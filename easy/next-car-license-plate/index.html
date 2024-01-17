@@ -1,0 +1,37 @@
+<h1>Next car license plate  ?</h1>
+
+<a href="https://www.codingame.com/training/easy/next-car-license-plate">https://www.codingame.com/training/easy/next-car-license-plate</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">French car license plates look like CG-123-BJ.<br>They are of the form &quot;<var>ab</var>-<var>cde</var>-<var>fg</var>&quot;, where <var>ab</var> and <var>fg</var> range from <const>AA</const> to <const>ZZ</const>, and <var>cde</var> ranges from <const>001</const> to <const>999</const>.<br><br>The license plates are generated in alphabetical order:<br><br>AA-001-AA,  AA-002-AA,  AA-003-AA,  ...,  AA-999-AA,<br>AA-001-AB,  AA-002-AB,  AA-003-AB,  ...,  AA-999-AB,<br>...,<br>AA-001-ZZ,  AA-002-ZZ,  AA-003-ZZ,  ...,  AA-999-ZZ,<br>AB-001-AA,  AB-002-AA,  AB-003-AA,  ...,  AB-999-AA,<br>...,<br>ZY-001-ZZ,  ZY-002-ZZ,  ZY-003-ZZ,  ...,  ZY-999-ZZ,<br>ZZ-001-AA,  ZZ-002-AA,  ZZ-003-AA,  ...,  ZZ-999-ZZ.<br><br><br>Given the license plate of a car and the number of cars that were registered after that car, calculate the license plate of the last registered car.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><var>x</var> : starting license plate <br><var>n</var> : number of subsequent registered cars</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><var>y</var> : license plate of the last car registered</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le;  <var>n</var> &le;  100 000 000</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">AB-123-CD
+5</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">AB-128-CD</pre>
+         </div>
+      </div>
+   </div>
+</div>

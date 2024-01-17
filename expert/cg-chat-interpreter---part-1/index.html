@@ -1,0 +1,64 @@
+<h1>CG Chat interpreter - Part 1</h1>
+
+<a href="https://www.codingame.com/training/expert/cg-chat-interpreter---part-1">https://www.codingame.com/training/expert/cg-chat-interpreter---part-1</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You have found hidden meaning in the inane babblings of CG Chat. Write a program to make sense of the madness. This first puzzle introduces the concepts of numeric constants, arithmetic, and stack operations.<br><br>NOTE: CG Chat is case insensitive. Also, punctuation is ignored.<br><br><strong>NICKS</strong><br>Nicknames (nicks) can be at the start of a line in angle brackets (<const>&lt; &gt;</const>) to indicate the current speaker:<br><br><pre style="font-family: monospace">&lt;jim&gt; Hello!</pre><br><br>Nicks can also be mentioned by a speaker. The mentioned nick is surrounded by asterisks (<const>*</const>) to emphasize the reference:<br><br><pre style="font-family: monospace">&lt;woody&gt; Get over here, *buzz*!</pre><br><br><strong>SET CONTEXT COMMAND</strong><br>Each nick can only talk to one other nick at a time. This is the <strong>context</strong> of the conversation:<br><br><pre style="font-family: monospace">&lt;john&gt; Hey, *jude*!</pre><br><strong>jude</strong> is <strong>john</strong>'s context. Context statements look like:<br><br>&lt;{nick}&gt; {flavor text} *{nick}* {flavor text}<br><br>Context can also be asserted for the current statement (takes place immediately) if <strong>*nick*</strong> occurs at the beginning of the statement. Once context is set for a nick, it persists until a new context is set.<br><br><strong>CONSTANTS</strong><br>Constants are phrases that represent signed integers, and look like:<br><br>{a/an} {adjective(s)} {noun}<br><br>The &quot;<strong>noun</strong>&quot; (which may not actually be a noun) is from a provided list of &quot;good&quot; and &quot;bad&quot; nouns. Good nouns represent the value <const>1</const>. Bad nouns represent the value <const>-1</const>. All words between <strong>a/an</strong> and <strong>noun</strong> are <strong>adjectives</strong>. Each adjective multiplies <strong>noun</strong> by <const>2</const>. So for the phrase:<br><br><pre style="font-family: monospace">a slimy, sad eel</pre><br>If <strong>eel</strong> is a bad noun, this phrase represents the constant -4: <const>2</const> x <const>2</const> x <const>-1</const> <br><br><strong>SPECIAL CONSTANTS</strong><br>Represent the top value from the specified stack:<br><br> - &quot;me&quot; =&gt; the speaker's stack<br> - &quot;you&quot;, &quot;u&quot; =&gt; the context's stack<br> - <strong>*{nick}*</strong> =&gt; <strong>nick</strong>'s stack (no context change in this situation)<br><br>The referenced value is not removed from the corresponding stack.<br><br><strong>ARITHMETIC CONSTANTS</strong><br>Arithmetic phrases can be used anywhere a {constant} can be used:<br><br> - {constant} squared<br> - {constant} and {constant} too =&gt; (a + b)<br> - {constant} but not {constant} though =&gt; (a - b)<br> - {constant} by {constant} multiplied =&gt; (a * b)<br><br><strong>ASSIGNMENT COMMAND</strong><br>Words indicating the start of an assignment: &quot;youre&quot;, &quot;your&quot;, &quot;ur&quot;<br><br>This looks like:<br><br>{keyword} {flavor text} {constant}<br><br>For example:<br><br><pre style="font-family: monospace">&lt;tom&gt; *tina* UR such a good girl. U love u momma.</pre><br>This pushes the value 2 onto the top of <strong>tina</strong>'s stack<br><br><strong>STACK COMMANDS</strong><br> - The keyword <strong>listen</strong> duplicates the top value of the context's stack<br> - The keyword <strong>forget</strong> pops the top value off the context's stack<br> - The keyword <strong>flip</strong> exchanges the top two values of the context's stack<br><br><strong>OUTPUT COMMAND</strong><br>Each instance of the following words will pop then print the top value of the context's stack:<br><br> - &quot;tell&quot;, &quot;telling&quot; - Print the top value as an integer<br><br><strong>HINT</strong><br>All tests in this puzzle have one nick who explains what's happening. Pay attention to this.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Two space-separated integers, <var>numGood</var> and <var>numBad</var> indicating the number of &quot;good&quot; and &quot;bad&quot; nouns that will be declared.<br><strong>Line 2:</strong> A space-separated list of <var>numGood</var> &quot;good&quot; nouns. (Blank line if <var>numGood</var> == 0)<br><strong>Line 3:</strong> A space-separated list of <var>numBad</var> &quot;bad&quot; nouns. (Blank line if <var>numBad</var> == 0)<br><strong>Line 4:</strong> An integer, <var>numLines</var>, indicating the number of lines in the chat transcript<br><strong>Next <var>numLines</var> lines:</strong> The chat transcript to be interpreted</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The output of the program</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">Each line may contain multiple constants, but will only contain a single command. The exception to this is if a context change occurs as the first word in a line. In this instance, the context is changed immediately for that line (and all subsequent lines) and another command <strong>can</strong> be given on that same line.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1 1
+hacker
+puzzle
+25
+&lt;__observer&gt;     since I never set a context
+&lt;__observer&gt;     all my lines are ignored
+&lt;MadKnife&gt; Hi, *[CG]ThisBot*
+&lt;__observer&gt;     MK's _context_ is now [CG]TB
+&lt;[CG]ThisBot&gt; Hello.
+&lt;MadKnife&gt; UR an awesome hacker yet?
+&lt;__observer&gt;     &quot;hacker&quot; is a _good_ word
+&lt;__observer&gt;     so &quot;an awesome hacker&quot; is a _constant_
+&lt;__observer&gt;     since there is one _adjective_
+&lt;__observer&gt;     the value is 2 x 1 = 2
+&lt;__observer&gt;     the keyword &quot;ur&quot; pushes 2 onto [CG]TB
+&lt;[CG]ThisBot&gt; I'm getting better all the time.
+&lt;MadKnife&gt; I'll tell you how to be an awesome hacker.
+&lt;__observer&gt;     the keyword &quot;tell&quot; pops then
+&lt;__observer&gt;     prints the top of [CG]TB
+&lt;[CG]ThisBot&gt; Oh really?
+&lt;MadKnife&gt; You're still stuck on a silly, pointless puzzle.
+&lt;__observer&gt;     &quot;puzzle&quot; is a _bad_ word
+&lt;__observer&gt;     with 2 _adjectives_, the phrase
+&lt;__observer&gt;     &quot;a silly pointless puzzle&quot; pushes
+&lt;__observer&gt;     2 x 2 x -1 = -4 onto [CG]TB
+&lt;MadKnife&gt; I'm telling the truth.
+&lt;__observer&gt;     &quot;telling&quot; is another form of &quot;tell&quot;
+&lt;__observer&gt;     pop then print
+&lt;MadKnife&gt; Play CSB. Then you'll be awesome.</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">2-4</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,41 @@
+<h1>Musical Intervals</h1>
+
+<a href="https://www.codingame.com/training/hard/musical-intervals">https://www.codingame.com/training/hard/musical-intervals</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">A <strong>musical interval</strong> is a measure of the distance between two notes' pitches. You are given pitch pairs and asked to describe the musical interval between them.<br><br><strong>Note:</strong> This puzzle describes tuning-independent interval identification. If you know another recipe, it's perfectly valid too, and you can safely skip to the I/O format description.<br><br>In western musical formalism, an interval is a combination of a <strong>type</strong> and a <strong>quality</strong>.<br><br>The type describes the distance between the two unaltered pitches that compose it, ranging from the <const>prime</const> between two notes of the same pitch, to the <const>second</const>, <const>third</const>, <const>fourth</const>, <const>fifth</const>, <const>sixth</const>, <const>seventh</const>, and <const>octave</const> between two same-named notes a full scale apart.<br><br>Qualities are, in increasing order of span: <const>diminished</const>, <const>minor</const>, <const>perfect</const>, <const>major</const> and <const>augmented</const>.<br>Second, third, sixth and seventh intervals can be any quality but perfect. Primes, fourths, fifths and octaves can be any quality but major and minor.<br><br>Using English names, the unaltered pitches are A, B, C, D, E, F and G. The distance between B and C is a semitone; the distance between E and F is a semitone; all other consecutive pitches are a tone apart, including from G up to A.<br>Natural intervals from A to:<br>&bull; B: major second<br>&bull; C: minor third<br>&bull; D: perfect fourth<br>&bull; E: perfect fifth<br>&bull; F: minor sixth<br>&bull; G: minor seventh<br>&bull; next A: perfect octave<br><br>Here's one way to find an interval's quality:<br>&bull; Take the reference interval of the same type from the list above<br>&bull; Shift it step by step until the pitches match.<br>&emsp;&ndash; shifting both pitches over a tone or semitone doesn't change the quality.<br>&emsp;&ndash; shifting pitches one over a tone and the other over a semitone expands or shrinks the quality to the next available one for that type.<br>&bull; Sharps and flats, when present, also expand or reduce the quality to the next. Sharp (traditional notation ♯ represented as a <const>+</const> in the inputs) raises a pitch, and flat (traditionally ♭, here <const>-</const>) lowers it.<br><br>Identifying the interval from C to E: the pitches are two steps apart (CDE), so the interval is a third. What's its quality? The provided reference third, A to C, is minor. Shifting it one step up makes it B to D; the A to B step is a tone, C to D is a tone too; so the interval quality doesn't change and is still minor. Shifting one more step reaches the goal C to E; the B to C step is a semitone, D to E a tone; so we're raising the bottom pitch less than the upper one, and the interval expands to the next available quality: major. So C to E is a major third.<br><br>What's the interval between B♭ and F♯? They're four steps apart, so it's a fifth. The reference fifth, A to E, is perfect. Shifting up once raises the bottom pitch by a tone and the top one a semitone, so B to F is a diminished fifth. Lowering B to B♭ expands that to a perfect fifth, and raising the F to F♯ expands that to an augmented fifth.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> the number <var>N</var> of intervals<br><strong>Next <var>N</var> lines:</strong> two space-separated pitches <var>from</var> and <var>to</var><br><br>A pitch is a letter from <const>A</const> to <const>G</const>, optionally followed by a <const>+</const> for sharp or a <const>-</const> for flat.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>N</var> lines:</strong> a fully-qualified interval</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><var>from</var> and <var>to</var> describe the smallest strictly rising interval between the two pitches. There are no edge cases.<br>No other interval types and qualities than  those mentioned in the statement are needed.<br><br>Semitones are assumed to be smaller than tones. No other assumption is needed on the tuning system used, or on sharps', flats', tones' and semitones' relative extents.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+C E
+B- F+
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">major third
+augmented fifth
+</pre>
+         </div>
+      </div>
+   </div>
+</div>

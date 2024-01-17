@@ -1,0 +1,38 @@
+<h1>Count of Primes in a number grid</h1>
+
+<a href="https://www.codingame.com/training/medium/count-of-primes-in-a-number-grid">https://www.codingame.com/training/medium/count-of-primes-in-a-number-grid</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Given a grid of single digit numbers in <var>R</var> rows and <var>C</var> columns, count the number of <strong>distinct</strong> primes that can be found using <strong>Across</strong> or <strong>Down</strong> reading order. Partial use of the numbers in any direction is allowed, but skipping digits is not.<br><br>Example:  In the grid below:<br>2 3<br>1 7<br><br>The primes that can found are : <strong>2, 3, 7, 17, 23, 37</strong>.  So, the output would be <const>6</const>.  Note that 13 and 71 are not counted as they  are not a result of using the across or down reading order.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Two numbers <var>R</var> and <var>C</var>, separated by a single space<br><strong>Next <var>R</var> lines:</strong> Depicts a grid of single digit numbers, separated by a single space</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">One single number depicting the count of distinct primes found in the grid. Do not count duplicates.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2&lt;=<var>R</var>&lt;=8<br>2&lt;=<var>C</var>&lt;=8</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2 2
+2 3
+1 7</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">6</pre>
+         </div>
+      </div>
+   </div>
+</div>

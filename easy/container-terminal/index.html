@@ -1,0 +1,45 @@
+<h1>Container Terminal</h1>
+
+<a href="https://www.codingame.com/training/easy/container-terminal">https://www.codingame.com/training/easy/container-terminal</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Cargo trucks are transporting containers due for export to a seaport terminal.<br><br>The containers will be temporarily stored in the terminal to wait for ships to come. To save space, containers are usually stacked up in the terminal.<br><br>There are different ships bound for different destinations. Terminal operators have to pick the correct containers from temporary storage to load onto the ships. If the correct containers are on the top of the stack, it will be easy to pick them up for loading. But if a wanted container is underneath some other containers, the overlaying containers must first be moved aside before reaching the wanted container, causing extra operation cost and wasting time.<br><br>To manage the container terminal in the most efficient manner, you need a plan.<br><br>There are ship A to ship Z, totally 26 different ships bound for 26 different destinations.<br><br>You know the schedule of the ships. Ship A will come earlier than Ship B. Ship B will come earlier than Ship C. The ships always come in alphabetical order.<br><br>You know the schedule of the cargo trucks. The containers for different ships are arriving in a predictable order. No cargo owner wishes to miss a shipment. All cargoes will arrive before the first ship to come.<br><br>You have to plan when the trucks come, how should the containers be stored. <br><br><strong>Example</strong><br><br>Six trucks are sending six containers to the terminal in this order:<br><br><pre style="font-family: monospace">BACCBA</pre><br>B is a container for ship B. This container comes first.<br>It is followed by container A, targeted for ship A.<br>A is followed by two containers C, to be loaded to ship C.<br>... and so on for the rest.<br><br>We can arrange the six containers in two stacks, like this: <br><pre style="font-family: monospace"> ___ ___<br>| A | B |<br>|___|___|<br>| A | C |<br>|___|___|<br>| B | C |<br>|___|___|</pre><br>When ship A comes, we can pick up the two uppermost A containers to load to the ship.<br>When ship B comes, the two B containers are on the uppermost layer easy to pick up.<br>When ship C comes, the remaining two C containers are ready for pick up and loading.<br><br>The whole process used 2 stacking areas.<br><br>Note that we do not sort the containers before stacking them up. Sorting is an option too slow and costly to put in practice.<br><br>Now is your turn. You are given the cargo trucks schedule. Find the minimum stacking areas needed to ensure the most efficient shipment loading.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var> for the number of lines to follow.<br><strong>The following <var>N</var> lines:</strong> each line is an independent test case, which is a string composed of alphabetical upper case letters. Each letter refers to a container targeted for its same-letter ship. The cargoes will be transported to the terminal strictly in the order shown in the string. Process each line as an independent case.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">Write <var>N</var> lines, each line is an integer, which is the answer for its corresponding input line.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>N</var> &le; 100<br>1 &le; length of each line &le; 500 characters<br><br>In the real world there is a maximum height limit for each stack of containers. In this puzzle we assume there is no such limit.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">5
+A
+CBACBACBACBACBACBA
+CCCCCBBBBBAAAAA
+BDNIDPD
+CODINGAME</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1
+3
+1
+4
+4</pre>
+         </div>
+      </div>
+   </div>
+</div>

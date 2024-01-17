@@ -1,0 +1,40 @@
+<h1>Find the liars</h1>
+
+<a href="https://www.codingame.com/training/medium/find-the-liars">https://www.codingame.com/training/medium/find-the-liars</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Among a group of people, will you be able to find the liars?<br>They each give you a sentence to analyze.<br><br>All <var>N</var> people give you one single sentence.<br>A <strong>sentence</strong> is stated like: <const>NUM&gt;NUM&gt;NUM[...]=(T or L)</const><br>Where <const>NUM</const> is a person number. You can have up to a hundred of recursive <const>NUM&gt;</const>.<br>The Regex of a sentence is <const>\d(&gt;\d)*=[TL]</const><br><br><const>T</const> represents &quot;Truth&quot; and <const>L</const> represents &quot;Lying&quot;.<br>That can be translated by:<br><strong><const>NUM</const> told that <const>NUM</const> told me that <const>NUM</const> [...] <const>NUM</const> is telling the truth/is lying</strong><br><br>The people are numbered from 0 to 9.<br>If someone is lying, then he inverses everything he says (truth became lie and lie became truth).<br>If someone is telling the truth, then for him everything he said is correct.<br><br>For every case, there is only one single solution.<br><br><strong>Examples:</strong><br><const>2&gt;0=L</const>: 2 told that 0 is lying<br><const>2&gt;3&gt;0=T</const>: 2 told that 3 told me that 0 is telling the truth<br><br><strong>Explanation of the first exemple case :</strong><br>If 0 is saying the truth, then 1 must lie <const>0&gt;1=L</const><br>But if 1 lie, 2 must lie too <const>1&gt;2=T</const> (a liar say that 2 is telling the truth)<br>If 0 tell the truth, there is 2 liars, but it is impossible, so 0 is the liar.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var> for the number of people.<br><strong>Line 2:</strong> An integer <var>L</var> for the number of liars.<br><strong>Next <var>N</var> lines:</strong> A string <var>sentence</var> about the sentence of the person.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> The people who lie separated by spaces, in ascending order.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &le; <var>N</var> &le; 10<br>1 &le; <var>L</var> &le; 9</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+1
+0&gt;1=L
+1&gt;2=T
+2&gt;0=L</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">0</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,50 @@
+<h1>Master of Mayhem</h1>
+
+<a href="https://www.codingame.com/training/easy/master-of-mayhem">https://www.codingame.com/training/easy/master-of-mayhem</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">The Master of Mayhem has unleashed a crew of cyborgs on the city, and may be disguised as one - but which one?<br><br>From surveillance reports we have determined that each cyborg is wearing a<br><const>hat</const> and some <const>neckwear</const>, and has a <const>companion</const> and a <const>catchphrase</const>.<br><br>If Mayhem's hat is a <strong>FEDORA</strong>, then a cyborg wearing a <strong>BEANIE</strong> hat can't be the disguise. <br>If you can eliminate all but one cyborg, that's Mayhem!<br><br>Mayhem has only been heard to utter one <const>word</const> from a <const>catchphrase</const>.<br><br>We might not know all the attributes of either Mayhem or the cyborgs.<br><br>Information about Mayhem and the cyborgs always follows one of these formats:<br><br><var>Name</var>'s <var>attribute</var> is a <var>string</var><br><var>Name</var>'s <var>attribute</var> is an <var>string</var><br><var>Name</var>'s <var>attribute</var> is &quot;<var>string</var>&quot;<br><br>A <var>string</var> contains only letters and spaces.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var> for the number of cyborgs<br><strong>Next <var>N</var> lines:</strong> Cyborg names<br><strong>Next line:</strong> An integer <var>M</var> for the number of reports about Mayhem<br><strong>Next <var>M</var> lines:</strong> Reports about Mayhem in random order<br><strong>Next line:</strong> An integer <var>C</var> for the number of reports about the cyborgs<br><strong>Next <var>C</var> lines:</strong> Reports about the cyborgs in random order</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> The name of the only cyborg that could be Mayhem in disguise.<br>If none of the listed cyborgs could be Mayhem, output <const>MISSING</const><br>If more than one cyborg could be Mayhem, output <const>INDETERMINATE</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &lt;= <var>N</var> &lt;= 10<br>0 &lt;= <var>M</var> &lt;= 4<br>0 &lt;= <var>C</var> &lt;= 40</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+SPEEDO
+TYPO
+3
+Mayhem's hat is a FEDORA
+Mayhem's neckwear is a STRING OF PEARLS
+Mayhem's word is &quot;SNARK&quot;
+7
+SPEEDO's hat is a FEDORA
+TYPO's catchphrase is &quot;I am HUNTING for a SNARK&quot;
+TYPO's companion is a MINIATURE DRAGON
+SPEEDO's neckwear is a STRING OF PEARLS
+SPEEDO's companion is a BEAVER
+TYPO's hat is a FEDORA
+TYPO's neckwear is a PENDANT</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">SPEEDO</pre>
+         </div>
+      </div>
+   </div>
+</div>

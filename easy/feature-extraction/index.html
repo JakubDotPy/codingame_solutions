@@ -1,0 +1,43 @@
+<h1>Feature Extraction</h1>
+
+<a href="https://www.codingame.com/training/easy/feature-extraction">https://www.codingame.com/training/easy/feature-extraction</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement"><strong>Convolution</strong> is a method for extracting features from an input image which can be used for training a Deep Neural Network to classify input image. It produces an output matrix where each element is a weighted sum of neighbouring input elements using a <strong>kernel</strong> (weight matrix).<br><br>Given an input image of size <var>r</var> &times; <var>c</var> pixels (each pixel represented by an integer) and a kernel of size <var>m</var> &times; <var>n</var>, print the (<var>r</var>-<var>m</var>+1) &times; (<var>c</var>-<var>n</var>+1) output pixels after the convolution.<br><br>To calculate the output pixel values, place the <strong>top left corner</strong> of kernel of size <var>m</var> &times; <var>n</var> on the input image matrix starting from the top left corner and then shift it one step right as long as it fits in the input image matrix. Then start again on the next row down.<br><br>At each location, calculate the sum of the weights multiplied by the pixel values at the overlapped cells. <br><br><strong>Example how convolution works</strong><br><br><const>Image Pixel Matrix</const> <br><br>a11 a12 a13 a14<br>a21 a22 a23 a24<br>a31 a32 a33 a34<br>a41 a42 a43 a44<br><br><const>Kernel Weight Matrix</const><br><br>w11 w12<br>w21 w22<br><br>In this case we have 9 possible placements of the kernel matrix. <const>Output image size is 3&times;3</const>.<br><br>Top left corner at <const>(0,0)</const><br>Weighted Sum = a11 * w11 + a12 * w12 + a21 * w21 + a22 * w22<br><br>Top left corner at <const>(0,1)</const><br>Weighted Sum = a12 * w11 + a13 * w12 + a22 * w21 + a23 * w22<br><br>Top left corner at <const>(0,2)</const><br>Weighted Sum = a13 * w11 + a14 * w12 + a23 * w21 + a24 * w22<br><br>Top left corner at <const>(1,0)</const><br>Weighted Sum = a21 * w11 + a22 * w12 + a31 * w21 + a32 * w22<br><br>Top left corner at <const>(1,1)</const><br>Weighted Sum = a22 * w11 + a23 * w12 + a32 * w21 + a33 * w22<br><br>So on...<br><br><strong>For an animated visualization please refer to this link:</strong>  tinyurl.com/nk0vnyel<br><br><strong>Resources for more information:</strong><br>https://d2l.ai/chapter_convolutional-neural-networks/conv-layer.html<br>https://developers.google.com/machine-learning/practica/image-classification/convolutional-neural-networks</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> The height (<var>r</var>) and width (<var>c</var>) of input image matrix separated by space.<br><strong>Next <var>r</var> lines:</strong> <var>c</var> pixel values separated by spaces.<br><strong>Line <var>r</var>+2:</strong> The height (<var>m</var>) and width (<var>n</var>) of the kernel matrix separated by space.<br><strong>Next <var>m</var> lines:</strong> <var>n</var> weights separated by spaces.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">Print the output image matrix after the convolution.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">Kernel matrix is a square matrix.<br><var>m</var> &le; <var>r</var> and <var>n</var> &le; <var>c</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3 3
+100 200 100
+200 100 200
+50 100 50
+2 2
+-1 1
+1 -1</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">200 -200
+-150 150</pre>
+         </div>
+      </div>
+   </div>
+</div>

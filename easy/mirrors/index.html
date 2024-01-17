@@ -1,0 +1,38 @@
+<h1>Mirrors</h1>
+
+<a href="https://www.codingame.com/training/easy/mirrors">https://www.codingame.com/training/easy/mirrors</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">When <const>z</const> units of light shine on any side of a mirror with reflectivity <const>r</const>, <const>rz</const> units of light are reflected, and the other <const>(1-r)z</const> units of light pass through the mirror. <br>There are <var>n</var> mirrors numbered 1...<var>n</var> arranged in a row. Mirror <var>i</var> has reflectivity <var>r_i</var>. Find the total amount of light reflected back to the source when <const>1</const> unit of light shines on the first mirror. <br>Note that light can be reflected multiple times.<br><pre style="font-family: monospace">----&gt; | | | | |<br>light 1 2 3 4 5 ...</pre></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong>: An integer <var>n</var> for the number of mirrors<br><strong>Line 2</strong>: <var>n</var> space-separated floats <var>r</var> for the reflectivity of the mirrors</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1</strong>: Total reflected light rounded to 4 decimal places</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>n</var> &le; 10<br>0 &le; <var>r</var> &le; 1</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+0.5 0.500000
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">0.6667</pre>
+         </div>
+      </div>
+   </div>
+</div>

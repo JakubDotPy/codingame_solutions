@@ -1,0 +1,48 @@
+<h1>Langton's ant</h1>
+
+<a href="https://www.codingame.com/training/medium/langtons-ant">https://www.codingame.com/training/medium/langtons-ant</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Langton's ant is a turing machine built on simple rules:<br>&bull; Consider a grid of <var>W</var>x<var>H</var> squares, each of which can be either black <const>#</const> or white <const>.</const>.<br>&bull; The ant starts at the position (<var>x</var>, <var>y</var>) of the grid, the upper left square coordinates are (0,0).<br>&bull; The ant is facing one of the following directions (<const>N</const> = up, <const>E</const> = right, <const>S</const> = down, <const>W</const> = left).<br>&bull; The ant moves <var>T</var> turns. For each turn:<br>　　- it rotates 90&deg; left if it is on a white square, 90&deg; right otherwise.<br>　　- it inverts the color of the square it is located on.<br>　　- it moves 1 square forward in its current direction.<br><br>From an arbitrarily coloured grid and the ant's initial state, you have to print the grid state after <var>T</var> turns.<br><br>On the given test cases, the ant never has to go out of bounds.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Ligne 1 :</strong> Two integers <var>W</var> and <var>H</var> for the width and height of the grid.<br><strong>Ligne 2 :</strong> Two integers <var>x</var> and <var>y</var> for the ant's initial coordinates.<br><strong>Ligne 3 :</strong> A character <const>N</const>, <const>E</const>, <const>S</const> or <const>W</const> for the ant's initial direction.<br><strong>Ligne 4 :</strong> An integer <var>T</var> for the number of turns.<br><strong><var>H</var> following lines :</strong> A line of size <var>W</var> composed of <const>#</const> (black square) and <const>.</const> (white square) for the initial state of the grid.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><var>H</var> lines representing the final state of the grid.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>W</var>, <var>H</var> &le; 30<br>0 &le; <var>x</var> &lt; <var>W</var><br>0 &le; <var>y</var> &lt; <var>H</var><br>0 &le; <var>T</var> &le; 1000</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">5 5
+2 2
+N
+10
+.....
+.....
+.....
+.....
+.....</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">.....
+..##.
+.##..
+.##..
+.....</pre>
+         </div>
+      </div>
+   </div>
+</div>

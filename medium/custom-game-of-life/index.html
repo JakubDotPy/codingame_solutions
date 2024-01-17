@@ -1,0 +1,43 @@
+<h1>Custom Game of Life</h1>
+
+<a href="https://www.codingame.com/training/medium/custom-game-of-life">https://www.codingame.com/training/medium/custom-game-of-life</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You probably know the game of life, if you don't: https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life<br>It is a cellular automaton created by John Conway in 1970. An infinite grid made of dead and living cells that changes each turn following specific rules:<br>A living cell will survive only if it has 2 or 3 neighbours (&lt;2: isolation death, &gt;3: overpopulation death).<br>If a dead cell has exactly 3 neighbours, it comes back to life, else it stays dead.<br><var>neighbours</var> is the number of neighbours with Moore neighbourhood (8 cells).<br><br>You will be given new rules and will have to adapt the evolution of the grid to these:<br>The first line is the condition of surviving of a living cell, and the second line is the birth condition of a dead cell. The index within the line is the number of neighbours, 0 to 8. Living is represented by <const>1</const>, dead by <const>0</const>.<br>Your goal is to output the grid given in input after <var>n</var> turns and with specific given rules.<br><br><strong>Example: Classic rules</strong><br>001100000   A living cell survives if it has 2 or 3 neighbours, and dies if 0,1 or 4+.<br>000100000   A dead cell is back to life if it has 3 neighbours, and stays dead if any other number.<br><br>A cell outside the grid will always be considered as dead.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>First line:</strong>  <var>h</var> &amp; <var>w</var>, height and width of the grid, <var>n</var> the number of turns you have to simulate before output.<br><strong>Second line:</strong> 9 <strong>not</strong> space separated binary integers, the condition of surviving of a living cell (<const>0</const>: dies, <const>1</const>: stays alive).<br><strong>Third line:</strong> 9 <strong>not</strong> space separated binary integers, the condition of birth of a dead cell (<const>0</const>: stays dead, <const>1</const>: birth).<br><strong>Next <var>h</var> lines:</strong> <var>w</var>-length string for cells (<const>.</const>: dead, <const>O</const>: alive).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>h</var> lines</strong> of <var>w</var>-length strings for cells after <var>n</var> turns (<const>.</const>: dead, <const>O</const>: alive).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <var>w</var>, <var>h</var>, <var>n</var> &le; 20</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3 4 1
+001100000
+000100000
+.OO.
+O..O
+.OO.</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">.OO.
+O..O
+.OO.</pre>
+         </div>
+      </div>
+   </div>
+</div>

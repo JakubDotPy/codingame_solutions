@@ -1,0 +1,47 @@
+<h1>Someone's Acting Sus....</h1>
+
+<a href="https://www.codingame.com/training/easy/someones-acting-sus----">https://www.codingame.com/training/easy/someones-acting-sus----</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are a professional <strong>Among Us</strong> gamer, however, you don't know who the impostor is! Luckily, you're hacking, so you know the exact path each crewmate took before the <strong>EMERGENCY MEETING</strong>. You notice that certain crewmates are acting SUSSY - they are moving much faster than they should! You know that there are <strong>vents</strong> connecting all of the rooms, so there is only 1 possible explanation. Your task is to figure out who is <strong>SUS</strong>, and vote them out immediately!<br><br>The rooms are labelled arranged in cyclic fashion. For example, for a room layout <const>ABCDEF</const>, a crewmate in room <const>D</const> can go to either room <const>C</const> or <const>E</const>, and a crewmate in room <const>A</const> can move to either room <const>B</const> or room <const>F</const>. Changing rooms takes <const>1</const> minute.<br><br>For each crewmate, you will receive a string of length <var>K</var>. This string is ordered so that the first character represents the position of the crewmate at the first minute, and so on.<br>Sometimes, the hacks you're using may freeze (because of the bloatware you installed with it), so you will be missing some data. In this case, the character you will be given will be <strong>#</strong>.<br><br>For example (examples with room layout <const>ABCDEF</const>:<br>For input <const>ABAFEDEF</const>, the path the crewmate took is &lt;&lt;A-&gt;B-&gt;A-&gt;F-&gt;E-&gt;D-&gt;E-&gt;F&gt;&gt;. This is not sus, since the crewmate never travels more than 1 room per minute.<br>For input <const>AFEBAFE</const>, the path the crewmate took is &lt;&lt;A-&gt;F-&gt;E-&gt;B-&gt;A-&gt;F-&gt;E&gt;&gt;. This is sus because a normal crewmate cannot travel from room <const>E</const> to room <const>B</const> in 1 minute.<br>For input <const>B#DCB#F</const>, the path the crewmate took is &lt;&lt;B-&gt;?-&gt;D-&gt;C-&gt;B-&gt;?-&gt;F&gt;&gt;. This is not sus because the crewmate can travel from <const>B</const> to <const>D</const> in 2 minutes, and <const>B</const> to <const>F</const> in 2 minutes.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">An <strong>integer</strong>, <var>L</var>.<br>A line <var>F</var> of length <var>L</var>, corresponding to the room layout. All characters in <var>F</var> will be <strong>uppercase</strong> and <strong>unique.</strong><br>2 space separated integers, <var>N</var> and <var>K</var>, representing the number of <strong>crewmates</strong> and the <strong>length of time</strong> the crewmates were recorded (length of each string).<br>This is followed by <var>N</var> strings, comprised of <strong>capital letters</strong>, or <strong>number signs (#)</strong>, each of length <var>K</var>. It is guaranteed that the letters will be present in line <var>F</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><var>N</var> lines corresponding to each of the <var>N</var> crewmates. Output <strong>&quot;SUS&quot;</strong> if the crewmate is suspicious, otherwise print <strong>&quot;NOT SUS&quot;</strong>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">6&lt;=L&lt;=26<br>5&lt;=N&lt;=40<br>2&lt;=K&lt;=50</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">6
+ABCDEF
+5 3
+ABC
+AFE
+CDC
+DBC
+AAA</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">NOT SUS
+NOT SUS
+NOT SUS
+SUS
+NOT SUS</pre>
+         </div>
+      </div>
+   </div>
+</div>

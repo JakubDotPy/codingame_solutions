@@ -1,0 +1,39 @@
+<h1>Paper labyrinth</h1>
+
+<a href="https://www.codingame.com/training/medium/paper-labyrinth">https://www.codingame.com/training/medium/paper-labyrinth</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are Alice and you must find the rabbit then go out of the Queen&rsquo;s labyrinth of death as quickly as you can.<br>The labyrinth is made of thin walls, each wall is binary-coded in each cell: <const>1</const> is the the down wall, <const>2</const> the left wall, <const>4</const> the top wall and <const>8</const> the right wall. If the wall is present, add its number to the cell. For example, <const>10=8+2</const> in a cell where you stand means that there are walls on your left and on your right and that you can walk downwards and upwards.<br>This also means that one-way doors are not forbidden. Look for instance at <const>10 5</const>, if you are on <const>5</const>, you can go on <const>10</const> but you can&rsquo;t go back.<br>In fact, the cells are coded in hexadecimal, <const>10</const> is <const>a</const>.<br>The first simple labyrinth is this one:<br><pre style="font-family: monospace">________<br>|S    R|<br>&oline;&oline;&oline;&oline;&oline;&oline;&oline;&oline;</pre><br><const>7=4+2+1</const>, it&rsquo;s the start cell on the left, <const>0xd=13=8+4+1</const>, it&rsquo;s the rabbit cell on the right. The other cells are <const>5=4+1</const>.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> The coordinates <var>xs</var> <var>ys</var> of the start and exit (screen-style, (0,0) on top left)<br><strong>Line 2:</strong> The coordinates <var>xr</var> <var>yr</var> of the rabbit<br><strong>Line 3:</strong> The <var>w</var>idth and <var>h</var>eight of the labyrinth<br><strong>Next <var>h</var> lines:</strong> The <var>h</var> lines of the labyrinth coded in hexadecimal</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The number of cells needed to reach the rabbit then to return.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1⩽<var>w</var>,<var>h</var>⩽7</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">0 0
+5 0
+6 1
+75555d</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">5 5</pre>
+         </div>
+      </div>
+   </div>
+</div>

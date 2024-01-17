@@ -1,0 +1,36 @@
+<h1>Smooth Factory</h1>
+
+<a href="https://www.codingame.com/training/medium/smooth-factory">https://www.codingame.com/training/medium/smooth-factory</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Edsger is Ming and Ham's teacher. He's quite fond of them playing Smoothie Reduction, as their grades have kept improving since they started, for some reason.<br><br>Edsger is a man of influence. He's willing to pull some strings so that the next bulk shipments all result in victories for Ming and Ham. Edsger is also lean. He'll want the shipments to be as little as possible. Edsger strives to be a good teacher, so he'll also ensure no two shipments are the same size. For the learning experience.<br><br>How many pieces of fruit will he have to schedule over the following weeks to ensure Ming and Ham enjoy at least <var>V</var> victories?<br><br>This is a harder take on easy puzzle &ldquo;Smooth!&rdquo;. You may want to solve that one first. In any case, here's a reminder of the game.<br><br><strong>Smoothie Reduction</strong><br><br>Ming and Ham like smoothies. To make smoothies, you need a lot of fruit. Every now and then, they'll play a little game. They'll buy a lot of fruit in bulk, and then take turns at &ldquo;reducing&rdquo; it.<br><br>A turn of reducing works as follows:<br>&bull; Ming will neatly arrange the fruit in a first line, with the pieces evenly spread<br>&bull; Ham will pick a fruit type from stock, and arrange them in a second line, evenly spread, such that each one matches a bundle of exactly <var>n</var> pieces in the first line, with <var>n</var> depending on the fruit type (see table below)<br>&bull; if any fruit in the first line is left unmatched with fruit from the second line, Ming eats it and the game finishes in defeat<br>&bull; else they scoop all fruit from the first line to the blender, swap roles and repeat<br><br>They have the following fruit types in stock:<br>&bull; apples, that spread one for every bundle of <var>n</var> = two<br>&bull; oranges, that spread one for every bundle of <var>n</var> = three<br>&bull; bananas, that spread one for every bundle of <var>n</var> = five<br>&bull; watermelons, that spread one for every bundle of <var>n</var> = one<br><br>The game ends in a victory if the second row ever gets reduced to a single watermelon at the end of a turn.<br><br><strong>Example</strong><br><br>If Edsger wants to ensure <const>5</const> victories, he'll need to schedule:<br>&bull; a size-<const>1</const> &ldquo;bulk&rdquo; fruit arrival on week <const>1</const><br>&bull; a size-<const>2</const> bulk fruit arrival on week <const>2</const><br>&bull; a size-<const>3</const> bulk fruit arrival on week <const>3</const><br>&bull; a size-<const>4</const> bulk fruit arrival on week <const>4</const><br>&bull; a size-<const>5</const> bulk fruit arrival on week <const>5</const><br>&hellip;for a total of <const>15</const> pieces of fruit.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> <var>V</var> number of victories</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>One line:</strong> <var>F</var> amount of fruit to schedule</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><var>V</var> &le; 4500</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">5</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">15</pre>
+         </div>
+      </div>
+   </div>
+</div>

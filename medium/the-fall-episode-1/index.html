@@ -1,0 +1,185 @@
+<h1>The Fall - Episode 1</h1>
+
+<a href="https://www.codingame.com/training/medium/the-fall-episode-1">https://www.codingame.com/training/medium/the-fall-episode-1</a>
+
+<div id="statement_back" class="statement_back" style="display: none;">&nbsp;</div>
+<div class="statement-body">
+  <!-- GOAL -->
+  <div class="statement-section statement-goal">
+    <h2><span class="icon icon-goal">&nbsp;</span> <span>The Goal</span></h2>
+    <div class="statement-goal-content">Your objective is to write a program <strong>capable of predicting the route Indy will take on his way down a tunnel</strong>. Indy is not in danger of getting trapped in this first mission.</div>
+  </div>
+  <!-- RULES -->
+  <div class="statement-section statement-rules">
+    <h2><span class="icon icon-rules">&nbsp;</span> <span>Rules</span></h2>
+    <div>
+      <div class="statement-rules-content"><strong>The tunnel consists of a patchwork of square rooms of different types.</strong>The rooms can be accessed and activated by computer using an ancient RS232 serial port (because Mayans aren't very technologically advanced, as is to be expected...).<br /><br /><strong>There is a total of 14 room types </strong>(6 base shapes extended to 14 through rotations).<br /><br />Upon entering a room, depending on the type of the room and Indy's entrance point (<const>TOP</const>,<const>LEFT</const>, or <const>RIGHT</const>) he will either <strong>exit the room through a specific exit point</strong>, suffer a lethal collision or lose momentum and get stuck:
+        <table style="color: #20252a; margin-left: auto; margin-right: auto; margin-top: 20px; text-align: center; border-spacing: 5px 5px; border-collapse: separate;">
+          <colgroup>
+            <col style="width: 120px; background-color: #eeeeee;" />
+            <col style="width: 120px; background-color: #eeeeee;" />
+            <col style="width: 120px; background-color: #eeeeee;" />
+            <col style="width: 120px; background-color: #eeeeee;" />
+          </colgroup>
+          <tbody>
+            <tr style="height: 120px;">
+              <td><span><img src="https://cdn-games.codingame.com/the-last-crusade/indiana1/type_00.png" alt="" /><br /><em>Type 0</em></span></td>
+              <td style="text-align: left; padding: 20px; vertical-align: middle;" colspan="3">This room type is not part of the tunnel per se as Indy cannot move across it.</td>
+            </tr>
+            <tr style="height: 120px;">
+              <td><span><img src="https://cdn-games.codingame.com/the-last-crusade/indiana1/type_01.png" alt="" /><br /><em>Type 1</em></span></td>
+              <td style="text-align: left; padding: 20px; vertical-align: middle;" colspan="3">The green arrows indicate Indy's possible paths through the room.</td>
+            </tr>
+            <tr style="height: 120px;">
+              <td><span><img src="https://cdn-games.codingame.com/the-last-crusade/indiana1/type_02.png" alt="" /><br /><em>Type 2</em></span></td>
+              <td><span><img src="https://cdn-games.codingame.com/the-last-crusade/indiana1/type_03.png" alt="" /><br /><em>Type 3</em></span></td>
+              <td style="text-align: left; padding: 20px; vertical-align: middle;" colspan="2">Type 3 rooms are similar to type 2 rooms but are rotated.</td>
+            </tr>
+            <tr style="height: 120px;">
+              <td><span><img src="https://cdn-games.codingame.com/the-last-crusade/indiana1/type_04.png" alt="" /><br /><em>Type 4</em></span></td>
+              <td><span><img src="https://cdn-games.codingame.com/the-last-crusade/indiana1/type_05.png" alt="" /><br /><em>Type 5</em></span></td>
+              <td style="text-align: left; padding: 20px; vertical-align: middle;" colspan="2">A red arrow indicates a path that Indy cannot use to move across the room.</td>
+            </tr>
+            <tr style="height: 120px;">
+              <td><span><img src="https://cdn-games.codingame.com/the-last-crusade/indiana1/type_06.png" alt="" /><br /><em>Type 6</em></span></td>
+              <td><span><img src="https://cdn-games.codingame.com/the-last-crusade/indiana1/type_07.png" alt="" /><br /><em>Type 7</em></span></td>
+              <td><span><img src="https://cdn-games.codingame.com/the-last-crusade/indiana1/type_08.png" alt="" /><br /><em>Type 8</em></span></td>
+              <td><span><img src="https://cdn-games.codingame.com/the-last-crusade/indiana1/type_09.png" alt="" /><br /><em>Type 9</em></span></td>
+            </tr>
+            <tr style="height: 120px;">
+              <td><span><img src="https://cdn-games.codingame.com/the-last-crusade/indiana1/type_10.png" alt="" /><br /><em>Type 10</em></span></td>
+              <td><span><img src="https://cdn-games.codingame.com/the-last-crusade/indiana1/type_11.png" alt="" /><br /><em>Type 11</em></span></td>
+              <td><span><img src="https://cdn-games.codingame.com/the-last-crusade/indiana1/type_12.png" alt="" /><br /><em>Type 12</em></span></td>
+              <td><span><img src="https://cdn-games.codingame.com/the-last-crusade/indiana1/type_13.png" alt="" /><br /><em>Type 13</em></span></td>
+            </tr>
+          </tbody>
+        </table>
+        <br />Indy is perpetually drawn downwards: <strong>he cannot leave a room through the top</strong>.<br /><br /><span><span>At the start of the game, you are given the map of the tunnel in the form of a rectangular grid of rooms. Each room is represented by its type.</span><br /><br />For this first mission, you will familiarize yourself with the tunnel system, the rooms have all been arranged in such a way that Indy <strong>will have a safe continuous route between his starting point (top of the temple) and the exit area (bottom of the temple)</strong>.<br /><br />Each game turn: </span>
+        <ul>
+          <li><span>You receive Indy's current position</span></li>
+          <li><span>Then you specify what Indy's position will be next turn.</span></li>
+          <li><span>Indy will then move from the current room to the next according to the shape of the current room.</span></li>
+        </ul>
+      </div>
+      <!-- Victory conditions -->
+      <div class="statement-victory-conditions">
+        <div class="icon victory">&nbsp;</div>
+        <div class="blk">
+          <div class="title">Victory Conditions</div>
+          <div class="text">Indy reaches the exit</div>
+        </div>
+      </div>
+      <!-- Lose conditions -->
+      <div class="statement-lose-conditions">
+        <div class="icon lose">&nbsp;</div>
+        <div class="blk">
+          <div class="title">Lose Conditions</div>
+          <div class="text">You assert an incorrect position for Indy</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- EXAMPLES -->
+  <div class="statement-section statement-examples">
+    <h2><span class="icon icon-example">&nbsp;</span> <span>Example</span></h2>
+    <div class="statement-examples-text">
+      <div class="statement-example-horizontal">
+        <div style="display: table-cell; background-color: transparent; vertical-align: middle; padding: 0;"><img style="height: 100%; background-color: white;" src="https://cdn-games.codingame.com/the-last-crusade/indiana1/statement_img_01.png" /></div>
+        <div class="legend">Indy starts in the room <const>(1,0)</const>,<br />then, he falls down in <const>(1,1)</const> and moves to <const>(0,1)</const>.<br />After that, he falls in <const>(0,2)</const> and moves to <const>(1,2)</const>.<br />He finally reaches <const>(1,3)</const> from where he can safely escape.</div>
+      </div>
+    </div>
+  </div>
+  <!-- WARNING -->
+  <div class="statement-section statement-warning">
+    <h2><span class="icon icon-warning">&nbsp;</span> <span>Note</span></h2>
+    <div class="statement-warning-content">The tests provided are similar to the validation tests used to compute the final score but remain different.</div>
+  </div>
+  <!-- PROTOCOL -->
+  <div class="statement-section statement-protocol">
+    <h2><span class="icon icon-protocol">&nbsp;</span> <span>Game Input</span></h2>
+    <!-- Protocol block -->
+    <div class="blk">
+      <div class="text">The program must first read the initialization data from standard input. Then, <strong>within an infinite loop</strong>, read the data from the standard input related to the current position of Indy and provide to the standard output the expected data.</div>
+    </div>
+    <!-- Protocol block -->
+    <div class="blk">
+      <div class="title">Initialization input</div>
+      <div class="text">
+        <p><span class="statement-lineno">Line 1:</span> 2 space separated integers <var>W</var> <var>H</var> specifying the width and height of the grid.</p>
+        <p><span class="statement-lineno">Next <var>H</var> lines:</span> each line represents a line in the grid and contains <var>W</var> space separated integers <var>T</var>. <var>T</var> specifies the type of the room.</p>
+        <p><span class="statement-lineno">Last line:</span> 1 integer <var>EX</var> specifying the coordinate along the X axis of the exit (this data is not useful for this first mission, it will be useful for the second level of this puzzle).</p>
+      </div>
+    </div>
+    <!-- Protocol block -->
+    <div class="blk">
+      <div class="title">Input for one game turn</div>
+      <div class="text"><span class="statement-lineno">Line 1:</span> <var>XI</var> <var>YI</var> <var>POS</var>
+        <ul>
+          <li>(<var>XI, YI</var>) two integers to indicate Indy's current position on the grid.</li>
+          <li><var>POS</var> a single word indicating Indy's entrance point into the current room: <const>TOP</const> if Indy enters from above, <const>LEFT</const> if Indy enters from the left and <const>RIGHT</const> if Indy enters from the right.</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Protocol block -->
+    <div class="blk">
+      <div class="title">Output for one game turn</div>
+      <div class="text">A <span class="statement-lineno">single line</span> with 2 integers: <var>X</var> <var>Y</var> representing the (<var>X</var>, <var>Y</var>) coordinates of the room in which you believe Indy will be on the next turn.</div>
+    </div>
+    <!-- Protocol block -->
+    <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="text">0 &lt; <var>W</var> ≤ 20<br />0 &lt; <var>H</var> ≤ 20<br />0 ≤ <var>T</var> ≤ 13<br />0 ≤ <var>EX</var> &lt; W<br />0 ≤ <var>XI</var>, <var>X</var> &lt; W<br />0 ≤ <var>YI</var>, <var>Y</var> &lt; H<br /><br />Response time for one game ≤ 150ms</div>
+    </div>
+    <!-- Protocol block -->
+    <div class="blk">
+      <div class="title">Example</div>
+      <div class="text">
+        <div class="statement-inout">
+          <div class="statement-inout-in" style="background-color: white;">
+            <div class="title" style="color: #989898; padding: 0;">Initialization input</div>
+            <pre>2 4       (W H)
+4 3       (T T)
+12 10     (T T)
+11 5      (T T)
+2 3       (T T)
+1	  (EX)
+</pre>
+          </div>
+          <div class="statement-inout-in" style="background-color: white; text-align: center;">Grid with 2 columns, 4 lines.<br /><br /><img src="https://cdn-games.codingame.com/the-last-crusade/indiana1/example_00.png" /></div>
+          <div class="statement-inout-out" style="background-color: white;">
+            <div class="title" style="color: #989898; padding: 0;">No output expected</div>
+          </div>
+        </div>
+        <div class="statement-inout">
+          <div class="statement-inout-in" style="background-color: white;">
+            <div class="title" style="color: #989898; padding: 0;">Input for turn 1</div>
+            <pre>1 0 TOP</pre>
+            <br /><em>(XI YI POS)</em>
+          </div>
+          <div class="statement-inout-in" style="background-color: white; text-align: center;">Indy enters room (1,0) from above<br /><br /><img src="https://cdn-games.codingame.com/the-last-crusade/indiana1/example_01.png" /></div>
+          <div class="statement-inout-out" style="background-color: white;">
+            <div class="title" style="color: #989898; padding: 0;">Output for turn 1</div>
+            1 1<br /><br />Determine that Indy will be in room (1,1) on the next turn
+          </div>
+        </div>
+        <div class="statement-inout">
+          <div class="statement-inout-in" style="background-color: white;">
+            <div class="title" style="color: #989898; padding: 0;">Input for turn 2</div>
+            <pre>1 1 TOP</pre>
+            <br /><em>(XI YI POS)</em>
+          </div>
+          <div class="statement-inout-in" style="background-color: white; text-align: center;">Indy is now in (1,1)<br /><br /><img src="https://cdn-games.codingame.com/the-last-crusade/indiana1/example_02.png" /></div>
+          <div class="statement-inout-out" style="background-color: white;">
+            <div class="title" style="color: #989898; padding: 0;">Output for turn 2</div>
+            0 1<br /><br />Determine that Indy will be in room (0,1) on the next turn
+          </div>
+        </div>
+        <div class="statement-inout">
+          <div class="statement-inout-in" style="background-color: white; text-align: center;"><img src="https://cdn-games.codingame.com/the-last-crusade/indiana1/example_03.png" /></div>
+          <div class="statement-inout-out" style="background-color: white;">And so on until Indy reaches the exit at (1, 3)...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>

@@ -1,0 +1,208 @@
+<h1>Vox Codei - Episode 1 - Code Golf</h1>
+
+<a href="https://www.codingame.com/codegolf/hard/vox-codei-episode-1-codesize">https://www.codingame.com/codegolf/hard/vox-codei-episode-1-codesize</a>
+
+<div class="statement_back" id="statement_back" style="display:none">&nbsp;</div>
+
+<div class="statement-body"><!-- GOAL -->
+<div class="statement-section statement-goal">
+<h2><span class="icon icon-goal">&nbsp;</span> <span>The Goal</span></h2>
+
+<div class="statement-goal-content">
+<p>You access the central computer&#39;s firewall interface via Viktor&#39;s tablet. The firewall is comprised of surveillance nodes.<br />
+<br />
+<b>You must destroy these nodes by overloading them with the help of fork-bombs.</b></p>
+</div>
+</div>
+<!-- RULES -->
+
+<div class="statement-section statement-rules">
+<h2><span class="icon icon-rules">&nbsp;</span> <span>Rules</span></h2>
+
+<div>
+<div class="statement-rules-content">The interface is presented by a rectangular grid, of variable width and height. It is provided at the beginning of each game in the shape of a table of characters.<br />
+<br />
+Details:<br />
+&nbsp;
+<ul>
+	<li>
+	<p dir="ltr" style="line-height: 1.15;">Several surveillance nodes (@) are positioned on the grid.</p>
+	</li>
+	<li>
+	<p dir="ltr" style="line-height: 1.15;"><b>Indestructible and passive nodes </b>(#) can also be present on the grid.</p>
+	</li>
+	<li>
+	<p dir="ltr" style="line-height: 1.15;">You have a fixed number of bombs to use at the start of the game.</p>
+	</li>
+	<li>
+	<p dir="ltr" style="line-height: 1.15;">Each game turn, you may either place a bomb on the grid or wait.</p>
+	</li>
+	<li>
+	<p dir="ltr" style="line-height: 1.15;">The fork-bombs explode&nbsp;<b>3 turns after&nbsp;having been placed</b>.</p>
+	</li>
+	<li>
+	<p dir="ltr" style="line-height: 1.15;"><b>Bombs explode in a cross shape</b>. They have a range of 3 cells (see schema further down).</p>
+	</li>
+	<li>
+	<p dir="ltr" style="line-height: 1.15;">The bombs will destroy every node the explosion comes into contact with. <b>Explosions do not go through passive nodes</b>.</p>
+	</li>
+	<li>
+	<p dir="ltr" style="line-height: 1.15;">A fork-bomb can explode before the 3 turns if it is triggered by the explosion of another fork-bomb.</p>
+	</li>
+	<li>
+	<p dir="ltr" style="line-height: 1.15;"><b>You cannot place a bomb on a node</b>. You must place them on empty cells (.) of the grid.</p>
+	</li>
+	<li>
+	<p dir="ltr" style="line-height: 1.15;">You have a limited amount of turns in which to destroy all of the surveillance nodes, or you will be detected and lose the game.</p>
+	</li>
+</ul>
+</div>
+<!-- Victory conditions -->
+
+<div class="statement-victory-conditions">
+<div class="icon victory">&nbsp;</div>
+
+<div class="blk">
+<div class="title">Victory Conditions</div>
+
+<div class="text">You will win once all of the surveillance nodes have been destroyed in the allotted amount of turns</div>
+</div>
+</div>
+</div>
+</div>
+<!-- EXAMPLES -->
+
+<div class="statement-section statement-examples">
+<h2><span class="icon icon-example">&nbsp;</span> <span>Example</span></h2>
+
+<div class="statement-examples-text">
+<div class="statement-example-horizontal" style="background-color: transparent">
+<div style="width: 280px;display: table-cell;background-color: transparent;vertical-align: middle;padding: 0;text-align:center">
+<pre style="border: none;letter-spacing: 1em;background-color:transparent;margin:0">
+...@...
+...#...
+.......
+.....@@
+.......
+.......
+.......</pre>
+</div>
+
+<div class="legend" style="text-align:center">Example for the explosion of a bomb placed at <const>(3,&nbsp;3)</const> in the following interface grid.<br />
+<br />
+The two nodes to the right are destroyed by the blast. The top node is protected by the indestructible passive node.</div>
+</div>
+</div>
+
+<div class="statement-example-container">
+<div class="statement-example"><img src="https://files.codingame.com/codingame/vox-codei/images/boum-1g.png" />
+<div class="legend">
+<div class="title">1st round</div>
+
+<div class="description">The fork-bomb has been placed</div>
+</div>
+</div>
+
+<div class="statement-example"><img src="https://files.codingame.com/codingame/vox-codei/images/boum-2g.png" />
+<div class="legend">
+<div class="title">2nd round</div>
+
+<div class="description">The fork-bomb is charging</div>
+</div>
+</div>
+
+<div class="statement-example"><img src="https://files.codingame.com/codingame/vox-codei/images/boum-3g.png" />
+<div class="legend">
+<div class="title">3rd round</div>
+
+<div class="description">The bomb explodes</div>
+</div>
+</div>
+</div>
+</div>
+<!-- WARNING -->
+
+<div class="statement-section statement-warning">
+<h2><span class="icon icon-warning">&nbsp;</span> <span>Note</span></h2>
+
+<div class="statement-warning-content">Don&rsquo;t forget to run the tests by launching them from the &ldquo;Test cases&rdquo; window.<br />
+<br />
+The tests provided are similar to the validation tests used to compute the final score but are slightly different.</div>
+</div>
+<!-- PROTOCOL -->
+
+<div class="statement-section statement-protocol">
+<h2><span class="icon icon-protocol">&nbsp;</span> <span>Game Input</span></h2>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="text">The program must first read the initialization data from standard input. Then, within an infinite loop, read the contextual data (number of bombs and remaining turns) from the standard input and provide the next instruction to standard output. The protocol is detailed further down.</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Initialization input</div>
+
+<div class="text">
+<p><span class="statement-lineno">Line 1: </span> 2 integers <var>width</var> and <var>height</var>. They correspond to the size of the grid.</p>
+
+<p><span class="statement-lineno"><var>height</var> next lines: </span> 1 string <var>mapRow</var> of length <var>width</var>. Each line corresponds to a row in the grid. The <const>.</const> represents an empty cell, <const>@</const> represents surveillance node and <const>#</const> represents a passive node.</p>
+</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Input for one game turn</div>
+
+<div class="text">
+<p><span class="statement-lineno">Line 1: </span> 2 integers <var>rounds</var> and <var>bombs</var>. They correspond to the number of turns remaining before detection and the number of bombs still available to you.</p>
+</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Output for one game turn</div>
+
+<div class="text"><span class="statement-lineno">A single line</span> (including newline character) to indicate which action to take:
+
+<ul>
+	<li>Either the keyword <action>WAIT</action> to do nothing</li>
+	<li>or the (<var>x</var>, <var>y</var>) coordinates in the grid of where you want to place a fork-bomb (2 integers separated by a space). The (0,0) coordinate is located in the upper-left corner of the grid</li>
+</ul>
+</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Constraints</div>
+
+<div class="text">2 &lt; <var>width</var>, <var>height</var> &lt; 20<br />
+3 &lt; <var>rounds</var> &lt; 20<br />
+0 &lt; <var>bombs</var> &lt; 10<br />
+0 &lt;= <var>x</var> &lt; width<br />
+0 &lt;= <var>y</var> &lt; height<br />
+Duration of one game turn: 100 ms</div>
+</div>
+</div>
+<!-- STORY 
+
+<div class="statement-story-background">
+<div class="statement-story-cover" style="background-size: cover; background-image: url(https://www.codingame.com/servlet/fileservlet?id=2210294621118)">
+<div class="statement-story" style="min-height: 300px; position: relative">
+<h2>London, September 27th 1989, 6pm, Museum of Shadows...</h2>
+
+<div class="story-text"><span style="line-height: 1.5em;">Destruction, then cold, and a void... Within this void, revenge has settled, warming me. It has twisted itself across my mind, and has kept me company during all these years. The moment to unleash it has now arrived...</span></div>
+&nbsp;
+
+<div style="margin-bottom:5px;line-height: 1.5em;">My infiltration work has paid off. I have obtained the security codes for Fate, the government&#39;s&nbsp;super-computer. Without it, the Eye shall be blind, and the Ear shall be deaf. Deprived of its surveillance organs, the fascist regime will be at its most vulnerable. My vengeance shall smash down upon the vile, and the sound of my victory will vibrate across the vast expanse of villainy - verily.</div>
+&nbsp;
+
+<div style="margin-bottom:5px;line-height: 1.5em;">The one thing left to do is to break down Fate&#39;s defenses. Child&#39;s play for a developer...</div>
+&nbsp;
+
+<div style="margin-bottom:5px;line-height: 1.5em;"><b>Help&nbsp;<i>V</i>&nbsp;destroy&nbsp;Fate&#39;s firewall!</b></div>
+</div>
+</div>
+</div>
+</div>
+-->

@@ -1,0 +1,40 @@
+<h1>We're going in circles!</h1>
+
+<a href="https://www.codingame.com/training/medium/were-going-in-circles">https://www.codingame.com/training/medium/were-going-in-circles</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">There is a <var>w</var> by <var>h</var> grid of arrows represented by: &quot;<const>^</const>&quot;, &quot;<const>&gt;</const>&quot;, &quot;<const>v</const>&quot;, &quot;<const>&lt;</const>&quot;. Empty cells are represented by periods: &quot;<const>.</const>&quot;.<br><br>A <strong>loop of arrows</strong> is a set of arrows that loop back on themselves when moving from one arrow to the <strong>closest</strong> arrow in the direction that it points. If an arrow points outside the grid, it is not part of a loop.<br><br>The goal is to count the <var>number_of_loops</var> in the grid.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>line 1</strong>: <var>w</var> and <var>h</var> separated by a space (width and height, respectively).<br><strong>The next <var>h</var> lines</strong>: The grid of arrows and empty cells.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The <var>number_of_loops</var> in the grid.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <var>w</var>, <var>h</var> &lt;= 20<br>The grid only contains the characters: <const>^&gt;v&lt;.</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">5 4
+&gt;.&gt;.v
+....v
+....v
+^&lt;&lt;&lt;&lt;</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1</pre>
+         </div>
+      </div>
+   </div>
+</div>

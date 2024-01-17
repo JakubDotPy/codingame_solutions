@@ -1,0 +1,46 @@
+<h1>Cheat Solving</h1>
+
+<a href="https://www.codingame.com/training/hard/cheat-solving">https://www.codingame.com/training/hard/cheat-solving</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Can a Rubik's cube be solved by Reassembly&trade;?<br><br>A popular method to solve a Rubik's cube when you don't know any algorithms is to disassemble it and reassemble it directly into a solved state.  It doesn't damage the stickers and is guaranteed to always work... provided the stickers haven't been messed with, that is!<br><br>Seung-Hyuk had left his cube solved on the table, but when he came back from his break a few minutes later, he noticed that his cube was now scrambled, and there was an evil grin on Hyo-Min's face.  Obviously Hyo-Min had scrambled it, but had he been moving stickers around as well, rendering it unsolvable using the Reassembly&trade; method?  Help Seung-Hyuk by telling him whether or not he can disassemble the pieces and assemble them back together into a solved cube state.<br><br>You are given a cube state in pattern format. A solved cube looks like this:<br><pre style="font-family: monospace"><br>    UUU<br>    UUU<br>    UUU<br><br>LLL FFF RRR BBB<br>LLL FFF RRR BBB<br>LLL FFF RRR BBB<br><br>    DDD<br>    DDD<br>    DDD<br></pre><br>Letters <const>ULFRBD</const> mean &ldquo;this sticker belongs on the Up/&zwnj;Left/&zwnj;Front/&zwnj;Right/&zwnj;Back/&zwnj;Down face&rdquo;.<br><br>A cube with an edge flip or a corner twist is obviously solvable using the Reassembly&trade; method: simply pop the piece out and insert it back with the correct orientation.<br><br>A cube where a corner has two stickers exchanged out of three cannot be solved using the Reassembly&trade; method: there is no way that corner can be placed where it has more than one sticker on the right face. Similarly, any piece with two stickers of the same color would render the cube unsolvable, as there is no reassembly that would put those two stickers back on the same face.<br><br>A cube where any regular disassembly-free scramble has been applied is obviously solvable using the Reassembly&trade; method. One is given in example below.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><const>11</const> lines (including <const>2</const> blank): a cube pattern</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><const>SOLVABLE</const> if it is possible to disassemble the cube and assemble it back in a solved state.<br><const>UNSOLVABLE</const> otherwise.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">Apart from the stickering, all cubes are standard 3&times;3&times;3 Rubik's cubes.<br>Only valid sticker colors are provided.<br>No extra stickers have been used&nbsp;&mdash; all cubes here could be solved using the Restickering&trade; method.<br><br>A cube is made of:<br>* 6 unisticker center pieces<br>* 12 bisticker edge pieces<br>* 8 tristicker corner pieces<br>In this problem's context, you can assume center caps can be exchanged freely.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">    DUD
+    DUU
+    BDL
+
+LLL UFF ULR FBF
+LLR BFF URB DBF
+FRD BUU BFB DBR
+
+    LRR
+    DDR
+    ULR</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">SOLVABLE</pre>
+         </div>
+      </div>
+   </div>
+</div>

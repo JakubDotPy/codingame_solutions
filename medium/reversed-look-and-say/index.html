@@ -1,0 +1,36 @@
+<h1>Reversed Look-and-say</h1>
+
+<a href="https://www.codingame.com/training/medium/reversed-look-and-say">https://www.codingame.com/training/medium/reversed-look-and-say</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Given an element of the Look-and-say series, you must walk the series in the reverse direction until you find the first valid element of the series.<br><br>The Look-and-say series transforms a given number by changing a &quot;spoken&quot; interpretation of that number into a numerical format. The spoken interpretation of a number takes groups of digits and states the count of repeated digits in each group.<br><br><pre style="font-family: monospace">13112221 =&gt;<br>    1  3  11  222  1 =&gt;<br>        &quot;One 1, one 3, two 1s, three 2s, one 1&quot; =&gt;<br>            11  13  21  32  11 =&gt;<br>                1113213211</pre><br><br>Given the above example of the Look-and-say series, if you were given &quot;1113213211&quot; as an input, the first step in walking the series in reverse would yield &quot;13112221&quot;. Be careful after each iteration because the process is not always reversible...<br><br><br>For example:<br><br><br><pre style="font-family: monospace">1211 =&gt; <br>    1 x &quot;2&quot; + 1 x &quot;1&quot; = 21 =&gt; <br>        2 x &quot;1&quot; = 11 =&gt; <br>            1 x &quot;1&quot; = 1. This is the last possible step</pre><br><br><br><pre style="font-family: monospace">41 =&gt; <br>    4 x &quot;1&quot; = 1111 =&gt; <br>        1 x &quot;1&quot; + 1 x &quot;1&quot; = 11. This step is not reversible!<br><br>The solution is 1111</pre><br><br><br>You can find detailed information of this sequence in https://en.wikipedia.org/wiki/Look-and-say_sequence.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>n</var> for the starting element of the series.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1 :</strong> The very first valid element of the look-and-say series.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">Log(<var>n</var>) &lt; 100</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1211</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,39 @@
+<h1>Snooker Ball Collision</h1>
+
+<a href="https://www.codingame.com/training/hard/snooker-ball-collision">https://www.codingame.com/training/hard/snooker-ball-collision</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">The goal is to predict the position of two balls after stopping (at the beginning: one is moving, the other is immobile).<br>- The radius of the balls is <strong>30.75mm</strong><br>- We consider there is <strong>no borders</strong>.<br>- Any collision is perfectly elastic.<br>- The formula of the acceleration induced by the frictions is: <strong>a_d(t) = -0.8*v(t)</strong><br>With <strong>v(t)</strong> the speed of the ball (in meters per second) and <strong>t</strong> the time (in seconds)</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Two real numbers <var>x0</var> and <var>y0</var> (separated by a space), the position of the moving ball (in meters).<br><strong>Line 2:</strong> Two real numbers <var>x1</var> and <var>y1</var> (separated by a space), the position of the static ball (in meters).<br><strong>Line 3:</strong> Two real numbers <var>vx</var> and <var>vy</var> (separated by a space), the components of the velocity (in meters per second).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> <var>x0_f</var> and <var>y0_f</var> (separated by a space), the components of the position of the moving ball when stopped <strong>rounded to two decimals</strong> (in meters).<br><strong>Line 2:</strong> <var>x1_f</var> and <var>y1_f</var> (separated by a space), the components of the position  of the static ball when stopped <strong>rounded to two decimals</strong> (in meters).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1.24 0.34
+0.29 1.05
+0 0</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1.24 0.34
+0.29 1.05</pre>
+         </div>
+      </div>
+   </div>
+</div>

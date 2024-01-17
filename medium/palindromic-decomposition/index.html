@@ -1,0 +1,38 @@
+<h1>Palindromic Decomposition</h1>
+
+<a href="https://www.codingame.com/training/medium/palindromic-decomposition">https://www.codingame.com/training/medium/palindromic-decomposition</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">We say a tuple of three strings (<var>P</var>, <var>Q</var>, <var>R</var>) is a palindromic decomposition of string <var>S</var> if <var>P</var>+<var>Q</var>+<var>R</var>=<var>S</var> and all of <var>P</var>, <var>Q</var> and <var>R</var> are palindrome. Note that <var>P</var>, <var>Q</var> and <var>R</var> can be the empty string <const>&epsilon;</const>.<br><br>Given string <var>S</var>, calculate the number of the palindromic decompositions of <var>S</var>.<br><br>For example, if you are given <const>abab</const>, you should answer <const>6</const> because (<const>&epsilon;</const>, <const>a</const>, <const>bab</const>), (<const>&epsilon;</const>, <const>aba</const>, <const>b</const>), (<const>a</const>, <const>&epsilon;</const>, <const>bab</const>), (<const>a</const>, <const>bab</const>, <const>&epsilon;</const>), (<const>aba</const>, <const>&epsilon;</const>, <const>b</const>) and (<const>aba</const>, <const>b</const>, <const>&epsilon;</const>) are the palindromic decompositions of <const>abab</const>.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">A string <var>S</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The number of palindromic decompositions of <var>S</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; length of <var>S</var> &le; 4000.<br><var>S</var> is consisting of lowercase English letters.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">abab
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">6
+</pre>
+         </div>
+      </div>
+   </div>
+</div>

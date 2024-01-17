@@ -1,0 +1,36 @@
+<h1>Kaprekar's routine</h1>
+
+<a href="https://www.codingame.com/training/medium/kaprekars-routine">https://www.codingame.com/training/medium/kaprekars-routine</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Suppose you're given a positive integer <var>n1</var>. <br>You can build another integer n2 = D(n1) - A(n1) , where D(x) is integer x whose digits are in descending order, and A(x) is integer x whose digits are in ascending order.<br><br>Then you can repeat the process another time with n3 = D(n2) - A(n2), and so on, until you get a cycle.<br><br>Your program must return the cycle for any input <var>n1</var>.<br><br>All ni numbers must be of same size . For example,if you're given n1 = &quot;123&quot;, and you get ni=4 at some iteration, it must be writen as &quot;004&quot;<br><br>Example of a 2 digit number ending in a cycle of length 5 :<br>n=<strong>09</strong><br>n2=90-09=<strong>81</strong><br>n3=81-18=<strong>63</strong><br>n4=63-36=<strong>27</strong><br>n5=72-27=<strong>45</strong><br>n6=54-45=09<br><br>Here cycle is &quot;09 81 63 27 45&quot;</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong>number <var>n</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> the cycle as a list of integers separated by space</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0&lt;<var>n1</var>&lt;99999999</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2178</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">6174</pre>
+         </div>
+      </div>
+   </div>
+</div>

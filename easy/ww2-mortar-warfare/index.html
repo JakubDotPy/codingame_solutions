@@ -1,0 +1,37 @@
+<h1>WW2 Mortar Warfare</h1>
+
+<a href="https://www.codingame.com/training/easy/ww2-mortar-warfare">https://www.codingame.com/training/easy/ww2-mortar-warfare</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Welcome soldier, <br><br>It is in the heart of World War 2 and imagine yourself hunkered down in a trench line with your squad, and that there is also an enemy squad nearby opposing your movement. Both squads appear evenly matched, and there has been a stalemate for hours. There is a mortar kit which includes a rudimentary range finder, but unfortunately for your squad, no one knows how to operate it properly; however, at this point, attempting to use it is becoming your only viable option. You hop onto the radio with your superior who puts you through to an artillery specialist...<br><br>&quot;Listen up, lieutenant. Do you have a pen, paper, and your slide rule? Good, you will need those to do your calculations. Your range finder is going to provide you with a horizontal distance between you and the enemy unit. The stereoscope will need to be focused for an accurate reading. I recommend that you don't get spotted using it just yet. You will then need to use that <var>range</var> and also the <const>exit velocity</const> of your mortar round to determine what angle you will need to use to successfully land your shot. I will send you the info for the M2 mortar and the physics behind it right away, but when you start firing, I want you to radio me the <strong>angle</strong> and <strong>flight time</strong> so that I know that your calculations are at least somewhat accurate. Good luck, soldier. Now give 'em hell!&quot;<br><br>M2 Mortar Round Specifications:<br><br>Shell Weight 1.4kg<br>Caliber 60mm<br>Elevation <const>40&deg; - 85&deg;</const><br>Rate of Fire 18 rounds/minute<br>Max Range <const>1.8km</const><br>Initial Velocity <const>158 meters/second</const><br><br>(Source: https://en.wikipedia.org/wiki/M2_mortar)<br><br>Physics Formulas:<br><br>&Theta; = (arcsin((R*g)/v^2))/2<br><br>t = (2*v*sin&Theta;)/g<br><br>Where<br>R = Range (in meters)<br>g = Acceleration due to gravity (9.8 meters/second^2)<br>v = Initial velocity (in meters/second)<br>&Theta; = Mortar angle/elevation (in radians)<br>t = Time of Flight (in seconds)<br><br>Note that the potential trajectories come in pairs where there are two different angles that can achieve the same range. For example, if the calculation produces an elevation of 10&deg;, then 80&deg; (90&deg; - 10&deg;) will also work.<br><br>(Source: https://openstax.org/books/university-physics-volume-1/pages/4-3-projectile-motion<br>I derived the formula for theta, but more information is available in this free text. I recommend reading through the short section on Projectile Motion completely if you have the time, specifically the sub-section Time of Flight, Trajectory, and Range.)<br><br>In this problem, we can assume zero air resistance, and that the mortar and the target have the same vertical displacement (they are in-line horizontally).</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> A string which includes the <var>range</var> in meters. Extraneous characters represent the rangefinder being out of focus, but the digits included are the range needed for the problem.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> The value of the angle rounded to the tenth of a degree.<br><strong>Line 2:</strong> The time of flight rounded to the nearest tenth of a second.<br><br>If the target is out of range, simply print <const>OUT OF RANGE</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">There are a couple constraints embedded in the problem statement.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">-+500+--</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">84.3 degrees
+32.1 seconds</pre>
+         </div>
+      </div>
+   </div>
+</div>

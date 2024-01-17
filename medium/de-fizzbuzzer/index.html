@@ -1,0 +1,75 @@
+<h1>De-FizzBuzzer</h1>
+
+<a href="https://www.codingame.com/training/medium/de-fizzbuzzer">https://www.codingame.com/training/medium/de-fizzbuzzer</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">We have a mysterious machine, the FizzBuzzer, that implements an advanced version of <strong>FizzBuzz</strong>. <br><br>The FizzBuzzer receives a positive integer, and outputs a single string by joining the substrings produced by the rules below and in that order:<br>- produce <const>Fizz</const> for each time the digit <const>3</const> appears in the integer;<br>- produce <const>Fizz</const> for each time the integer can be divided by <const>3</const>;<br>- produce <const>Buzz</const> for each time the digit <const>5</const> appears in the integer;<br>- produce <const>Buzz</const> for each time the integer can be divided by <const>5</const>;<br>- if no <const>Fizz</const> or <const>Buzz</const> has been produced so far, produce the original integer as the substring.<br><br>Your task is to <strong>invert</strong> the behaviour of the FizzBuzzer. You will receive some strings, and for each string you should determine the smallest positive integer (up to 1000 inclusive), if any, that would produce that string when fed to the FizzBuzzer.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var> for the number of strings.<br><strong>Next <var>N</var> lines:</strong> On each line, a <var>string</var> that may have been produced by the FizzBuzzer.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>N</var> lines:</strong> The smallest positive integer (up to 1000 inclusive) that would produce the given string, or the string <const>ERROR</const> if no such integer exists.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>N</var> &le; 100<br>length of each string &le; 100<br>1 &le; each output integer &le; 1000</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">20
+1
+2
+FizzFizz
+4
+BuzzBuzz
+Fizz
+7
+8
+FizzFizz
+Buzz
+11
+Fizz
+Fizz
+14
+FizzBuzzBuzz
+16
+17
+FizzFizz
+19
+Buzz</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1
+2
+3
+4
+5
+6
+7
+8
+3
+10
+11
+6
+6
+14
+15
+16
+17
+3
+19
+10</pre>
+         </div>
+      </div>
+   </div>
+</div>

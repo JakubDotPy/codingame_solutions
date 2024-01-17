@@ -1,0 +1,42 @@
+<h1>Vortex</h1>
+
+<a href="https://www.codingame.com/training/hard/vortex">https://www.codingame.com/training/hard/vortex</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You must crank an <var>W</var>x<var>H</var> matrix counterclockwise by <var>X</var> positions. To crank a matrix, you must shift each matrix element along the matrix rectangle. For example, for a 7x5 matrix with <var>X</var> = 1 the movements are performed this way:<br><br>v &lt; &lt; &lt; &lt; &lt; &lt; <br>v v &lt; &lt; &lt; &lt; ^ <br>v v 0 0 0 ^ ^<br>v &gt; &gt; &gt; &gt; ^ ^<br>&gt; &gt; &gt; &gt; &gt; &gt; ^<br><br>where the characters &lt; ^ &gt; v  represent the displacement of a value in that position; 0 means no displacement.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> 2 integers <var>W</var> and <var>H</var> representing the width and height (respectively) of a matrix.<br><strong>Line 2:</strong> An integer <var>X</var> representing the number of positions to crank the matrix.<br><strong>Next <var>H</var> lines:</strong> <var>W</var> matrix values <var>v</var> per line.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>H</var> lines:</strong> The cranked matrix.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>W</var>,<var>H</var> &le; 50<br>1 &le; <var>X</var> &le; 100000000<br>-100 &le; <var>v</var> &le; 100</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3 3
+1
+1 2 3
+4 5 6
+7 8 9</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">2 3 6
+1 5 9
+4 7 8</pre>
+         </div>
+      </div>
+   </div>
+</div>

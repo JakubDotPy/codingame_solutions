@@ -1,0 +1,141 @@
+<h1>Snake</h1>
+
+<a href="https://www.codingame.com/multiplayer/optimization/snake">https://www.codingame.com/multiplayer/optimization/snake</a>
+
+<div class="statement_back"></div>
+<div class="statement-body">
+  
+  <div class="statement-section statement-goal">
+    <h1>
+      <span class="icon icon-goal"> </span>
+      <span>The Goal</span>
+    </h1>
+    <div class="statement-goal-content">
+      The aim of this game is catch all the rabbits.
+      <br />
+      
+    </div>
+  </div>
+  
+  <div class="statement-section statement-rules">
+    <h1>
+      <span class="icon icon-rules"> </span>
+      <span>Rules</span>
+    </h1>
+    <div>
+      <div class="statement-rules-content">Your program receives the first turn only the coordinates of the rabbits. After that, you receive each turn the coordinates of the snake.
+      
+      <br />
+        You have to catch all the rabbits.<br />
+        <br />
+        The game zone works as follows:
+        <ul><li>The map of the game is 54x96 size (height x width)</li></ul>
+        <br />
+        
+        You <strong>lose</strong> if:
+        <ul><li>You get out the map.</li><li>You do not supply a valid sequence of actions.</li><li>The snake head touch his body.</li></ul>
+      </div>
+    </div>
+  </div>
+  
+  <div class="statement-section statement-expertrules">
+    <h1>
+      <span class="icon icon-expertrules"> </span>
+      <span>Expert Rules</span>
+    </h1>
+    <div class="statement-expert-rules-content">
+      The snake must always be in movement. If the coordinates of the snake head is 50 10, and his body part is 49 10, 48 10, 47 10, etc... <br />
+      You have to move in 3 directions, go up, go down and go right, and not go left because the snake head will touch his body.
+      You can move left if you don&#39;t touch the snake body part.
+      If you go up, you have to output 50 9.<br />
+      If you go down, you have to output 50 11.<br />
+      If you go right, you have to output 51 10.<br />
+      It&#39;s the basic rules for the snake which is a famous game in the world.<br />
+      
+      The test cases are random or static.
+    </div>
+  </div>
+  
+  <div class="statement-section statement-examples">
+    <h1>
+      <span class="icon icon-example"> </span>
+      <span>Example</span>
+    </h1>
+
+    <div class="statement-examples-text">
+      Choose a rabbit to catch , get over it and try to get the highest score.
+      Your score is calculated like that when you catch some rabbits :<br />
+      - You have a penalty if you don&#39;t catch a rabbit in 10 turns. The penalty is turn * NB_TURN_WITHOUT_CATCH_RABBIT.<br />
+      - Then the score is calculated, SCORE &#43;&#61; 10000 &#43; add_combo - penalty. add_combo is equal to NB_CATCH_IN_2_TURNS_MIN * 15000. After 2 turns NB_CATCH_IN_2_TURNS_MIN is reset.
+      
+    </div>
+
+  </div>
+  
+  <div class="statement-section statement-warning">
+    <h1>
+      <span class="icon icon-warning"> </span>
+      <span>Note</span>
+    </h1>
+    <div class="statement-warning-content">
+      <b>Don’t forget to run the tests by launching them from the “Test cases” window</b>. You can submit at any time
+      to receive a score against the training validators. <b>You can submit as many times as you like</b>. Your most
+      recent submission will be used for the final ranking.<br />
+      <br />
+      <strong>Warning:</strong> the validation tests used to compute the final score are not the same as the ones used
+      during the event.
+      Hardcoded solutions will not score high.<br />
+      <br />
+      Don&#39;t hesitate to change the viewer&#39;s options to help debug your code (<img style="background:#20252a" height="18" src="https://www.codingame.com/servlet/fileservlet?id&#61;3463235186409" width="18" />).
+    </div>
+  </div>
+  
+  <div class="statement-section statement-protocol">
+    <h1>
+      <span class="icon icon-protocol"> </span>
+      <span>Game Input</span>
+    </h1>
+    
+    
+    
+    <div class="blk">
+      <div class="title"><b>Input</b></div>
+      <div class="text">
+        <p><b>Initialization Input</b>:<br /> <b>Line 1</b>: <var>N</var> an integer for the number of rabbits <br />
+        			<var>N</var> <b>lines</b> containing 2 space-separated integers <var>X</var> <var>Y</var> the coordinates of the rabbits.
+        </p>
+        <p><b>Input for one game turn</b>:<br /><b>One Line</b>: <var>NS</var> an integer for the number of snake body part.  <br />
+			<var>NS</var> <b>lines</b> containing 2 space-separated integers <var>X</var> <var>Y</var> the coordinates of the snake body parts.<br />
+			PS: The fist X Y cooordinates are the coordinates of the snake head.
+        </p>
+      </div>
+    </div>
+
+    
+    <div class="blk">
+      <div class="title"><b>Output</b></div>
+      <div class="text">
+        2 space-separated integers <var>X</var> <var>Y</var> the new coordinates of the snake head.
+        <br />
+      </div>
+    </div>
+
+    
+    <div class="blk">
+      <div class="title"><b>Constraints</b></div>
+      <div class="text">Allotted response time to output
+        is ≤ <const>50</const> ms/turn in 600 turn max.</div>
+    </div>
+  </div>
+  
+  <div class="statement-story-background">
+    <div class="statement-story-cover" style="background-image:url(&#39;https://www.codingame.com/servlet/fileservlet?id&#61;2210505809934&#39;)">
+      <div class="statement-story">
+        <h1>Snake</h1>
+        <div class="story-text">Play
+          <br />
+          Play again</div>
+      </div>
+    </div>
+  </div>
+</div>

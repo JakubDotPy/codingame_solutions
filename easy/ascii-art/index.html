@@ -1,0 +1,146 @@
+<h1>ASCII Art</h1>
+
+<a href="https://www.codingame.com/training/easy/ascii-art">https://www.codingame.com/training/easy/ascii-art</a>
+
+<div class="statement_back" id="statement_back" style="display:none">&nbsp;</div>
+
+<div class="statement-body"><!-- GOAL -->
+<div class="statement-section statement-goal">
+<h2><span class="icon icon-goal">&nbsp;</span> <span>The Goal</span></h2>
+
+<div class="statement-goal-content">In stations and airports you often see this type of screen:
+<div style="text-align: center; margin: 10px;"><img src="https://www.codingame.com/fileservlet?id=21824381272" /></div>
+Have you ever asked yourself how it might be possible to simulate this display on a good old terminal? We have: with ASCII art!</div>
+</div>
+<!-- RULES -->
+
+<div class="statement-section statement-rules">
+<h2><span class="icon icon-rules">&nbsp;</span> <span>Rules</span></h2>
+
+<div>
+<div class="statement-rules-content">
+<p>ASCII art allows you to represent forms by using characters. To be precise, in our case, these forms are words. For example, the word &quot;MANHATTAN&quot; could be displayed as follows in ASCII art:</p>
+&nbsp;
+
+<div style="width:400px;font-family: monospace; font-size: 11px; line-height: 1em; margin: 6px 0; text-align: center;">#&nbsp;#&nbsp;&nbsp;#&nbsp;&nbsp;###&nbsp;#&nbsp;#&nbsp;&nbsp;#&nbsp;&nbsp;###&nbsp;###&nbsp;&nbsp;#&nbsp;&nbsp;###<br />
+###&nbsp;#&nbsp;#&nbsp;#&nbsp;#&nbsp;#&nbsp;#&nbsp;#&nbsp;#&nbsp;&nbsp;#&nbsp;&nbsp;&nbsp;#&nbsp;&nbsp;#&nbsp;#&nbsp;#&nbsp;#<br />
+###&nbsp;###&nbsp;#&nbsp;#&nbsp;###&nbsp;###&nbsp;&nbsp;#&nbsp;&nbsp;&nbsp;#&nbsp;&nbsp;###&nbsp;#&nbsp;#<br />
+#&nbsp;#&nbsp;#&nbsp;#&nbsp;#&nbsp;#&nbsp;#&nbsp;#&nbsp;#&nbsp;#&nbsp;&nbsp;#&nbsp;&nbsp;&nbsp;#&nbsp;&nbsp;#&nbsp;#&nbsp;#&nbsp;#<br />
+#&nbsp;#&nbsp;#&nbsp;#&nbsp;#&nbsp;#&nbsp;#&nbsp;#&nbsp;#&nbsp;#&nbsp;&nbsp;#&nbsp;&nbsp;&nbsp;#&nbsp;&nbsp;#&nbsp;#&nbsp;#&nbsp;#</div>
+&nbsp;
+
+<p>​Your mission is to write a program that can display a line of text in ASCII art&nbsp;in a style you are given as input.</p>
+</div>
+</div>
+</div>
+<!-- PROTOCOL -->
+
+<div class="statement-section statement-protocol">
+<h2><span class="icon icon-protocol">&nbsp;</span> <span>Game Input</span></h2>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Input</div>
+
+<div class="text">
+<p><span class="statement-lineno">Line 1: </span> the width <var>L</var> of a letter represented in ASCII art. All letters are the same width.</p>
+
+<p><span class="statement-lineno">Line 2: </span> the height <var>H</var> of a letter represented in ASCII art. All letters are the same height.</p>
+
+<p><span class="statement-lineno">Line 3: </span> The line of text <var>T</var>, composed of <var>N</var> ASCII characters.</p>
+
+<p><span class="statement-lineno">Following lines: </span> the string of characters ABCDEFGHIJKLMNOPQRSTUVWXYZ? Represented in ASCII art.</p>
+</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Output</div>
+
+<div class="text">The text <var>T</var> in ASCII art.<br />
+The characters a to z are shown in ASCII art by their equivalent in upper case.<br />
+The characters that are not in the intervals [a-z] or [A-Z] will be shown as a question mark in ASCII art.</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Constraints</div>
+
+<div class="text">0 &lt; <var>L</var> &lt; 30<br />
+0 &lt; <var>H</var> &lt; 30<br />
+0 &lt; <var>N</var> &lt; 200</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Example 1</div>
+
+<div class="text">
+<div class="statement-inout" style="table-layout: fixed;">
+<div class="statement-inout-in" style="background-color: white">
+<div class="title" style="color:#989898;padding:0">Input</div>
+
+<pre style="line-height:14px;overflow-x: auto;">
+4
+5 
+E
+ #  ##   ## ##  ### ###  ## # # ###  ## # # #   # # ###  #  ##   #  ##   ## ### # # # # # # # # # # ### ### 
+# # # # #   # # #   #   #   # #  #    # # # #   ### # # # # # # # # # # #    #  # # # # # # # # # #   #   # 
+### ##  #   # # ##  ##  # # ###  #    # ##  #   ### # # # # ##  # # ##   #   #  # # # # ###  #   #   #   ## 
+# # # # #   # # #   #   # # # #  #  # # # # #   # # # # # # #    ## # #   #  #  # # # # ### # #  #  #       
+# # ##   ## ##  ### #    ## # # ###  #  # # ### # # # #  #  #     # # # ##   #  ###  #  # # # #  #  ###  #  
+</pre>
+</div>
+
+<div class="statement-inout-out" style="background-color: white">
+<div class="title" style="color:#989898;padding:0">Output</div>
+
+<pre style="line-height:14px;overflow-x: auto;">
+### 
+#   
+##  
+#   
+### 
+</pre>
+</div>
+</div>
+</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Example 2</div>
+
+<div class="text">
+<div class="statement-inout" style="table-layout: fixed;">
+<div class="statement-inout-in" style="background-color: white">
+<div class="title" style="color:#989898;padding:0">Input</div>
+
+<pre style="line-height:14px;overflow-x: auto;">
+4
+5
+MANHATTAN
+ #  ##   ## ##  ### ###  ## # # ###  ## # # #   # # ###  #  ##   #  ##   ## ### # # # # # # # # # # ### ### 
+# # # # #   # # #   #   #   # #  #    # # # #   ### # # # # # # # # # # #    #  # # # # # # # # # #   #   # 
+### ##  #   # # ##  ##  # # ###  #    # ##  #   ### # # # # ##  # # ##   #   #  # # # # ###  #   #   #   ## 
+# # # # #   # # #   #   # # # #  #  # # # # #   # # # # # # #    ## # #   #  #  # # # # ### # #  #  #       
+# # ##   ## ##  ### #    ## # # ###  #  # # ### # # # #  #  #     # # # ##   #  ###  #  # # # #  #  ###  #  
+</pre>
+</div>
+
+<div class="statement-inout-out" style="background-color: white;">
+<div class="title" style="color:#989898;padding:0">Output</div>
+
+<pre style="overflow-x: auto;">
+<span style="line-height: 14px;"># #  #  ### # #  #  ### ###  #  ###  
+### # # # # # # # #  #   #  # # # #  
+### ### # # ### ###  #   #  ### # #  
+# # # # # # # # # #  #   #  # # # #  
+# # # # # # # # # #  #   #  # # # # </span><font face="sans-serif, Arial, Verdana, Trebuchet MS"><span style="white-space: normal;">
+</span></font></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

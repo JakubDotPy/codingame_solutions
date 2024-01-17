@@ -1,0 +1,132 @@
+<h1>Adversarial Mate with Rook</h1>
+
+<a href="https://www.codingame.com/training/hard/adversarial-mate-with-rook">https://www.codingame.com/training/hard/adversarial-mate-with-rook</a>
+
+<div class="statement_back"></div>
+<div class="statement-body">
+  <div style="color:#7cc576;background-color:rgba( 124 , 197 , 118 , 0.1 );padding:20px;margin-right:15px;margin-left:15px;margin-bottom:10px;text-align:left">
+        <span class="statement-league-alert-content">
+          Here, we consider <a href="https://en.wikipedia.org/wiki/Chess" target="_blank" rel="nofollow noopener noreferrer">Chess</a> endgames with only black king, white king, and white rook. Your goal, as the white player, is to checkmate the black king as quickly as possible.
+          
+        </span>
+  </div>
+
+  
+  <div class="statement-section statement-goal">
+    <h1>
+      <span class="icon icon-goal"> </span>
+      <span>The Goal</span>
+    </h1>
+    <div class="statement-goal-content">
+      For a given initial state of the game, your goal is to compute moves of the white player leading to the fastest checkmate. You need to consider an opponent, who may try to prolong play and achieve a draw when possible.
+    </div>
+  </div>
+  
+  <div class="statement-section statement-rules">
+    <h1>
+      <span class="icon icon-rules"> </span>
+      <span>Rules</span>
+    </h1>
+    <div>
+      <div class="statement-rules-content">
+        <p>The initial game state is described by the position of each piece: white king, white rook, and black king, formatted as <const>e3 h5 e1</const>. The white player is always the one who moves first.</p>
+        <p>The goal of this puzzle is to, in each turn, provide a move leading to quickest checkmate, according to the Chess rules. Each move should be formatted as <const>h5h1</const>.</p>
+        <p>After each white move, black&#39;s reply will be given in the same format.</p>
+
+      </div>
+    </div>
+
+    <br />
+
+  
+  <div class="statement-victory-conditions">
+    <div class="icon victory"></div>
+    <div class="blk">
+      <div class="title">Victory Conditions</div>
+      <div class="text">
+        <ul style="padding-bottom:0"><li>
+            Given moves leads to the fastest checkmate possible in the current board position.
+          </li></ul>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="statement-lose-conditions">
+    <div class="icon lose"></div>
+    <div class="blk">
+      <div class="title">Loss Conditions</div>
+      <div class="text">
+        <ul style="padding-bottom:0"><li>
+            Given sequence of moves does not lead to a fastest checkmate.
+          </li><li>
+            Given move is illegal.
+          </li><li>
+            Given answer is not properly formatted.
+          </li><li>
+            Response time exceeds the time limit.
+          </li></ul>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  
+  <div class="statement-section statement-expertrules">
+    <h1>
+      <span class="icon icon-expertrules"> </span>
+      <span>Detailed rules</span>
+    </h1>
+    <div class="statement-expert-rules-content">
+      <ul><li>If the black player makes a suboptimal move and a quicker checkmate becomes possible, you should find the faster checkmate.</li><li>Given board state is always a valid Chess game position.</li><li>You can hide showing legal moves in the settings panel (<img style="background:#20252a" height="18" src="https://www.codingame.com/servlet/fileservlet?id&#61;3463235186409" width="18" />)..</li></ul>
+    </div>
+  </div>
+
+  
+  <div class="statement-section statement-examples">
+    <h1>
+      <span class="icon icon-example"> </span>
+      <span>Related puzzles</span>
+    </h1>
+    <div class="statement-examples-text">
+      <ul><li>Cooperative variant of single rook endgames, requiring you to reach the fastest checkmate by controlling both players, is available <a href="https://www.codingame.com/contribute/view/638293decff575b25b7a73c0cbf1c9d958dd" target="_blank" rel="nofollow noopener noreferrer">here</a>.</li><li>To play full version of Chess as a bot programming game you can go <a href="https://www.codingame.com/multiplayer/bot-programming/chess" target="_blank" rel="nofollow noopener noreferrer">here</a>.</li></ul>
+    </div>
+  </div>
+
+  
+  <div class="statement-section statement-protocol">
+    <h1>
+      <span class="icon icon-protocol"> </span>
+      <span>Game Input</span>
+    </h1>
+
+    
+    <div class="blk">
+      <div class="title">Initial input</div>
+      <div class="text">
+        <p><span class="statement-lineno">A single line </span> containing space-separated strings, <var>whiteKing</var> <var>whiteRook</var> <var>blackKing</var> positions in column-row format, e.g. <const>a1</const>.</p>
+      </div>
+      <div class="title">Input for the following turns</div>
+      <div class="text">
+        <p><span class="statement-lineno">A single line </span> containing a string <var>opponentMove</var>  wih the opponent move encoded as from-to in column-row format, e.g. <const>a1h8</const>.</p>
+      </div>
+    </div>
+
+    
+    <div class="blk">
+      <div class="title">Output each turn</div>
+      <div class="text">
+        <span class="statement-lineno">A single line</span> containing a moves in <const>a1h8</const> format.
+      </div>
+    </div>
+
+    
+    <div class="blk">
+      <div class="title">Constraints</div>
+      1 ≤ <var>depth of the quickest checkmate solution</var> ≤ 13 <br />
+      Response time for first turn ≤ <const>25</const>s<br />
+      Response time for the following turns ≤ <const>200</const>ms<br />
+    </div>
+  </div>
+</div>
+

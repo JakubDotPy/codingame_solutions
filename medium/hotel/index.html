@@ -1,0 +1,46 @@
+<h1>Hotel</h1>
+
+<a href="https://www.codingame.com/training/medium/hotel">https://www.codingame.com/training/medium/hotel</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are at the reception desk of a 4-floor hotel and a group of <var>c</var> customers arrive and ask for a room.<br><br>But what should have been a routine task becomes a nightmare when you realise they have very specific demands !<br><br>Your job is to assign a floor (from 0 to 3) for each of them while respecting their <var>r</var> rules.<br><br>There are 10 types of rules:<br><br><var>customer_name</var> is at floor <var>y</var>        <br><var>customer_name</var> is NOT at floor <var>y</var>    <br>There's nobody at floor <var>y</var><br>There are exactly two customers at floor <var>y</var><br><var>customer_name</var> is alone at his/her floor<br><var>customer_name</var> is with two other customers at his/her floor<br><var>customer_name</var> is just above <var>customer_name</var>   <br><var>customer_name</var> is higher than <var>customer_name</var><br><var>customer_name</var> is at the same floor as <var>customer_name</var><br><var>customer_name</var> is NOT at the same floor as <var>customer_name</var><br><br>There is a unique solution for each test.<br><br>This puzzle is inspired by the boardgame Gamme Logic - H&ocirc;tel</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>c</var> for the number of customers.<br><br><strong>Next <var>c</var> lines:</strong> A string <var>customer_name</var><br><br><strong>Next line:</strong> An integer <var>r</var> for the number of rules.<br><br><strong>Next <var>r</var> lines:</strong> A string <var>rule</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>c</var> lines in input order</strong> A string with <var>customer_name</var> <var>floor</var> separated by a space</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">3 &lt;= <var>c</var> &lt;= 6<br>3 &lt;= <var>r</var> &lt;= 8</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+Jon Snow
+Daenerys Targaryen
+The Night King
+4
+The Night King is alone at his/her floor
+There's nobody at floor 0
+Jon Snow is just above Daenerys Targaryen
+Jon Snow is at floor 2</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">Jon Snow 2
+Daenerys Targaryen 1
+The Night King 3</pre>
+         </div>
+      </div>
+   </div>
+</div>

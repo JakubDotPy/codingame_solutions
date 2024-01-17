@@ -1,0 +1,43 @@
+<h1>ASCII cube</h1>
+
+<a href="https://www.codingame.com/training/medium/ascii-cube">https://www.codingame.com/training/medium/ascii-cube</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement"><strong>Instructions</strong><br>Your goal is to output a cube of dimensions <var>w</var> &times; <var>h</var> &times; <var>d</var> in ASCII Art, oriented so that the front face is in the direction of bottom left.<br>Therefore, the three visible faces are the front, the top and the right.<br>The visible edges are represented with the characters <const>/</const>, <const>\</const> and <const>_</const>.<br>You'll have to draw the hidden edges too, with the characters <const>⠌</const>, <const>⠡</const> and <const>.</const>.<br><br><strong>Notes</strong><br>&bull; <const>⠌</const> or <const>⠡</const> are characters from braille alphabet. Their unicode are 0x280c and 0x2821, respectively.<br>&bull; Because a console character is higher than large, a unit of 1 <var>w</var> (width) is represented with two characters instead of one (<const>__</const> or <const>..</const>).<br>&bull; If a visible face has a width, a height or a depth of 1, you won't have to draw the hidden edges behind this face.<br>&bull; If a solid line and a dotted line are layered on the same character, the priority always goes to the solid line, except for a hidden oblique edge (<const>⠌</const> or <const>⠡</const>), which must replace a visible horizontal edge  (<const>_</const>) (see examples below).<br><br><strong>Examples</strong><br><br><pre style="font-family: monospace"><strong>Input:</strong><br><var>w</var> = 4<br><var>h</var> = 2<br><var>d</var> = 4</pre><br><br><pre style="font-family: monospace"><strong>Output:</strong><br>    ________<br>   /⠡      /\<br>  /  ⠡..../..\<br> /   ⠌   /   /<br>/___⠌___/   /<br>\  ⠌    \  /<br> \⠌______\/</pre><br><br><pre style="font-family: monospace"><strong>Input:</strong><br><var>w</var> = 6<br><var>h</var> = 2<br><var>d</var> = 2</pre><br><br><pre style="font-family: monospace"><strong>Output:</strong><br>  ____________<br> /⠡          /\<br>/__⠡________/..\<br>\  ⠌        \  /<br> \⠌__________\/</pre><br><br><pre style="font-family: monospace"><strong>Input:</strong><br><var>w</var> = 1<br><var>h</var> = 1<br><var>d</var> = 1</pre><br><br><pre style="font-family: monospace"><strong>Output:</strong><br> __<br>/_/\<br>\_\/</pre></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>w</var> for the width.<br><strong>Line 2:</strong> An integer <var>h</var> for the height.<br><strong>Line 3:</strong> An integer <var>d</var> for the depth.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">An ASCII Art of a cube of dimensions <var>w</var> &times; <var>h</var> &times; <var>d</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><var>w</var>, <var>h</var>, <var>d</var> &gt; 0</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">8
+3
+2</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">  ________________
+ /⠡              /\
+/__⠡____________/  \
+\   ⠡...........\...\
+ \  ⠌            \  /
+  \⠌______________\/</pre>
+         </div>
+      </div>
+   </div>
+</div>

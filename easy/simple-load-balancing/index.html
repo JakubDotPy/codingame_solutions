@@ -1,0 +1,38 @@
+<h1>Simple Load Balancing</h1>
+
+<a href="https://www.codingame.com/training/easy/simple-load-balancing">https://www.codingame.com/training/easy/simple-load-balancing</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">In this challenge, you are given <var>N</var> servers. Each server has a current load <var>Li</var> jobs running on it. Then a batch <var>k</var> jobs comes and must be distributed on the <var>N</var> servers. Your job is to design a program that will distribute the incoming <var>k</var> jobs on the servers such that the difference of the number of jobs in the server with the highest load and the one with the lowest load is minimal. Let&rsquo;s call this metric Minimal Imbalance.<br>For example if we have <var>N</var>=<const>4</const> and the initial loads as follows [5,0,2,1]. For <var>k</var>=3 arriving jobs, distributing the jobs to get the following [5,2,2,2] achieves the Minimal Imbalance. The result here is 3 (5-2)<br>This challenge was one of the problems in Amazon Last Mile 22.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> <var>N</var> An integer denoting the number of servers<br><strong>Line 2:</strong> <var>k</var> An integer denoting the number of jobs to be scheduled<br><strong>Line 3:</strong> One line containing integers <var>Li</var> where each integer denotes the server current load</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">An integer denoting the minimum achievable imbalance after scheduling the <var>k</var> jobs.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1&lt;=<var>N</var>&lt;10000<br>0&lt;=<var>Li</var>&lt;=10000<br>0&lt;=<var>k</var>&lt;=100000000</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">4
+3
+5 0 2 1</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">3</pre>
+         </div>
+      </div>
+   </div>
+</div>

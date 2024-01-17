@@ -1,0 +1,58 @@
+<h1>Escaping the cat</h1>
+
+<a href="https://www.codingame.com/training/medium/escaping-the-cat">https://www.codingame.com/training/medium/escaping-the-cat</a>
+
+<div class="statement-body">
+   <div class="statement-section statement-goal">
+      <h2><span class="icon icon-goal"> </span><span>Goal </span></h2>
+      <span class="question-statement">In this game, you control a mouse swimming in a pool trying to escape the cat.
+      The cat is running around the pool and will try to catch you, but the cat will never go in the water. The goal is simply to escape from the pool without being trapped by the cat.<br />
+      If your mouse reaches the border of the pool and the distance from mouse to cat is greater or equals than <const>80</const> you win the game.
+         <br /><br />
+
+         The game is played inside a pool of radius <strong>500</strong> pixels where 0,0 is the center of the pool (represented by a little green dot)<br /><br />
+
+         The mouse has a maximum speed <const>MOUSE_SPEED</const> of <strong>10 Pixels / turn</strong> so then when providing a target destination the mouse will move
+         towards this destination but the distance will be capped to MOUSE_SPEED.<br /><br />
+         The cat has a dynamic speed that will be provided in input.<br /><br />
+         There is no physics in this game so the mouse can change completly its direction from one turn to another.
+         <br /><br />
+         The mouse is captured by the cat if the distance between mouse and cat is strictly less than <const>80</const> and then you lose the game.<br />
+         If you are not able to escape after <const>350</const> turns then you also lose the game.<br /><br />
+         You can display a gaming message capped to <strong>27 Chars</strong> on the panel located in the left upper corner of the map (see details below).
+    <br /><br />
+   </span>
+   </div>
+
+   <div class="statement-section statement-expertrules">
+      <h1>
+         <span class="icon icon-expertrules"> </span>
+         <span>Expert Rules</span>
+      </h1>
+      <div class="statement-expert-rules-content">
+         The cat is moving using the shortest path around the pool to target the closest point where the mouse can escape<br />
+         This is the closest intersection of straight [Center pool/mouse position] and pool edges.
+      </div>
+   </div>
+
+   <div class="statement-section statement-protocol">
+      <div class="blk">
+         <div class="title">Initialization input</div>
+         <div class="question-statement-input">1 integer <var>CatSpeed</var> representing the speed of the cat</div>
+         <div class="title">Input for a game round</div>
+         <div class="question-statement-input">4 integers <var>mouseX</var> and <var>mouseY</var> representing the position of the mouse in the cartesian coordinate system where [0,0] is the center of the pool
+            <var>catX</var> and <var>catY</var> representing the position of the cat.
+         </div>
+      </div>
+      <div class="blk">
+         <div class="title">Output</div>
+         <div class="question-statement-output">2 integers <var>X</var> <var>Y</var> separated by spaces representing the target destination of the mouse in the
+            cartesian coordinate system where [0,0] is the center of the pool, optionally a space &#43; <var>message</var> the message to display on panel<br />
+            Example : -1000 1000 Escape the cat
+         </div>
+      </div>
+      <div class="blk">
+         <div class="title">Contraintes</div>
+         <div class="question-statement-constraints"><var>X</var> and <var>Y</var> should be integers</div>
+      </div>
+   </div></div>

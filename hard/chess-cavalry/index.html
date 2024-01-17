@@ -1,0 +1,36 @@
+<h1>Chess cavalry</h1>
+
+<a href="https://www.codingame.com/training/hard/chess-cavalry">https://www.codingame.com/training/hard/chess-cavalry</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You need to move a chess knight between the points <const>B</const> and <const>E</const>.<br><br>A chess knight moves in an L shaped pattern, like so:<br><br><pre style="font-family: monospace">.X.X.<br>X...X<br>..B..<br>X...X<br>.X.X.</pre><br>The <const>X</const>s mark where the knight in position <const>B</const> can move.<br><br>There may be other chess pieces on the board, blocking the knight's movement, but for clarity, you will only be notified of where you cannot go by <const>#</const> characters. You cannot land on these marked spaces, but you can go over them. You also cannot go outside of the board.<br><br>Your goal is to find how many turns <const>N</const> are needed to go from <const>B</const> to <const>E</const>, or return <const>Impossible</const> if it can't be done.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Two integers <var>W</var> and <var>H</var> giving the width and height of the board.<br><strong><var>H</var> next lines:</strong> A <var>row</var> of the board, containing the characters <const>B</const>, <const>E</const>, <const>.</const> and <const>#</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">One line, giving the minimum number of turns <var>N</var> needed to go from <const>B</const> to <const>E</const>, or <const>Impossible</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &#8804; <var>W</var>, <var>H</var>  &#8804; 8</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3 2&#10;..E&#10;B..</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1</pre>
+         </div>
+      </div>
+   </div>
+</div>

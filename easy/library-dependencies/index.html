@@ -1,0 +1,42 @@
+<h1>Library dependencies</h1>
+
+<a href="https://www.codingame.com/training/easy/library-dependencies">https://www.codingame.com/training/easy/library-dependencies</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are given <var>n_imp</var> lines, each representing a library import in python style. Then, <var>n_dep</var> lines for the dependencies between libraries. Then, step by step you have to:<br><br><strong>(1)</strong> Assess if the code will run successfully as it is. If so, print <const>Compiled successfully!</const> and exit.<br><br><strong>(2)</strong> If the code doesn't run successfully, find where the first<strong>*</strong> error is located, print the line <const>Import error: tried to import <var>library1</var> but <var>library2</var> is required.</const>, and finally:<br><br><strong>(2.1)</strong> If it can be fixed by reordering the imports, find the only order such that at any time, among the possible importable libraries, the smallest (lexicographically) module is chosen.<br>The format will be, the line: <const>Suggest to change import order:</const>, and then, for each library to import in the suggested order, the line <const>import </const><var>library</var> (similar to the input imports).<br><br><strong>(2.2)</strong> If the error is not salvageable return the message <const>Fatal error: interdependencies.</const>.<br><br><strong>*</strong> The imaginary compiler will import the libraries in the order that they are given by the puzzle until it finds one that requires a library that was not previously imported.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>n_imp</var> for the number of libraries to import.<br><strong>Next <var>n_imp</var> lines:</strong> A python-like declaration for a library import.<br><strong>Next line:</strong>  An integer <var>n_dep</var> for the number of dependency relation between libraries.<br><strong>Next <var>n_dep</var> lines:</strong> A string representing a dependency relation between libraries.<br><br>A dependency relation is given in the format:<br><var>library</var> <const>requires</const> <var>library1</var> [, <var>library2</var>, <var>library3</var> ... ]</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The compilation log as defined in the statement, one log message per line.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><const>2</const> &le; <var>n_imp</var> &le; <const>100</const>.<br><const>1</const> &le; <var>n_dep</var> &le; <const>100</const>.<br><const>1</const> &le; Total amount of dependencies &le; <const>200</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+import A
+import B
+import C
+2
+B requires A
+C requires B</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">Compiled successfully!</pre>
+         </div>
+      </div>
+   </div>
+</div>

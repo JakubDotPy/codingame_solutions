@@ -1,0 +1,146 @@
+<h1>Genome Sequencing</h1>
+
+<a href="https://www.codingame.com/training/hard/genome-sequencing">https://www.codingame.com/training/hard/genome-sequencing</a>
+
+<div class="statement_back" id="statement_back" style="display:none">&nbsp;</div>
+
+<div class="statement-body"><!-- GOAL -->
+<div class="statement-section statement-goal">
+<h2><span class="icon icon-goal">&nbsp;</span> <span>The Goal</span></h2>
+
+<div class="statement-goal-content">You are working as a computer scientist in a laboratory seeking to sequence the genome. A DNA sequence is represented by a character string (of A, C, T and G) such as GATTACA. The problem is that biologists are only able to extract sub-sequences of the complete sequence. Your role is to combine these partial sub-sequences to recover the original sequence.<br />
+<br />
+In this exercise you are asked to calculate the length of the shortest sequence that contains all the sub-sequences of the input data.</div>
+</div>
+<!-- RULES -->
+
+<div class="statement-section statement-rules">
+<h2><span class="icon icon-rules">&nbsp;</span> <span>Rules</span></h2>
+
+<div>
+<div class="statement-rules-content">You are given <var>N</var> sub-sequences and you must return the length of the shortest sequence that contains all the sub-sequences. There may be several sequences of the same minimum length and which fit the requirement. We are not asking you to list these, but only to return their length.<br />
+<br />
+Note that there is always a solution. One can indeed simply concatenate all the sub-sequences to obtain a valid sequence. But by nesting (even partially) the sub-sequences, it is generally possible to obtain a shorter sequence (see the example).</div>
+</div>
+</div>
+<!-- EXAMPLES -->
+
+<div class="statement-section statement-examples">
+<h2><span class="icon icon-example">&nbsp;</span> <span>Example</span></h2>
+
+<div class="statement-examples-text">For example, you have three sub-sequences AGATTA, GATTACA, and TACAGA. The sequence AGATTACAGA is the shortest sequence that contains all the sub-sequences.<br />
+<br />
+Note that in this example, there are other sequences which contain all of the sub-sequences such as TACAGATTACAGATTA.. However, we prefer the former because it is shorter (10 characters instead of 16).</div>
+
+<div class="statement-example-container">
+<div class="statement-example"><img src="https://www.codingame.com/fileservlet?id=215473947480" />
+<div class="legend">
+<div class="title">Example</div>
+
+<div class="description">AGATTACAGA contains the sub-sequences AGATTA, GATTACA, and TACAGA.</div>
+</div>
+</div>
+
+<div class="statement-example" style="height: 0; margin-top: 0; margin-bottom: 0">&nbsp;</div>
+
+<div class="statement-example" style="height: 0; margin-top: 0; margin-bottom: 0">&nbsp;</div>
+
+<div class="statement-example" style="height: 0; margin-top: 0; margin-bottom: 0">&nbsp;</div>
+
+<div class="statement-example" style="height: 0; margin-top: 0; margin-bottom: 0">&nbsp;</div>
+</div>
+</div>
+<!-- PROTOCOL -->
+
+<div class="statement-section statement-protocol">
+<h2><span class="icon icon-protocol">&nbsp;</span> <span>Game Input</span></h2>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Input</div>
+
+<div class="text">
+<p><span class="statement-lineno">Line 1: </span>The number <var>N</var> of sub-sequences</p>
+
+<p><span class="statement-lineno"><var>N</var> following lines: </span>one sub-sequence by line, represented by a string of characters from <const>A</const>, <const>C</const>, <const>T</const> and <const>G</const>. Each sub-sequence ranges from 1 to maximum 10 characters long.</p>
+</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Output</div>
+
+<div class="text">The length of the shortest sequence containing all the sub-sequences.</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Constraints</div>
+
+<div class="text">0 &lt; <var>N</var> &lt; 6</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Examples</div>
+
+<div class="text">
+<div class="statement-inout">
+<div class="statement-inout-in" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Input</div>
+
+<pre>
+2
+AAC
+CCTT</pre>
+</div>
+
+<div class="statement-inout-out" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Output</div>
+
+<pre>
+6</pre>
+</div>
+</div>
+
+<div class="statement-inout">
+<div class="statement-inout-in" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Input</div>
+
+<pre>
+3
+AGATTA
+GATTACA
+TACAGA</pre>
+</div>
+
+<div class="statement-inout-out" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Output</div>
+
+<pre>
+10</pre>
+</div>
+</div>
+
+<div class="statement-inout">
+<div class="statement-inout-in" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Input</div>
+
+<pre>
+3
+TT
+AA
+ACT</pre>
+</div>
+
+<div class="statement-inout-out" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Output</div>
+
+<pre>
+5</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

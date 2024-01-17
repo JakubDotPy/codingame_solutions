@@ -1,0 +1,42 @@
+<h1>Universe Conquest</h1>
+
+<a href="https://www.codingame.com/training/hard/universe-conquest">https://www.codingame.com/training/hard/universe-conquest</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">The universe is made up of <var>P</var> planets numbered from 1 to <var>P</var>.<br>There are <var>H</var> hyperspace roads, linking those planets.<br>Two different space factions own and defend the planets : <const>E</const>, the empire and <const>R</const> the republic.<br><br>In order to conquer this universe, you have come up with a plan : you need to destroy those hyperspace roads. The problem is that if you attack any hyperspace road, the armies from both planets will come to defend it. You realize now that if both the empire <const>E</const> and  the republic <const>R</const> defend the hyperspace road, your attack will fail... miserably.<br><br>You decide that, before attacking the hyperspace roads, you will attack some planets first to destroy the armies defending it. This way, you will be able to carry on with your plan. It will be difficult. You estimate that, in order to destroy the armies protecting each planet, you will need a certain number of your best ships : <var>S</var>.<br><br>Your goal is to determine which planet(s) to attack, using as few ships as possible.<br>You must make sure that no hyperspace road stands connecting a planet defended by the empire <const>E</const> and one defended by the republic <const>R</const>.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1 :</strong> An integer <var>P</var> and an integer <var>H</var> defining the number of planets and hyperspace roads.<br><strong><var>P</var> next lines :</strong> The planets. Each line has a character <var>A</var> defining the faction (either <const>'E'</const> or <const>'R'</const>) and an integer <var>S</var> defining the number of ships to wipe out the defending army.<br><strong><var>H</var> next lines :</strong> The hyperspace roads. Each line has 2 integers <var>P1</var>and <var>P2</var> defining the planets linked by this hyperspace road.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1 :</strong> An integer <var>T</var> stating the minimum total ships required to conquer the universe.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &lt; <var>P</var> &lt;= 30<br>0 &lt;= <var>H</var> &lt;= 200<br>1 &lt;= <var>S</var> &lt;= 100</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3 3
+E 1
+E 1
+R 1
+1 2
+1 3
+2 3</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1</pre>
+         </div>
+      </div>
+   </div>
+</div>

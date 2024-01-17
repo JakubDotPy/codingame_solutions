@@ -1,0 +1,198 @@
+<h1>Power of Thor - Episode 1</h1>
+
+<a href="https://www.codingame.com/training/easy/power-of-thor-episode-1">https://www.codingame.com/training/easy/power-of-thor-episode-1</a>
+
+<div class="statement_back" id="statement_back" style="display:none">&nbsp;</div>
+
+<div class="statement-body"><!-- GOAL -->
+<div class="statement-section statement-goal">
+<h2><span class="icon icon-goal">&nbsp;</span> <span>The Goal</span></h2>
+
+<div class="statement-goal-content">Your program must allow Thor to reach the light of power.</div>
+</div>
+<!-- RULES -->
+
+<div class="statement-section statement-rules">
+<h2><span class="icon icon-rules">&nbsp;</span> <span>Rules</span></h2>
+
+<div>
+<div class="statement-rules-content">Thor moves on a map which is <const>40</const> wide by <const>18</const> high. Note that the coordinates (X and Y) start at the top left! This means the most top left cell has the coordinates &quot;X=0,Y=0&quot; and the most bottom right one has the coordinates &quot;X=39,Y=17&quot;.<br />
+<br />
+<strong>Once the program starts</strong> you are given:
+
+<ul>
+	<li>the variable <var>lightX</var>: the X position of the light of power that Thor must reach.</li>
+	<li>the variable <var>lightY</var>: the Y position of the light of power that Thor must reach.</li>
+	<li>the variable <var>initialTX</var>: the starting X position of Thor.</li>
+	<li>the variable <var>initialTY</var>: the starting Y position of Thor.</li>
+</ul>
+<strong>At the end of the game turn</strong>, you must output the direction in which you want Thor to go among:
+
+<div class="statement-example-horizontal">
+<div style="width: 280px;display: table-cell;background-color: transparent;vertical-align: middle;padding: 0;"><img src="https://files.codingame.com/codingame/ragnarok/rose_des_vents2.png" style="width: 100%" /></div>
+
+<div class="legend">
+<div><action>N</action> (North)</div>
+
+<div><action>NE</action> (North-East)</div>
+
+<div><action>E</action> (East)</div>
+
+<div><action>SE</action> (South-East)</div>
+
+<div><action>S</action> (South)</div>
+
+<div><action>SW</action> (South-West)</div>
+
+<div><action>W</action> (West)</div>
+
+<div><action>NW</action> (North-West)</div>
+</div>
+</div>
+Each movement makes Thor move by 1 cell in the chosen direction.<br />
+&nbsp;</div>
+<!-- Victory conditions -->
+
+<div class="statement-victory-conditions">
+<div class="icon victory">&nbsp;</div>
+
+<div class="blk">
+<div class="title">Victory Conditions</div>
+
+<div class="text">You win when Thor reaches the light of power</div>
+</div>
+</div>
+<!-- Lose conditions -->
+
+<div class="statement-lose-conditions">
+<div class="icon lose">&nbsp;</div>
+
+<div class="blk">
+<div class="title">Lose Conditions</div>
+
+<div class="text">Thor moves outside the map</div>
+</div>
+</div>
+</div>
+</div>
+<!-- PSEUDO CODE 
+
+<div class="statement-section statement-pseudocode">
+<h2><span class="icon icon-pseudocode">&nbsp;</span> <span>Pseudo Code Algorithm</span></h2>
+
+<div class="statement-pseudocode-content">
+<p>To succeed your mission, you can use this algorithm:</p>
+&nbsp;
+
+<p><b>Before the game loop</b>, create two variables <var>thorX</var> and <var>thorY</var>, that will hold the current position of Thor. Initialize these variables to <var>initialTX</var> and <var>initialTY</var>.</p>
+&nbsp;
+
+<p><b>For each game turn</b>, execute the following actions:</p>
+
+<ul>
+	<li>Initialize two variables of type string with two empty strings: <var>directionX</var> and <var>directionY</var>.</li>
+	<li>If <var>thorX</var> is greater than <var>lightX</var>, <var>directionX</var> receives the value <action>W</action> else if <var>thorX</var> is lower than <var>lightX</var>, <var>directionX</var> receives the value <action>E</action>.</li>
+	<li>If <var>thorY</var> is greater than <var>lightY</var>, <var>directionY</var> receives the value <action>N</action> else if <var>thorY</var> is lower than <var>lightY</var>, <var>directionY</var> receives the value <action>S</action>.</li>
+	<li>Update the variables <var>thorX</var> and <var>thorY</var> in function of the chosen direction (+1 or -1).</li>
+	<li>Indicate, before the end of the turn, the chosen direction as the concatenation of <var>directionY</var> and <var>directionX</var>.</li>
+</ul>
+</div>
+</div>--><!-- EXAMPLES -->
+
+<div class="statement-section statement-examples">
+<div class="statement-example-container">
+<div class="statement-example"><img src="https://files.codingame.com/codingame/ragnarok/thor0.png" />
+<div class="legend">
+<div class="title">Initial phase</div>
+
+<div class="description">Thor starts on the map at position (3, 6). The light is at position (3, 8).</div>
+</div>
+</div>
+
+<div class="statement-example"><img src="https://files.codingame.com/codingame/ragnarok/demo1.png" />
+<div class="legend">
+<div class="title">Round 1</div>
+
+<div class="description">Action <action>S</action>: Thor moves towards south.<br />
+New position is (3, 7).</div>
+</div>
+</div>
+
+<div class="statement-example"><img src="https://files.codingame.com/codingame/ragnarok/demo2.png" />
+<div class="legend">
+<div class="title">Round 2</div>
+
+<div class="description">Action <action>S</action>: Thor moves towards south.<br />
+New position is (3, 8).</div>
+</div>
+</div>
+</div>
+</div>
+<!-- WARNING -->
+
+<div class="statement-section statement-warning">
+<h2><span class="icon icon-warning">&nbsp;</span> <span>Note</span></h2>
+
+<div class="statement-warning-content">Do not forget to execute the tests from the &quot;Test cases&quot; panel.<br />
+<strong>Beware:</strong> the tests given and the validators used to compute the score are slightly different in order to avoid hard coded solutions.</div>
+</div>
+<!-- PROTOCOL -->
+
+<div class="statement-section statement-protocol">
+<h2><span class="icon icon-protocol">&nbsp;</span> <span>Game Input</span></h2>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="text">The program must first read the initialization data from the standard input, then, in an infinite loop, provides on the standard output the instructions to move Thor.</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Initialization input</div>
+
+<div class="text"><span class="statement-lineno">Line 1: </span>4 integers <var>lightX</var> <var>lightY</var> <var>initialTX</var> <var>initialTY</var>. (lightX, lightY) indicates the position of the light. (initialTX, initialTY) indicates the initial position of Thor.</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Input for a game round</div>
+
+<div class="text"><span class="statement-lineno">Line 1: </span>the number of remaining moves for Thor to reach the light of power: <var>remainingTurns</var>. You can ignore this data but you must read it.</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Output for a game round</div>
+
+<div class="text">A <span class="statement-lineno">single line</span> providing the move to be made: <action>N</action> <action>NE</action> <action>E</action> <action>SE</action> <action>S</action> <action>SW</action> <action>W</action> ou <action>NW</action></div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Constraints</div>
+
+<div class="text">0 &le; <var>lightX</var> &lt; 40<br />
+0 &le; <var>lightY</var> &lt; 18<br />
+0 &le; <var>initialTX</var> &lt; 40<br />
+0 &le; <var>initialTY</var> &lt; 18
+
+<div class="timeout_text">Response time for a game round &le; 100ms</div>
+</div>
+</div>
+</div>
+<!-- STORY -->
+
+<div class="statement-story-background">
+<div class="statement-story-cover" style="background-size: cover; background-image: url(https://www.codingame.com/servlet/fileservlet?id=2210376422695)">
+<div class="statement-story" style="min-height: 300px; position: relative">
+<h2>Synopsis</h2>
+
+<div class="story-text">The final battle of <i>Ragnar&ouml;k</i>, the twilight of the gods is approaching. You incarnate Thor who is participating in this final battle against all the forces of evil, led by <i>Loki</i>, <i>Thor&#39;</i>s wizard brother.<br />
+<br />
+Thor was wounded during a previous battle against Fenrir, the wolf-god. During the battle, <i>Loki</i> took advantage of the general confusion and used his magic to annihilate the magical powers of Thor&rsquo;s hammer, <i>Mj&ouml;llnir</i>, by separating it from his soul: the light of power.<br />
+<br />
+<i>Thor</i>, who now feels very weak, must find and reach the light of power, as fast as possible, since it is the only thing which can restore his and <i>Mjollnir&#39;</i>s powers.</div>
+</div>
+</div>
+</div>
+</div>

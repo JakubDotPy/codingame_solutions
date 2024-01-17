@@ -1,0 +1,39 @@
+<h1>Equivalent Resistance, Circuit Building</h1>
+
+<a href="https://www.codingame.com/training/easy/equivalent-resistance-circuit-building">https://www.codingame.com/training/easy/equivalent-resistance-circuit-building</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Calculate the equivalent resistance of a circuit containing only resistors.<br><br>A resistor is a component used in electrical circuits. A resistor is quantified by its <strong>Resistance</strong>, which is measured in Ohms. We are interested in knowing the total resistance of a circuit of only resistors. There are two key definitions needed to determine the resistance of multiple resistors. <br><br><strong>1. Series</strong><br><br>The resistance of resistors in a line is equivalent to the sum of the resistance of those resistors.<br><br><pre style="font-family: monospace">    ---[R_1]---[R_2]---</pre><br>Resistors in series will be noted with parentheses ( R_1 R_2 R_3 ... and so on ).<br><br>The resistance of a series arrangement is: R_eq = R_1 + R_2 + R_3 + ... and so on, where R_eq is the equivalent resistance of the series arrangement.<br><br><strong>2. Parallel</strong><br><br>The resistance of resistors in branching paths of the circuit is equal to 1 over the sum of 1 over the resistance of each branching path.<br><br><pre style="font-family: monospace">       +---[R_1]---+<br>       |           |<br>    ---+           +---<br>       |           |<br>       +---[R_2]---+<br></pre><br><br>Resistors in parallel will be noted with brackets [ R_1 R_2 R_3 ... and so on ].<br><br>The resistance of resistors in parallel is R_eq = 1/(1/R_1 + 1/R_2 + 1/R_3 + 1/... and so on). <br><br>A branch can be treated as a single resistor by determining its equivalent resistance.<br><br><strong>Example:</strong><br><br><var>N</var> = 3<br><pre style="font-family: monospace">A 24<br>B 8<br>C 48<br>[ ( A B ) [ C A ] ]</pre><br>This will look something like this:<br><br><pre style="font-family: monospace">       +---[C]---+<br>       |         |<br>    +--+         +--+<br>    |  |         |  |<br>    |  +---[A]---+  |<br>    |               |<br>    +---[A]---[B]---+<br>    |               |<br>    +---[Battery]---+</pre><br>[ <const>( A B )</const> <const>[ C A ]</const> ] =&gt; [ <const>24+8</const> <const>1/(1/48+1/24)</const> ] =&gt; [ <const>32</const> <const>16</const> ] =&gt; <const>1/(1/32+1/16)</const> =&gt; <const>32/3</const> =&gt; <const>10.666...</const> =&gt; <const>10.7</const></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var> for the number of unique resistors present in the circuit<br><strong>Next <var>N</var> lines:</strong> A space separated <var>name</var> and the integer resistance <var>R</var> of a resistor<br><strong>Last line:</strong> A space separated combination of parentheses, brackets, and names of resistors</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The equivalent resistance expressed as a float rounded to the nearest 0.1 Ohms.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <var>N</var> &lt; 10<br>0 &lt; <var>R</var> &lt; 100</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+A 20
+B 10
+( A B )</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">30.0</pre>
+         </div>
+      </div>
+   </div>
+</div>

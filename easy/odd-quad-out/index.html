@@ -1,0 +1,42 @@
+<h1>Odd-Quad-Out</h1>
+
+<a href="https://www.codingame.com/training/easy/odd-quad-out">https://www.codingame.com/training/easy/odd-quad-out</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement"><strong>Overview:</strong> Which of the 4 quadrant-values is different than the others?<br><br><br><strong>Details:</strong><br>You will be given a square table (<var>sqTable</var>), with a <var>sideSize</var> of an even-number (such as 4, 6, 8 etc).<br>This <var>sqTable</var> can be thought of as having 4 equal quadrants (<var>quad</var>s).<br><br>Each cell in <var>sqTable</var> contains either nothing (represented by <const>.</const>) or a number from 1 to 9.<br><br>The <var>value</var> of each <var>quad</var> is equal to the sum of the numbers in it.<br><br><br><strong>Your Task:</strong><br>Find the <var>oddQuad</var> that has a different value (<var>oddValue</var>) than&nbsp;the other <var>quad</var>s.<br>The other three <var>quad</var>s will have the <var>standardValue</var>.<br><br><br><strong>Note:</strong><br>The <var>oddValue</var> might be larger or smaller than the <var>standardValue</var><br><br><pre style="font-family: monospace">-----------------------<br>|          |          |<br>|  Quad-1  |  Quad-2  |<br>|          |          |<br>-----------------------<br>|          |          |<br>|  Quad-3  |  Quad-4  |<br>|          |          |<br>-----------------------<br></pre></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer, <var>sideSize</var><br><br><strong>Next  <var>sideSize</var> Lines:</strong> A string that is <var>sideSize</var> long, consisting only of <const>.</const> and digits (1 through 9)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> <const>Quad-</const><var>oddQuad</var> <const>is Odd-Quad-Out</const><br><strong>Line 2:</strong> <const>It has value of</const> <var>oddValue</var><br><strong>Line 3:</strong> <const>Others have value of</const> <var>standardValue</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><var>sideSize</var> is an even-number<br>4 &le; <var>sideSize</var> &le; 30</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">4
+.48.
+3..2
+6.2.
+4.17</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">Quad-1 is Odd-Quad-Out
+It has value of 7
+Others have value of 10</pre>
+         </div>
+      </div>
+   </div>
+</div>

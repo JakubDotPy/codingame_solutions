@@ -1,0 +1,40 @@
+<h1>Road Trip</h1>
+
+<a href="https://www.codingame.com/training/medium/road-trip">https://www.codingame.com/training/medium/road-trip</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are tired of your daily routine as a developer, and thus decide to take some vacation and go on a road trip!<br><br>You consider inviting <var>N</var> friends to come along. Your travel plan has a base cost of <var>C</var>, independent of the number of travelers, and an additional cost of <var>P</var> per person.<br>Each of your friends has a limited <var>budget</var>. Your friends have their pride: they won't accept money from others, hence every traveler - including yourself - has to pay the same price (keep in mind that this amount might not be an integer). A friend that cannot afford the trip will decline your invitation.<br>Since you have developed countless Java applications, you are very rich and will always be able to afford the vacation.<br><br>Each friend brings you a certain amount of <var>joy</var> by coming along on the trip.<br>Among your friends, there are some people that you don't really like: they bring you negative <var>joy</var>. Being a pragmatic person, you still consider inviting them to lower the price per person, and allow your real friends to come.<br><br>Your happiness is the sum of the <var>joy</var> brought to you by every friend that comes along on the trip.<br>Find the maximum happiness that you can get if you invite the right friends.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> three integers <var>N</var>, <var>C</var> and <var>P</var>.<br><strong>Next <var>N</var> lines:</strong> two integers, the <var>budget</var> and <var>joy</var> of each friend.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> the maximum happiness that you can get from this trip.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><const>1</const> &le; <var>N</var> &le; <const>900</const><br><const>0</const> &le; <var>P</var> &le; <const>1000</const><br><const>0</const> &le; <var>C</var> &le; <const>10^5</const><br><const>0</const> &le; <var>budget</var> &le; <const>10^5</const><br><const>-10^5</const> &le; <var>joy</var> &le; <const>10^5</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">4 10 5
+9 4
+7 10
+9 3
+6 1</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">7</pre>
+         </div>
+      </div>
+   </div>
+</div>

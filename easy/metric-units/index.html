@@ -1,0 +1,36 @@
+<h1>Metric Units</h1>
+
+<a href="https://www.codingame.com/training/easy/metric-units">https://www.codingame.com/training/easy/metric-units</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">The goal of this exercise is to add two lengths with given metric units.<br>To calculate it properly you first need to convert them to the same unit. <br>Present the result using the smaller unit.<br><br>For instance:<br><strong>4cm + 2dm</strong><br>must convert 2dm to 20cm:<br><strong>4cm + 20cm</strong><br>it then results to:<br><strong>24cm</strong><br><br>If you like to challenge yourself a little more...<br>Try to limit the number of <strong>ifs</strong> and <strong>switches</strong> as much as possible in your code.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> the expression to calculate <var>value</var><var>unit</var><const> + </const><var>value</var><var>unit</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><var>value</var><var>unit</var><br><br><var>value</var> should be a sum of two given values after units conversion to the smaller one.<br><br><var>unit</var> should be the smaller unit of the two parameters.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><var>value</var> is a real number:<br>0 &lt;= <var>value</var> &lt;= 1000 <br>with precision &lt;= <const>0.00001</const><br><br><var>unit</var> can be one of the following:<br> - um (micrometer)<br> - mm (millimeter) where 1mm = 1000um<br> - cm (centimeter) where 1cm = 10mm<br> - dm (decimeter) where 1dm = 10cm<br> - m (meter) where 1m = 10dm<br> - km (kilometer) where 1km = 1000m</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1m + 1cm</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">101cm</pre>
+         </div>
+      </div>
+   </div>
+</div>

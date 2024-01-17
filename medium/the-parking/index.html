@@ -1,0 +1,38 @@
+<h1>The parking</h1>
+
+<a href="https://www.codingame.com/training/medium/the-parking">https://www.codingame.com/training/medium/the-parking</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You have to calculate the total parking fees and count the number of vehicles which cannot be parked because no empty parking slot is available.<br><br>There are 7 car slots and 2 motorbike slots in the car park.<br><pre style="font-family: monospace">______________________________________________________<br>|............|............|.............|..MOTORBIKE..<br>|............|............|.............|-------------<br>|....CAR.....|....CAR.....|.....CAR.....|..MOTORBIKE..<br>|............|............|.............|<br>|............|............|.............|<br>|<br>|                                      <br>|<br>|<br>|<br>|............|............|.............|.............|<br>|............|............|.............|.............|<br>|....CAR.....|....CAR.....|.....CAR.....|.....CAR.....|<br>|............|............|.............|.............|<br>|............|............|.............|.............|<br>______________________________________________________<br></pre><br>Parking is charged at the following rates:<br>- <const>1.2</const> euros per <const>15</const> minutes (note) for cars<br>- <const>0.7</const> euros per <const>15</const> minutes (note) for motorbikes<br>- Free if a vehicle stays for strictly less than <const>30</const> minutes<br>- Full day (a vehicle that is still in the car park at the end of the day) fixed-price: <const>30</const> euros<br>Note: Parking time is rounded <strong>up</strong> to the nearest 15 minute interval. For example, the parking fee for 35 minutes is equal to 45 multiplied by the relevant rate.<br><br>Example:<br>10:00 &gt; C456 M001 M002 M003 means at 10:00 1 car and 3 motorbikes arrive at the car park. Only the car and the 2 first motorbikes will be parked. The third motorbike cannot be parked since there are only 2 motorbike slots.<br>11:00 &lt; C456 M001 M002 means at 11:00 the car and the 2 motorbikes leave the car park.<br><br>Output will be:<br>10.4 0 1<br>- 10.4 is the total parking fees (in euros) for the day, which is the sum of<br>(a) parking fee from the car: 1.2 euros * 4  (1 hour = 15 minutes * 4)<br>(b) parking fees from the 2 motorbikes: 0.7 euros * 4 + 0.7 euros * 4<br>- 0 is the total number of cars which cannot be parked<br>- 1 is the total number of motorbikes which cannot be parked</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>H</var> for the number of lines to read.<br><strong>Next <var>H</var> lines:</strong> Details of the cars and motorbikes which arrive at or depart from the park in the format of <const>time</const> <const>direction</const> <const>vehicles</const>, e.g. 10:05 &gt; C111 C222 C123 M485 M123.<br><const>time</const>: in <const>HH:MM</const> 24-hour format<br><const>direction</const>: <const>&gt;</const> for arrival, <const>&lt;</const> for departure<br><const>vehicles</const>: list of registration numbers, one for each vehicle. Registration numbers of cars start with <const>C</const>. Registration numbers of motorbikes start with <const>M</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><const>total_fees</const> <const>cars_not_parked</const> <const>motorbikes_not_parked</const><br><const>total_fees</const>: total parking fees in euros, shown with 1 decimal place<br><const>cars_not_parked</const>: total number of cars that cannot be parked<br><const>motorbikes_not_parked</const>: total number of motorbikes that cannot be parked</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">All the times provided in the input refer to the <strong>same</strong> day.<br>Assume all parking slots are empty at the beginning of the day.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+10:00 &gt; C456 M001 M002 M003
+11:00 &lt; C456 M001 M002</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">10.4 0 1</pre>
+         </div>
+      </div>
+   </div>
+</div>

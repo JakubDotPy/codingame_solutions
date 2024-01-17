@@ -1,0 +1,40 @@
+<h1>Mind Cracker</h1>
+
+<a href="https://www.codingame.com/training/hard/mind-cracker">https://www.codingame.com/training/hard/mind-cracker</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">In this coding challenge, you are tasked with deciphering a series of Mastermind riddles. Mastermind is a classic board game where players deduce a hidden color code through a process of elimination. In this digital version, your task is to efficiently determine the correct color combination based on the provided clues.<br><br>Develop an algorithm that accurately deduces the unique solution for each riddle with minimal computational effort.<br>Brute force solutions may struggle to meet performance requirements.<br><br>Rules:<br><br>    The game involves a grid of <var>nColumns</var> columns and <var>nLines</var> lines of color code guesses.<br><br>    Each line contains a guess on what the color code is, as  <var>nColumns</var>  colors represented each by an integer between <const>0</const> to <var>nColors</var><const> &ndash; 1</const>.<br><br>    Next to each guess are the numbers of clues:<br>    - <var>nBlackClues</var> indicates <strong>the number of color matches in the correct position (black clues)</strong>.<br>    - <var>nWhiteClues</var> indicates <strong>the number of color matches in incorrect positions (white clues)</strong>.<br><br>Check out the rules of Mastermind if needed: https://en.wikipedia.org/wiki/Mastermind_(board_game)#Gameplay_and_rules<br><br>It is guaranteed that there is always one unique solution.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong> <var>nColors</var>: Number of available colors.<br><strong>Line 2</strong> <var>nColumns</var>: Number of colors in each guess.<br><strong>Line 3</strong> <var>nLines</var>: Number of guesses.<br><br>   <strong>Next <var>nLines</var> lines</strong> each containing, separated by a space: <br>- <var>colors</var>: a string of <var>nColumns</var> integers ( from <const>0</const> to <var>nColors</var><const> &ndash; 1</const>) representing a guess<br>- <var>nBlackClues</var>: Number of black clues received for that guess.<br>- <var> nWhiteClues</var>: Number of white clues received for that guess.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">Output a string of <var>nColumns</var> integers (<const>0</const> to <var>nColors</var><const> &ndash; 1</const>) representing the unique solution that satisfies the provided clues.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">3 &le; <var>nColors</var> &le;10<br>3 &le; <var>nLColumns</var> &le;7<br>2 &le; <var>nLines</var> &le;11</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+3
+2
+002 0 2
+101 1 1</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">120</pre>
+         </div>
+      </div>
+   </div>
+</div>

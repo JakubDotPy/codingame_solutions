@@ -1,0 +1,37 @@
+<h1>What the Brainfuck !</h1>
+
+<a href="https://www.codingame.com/training/medium/what-the-brainfuck">https://www.codingame.com/training/medium/what-the-brainfuck</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Brainfuck is a minimalist programming language consisting of 8 commands. That's all.<br>However it is Turing complete and allows you to make whatever you want, if you are very patient and motivated.<br><br>Your goal is to create a fully functional Brainfuck interpreter.<br>Let see how it works.<br><br>The Brainfuck model is composed of three elements:<br>- <strong>An array</strong> of <var>S</var> one byte cells initialized to 0, and indexed from 0.<br>- <strong>A pointer</strong> initialized to point to the first cell (index 0) of the array.<br>- <strong>A program</strong> made up of the 8 valid instructions.<br><br>The following are the instructions:<br>- <const>&gt;</const> increment the pointer position.<br>- <const>&lt;</const> decrement the pointer position.<br>- <const>+</const> increment the value of the cell the pointer is pointing to.<br>- <const>-</const> decrement the value of the cell the pointer is pointing to.<br>- <const>.</const> output the value of the pointed cell, interpreting it as an ASCII value.<br>- <const>,</const> accept a positive one byte integer as input and store it in the pointed cell.<br>- <const>[</const> jump to the instruction after the corresponding <const>]</const> if the pointed cell's value is 0.<br>- <const>]</const> go back to the instruction after the corresponding <const>[</const> if the pointed cell's value is different from 0.<br><br><strong>Note:</strong> The <const>[</const> and <const>]</const> commands always come in pairs, and in case of nested <const>[</const><const>]</const> the first <const>[</const> always correspond to the last <const>]</const>.<br><br><strong>Be careful:</strong> A Brainfuck program can contain any characters, that allow the developers to comment their code and to make it more readable. Of course your interpreter must ignore all of these &quot;inactive&quot; characters.<br><br>In some cases, errors might be encountered. When this happens you have to stop the execution of the program and  print the correct error message from the following list:<br>- <strong>&quot;SYNTAX ERROR&quot;</strong> if a <const>[</const> appears to have no <const>]</const> to jump to, or vice versa. Note that this error must be raised before the execution of the program, no matter its position in the Brainfuck code.<br>- <strong>&quot;POINTER OUT OF BOUNDS&quot;</strong> if the pointer position goes below 0 or above <var>S</var> - 1.<br>- <strong>&quot;INCORRECT VALUE&quot;</strong> if after an operation the value of a cell becomes negative or higher than 255.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Three integers <var>L</var>, <var>S</var> and <var>N</var> for the program line count, the needed array size and the inputs count.<br><strong>Next <var>L</var> lines:</strong> A line of the Brainfuck program.<br><strong>Next <var>N</var> lines:</strong> An integer input to the Brainfuck program.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The output must be the characters sequence printed (<const>.</const>) by the Brainfuck program, or the correct error message if a problem is encountered.<br>Note that the given programs will never try to use <const>.</const> on a value corresponding to no printable ASCII characters.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <var>L</var> &le; 100<br>0 &le; <var>N</var> &le; 100<br>0 &lt; <var>S</var> &le; 100</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1 1 0
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.+.+.</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">ABC</pre>
+         </div>
+      </div>
+   </div>
+</div>

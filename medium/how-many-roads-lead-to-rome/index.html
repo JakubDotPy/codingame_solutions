@@ -1,0 +1,40 @@
+<h1>How many roads lead to Rome?</h1>
+
+<a href="https://www.codingame.com/training/medium/how-many-roads-lead-to-rome">https://www.codingame.com/training/medium/how-many-roads-lead-to-rome</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Someone just told you all roads lead to Rome.<br>As a matter of fact, this is not true.<br>In order to restore scientific truth, you must write a program that counts the actual number of paths from <strong>Paris</strong> to <strong>Rome</strong>, where cities are visited <strong>at most once</strong>.<br>To start with, you are given a collection of all paths that directly connect two individual cities and where each city is defined by a number from 1 to 100. <strong>Paris</strong> has <strong>label 1</strong>, and <strong>Rome</strong> has <strong>label 100</strong>.<br>One may use paths <strong>both ways</strong>.<br><br>Let us illustrate the problem with a simple example: <br>you are given 5 paths:<br><br>1 50<br>50 100<br>25 50<br>75 25<br>100 75<br><br>So, we have 5 cities:<br>- 1 (Paris)<br>- 25<br>- 50<br>- 75<br>- 100 (Rome)<br><br>There are 2 roads from Paris to Rome:<br>1 -&gt; 50 -&gt; 100<br>1 -&gt; 50 -&gt; 25 -&gt; 75 -&gt; 100</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong>: An integer <var>N</var> corresponding to the total number of paths<br><strong><var>N</var> next lines</strong>: Two integers <var>A</var> and <var>B</var> corresponding to the two cities the path connects.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The number of roads from Paris to Rome</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>N</var> &le; 100<br>1 &le; <var>A</var>,<var>B</var> &le; 100</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">4
+1 25
+25 50
+50 75
+75 100</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1</pre>
+         </div>
+      </div>
+   </div>
+</div>

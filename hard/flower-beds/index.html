@@ -1,0 +1,45 @@
+<h1>Flower beds</h1>
+
+<a href="https://www.codingame.com/training/hard/flower-beds">https://www.codingame.com/training/hard/flower-beds</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">In his garden, Lancelot has nice <strong>polygon-shaped</strong> flower beds that he would like to fill with flowers at <strong>evenly-spaced</strong> intervals. <br><br>So he has hammered poles in the ground and stretched strings <strong>in a grid pattern</strong> over each flower bed, to materialize potential planting spots. Lancelot is now ready to put flowers on all planting spots which are <strong>inside</strong> flower beds, but there is one question left: <strong>how many flowers should he buy?</strong><br><br><strong>Examples:</strong><br>Here is the flower bed in the first test.<br>  - flower beds vertices are shown with <const>#</const> <br>  - potential planting spots are shown with <const>.</const><br>  - flowers are shown with <const>o</const><br><pre style="font-family: monospace">  <br>   ^  .  .  .  .  .  .  .  .  .<br>12 +  .  .  .  .  .  .  .  .  .<br>11 +  .  .  #  .  #--#  .  .  .<br>10 +  .  . /o\ . /o  o\ .  .  .<br> 9 +  .  ./ o \./ o  o \.  .  .<br> 8 +  .  /  o  #  o  o  #  .  .<br> 7 +  . /o  o  o  o  o /.  .  .<br> 6 +  ./ o  o  o  o  o/ .  .  .<br> 5 +  #  o  o  o  o  #  .  .  .<br> 4 +  .\ o  o  o  o  o\ .  .  .<br> 3 +  . \o  o  o  o  o \.  .  .<br> 2 +  .  #--------------#  .  .<br> 1 +  .  .  .  .  .  .  .  .  .<br> 0 +--+--+--+--+--+--+--+--+--+--&gt;<br>   0  1  2  3  4  5  6  7  8  9<br></pre><br>Lancelot needs <strong>33</strong> flowers to fill this flower bed. <br>So the output should be: <pre style="font-family: monospace">33</pre><br><br>Here is the example in the second test:<br><pre style="font-family: monospace"><br>   ^ . . . . . . . .<br>   |<br> 8 + . # . . # . . .<br>   |  / \   / \ <br> 7 + # o #-# o # . .<br>   | |         |<br> 6 + # o # # o # . .<br>   |  \ /| |\ /<br> 5 + . # | | # . . .<br>   |     | | <br> 4 + . # | | # . . .<br>   |  / \| |/ \<br> 3 + # o # # o # . .<br>   | |         |<br> 2 + # o #-# o # . .<br>   |  \ /   \ /<br> 1 + . # . . # . . .<br>   |<br> 0 +-+-+-+-+-+-+-+-+-&gt;<br>   0 1 2 3 4 5 6 7 8<br></pre><br>Lancelot needs only <strong>8</strong> flowers to fill this one. <br>So the output should be: <pre style="font-family: monospace">8</pre><br><br><strong>Notes:</strong><br>- flowers cannot be planted on the flower bed boundary<br>- flower bed vertices are always on potential planting spots (their coordinates are <strong>integers</strong>)<br>- flower bed edges do not intersect each others</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> an integer <var>N</var> the number of vertices of the flower bed<br><strong>Next <var>N</var> lines:</strong> 2 integers <var>x</var> and <var>y</var> the coordinates of a vertex</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">An integer <var>F</var> the number of flowers needed to fill the flower bed</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">3 &le; <var>N</var> &le; 100<br>0 &le; <var>x</var>, <var>y</var> &le; 10000<br><var>F</var> &lt; 2^32</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">9
+2 2
+7 2
+6 5
+7 8
+6 11
+5 11
+4 8
+3 11
+1 5</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">33</pre>
+         </div>
+      </div>
+   </div>
+</div>

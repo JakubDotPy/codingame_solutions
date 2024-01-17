@@ -1,0 +1,42 @@
+<h1>Tiny Forest</h1>
+
+<a href="https://www.codingame.com/training/medium/tiny-forest">https://www.codingame.com/training/medium/tiny-forest</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You have just inherited of a small plot of land of width <var>W</var> and height <var>H</var> with some trees on it. You want to grow a forest, but you have only <const>1</const> seed to plant. Find the maximum number of trees after <const>33</const> years you can have by planting the seed at the best place.<br><br><strong>Rules:</strong><br>-Seeds need 10 years to grow into a tree.<br>-Trees produce 4 seeds around them after one year.<br>-Trees may already be present on your land. They will also produce seeds after one year.<br><br><strong>Year 0</strong> : X is your one and only seed and Y is a tree already present.<br><br><pre style="font-family: monospace">.  .  .  .  .</pre>        <br><pre style="font-family: monospace">.  X  .  .  .</pre><br><pre style="font-family: monospace">.  .  .  .  .</pre><br><pre style="font-family: monospace">.  .  .  .  .</pre> <br><pre style="font-family: monospace">.  .  .  .  Y</pre><br><br><strong>Year  1</strong> : Trees produce seeds after one year.<br><br><pre style="font-family: monospace">.  .  .  .  .</pre>        <br><pre style="font-family: monospace">.  X  .  .  .</pre><br><pre style="font-family: monospace">.  .  .  .  .</pre><br><pre style="font-family: monospace">.  .  .  .  X</pre> <br><pre style="font-family: monospace">.  .  .  X  Y</pre><br><br><strong>Year  10</strong> : Your seed is now a tree. Congratulations!<br><br><pre style="font-family: monospace">.  .  .  .  .</pre>        <br><pre style="font-family: monospace">.  Y  .  .  .</pre><br><pre style="font-family: monospace">.  .  .  .  .</pre><br><pre style="font-family: monospace">.  .  .  .  X</pre> <br><pre style="font-family: monospace">.  .  .  X  Y</pre><br><br><strong>Year 11</strong> : Your new tree starts to produce seeds after a year.<br><br><pre style="font-family: monospace">.  X  .  .  .</pre>        <br><pre style="font-family: monospace">X  Y  X  .  .</pre><br><pre style="font-family: monospace">.  X  .  .  .</pre><br><pre style="font-family: monospace">.  .  .  .  Y</pre> <br><pre style="font-family: monospace">.  .  .  Y  Y</pre><br><br><strong>Year 12</strong> : The old trees in the corner also keep spreading.<br><br><pre style="font-family: monospace">.  X  .  .  .</pre>        <br><pre style="font-family: monospace">X  Y  X  .  .</pre><br><pre style="font-family: monospace">.  X  .  .  X</pre><br><pre style="font-family: monospace">.  .  .  X  Y</pre> <br><pre style="font-family: monospace">.  .  X  Y  Y</pre><br><br><strong>Year 33</strong> : Finally you have a tiny forest of 21 trees!<br><br><pre style="font-family: monospace">Y  Y  Y  X  .</pre>         <br><pre style="font-family: monospace">Y  Y  Y  Y  Y</pre> <br><pre style="font-family: monospace">Y  Y  Y  Y  Y</pre> <br><pre style="font-family: monospace">X  Y  Y  Y  Y</pre>  <br><pre style="font-family: monospace">.  Y  Y  Y  Y</pre><br><br>Maybe if you plant the seed at another place you can get a bigger forest in the end.<br>When you will find the best place, you will need to give the number of trees you get after 33 years.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong> : an integer <var>W</var> for the width of the parcel.<br><strong>Line 2</strong> : an integer <var>H</var> for the height of the parcel.<br><strong>Next <var>H</var> lines</strong> : each line of the land, with trees (<const>Y</const>) or grass (<const>.</const>).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1</strong> : an integer <var>N</var> for the number of trees you can have on your land after <const>33</const> years by planting your seed at the best place.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &lt;=  <var>W</var> &lt;= 40<br>1 &lt;=  <var>H</var>  &lt;= 40</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">5
+5
+.....
+.....
+.....
+.....
+.....</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">13</pre>
+         </div>
+      </div>
+   </div>
+</div>

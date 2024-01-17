@@ -1,0 +1,45 @@
+<h1>if then else</h1>
+
+<a href="https://www.codingame.com/training/medium/if-then-else">https://www.codingame.com/training/medium/if-then-else</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement"><pre style="font-family: monospace">begin<br>  if (condition1) then<br>    action1<br>  else<br>    action2<br>  endif<br>  <br>  if (condition2) then<br>    action3<br>  else <br>    action4<br>  endif<br>end</pre><br>How many different results this program can produce?<br><strong>Answer is 4.</strong><br><br>By varying combination of condition1 and condition2, there are 4 possible different results: <br>🔹 action1, action3<br>🔹 action1, action4<br>🔹 action2, action3<br>🔹 action2, action4<br><br><br>In this puzzle, our focus is to evaluate the program logical structure. <br>We do not care what conditions are given nor what actions are to happen.<br>We just want to know the number of result combinations.<br><br>To ease evaluation, we normalize the syntax of the program.<br><br>🔶 &quot;if...then&quot; is represented by &quot;<strong>if</strong>&quot;. We assume there should always be a condition, hidden, after &quot;if&quot;.<br>🔶 We assume following an &quot;if&quot; line there is always one (no more, no less) related &quot;<strong>else</strong>&quot; line. &quot;if..else&quot; will be finalized by an &quot;<strong>endif</strong>&quot; line to make a complete statement.<br>🔶 Nested conditions are allowed.<br>🔶 Action statements are represented by &quot;<strong>S</strong>&quot;. It can appear anywhere within the program to perform actions. We are lazy sometimes we may omit writing it but you have to assume within an if-else-endif structure there is always at lease one action statement (can be hidden) for the &quot;true&quot; condition and another one (also can be hidden) for the &quot;false&quot; condition.<br>🔶 The whole program is enclosed by <strong>begin</strong> and <strong>end</strong><br>🔶 We do not indent the lines; we do not insert blank lines.<br><br>The above example program can be normalized as:<br><br><pre style="font-family: monospace">begin<br>if<br>else<br>endif<br>if<br>else<br>endif<br>end</pre><br><br>Another example with nested conditions:<br><br><pre style="font-family: monospace">begin<br>  if (condition1) then<br>    S<br>  else<br>    if (condition2) then<br>      S<br>    else<br>      S<br>    endif<br>  endif<br>end</pre><br><br>This program can be normalized as:<br><br><pre style="font-family: monospace">begin<br>if<br>S<br>else<br>if<br>S<br>else<br>S<br>endif<br>endif<br>end</pre><br><strong>It has 3 result combinations.</strong><br><br>More program structure examples are in the test cases.<br><br>Your task is to evaluate some normalized program structures to tell the number of result combinations.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1 :</strong> <var>N</var>, the number of lines in the program.<br><strong>The following <var>N</var> lines</strong> are the normalized program codes.<br><br>There is no unnecessary space at the front or end of the lines.<br>You can assume all given codes are syntactically correct.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1 :</strong> The number of result combinations</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &le; <var>N</var> &le; 195</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">8
+begin
+if
+else
+endif
+if
+else
+endif
+end
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">4</pre>
+         </div>
+      </div>
+   </div>
+</div>

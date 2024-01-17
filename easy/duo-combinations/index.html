@@ -1,0 +1,41 @@
+<h1>Duo combinations</h1>
+
+<a href="https://www.codingame.com/training/easy/duo-combinations">https://www.codingame.com/training/easy/duo-combinations</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">We as programmers know about the binary, which machine understands. A Binary combination of 0 and 1 for <strong>n</strong> bits holds 2<strong>ⁿ</strong> combinations. For example, 3-bit combinations will be: <const> 000, 001, 010, 011, 100, 101, 110, 111 </const>.<br><br>Now, what if the bits change? It would still be a binary or a duo combination of the symbols used. To get over the usual 0-1 as digits or symbols, let's attempt using several distinct special character symbols for the sake of modification. With various symbols provided, use every character in place of <const>0</const> bit with its following character as bit <const>1</const>. As last character would not have any character following it, do not try to have its circular pairing with first one.<br><br>As a quick clarification, refer to the following examples:<br>- If characters are <const>@</const>, <const>$</const>, pair up <const>@</const> with <const>$</const>.<br>- If characters are <const>@</const>, <const>$</const>, <const>#</const>, pair up <const>@</const> with <const>$</const>, followed by <const>$</const> with <const>#</const>.<br>- If characters are <const>@</const>, <const>$</const>, <const>#</const>, <const>%</const>, pair up <const>@</const> as <strong>0</strong> with <const>$</const> for <strong>1</strong>, followed by <const>$</const> as <strong>0</strong> with <const>#</const> for <strong>1</strong> and then <const>#</const> as <strong>0</strong> with <const>%</const> as <strong>1</strong>.<br>and so on ...<br>Note: In case you just receive a single character, just use the same character instead of empty output.<br><br>Given some distinct symbols as input, try to output all the unique combinations of all the two adjacent symbols as bits. Feel free to make use of any binary sequences generation techniques or come up with your own edition to match the order of desired output.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong> contains an integer <var>total</var><br><strong>Next <var>total</var> lines</strong> contain one <var>character</var> symbol to be used as a bit with its adjacent symbols.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">Various possible combinations with each combination in a separate line, having same length as the total number of given symbols, and formed with characters in adjacent rows of a given symbol.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><var>character</var> symbols belong to { <const>!</const>, <const>@</const>, <const>#</const>, <const>$</const>, <const>%</const>, <const>^</const>, <const>&amp;</const>, <const>*</const>, <const>()</const>, <const>[]</const>, <const>:</const>, <const>.</const>, <const>\</const>, <const>/</const> }<br>1 &lt; <var>total</var> count of symbols (per testcase) &lt; 10</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+*
+#</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">**
+*#
+#*
+##</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,42 @@
+<h1>Mandelbrot Set Approximation</h1>
+
+<a href="https://www.codingame.com/training/easy/mandelbrot-set-approximation">https://www.codingame.com/training/easy/mandelbrot-set-approximation</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">The Mandelbrot set is the set of all complex numbers <var>c</var> that do not diverge (don't get bigger and bigger) when you repeatedly apply the function:<br><br>z(n+1) = z(n)^2 + <var>c</var><br><br>with z(0) = 0.<br>For example, if <var>c</var> = 1 then z(0)=0, z(1) = 0^2+1 = 1, z(2) = 1^2 + 1 = 2, z(3) = 2^2 + 1 = 5, etc. - so for c = 1, it diverges (it gets bigger each time).<br><br><var>c</var> can be any complex number, which can be simplified as a 2-column vector [x,y] where 'x' is the 'real' part and 'y' is the 'imaginary' part. [x,y]^2 is defined as [x^2-y^2, 2*x*y] (if your coding language doesn't natively support complex arithmetic).<br><br>Given an input <var>n</var> which is the number of rows of output to give in your answer, with the number of columns being 1.5*(<var>n</var>-1)+1, each having the same step size - step = 2/(<var>n</var>-1). Approximate the Mandelbrot set by checking whether each point on the 2D region from x = -2 to +1 and y = -1 to +1 is still 'small' after 10 iterations of the function. 'Small' is defined here by whether the absolute value of z(10) (the 10th iteration) is &lt;= 1.<br><br>e.g. for <var>c</var> = [0.5,0.5], z(0) = [0,0], z(1) = [0.5,0.5],<br>z(2) = [0.5,0.5]^2+[0.5,0.5] = [0.5^2-0.5^2, 2*0.5*0.5]+[0.5,0.5] = [0,0.5]+[0.5,0.5] = [0.5,1]<br>z(3) = ...<br>z(10) &asymp; [9.746656569875421e+17,1.5363420963186726e+17i]<br>|z(10)| &asymp; 9.866998597750816e+17  &lt;- definitely not in the set<br><br>Print the 2D grid with <var>n</var> evenly spaced points in -1&le;y&le;1 and 1.5*(<var>n</var>-1)+1 points in -2&le;x&le;1 and display points that diverge as a space ' ' and points in the set as a '*'. (Leave trailing spaces so the grid is a square)<br><br>Note: the step size will be the same in x and y.<br>Note: the absolute value of a complex number is the square root of the sum of the two components squared &radic;(x^2+y^2).</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><var>n</var>: the (integer) number of rows  for your 2D grid, number of columns = 3*(<var>n</var>-1)/2+1.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>n</var> lines</strong>: the approximated Mandelbrot set with points in the set shown as '*' and points that diverged shown as a space ( ).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &le; <var>n</var> &le; 25 (25 rows and 37 columns at most)<br><var>n</var> is always odd</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">7</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">          
+      *   
+    ****  
+ ******   
+    ****  
+      *   
+          </pre>
+         </div>
+      </div>
+   </div>
+</div>

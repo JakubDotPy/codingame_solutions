@@ -1,0 +1,39 @@
+<h1>Tree Paths</h1>
+
+<a href="https://www.codingame.com/training/easy/tree-paths">https://www.codingame.com/training/easy/tree-paths</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are given a binary tree, where each node in the tree has two or zero children. If a node <strong>X</strong> has two children, they are called <var>L</var> Left &amp;  <var>R</var> Right children respectively. <strong>X</strong> is a <strong>Parent</strong> of <var>L</var> and <var>R</var>.<br><br>All trees have one root node, which is the only node without <strong>parent</strong>. All the other nodes have exactly one <strong>parent</strong>.<br><br>All tree nodes have assigned a unique number called <strong>index</strong>.<br>Given a tree and an index <var>V</var>, <strong>print the path from the root to the tree node with index <var>V</var></strong><br><br>A <strong>tree path</strong> starts at the root node, and it goes down by choosing the left or the right children until it arrives to the target value. Print the <const>Left</const> &amp; <const>Right</const> elements from the path in a single line.<br><br>For instance, if we have the following tree.<br><pre style="font-family: monospace"><br>     1<br>    / \<br>   /   \<br>  2     \<br> / \     3<br>4   5   / \<br>       9   \<br>            8<br>           / \<br>          6   7<br></pre><br>For this sample tree, <strong>Node 1</strong> is the root, the only one without parents.<br>if <var>V</var> = 5, the Tree Path is <const>Left Right</const><br>if <var>V</var> = 7, the Tree Path is <const>Right Right Right</const><br>if <var>V</var> = 6, the Tree Path is <const>Right Right Left</const></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1: </strong> Integer <var>N</var>, the number of nodes in the tree.<br><strong>Line 2: </strong> Integer <var>V</var>, the index of the target node.<br><strong>Line 3: </strong> Integer <var>M</var>, the number of nodes with two children.<br><strong>Followed by <var>M</var> lines</strong> containing three numbers <var>P</var> <var>L</var> <var>R</var> each:<br><var>P</var> is the node index<br><var>L</var> is the left children of <var>P</var><br><var>R</var> is the right children of <var>P</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">A sequence of <const>Left</const> and <const>Right</const> commands in a single line, representing the tree path from the root node, to the target node <var>V</var>.<br><br>If the target node <var>V</var> is the root, print <const>Root</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">All <var>N</var> node indexes are unique and go from 1 to <var>N</var>.<br>All tree nodes belong to a single tree.<br><br>0 &lt; <var>N</var> &lt; 128<br>1 &le; <var>V</var>, <var>P</var>, <var>L</var>, <var>R</var> &le; <var>N</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+2
+1
+1 2 3</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">Left</pre>
+         </div>
+      </div>
+   </div>
+</div>

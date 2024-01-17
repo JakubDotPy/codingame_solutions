@@ -1,0 +1,38 @@
+<h1>Queneau Numbers</h1>
+
+<a href="https://www.codingame.com/training/medium/queneau-numbers">https://www.codingame.com/training/medium/queneau-numbers</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Queneau Numbers were discovered by the French writer and mathematician Raymond Queneau, while member of the OULIPO.<br><br>A Queneau Number is a number <var>N</var> such that the sequence [1..N] can go through a series of spiral permutations (or &quot;snail&quot; permutations) and come back to [1..N] in exactly N iterations. The permutation consists in tracing a spiral from the last number of the sequence, spiraling towards the center. <br>You can visualize it for the sequence 1 2 3 4 5 :<br>1&larr;&larr;&larr;&larr;5 <br>1&rarr;&rarr;&rarr;45 <br>12&larr;&larr;45<br>12&rarr;345<br>thus [1 2 3 4 5] becomes [5 1 4 2 3]<br><br><br>For instance, 5 being a Queneau Number, the permutations will start from the sequence<br><br><pre style="font-family: monospace">1,2,3,4,5</pre><br><br>And go as follows:<br><br><pre style="font-family: monospace">5,1,4,2,3</pre><br><pre style="font-family: monospace">3,5,2,1,4</pre><br><pre style="font-family: monospace">4,3,1,5,2</pre><br><pre style="font-family: monospace">2,4,5,3,1</pre><br><pre style="font-family: monospace">1,2,3,4,5</pre><br><br>The Nth line is always the same as the initial sequence, or else the number is <strong>not</strong> a Queneau Number.<br><br>Erratum: Actually, a Queneau number should be such that the order of the permutation is exactly N, (i.e the sequence [1..N] cannot become [1..N] again before exactly N spiral permutations).<br>In this problem, all numbers such that [1..N] is still [1..N] after N spiral permutations are considered valid even if it might take less than N spiral permutations to encounter [1..N]</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">One number <var>N</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>N</var> lines:</strong> the different steps of permutations, as a comma-separated sequence<br>OR<br><const>IMPOSSIBLE</const> if the number is not a Queneau number.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &le; <var>N</var> &le; 30</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">3,1,2
+2,3,1
+1,2,3</pre>
+         </div>
+      </div>
+   </div>
+</div>

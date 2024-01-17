@@ -1,0 +1,47 @@
+<h1>Solve for X</h1>
+
+<a href="https://www.codingame.com/training/hard/solve-for-x">https://www.codingame.com/training/hard/solve-for-x</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">This puzzle builds on the concepts explored in the puzzle 24: The Long Game by @jddingemanse. Significant insight can be gained by solving that puzzle before working through this one:<br><br>https://www.codingame.com/training/hard/24-the-long-game<br><br>In this puzzle, you are given an <var>equation</var> with a variable <strong>x</strong> somewhere in that equation. Your task is to <strong>REARRANGE</strong> the terms of the expressions on either side of the equal sign to produce an equation in the following form:<br><br><const>x=</const><var>expression</var><br><br>The <var>expression</var> on the right side of the equal sign must be in &quot;standard form&quot; per the rules identified in 24: The Long Game. For your convenience, those rules are copied below. <strong>To see these rules applied to a sample expression, please refer back to 24: The Long Game.</strong><br><br><br><strong>EXPRESSIONS, TERMS AND SUBEXPRESSIONS</strong><br>To understand the rules for rewriting expressions, we must distinguish <strong>expressions, terms and subexpressions</strong>.<br><br><strong>expression:</strong> Terms separated by mathematical operators that can be evaluated from left to right. For example: <const>1+2+3+18</const>, <const>3*2*1*4</const>, <const>24+10-6-4</const>, <const>24/1/1/1</const> or <const>2*3*40/10</const>. <br><br><strong>term:</strong> A constant or a subexpression. The expression <const>3+7*(1+2)</const> has two terms. The first term is the constant <const>3</const>. The second term is the subexpression <const>7*(1+2)</const> - which itself also consists of one constant <const>7</const> and one subexpression <const>(1+2)</const>.<br><br><strong>subexpression:</strong> A subexpression is an expression that must be evaluated before the parent expression can be evaluated. The expression <const>(1+2)*(9-1)</const> consists of two terms, both of which are subexpressions: <const>(1+2)</const> and <const>(9-1)</const>. The expression <const>20+6/3+2</const> consists of three terms, of which one is a subexpression: <const>6/3</const> (the other two terms are the constants <const>20</const> and <const>2</const>).<br><br><strong>REWRITING EXPRESSIONS</strong><br><strong>Only rewrite an expression such that it remains mathematically the same.</strong><br>Rewrite expressions according to the following three rules:<br><br><strong>1. Use as few parentheses as possible.</strong><br>- Remove unnecessary parentheses: <const>(1*2)*3*4</const>&rarr;<const>1*2*3*4</const><br>- Rewrite an expression, if necessary: <const>9+18-(2+1)</const>&rarr;<const>9+18-2-1</const>, <const>12/(3/(2+4))</const>&rarr;<const>12*(2+4)/3</const><br>	<br><strong>2. Sort operators: <const>+</const> before <const>-</const> and <const>*</const> before <const>/</const>.</strong><br>- Change the order of terms such that for their connecting operators <const>+</const> comes before <const>-</const>, and <const>*</const> comes before <const>/</const><br>- Do this within a parent expression: <const>8-3+9+10</const>&rarr;<const>8+9+10-3</const>, <const>2/3*6*6</const>&rarr;<const>2*6*6/3</const>, <const>8-2+3*6</const>&rarr;<const>8+3*6-2</const><br>- Do this within a subexpression: <const>3*(5-4+7)</const>&rarr;<const>3*(5+7-4)</const>, <const>8+6/3*8</const>&rarr;<const>8+6*8/3</const><br>- This does not apply to operators in two different subexpressions: in <const>(3-1)*(5+7)</const>, the <const>-</const> and <const>+</const> are not part of the same subexpression, so their order is not decided by this rule (instead, use rule 3c for this case).<br><br><strong>3. For cases not decided by rule 2, sort terms of expressions and subexpressions</strong><br><strong> a)</strong> Sort constants in ascending order: <const>3*(16-5-3)</const>&rarr;<const>3*(16-3-5)</const>, <const>4+5*4*1</const>&rarr;<const>4+1*4*5</const>, <const>25-10/5/2</const>&rarr;<const>25-10/2/5</const><br><strong> b)</strong> Place constants before subexpressions: <const>(16-3-5)*3</const>&rarr;<const>3*(16-3-5)</const>, <const>5*8/4+14</const>&rarr;<const>14+5*8/4</const><br><strong> c)</strong> Sort two subexpressions according to their numerical value: <const>4*5+1*4</const>&rarr;<const>1*4+4*5</const> (1*4 &lt; 4*5), <const>(5+7)*(3-1)</const>&rarr;<const>(3-1)*(5+7)</const> (3-1 &lt; 5+7)<br>In the case of equal value, sort the subexpressions as strings, based on the ASCII value of characters: <const>48/4+3*4</const>&rarr;<const>3*4+48/4</const> ('3*4' &lt; '48/4')</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>numEquations</var> indicating the number of equations to be solved (rearranged).<br><strong>Next <var>numEquations</var> lines:</strong> A string <var>equation</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> A string '<const>x=</const><var>expression</var>' with the expression rewritten in standard form.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><var>numEquations</var> &lt;= 40<br>length(<var>equation</var>) &lt; 100<br><br><var>equation</var> is always a valid equation and contains only one <const>x</const>, one <const>=</const>, and the characters <const>0</const> to <const>9</const>, <const>+</const>, <const>-</const>, <const>*</const>, <const>/</const>, <const>(</const> and <const>)</const>.<br><br>The following two constraints ensure each <var>equation</var> is in the set of equations fully covered by the rules of 24: The Long Game.<br><br>There is no explicit zero term anywhere in any <var>equation</var>.<br><br>No expression or subexpression in the <var>equation</var> will ever begin with a negative sign (<const>-</const>).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">6
+3+x=7
+x+44=6
+18=29+x
+310=x+429
+x+4+9+2+23+18=13+26+3+1
+8+4+10+67+234=x+87+98+12+65</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">x=7-3
+x=6-44
+x=18-29
+x=310-429
+x=1+3+13+26-2-4-9-18-23
+x=4+8+10+67+234-12-65-87-98</pre>
+         </div>
+      </div>
+   </div>
+</div>

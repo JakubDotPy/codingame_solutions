@@ -1,0 +1,135 @@
+<h1>Winamax Sponsored Contest</h1>
+
+<a href="https://www.codingame.com/training/hard/winamax-sponsored-contest">https://www.codingame.com/training/hard/winamax-sponsored-contest</a>
+
+<div class="statement_back" id="statement_back" style="display:none">&nbsp;</div>
+
+<div class="statement-cover" style="background-size: cover; background-repeat:no-repeat; min-height: 300px; background-image: url(https://www.codingame.com/servlet/fileservlet?id=9517778048847);">&nbsp;</div>
+
+<div class="statement-container">
+<div class="statement-body"><!-- GOAL -->
+<div class="statement-section statement-goal">
+<h2><span class="icon icon-goal">&nbsp;</span> <span>The Goal</span></h2>
+
+<div class="statement-goal-content">Winamax now offers a sports betting service.<br />
+While you wait for the results of the golf tournament, you decide to write a program capable of simulating the required strokes on a given golf course to minimize the time and effort needed to finish the game.</div>
+</div>
+<!-- RULES -->
+
+<div class="statement-section statement-rules">
+<h2><span class="icon icon-rules">&nbsp;</span> <span>Rules</span></h2>
+
+<div>
+<div class="statement-rules-content">In this puzzle, you are given a grid representing a golf course.<br />
+On each course is a certain amount of balls and an equal amount of holes. The objective is to find the route for each ball to a different hole without their paths ever crossing.<br />
+<br />
+Your program must output the <b>unique solution</b> for each course.<br />
+<br />
+A course has a given number of columns and rows. Each cell is represented by a character.<br />
+The cells can be:
+<ul>
+	<li>A dot <const>.</const> for an empty cell.</li>
+	<li>A positive integer between <const>1</const> and <const>9</const> for a ball. The value indicates the ball&#39;s <b>shot count</b>.</li>
+	<li>The letter <const>X</const> for a water hazard.</li>
+	<li>The letter <const>H</const> for a hole.</li>
+</ul>
+Balls can be hit multiple times across the grid, as many times as their <b>shot count</b>.<br />
+Your program must output a grid of equal width and height, containing <strong>arrows</strong> indicating how the balls must be hit.<br />
+An <strong>arrow</strong> is represented by a sequence of cells containing a <strong>direction</strong>.<br />
+The four <strong>directions</strong> are represented by the characters <const>v</const>, <const>&lt;</const>, <const>&gt;</const> and <const>^</const> (respectively <strong>down</strong>, <strong>left</strong>, <strong>right</strong> and <strong>up</strong>).<br />
+<br />
+To show the movement of a ball, an <strong>arrow</strong> must start in the cell where the ball begins and must stop right before the cell in which the ball lands.<br />
+You need <strong>only</strong> output <strong>arrows</strong> in your solution, the rest of the grid should be respresented with dot <const>.</const> characters.<br />
+<br />
+A ball moves across as many cells as its <b>shot count</b> the first time it moves, vertically or horizontally. The next move becomes one shorter, it decreases the number of cells to pass by 1. The direction of movement may change after a move. When the next movement becomes 0, or the ball stops at a <strong>hole</strong> cell, the ball may not be moved any further.<br />
+<br />
+Arrows <strong>cannot</strong> cross balls, holes, or other arrows.<br />
+<br />
+Each ball must end in a hole. Holes may receive no more than <const>1</const> ball.<br />
+<br />
+A ball cannot leave the grid, and cannot stop in a water hazard. It can however <b>go over</b> water hazards.</div>
+<!-- Victory conditions -->
+
+<div class="statement-victory-conditions">
+<div class="icon victory">&nbsp;</div>
+
+<div class="blk">
+<div class="title">Victory Conditions</div>
+
+<div class="text">You output a solution grid:
+<ul>
+	<li>All balls land in a hole with at least one hit each.</li>
+	<li>Arrows do not cross each other.</li>
+	<li>Arrows do not cross ball or hole locations.</li>
+	<li>Arrows do not point to a water hazard.</li>
+	<li>Arrows do not point outside the grid.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- PROTOCOL -->
+
+<div class="statement-section statement-protocol">
+<h2><span class="icon icon-protocol">&nbsp;</span> <span>Game Input</span></h2>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Input</div>
+
+<div class="text">
+<p><span class="statement-lineno">Line 1: </span>Two space separated integers <var>width</var> and <var>height</var> representing the size of the grid.</p>
+
+<p><span class="statement-lineno">Next <var>height</var> lines: </span>One row of the grid containing <var>width</var> characters.</p>
+</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Output</div>
+
+<div class="text">All <var>height</var> rows of the solution grid, containing dots <const>.</const> for untouched cells or the characters <const>v</const>, <const>&lt;</const>, <const>&gt;</const>, <const>^</const> for arrows.</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Constraints</div>
+
+<div class="text">0 &lt; <var>width</var> &le; 1000</div>
+
+<div class="text">0 &lt; <var>height</var> &le; 1000</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Example</div>
+
+<div class="text">
+<div class="statement-inout">
+<div class="statement-inout-in" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Input</div>
+
+<pre>
+3 3
+2.X
+X.H
+.H1</pre>
+<img src="/servlet/fileservlet?id=9111339362267" style="width:100%" /></div>
+
+<div class="statement-inout-out" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Output</div>
+
+<pre>
+v..
+v..
+&gt;.^
+
+</pre>
+<img src="/servlet/fileservlet?id=9111321532465" style="width:100%" /></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

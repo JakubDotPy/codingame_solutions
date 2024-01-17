@@ -1,0 +1,41 @@
+<h1>The Michelangelo Code</h1>
+
+<a href="https://www.codingame.com/training/easy/the-michelangelo-code">https://www.codingame.com/training/easy/the-michelangelo-code</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Are secret messages hidden in famous texts?<br><br>Search the given <var>TEXT</var> for evenly spaced letters which form <var>WORD</var>s from the given list. Ignore punctuation, capitalization, and spacing.<br><br>Print the section of <var>TEXT</var> that contains the longest hidden <var>WORD</var>, in lowercase and omitting all non-letters. Highlight the hidden <var>WORD</var> with UPPERCASE. There will be only one such longest word.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> A string of <var>TEXT</var> to search in.<br><strong>Line 2:</strong> An integer <var>N</var> for the number of words in the list.<br><strong>Next <var>N</var> lines:</strong> A string of a <var>WORD</var> to search for.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> The portion of <var>TEXT</var> which contains the longest <var>WORD</var>, in lowercase except for the evenly spaced letters of <var>WORD</var>, with all non-letters removed.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">Length of <var>TEXT</var> &lt; 1000<br>1 &le; <var>N</var> &le; 2000<br>Length of <var>WORD</var> &lt; 25</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">some wacky runes a tourist found
+4
+secret
+hidden
+invisible
+message</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">SomEwaCkyRunEsaT</pre>
+         </div>
+      </div>
+   </div>
+</div>

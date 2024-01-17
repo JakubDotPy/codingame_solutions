@@ -1,0 +1,140 @@
+<h1>Wordle</h1>
+
+<a href="https://www.codingame.com/multiplayer/optimization/wordle">https://www.codingame.com/multiplayer/optimization/wordle</a>
+
+<div class="statement_back"></div>
+<div class="statement-body">
+  
+  <div class="statement-section statement-goal">
+    <h1>
+      <span class="icon icon-goal"> </span>
+      <span>The Goal</span>
+    </h1>
+    <div class="statement-goal-content">
+      This is an adaptation of an online game Wordle <a href="https://www.nytimes.com/games/wordle/index.html" target="_blank" rel="nofollow noopener noreferrer">(https://www.nytimes.com/games/wordle/index.html)</a> with slight modifications in the rules.
+      <br /><br />The goal of the game is to guess the hidden word based on the hints given each turn.
+    </div>
+  </div>
+  
+  <div class="statement-section statement-rules">
+    <h1>
+      <span class="icon icon-rules"> </span>
+      <span>Rules</span>
+    </h1>
+    <div>
+      <div class="statement-rules-content">
+
+    <ol><li>At each turn, the player will guess a word.</li><li>After each guess, the player will know the state of each letter.<br />
+      Letter at a position can have four states:
+              <ul><li>State <const>1</const> means the letter at the position is <strong>not present in the word</strong>.</li><li>State <const>2</const> means the letter at the position is <strong> present in the word</strong> but <strong>position is incorrect</strong>.</li><li>State <const>3</const> means the letter at the position is <strong>present in the word</strong> and <strong>position is correct</strong>.</li><li>State <const>0</const> means <strong>unknown</strong>. For the first turn only.</li></ul>   
+      </li><li>A letter can appear multiple times in the word.<br />
+        Same letter twice or multiple times in the word will work as follows:
+        <ul><li>If <strong>ORBIT</strong> is the word and player guessed <strong>ABBEY</strong>, <strong>B</strong> at the <strong>2nd</strong> position has state <strong>2</strong> and <strong>B</strong> at the <strong>3rd</strong> position has state <strong>3</strong>.</li><li>If <strong>CELEB</strong> is the word and player guessed <strong>ABBEY</strong>, <strong>B</strong> at both the <strong>2nd</strong> and <strong>3rd</strong> position have state <strong>2</strong>.</li><li>If <strong>SHARP</strong> is the word and player guessed <strong>ABBEY</strong>, <strong>B</strong> at both the <strong>2nd</strong> and <strong>3rd</strong> position have state <strong>1</strong>.</li></ul>
+      </li><li>Leaderboard is ascended by the amount of total guesses among all the validation test cases.</li></ol>
+      </div>
+    </div>
+  </div>
+      <div class="statement-section statement-rules">
+        
+        <div class="statement-victory-conditions">
+            <div class="icon victory"></div>
+            <div class="blk">
+                <div class="title">Victory Conditions</div>
+                <div class="text">
+                    <ul style="padding-top:0;padding-bottom:0"><li>
+                          You guess the word in less than 27 turns.
+                        </li></ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="statement-lose-conditions">
+            <div class="icon lose"></div>
+            <div class="blk">
+                <div class="title">Defeat Conditions</div>
+                <div class="text">
+                    <ul style="padding-top:0;padding-bottom:0"><li>
+                          You use more than 26 guesses.
+                        </li><li>
+                          You make a guess which is too short or too long.
+                        </li><li>
+                          Your guess containing characters other than alphabetical letters.
+
+
+
+
+                        </li></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  
+
+  
+  
+  
+  <div class="statement-section statement-warning">
+    <h1>
+      <span class="icon icon-warning"> </span>
+      <span>Note</span>
+    </h1>
+    <div class="statement-warning-content">
+      It is allowed to make guesses with unreal words although the word the player have to guess is a real word.<br />
+    </div>
+  </div>
+
+  
+  <div class="statement-section statement-protocol">
+    <h1>
+      <span class="icon icon-protocol"> </span>
+      <span>Game Input</span>
+    </h1>
+    
+    <div class="blk">
+      <div class="text">The program must first read the initialization data from standard input. Then, provide to the standard output one line for each game turn.</div>
+    </div>
+
+    
+    <div class="blk">
+      <div class="title">Initializaton input</div>
+      <div class="text">
+        <p><span class="statement-lineno">Line 1: </span>An integer <var>wordCount</var>, number of words in the word set.</p>
+      </div>
+      <div class="text">
+        <p><span class="statement-lineno">Line 2: </span><var>wordCount</var> amount of space separated words, each containing exactly <const>6</const> letters. Represents the word set, the word the player have to guess belongs to the word set.</p>
+      </div>
+    </div>
+
+    
+    <div class="blk">
+      <div class="title">Input for a game turn</div>
+      <div class="text">
+        <p><span class="statement-lineno">A single line: </span><const>6</const> space separated integers, each representing the <var>state</var> of the letter of the corresponding position of previous guess.</p>
+        For the first turn all the <const>6</const> states are <const>0</const>.
+         
+      </div>
+    </div>
+
+    
+    <div class="blk">
+      <div class="title">Output for a game turn</div>
+      <div class="text">
+        <span class="statement-lineno">A single line</span> containing a word of length <const>6</const> letters in uppercase.
+        <br />
+      </div>
+    </div>
+
+    
+    <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="text"><var>wordCount</var> ≈ <const>10000</const></div>
+      <div class="text">Word length &#61; <const>6</const> letters</div>
+      <div class="text">Response time per turn ≤ <const>50</const> ms</div>
+      <div class="text">Response time for the first turn ≤ <const>1000</const> ms</div>
+      <div class="text">Number of turns ≤ <const>26</const></div>
+    </div>
+  </div>
+  
+  
+</div>

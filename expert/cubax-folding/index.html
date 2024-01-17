@@ -1,0 +1,42 @@
+<h1>Cubax Folding</h1>
+
+<a href="https://www.codingame.com/training/expert/cubax-folding">https://www.codingame.com/training/expert/cubax-folding</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Woody and Buzz Lightyear are welcoming Cubax, Andy's new toy. This toy is actually a Chinese puzzle whose expected &ldquo;final&rdquo; state is a simple cube. During the festivities, Cubax unfolded, because it cannot move when folded.<br>Suddenly, Andy appears at the window! He will be up in the room in an instant. Buzz and Woody only have a few seconds to pack Cubax back into its original package before Andy comes in and discovers his toys are alive&hellip;<br><br>Cubax is composed of <var>N</var>&sup3; smaller cubes (elements) linked together in a kind of doubly linked chain. The chain has two ends, it doesn't loop.<br>3 successive elements of Cubax are either:<br>- always aligned<br>- always at a right angle (90&deg;)<br><br>Thus a simple way of defining Cubax's structure is to provide the successive number of aligned blocks, starting from the first element.<br><br>For example, representing <const>S</const> as the starting elements, <const>E</const> as the ending element and <const>X</const> as other elements, the structure defined as <const>332</const> could take any of the following 2D shapes:<br><pre style="font-family: monospace"><br>  XE   EX<br>  X     X<br>SXX   SXX   SXX   SXX<br>              X     X<br>             EX     XE<br></pre><br>Another example: <const>434</const> could be represented as:<br><pre style="font-family: monospace"><br>S E<br>X X<br>X X<br>XXX<br></pre><br>Note: Counting the successive the number of aligned elements implies that elements in an angle are counted twice. In the last example <const>434</const>, there are actually only <const>4</const>+<const>3-1</const>+<const>4-1</const>=<const>9</const> elements.<br><br>To provide the output solution, use the following rules.<br>For each series of aligned blocks, one character representing the direction where it has to point to is written:<br>- <const>U</const> Direction <strong>Up</strong> (increasing y)<br>- <const>D</const> Direction <strong>Down</strong> (decreasing y)<br>- <const>R</const> Direction <strong>Right</strong> (increasing x)<br>- <const>L</const> Direction <strong>Left</strong> (decreasing x)<br>- <const>F</const> Direction <strong>Front</strong> (increasing z)<br>- <const>B</const> Direction <strong>Back</strong> (decreasing z)<br>Considering a 3D representation (x,y,z), we will only be interested in the solutions where the first element is located at (1,1,1) and where the last element is located at (<var>N</var>,<var>N</var>,<var>N</var>)<br>Note: As a consequence, there will be no valid solution starting by <const>D</const>, <const>L</const> or <const>B</const>.<br><br>Example: for the input <const>3332</const>, the output <const>RDRD</const> corresponds to the following planar shape:<br><pre style="font-family: monospace"><br>SXX<br>  X<br>  XXX<br>    E<br></pre><br>For the same input <const>3332</const>, the output <const>RDLU</const> corresponds to:<br><pre style="font-family: monospace"><br>SXX<br>E X<br>XXX<br></pre><br>Your program has to read the initial shape of Cubax and provide to Woody and Buzz the moves to apply so as to pack it back to a full cube of side length <var>N</var>.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1 :</strong> An integer <var>N</var>. The side length of the cube<br><strong>Line 2 :</strong> A string <var>BLOCKS</var>. Each character providing the successive number of aligned blocks</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The alphabetically-sorted list of all solutions, one solution per line</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><const>2</const> &le; <var>N</var> &le; <const>4</const><br>SUM ( <var>BLOCKS</var>[i] - 1 ) = <var>N</var>&sup3; - 1<br><const>2</const> &le; <var>BLOCKS</var>[i] &le; <var>N</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+2222222</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">FRBULFR
+FUBRDFU
+RFLUBRF
+RULFDRU
+UFDRBUF
+URDFLUR</pre>
+         </div>
+      </div>
+   </div>
+</div>

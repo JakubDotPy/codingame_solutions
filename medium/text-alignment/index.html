@@ -1,0 +1,44 @@
+<h1>Text alignment</h1>
+
+<a href="https://www.codingame.com/training/medium/text-alignment">https://www.codingame.com/training/medium/text-alignment</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Your program must align a text, line by line, to the width of the largest line of the text and according to the requested alignment:<br><const>LEFT</const>: display text as-is.<br><const>RIGHT</const>: align text to the right.<br><const>CENTER</const>: spread the remaining space evenly on both sides of the text. If the number of remaining spaces is odd, leave the extra space on the right. Don't actually append space characters to the end of the line, though.<br><const>JUSTIFY</const>: spread the remaining space evenly between words of the line so that all lines end on the same column, with the exception that lines with a single word should remain left-aligned. When necessary, round the numbers of spaces to their integer part. For instance if you need to spread 11 spaces between 5 words, the theoretical number of spaces between each pair of words  is 2.75, yielding a total number of used spaces of 2.75 - 5.5 - 8.75 - 11. Round to 2 - 5 - 8 -11 and the effective number of spaces in each block is 2 - 3 - 3 - 3.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> The requested <var>alignment</var>, either <const>LEFT</const>, <const>RIGHT</const>, <const>CENTER</const>, or <const>JUSTIFY</const><br><strong>Line 2:</strong> <var>N</var>, the number of text lines<br><strong>Next <var>N</var> lines:</strong> A line of <var>text</var> to align</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><var>N</var> lines of the original text, aligned according to specifications<br>Do NOT print trailing whitespace for <const>LEFT</const> or <const>CENTER</const> alignments</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1&le;<var>N</var>&le;10<br>The input text never contains any leading or trailing whitespace, and when a line contains multiple words, they are always separated by a single space.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">LEFT
+4
+Never gonna give you up, never gonna let you down
+Never gonna run around and desert you
+Never gonna make you cry, never gonna say goodbye
+Never gonna tell a lie and hurt you</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">Never gonna give you up, never gonna let you down
+Never gonna run around and desert you
+Never gonna make you cry, never gonna say goodbye
+Never gonna tell a lie and hurt you</pre>
+         </div>
+      </div>
+   </div>
+</div>

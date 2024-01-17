@@ -1,0 +1,38 @@
+<h1>Locked in gear</h1>
+
+<a href="https://www.codingame.com/training/medium/locked-in-gear">https://www.codingame.com/training/medium/locked-in-gear</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">A number of gears are placed on a grid. The first gear is driven in a clockwise direction. Your goal is to determine the turning direction of the last gear.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> an integer <var>N</var> corresponding to the number of gears (at least 2)<br><strong>Next <var>N</var> lines:</strong> the properties of the gears, given as<br>- the coordinates of center of the gear, given by two integers <var>x</var> and <var>y</var><br>- the radius of the gear, given by an integer <var>r</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">A single line, stating the direction of the last gear from the input. The direction can be one of the following:<br>- <const>CW</const> for a clockwise movement,<br>- <const>CCW</const> for a counterclockwise movement,<br>- <const>NOT MOVING</const> if the gear doesn't move at all.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &le; <var>N</var> &le; 1000<br>0 &le; <var>x</var> &le; 1000<br>0 &le; <var>y</var> &le; 1000<br>1 &le; <var>r</var> &le; 1000<br>The gears do not overlap.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+1 1 1
+1 3 1</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">CCW</pre>
+         </div>
+      </div>
+   </div>
+</div>

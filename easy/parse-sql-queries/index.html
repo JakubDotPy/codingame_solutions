@@ -1,0 +1,44 @@
+<h1>Parse SQL Queries</h1>
+
+<a href="https://www.codingame.com/training/easy/parse-sql-queries">https://www.codingame.com/training/easy/parse-sql-queries</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Puzzle is meant to be a quick intro to SQL. Nothing too wild.<br><br>Your inputs are a basic SQL table and a SELECT query command for each test case. Your program needs to parse these and output the correct query results.<br><br>For simplicity there are no commands to manipulate tables and only one table to select from. Nothing more advanced than basic SELECT.<br><br>Basic structure of query is as follows:<br><const>SELECT</const> <var>column_name1</var>, <var>column_name2</var> <const>FROM</const> <var>table_name1</var><br><br><const>SELECT</const> tells you which columns to keep from the input table for your output table. <const>FROM</const> specifies the name of the table. For this puzzle it won't matter, therefore simply keeping the relevant columns is enough for this query.<br><br><const>SELECT</const> <strong>*</strong> will select all columns.<br><br>Slightly more advanced query:<br><const>SELECT</const> <var>column_name1</var>, <var>column_name2</var> <const>FROM</const> <var>table_name1</var> <const>WHERE</const> <var>column_name1</var> = <pre style="font-family: monospace">ColumnValue</pre> <const>ORDER BY</const> <var>column_name2</var> <const>DESC</const><br><br><const>WHERE</const> tells you what conditions must be met to display a row. Multiple conditions can be concatenated with <const>AND</const>, <const>OR</const>. Since this is an easy puzzle the only condition you need to check for is if the values are equal.<br><br><const>ORDER BY</const> <strong>value</strong> <const>DESC</const> is the criteria for sorting the table rows. The sorting can be either ascending <const>ASC</const> or descending <const>DESC</const><br><br>NOTE: sort numerical columns by their numerical value and not by their string value.<br><br>For more info on SQL syntax:<br>https://www.w3schools.com/sql/default.asp<br><br><br>Image source: https://unsplash.com/photos/PkbZahEG2Ng</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> A string containing the query you need to parse.<br><strong>Line 2:</strong> An integer <var>n</var> for the number of table rows (or entries).<br><strong>Line 3:</strong> A string representing a table header, containing the title of each table column, separated by space.<br><strong>Following n Lines:</strong> A string representing the values for each column, separated by space.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> A string representing the header of the table, containing the selected column titles separated by space.<br><strong>Following Lines:</strong> A string representing the values for each selected column, separated by space.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &le; <var>Columns</var> &le; 10<br>2 &le; <var>N</var> &le; 30</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">SELECT * FROM cats
+3
+Name Breed
+McFur Peterbald
+Squeeky Bambino
+Greta Laperm</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">Name Breed
+McFur Peterbald
+Squeeky Bambino
+Greta Laperm</pre>
+         </div>
+      </div>
+   </div>
+</div>

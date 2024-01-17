@@ -1,0 +1,226 @@
+<h1>Mars Lander - Episode 3</h1>
+
+<a href="https://www.codingame.com/training/expert/mars-lander-episode-3">https://www.codingame.com/training/expert/mars-lander-episode-3</a>
+
+<div class="statement_back" id="statement_back" style="display:none">&nbsp;</div>
+
+<div class="statement-body"><!-- GOAL -->
+<div class="statement-section statement-goal">
+<h2><span class="icon icon-goal">&nbsp;</span> <span>The Goal</span></h2>
+
+<div class="statement-goal-content">The goal for your program is to safely land the &quot;Mars Lander&quot; shuttle, the landing ship which contains the Opportunity rover. Mars Lander is guided by a program, and right now the failure rate for landing on the NASA simulator is unacceptable.<br />
+<br />
+<strong>This puzzle is the last level of the &quot;Mars Lander&quot; trilogy. The controls are the same as the previous levels but the surface is more complex...</strong></div>
+</div>
+<!-- RULES -->
+
+<div class="statement-section statement-rules">
+<h2><span class="icon icon-rules">&nbsp;</span> <span>Rules</span></h2>
+
+<div>
+<div class="statement-rules-content">
+<p>Built as a game, the simulator puts Mars Lander on a limited zone of Mars sky.</p>
+
+<div class="statement-example-horizontal" style="margin-bottom: 30px">
+<div style="width: 340px; display: table-cell;background-color: #eeeeee;vertical-align:middle;padding: 0"><img alt="" src="https://www.codingame.com/fileservlet?id=2635325710601" style="width: 100%;background-color: #eeeeee;" /></div>
+
+<div class="legend">The zone is <const>7000m</const> wide and <const>3000m</const> high.<br />
+<br />
+There is a <strong>unique area of flat ground</strong> on the surface of Mars, which is at least <const>1000</const> meters wide.</div>
+</div>
+<strong>Every second</strong>, depending on the current flight parameters (location, speed, fuel ...), the program must provide the new desired tilt angle and thrust power of Mars Lander:
+
+<div class="statement-example-horizontal" style="margin-bottom: 30px">
+<div style="width: 280px; display: table-cell;background-color: #eeeeee;vertical-align:middle;padding: 0"><img alt="" src="https://www.codingame.com/fileservlet?id=957023678862" style="width: 100%;background-color: #eeeeee;" /></div>
+
+<div class="legend">Angle goes from <const>-90&deg;</const> to <const>90&deg;</const> . Thrust power goes from <const>0</const> to <const>4</const> .<br />
+&nbsp;</div>
+</div>
+The game simulates <strong>a free fall</strong> without atmosphere. Gravity on Mars is <const>3.711 m/s&sup2;</const> . For a <strong>thrust power of X</strong>, a push force equivalent to <strong>X m/s&sup2;</strong> is generated and <strong>X liters of fuel</strong> are consumed. As such, a thrust power of <const>4</const> in an almost vertical position is needed to compensate for the gravity on Mars.<br />
+<br />
+For a landing to be successful, the ship must:
+<ul>
+	<li>land on flat ground</li>
+	<li>land in a vertical position (tilt angle = 0&deg;)</li>
+	<li>vertical speed must be limited ( &le; 40m/s in absolute value)</li>
+	<li>horizontal speed must be limited ( &le; 20m/s in absolute value)</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- WARNING -->
+
+<div class="statement-section statement-warning">
+<h2><span class="icon icon-warning">&nbsp;</span> <span>Note</span></h2>
+
+<div class="statement-warning-content">Tests and validators are only slightly different. <strong>A program that passes a given test will pass the corresponding validator</strong> without any problem.</div>
+</div>
+<!-- PROTOCOL -->
+
+<div class="statement-section statement-protocol">
+<h2><span class="icon icon-protocol">&nbsp;</span> <span>Game Input</span></h2>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="text">The program must first read the initialization data from standard input. Then, <strong>within an infinite loop</strong>, the program must read the data from the standard input related to Mars Lander&#39;s current state and provide to the standard output the instructions to move Mars Lander.</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Initialization input</div>
+
+<div class="text"><span class="statement-lineno">Line 1: </span> the number <var>surfaceN</var> of points used to draw the surface of Mars.<br />
+<span class="statement-lineno">Next <var>surfaceN</var> lines: </span>a couple of integers <var>landX</var> <var>landY</var> providing the coordinates of a ground point. By linking all the points together in a sequential fashion, you form the surface of Mars which is composed of several segments. For the first point, <var>landX</var> = <const>0</const> and for the last point, <var>landX</var> = <const>6999</const></div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Input for one game turn</div>
+
+<div class="text">A <span class="statement-lineno">single line</span> with 7 integers: <var>X</var> <var>Y</var> <var>hSpeed</var> <var>vSpeed</var> <var>fuel</var> <var>rotate</var> <var>power</var>
+
+<ul>
+	<li><var>X</var>,<var>Y</var> are the coordinates of Mars Lander (in meters).</li>
+	<li><var>hSpeed</var> and <var>vSpeed</var> are the horizontal and vertical speed of Mars Lander (in m/s). These can be negative depending on the direction of Mars Lander.</li>
+	<li><var>fuel</var> is the remaining quantity of fuel in liters. When there is no more fuel, the power of thrusters falls to zero.</li>
+	<li><var>rotate</var> is the angle of rotation of Mars Lander expressed in degrees.</li>
+	<li><var>power</var> is the thrust power of the landing ship.</li>
+</ul>
+</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Output for one game turn</div>
+
+<div class="text">A <span class="statement-lineno">single line</span> with 2 integers: <var>rotate</var> <var>power</var> :
+
+<ul>
+	<li><var>rotate</var> is the desired rotation angle for Mars Lander. Please note that for each turn the actual value of the angle is limited to the value of the previous turn <const>+/- 15&deg;</const>.</li>
+	<li><var>power</var> is the desired thrust power. <const>0</const> = off. <const>4</const> = maximum power. Please note that for each turn the value of the actual power is limited to the value of the previous turn <const>+/- 1</const>.</li>
+</ul>
+</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Constraints</div>
+
+<div class="text">2 &le; <var>surfaceN</var> &lt; 30<br />
+0 &le; <var>X</var> &lt; 7000<br />
+0 &le; <var>Y</var> &lt; 3000<br />
+-500 &lt; <var>hSpeed</var>, <var>vSpeed</var> &lt; 500<br />
+0 &le; <var>fuel</var> &le; 2000<br />
+-90 &le; <var>rotate</var> &le; 90<br />
+0 &le; <var>power</var> &le; 4<br />
+Response time per turn &le; 100ms</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Example</div>
+
+<div class="text">
+<div class="statement-inout">
+<div class="statement-inout-in" style="background-color: white">
+<div class="title" style="color:#989898;padding:0">Initialization input</div>
+
+<pre>
+6         	(surfaceN) Surface made of 6 points
+0 1500      	(landX landY)
+1000 2000	(landX landY)
+2000 500	(landX landY) Start of flat ground
+3500 500	(landX landY) End of flat ground
+5000 1500	(landX landY)
+6999 1000	(landX landY)
+</pre>
+</div>
+
+<div class="statement-inout-out" style="background-color: white">
+<div class="title" style="color:#989898;padding:0">No output expected</div>
+You can ignore this but you need to read the values.</div>
+</div>
+
+<div class="statement-inout">
+<div class="statement-inout-in" style="background-color: white">
+<div class="title" style="color:#989898;padding:0">Input for turn 1</div>
+
+<pre>
+5000 2500 -50 0 1000 90 0	(X Y hSpeed vSpeed fuel rotate power)
+</pre>
+</div>
+
+<div class="statement-inout-out" style="background-color: white">
+<div class="title" style="color:#989898;padding:0">Output for turn 1</div>
+
+<pre>
+-45 4 (rotate power)</pre>
+<br />
+Requested rotation to the right, maximum thrust power</div>
+</div>
+
+<div class="statement-inout">
+<div class="statement-inout-in" style="background-color: white">
+<div class="title" style="color:#989898;padding:0">Input for turn 2</div>
+
+<pre>
+4950 2498 -51 -3 999 75 1	(X Y hSpeed vSpeed fuel rotate power)</pre>
+<br />
+Tilt angle changed only by 15&deg; and thrust power only by 1</div>
+
+<div class="statement-inout-out" style="background-color: white">
+<div class="title" style="color:#989898;padding:0">Output for turn 2</div>
+
+<pre>
+-45 4 (rotate power)</pre>
+<br />
+Same request as previous turn</div>
+</div>
+
+<div class="statement-inout">
+<div class="statement-inout-in" style="background-color: white">
+<div class="title" style="color:#989898;padding:0">Input for turn 3</div>
+
+<pre>
+4898 2493 -53 -6 997 60 2	(X Y hSpeed vSpeed fuel rotate power)
+</pre>
+</div>
+
+<div class="statement-inout-out" style="background-color: white">
+<div class="title" style="color:#989898;padding:0">Output for turn 3</div>
+
+<pre>
+-45 4 (rotate power)</pre>
+<br />
+Same request as previous turn</div>
+</div>
+</div>
+</div>
+</div>
+<!-- STORY -->
+
+<div class="statement-story-background">
+<div class="statement-story-cover" style="background-size: cover; background-image: url(https://www.codingame.com/servlet/fileservlet?id=2210406847466)">
+<div class="statement-story" style="min-height: 300px; position: relative">
+<h2>Synopsis</h2>
+
+<div class="story-text">
+<div><b>Same place, the day after next. The meeting room stinks of sweat. Left-over pizzas are scattered on the tables.</b></div>
+&nbsp;
+
+<div>&ldquo;<i>I have a good feeling about this. I am starting to see the light. Mike do you see the light?</i>&rdquo;</div>
+
+<div>&ldquo;<i>Well, it&#39;s not too bad.</i>&rdquo;</div>
+
+<div>&ldquo;<i>Not too bad? A little enthusiasm wouldn&#39;t hurt! This rover will land, I&#39;m telling you!</i>&rdquo;</div>
+&nbsp;
+
+<div>Jeff, who is overexcited, is frantically chewing at a match whilst giving you his latest encouragements:</div>
+
+<div><br />
+&ldquo; <i>OK, this is the last percent. The most hardened of our developers have lost their shirts on that one. I know you can do it. So DON&#39;T let me down!</i>&rdquo;</div>
+</div>
+</div>
+</div>
+</div>
+</div>

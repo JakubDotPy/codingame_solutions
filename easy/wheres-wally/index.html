@@ -1,0 +1,50 @@
+<h1>Where's Wally</h1>
+
+<a href="https://www.codingame.com/training/easy/wheres-wally">https://www.codingame.com/training/easy/wheres-wally</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You will get a representation of Wally and a Picture.<br><br>You must find Wally's position inside the picture. The top left corner of the picture is <var>(x, y)</var>=<const>(0,0)</const>.<br><br><strong>If Wally's representation contains spaces, the picture may contain others characters at these positions.</strong><br><br><strong>All non-space characters of Wally will be visible in the picture.</strong><br><br>________________________________________<br>* ASCII ART representations of wally are from :<br> - https://ascii.co.uk/art/men<br> - https://asciiart.website/index.php?art=comics/dilbert</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1 :</strong> 2 space-separated integers <var>wallyWidth</var> <var>wallyHeight</var> indicating Wally's size<br><strong><var>wallyHeight</var> next lines :</strong> Representation of Wally<br><strong>Next Line :</strong> 2 space-separated integers <var>pictureWidth</var> <var>pictureHeight</var> indicating the picture size<br><strong><var>pictureHeight</var> next lines :</strong> Picture</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1 :</strong>Two space-separated integers <var>x</var> and <var>y</var> indicating the top left corner of Wally in the picture</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <var>wallyWidth</var> &lt;= <var>mapWidth</var> &lt; 100<br>0 &lt; <var>wallyHeight</var> &lt;= <var>mapHeight</var> &lt; 100<br>PIcture and Wally representations are limitted to ascii chars</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3 3
+ O 
+/|\
+/ \
+10 10
+..........
+.......O..
+....../|\.
+....../.\.
+..........
+..........
+..........
+..........
+..........
+..........</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">6 1</pre>
+         </div>
+      </div>
+   </div>
+</div>

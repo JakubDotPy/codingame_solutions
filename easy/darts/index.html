@@ -1,0 +1,46 @@
+<h1>Darts</h1>
+
+<a href="https://www.codingame.com/training/easy/darts">https://www.codingame.com/training/easy/darts</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">A group of your friends want to have a dart throwing competition with a unique target. They've asked you, their tech savvy friend, to automate the scoring as they often squabble over scoring, and have trouble keeping track of who's turn it is to throw.<br><br>The target is a square. The square has a circle inscribed within whose diameter matches the width of the square. The circle, in turn, encompasses a diamond whose width from corner to corner matches the circle's diameter. The diamond can be thought of as a square rotated by 1/4 PI so that the corners of the square are on the x and y axes.<br><br>Darts landing within the square but not within the circle or diamond are worth 5 points. Darts landing within the circle but not within the diamond are worth 10 points. Darts landing within the diamond are worth 15 points.<br><br>In the event of a tie, competitors should be ordered as they were in the name list, so competitors appearing earlier in the name list are listed earlier in ties.<br><br>Note: Darts landing on the edge of a shape are considered within the shape.<br>Note: The center of the square, circle and diamond is at (0,0).</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> <var>SIZE</var> of square as integer.<br><strong>Line 2:</strong> The number of competitors in name list, <var>N</var>.<br><strong>Next <var>N</var> lines:</strong> <var>name</var> of a single competitor in name list.<br><strong>Next line (<var>N</var>+3):</strong> Number of throws, <var>T</var>.<br><strong>Next <var>T</var> lines:</strong> Name of competitor, integer x-coordinate and integer y-coordinate of throw, each separated by a space, <var>name</var> <var>X</var> <var>Y</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>N</var> lines:</strong> Competitor's name, a space, and that competitor's score, in descending order by score (and in order of appearance in the input list in case of a tie).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">10 &le; <var>SIZE</var> &le; 100<br>1 &le; <var>N</var> &le; 10<br>1 &le; <var>T</var> &le; 50<br>-300 &le; <var>X</var> &le; 300<br>-300 &le; <var>Y</var> &le; 300</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">20
+2
+Will
+Jill
+4
+Will 0 0
+Jill 0 0
+Will 20 20
+Jill 0 0
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">Jill 30
+Will 15</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,178 @@
+<h1>RUSH HOUR</h1>
+
+<a href="https://www.codingame.com/training/medium/rush-hour">https://www.codingame.com/training/medium/rush-hour</a>
+
+<div class="statement_back"></div>
+<div class="statement-body">
+  
+  <div class="statement-section statement-goal">
+    <h1>
+      <span class="icon icon-goal"> </span>
+      <span>The Goal</span>
+    </h1>
+    <div class="statement-goal-content">
+      This puzzle is inspired by a board game named <a href="https://en.wikipedia.org/wiki/Rush_Hour_%28puzzle%29" target="_blank" rel="nofollow noopener noreferrer">Rush hour</a>
+      <br />
+      There is a 6x6 grid surrounded by walls, except an exit on the right of the 3rd line.
+      <br />
+      You have to drive the red car to the exit, but there are other vehicles that obstruct the path.
+    </div>
+  </div>
+  
+  <div class="statement-section statement-rules">
+    <h1>
+      <span class="icon icon-rules"> </span>
+      <span>Rules</span>
+    </h1>
+    <div>
+      <div class="statement-rules-content">
+        There are vertical and horizontal vehicles. You can move any vehicle you want, but on a straight line (vehicles can&#39;t turn). This means that horizontal vehicles can only go LEFT and RIGHT, and vertical vehicles only UP and DOWN
+        <br />
+        <br />
+        Vehicles are given by their id, top-left coordinates, length and axis (H/V).
+        <br />
+        <br />
+        Moreover:
+        <ul><li>The exit is always on 3rd line (y&#61;&#61;2), on the right.</li><li>The ID of the red car is always 0, on the 3rd line (y&#61;&#61;2) and the car is always 2 cells long and horizontal.</li><li>The IDs of the other vehicles are always &gt;0, and they are 2 or 3 cells long.</li><li>The other vehicles can&#39;t be both horizontal and on 3rd line.</li></ul>
+        <br />
+        You indicate moves by the id of the vehicle, followed by the direction UP / DOWN / LEFT / RIGHT.
+        <br />
+        You win the game when the red car is in front of the exit (x&#61;&#61;4).
+      </div>
+    </div>
+    
+    <div class="statement-victory-conditions">
+        <div class="icon victory"></div>
+        <div class="blk">
+            <div class="title">Victory Conditions</div>
+            <div class="text">
+                <ul style="padding-bottom:0"><li>You drive the red car in front of the exit (x&#61;&#61;4)</li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="statement-lose-conditions">
+        <div class="icon lose"></div>
+        <div class="blk">
+            <div class="title">Loss Conditions</div>
+            <div class="text">
+                <ul style="padding-bottom:0"><li>You do not respond in time.</li><li>You output an unrecognized id.</li><li>You output an unrecognized direction.</li><li>You exceed the number of turns allowed</li></ul>
+            </div>
+        </div>
+    </div>
+    <h3 style="font-size:14px;font-weight:700;padding-top:15px;color:#838891;padding-bottom:15px">&#x1f41e; Debugging tips</h3>
+    <ul><li>Append text after any command and that text will appear above the grid.</li><li>Hover over a car to see information about it.</li></ul>
+  </div>
+  <br />
+  
+  <div class="statement-section statement-protocol">
+    <h1>
+      <span class="icon icon-protocol"> </span>
+      <span>Game datas</span>
+    </h1>
+    
+    <div class="blk">
+      <div class="title">Initial input</div>
+      <div class="text">
+        <p><span class="statement-lineno">Line 1: </span>The number <var>n</var> of cars</p>
+      </div>
+    </div>
+    
+    <div class="blk">
+      <div class="title">Input per turn</div>
+      <div class="text">
+        <p><span class="statement-lineno"><var>n</var> lines: </span>The cars represented by 4 integers <var>id</var>, <var>x</var>, <var>y</var>, <var>length</var> and one string <var>axis</var></p>
+      </div>
+    </div>
+    
+    <div class="blk">
+      <div class="title">Output per turn</div>
+      <div class="text">
+        <span class="statement-lineno">A single line</span> containing the <var>id</var> and the <var>direction</var> of the car to move.
+        <br />
+      </div>
+    </div>
+    
+    <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="text">
+        <var>id</var>&#61;0 for the red car
+        <br />
+        0&lt;<var>id</var>&lt;16 for other vehicles
+        <br />
+        0&lt;&#61;<var>x</var>,<var>y</var>&lt;6
+        <br />
+        2&lt;&#61;<var>length</var>&lt;&#61;3
+        <br />
+        <var>axis</var>&#61;&#39;H&#39; or &#39;V&#39;
+        <br />
+        Max response time in the 1st turn : 5 seconds
+        <br />
+        Max response time in the other turns : 100 ms
+        <br />
+        Max turns : 100
+      </div>
+    </div>
+  </div>
+  
+  <br />
+  <div class="statement-section statement-examples">
+    <h1>
+      <span class="icon icon-example"> </span>
+      <span>Example</span>
+    </h1>
+    <div class="statement-examples-text">
+      <b>Initial input :</b>
+      <br />
+      3
+      <br />
+      <br />
+      <b>Input for 1st turn :</b>
+      <br />
+      0 1 2 2 H<br />3 4 2 2 V<br />13 0 4 3 H
+      <br />
+      <br />
+      These inputs mean :
+        <ul><li>there are 3 vehicles</li><li>the vehicle with id 0 starts at x&#61;1, y&#61;2, is 2 cells long and is horizontal</li><li>the vehicle with id 3 starts at x&#61;4, y&#61;2, is 2 cells long and is vertical</li><li>the vehicle with id 13 starts at x&#61;0, y&#61;4, is 3 cells long and is horizontal</li></ul>
+        which corresponds to the following game :
+      <br />
+      <br />
+      <img src="https://cdn-games.codingame.com/community/4341304-1658170293668/77952ed9bc74608c35f97cd155397dc7323d6f0f0b2ae357b5694e78cf35f650.png" />
+      <br />
+      <br />
+      <b>Output for 1st turn :</b>
+      <br />
+      0 RIGHT (red car moves to right)
+      <br />
+      <br />
+      <b>Input for 2nd turn :</b>
+      <br />
+      0 <b>2</b> 2 2 H (after moving right)<br />3 4 2 2 V<br />13 0 4 3 H
+      <br />
+    </div>
+  </div>
+  
+  <div class="statement-story-background">
+    <div class="statement-story-cover" style="background-image:url(&#39;https://www.codingame.com/servlet/fileservlet?id&#61;87349161408865&#39;)">
+      <div class="statement-story">
+        <h1>Mitch and the beach</h1>
+        <div class="story-text">
+          <br />
+          Mitch wants to reach the beach.
+          <br />
+          <br />
+          Mitch owns a beautiful red car.
+          <br />
+          <br />
+          Mitch loves to pose with his red car on the beach.
+          <br />
+          <br />
+          But ... Oh No ! Mitch is stuck in city traffic.
+          <br />
+          <br />
+          You have to help Mitch to exit the city, so that Mitch can reach the beach.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

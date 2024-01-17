@@ -1,0 +1,39 @@
+<h1>Nature of triangles</h1>
+
+<a href="https://www.codingame.com/training/easy/nature-of-triangles">https://www.codingame.com/training/easy/nature-of-triangles</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You have to output the nature of the triangles whose vertices&rsquo; coordinates are given. The output should follow this format:<br><br><var>Name of triangle</var> <const>is a/an</const> <var>side nature</var> <const>and a/an</const> <var>angle nature</var> <const>triangle.</const><br><br><var>Name of triangle</var> follows the same order as the vertices given.<br><br><var>Side nature</var> is:<br>&bull; &ldquo;<const>scalene</const>&rdquo; if all sides have different lengths, or<br>&bull; &ldquo;<const>isosceles in <var>vertex</var></const>&rdquo; if exactly two sides have the same length and they have a common vertex of <var>vertex</var>.<br><br><var>Angle nature</var> is:<br>&bull; &ldquo;<const>acute</const>&rdquo; if all angles are acute, or<br>&bull; &ldquo;<const>right in <var>vertex</var></const>&rdquo; if the angle at <var>vertex</var> is 90&deg;, or<br>&bull; &ldquo;<const>obtuse in <var>vertex</var> (<var>degrees</var>&deg;)</const>&rdquo; if the angle at <var>vertex</var> is obtuse. In this case, output the measure of the obtuse angle in <var>degrees</var>, rounded to the nearest integer.<br><br><strong>Output examples</strong><br>BAC is a scalene and a right in A triangle.<br>DEF is an isosceles in D and an obtuse in D (120&deg;) triangle.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var> for the number of triangles.<br><strong>Next <var>N</var> lines:</strong> Each <var>vertex</var> followed by its <var>x</var> and <var>y</var> coordinates, one triangle per line.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>N</var> lines:</strong> The nature of the triangles, one triangle per line, in the same order as the input.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 ⩽ <var>N</var> ⩽ 8<br>-20 ⩽ <var>x</var>, <var>y</var> ⩽ 20<br><var>x</var> and <var>y</var> are integers.<br>Degenerate triangles do not appear in this puzzle.<br>Equilateral triangles do not appear in this puzzle because they involve non-integer coordinates (calculation involves &radic;3).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+A 5 -2 B 8 2 C -1 -9
+O 0 0 A 3 0 B 1 2</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">ABC is a scalene and an obtuse in A (176&deg;) triangle.
+OAB is a scalene and an acute triangle.</pre>
+         </div>
+      </div>
+   </div>
+</div>

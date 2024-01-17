@@ -1,0 +1,38 @@
+<h1>Derivative time !!! - part2</h1>
+
+<a href="https://www.codingame.com/training/hard/derivative-time---part2">https://www.codingame.com/training/hard/derivative-time---part2</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Story: <br>Louise is learning calculus in her maths courses and she likes the idea. When doing her homework, she is not sure and she wants to check her answers with yours. Could you create a program so that we can check the answers?<br><br>It's recommended to finish Part 1 first:<br>https://www.codingame.com/training/medium/derivative-time---part1<br><br>Calculate the partial derivative of a given formula.<br><br>For example, in Test1 &quot;crazy chain&quot;<br><strong>Line1</strong>: <var>formula</var>: <const>ln(ln(ln(ln x)))</const><br><strong>Line2</strong>: <var>vars</var>: <const>x</const><br><strong>Line3</strong>: <var>vars</var>' values: <const>x 15.16</const><br><br>a formula <const>ln(ln(ln(ln x)))</const> and <const>x</const> means to calculate <br><const>d(f(x))/dx</const>,<br>which should be <const>1/x*1/(ln x)*1/ln(ln x)*1/ln(ln(ln x))</const>,<br>and then use the value <const>x=15.16</const> to resolve it.<br>So the answer is 174.23.<br><br>Note:<br>Formula: &quot;e&quot; and &quot;pi&quot; could appear in the formula.<br><br>Priority: [ln, sin, cos] &gt; [^] &gt; [*] &gt; [+]<br>[ln, sin, cos] will be followed by one space if no parenthesis<br>Power follows an order from right to left<br>e.g.: 2^3^4 = 2^(3^4)<br>Negative power has no parenthesis<br>e.g.: 5*sin x*y^-2 = 5*(sin x)*(y^(-2))<br><br>To simplify, x^x form will only has same expression at floor and power position.<br>e.g.: (sin x)^(sin x) could appear, but (x+2)^(x*3) will not appear<br><br><var>var</var>s may be in other forms other than x, y, and z. Similar to identifiers in many programming languages, the var would be some letter (or ASCII letter) followed by letters, numbers or underscore.<br><br>link about calculus rules: <const>https://en.wikipedia.org/wiki/Differentiation_rules</const><br>The rules needed here:<br>a'=0<br>(a*x)'=a<br>(x^a)'=a*x^(a-1)  (when a is not 0)<br>(a^x)'=ln(a)*a^x<br>(x^x)'=(ln(x)+1)*x^x<br>(ln x)'=x^-1<br>(sin x)'=cos x<br>(cos x)'=-sin x<br>(u+v)'=u'+v'<br>(u*v)'=u'*v+v'*u<br>df/dx=df/dt*dt/dx  (the chain rule)<br>e^(pi*i)+1=0  (just kidding, we will not need this one :) )</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line1</strong>: <var>formula</var>, built by <const>vars</const> (e.g. x, y, z, Gamma, x1...), <const>constants</const> (integers, floats, &quot;e&quot;, &quot;pi&quot;), and <const>operators</const> (ln, sin, cos, ^, *, +).<br><strong>Line2</strong>: list of <var>vars</var> for partial derivative, separated by space, length of the list will be 1, 2 or 3.<br><strong>Line3</strong>: <var>vars</var>' values, paired and separated by space, value will be float with 2 digits.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The result (always float with 2 digits, rounding to nearest)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><strong>Line2</strong> would give a list from 1 to 3 different/same vars to do partial derivative.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">ln(ln(ln(ln x)))
+x
+x 15.16</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">174.23</pre>
+         </div>
+      </div>
+   </div>
+</div>

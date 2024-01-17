@@ -1,0 +1,41 @@
+<h1>Ticket to Ride: Europe</h1>
+
+<a href="https://www.codingame.com/training/expert/ticket-to-ride-europe">https://www.codingame.com/training/expert/ticket-to-ride-europe</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Ticket to Ride is a classic board game by Alan Moon and Days of Wonder in which you earn points by connecting cities via train routes. In this puzzle, you must calculate the maximum possible score in a Ticket to Ride scenario.<br><br><strong>EARNING POINTS</strong><br> - Each completed route provides a certain number of points.<br> - Each completed ticket card earns you a certain number of bonus points.<br> - Ticket cards that are not completed are worth negative points.<br><br><strong>COMPLETING ROUTES</strong><br>Each route connects two cities, and requires you to expend two resources, both <var>trainCars</var> and cards, to complete it. The <var>length</var> of the route informs you how many of each resource are required. A route of <var>length</var> = <const>3</const> requires 3 <var>trainCars</var> <strong>AND</strong> 3 cards.<br><br><strong>STARTING GAME STATE</strong><br>You will be provided with:<br> - Number of <var>trainCars</var> available for use. (Resource #1)<br> - Number and type of cards in your hand (Resource #2)<br> - Number and nature of tickets in your hand.<br> - A list of available routes on the board, and the resources required to complete each one.<br><br><strong>SCORING ROUTES</strong><br>Points awarded for completing a route are based on the route <var>length</var>:<br> - length of 1: 1 pt<br> - length of 2: 2 pts<br> - length of 3: 4 pts<br> - length of 4: 7 pts<br> - length of 6: 15 pts<br><br><strong>SCORING TICKETS</strong><br>Each ticket specifies two cities and a number of bonus points to be earned. If the two cities are connected via train routes (either directly or indirectly) then the points for the ticket are added to your score. If not, then the ticket&rsquo;s points are deducted from your score.<br><br><strong>CARDS AND ROUTES</strong><br>Each <strong>card</strong> in your hand is EITHER a colored card (<const>8</const> colors available) OR an engine card (wild). Likewise, each <strong>route</strong> is EITHER one of the <const>8</const> colors, OR is <const>Gray</const>. To complete a colored route, you must expend  <var>length</var> cards <strong>of the SAME color</strong> from your hand. So, to complete a <const>Pink</const> route of <var>length</var> = <const>3</const>, you would need to expend 3 pink cards.<br><br><strong>ENGINE CARDS</strong><br>Engines are wild, and can be used as a substitute for any colored card.<br><br><strong>GRAY ROUTES</strong><br><const>Gray</const> routes can be any color you want them to be. However, to complete a <const>Gray</const> route, the cards you expend <strong>MUST</strong> be all of the same color (potentially supplemented with engines).<br><br><strong>FERRIES</strong><br>Some <const>Gray</const> routes (called &ldquo;ferries&rdquo;) require that a certain number of the cards you expend <strong>MUST</strong> be engine cards.<br><br><strong>FERRY EXAMPLE</strong><br>A ferry of <var>length</var> = <const>3</const> and <var>requiredEngines</var> = <const>1</const> could be completed with:<br> - 2 red cards and 1 engine,<br> - 1 black and 2 engines,<br> - but <strong>NOT</strong> 3 blue cards,<br> - and <strong>NOT</strong> 1 green, 1 yellow, and 1 engine<br><br><strong>SCORING EXAMPLE</strong><br>Given:<br> - A <const>5</const> point ticket for connecting Athina to Angora<br> - Two routes:<br>1) Athina to Smyrna (<var>length</var> = <const>2</const>)<br>2) Smyrna to Angora (<var>length</var> = <const>3</const>)<br><br>Total points received for completing both routes = <strong>11 POINTS</strong>:<br> - 2 pts: complete route #1<br> - 4 pts: complete route #2<br> - 5 pts: complete ticket</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Three space-separated integers: number of <var>trainCars</var>, number of tickets (<var>numTickets</var>) you have, and number of available routes (<var>numRoutes</var>) on the board.<br><br><strong>Line 2:</strong> Nine space-separated integers for the number of <var>red</var>, <var>yellow</var>, <var>green</var>, <var>blue</var>, <var>white</var>, <var>black</var>, <var>orange</var>, <var>pink</var>, and <var>engine</var> cards you have in your hand.<br><br><strong>Next <var>numTickets</var> lines:</strong> One line for each ticket in your hand. Each line has an integer for the <var>points</var> value of the ticket, followed by two space-separated city names.<br><br><strong>Next <var>numRoutes</var> lines:</strong> One line for each available route on the board. Each line has an integer for the <var>length</var> of the route (in number of train cars), an integer for the number of <var>requiredEngines</var>, a <var>color</var> (<const>Red</const>, <const>Yellow</const>, <const>Green</const>, <const>Blue</const>, <const>White</const>, <const>Black</const>, <const>Orange</const>, <const>Pink</const>, or <const>Gray</const>), and two space-separated city names.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">A single integer indicating the maximum possible score.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><const>0</const> &le; <var>trainCars</var> &lt; <const>30</const><br><const>0</const> &le; <var>numTickets</var> &lt; <const>30</const><br><const>0</const> &le; <var>numRoutes</var> &lt; <const>30</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">6 1 3
+1 2 0 0 0 0 3 0 0
+6 Zurich Budapest
+1 0 Red Wien Budapest
+2 0 Yellow Zurich Munchen
+3 0 Orange Munchen Wien</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">13</pre>
+         </div>
+      </div>
+   </div>
+</div>

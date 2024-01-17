@@ -1,0 +1,47 @@
+<h1>Sky Maze Adventures 1</h1>
+
+<a href="https://www.codingame.com/training/medium/sky-maze-adventures-1">https://www.codingame.com/training/medium/sky-maze-adventures-1</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+<h2><span class="icon icon-goal"> </span><span>Goal </span></h2>
+<span class="question-statement">
+A maze robot, BillyBot, is going to take the sky maze challenge.
+<br /><br />Your goal given the maze of <var>w</var> by <var>h</var> and a destination point (<var>dx</var>, <var>dy</var>), help BillyBot to reach the destination without repeating the same route.
+<br /><br />The maze, with the top left corner being (0, 0), consists characters <const>1</const> and <const>0</const> where 0 is a walkable path, and 1 is an empty space.
+<br /><br />
+<b>For example:</b> Given the 5 by 3 maze:
+<br />01111
+<br />00000
+<br />11110
+<br />  <br />And you are given a destination of (4, 2), reaching it from starting point (0, 0) would be:
+<br /><b>-&gt; DOWN</b>
+<br /><b>-&gt; RIGHT</b>
+<br /><b>-&gt; RIGHT</b>
+<br /><b>-&gt; RIGHT</b>
+<br /><b>-&gt; RIGHT</b>
+<br /><b>-&gt; DOWN</b>
+</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Initialization input</div>
+      <div class="question-statement-input">
+
+<b>Line 1:</b> 2 space-separated integers <var>w</var> and <var>h</var>, width and height of the maze.
+<br /><b>Line 2:</b> 2 space-separated integers <var>dx</var> and <var>dy</var>, destination x and y.
+<br /><b>Next <var>h</var> lines:</b> A string of characters either a <const>1</const> or a <const>0</const>.</div>
+      <div class="title">Input for a game round</div>
+      <div class="question-statement-input">2 space separated integers <var>x</var> and <var>y</var>, the position of the player.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">
+<b>Actions:</b> <const>UP</const>, <const>DOWN</const>, <const>LEFT</const>, <const>RIGHT</const>, changing the width and height of the player acordingly. <b>All outputs must be capital.</b>
+</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1&lt;&#61;<var>w</var>,<var>h</var>,<var>dx</var>,<var>dy</var>,<var>x</var>,<var>y</var>&lt;50
+   </div>
+</div></div></div>

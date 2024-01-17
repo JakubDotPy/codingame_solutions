@@ -1,0 +1,46 @@
+<h1>To Sky's Edge</h1>
+
+<a href="https://www.codingame.com/training/hard/to-skys-edge">https://www.codingame.com/training/hard/to-skys-edge</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement"><strong>A generation starship is heading towards a new home for mankind : Sky's Edge. The exoplanet being several light years away, the journey will last centuries and see multiple generations of crew members being born, reproducing and dying in the service of human extrasolar expansion. Your goal is to determine which life expectancies are the best suited to reach Sky's Edge with at least 200 settlers, while avoiding overcrowding the ship.</strong><br><br>The journey will last <var>Y</var> years, with a variable starting group of people, on a starship having a maximum capacity of <var>C</var>. Every member of the expedition will have exactly the same life expectancy. <br><br>Every year, these modifications will take place in the given order :<br>1 - Every crew member will get older by one year.<br>2 - Every crew member exceeding the life expectancy will die.<br>3 - For each batch of <const>10</const> crew members between the age of <const>20</const> and half the life expectancy (rounded down), a baby is born, adding one 0-year-old individual to the crew. These limits are inclusive.<br><br>If the number of people exceeds the ship capacity <const>C</const>, overpopulation causes a civil war leading to the destruction of the ship. The expedition is considered successful if at least <const>200</const> people reach Sky's Edge after <var>Y</var> years of travel.<br><br>Your goal is to give the minimum and maximum life expectancies in order to have a successful expedition. There is always at least one valid life expectancy. <br><br><strong>Example :</strong><br>The ship has 10 fifteen-year-olds, 15 twenty-year-olds, 5 forty-year-olds and 2 eighty-year-olds. The life expectancy is of 82 years.<br>- At year 1, there will be 10 sixteen-year-olds, 15 twenty-one-year-olds, 5  forty-one-year-olds, 2 eighty-one-year-olds AND 2 zero-year-olds, since the 15 twenty-one-year-olds and 5 forty-one-year-olds are within the &quot;fertility span&quot; of [20, 41].<br>- At year 2,  there will be 2 one-year-olds, 10 seventeen-year-olds, 15 twenty-two-year-olds, 5  forty-two-year-olds, 2 eighty-two-year-olds and only one new zero-year-old.<br>- At year 3, there will be 1 one-year-old, 2 two-year-olds, 10 eighteen-year-olds, 15 twenty-three-year-olds, 5  forty-three-year-olds and one zero-year-old. Sadly, the 2 old timers have passed away since they exceeded their life expectancy...<br>- ... And so on, with a new peak of natality when the 10 teenagers will reach their twenties, but still heading to extinction...</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">Line 1: An integer <var>Y</var> representing the number of years of travel.<br>Line 2: An integer <var>C</var> representing the capacity of the ship.<br>Line 3: An integer <var>N</var> representing the number of different ages of the starting group of people.<br>Next N lines: Two integers <var>AGE</var> and <var>NUMBER</var> representing the number of people of that age.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">Two space-separated integers representing the minimum and maximum life expectancies for the expedition to succeed.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>Y</var> &le; 30000<br>200 &le; <var>C</var> &le; 10000<br>1 &le; <var>N</var> &le; 50</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">150
+500
+8
+10 5
+15 20
+20 30
+25 40
+30 40
+35 40
+40 30
+45 20</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">62 63</pre>
+         </div>
+      </div>
+   </div>
+</div>

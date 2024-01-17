@@ -1,0 +1,41 @@
+<h1>Video comments</h1>
+
+<a href="https://www.codingame.com/training/easy/video-comments">https://www.codingame.com/training/easy/video-comments</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are responsible for the making of a comments system for a newly made videos app. There is one problem, what's the point if comments are randomly shown? And here comes your job, <strong>you need to design a priority system for comments.</strong><br><br>There are <var>n</var> comments given to you in random order. Each comment contains comment data (name, date, likes, priority) separated by a <const>|</const> character. You are not given the content for comments because it is unnecessary for the sorting process. And for simplicity, we are going to assume all comments are made in the same day, so you only have to look at the time in <strong>24-hour format</strong>.<br><br>You need to sort the comments in a way such that:<br>- Pinned comment appears first, there is only one of such comment, and its priority is <const>Pinned</const>.<br>- Followed people's comments appear second, and their priority is <const>Followed</const>.<br>- Comments with most likes appear third, regardless of their date, they have priority <const>none</const>.<br>- Newer comments appear fourth, they have priority <const>none</const>.<br>- in a case of more than 1 followed accounts, they would be ordered by their likes and date as said.<br>- in case of a tie between two users, the one given in input first is outputted first, e.g. user1 is given before user2, so you output user1 then user2.<br><br><const>none</const> priority means it is not a pinned nor followed comment.<br><br>Comments may contain replies, <strong>A reply starts with 4 spaces, and is under the comment it belongs to.</strong><br><br>The replies of a comment are also sorted based on the above said priorities, there will not be a pinned reply.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>n</var> for the amount of comments<br><strong>Next <var>n</var> lines:</strong> A comment, split by a vertical bar (<const>|</const>): name, date, likes, priority</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The comments after being sorted</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &le; <var>n</var> &le; 13<br>There will not be nested replies, i.e. a reply to another reply<br>Names will only consist of <const>user</const> and a number, and are not necessarily in order</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+user1|05:34|0|none
+user2|05:36|0|none
+user3|05:35|0|none</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">user2|05:36|0|none
+user3|05:35|0|none
+user1|05:34|0|none</pre>
+         </div>
+      </div>
+   </div>
+</div>

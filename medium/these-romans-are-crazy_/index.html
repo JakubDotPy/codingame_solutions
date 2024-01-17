@@ -1,0 +1,36 @@
+<h1>These Romans are crazy!</h1>
+
+<a href="https://www.codingame.com/training/medium/these-romans-are-crazy%21">https://www.codingame.com/training/medium/these-romans-are-crazy%21</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are given 2 expressions representing 2 numbers written in roman numerals.<br>You have to provide the result of the sum of these 2 numbers, also in roman numerals.<br><br><const>I</const> has a value of 1 (maximum 3 in a row)<br><const>V</const> has a value of 5 (maximum 1 in a row)<br><const>X</const> has a value of 10 (maximum 3 in a row)<br><const>L</const> has a value of 50 (maximum 1 in a row)<br><const>C</const> has a value of 100 (maximum 3 in a row)<br><const>D</const> has a value of 500 (maximum 1 in a row)<br><const>M</const> has a value of 1000 (maximum 4 in a row)<br><br>The character <const>I</const> just before an <const>V</const> or <const>X</const> has a value of -1 (example <const>IX</const> equals 9)<br>The character <const>X</const> just before an <const>L</const> or <const>C</const> has a value of -10 (example <const>XL</const> equals 40)<br>The character <const>C</const> just before an <const>D</const> or <const>M</const> has a value of -100 (example <const>CM</const> equals 900)</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong>  :  <var>Rom1</var>  (the 1st number in roman numerals)<br><strong>Line 2</strong>  :  <var>Rom2</var>  (the 2nd number in roman numerals)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The result of <var>Rom1</var> + <var>Rom2</var> written in roman numerals</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &#8804; <var>Rom1</var> &#8804; 4999<br>1 &#8804; <var>Rom2</var> &#8804; 4999<br>1 &#8804; <var>Rom1</var> + <var>Rom2</var> &#8804; 4999</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">VI&#10;VII</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">XIII</pre>
+         </div>
+      </div>
+   </div>
+</div>

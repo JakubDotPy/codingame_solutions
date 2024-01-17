@@ -1,0 +1,40 @@
+<h1>Bouncing Barry</h1>
+
+<a href="https://www.codingame.com/training/medium/bouncing-barry">https://www.codingame.com/training/medium/bouncing-barry</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Barry the bouncing bunny is a bit braindead. Barry mindlessly jumps around on an infinitely large square grid, comprising tiles that initially display the <const>.</const> character. Each time Barry <strong>lands</strong> on a tile, the tile toggles between displaying <const>.</const> and <const>#</const>.<br><br>Barry's bouncing behavior is described with a space-separated sequence of directions <var>d_1 d_2 d_3...</var> followed by an index-matched integer sequence for bounce count <var>b_1 b_2 b_3...</var> Directions are any of the four cardinal directions <const>NSEW</const>. Bounce count describes how many tiles Barry bounces forward in a straight line. <strong>Turning does not count as a bounce.</strong><br><br>After Barry has finished his bouncing business, print the appearance of the floor, cropped to the smallest rectangle that includes all <const>#</const>'s.<br><br>For example, the input<br><pre style="font-family: monospace"><const>E S E</const><br><const>4 3 1</const></pre><br>would produce the floor as shown:<br><pre style="font-family: monospace"><const>........</const><br><const>..####..</const><br><const>.....#..</const><br><const>.....#..</const><br><const>.....##.</const><br><const>........</const></pre><br>but this should be printed instead:<br><pre style="font-family: monospace"><const>####.</const><br><const>...#.</const><br><const>...#.</const><br><const>...##</const></pre><br>If no tiles show <const>#</const> at the end of Barry's bouncing, simply print <const>.</const> instead.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> A string containing a space-separated sequence of characters <const>NSEW</const> representing bouncing direction<br><strong>Line 2:</strong> A string containing a space-separated sequence of integers representing bounce count</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">A map of the floor, consisting of characters <const>#</const> and <const>.</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; bounces per action &le; 100000<br>1 &le; sequence length &le; 500</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">E S W
+4 3 2</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">####
+...#
+...#
+.###</pre>
+         </div>
+      </div>
+   </div>
+</div>

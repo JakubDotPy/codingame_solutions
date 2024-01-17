@@ -1,0 +1,36 @@
+<h1>CGS minifier</h1>
+
+<a href="https://www.codingame.com/training/medium/cgs-minifier">https://www.codingame.com/training/medium/cgs-minifier</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Your program must output a minified version of a CodinGame script formatted as CGS.<br><br>To do so, <strong>except</strong> for names between apostrophes (<const>'</const>), remove spaces, tabulations and display the code on one line.<br>In addition, variables written between two (<const>$</const>) must be minified, the first variable of the script will be <strong>$a$</strong>, the second one <strong>$b$</strong>, etc.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1: </strong>The number <var>N</var> of CGS lines to be minified.<br><strong>The <var>N</var> following lines: </strong>The CGS content.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1: </strong>The minified CGS content.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <var>N</var> &lt; 10<br>0 &#8804; number of variables in CGS content &lt; 10</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">4&#10;(&#10;    $hello$ = 'hello';&#10;    print $hello$;&#10;)</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">($a$='hello';print$a$;)</pre>
+         </div>
+      </div>
+   </div>
+</div>

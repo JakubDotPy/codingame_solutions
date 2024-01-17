@@ -1,0 +1,43 @@
+<h1>Fair Numbering</h1>
+
+<a href="https://www.codingame.com/training/medium/fair-numbering">https://www.codingame.com/training/medium/fair-numbering</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Alice and Bob are preparing printed notes for their CEO to use in a product launch event. However, at the last moment they found that they forgot to add page numbers into some pages.<br><br>They have no time and no ink in the printer to print the notes all over again. They opted to handwrite the needed page numbers at the bottom of each unnumbered page.<br><br>The unnumbered pages are in a continuous range. Alice will handwrite the numbers in the first half of the range. Bob will do the rest.<br><br>Half and half. Is this division of labor fair? Nonono.<br><br>Suppose they have to write from page 1 to page 200. According to this simple division, Alice will write 1, 2, 3... until 100. Bob will write 101, 102, 103... to 200. Bob will have to write a lot more <strong>digits</strong> than Alice!<br><br>Could you help them find a fair way to split the task? Find the number of the last page that should be numbered by Alice, so that both of them will write the same number of digits. If it turns out to be impossible, find the last page for Alice such that Alice's digit-writing count will be as far as possible close to and not more than Bob's.<br><br>☀  A page number has to be written by either Alice or Bob. They cannot jointly write one number.<br>☀  Page numbers are all decimal integers count from 1. The missing number pages can start from page 1 or anywhere in the middle of the notes.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">There are multiple tests in each test case.<br><br><strong>Line 1: </strong> Integer <var>N</var>, the number of tests to follow.<br><strong>Following <var>N</var> lines: </strong> Each line has two integers, <var>st</var> <var>ed</var>, for the starting and ending page numbers (inclusive) defining the range of pages that needs handwritten numbering.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>N</var> Lines: </strong> For each test in the input, write the corresponding last page number that should be responsible by Alice to write the needed page number on.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>N</var> &le; 200<br>1 &le; <var>st</var> &lt; <var>ed</var> &le; 10,000,000</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">4
+1 200
+8 10
+9 10
+8 11</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">118
+9
+9
+9</pre>
+         </div>
+      </div>
+   </div>
+</div>

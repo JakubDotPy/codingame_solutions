@@ -1,0 +1,43 @@
+<h1>A child's play</h1>
+
+<a href="https://www.codingame.com/training/easy/a-childs-play">https://www.codingame.com/training/easy/a-childs-play</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">For several years now, in elementary schools, we have seen the emergence of a new educational model, playful programming. The students must program a small robot using assembly blocks. This allows them to get familiar with programming from an early age while exercising their logic and perception of space.<br><br>You are a student at one such school. The purpose of the exercise is simple: your teacher has crafted a circuit for your robot, told you how many moves <var>n</var> the robot may make, and <strong>you must find out the final position of the robot at end of execution.</strong><br><br>To do this you need to know some principles of robot operation.<br>&ndash;&nbsp;When the robot encounters an obstacle (represented by <const>#</const>) it turns right (on same operation) until there's no obstacle ahead anymore. Otherwise on an empty area (represented by <const>.</const>) it moves straight ahead.<br>&ndash; The robot initially moves upwards.<br>&ndash; The robot stops after <var>n</var> moves.<br>&ndash; The top left corner represents the coordinates (0,0)<br>&ndash; The robot's environment is represented as follows, where <const>O</const> is the robot's initial position:<br><pre style="font-family: monospace">...#........<br>...........#<br>............<br>............<br>..#O........<br>..........#.</pre></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Width <var>w</var> and height <var>h</var> of the map.<br><strong>Line 2:</strong> Number <var>n</var> of operations to be performed by the robot<br><strong>Next <var>n</var> lines:</strong> The map where the robot moves with <const>.</const> representing a free space, <const>#</const> an obstacle and <const>O</const> the starting position.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">&curren; The final position <var>x y</var> (separated by a space) of the robot at end of execution, where <var>x</var> is the horizontal position and <var>y</var> is the vertical position.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">&curren; 0 &lt; <var>w</var> &lt;= 20<br>&curren; 0 &lt; <var>h</var> &lt;= 10<br>&curren; The obstacles are placed in such a way that the robot will never leave the map <br>&curren; The robot will never be blocked between obstacles<br>&curren; <var>n</var> &lt; 2^53</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">12 6
+987
+...#........
+...........#
+............
+............
+..#O........
+..........#.</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">7 1</pre>
+         </div>
+      </div>
+   </div>
+</div>

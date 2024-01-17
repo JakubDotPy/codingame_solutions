@@ -1,0 +1,38 @@
+<h1>Balanced Levers</h1>
+
+<a href="https://www.codingame.com/training/hard/balanced-levers">https://www.codingame.com/training/hard/balanced-levers</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">A hanging mobile (not referring to a mobile phone) is a sculpture or decoration whose parts are balanced to move in response to air currents. It is a kinetic art based on lever balance design. In this puzzle, whenever a &quot;mobile&quot; is mentioned, it means &quot;hanging mobile&quot;. The banner shows example drawings of this object.<br><br>You probably know the lever equilibrium equation very well. For the sake of completeness, here is the equation stated.<br><br>a, b are lengths; n, m are weights.<br><br><pre style="font-family: monospace">      |<br> __a__|____b____<br>|               |<br>n               m</pre><strong>a * n = b * m</strong><br><br><br><strong>A mobile is defined as:</strong><br>▪️  a weight hung by a string, or<br>▪️ a rod with two sub-mobiles at both ends.<br>(A sub-mobile is also a mobile with the same definition.)<br><br>A weight cannot be tied directly to a weight. The banner drawing is just a decoration, not a definition.<br><br><const>● ○ ● ○ ● ○ ● ○ ● ○ ● ○ ● ○ ● ○ ● ○ ● ○ ● ○ ● ○</const><br><br>In a classroom, students are given a number of weights and some rods to build hanging mobiles. Specifications are given:<br><br>▪️ All rods are identical, with a length of one (1) unit. Rods cannot be extended or cut short. The full length of the rods should be used as the beam in a lever.<br>▪️ Every rod used must be designed to be horizontally balanced.<br>▪️ For simplicity, the rods and strings are assumed to be weightless. Assume the rods will not be bent by the weights.<br><br><strong>Task</strong><br>You have to design a hanging mobile that has the longest width.<br>All given weights must be used. You can have as many rods as you need. Ignore the width of the weights when measuring the total width.<br><br><strong>Big but not too big</strong><br>Last but not the least, the classroom has a limited area. Any hanging mobile designs wider than the classroom width are rejected. Keep your design no larger than the given limit.<br><br><br><strong>Example</strong><br><br>With a given set of weights [1, 1, 2], there are several possible designs. Some of them are wider.<br><br><pre style="font-family: monospace"> _______|__          _______|__<br>|    ______|___     |       ___|______<br>1   |          |    1      |          |<br>    1          2           2          1<br><br>width = 1 + (1/3)    width = 1 + (2/3)</pre><br>The max width is 1.6667. If it is not exceeding the classroom width limit, it is the answer.<br><br>Hanging mobiles are often in 3D form. To measure the width, we flatten the design into a 2D form. Some rods and weights can be overlapping when flattened and it is allowed.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1: </strong> <var>L</var>, a float-point number which is the width of the classroom, measured in unit length (same unit used for rod length)<br><strong>Line 2: </strong> <var>N</var>, the number of weights given<br><strong>Line 3: </strong> [w1, w2, w3...wn], totally <var>N</var> integers listed in one line, space separated, for all the given weights, in no specific order.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1: </strong> A float-point number for the maximum width of a mobile design confirming to the above requirements, round to 4 digits after the decimal point. (e.g. 1.00005 becomes 1.0001)<br><br>In case no design can fit into the classroom, output <strong>-1</strong> as the answer.<br><br>Note that the classroom width is an absolute limit that no mobile design should be larger than it. Suppose the classroom width is 2 and the width of a mobile design is 2.00001. Although this design width can be rounded to 2.0000, we should still reject this design because it is absolutely longer than the limit. We should resort to design options less than or equal to 2.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">Number of weights: 1 &le; <var>N</var> &le; 6<br>Value of each weight: 1 &le; w &le; 1000<br>Classroom width: 1 &le; <var>L</var> &le; 10</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">9.9
+3
+1 2 4</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1.8000</pre>
+         </div>
+      </div>
+   </div>
+</div>

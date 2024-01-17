@@ -1,0 +1,36 @@
+<h1>Number formatting</h1>
+
+<a href="https://www.codingame.com/training/easy/number-formatting">https://www.codingame.com/training/easy/number-formatting</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Based on the specially formatted number <var>numberstring</var>, you need to output the number divided by two in that same special format.<br><br>The <strong>special format rules</strong>: a number is always represented as a <const>string</const> with length <const>19</const>, which represents a float with 9 numbers before and 6 numbers after the decimal point. All numbers before the decimal point are comma-separated for every three digits, while all numbers after the decimal point are point-separated for every three digits. All positions not used are represented with <const>x</const>.<br><br><strong>For example</strong>: the input <const>xxx,x38,858.321.82x</const> is <const>38858.32182</const>. Divided by two this gives <const>19429.16091</const>, so the output should be <const>xxx,x19,429.160.91x</const>.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong>: the string <var>numberstring</var> with length <const>19</const>, representing a number in special format.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">A string with length <const>19</const>, which is the number from the input, divided by two, in special format.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><var>numberstring</var>  represents a number &gt;= 0 and &lt;= 999999999.999998<br>The last character of <var>numberstring</var> will always either be <const>x</const> or an even number.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">200,000,000.000.002</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">100,000,000.000.001</pre>
+         </div>
+      </div>
+   </div>
+</div>

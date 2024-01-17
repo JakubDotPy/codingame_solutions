@@ -1,0 +1,39 @@
+<h1>1D Spreadsheet</h1>
+
+<a href="https://www.codingame.com/training/easy/1d-spreadsheet">https://www.codingame.com/training/easy/1d-spreadsheet</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are given a 1-dimensional spreadsheet. You are to resolve the formulae and give the value of all its cells.<br><br>Each input cell's content is provided as an <var>operation</var> with two operands <var>arg1</var> and <var>arg2</var>.<br><br>There are 4 types of operations:<br><const>VALUE</const> <var>arg1</var> <var>arg2</var>: The cell's value is <var>arg1</var>, (<var>arg2</var> is not used and will be &quot;_&quot; to aid parsing).<br><const>ADD</const> <var>arg1</var> <var>arg2</var>: The cell's value is <var>arg1</var> + <var>arg2</var>.<br><const>SUB</const> <var>arg1</var> <var>arg2</var>: The cell's value is <var>arg1</var> - <var>arg2</var>.<br><const>MULT</const> <var>arg1</var> <var>arg2</var>: The cell's value is <var>arg1</var> &times; <var>arg2</var>.<br><br>Arguments can be of two types:<br>&bull; <strong>Reference</strong> $<var>ref</var>: If an argument starts with a dollar sign, it is a interpreted as a reference and its value is equal to the value of the cell by that number <var>ref</var>, 0-indexed.<br>For example, &quot;$0&quot; will have the value of the result of the first cell.<br>Note that a cell can reference a cell <strong>after</strong> itself!<br><br>&bull; <strong>Value</strong> <var>val</var>: If an argument is a pure number, its value is <var>val</var>.<br>For example: &quot;3&quot; will have the value <const>3</const>.<br><br>There won't be any cyclic references: a cell that reference itself or a cell that references it, directly or indirectly.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var> for the number of cells.<br><strong>Next <var>N</var> lines:</strong> <var>operation</var> <var>arg1</var> <var>arg2</var><br><br><var>operation</var> is one of { <const>VALUE</const>, <const>ADD</const>, <const>SUB</const>, <const>MULT</const> }<br><var>arg1</var> and <var>arg2</var> are either a number (&quot;-?[0-9]+&quot;), a reference (&quot;\$[0-9]+&quot;) or nothing &quot;_&quot;.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>N</var> lines:</strong> the value of each cell, one value per line, from cell&nbsp;0 to&nbsp;cell <var>N</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>N</var> &le; 100<br>-10000 &le; <var>val</var> &le; 10000<br>$0 &le; $<var>ref</var> &le; $(<var>N</var>-1)<br><var>val</var> &isin;  ℤ<br><var>ref</var> &isin; ℕ<br>There are <strong>no</strong> cyclic references.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+VALUE 3 _
+ADD $0 4</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">3
+7</pre>
+         </div>
+      </div>
+   </div>
+</div>

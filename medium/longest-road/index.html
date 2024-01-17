@@ -1,0 +1,41 @@
+<h1>Longest Road</h1>
+
+<a href="https://www.codingame.com/training/medium/longest-road">https://www.codingame.com/training/medium/longest-road</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Determine which player in a <strong>rectangular</strong> &quot;Settlers of Catan&quot; themed game board has the longest road.<br><br>Given an ascii game board:<br><pre style="font-family: monospace">aa##b<br>#A##B<br>#aa#b<br>##a##</pre><br>The lower case letters &quot;<const>a</const>&quot; denote a road belonging to player <const>A</const>.<br>Uppercase letters denote a settlement.<br><br>If a player has at least 5 consecutive (non-repeating) roads then they can be awarded the &quot;longest road&quot; victory points.<br>Roads connected diagonally are not considered consecutive. Roads can be linked together by settlements, but the settlements do not count towards the total length of the player's roads. In the above example player <const>A</const> would have the longest road with a length of 5.<br><br>The input will never include the case where multiple players are tied for longest road.<br><br><strong>Loops and branches</strong><br>A road may form a loop or branch out in multiple directions. In all cases the longest possible consecutive link of roads is used to determine the players' longest roads.<br><br>Inspired by the board game &quot;Settlers of Catan&quot; by Klaus Teuber.<br>Image by dograapps from Pixabay.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Integer <var>n</var> the length of the square board.<br><strong>Next <var>n</var> lines:</strong> String of characters representing the game board. <const>#</const> represents an open space. Lowercase letters represent roads, and uppercase letters represent settlements.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">Output the capital letter of the player with the longest road, and the length of the road, e.g. <const>A 6</const>.<br>If no player has the longest road then output the number <const>0</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">5 &le; <var>n</var> &le; 10</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">5
+#a###
+#a###
+#a###
+#aa##
+##a##</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">A 6</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,38 @@
+<h1>Interstellar</h1>
+
+<a href="https://www.codingame.com/training/easy/interstellar">https://www.codingame.com/training/easy/interstellar</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Picture yourself as an intrepid intergalactic navigator, entrusted with the task of charting a course through a mesmerizing cosmic wormhole. Your advanced ship is equipped with cutting-edge sensors capable of detecting vectors representing the elusive location of this celestial phenomenon. You'll be provided with two vectors, denoted as <var>ship</var> and <var>wormhole</var>, the magnitude of each component (i,j,k) being integers.<br><br>To guarantee a secure passage through this ethereal expanse, you must develop a program that can precisely calculate the <strong>direction</strong> and <strong>distances</strong> between your ship and the wormhole. However, there's a twist! The sensors have encountered an unexpected glitch, introducing superfluous white spaces between coordinates. Furthermore, they may not adhere to the conventional <strong>i</strong>, <strong>j</strong>, and <strong>k</strong> sequence. For instance, you might receive a vector like <strong>&quot;2i-3k+4j&quot;</strong>, where the default <strong>i, j and k</strong> sequence is violated.<br><br>Additionally, if no number is explicitly mentioned before a component, consider it to be 1. For instance, <strong>&quot;k+i-j&quot;</strong> equates to <strong>&quot;1k+1i-1j&quot;</strong>. And if a component is entirely absent, its value is assumed to be 0, like <strong>&quot;i-k&quot;</strong>, which is equivalent to <strong>&quot;1i+0j-1k&quot;</strong>.<br><br><strong>Hint:</strong><br>1) The vector ai+bj+ck denotes the coordinates (a,b,c) in space<br>2) Distance between two points (say (a1,b1,c1) and (a2,b2,c2)) is calculated by &radic;((a2 &ndash; a1)&sup2; + (b2 &ndash; b1)&sup2; + (c2-c1)&sup2;)<br>3) Directional vector of one vector(a1i+b1j+c1k) with respect to another vector(a2i+b2j+c2k) is given by (a1-a2)i+(b1-b2)j+(c1-c2)k<br>4) The sign before the first component of directional vector is omitted if it is positive. That is, <strong>+2i+3j-4k</strong> should be written as <strong>2i+3j-4k</strong>, whereas <strong>-9i+8j+4k</strong> remains the same.<br>5) Return the directional vectors in their simplified form by dividing each component by the GCD (Greatest Common Divisor) of the components. That is, <strong>2i-4j</strong> should be converted to <strong>i-2j</strong><br>6) Finally, round the distance off to 2 decimal places.<br><br>Prepare for a cosmic challenge, Captain! It's time to navigate through the wormhole with finesse and precision.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> A string <var>ship</var> representing the location of the ship in space.<br><strong>Line 2:</strong> A string <var>wormhole</var> representing the location of the wormhole in space.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> The directional vector to the wormhole from the ship<br><strong>Line 2:</strong> Distance between the ship and the wormhole rounded off to two decimal places.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; length(<var>ship</var>) &le; 20<br>1 &le; length(<var>wormhole</var>) &le; 20</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">i+j-k
+i-j+k</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">Direction: -j+k
+Distance: 2.83</pre>
+         </div>
+      </div>
+   </div>
+</div>

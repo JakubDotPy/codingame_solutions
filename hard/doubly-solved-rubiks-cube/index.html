@@ -1,0 +1,56 @@
+<h1>Doubly solved Rubik's cube</h1>
+
+<a href="https://www.codingame.com/training/hard/doubly-solved-rubiks-cube">https://www.codingame.com/training/hard/doubly-solved-rubiks-cube</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Given a configuration of the Rubik's cube, find its doubly solved configuration. Specifically, pick any sequence of twists that solves the given Rubik's cube. Apply that same sequence twice to the given cube (once to solve it, then again to get some new configuration). You are asked to output the resulting configuration.<br><br>It can be shown that the result is independent of the sequence of twists used to solve the initial cube. In this problem only the configuration below counts as solved (no other orientations).<br><br>The solved cube configuration is:<br><pre style="font-family: monospace"></pre><pre style="font-family: monospace">    UUU<br>    UUU<br>    UUU<br><br>LLL FFF RRR BBB<br>LLL FFF RRR BBB<br>LLL FFF RRR BBB<br><br>    DDD<br>    DDD<br>    DDD</pre><pre style="font-family: monospace"></pre>There are no trailing spaces.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">A flattened Rubik's cube configuration. If we made a cut-out of the flattened configuration on paper, we could fold the flaps backwards to produce a cube. This gives each input character a corresponding Rubik's cube sticker.<br><br><strong>3 lines:</strong> The top of the cube<br><strong>Blank line</strong><br><strong>3 lines:</strong> The left, front, right and back of the cube<br><strong>Blank line</strong><br><strong>3 lines:</strong> The bottom of the cube</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The doubly solved configuration in the same format as the input.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">The input will be a valid cube configuration, i.e. it can be solved by a sequence of twists and full cube orientation changes.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">    UUF
+    UUF
+    UUF
+
+LLL FFD RRR UBB
+LLL FFD RRR UBB
+LLL FFD RRR UBB
+
+    DDB
+    DDB
+    DDB</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">    UUB
+    UUB
+    UUB
+
+LLL FFU RRR DBB
+LLL FFU RRR DBB
+LLL FFU RRR DBB
+
+    DDF
+    DDF
+    DDF</pre>
+         </div>
+      </div>
+   </div>
+</div>

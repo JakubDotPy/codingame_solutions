@@ -1,0 +1,41 @@
+<h1>Annihilation</h1>
+
+<a href="https://www.codingame.com/training/easy/annihilation">https://www.codingame.com/training/easy/annihilation</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Starting with an <var>H</var>x<var>W</var> grid at t=0, at each time step the arrows <const>^v&lt;&gt;</const> move one space up/down/left/right respectively (wrapping around if they go off the edge).  After each time step, if two or more arrows are in the same position they are all destroyed.  How many time steps does it take until there are no arrows remaining?</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> <var>H</var> <var>W</var><br><strong>Next <var>H</var> lines:</strong> The grid values.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The number of time steps until there are no arrows remaining.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">4 &le; <var>H</var>,<var>W</var> &le; 50</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">5 5
+.....
+..v..
+.&gt;.&lt;.
+..^..
+.....</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1</pre>
+         </div>
+      </div>
+   </div>
+</div>

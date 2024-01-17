@@ -1,0 +1,39 @@
+<h1>Code your own Automaton2000, step 1</h1>
+
+<a href="https://www.codingame.com/training/hard/code-your-own-automaton2000-step-1">https://www.codingame.com/training/hard/code-your-own-automaton2000-step-1</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Do you know Automaton2000? You don't? Okay, so, let's join the chat. Look at the right of the website and join the general channel. If you are level 3, just say &quot;<strong>Hi Automaton2000</strong>&quot; and the bot Automaton2000 will answer you.<br><br>The behavior of Automaton2000 is pretty simple. It learns from what it reads on the channel. It is always here, listening. When you poke him by writing its name, it will build a sentence using what it has read on the channel.<br><br><strong>Your goal here is to code your own Automaton2000 !</strong><br>Important note: The real Automaton2000 has a random behavior because there's no fun at all in a bot repeating the same sentence again and again. But for this puzzle, there's will be no random at all in the expected output.<br><br>Automaton2000 captures all the words in every sentence in the chat and builds a tree with the words. To build a new sentence, it browses the tree, concatenating the words one by one until the end of the sentence (represented by an <const>__END__</const> node in the tree).<br><br>For instance, take the following chat log:<br><br>(21:52:18) Magus: Hey MadKnight<br>(21:53:05) MadKnight: Hey Magus. How is your CSB?<br><br>Automaton2000 will first ignore the part <const>(21:52:18) Magus:</const>. The rest is split on the space character. Then the words are used to build the tree. With the given example, Automaton2000 will build the following tree:<br><br><pre style="font-family: monospace">__START__<br>    Hey 2<br><br>Hey<br>    MadKnight 1<br>    Magus. 1<br><br>MadKnight<br>    __END__ 1<br><br>Magus.<br>    How 1<br><br>How<br>    is 1<br><br>is<br>    your 1<br><br>your<br>    CSB? 1<br><br>CSB?<br>    __END__ 1</pre><br><br><const>__START__</const> is a special node representing the start of a sentence. <const>__END__</const> is a special node representing the end of a sentence.<br><br>Your program will receive a chat log in input. It should try to build the same tree as Automaton2000. Each time you read the word Automaton2000 at least one time in a sentence, you have to print a sentence. Your program must output the most likely sentence possible according to the tree. You have to browse your tree, selecting the most powerful word each time.<br><br>Don't forget that you must output the sentence using the tree in its current state after the string <const>Automaton2000</const> appears. So you should first read the sentence, update your tree, and then print a phrase when you have to.<br><br>With the given example, your program should print <strong>Hey MadKnight</strong><br><br>Don't forget these specific points:<br>* Automaton2000 ignores the word <const>Automaton2000</const>. But <const>Automaton2000_</const> is a valid word, for example.<br>* Automaton2000 does not read its own sentences.<br>* Automaton2000 ignores empty sentences.<br>* If you must choose between multiple words with the same weight, choose according to the alphabetical order (case sensitive, uppercase first).<br>* Automaton2000 has a security and stops at 30 words at maximum. You don't want to do an infinite loop !<br>* Symbols like <const>,</const> and <const>.</const> are read as letters.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 2:</strong> An integer <var>n</var>.<br><strong>Next <var>n</var> lines:</strong> A chat line like <pre style="font-family: monospace">(21:52:18) Magus: Hey MadKnight, did you improve your CSB AI recently ?</pre></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>X lines</strong> One line each time a chat line contains the string <const>Automaton2000</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>n</var> &le; 100</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+(21:52:18) Magus: Hey MadKnight, did you improve your CSB AI recently?
+(21:53:05) MadKnight: Hey Magus. Yes my CSB AI use a new genetic algorithm! And you?
+(21:53:42) Magus: No i'm too busy trying to fix Automaton2000</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">Hey MadKnight, did you improve your CSB AI recently?</pre>
+         </div>
+      </div>
+   </div>
+</div>

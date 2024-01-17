@@ -1,0 +1,38 @@
+<h1>Apple tree</h1>
+
+<a href="https://www.codingame.com/training/hard/apple-tree">https://www.codingame.com/training/hard/apple-tree</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">There are <const>N</const> apples on the tree. Every apple is a sphere with position (<const>x</const>, <const>y</const>, <const>z</const>) and radius <const>r</const>.<br>Then the <const>i</const>-th apple begins to fall straight down and can collide with others. When static apple gets hit by the falling one it begins to fall too, and the falling apple continues to fall straight down.<br>Your task is to determine how many apples will remain on the tree.<br><br><strong>NOTE</strong><br>&quot;Down&quot; direction is vector (<const>0</const>, <const>0</const>, <const>-1</const>), i.e. apple with position (<const>0</const>,<const>0</const>,<const>10</const>) is higher than (<const>0</const>,<const>0</const>,<const>5</const>)</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong> Two integers <var>N</var> and <var>i</var> &ndash; the number of apples and index of the falling apple<br><strong>Next N lines</strong> Four space-separated integers <var>X</var>, <var>Y</var>, <var>Z</var> and <var>R</var> &ndash; position and radius of the apple</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">A single integer &ndash; number of remaining apples</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>N</var> &lt; 100<br>0 &le; <var>i</var> &lt; N<br>-1000000 &le; <var>x</var>, <var>y</var>, <var>z</var> &le; 1000000<br>1 &le; <var>r</var> &lt; 1000000</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2 0
+0 0 100 10
+0 0 200 15</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1</pre>
+         </div>
+      </div>
+   </div>
+</div>

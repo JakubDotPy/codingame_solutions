@@ -1,0 +1,38 @@
+<h1>Rectangle Partition</h1>
+
+<a href="https://www.codingame.com/training/easy/rectangle-partition">https://www.codingame.com/training/easy/rectangle-partition</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">There is a rectangle of given width <var>w</var> and height <var>h</var>,<br><br>On the width side, you are given a list of measurements.<br>On the height side, you are given another list of measurements.<br><br>Draw perpendicular lines from the measurements to partition the rectangle into smaller rectangles.<br><br>In all sub-rectangles (include the combinations of smaller rectangles), how many of them are squares?<br><br><br><strong>Example</strong><br><br>w = 10<br>h = 5<br>measurements on x-axis: 2, 5<br>measurements on y-axis: 3<br><br><pre style="font-family: monospace">   ___2______5__________ <br>  |   |      |          |<br>  |   |      |          |<br> 3|___|______|__________|<br>  |   |      |          |<br>  |___|______|__________|</pre><br>Number of squares in sub-rectangles = 4 (one 2x2, one 3x3, two 5x5)</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1: </strong> Integers <var>w</var> <var>h</var> <var>countX</var> <var>countY</var>, separated by space<br><strong>Line 2: </strong> list of measurements on the width side, <var>countX</var> integers separated by space, sorted in asc order<br><strong>Line 3: </strong> list of measurements on the height side, <var>countY</var> integers separated by space, sorted in asc order</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1: </strong> the number of squares in sub-rectangles created by the added lines</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>w</var>, <var>h</var> &le; 20,000<br>1 &le; number of measurements on each axis &le; 500</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">10 5 2 1
+2 5
+3</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">4</pre>
+         </div>
+      </div>
+   </div>
+</div>

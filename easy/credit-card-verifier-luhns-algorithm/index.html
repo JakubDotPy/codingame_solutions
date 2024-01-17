@@ -1,0 +1,39 @@
+<h1>Credit Card Verifier (Luhn’s algorithm)</h1>
+
+<a href="https://www.codingame.com/training/easy/credit-card-verifier-luhns-algorithm">https://www.codingame.com/training/easy/credit-card-verifier-luhns-algorithm</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Most payment card numbers are 16 digits long. The leftmost 6 digits represent a unique identification number for the bank who has issued the card. The next 2 digits determine  the type of the card (e.g., debit, credit, gift). Digits 9 to 15 are the serial number of the card, and the last digit is used as a control digit to verify whether the card number is valid. Hence, if somebody enters the card number incorrectly, there is a high chance that a payment software can easily determine it.<br>Most cards use an algorithm invented by Hans Peter Luhn, a nice fellow from IBM. According to Luhn&rsquo;s algorithm, you can determine if a credit card number is (syntactically) valid as follows:<br><br><strong>1.</strong>Double every second digit from right to left. If this &ldquo;doubling&rdquo; results in a two-digit number, subtract 9 from it get a single digit.<br><strong>2.</strong>Now add all single digit numbers from step <strong>1</strong>.<br><strong>3.</strong>Add all digits in the odd places from right to left in the credit card number.<br><strong>4.</strong>Sum the results from steps <strong>2</strong> &amp; <strong>3</strong>.<br><strong>5.</strong>If the result from step <strong>4</strong> is divisible by 10, the card number is valid; otherwise, it is invalid.<br>for example:<br><br><strong>Test 1:</strong><br><pre style="font-family: monospace">4556 7375 8689 9855</pre><br><strong>1.</strong><br><pre style="font-family: monospace">5*2 9*2 8*2 8*2 7*2 7*2 5*2 4*2</pre><br><pre style="font-family: monospace">10 18 16 16 14 14 10 8</pre><br><pre style="font-family: monospace">1 9 7 7 5 5 1 8</pre><br><strong>2.</strong><br><pre style="font-family: monospace">1+9+7+7+5+5+1+8=43</pre><br><strong>3.</strong><br><pre style="font-family: monospace">5+8+9+6+5+3+6+5=47</pre><br><strong>4.</strong><br><pre style="font-family: monospace">43+47=90</pre><br>The number is valid<br><br><strong>Test 2:</strong><br><pre style="font-family: monospace">4024 0071 0902 2143</pre><br><strong>1.</strong><br><pre style="font-family: monospace">4*2 2*2 0*2 0*2 7*2 0*2 2*2 4*2</pre><br><pre style="font-family: monospace">8 4 0 0 14 0 4 8</pre><br><pre style="font-family: monospace">8 4 0 0 5 0 4 8</pre><br><strong>2.</strong><br><pre style="font-family: monospace">8+4+0+0+5+0+4+8=29</pre><br><strong>3.</strong><br><pre style="font-family: monospace">3+1+2+9+1+0+4+0=20</pre><br><strong>4.</strong><br><pre style="font-family: monospace">20+29=49</pre><br>Therefore the number not valid.<br>So, validating credit card numbers isn&rsquo;t hard, but it does get a bit tedious by hand.<br><br>Your task is to read several card numbers from the input, and determine whether each one is a valid card number or not.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong>: An integer <var>N</var> for the number of cards to verify.<br><strong>Next <var>N</var> lines</strong>: One line for each card to verify. Each test is consisting of four space-separated 4-digit strings.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong> <var>N</var> lines</strong>: For each test case, output a line containing <const>YES</const> or <const>NO</const> depending on whether the card number is valid or not, respectively.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+4556 7375 8689 9855
+4024 0071 0902 2143</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">YES
+NO</pre>
+         </div>
+      </div>
+   </div>
+</div>

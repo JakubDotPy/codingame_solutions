@@ -1,0 +1,38 @@
+<h1>Breaking Apart</h1>
+
+<a href="https://www.codingame.com/training/hard/breaking-apart">https://www.codingame.com/training/hard/breaking-apart</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">In the wonderful words of <strong>Servatta</strong> they use a very peculiar language.<br>They utilize <strong>the English alphabet</strong> for their writing, their <strong>vowels are &quot;aeiou&quot;</strong>, the <strong>consonants are the rest</strong>.<br><strong>Words can be broken into syllables</strong>, a syllable consists of <strong>a vowel</strong> with at most <strong>two consonants on each side</strong> of it (so syllables can be of the form e, te, et or tet). <strong>Consonants tend to belong to the next vowel in the word</strong>, unless there's <strong>two of them next to each other</strong> (in which case they split Ser|vat), or it's <strong>the last letter in the word</strong> (Ser|<strong>vat</strong>). Having two consonants at the end of a word is not grammatically correct.<br>When breaking up words at the end of the line, a <strong>hyphen</strong> gets placed at the end of one of the syllables, and the rest of the word continues on the next line:<br>Servat-<br>ta<br><br>Lemi is the only journalist in the entire country and he types out every article in a very basic monospace text editor. <br>He has the following way of breaking up lines manually: he tries to <strong>fill the current line with as many words as possible</strong>, then he tries to <strong>fit partial words into the remaining space</strong>. After this he <strong>moves onto the next line</strong>. He always pays attention so that he <strong>never breaks up a word if it would mean only one letter would be left before the hyphen</strong> though, so the following is invalid:<br>a-<br>tara<br><br>One day Lemi has decided that he had enough, and swore to never type anything ever again, but because he doesn't want to get fired, he asked you to write a program that would do this for him instead.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var> for the width of the page in characters<br><strong>Line 2:</strong> The text <var>S</var> that needs to be handled</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">Some number of lines with at most <var>N</var> characters each including the hyphens broken up by Lemi's method</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">10 &le; <var>N</var> &le; 100<br>1 &le; Length of <var>S</var> &le; 500<br>1 &le; Length of one word &le; 200<br><var>S</var> consists of only upper and lowercase letters and spaces, for the purposes of this challenge, the text doesn't contain punctuation</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">20
+Dertana et alioumatok gorigo te</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">Dertana et aliouma-
+tok gorigo te</pre>
+         </div>
+      </div>
+   </div>
+</div>

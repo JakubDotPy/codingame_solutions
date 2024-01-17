@@ -1,0 +1,129 @@
+<h1>Network Cabling</h1>
+
+<a href="https://www.codingame.com/training/medium/network-cabling">https://www.codingame.com/training/medium/network-cabling</a>
+
+<div class="statement_back" id="statement_back" style="display:none">&nbsp;</div>
+
+<div class="statement-body"><!-- GOAL -->
+<div class="statement-section statement-goal">
+<h2><span class="icon icon-goal">&nbsp;</span> <span>The Goal</span></h2>
+
+<div class="statement-goal-content">An internet operator plans to connect a business park to the optical fiber network. The area to be covered is large and the operator is asking you to write a program that will calculate the minimum length of optical fiber cable required to connect all buildings.</div>
+</div>
+<!-- RULES -->
+
+<div class="statement-section statement-rules">
+<h2><span class="icon icon-rules">&nbsp;</span> <span>Rules</span></h2>
+
+<div>
+<div class="statement-rules-content">
+<div>For the implementation of the works, the operator has technical constraints whereby it is forced to proceed in the following manner:</div>
+
+<div>A main cable will cross through the park from the West to the East (from the position x of the most westerly building to the position x of the most easterly building).<br />
+<br />
+For each building, a dedicated cable will connect from the building to the main cable by a minimal path (North or South), as shown in the following example:</div>
+&nbsp;
+
+<div class="statement-example-horizontal">
+<div style="width: 280px;display: table-cell;background-color: transparent;vertical-align: middle;padding: 0;"><img src="https://www.codingame.com/fileservlet?id=11638050532" style="width: 100%; background-color: white" /></div>
+
+<div class="legend" style="text-align: center; vertical-align: center">In this example, the green lines represent the cables.</div>
+</div>
+&nbsp;
+
+<p>The minimum length will therefore depend on the position of the main cable.</p>
+</div>
+</div>
+</div>
+<!-- PROTOCOL -->
+
+<div class="statement-section statement-protocol">
+<h2><span class="icon icon-protocol">&nbsp;</span> <span>Game Input</span></h2>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Input</div>
+
+<div class="text">
+<p><span class="statement-lineno">Line 1: </span>The number <var>N</var> of buildings that need to be connected to the optical fiber network</p>
+
+<p><span class="statement-lineno">On the <var>N</var> following lines: </span> The coordinates <var>x</var> and <var>y</var> of the buildings</p>
+</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Output</div>
+
+<div class="text">The minimum length <var>L</var> of cable required to connect all of the buildings. In other words, the length of the main cable plus the length of the cables dedicated to all the buildings.<br />
+<br />
+Note: the buildings with the same position <var>x</var> should not in any case share the same dedicated cable.</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Constraints</div>
+
+<div class="text">0 &lt; <var>N</var> &le; 100000<br />
+0 &le; <var>L</var> &le; 2<sup>63</sup><br />
+-2<sup>30</sup> &le; <var>x</var> &le; 2<sup>30</sup><br />
+-2<sup>30</sup> &le; <var>y</var> &le; 2<sup>30</sup></div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Example 1</div>
+
+<div class="text">
+<div class="statement-inout">
+<div class="statement-inout-in" style="text-align: center; background-color: white; vertical-align: top;"><img src="https://www.codingame.com/fileservlet?id=12126801889" style="background-color: white" /></div>
+
+<div class="statement-inout-in" style="background-color: white; vertical-align: top;">
+<div class="title" style="color: #989898; padding:0">Input</div>
+
+<pre>
+3
+0 0
+1 1
+2 2</pre>
+</div>
+
+<div class="statement-inout-out" style="background-color: white;vertical-align: top;">
+<div class="title" style="color: #989898; padding:0">Output</div>
+
+<pre>
+4</pre>
+</div>
+</div>
+</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Example 2</div>
+
+<div class="text">
+<div class="statement-inout">
+<div class="statement-inout-in" style="background-color: white; text-align: center; vertical-align: top;"><img src="https://www.codingame.com/fileservlet?id=12334916061" style="background-color: white" /></div>
+
+<div class="statement-inout-in" style="background-color: white; vertical-align: top;">
+<div class="title" style="color: #989898; padding:0">Input</div>
+
+<pre>
+3
+1 2
+0 0
+2 2</pre>
+</div>
+
+<div class="statement-inout-out" style="background-color: white;vertical-align: top;">
+<div class="title" style="color: #989898; padding:0">Output</div>
+
+<pre>
+4</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

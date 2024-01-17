@@ -1,0 +1,155 @@
+<h1>The Descent - Code Golf</h1>
+
+<a href="https://www.codingame.com/codegolf/easy/the-descent-codesize">https://www.codingame.com/codegolf/easy/the-descent-codesize</a>
+
+<div class="statement_back" id="statement_back" style="display:none">&nbsp;</div>
+
+<div class="statement-body"><!-- GOAL -->
+<div class="statement-section statement-goal">
+<h2><span class="icon icon-goal">&nbsp;</span> <span>The Goal</span></h2>
+
+<div class="statement-goal-content">Destroy the mountains before your starship collides with one of them. For that, shoot the highest mountain on your path.</div>
+</div>
+<!-- RULES -->
+
+<div class="statement-section statement-rules">
+<h2><span class="icon icon-rules">&nbsp;</span> <span>Rules</span></h2>
+
+<div>
+<div class="statement-rules-content"><strong>At the start of each game turn</strong>, you are given the height of the 8 mountains from left to right.<br />
+<strong>By the end of the game turn</strong>, you must fire on the highest mountain by outputting its index (from 0 to 7).<br />
+<br />
+Firing on a mountain will only destroy part of it, reducing its height. Your ship descends after each pass. &nbsp;</div>
+<!-- Victory conditions -->
+
+<div class="statement-victory-conditions">
+<div class="icon victory">&nbsp;</div>
+
+<div class="blk">
+<div class="title">Victory Conditions</div>
+
+<div class="text">You win if you destroy every mountain</div>
+</div>
+</div>
+<!-- Lose conditions -->
+
+<div class="statement-lose-conditions">
+<div class="icon lose">&nbsp;</div>
+
+<div class="blk">
+<div class="title">Lose Conditions</div>
+
+<div class="text">
+<ul>
+	<li>Your ship crashes into a mountain</li>
+	<li>You provide incorrect output or your program times out</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- PSEUDO CODE  
+      <div class="statement-section statement-pseudocode"> 
+        <h2> 
+          <span class="icon icon-pseudocode">&nbsp;</span> 
+          <span>Pseudo Code Algorithm</span> 
+        </h2> 
+        <div class="statement-pseudocode-content"> 
+      To succeed in your mission, write the following algorithm:
+<ul>
+	<li>Each game turn, find which of the mountains is the highest.</li>
+	<li>If your ship is located on the same cell (<var>spaceX</var> variable) as the highest mountain, shoot with <action>FIRE</action>!</li>
+	<li>Else, wait with <action>HOLD</action> to keep shot ready for when you reach the highest mountain.</li>
+</ul> 
+        </div> 
+      </div> 
+      --><!-- EXAMPLES 
+      <div class="statement-section statement-examples">
+        <h2> 
+          <span class="icon icon-example">&nbsp;</span> 
+          <span>Example</span> 
+        </h2> 
+<div class="statement-example-container">
+ 
+          <div class="statement-example"> 
+            <img src="https://files.codingame.com/codingame/kirk/statement/k1/descentInit.png" /> 
+            <div class="legend"> 
+              <div class="title">Start of turn 1</div> 
+              <div class="description">Ship starts on the left (<var>spaceX</var> = 0) at the highest altitude ( <var>spaceY</var> = 10)</div> 
+            </div> 
+          </div> 
+          <div class="statement-example"> 
+            <img src="https://files.codingame.com/codingame/kirk/statement/k1/descent1.png" /> 
+            <div class="legend"> 
+              <div class="title">End of turn 1</div> 
+              <div class="description"><action>FIRE</action>: Starship fires on the first mountain, which is 5 kilometers high.</div> 
+            </div> 
+          </div> 
+          <div class="statement-example"> 
+            <img src="https://files.codingame.com/codingame/kirk/statement/k1/descent2.png" /> 
+            <div class="legend"> 
+              <div class="title">Turn 2</div> 
+              <div class="description">Ship has moved to the right (<var>spaceX</var> = 1).<action>HOLD</action>: Starship is not firing (and won't be able to fire until next pass).</div> 
+            </div> 
+          </div></div>
+      </div> --><!-- WARNING -->
+
+<div class="statement-section statement-warning">
+<h2><span class="icon icon-warning">&nbsp;</span> <span>Note</span></h2>
+
+<div class="statement-warning-content">Don&rsquo;t forget to run the tests by launching them from the &ldquo;Test cases&rdquo; window. The tests provided and the validators used to calculate your score are slightly different to avoid hard-coded solutions.</div>
+</div>
+<!-- PROTOCOL -->
+
+<div class="statement-section statement-protocol">
+<h2><span class="icon icon-protocol">&nbsp;</span> <span>Game Input</span></h2>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="text">Within an infinite loop, read the heights of the mountains from the standard input and print to the standard output the index of the mountain to shoot.</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Input for one game turn</div>
+
+<div class="text"><span class="statement-lineno"><const>8</const> lines:</span> one integer <var>mountainH</var> per line. Each represents the height of one mountain given in the order of their index (from 0 to 7).</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Output for one game turn</div>
+
+<div class="text">A <span class="statement-lineno">single line</span> with one integer for the index of which mountain to shoot.</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Constraints</div>
+
+<div class="text">0 &le; <var>mountainH</var> &le; 9<br />
+Response time per turn &le; 100ms</div>
+</div>
+</div>
+<!-- STORY 
+
+<div class="statement-story-background">
+<div class="statement-story-cover" style="background-size: cover; background-image: url(https://www.codingame.com/servlet/fileservlet?id=2210430800300)">
+<div class="statement-story" style="min-height: 300px; position: relative">
+<h2>Synopsis</h2>
+
+<div class="story-text">
+<div>&ldquo;<i><b>Captain&#39;s log, stardate 1567.9.</b> We are entering the Deneb system two days after receiving a distress call issuing from the unexplored planet XIV of this system. Our mission is to bring aid to whomever is in need of our help on this planet.</i>&rdquo;</div>
+&nbsp;
+
+<div>&ldquo;<i><b>Captain&#39;s log, supplemental.</b> While reaching the planet, our rescue ship was drawn to a point on the surface by an invisible force that we have yet to understand. Despite all efforts, the ship continues its downward course and we are at great risk of colliding with the mountains that tower below us.</i>&rdquo;</div>
+&nbsp;
+
+<div>&ldquo;<i><b>Captain&#39;s log, supplemental.</b> In a final attempt, Scotty was able to re-engineer the phase cannons so that they can now destroy the mountains from their foundations. This gives us hope of landing safely on the planet. <strong>We are now looking for a crew member able to program the firing rate</strong> <strong>of the phase cannons </strong>to get us out safely from what clearly appears to be a trap designed to destroy us.</i>&rdquo;</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+` -->

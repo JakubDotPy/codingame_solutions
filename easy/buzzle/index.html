@@ -1,0 +1,46 @@
+<h1>Buzzle</h1>
+
+<a href="https://www.codingame.com/training/easy/buzzle">https://www.codingame.com/training/easy/buzzle</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Buzzle is a funny little math game about multiples.<br>Here were added some difficulty levels which add more rules and make it more complex.<br><br><strong>Buzzle - Level 1</strong><br><br>Players have to alternately enumerate numbers from <var>a</var> to <var>b</var>, without forgetting to replace any number which ends with <strong>7</strong> or which is a multiple of <strong>7</strong> by &quot;<const>Buzzle</const>&quot;. If a number verifies both rules (like 7 or 77), just replace it by &quot;<const>Buzzle</const>&quot;<br><br>Example (from 34 to 43):<br>34<br>Buzzle (35 = 5&times;7)<br>36<br>Buzzle (37 ends with 7)<br>38<br>39<br>40<br>41<br>Buzzle (42 = 6&times;7)<br>43<br><br><br><strong>Buzzle - Level 2</strong><br><br>Same rules as level 1, but you also have to replace the numbers by &quot;<const>Buzzle</const>&quot; when the sum of their digits is a Buzzle. For example, 88 -&gt; 8+8=16 -&gt; 1+6=7 -&gt; Buzzle<br><br>Example (from 175 to 182):<br>175<br>Buzzle (176 -&gt; 1+7+6 = 14 which is 2&times;7)<br>Buzzle (177 ends with 7)<br>Buzzle (178 -&gt; 1+7+8=16 -&gt; 1+6=7 which is 1&times;7)<br>Buzzle (179 -&gt; 1+7+9=17 which ends with 7)<br>180<br>181<br>Buzzle (182 = 26&times;7)<br>183<br><br><br><strong>Buzzle - Level 3</strong><br><br>Same rules as level 2, but it is not with <strong>7</strong>. You have to adapt the rules for the <var>k</var> numbers <var>num</var> provided in input. They are all in the range [2,9]. 1&le;<var>k</var>&le;8<br><br>Example (from 13 to 26, numbers: 5,9):<br>13<br>Buzzle (14 -&gt; 1+4=5)<br>Buzzle (15 = 3&times;5)<br>16<br>17<br>Buzzle (18 = 2&times;9  /  18-&gt; 1+8=9)<br>Buzzle (19 ends with 9  /  19 -&gt; 1+9 = 10 = 2&times;5)<br>Buzzle (20 = 4&times;5)<br>21<br>22<br>Buzzle (23 -&gt; 2+3 = 5)<br>24<br>Buzzle (25 = 5&times;5)<br>26<br><br><br><strong>Buzzle - Level 4</strong><br><br>Same rules as level 3, but you have to apply them in base <var>n</var>. Continue to display numbers in decimal, but the &quot;last digit&quot; and &quot;sum of the digits&quot; rules are in base <var>n</var>.<br>For example, in base 18, with <var>num</var> = <const>7</const> : <strong>16</strong> is not a Buzzle, because it consists in one single digit (G if we chose <const>0123456789ABCDEFGH</const> as digits), so its sum is 16. <strong>17</strong> is not a Buzzle, because its last digit is <const>H</const> (17) and not <strong>7</strong>. <strong>48</strong> is <strong>2C</strong> in base 18, the sum is 2+C (2+12) = 14 which is a multiple of <strong>7</strong> (&quot;multiple&quot; rule doesn't change with the base).<br>Warning : in base 18, 21 is not a multiple of 7 because it is the representation of 2*18 + 1 = 37. But 1H is a multiple of 7 because it represents the number 35 = 5&times;7.<br>All the numbers provided in <var>num</var> are strictly inferior to <var>n</var>.<br>1&le;<var>k</var>&lt;<var>n</var><br><br>Example: in base 12, with 7 and 9<br><var>n</var> = 12<br><var>k</var> = 2<br><var>num</var> = [7, 11]<br><var>a</var> = 78<br><var>b</var> = 96<br><br>78<br>Buzzle (67 in base 12 which ends with 7)<br>Buzzle (68 in base 12 -&gt; 6+8=14 which is a multiple of 7)<br>81<br>82<br>Buzzle (6B in base 12 : last digit is &quot;11&quot; (&quot;B&quot;))<br>Buzzle (84 = 12&times;7  /  70 in base 12 -&gt; 7+0=7)<br>85<br>86<br>87<br>Buzzle (88 = 8&times;11  /  74 in base 12 -&gt; 7+4=11)<br>89<br>90<br>Buzzle (91 = 13&times;7  /  77 in base 12 -&gt; ends with 7 or 7+7=14)<br>92<br>93<br>94<br>Buzzle (7B in base 12 -&gt; 7+B=18 which is 16 in base 12 -&gt; 1+6=7  /  7B ends with 11)<br>96<br><br><br>You have to implement Level 4. But I strongly recommend to start with Level 1, 2 or 3. Tests 1 to 3 will work no matter if you implement Level 4 or not.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>First line :</strong> 3 space-separated integers <var>n</var>, <var>a</var> and <var>b</var> : The base and the bounds (<strong><var>a</var> and <var>b</var> are included</strong>)<br><strong>Second line :</strong> One integer <var>k</var>, how many numbers have to be taken into account<br><strong>Third line :</strong> <var>k</var> space-separated integers for the numbers you have to use in the rules</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>b</var>-<var>a</var>+1 lines :</strong> A number or <const>Buzzle</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &le; <var>n</var> &le; 64<br>1 &le; <var>a</var> &lt; <var>b</var> &le; 10000<br>1 &le; <var>k</var> &lt; <var>n</var><br>2 &le; numbers in <var>num</var> &lt; <var>n</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">10 107 114
+1
+7
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">Buzzle
+108
+109
+110
+111
+Buzzle
+113
+114</pre>
+         </div>
+      </div>
+   </div>
+</div>

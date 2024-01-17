@@ -1,0 +1,115 @@
+<h1>Blockout</h1>
+
+<a href="https://www.codingame.com/training/hard/blockout">https://www.codingame.com/training/hard/blockout</a>
+
+<div class="statement_back"></div>
+<div class="statement-body">
+    
+    <div class="statement-section statement-goal">
+        <h1>
+            <span class="icon icon-goal"> </span>
+            <span>Goal</span>
+        </h1>
+        <div class="statement-goal-content">
+            Survive <const>200</const> turns without letting your pit overflow.
+        </div>
+    </div>
+
+    
+    <div class="statement-section statement-rules">
+        <h1>
+            <span class="icon icon-rules"> </span>
+            <span>Rules</span>
+        </h1>
+        <div>
+            <div class="statement-rules-content">You start with a pit, that is initially empty. Each turn you get a new tile and have to place it somewhere in your pit by dropping it at a given location. You can rotate the given tile before dropping
+                it into your pit.<br /> When you manage to cover a complete layer with blocks, this layer will be removed and all layers above will drop down. <br />
+                <br />
+                For the set of available tiles see <a href="http://www.blockout.net/blockout2/scoretable.php?set&#61;0&amp;width&#61;5&amp;height&#61;5&amp;depth&#61;12" target="_blank" rel="nofollow noopener noreferrer">blockout.net</a>.
+            </div>
+        </div>
+    </div>
+    
+    <div class="statement-section statement-expertrules">
+        <h1>
+            <span class="icon icon-expertrules"> </span>
+            <span>Expert Rules</span>
+        </h1>
+        <div class="statement-expert-rules-content">
+            You can find the source code of the game at <a href="https://github.com/eulerscheZahl/BlockOut" target="_blank" rel="nofollow noopener noreferrer">https://github.com/eulerscheZahl/BlockOut</a>.
+        </div>
+    </div>
+    
+    <div class="statement-section statement-warning">
+        <h1>
+            <span class="icon icon-warning"> </span>
+            <span>Note</span>
+        </h1>
+        <div class="statement-warning-content">
+            You can zoom in the viewer with your mousewheel, change the rotation by moving your mouse while holding your left button and pan with your right mouse button.
+        </div>
+    </div>
+    
+    <div class="statement-section statement-protocol">
+        <h1>
+            <span class="icon icon-protocol"> </span>
+            <span>Game Input</span>
+        </h1>
+        
+        <div class="blk">
+            <div class="text">A block is given in the following way: <var>width</var> <var>height</var> <var>depth</var> <var>shape</var>.<br />
+                The shape consists of <const>width*height*depth</const> characters, which are all either <const>#</const> (filled) or <const>.</const> (empty).<br />
+                The characters are in order of <const>z</const>, then <const>y</const>, then <const>x</const> (that means, all cells with z&#61;0 are given first and among those with y&#61;0). <br /> <br />
+                <div class="statement-section statement-examples">
+                    <h1>
+                        <span class="icon icon-example"> </span>
+                        <span>Example</span>
+                    </h1>
+
+                    <div class="statement-examples-text">
+                        Let&#39;s have a look at the following block: <br />
+                        <img src="https://cdn-games.codingame.com/community/1500515-1606401236233/0d92c1c231aa0f9690a9e94621f970ea5cda546cb4e0f8a247f8384ed5d7a6cd.png" /> <br />
+                        It has a <var>width</var> of <const>3</const> and a <var>height</var> and <var>depth</var> of <const>2</const> each.
+                        The shape is <const>.##..###....</const>, mapping the positions for (0,0,0) (1,0,0) (2,0,0) (0,1,0) (1,1,0) (2,1,0) (0,0,1) (1,0,1) (2,0,1) (0,1,1) (1,1,1) (2,1,1).
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="blk">
+            <div class="title">Input per turn</div>
+            <div class="text">
+                <p><span class="statement-lineno">Line 1: </span>the pit: <var>pitWidth</var> <var>pitHeight</var> <var>pitDepth</var> <var>pitShape</var> giving the size and the current state of your pit</p>
+                <p><span class="statement-lineno">Line 2: </span><var>blockCount</var>, the number of distinct rotations for your next block</p>
+                <p><span class="statement-lineno">next <var>blockCount</var> lines: </span>the block: <var>blockIndex</var> <var>width</var> <var>height</var> <var>depth</var> <var>shape</var>. These shapes all represent the same block, just with
+                    different rotations.</p>
+            </div>
+        </div>
+
+        
+        <div class="blk">
+            <div class="title">Output</div>
+            <div class="text">
+                <span class="statement-lineno">A single line</span> containing <action>blockIndex x z</action> denoting the rotation of the block according to the list of inputs provided and the shift in x- and z-direction.
+                <br />
+            </div>
+        </div>
+
+        
+        <div class="blk">
+            <div class="title">Constraints</div>
+            <div class="text">
+                For the Tetris testcase: <var>pitWidth</var> &#61; 10, <var>pitHeight</var> &#61; 20, <var>pitDepth</var> &#61; 1 <br /><br />
+                For all other testcases: <br />
+                3 ≤ <var>pitWidth</var> &#61; <var>pitDepth</var> ≤ 6<br />
+                6 ≤ <var>pitHeight</var> ≤ 12<br />
+                1 ≤ <var>blockCount</var> ≤ 64<br />
+                1 ≤ <var>width</var>, <var>height</var>, <var>depth</var> ≤ min(<const>5</const>, <var>pitWidth</var>)<br />
+                <br />Allotted response time to output
+                is ≤ <const>1</const> second for the first turn, <const>150</const> ms for later turns.
+            </div>
+        </div>
+    </div>
+</div>

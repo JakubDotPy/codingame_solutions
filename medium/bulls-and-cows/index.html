@@ -1,0 +1,36 @@
+<h1>Bulls and Cows</h1>
+
+<a href="https://www.codingame.com/training/medium/bulls-and-cows">https://www.codingame.com/training/medium/bulls-and-cows</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">In the classic code-breaking game of Bulls and Cows, your opponent chooses a <const>4</const>-digit secret number, and you need to guess it. After each guess, your opponent tells you how many &#34;bulls&#34; and how many &#34;cows&#34; are in your guess, interpreted as:<br><br> - Each bull indicates a digit in your guess that exactly matches the value and position of a digit in your opponent's secret number.<br><br> - Each cow indicates a digit in your guess that matches the value of a digit in your opponent's secret number, but is in the wrong position.<br><br>So for example, if the secret number is <const>1234</const> and you guess <const>5678</const>, your guess has <const>0</const> bulls and <const>0</const> cows. However, if you guess <const>2324</const> then your guess has <const>1</const> bull (the <const>4</const>) and <const>2</const> cows (one of the <const>2</const>s, and the <const>3</const>.)<br><br>You will be given a series of guesses along with the number of bulls and cows in each guess. Your job is to determine the secret number based on the given information.<br><br><strong>NOTE:</strong> This version of the game deviates from the classic Bulls and Cows rules in that digits may be repeated any number of times in the secret number.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> The number <var>N</var> of guesses.<br><strong>Next <var>N</var> lines:</strong> A <var>guess</var>, consisting of <const>4</const> digits [0-9], followed by a space, then the number of <var>bulls</var>, another space, and then the number of <var>cows</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The <const>4</const>-digit secret number.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &#8804; <var>N</var> &#8804; 20<br>0&#8804; <var>bulls</var>+<var>cows</var> &#8804; 4</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1&#10;1234 4 0</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1234</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,42 @@
+<h1>Three little piggies</h1>
+
+<a href="https://www.codingame.com/training/hard/three-little-piggies">https://www.codingame.com/training/hard/three-little-piggies</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">The three little pigs have to build their houses on the field of grass but they fear the big bad wolf. Help them place their 3 homes on their land so that they can be protected. Sometimes, there are only two pigs but you still must place the three houses.<br>Their land is a 4&times;4 grid which has X&rsquo;s for grass and dots (periods) for trees. The pigs, which always stay on the same spot of grass and are too lazy to move, show up as P&rsquo;s. The big bad wolf, who will only show up at night, is a W (during the day he&rsquo;s sleeping in his lair).<br>For example:<br><br>Day:<br><pre style="font-family: monospace">.XX.<br><const>P</const>XXX<br>XX<const>P</const>X<br>.XXX</pre><br><br>Night:<br><pre style="font-family: monospace">.<const>W</const>X.<br>XXXX<br>X<const>PP</const>X<br>.X<const>P</const>X</pre><br><br>The straw house&rsquo;s tile is an L with the house in the corner:<br><br><pre style="font-family: monospace">Hs<br>s</pre><br><br>The sticks house&rsquo;s tile is a bar with the house in the middle:<br><br><pre style="font-family: monospace">SHS</pre><br><br>The brick house&rsquo;s tile is a longer L:<br><br><pre style="font-family: monospace">HBB<br>B</pre><br><br>You can rotate but not mirror the tiles: the longer L can become a 7, never a &Gamma;.<br>The tiles can&rsquo;t cover a tree or the wolf.<br><br>There are two kinds of inputs: one for day and one for night (only at night a wolf can be seen).<br>If it is day: place the houses so that the pigs can be seen. No tile much cover a pig.<br>If it is night: place the houses so that each pig is covered by an H. A house might not cover a pig, if there are only two pigs.<br><br>Each puzzle has a single solution.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>4 lines:</strong> The field</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The field filled with the three tiles.<br>Show the pigs if it&rsquo;s the day, hide them if not.<br>Some areas of the field may remain Xs, day or night.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">.PP.
+XXXX
+XXXX
+.XPX</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">.PP.
+HBBS
+BHsH
+.sPS</pre>
+         </div>
+      </div>
+   </div>
+</div>

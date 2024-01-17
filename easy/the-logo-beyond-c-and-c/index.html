@@ -1,0 +1,65 @@
+<h1>The logo beyond C++ and C#</h1>
+
+<a href="https://www.codingame.com/training/easy/the-logo-beyond-c-and-c">https://www.codingame.com/training/easy/the-logo-beyond-c-and-c</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Legend has it that the origin of the name &quot;C#&quot; was really just two &quot;++&quot; stacked on top of each other, like this<br>++<br>++ <br>...and that formed a &quot;sharp&quot; (musical note symbol).  Cool, right?<br><br>C-Enterprises is considering releasing yet another programming language and their Marketing Department is in need of a logo for it that will play off that history, so it too will consist solely of plus-signs.  They have asked you to do some rough drafts for them.<br><br>Here is what they know they want:<br>~ They want just the <strong>outline</strong> of plus-signs<br>~ The outline itself will be done in plus-signs characters (<const>+</const>)<br>~ When 2 plus-signs touch each other, the outlines separating the touching parts should disappear, so that it all &quot;flows together&quot;<br><br>They have not decided the following so these will be inputs in the various cases:<br>~ The <var>size</var> of the plus-signs<br>~ The <var>thickness</var> of the two-lines that form each plus-sign<br>~ The number and arrangement of the plus-signs<br><br>(You explain you are a programmer -- not a graphic artist -- but alas they insist.  So you just do your best, knowing the console application output will make the proportions appear a bit elongated.)</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>size</var> (both the height and width) of a single plus-sign outline<br><strong>Line 2:</strong> An integer <var>thickness</var> of the two lines of the plus-sign<br><strong>Line 3:</strong> An integer <var>N</var> for the number of rows in the proposed logo<br><strong>Next <var>N</var> lines:</strong> a string that constitutes a row of that logo</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">Draw the logo<br>(Trim off any white space to the right on each line)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">If <var>size</var> is even, <var>thickness</var> is even<br>If <var>size</var> is odd, <var>thickness</var> is odd<br><br><var>size</var> &ge; 5<br><var>thickness</var> &ge; 3<br><var>thickness</var> &lt; <var>size</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">13
+5
+2
++++
+++</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">    +++++        +++++        +++++
+    +   +        +   +        +   +
+    +   +        +   +        +   +
+    +   +        +   +        +   +
++++++   ++++++++++   ++++++++++   +++++
++                                     +
++                                     +
++                                     +
++++++   ++++++++++   ++++++++++   +++++
+    +   +        +   +        +   +
+    +   +        +   +        +   +
+    +   +        +   +        +   +
+    +   +        +   +        +++++
+    +   +        +   +
+    +   +        +   +
+    +   +        +   +
+    +   +        +   +
++++++   ++++++++++   +++++
++                        +
++                        +
++                        +
++++++   ++++++++++   +++++
+    +   +        +   +
+    +   +        +   +
+    +   +        +   +
+    +++++        +++++</pre>
+         </div>
+      </div>
+   </div>
+</div>

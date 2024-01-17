@@ -1,0 +1,48 @@
+<h1>Thermal Flying - Episode 1</h1>
+
+<a href="https://www.codingame.com/training/medium/thermal-flying---episode-1">https://www.codingame.com/training/medium/thermal-flying---episode-1</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">The air above us is not stable, there is a lot of movement and turbulences.<br>Paraglider pilots use something called thermals to gain altitude.<br><br>You have to simulate the flight of a pilot and give its position at a certain time <var>t</var>.<br><br>The simulation area is represented by a 2D grid :<br><const>.</const> means there is no thermal activity<br><const>V</const> pilot position (no thermal activity on this position)<br><const>-9 to 9</const> thermal value<br><br>Here we consider our paraglider vertical speed is <const>-1m/s</const> and horizontal speed is <const>10m/s</const>, it goes from left to right<br>the y step of the grid is <const>1</const> meter<br>the x step of the grid is <const>10</const> meters<br><br>If the paraglider pilot happen to be in a thermal, its altitude is increased (or decreased) by the thermal value.<br><br>If the pilot leaves the grid, you stop the simulation and print its last recorded position.<br><br><strong>Warning ! The grid coordinates doesn't use the CG standards</strong><br>It will be in normal representation, like this :<br>2  .  .  .<br>1  .  .  .<br>0 1 2 3<br><br>Example: for <var>width</var> = 5, <var>height</var> = 4, <var>t</var> = 4<br><br>V . . . .<br>. . . 1 .<br>. . 2 . .<br>. . . . .<br><br>then<br>. . . . .<br>. V . 1 .<br>. . 2 . .<br>. . . . .<br><br>then<br>. . V . .<br>. . . 1 .<br>. . 2 . .<br>. . . . .<br><br>then<br>. . . V .<br>. . . 1 .<br>. . 2 . .<br>. . . . .<br><br>then<br>. . . . .<br>. . . 1 V<br>. . 2 . .<br>. . . . .<br><br>position at <var>t</var> is <const>4 2</const></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>line 1 :</strong> <var>width</var> grid width<br><strong>line 2 :</strong> <var>height</var> grid height<br><strong>line 3 :</strong> <var>t</var> the duration of the simulation<br><strong> following lines:</strong> a string that give the thermal conditions</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">the simulated position <var>x</var> <var>y</var> of the pilot at time <var>t</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &le; <var>t</var> &le; 99</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">23
+10
+6
+.......................
+.......................
+V......................
+.......................
+.......................
+.......................
+.......................
+.......................
+.......................
+.......................</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">6 1</pre>
+         </div>
+      </div>
+   </div>
+</div>

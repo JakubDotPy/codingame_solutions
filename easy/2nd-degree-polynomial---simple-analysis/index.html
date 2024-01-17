@@ -1,0 +1,36 @@
+<h1>2nd degree polynomial - simple analysis</h1>
+
+<a href="https://www.codingame.com/training/easy/2nd-degree-polynomial---simple-analysis">https://www.codingame.com/training/easy/2nd-degree-polynomial---simple-analysis</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Given a polynomial <strong>y = </strong><var><strong>a</strong></var><strong>x&sup2; + </strong><var><strong>b</strong></var><strong>x + </strong><var><strong>c</strong></var>, calculate :<br>- the roots (intersections with the <strong>X axis</strong>), if existing (there can be 0, 1 or 2),<br>- the only intersection with the <strong>Y axis</strong> (always existant in our situation).<br><br>Output those points, from left-most to right-most.<br><br>To get the root(s) abscissa(s), first calculate <strong>delta = </strong><var><strong>b</strong></var><strong>&sup2; - 4&middot;</strong><var><strong>a</strong></var><strong>&middot;</strong><var><strong>c</strong></var>.<br>If <strong>delta &lt; 0</strong>, there are no roots (our graph will remain strictly above or below the <strong> X axis</strong>);<br>If <strong>delta = 0</strong>, there is a unique root (that is also the minimum or maximum of the function);<br>If <strong>delta</strong> &gt; <strong>0</strong>, there are 2 roots.<br>Then, the root abscissas are given by the formula : <strong>[x1, x2] = (-</strong><var><strong>b</strong></var><strong> &plusmn; sqrt(delta)) / (2&middot;</strong><var><strong>a</strong></var><strong>)</strong>.<br><br>Be aware that...<br>If <var><strong>a</strong></var><strong> = 0</strong>, we obtain a straight line, crossing the X axis in <strong>(-</strong><var><strong>c</strong></var><strong> / </strong><var><strong>b</strong></var><strong>, 0)</strong>.<br>If <var><strong>a</strong></var><strong> = 0</strong> and <var><strong>b</strong></var><strong> = 0</strong>, we have a horizontal line <strong>y = </strong><var><strong>c</strong></var>.<br>In the special case <var><strong>a</strong></var>, <var><strong>b</strong></var>, <var><strong>c</strong></var><strong> = 0</strong>, we have <strong>y = 0</strong> and the only point to output will be <strong>(0,0)</strong>.<br><br>Examples :<br><strong>y = 1x&sup2; + 0x + 1</strong>   (= x&sup2; + 1)<br>Input : 1 0 1<br>Output : (0,1)<br><br><strong>y = 1x&sup2; + 0x - 1</strong>   (= x&sup2; - 1)<br>Input : 1 0 -1<br>Output : (-1,0),(0,-1),(1,0)</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1 :</strong> 3 decimal numbers <var><strong>a</strong></var>, <var><strong>b</strong></var>, <var><strong>c</strong></var>, representing the polynomial coefficients.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1 :</strong> a comma-separated list of <var>P</var> points (intersections with the X &amp; Y axis), ordered from left to right, with each point formatted as <strong>(x,y)</strong> without spaces.<br><br>Every x and y coordinate, <strong>at display time</strong>, must be rounded to <strong>maximum</strong> 2 decimals (only the meaningful ones) :<br><pre style="font-family: monospace"><const>5.000</const>  =&gt; <const>5</const><br><const>1.2001</const> =&gt; <const>1.2</const><br><const>0.1256</const> =&gt; <const>0.13</const></pre></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><const>-100</const> &lt; <var><strong>a</strong></var> &lt; <const>100</const><br><const>-100</const> &lt; <var><strong>b</strong></var> &lt; <const>100</const><br><const>-100</const> &lt; <var><strong>c</strong></var> &lt; <const>100</const><br><const>1</const> &le; <var><strong>P</strong></var> &le; <const>3</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1 0 1</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">(0,1)</pre>
+         </div>
+      </div>
+   </div>
+</div>

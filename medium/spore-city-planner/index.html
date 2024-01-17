@@ -1,0 +1,40 @@
+<h1>SPORE City Planner</h1>
+
+<a href="https://www.codingame.com/training/medium/spore-city-planner">https://www.codingame.com/training/medium/spore-city-planner</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are playing the SPORE Galactic Adventures game. https://en.wikipedia.org/wiki/Spore_Galactic_Adventures<br>In the Civilization stage and in the Space stage, you can manage your cities using the City Planner.<br>Inside each city there are several places (up to 11, depend on the level of the city) for placing objects and one especial place in the city center - the <strong>City Hall</strong>.<br>There are 3 types of objects.<br>The <strong>House</strong> does nothing.<br><strong>Entertainment</strong> increases the happiness of the city.<br><strong>Factory</strong> reduces the happiness of the city.<br>The <strong>City Hall</strong> is a <strong>House</strong> type object and cannot be removed from the city center.<br><br>Some places in the city are connected by roads.<br>The road becomes a colored link if the objects are placed both sides of the link.<br>Colored links have an effect.<br>Blue links (House - Factory) increase the production of the city.<br>Green links (House - Entertainment) increase the city's happiness.<br>Red links (Factory - Entertainment) decrease the city's happiness.<br>White links (between objects of the same type) are neutral.<br><br>You should place objects in the city in order to get the maximum production of the city. But a city cannot have negative happiness.<br><br><strong>Example</strong><br>City has configuration   (1) - - (0) - - (2) - - (3)<br>Input for this city are<br>3<br>3<br>0 1<br>0 2<br>2 3<br>Placing objects like<br>1 - Factory<br>2 - Factory<br>3 - House<br>(Factory) - blue - (House) - blue - (Factory) - blue - (House)<br>gives 3 production (3 blue links)<br>but have -2 happiness (two Factories)<br>(-1) - - (0) - - (-1) - - (0)<br>This placement is not acceptable.<br><br>Correct placement is<br>1 - Entertainment<br>2 - Factory<br>3 - House<br>(Entertainment) - green - (House) - blue - (Factory) - blue - (House)<br>gives 2 production (2 blue links)<br>and have +1 happiness (1 Entertainment + 1 green link - 1 Factory)<br>(1) - 1 - (0) - - (-1) - - (0)<br>So, answer for this city is 2</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong>: An integer <var>N</var> for the number of places inside the city (City Hall not included to <var>N</var>).<br><strong>Line 2</strong>: An integer <var>L</var> for the number of links.<br><strong>Next <var>L</var> lines</strong>: Two space separated integers <var>A</var> and <var>B</var> (from <const>0</const> to <var>N</var>) - two node numbers for describe Link. Place <const>0</const> means City Hall.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The maximum possible value of city's production.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &lt; <var>N</var> &le; 11<br>0 &le; <var>A</var>,<var>B</var> &le; <var>N</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+3
+0 1
+0 2
+2 3</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">2</pre>
+         </div>
+      </div>
+   </div>
+</div>

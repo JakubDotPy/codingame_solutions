@@ -1,0 +1,49 @@
+<h1>The lost files</h1>
+
+<a href="https://www.codingame.com/training/medium/the-lost-files">https://www.codingame.com/training/medium/the-lost-files</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You work in CG, where you wrote a bleeding-edge map generator for the next multi-player contest.<br>Your map generator takes 2 parameters: <var>C</var> the number of continents and <var>T</var> the total number of tiles to generate.<br>Generated tiles have <strong>polygonal shape</strong> and 2 tiles belong to the same continent if they share <strong>at least one</strong> vertex.<br><br>Your generator generates 2 files <const>vertices.txt</const> and <const>edges.txt</const>.<br>The first one contains coordinates of tile vertices sorted by their index, the second one describes edges between vertices. <br>You spent days to generate random maps and carefully saved the output files of the nicest ones for the contest... <strong>but you just accidentally erased all the <const>vertices.txt</const> files!</strong><br><br>With the right values of <var>C</var> and <var>T</var>, you could easily re-generate the erased files because you always hard-code random seeds to 42, but you cannot remember these damn parameters and the contest is in 24h.<br>No choice, you will have to cancel the contest... unless you can write a program to recover the <var>C</var> and <var>T</var> parameters from the leftover <const>edges.txt</const> files.<br><br><strong>Your task</strong><br>Find the generator parameters <var>C</var> and <var>T</var> from the generated list of edges.<br><br><strong>Example</strong><br>Here is a possible planar representation of the edges in the first test:<br><pre style="font-family: monospace"><br>                 1 --- 4 -- 10 -- 5<br>                 |     |     \   /<br>                 |     |      \ /<br>                 2 --- 7       8<br>                        \     /<br>      3 --- 6            \   /<br>       \   /              \ /<br>        \ /                0<br>         9<br></pre><br>The edges form <var>C</var>=2 continents with 1 and 3 tiles for a total of <var>T</var>=4 tiles.<br>The output should be:<br><pre style="font-family: monospace">2 4</pre></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> one integer <var>E</var> the number of edges<br><strong> Next <var>E</var> lines:</strong> two integers <var>n1</var> and <var>n2</var> representing an edge between vertex <var>n1</var> and vertex <var>n2</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">2 integers <var>C</var> and <var>T</var> for the number of continents and the total number of tiles</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><var>E</var>, <var>C</var>, <var>T</var> &lt; 1000</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">13
+4 10
+7 2
+2 1
+4 1
+8 10
+3 9
+6 3
+8 0
+7 4
+5 10
+9 6
+7 0
+8 5</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">2 4</pre>
+         </div>
+      </div>
+   </div>
+</div>

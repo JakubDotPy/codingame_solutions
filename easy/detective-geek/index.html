@@ -1,0 +1,38 @@
+<h1>Detective Geek</h1>
+
+<a href="https://www.codingame.com/training/easy/detective-geek">https://www.codingame.com/training/easy/detective-geek</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Detective Geek has a superpower of knowing when and where a crime is going to happen; unfortunately his superpower is encrypted, and he takes a lot of time decrypting it.<br>Everytime he sees a crime using his superpower he starts writing on paper and the result looks like this:<br><strong>#*######*#*</strong><br><strong>mayjul sepsep octapr octsep sepjun octjan</strong><br><br>As he is the one and only detective geek he wanted to write a program to help him decrypt faster.<br><br>The <var>first line</var> represents binary: <const>#*######*#*</const> becomes <const>10111111010</const> <br>This equals the decimal number 1530, which means the time when the crime is going to happen is 15:30.<br><br>The <var>second line</var> encodes the address where the crime will take place. Every word in the encrypted address represents a character in the real address.<br>A word such as <const>octapr</const> can be split into two strings of length 3 <const>oct</const> and <const>apr</const> which are abbreviations for months <strong>october</strong> and <strong>april</strong>.<br>Each month represents a number according to its order in the year. &quot;jan&quot; = 0, &quot;feb&quot;= 1 ,&quot;mar&quot;= 2 ... &quot;dec&quot; = 11<br>The string of two months represents a two-digit base 12 number. So <const>octapr</const> is 93<br>93 in base 12 becomes 111 in decimal<br>and the final step is to look in ascci table to see what letter correspond to 111.<br>so <strong>octapr</strong> -&gt; &quot;<const>o</const>&quot;</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>line 1</strong> : <var>time</var> <strong>string</strong> representing the time<br><strong>line 2</strong> : <var>address</var> <strong>string</strong> representing the address</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>line 1</strong> : time in <const>hh</const>:<const>mm</const> format<br><strong>line 2</strong> : decrypted address</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><var>date</var> : contains only <const>#</const> and <const>*</const> ,1&lt;=length&lt;13, represents a valid 24-hr time.<br><var>adress</var> : 5&lt;=length&lt;100, decodes to printable ASCII characters.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">#*######*#*
+mayjul sepsep octapr octsep sepjun octjan</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">15:30
+6hotel</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,37 @@
+<h1>The greatest number</h1>
+
+<a href="https://www.codingame.com/training/hard/the-greatest-number">https://www.codingame.com/training/hard/the-greatest-number</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You must print the greatest number using all the characters in the input, including the ten digits 0 to 9, the minus sign <const>-</const> and the decimal dot <const>.</const>.<br><br><strong>Beware:</strong><br>* The dot alone must not end a number, at least a digit is needed. For example, <const>98742.</const> is refused, write <const>9874.2</const> instead.<br>* Trailing and leading zeros must be removed. Write <const>-4</const> instead of <const>-4.0000</const> and <const>-5.65</const> instead of<const>-5.6500</const>.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1 :</strong> The number <var>N</var> of chars<br><strong>Line 2:</strong> <var>N</var> chars on a single line separated with spaces</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The greatest number possible using all the input chars (but maybe without some zeros).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>N</var> &le; 10</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">8
+4 9 8 . 8 5 2 -</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">-2.45889</pre>
+         </div>
+      </div>
+   </div>
+</div>

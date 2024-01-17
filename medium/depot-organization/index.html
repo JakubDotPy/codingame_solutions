@@ -1,0 +1,42 @@
+<h1>Depot organization</h1>
+
+<a href="https://www.codingame.com/training/medium/depot-organization">https://www.codingame.com/training/medium/depot-organization</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">In this puzzle, there are 7 depots on a floor plan. Each depot is shown as a hexagon, and each of its 6 walls (sides) are marked with its texture (denoted by a character). We have to arrange the depots with one in the center and the other 6 surrounding it observing the following rules:<br><br><strong>Rules</strong><br>1. Each depot may be <strong>rotated</strong> clockwise or anticlockwise as many times as needed (see illustration 1 below).<br>2. Depots <strong>may not be flipped</strong> as a mirror image.<br>3. The <strong>center</strong> depot must be oriented such that the texture denoted by the <strong>alphabetically lowest character</strong> is on the wall to the <strong>right</strong>.<br>4. Every wall shared by two depots must have a <strong>matching texture</strong>.<br><br>See illustration 2 below for a complete example.<br><br><strong>Illustration 1</strong><br>A depot may be rotated clockwise once like this:<br>https://user-images.githubusercontent.com/5595067/32763380-4cadec04-c93a-11e7-8d52-6884c9dea40a.png<br>Below shows the same illustration:<br><pre style="font-family: monospace">      .                  .      <br>     / \                / \<br>    /   \              /   \<br>   /     \            /     \  <br>  / N   D \          / G   N \<br> /         \        /         \<br>|           |      |           |<br>|           |      |           |<br>|G         W|  -&gt;  |J         D|<br>|           |      |           |<br>|           |      |           |<br> \         /        \         /<br>  \ J   T /          \ T   W /<br>   \     /            \     /<br>    \   /              \   /<br>     \ /                \ /<br>      v                  v<br></pre><br><br><strong>Illustration 2</strong><br>This is the illustration of the solution to the Example test case:<br>https://user-images.githubusercontent.com/5595067/32763805-ee635f64-c93c-11e7-9050-7996f726a882.png<br>Below shows the same illustration:<br><pre style="font-family: monospace">            .           .      <br>           / \         / \<br>          /   \       /   \<br>         /     \     /     \  <br>        / D   V \   / C   M \<br>       /         \ /         \<br>      |           |           |<br>      |           |           |<br>      |S    4    K|K    1    X|<br>      |           |           |<br>      |           |           |<br>     / \         / \         / \<br>    /   \ T   M /   \ W   F /   \<br>   /     \     /     \     /     \<br>  / X   T \   / M   W \   / F   S \<br> /         \ /         \ /         \<br>|           |           |           |<br>|           |           |           |<br>|N    2    R|R    6    C|C    5    G|<br>|           |           |           |<br>|           |           |           |<br> \         / \         / \         /<br>  \ M   W /   \ T   G /   \ B   K /<br>   \     /     \     /     \     /<br>    \   / W   T \   / G   B \   /<br>     \ /         \ /         \ /<br>      |           |           |<br>      |           |           |<br>      |D    0    J|J    3    C|<br>      |           |           |<br>      |           |           |<br>       \         / \         /<br>        \ N   G /   \ Q   V /<br>         \     /     \     /<br>          \   /       \   /<br>           \ /         \ /<br>            v           v</pre><br><br>(Problem based on: Hexagon Puzzle (Problem 24) from HP CodeWars 2017 NA)</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Lines 1 to 7:</strong> One line of <const>6</const> space-separated characters denoting the <var>texture</var> of the walls in clockwise order for each depot. The depots are <strong>ordered by their <var>index</var></strong> from <const>0</const> to <const>6</const>, i.e. the <var>n</var>th line relates to depot indexed <var>n - 1</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> One line of <const>7</const> space-separated pairs of the depots' <var>index</var> and <var>texture</var> on the walls to the <strong>right</strong>, after arranging the depots in a way which satisfies the rules.<br>Order the pairs by the depots' positions <strong>left-to-right, top-to-bottom</strong> (i.e. the first pair refers to the depot in the top left, and the last pair refers to the depot in the bottom right).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">For each case there is a unique arrangement (solution) which satisfies the rules.<br><br>The alphabetically lowest character in a depot may appear once only in that depot.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">W T J G N D
+X F W K C M
+M N X T R W
+B C V Q J G
+M T S D V K
+C F S G K B
+G T R M W C</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">4K 1X 2R 6C 5G 0J 3C</pre>
+         </div>
+      </div>
+   </div>
+</div>

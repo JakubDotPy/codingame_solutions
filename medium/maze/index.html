@@ -1,0 +1,44 @@
+<h1>Maze</h1>
+
+<a href="https://www.codingame.com/training/medium/maze">https://www.codingame.com/training/medium/maze</a>
+
+<div class="statement_wrapping_div" style="position: relative;"> 
+
+<style type="text/css"> 
+.statement_wrapping_div, .statement {font-size: 14px;font-weight: 400;}  
+.statement_wrapping_div {margin-bottom: 10px;}
+.statement_wrapping_div ul {padding-left: 40px;}
+.statement {background-color:rgba(255, 255, 255, 0.85);padding: 20px;padding-top:0px;}
+code, span.const {display:inline-block;font-family:Inconsolata,consolas,monospace;padding-left:5px;padding-right:5px;padding-top:1px;padding-bottom:1px;background-color:#18a1ea;white-space: nowrap;margin-right:2px;color: white;}
+span.var {display: inline-block;padding-left:5px;padding-right:5px;padding-top:1px;padding-bottom:2px;background-color:#f2dd00;white-space:nowrap;margin-left:1px;margin-right:2px;color:black;}
+.stat_mid_title {font-weight:700;margin-bottom:5px;}
+.protocol_title{color:#ffd200;}
+.cross-statementBlock{position:relative;}</style>
+
+<div class="stat_mid_title">The program:</div>
+<div class="question-statement">Your program must determine the possible exits of a maze.<br />The maze can have several exits or none, and may contain loops or parts that cannot be reached from the starting point.</div><br />
+</div>
+
+<div style="background-color: rgba(0, 0, 0, 0.85);padding: 20px;color: white;margin-top: 10px;">
+<div class="protocol_title"><b>INPUT:</b></div>
+<div class="question-statement-input"><strong>Line 1</strong>: two ints <span class="var">W</span> and <span class="var">H</span> representing the width and height of the maze.<br /><strong>Line 2</strong>: two ints <span class="var">X</span> and <span class="var">Y</span> representing your start position in the maze.<br /><strong><span class="var">H</span> following lines: </strong>one row of the maze. A <span class="const">.</span> represents an empty cell and a <span class="const">#</span> represents a wall that cannot be traversed.</div><br /> 
+
+<div class="protocol_title"><b>OUTPUT:</b></div>
+<div class="question-statement-output"><strong>Line 1: </strong> an integer <span class="var">N</span> representing the number of exits.<br /><strong><span class="var">N</span> following lines: </strong>two ints <span class="var">EX</span> and <span class="var">EY</span> representing the coordinates of each exit, given ordered by <span class="var">EX</span>, then by <span class="var">EY</span> (i.e. 2 10 comes before 5 1).</div><br /> 
+
+<div class="protocol_title"><b>CONSTRAINTS:</b></div>
+<div class="question-statement-constraints"><span class="const">7</span>&lt;=<span class="var">W</span>&lt;=<span class="const">21</span><br /><span class="const">7</span>&lt;=<span class="var">H</span>&lt;=<span class="const">21</span></div><br /> 
+
+<div class="protocol_title"><b>EXAMPLE:</b></div>
+<div style="border: 1px solid white; width: 440px;">
+<div style="float: left; margin-left: 10px; padding-left: 10px; width: 200px; font-family: monospace;">
+<div><b>Input</b></div>
+<div class="question-statement-example-in">7 7<br />1 1<br />#######<br />#.....#<br />#####.#<br />#.#...#<br />#.#.###<br />#......<br />#######</div>
+</div>
+<div style="margin-left: 10px; float: left; padding-left: 5px; width: 200px; font-family: monospace;">
+<div><b>Output</b></div>
+<div class="question-statement-example-out">1<br />6 5</div>
+</div>
+<div style="clear: both;">&nbsp;</div>
+</div>
+</div>

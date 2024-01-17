@@ -1,0 +1,36 @@
+<h1>Regular polygons</h1>
+
+<a href="https://www.codingame.com/training/medium/regular-polygons">https://www.codingame.com/training/medium/regular-polygons</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">John has to draw a lot of regular polygons with an increasing number of sides. <br>More precisely, John has got two numbers <var>a</var> and <var>b</var> and he must draw regular polygons with the number of sides:<strong> a, a+1, a+2, ..., b-2, b-1, b</strong>.<br><br>For example, if <var>a</var> = 3 and <var>b</var> = 6, John must draw an equilateral triangle, a square, a regular pentagon, and a regular hexagon.<br><br>Because John wants to do the job precisely, he intends to draw as many polygons as possible by geometric constructions (it means using only a straightedge and compass).<br><br>Based on Gauss&ndash;Wantzel theorem we know that:<br>A regular <strong>n-gon</strong> (that is, a polygon with <strong>n</strong> sides) can be constructed with compass and straightedge if and only if <strong>n</strong> is the product of a power of 2 and any number of distinct Fermat primes (including none).<br>A Fermat prime is a prime number of the form <strong>2^(2^m)+1</strong>. Where <strong>m</strong> is a natural number. <br><br>Help John and write a program that will calculate how many polygons from the given range can be drawn using geometric construction.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">Two space separated integers <var>a</var> and <var>b</var> for limits of range of polygons to draw.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">Number of polygons from given range that John can draw by geometric constructions.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">3 &le; <var>a</var> &le; <var>b</var> &lt; 2^31</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3 6</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">4</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,50 @@
+<h1>ASCII Art QR code</h1>
+
+<a href="https://www.codingame.com/training/hard/ascii-art-qr-code">https://www.codingame.com/training/hard/ascii-art-qr-code</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Your task is to implement a simplified <strong>QR code reader for ASCII Art</strong>, decoding the information that is stored inside the data area.<br><br><strong>Structure</strong><br>Data are encoded in binary format (0,1).<br>-	<var>W</var>, <var>H</var>: Width and Height in characters<br>-	3 Position detection markers located at the three corners (top left and right, bottom left), surrounded by no data zone (spaces of 1 character thick). Each position detection marker is indicated by a 5x3 rectangle made up of <const>+</const>, <const>-</const> and <const>|</const> with an <const>@</const> character in the centre<br>-	1 alignment marker near the bottom right corner (3 characters from right border, 1 character from bottom), without surrounding no data zone. The alignment marker is indicated by a 3x3 square made up of <const>+</const>, <const>-</const> and <const>|</const> with an <const>X</const> character in the centre.<br>-	Data area: all the remaining positions inside the rectangle <var>W</var> x <var>H</var>. A space is a 0, every ASCII which is not space character is a 1 <br>-	Mask pattern: a checkerboard pattern rectangle <var>W</var> x <var>H</var> of 0s and 1s.<br>The Mask pattern starts from the bit in the lower right corner set to 1 and does not stop at restricted areas.  For example:<br><pre style="font-family: monospace">101010<br>010101<br>101010<br>010101</pre><br><strong>Layout</strong><br>The raw data (as bitstream) starts from the lower right corner, then it goes upwards (as happens in real QR codes). Every time the bitstream comes across the no data zone (or the borders), it moves left and changes direction (downwards, etc.). If it hits the alignment marker, the bitstream just crosses the marker straight.<br>Below is an example of a 20x10 (<var>W</var>x<var>H</var>) QR code using the letters to simulate the sequence. The data starts from the lower right corner (uppercase <const>A</const>) and goes upwards. The case of the letters indicate the mask pattern (1 for uppercase, 0 for lowercase).  The <const>.</const> character indicates the no data zone around the position detection markers.<br><pre style="font-family: monospace">+---+.TsZyFeLk.+---+<br>| @ |.uRaXgDmJ.| @ |<br>+---+.VqBwHcNi.+---+<br>......wPcViBoH......<br>NmJiFeXoDuJaPgYxSrGf<br>oLkHgDyNeTkZqFzWtQhE<br>......ZmFsLyRe+-+pId<br>+---+.aLgRmXsD|X|OjC<br>| @ |.BkHqNwTc+-+nKb<br>+---+.cJiPoVuBaVuMlA</pre><br><strong>Data Encoding</strong><br>Raw data are encoded in binary where a <const>space</const> is a 0 and every other character is a 1. <br>Every bit of the raw data is XORed with the mask pattern.<br><pre style="font-family: monospace">data|pattern|  result<br>----+-------+----------<br>  0 |   0   | 0<br>  0 |   1   | 1 <br>  1 |   0   | 1<br>  1 |   1   | 0</pre><br>The raw data are repeated until all the space available in QR code is filled. There is always room for a full copy of the raw data, subsequent copies may be truncated.<br>Inside one copy of the raw data (bitstream) the structure is:<br><strong>BOM</strong> + <strong>Text</strong> + <strong>EOM</strong><br><strong>BOM</strong> (8 bit) <br><strong>Text</strong> (sequence of 7 bit ASCII chars) <br><strong>EOM</strong> (7 bit)<br><strong>BOM</strong>: Begin of message, 8 bits. <br>Value=0b1xxxxxxx means Text is not encrypted, <br>Value=0b0xxxxxxx means that the Text is encrypted. The encryption KEY is the 7 bits (least significant bits) of <strong>BOM</strong>.<br><strong>EOM</strong>: End of message. Value=0b0000000 7 bits.<br><br><strong>Encryption algorithm</strong><br>Only when the first bit of the <strong>BOM</strong> is 0, the Text is encrypted.<br>The KEY is XORed with all the bits of the remaining data (Text+EOM).<br><br>References: https://en.wikipedia.org/wiki/QR_code</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> integer <var>W</var> for the width of the QR code<br><strong>Line 2:</strong> integer <var>H</var> for the height of the QR code<br><strong>Next <var>H</var> lines:</strong> The ASCII QR code.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The message encoded in the QR code (only the first copy).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">12 &le; <var>W</var> &le; 100<br>8 &le; <var>H</var> &le; 100<br>The output message consists of ASCII characters only.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">17
+13
++---+ #  #  +---+
+| @ |   ### | @ |
++---+    #  +---+
+      ##         
+##   #   ####    
+#### #  #   #####
+#   ## # ### ####
+ # # ##   #   ## 
+ ## ##### # #   #
+      # ## +-+###
++---+   ###|X|## 
+| @ | #### +-+# #
++---+ #   ## ##  </pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">Hello CodinGame!</pre>
+         </div>
+      </div>
+   </div>
+</div>

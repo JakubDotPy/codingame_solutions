@@ -1,0 +1,53 @@
+<h1>Conditional probabilities</h1>
+
+<a href="https://www.codingame.com/training/hard/conditional-probabilities">https://www.codingame.com/training/hard/conditional-probabilities</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You have to write a solver of a conditional probabilities exercise where <var>A</var> and <var>B</var> are two events.<br>For readability, we will write that the probability of <var>A</var> is <var>A</var>.<br>You are given three probabilities, for example:<br><br>* <var>A</var>, <var>B</var>, <var>A GIVEN B</var><br>* <var>NOT A</var>, <var>A AND B</var>, <var>B GIVEN NOT A</var><br>* <var>A</var>, <var>NOT A GIVEN B</var>, <var>B GIVEN A</var><br><br>Where:<br>* <var>NOT A</var> means the probability of the opposite of <var>A</var>,<br>* <var>A AND B</var> means the probability of the conjunction of <var>A</var> and <var>B</var> (ie <var>A</var> and <var>B</var> occur simultaneously),<br>* <var>A GIVEN B</var> means the probability of <var>A</var> if <var>B</var> occurs.<br><br>For example, you have these relations:<br><var>A</var> + <var>NOT A</var> = 1<br><var>A AND B</var> + <var>A AND NOT B</var> = <var>A</var><br><var>A AND NOT B</var> = <var>A</var> &times; <var>NOT B GIVEN A</var> = <var>NOT B</var> &times; <var>A GIVEN NOT B</var><br><br>Note that <var>A AND B</var> is <var>B AND A</var> (so we will use only the first one) but that <var>A GIVEN B</var> <strong>is not</strong> <var>B GIVEN A</var> (it&rsquo;s a classical fallacy in psychology).<br>You have to find all the probabilities you can build with the words <var>A</var>, <var>B</var>, <var>NOT</var> (unary operator), <var>AND</var> and <var>GIVEN</var> (binary operators). Write them in the lexicographic order: <var>A</var> before <var>A AND B</var> before <var>A GIVEN B</var> before <var>A GIVEN NOT B</var> but not <var>B AND A</var>.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><var>FIRST PROBABILITY</var> = <const>value</const><br><var>SECOND PROBABILITY</var> = <const>value</const><br><var>THIRD PROBABILITY</var> = <const>value</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">16 sorted lines of the probabilities (written as reduced fractions) if the exercise is solvable, written as the input and including the input.<br>If the given data are not enough to solve the exercise, print only the probabilities that you can calculate (and that you are given).<br><var>IMPOSSIBLE</var> if the solution is a contradiction (for example if a probability is &lt;0 or &gt;1 or if a probability has actually two different values).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">The probabilities are given as fractions of integers.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">A = 1/2
+B = 1/3
+A AND B = 1/6</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">A = 1/2
+A AND B = 1/6
+A AND NOT B = 1/3
+A GIVEN B = 1/2
+A GIVEN NOT B = 1/2
+B = 1/3
+B GIVEN A = 1/3
+B GIVEN NOT A = 1/3
+NOT A = 1/2
+NOT A AND B = 1/6
+NOT A AND NOT B = 1/3
+NOT A GIVEN B = 1/2
+NOT A GIVEN NOT B = 1/2
+NOT B = 2/3
+NOT B GIVEN A = 2/3
+NOT B GIVEN NOT A = 2/3</pre>
+         </div>
+      </div>
+   </div>
+</div>

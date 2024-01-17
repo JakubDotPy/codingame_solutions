@@ -1,0 +1,36 @@
+<h1>The broken editor</h1>
+
+<a href="https://www.codingame.com/training/easy/the-broken-editor">https://www.codingame.com/training/easy/the-broken-editor</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Your favourite code editor broke, it can't display what you're typing anymore!<br>Replace the part that handles the keyboard inputs and build the output yourself!<br><br>All <var>typed_keys</var> can be either a <strong>character</strong>, a <strong>keyboard arrow</strong> (left / right) represented by <const>&lt;</const> and <const>&gt;</const> or a <strong>backspace</strong> represented by the minus sign <const>-</const><br><const>&lt;</const> moves the editor's cursor to the left<br><const>&gt;</const> moves the editor's cursor to the right<br><const>-</const> removes one character on the left side of the cursor's position (backspace behaviour)<br>Keep in mind that a cursor has boundaries: from the left of the first character to the right of the last one<br><br><strong>Example 1:</strong><br>You typed an extra <const>L</const> in <strong>Helllo World</strong> and removed it with a backspace:<br><pre style="font-family: monospace"><strong>Input</strong>: Helll-o World<br><strong>Output</strong>: Hello World</pre><br><strong>Example 2:</strong><br>While typing too fast, you skipped the <const>e</const>. You pressed left arrow twice, typed <const>e</const> then went back to the right and typed the rest (&quot;o World&quot;)<br><pre style="font-family: monospace"><strong>Input</strong>: Hll<strong>&lt;&lt;</strong>e&gt;&gt;o World<br><strong>Output</strong>: Hello World</pre><br>Good luck!</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1: <var>typed_keys</var></strong> A string representing all the pressed keys (characters/arrows/backspaces)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> The text to display in the editor's window</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; length of <var>typed_keys</var> &le; 80</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">echo &quot;Hello World!&quot;;</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">echo &quot;Hello World!&quot;;</pre>
+         </div>
+      </div>
+   </div>
+</div>

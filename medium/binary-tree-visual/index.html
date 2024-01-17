@@ -1,0 +1,54 @@
+<h1>Binary Tree Visual</h1>
+
+<a href="https://www.codingame.com/training/medium/binary-tree-visual">https://www.codingame.com/training/medium/binary-tree-visual</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You must output a visual of the given <strong>binary tree</strong> of size <var>N</var>.<br>A binary tree is a tree where each node has at most two children, called <strong>left child</strong> and <strong>right child</strong>.<br>A <strong>value</strong> is stored in each node.<br>Nodes have an id between 0 and <var>N</var> - 1 and are given in order.<br>The id of the root is always 0.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1 :</strong> An integer <var>N</var> for the number of nodes.<br><strong><var>N</var> next lines :</strong> Three space separated integers for the value stored in the node and the id of its left and right children. The id is -1 if there is no child.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">Lines trimmed on the right representing the tree.<br>Prior to trimming, the whole output can be seen as a big grid.<br>The values are located in &quot;cells&quot; of width <var>W</var> where <var>W</var> is 1 + the maximum number of digits of a tree value. The values are right-justified within their cell.<br>A node in the left sub-tree of a node is always represented to its left, a node in the right sub-tree of a node is always represented to its right.<br>The width of the visual is <var>N</var> cells, which means a total width of <var>N</var> x  <var>W</var> characters before the right trimming. In other words, every &quot;column&quot; of the big grid contains exactly one value.<br>The nodes are connected with <const>|</const>, <const>+</const> and <const>-</const> as seen in the example.<br> <const>|</const> and <const>+</const> are right-justified within their cell.<br>The total height of the visual is <var>L</var> + 3 x (<var>L</var> - 1) lines where <var>L</var> is the number of levels, also knows as the &quot;height&quot; of the tree (each level brings one line for the values and 3 lines for the connections - except for the last level) .</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>N</var> &le; 20</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">6
+111 1 2
+222 3 4
+3 -1 -1
+44 -1 -1
+555 -1 5
+66 -1 -1</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">                 111
+                   |
+       +-----------+---+
+       |               |
+     222               3
+       |
+   +---+---+
+   |       |
+  44     555
+           |
+           +---+
+               |
+              66</pre>
+         </div>
+      </div>
+   </div>
+</div>

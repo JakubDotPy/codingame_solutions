@@ -1,0 +1,40 @@
+<h1>🏐 🏖 Beach Volleyball 🏐 🏖</h1>
+
+<a href="https://www.codingame.com/training/medium/beach-volleyball">https://www.codingame.com/training/medium/beach-volleyball</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You love playing beach volleyball!  Out there in the sun, playing with your friends, volleying that ball back and forth, it's the best.<br><br>Until dude-face comes along, and kicks your precious volleyball into the ocean.  You'd kick sand at him, but that volleyball could float away and you have to go get it right away!<br><br>You are located on the beach at X=<var>start_x</var> and Y=<var>start_y</var>, and ocean meets the beach where Y=<var>beach_y</var>.  The volleyball is located in the water at X=<var>ball_x</var> and Y=<var>ball_y</var>.<br><br>You have to plot a route that <strong>will take the least time</strong> to get the ball.  You happen to know that you can travel <var>speed_land</var> units per second on land and <var>speed_water</var> units per second while in the water.<br><br>You will travel in a straight line towards the shoreline to coordinate X=<var>beach_x</var>, Y=<var>beach_y</var>, then another straight line from there to the ball.<br><br>Find the <strong>best integer value</strong> for <var>beach_x</var> on the shore line that will result in the least travel time.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> space separated values <var>start_x</var> and <var>start_y</var><br><strong>Line 2:</strong> <var>beach_y</var><br><strong>Line 3:</strong> space separated values <var>ball_x</var> and <var>ball_y</var><br><strong>Line 4:</strong> <var>speed_land</var><br><strong>Line 5:</strong> <var>speed_water</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1 :</strong> beach_x - The X coordinate of the point where you meet the beach on your way to the ball.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &le; <var>start_x</var>,<var>ball_x</var> &le; 20,000,000<br>0 &le; <var>start_y</var> &lt; <var>beach_y</var> &lt; <var>ball_y</var> &le; 20,000,000<br>1 &le;  <var>speed_water</var> &le; <var>speed_land</var> &le; 1,000</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2 0
+10
+2 20
+1
+1</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">2</pre>
+         </div>
+      </div>
+   </div>
+</div>

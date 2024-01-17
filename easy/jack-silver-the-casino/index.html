@@ -1,0 +1,94 @@
+<h1>Jack Silver: The Casino</h1>
+
+<a href="https://www.codingame.com/training/easy/jack-silver-the-casino">https://www.codingame.com/training/easy/jack-silver-the-casino</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Jack Silver is a spy from the international spy agency. <br><br>In his current mission he observes his targets at a roulette table at the Great Grand Casino in Villan City. He needs to know how much money his targets have at the end of the game.<br><br>The target plays as follows:<br>- He always bets 1/4 of the cash he currently has. If it is a fractional value, he always rounds up.<br>- The target's calls, <var>CALL</var>, can be  one of the three possibilities:<br>-- <const>EVEN</const> - He bets on an EVEN (non-zero) number<br>-- <const>ODD</const> - He bets on an ODD number<br>-- <const>PLAIN</const> - He bets on a specific number: <var>NUMBER</var><br><br><strong>NOTE:</strong> Since the odds of winning are much lower for <const>PLAIN</const> bets, the payout for a win is higher: <const>35 to 1</const>. For <const>EVEN</const> and <const>ODD</const>, the payout is <const>1 to 1</const>. As an example, if the ball comes up as 23, and the target bets 100, the payouts would be as follows:<br><br> - If he called <const>EVEN</const>, then he would lose his 100 bet.<br> - If he called <const>ODD</const>, then he would get his 100 bet back, plus an extra 100.<br> - If he called <const>PLAIN</const> and specified any number other than 23, he would lose his 100 bet.<br> - If he called <const>PLAIN</const> and specified 23 as his number, he would get back his 100 bet plus an extra 3500.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer, <var>ROUNDS</var>, for the number of rounds the target is playing<br><strong>Line 2:</strong> An integer, <var>CASH</var>, for the amount of cash the target starts with<br><strong>Next <var>ROUNDS</var> lines:</strong> The target's <var>PLAY</var> for that round, consisting of either 2 or 3 space separated variables: <br>1) an integer, <var>BALL</var>, which represents the roulette table result<br>2) a string, <var>CALL</var>, which represents the call the target made <br>3) (optional) an optional integer, <var>NUMBER</var>, which represents the selected number when the target's call is <const>PLAIN</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The amount of money, <var>MONEY</var>, the target has after <var>ROUNDS</var> of playing</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>ROUNDS</var> &le; 100<br>50000 &le; <var>CASH</var> &le; 100000<br><var>CALL</var> can be the text <const>EVEN</const>, <const>ODD</const> or <const>PLAIN</const>  with an integer <var>NUMBER</var><br>If <var>NUMBER</var> is set 0 &le; <var>NUMBER</var> &le; 36<br><br>1 &le; <var>MONEY</var> &le; 1 000 000</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">57
+70545
+31 PLAIN 30
+18 PLAIN 35
+14 PLAIN 32
+25 ODD
+13 PLAIN 9
+14 PLAIN 34
+32 ODD
+26 PLAIN 9
+29 EVEN
+7 PLAIN 21
+32 PLAIN 29
+0 PLAIN 7
+7 PLAIN 34
+13 PLAIN 14
+22 PLAIN 8
+25 PLAIN 28
+11 PLAIN 20
+14 ODD
+23 ODD
+13 PLAIN 22
+2 ODD
+23 EVEN
+17 ODD
+30 EVEN
+28 PLAIN 28
+5 PLAIN 36
+13 EVEN
+22 PLAIN 11
+5 EVEN
+32 PLAIN 25
+13 ODD
+10 EVEN
+28 ODD
+15 PLAIN 2
+33 EVEN
+29 ODD
+1 EVEN
+19 PLAIN 12
+0 PLAIN 34
+24 EVEN
+16 PLAIN 36
+4 EVEN
+35 PLAIN 13
+14 PLAIN 34
+30 ODD
+13 EVEN
+29 ODD
+7 EVEN
+18 PLAIN 20
+33 ODD
+24 PLAIN 28
+34 PLAIN 34
+33 EVEN
+32 EVEN
+10 EVEN
+13 ODD
+35 PLAIN 26</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1153</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,42 @@
+<h1>Counting Squares on Pegs</h1>
+
+<a href="https://www.codingame.com/training/medium/counting-squares-on-pegs">https://www.codingame.com/training/medium/counting-squares-on-pegs</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">A farmer wishes to delimit a <strong>square plot of land</strong> in his field by setting up a square fence. To this end, he needs to place <const>4</const> pegs at the <const>4</const> (distinct) corner positions beforehand. The pegs can only be placed at some given positions where the ground has the appropriate softness (not too hard so that it is possible to hammer the pegs deep enough, but not too soft so that the pegs support the fence without falling).<br><br>Given the possible <strong>integer positions</strong> for the pegs, <strong>in how many ways can the farmer pick <const>4</const> distinct positions to form a square?</strong><br><br>Note that we do <strong>not require</strong> the squares to be <strong>axis-aligned</strong>.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var> denoting the number of valid positions for pegs in the field.<br><strong>Next <var>N</var> lines:</strong> Two space-separated integers <var>X</var> and <var>Y</var> denoting some acceptable coordinates for a peg in the field (given in lexicographical order and without duplicates).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">A single integer denoting the number of squares that can be formed using the given vertices (pegs).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">4 &le; <var>N</var> &le; 2000<br>0 &le; <var>X</var>,<var>Y</var> &le; <var>N</var>-1</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">5
+0 0
+0 2
+1 0
+2 0
+2 2
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1</pre>
+         </div>
+      </div>
+   </div>
+</div>

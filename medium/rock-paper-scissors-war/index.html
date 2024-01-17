@@ -1,0 +1,39 @@
+<h1>Rock-Paper-Scissors War</h1>
+
+<a href="https://www.codingame.com/training/medium/rock-paper-scissors-war">https://www.codingame.com/training/medium/rock-paper-scissors-war</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">On a two-dimensional rectangular grid, a new civilization emerged.<br><br>Within the grid terrain, each location is occupied by one of the five life forms: Rocks, Papers, Scissors, Lizards or Spocks. <br><br>The life forms have these code names:<br><strong>R</strong>ock (R)<br><strong>P</strong>aper (P)<br>s<strong>C</strong>issors (C)<br><strong>L</strong>izard (L)<br><strong>S</strong>pock (S)<br><br>They defeat each others in a fixed pattern:<br>Scissors cuts Paper<br>Paper covers Rock<br>Rock crushes Lizard<br>Lizard poisons Spock<br>Spock smashes Scissors<br>Scissors decapitates Lizard<br>Lizard eats Paper<br>Paper disproves Spock<br>Spock vaporizes Rock<br>Rock crushes Scissors<br><br>Each day, different life forms occupying horizontally or vertically adjacent grid locations wage war.<br><br>At the end of the day, the victor life form will occupy the adjacent location originally owned by the loser.<br><br><pre style="font-family: monospace">Day 0          Day 1<br>+---+---+---+  +---+---+---+<br>| P | S | C |  | P | P | S |<br>+---+---+---+  +---+---+---+</pre><const>A two-front war - Spock wins the war on the right but loses the war on the left.</const><br><br>A life form on a location can have at most four fronts of war on the same day. If it wins at any frontier, it expands to the adjacent location of that front. At the same time if It is defeated by other life forms, it retreats from the original location, or just dies out.<br><br>When two different life forms are defeating the life form on the same location at the same time, the two winners will fight each other again to decide who is the final winner to occupy the location at the end of the day.<br><br><pre style="font-family: monospace">Day 0          Day 1<br>+---+---+---+  +---+---+---+<br>| P | S | L |  | P | L | L |<br>+---+---+---+  +---+---+---+</pre><const>Another two-front war - Spock loses both wars at two frontiers. The winners fight again and Lizard wins.</const><br><br>Your task is to determine the territory occupied by each life form after <var>n</var> days.<br><br>👉 Life form design is borrowed from another puzzle https://www.codingame.com/training/easy/rock-paper-scissors-lizard-spock. Code reuse is possible.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Integers <var>w</var> <var>h</var> <var>n</var>, separated by a space.<br><var>w</var> is the width of the terrain<br><var>h</var> is the height of the terrain<br><var>n</var> is the number of days to pass<br><br><strong>The following <var>h</var> lines:</strong> Showing what life forms are initially occupying the grid.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">Write out what life forms are occupying the grid after battling for <var>n</var> days. The output should have <var>h</var> lines of width <var>w</var>,</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>n</var> &le; 50<br>1 &le; <var>w</var>, <var>h</var> &le; 100</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">10 2 4
+PPPPPCCCCC
+PPPPPPPCCC</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">PCCCCCCCCC
+PPCCCCCCCC</pre>
+         </div>
+      </div>
+   </div>
+</div>

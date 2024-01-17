@@ -1,0 +1,49 @@
+<h1>Calculator</h1>
+
+<a href="https://www.codingame.com/training/easy/calculator">https://www.codingame.com/training/easy/calculator</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Your task is to output the <var>screen</var> of a calculator when a <var>key</var> is pressed. For example:<br>-Input <const>3</const>: Output <const>3</const><br>-Input <const>4</const>: Output <const>34</const><br>-Input <const>+</const>: Output <const>34</const><br>-Input <const>2</const>: Output <const>2</const><br>-Input <const>3</const>: Output <const>23</const><br>-Input <const>-</const>: Output <const>57</const><br>-Input <const>4</const>: Output <const>4</const><br>-Input <const>=</const>: Output <const>53</const><br>-Input <const>AC</const>: Output <const>0</const><br><br>The calculator doesn't take into account the priority of the operators. If the user presses:<br><const>2 + 3 x 5</const><br>the final output will be <const>25</const><br>The user may press two operation keys consecutively. In that case, the operation that must be taken into account is the second one.<br>If the result has decimal numbers, it must be output with, at most, 3 decimal places. Otherwise, it must be output without a decimal point. Decimal numbers are also stored rounded with 3 decimal places.<br>If the user presses the <const>=</const> key consecutively, the last operation should be performed repeatedly. For example, <const>1 0 - 3 = = =</const> is the same as calculating <const>10 - 3 - 3 - 3</const>.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>n</var> for the number of keys to press.<br><strong>Next <var>n</var> lines:</strong> A string that shows the <var>key</var> pressed.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>n</var> lines:</strong> The output of the screen after each key is pressed</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">The key will be one of these: <const>0</const>-<const>9</const>, <const>+</const>, <const>-</const>, <const>x</const>, <const>/</const>, <const>=</const>, <const>AC</const><br>Neither test cases nor validator will divide by zero. First key will always be a cipher.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">7
+2
+5
++
+6
+-
+7
+=</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">2
+25
+25
+6
+31
+7
+24</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,36 @@
+<h1>Simple CPU Emulation 1</h1>
+
+<a href="https://www.codingame.com/training/hard/simple-cpu-emulation-1">https://www.codingame.com/training/hard/simple-cpu-emulation-1</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You must create an emulator that takes a set of instructions and interprets them.<br>An emulator is a software program that mimics hardware, in this case a CPU. In this puzzle, you'll have to emulate an Arithmetic and Logic Unit (ALU) and registers. This CPU uses three 8-bit registers numbered 0,1, and 2, initialized to zero.<br><br>Example:<br>Instruction - Opcode - description; comment<br><strong>1015</strong> - 1knn - LD k, nn ; Load 0x15 into register 0x0<br><br>Opcode table<br><strong>0000</strong> &ndash; EXIT - Stop Execution and print result<br><strong>1knn</strong> - LD k, nn - Load value nn into register k<br><strong>20xy</strong> - ADD x, y - Add the value of register y to register x and store the value in register x, if the result is greater than 8 bits set register 2 to 1 else 0. Only the lowest 8-bits are stored in register x.<br><strong>30xy</strong> - SUB x, y - Subtract the value of register y from register x and store the value in register x, if register x &lt; register y set register 2 to 1 else 0.<br><strong>40xy</strong> &ndash; OR x,y &ndash; Bitwise OR on value of register x and register y, store value in register x<br><strong>50xy</strong> &ndash; AND x,y &ndash; Bitwise AND on value of register x and register y, store value in register x<br><strong>60xy</strong> &ndash; XOR x, y - Bitwise XOR on value of register x and register y, store value in register x<br><strong>7knn</strong> &ndash; SE k, nn &ndash; Skip next instruction if value of register k equals nn<br><strong>8knn</strong> &ndash; SNE k, nn &ndash; Skip next instruction if value of register k is not equal to nn<br><strong>90xy</strong> &ndash; SE x,y &ndash; Skip next instruction if value of register x equals value of register y<br><strong>A0xy</strong> &ndash; SNE x,y - Skip next instruction if value of register x is not equal to the value of register y<br><br>Example set of instructions:<br><pre style="font-family: monospace">1005110520010000</pre><br>opcode - instruction - comment<br><strong>1005</strong> - LD 0, 05 - Load 0x05 into register 0x0<br><strong>1105</strong> - LD 1, 05 - Load 0x05 into register 0x1<br><strong>2001</strong> - ADD 0,1 - Add register 0x0 to register 0x1, store in register 0x0<br><strong>0000</strong> - EXIT - stop and print results<br><br>Example execution:<br># register values = 0, 0, 0<br><strong>opcode 1005</strong><br># register values = 5, 0, 0<br><strong>opcode 1105</strong><br># register values = 5, 5, 0<br><strong>opcode 2001</strong><br># register values = 10, 5, 0<br><strong>opcode 0000</strong><br># exit and print register values<br><strong>PRINT 10 5 0</strong></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">You will receive a string of hexadecimal characters that represent the instructions to be interpreted.  Each character represents 4 bits and an opcode is made up of 4 characters, or 16 bits. An opcode is a single operation that must be performed.<br><br><strong>Line 1:</strong> A string of hex characters, <var>program</var>, without spaces</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">Print the values of registers 0,1 and 2, in decimal notation and separated by spaces.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><var>program</var> length &lt;= 100 and is divisible by 4</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1005110520010000</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">10 5 0</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,42 @@
+<h1>Elementary cellular automaton</h1>
+
+<a href="https://www.codingame.com/training/medium/elementary-cellular-automaton">https://www.codingame.com/training/medium/elementary-cellular-automaton</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Your goal is to write a program that can show the evolution of an Elementary Cellular Automaton! This is a one-dimensional binary system in which each cell (<const>0</const> or <const>1</const>) evolves to the next stage based on its own value and the values of its immediately adjacent neighbors.<br><br>For example, consider the <var>pattern</var>:<br><br><pre style="font-family: monospace"><const>0010110</const></pre><br><br>In order to determine the next value for the 4th cell, we look at the neighborhood: <const>101</const>, composed of the 3rd cell, <const>1</const>, 4th cell <const>0</const>, and 5th cell, <const>1</const>.<br><br>Since neighborhoods can have any one of 8 different values (<const>000</const> - <const>111</const>) there are 256 possible rules for determining how the automaton should evolve any given neighborhood into either a <const>0</const> or a <const>1</const>.<br><br>For example, a rule could state that neighborhoods that resemble <const>001</const> will evolve into <const>1</const>, and all other neighborhoods will evolve into <const>0</const>. In this case, the <var>pattern</var> <const>000100</const> would evolve as shown:<br><br><pre style="font-family: monospace"><const>000100<br>001000<br>010000</const></pre><br><br>In this puzzle, the rule will be provided in the <strong>Input</strong> in the form of a Wolfram code (a single 8-bit number) where each digit in the binary representation of the code represents the evolution for the corresponding neighborhood.<br><br>For example, if the provided rule is the code <const>53</const>, or <const>00110101</const> in binary, then this would be interpreted as follows:<br><br><pre style="font-family: monospace">Neighborhood:	<const>111   110   101   100   011   010   001   000</const><br>Next value:	 <const>0     0     1     1     0     1     0     1</const></pre><br><br>And so  a neighborhood resembling <const>010</const> would evolve into a <const>1</const>, while a neighborhood resembling <const>110</const> would evolve into a <const>0</const>.<br><br>For further explanation, see:<br>wikipedia.org/wiki/Elementary_cellular_automaton#The_numbering_system<br><br><strong>Note:</strong> The system is periodic, or wrapped around, meaning that for the <var>pattern</var> [ . . @ . @ ], the neighborhood for the 1st cell is [ @ . . ], the 2nd is [ . . @ ], the 3rd is [ . @ . ], the 4th is [ @ . @ ], and the neighborhood for the last cell is [ . @ . ].</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> A rule <var>R</var> provided as a Wolfram code.<br><strong>Line 2:</strong> The number <var>N</var> of lines to output.<br><strong>Line 3:</strong> The starting <var>pattern</var> to evolve. <const>@</const> and <const>.</const> represent <const>1</const> and <const>0</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>N</var> lines:</strong> The evolution of the starting <var>pattern</var>. The first line must be the starting pattern, itself, and the next <var>N</var>-1 lines represent the subsequent evolutions from the starting pattern.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &le; <var>R</var> &le; 255<br>10 &le; <var>pattern</var>.length &le; 50</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">254
+5
+.....@.....</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">.....@.....
+....@@@....
+...@@@@@...
+..@@@@@@@..
+.@@@@@@@@@.</pre>
+         </div>
+      </div>
+   </div>
+</div>

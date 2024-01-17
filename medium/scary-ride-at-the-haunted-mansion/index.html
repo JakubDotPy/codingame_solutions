@@ -1,0 +1,39 @@
+<h1>Scary Ride at the Haunted Mansion</h1>
+
+<a href="https://www.codingame.com/training/medium/scary-ride-at-the-haunted-mansion">https://www.codingame.com/training/medium/scary-ride-at-the-haunted-mansion</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">In an amusement park, people are queuing for the ride through the Haunted Mansion.<br><br>A ride consists of 10 wagons, with each wagon having 2 seats. So each ride can support up to 20 people. <br>A visual representation of an empty ride is as follows (each <strong>D</strong> represents an empty seat, the rest are the visuals of the ride):<br><pre style="font-family: monospace"><br>/&lt; | D | D | D | D | D | D | D | D | D | D |<br>\&lt; | D | D | D | D | D | D | D | D | D | D |<br></pre><br>The ride is moving from right to left, so the first wagon is on the left and last wagon is on the right in the picture above. This also means that in each wagon, the seat at the top row is on the right side of the wagon.<br><br>There are multiple groups of people queueing for the ride, and <strong>you are a kid in one of the groups</strong>. Your task is to output the <strong>ride number</strong> and the <strong>visual representation of the ride you are on</strong> according to the following rules:<br><br>Intra group rules:<br>1. Kids must be seated next to an adult.<br>2. In each wagon, the right seat must be filled first before the left seat.<br>3. In each wagon, adult is seated first before kid.<br>4. You will always be the first seated kid of your group.<br><br>Inter group rules:<br>5. People from the same group must all sit in the same ride.<br>6. Two people from different groups can't be seated on the same wagon.<br>7. If it's not possible to fulfill the above rules (e.g., a group of only kids, violating rule 1), the group is rejected from the ride.<br><br>Ride departure rules:<br>8. A ride is filled from the front to the back.<br>9. Once the ride can't fit the next group in the queue (excluding groups that are rejected) according to above rules, the ride departs, and the next ride (which is empty) comes in.<br><br>When outputting the visual representation of a filled ride, <strong>A</strong> represents an adult, <strong>k</strong> represents a kid, and <strong>x</strong> represents you.<br><br>Examples:<br><br>Rule 1: <strong>Kids must be seated next to an adult</strong><br>Example with group of 3 people (2 adults + 1 kid) : <strong>AAk</strong><br><pre style="font-family: monospace"><br>/&lt; | A | A | D | D | D | D | D | D | D | D |<br>\&lt; | k | D | D | D | D | D | D | D | D | D |<br></pre><br><br>Rule 3: <strong>In each wagon, adult is seated first before kid.</strong><br>Example with 1 adult + 1 kid: <strong>kA</strong><br><pre style="font-family: monospace"><br>Right side     /&lt; | A | D | D | D | D | D | D | D | D | D |<br>Left side      \&lt; | k | D | D | D | D | D | D | D | D | D |<br></pre><br><br>Rule 6: <strong>Two people from different groups can't be seated on the same wagon.</strong><br>Example with 2 group of 3 people per group: <strong>AAk AAAkk</strong><br><pre style="font-family: monospace"><br>/&lt; | A | A | A | A | A | D | D | D | D | D |<br>\&lt; | k | D | k | k | D | D | D | D | D | D |<br></pre></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong>: A number <var>N</var> representing the number of groups<br><strong>Line 2</strong>: A string <var>S</var> representing the groups in the queue. Groups are separated by a space.<br><const>A</const> represents an adult<br><const>k</const> represents a kid<br><const>x</const> represents you</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1</strong>: A number <var>M</var> that represents the ride number you are on. The first ride has <var>M</var>=1.<br><strong>Line 2-3</strong>: The visual representation of the ride that you are on.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <var>N</var> &lt; 20<br>0 &lt; <var>S</var> &lt; 1024</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1
+AAx</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1
+/&lt; | A | A | D | D | D | D | D | D | D | D |
+\&lt; | x | D | D | D | D | D | D | D | D | D |</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,47 @@
+<h1>Bulls and Cows 2</h1>
+
+<a href="https://www.codingame.com/multiplayer/optimization/bulls-and-cows-2">https://www.codingame.com/multiplayer/optimization/bulls-and-cows-2</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal"> </span><span>Goal </span></h2>
+   <span class="question-statement">This is an adaptation of a classic game of Bulls and Cows, where you will have to guess the number on the base of hints given each turn. One can also start by solving a <a href="https://www.codingame.com/ide/puzzle/bulls-and-cows" target="_blank" rel="nofollow noopener noreferrer">slightly more simple version</a> of the game. </span>
+</div>
+ 
+      <div class="statement-section statement-rules"> 
+        <h2> 
+          <span class="icon icon-rules"> </span> 
+          <span>Rules</span> 
+        </h2> 
+        <div><div class="statement-rules-content">
+        <p>1. At the start of the game player will get the <var>numberLength</var> of the secret number.</p>
+        <p>2. Each turn player is trying to guess the secret number.</p>
+        <p>3. After each guess player will know how many <var>bulls</var> and <var>cows</var> were in the last guess, where <br />
+<b>bull</b> is a digit in your guess that <b>exactly</b> matches the value and position of a digit in secret number. <br />
+<b>cow</b> indicates a digit in your guess that matches the value of a digit in your opponent&#39;s secret number, but is in the <b>wrong position</b>.</p>  
+        
+        <p>4. Each digit of the secret number is unique as well as should be the digits of the guess.</p>
+        <p>5. First digit of a guess and of the secret number can not be a <const>0</const>.</p>
+        <p>6. Score board is ascended by the total count of actions among all the test cases.</p>
+        <br />
+     	<br />
+	</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Initialization input</div>
+      <div class="question-statement-input">
+        <span class="statement-lineno">First line:</span> <var>numberLength</var>, count of digits in the secret number.<br /><br />
+        
+      </div>
+      <div class="title">Input for a game round</div>
+      <div class="question-statement-input">2 integers <var>bulls</var> and <var>cows</var> - count of bulls and cows in a guess, <const>-1</const> <const>-1</const> at the first turn</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">Single line of <var>numberLength </var> digits</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <var>numberLength</var> &lt; 11<br /><var>maxTurns</var> &#61; 300<br /><var>turnMaxTime</var> &#61; 50ms<br /></div>
+   </div>
+</div></div></div></div>

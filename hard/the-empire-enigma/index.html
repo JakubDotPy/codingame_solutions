@@ -1,0 +1,44 @@
+<h1>The Empire Enigma</h1>
+
+<a href="https://www.codingame.com/training/hard/the-empire-enigma">https://www.codingame.com/training/hard/the-empire-enigma</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Write a decoder to allow the rebellion to decipher the Empire's secret messages.<br><br>The rebelllion figured out that characters in the original message are encoded by XOR'ing them with a stream of random numbers:<br><br>- The Empire uses ASCII codes for their original message.<br><br>- First character of each original message is always <const>@</const>.<br><br>- Each message is encoded with a different <var>Seed</var> for the Random Number Generator (RNG).<br><br>- The first <var>Offset</var> numbers from the RNG are discarded before encoding.<br><br>- Each <strong>undiscarded</strong> random number from the RNG is then XOR'ed with the ASCII code of each character, truncated to the <strong>lowest 8 bits</strong>. The resulting number then becomes part of the encoded message.<br><br>- The RNG used is:<br><strong>R(n+1) =  (<const>7562100</const> * R(n) + <const>907598307</const>) mod <const>7140</const></strong><br>where R(0) = <var>Seed</var>, R(1) is the first number from the RNG, R(2) is the second, etc.<br><br>The Empire believes that security is guaranteed by using large seeds (<const>0</const> &lt; <var>Seed</var> &lt; <const>2^63</const>) and the large offsets ( <const>0</const> &le; <var>Offset</var> &lt; <const>2^63</const>) which should prevent any brute force attack. Apparently you have a better way to work around the security than simple brute force!<br><br><strong>Example</strong><br>The original message <const>@Hello</const> is encoded with <var>Seed</var> = <const>581980637</const> and <var>Offset</var> = <const>10</const> to obtain the encoded message of <const>135 155 214 19 183 44</const>.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>Offset</var> for the random numbers from the RNG to discard before starting XOR'ing.<br><strong>Line 2:</strong> An integer <var>Length</var> for the length of the message including <const>@</const>.<br><strong>Next <var>Length</var> lines:</strong> One integer <var>C</var> in each line for each encoded character of the message.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> The decoded message excluding the initial <const>@</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <var>Seed</var> &lt; 2^63<br>0 &le; <var>Offset</var> &lt; 2^63<br>0 &lt; <var>Length</var> &lt; 256<br>32 &le; ASCII code of each character in the original message &le; 126</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">10
+6
+135
+155
+214
+19
+183
+44
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">Hello</pre>
+         </div>
+      </div>
+   </div>
+</div>

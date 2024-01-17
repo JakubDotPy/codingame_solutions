@@ -1,0 +1,44 @@
+<h1>Queen control</h1>
+
+<a href="https://www.codingame.com/training/easy/queen-control">https://www.codingame.com/training/easy/queen-control</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Chess is played on an 8x8 board composed of 64 squares. In this game it is important to <strong>control</strong> a large amount of these squares to gain the upper hand on the opponent. A square is said to be controlled when it is in the range of movement of a chess piece.<br><br>The chess piece that can control the most squares is <strong>the queen</strong>. It can move on any square vertically, horizontally and diagonally.<br><br><strong>Your mission :</strong> Create a program able to calculate the number of squares controlled by the queen in a specific given position. <br><br><strong>A square is considered to be controlled when the queen can move to it.</strong><br><strong>- A square containing a piece of the same <var>color</var> isn't considered controlled.</strong><br><strong>- But a square containing a piece of the opposite <var>color</var> can be considered controlled.</strong><br><strong>- The square the queen is currently on isn't counted.</strong></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1 :</strong> The <var>color</var> of the queen (<const>white</const> or <const>black</const>)<br><strong>Next 8 lines :</strong> A string <var>line</var> of 8 characters describing the chess board.<br><br><const>.</const> = Empty square<br><const>Q</const>= The queen<br><const>w</const> = White piece<br><const>b</const> = Black piece</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1</strong> : An integer corresponding to the number of squares controlled by the queen</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">white
+Q.......
+........
+........
+........
+........
+........
+........
+........</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">21</pre>
+         </div>
+      </div>
+   </div>
+</div>

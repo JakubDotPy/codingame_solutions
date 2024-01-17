@@ -1,0 +1,37 @@
+<h1>Disordered First Contact</h1>
+
+<a href="https://www.codingame.com/training/easy/disordered-first-contact">https://www.codingame.com/training/easy/disordered-first-contact</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Finally, we have received the first messages from aliens! Unfortunately, we cannot understand them because they have a very unique way of speaking.<br><br>Here is how aliens encode their messages:<br>- At each step of the encoding, they remove a bigger part from the beginning of the original message, starting from 1 character only. First, they take the first character, then 2 characters, then 3, etc...<br>- Starting from an empty result string, they add each part taken from the original message alternatively at the end and at the beginning of the result string. They add the first part at the end, the second part at the beginning, the third part at the end, etc...<br><br><strong>Example</strong><br><const>abcdefghi</const> becomes <const>ghibcadef</const><br><br>1) Take &quot;a&quot; from <const>abcdefghi</const>, add it at the end of an empty string -&gt; <const>a</const><br>2) Take &quot;bc&quot; from <const>bcdefghi</const>, add it at the beginning of <const>a</const> -&gt; <const>bca</const><br>3) Take &quot;def&quot; from  <const>defghi</const>, add it at the end of <const>bca</const> -&gt; <const>bcadef</const><br>4) Take the remaining characters &quot;ghi&quot; and add it at the beginning of <const>bcadef</const> -&gt; <const>ghibcadef</const><br><br>Your job here is to <strong>decode</strong> or <strong>encode</strong> the messages to discuss with aliens.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var> indicating the number of times the message was transformed. If <var>N</var> is <strong>positive</strong> you have to <strong>decode</strong> i.e. retrieve the original message. If <var>N</var> is <strong>negative</strong> you have to <strong>encode</strong> i.e. transform the message.<br><strong>Line 2:</strong> A string <var>message</var> to be decoded or encoded.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">One line: The original message (if <var>N</var> is <strong>positive</strong>) or the transformed message (if <var>N</var> is <strong>negative</strong>).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">-10 &le; <var>N</var> &le; 10<br>0 &lt; <var>message</var> length &lt; 1024</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1
+ghibcadef</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">abcdefghi</pre>
+         </div>
+      </div>
+   </div>
+</div>

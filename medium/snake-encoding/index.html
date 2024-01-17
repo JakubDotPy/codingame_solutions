@@ -1,0 +1,36 @@
+<h1>Snake encoding</h1>
+
+<a href="https://www.codingame.com/training/medium/snake-encoding">https://www.codingame.com/training/medium/snake-encoding</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You must encode a <var>N</var> sized square of text <var>X</var> times.<br>It is provided as follows, the example stands for a three-letter sided square:<br><br>ABC<br>DEF<br>GHI<br><br>The encoding pattern begins at the bottom left corner of the square and goes upwards, replacing the current letter with the one below.<br>In this example, the D, which is above the G, is replaced with G and the A, which is above the D, is replaced with D.<br>Once the top of the square is reached, the pattern switches to the next column and proceeds downwards.<br>Similarly, when the bottom of the square is reached, the next column is engaged and the pattern proceeds upwards.<br>When switching columns, the current letter is replaced with the previous one on the left.<br>For example, when reaching the top of the first column at A and switching to the second one, B is replaced with A, then the pattern goes downwards.<br>When the top right corner of the square has been reached, the current letter is replaced with the one at the bottom left corner in order to complete the sequence.<br>A full example demonstrating one round of the encoding pattern is provided below.<br><br>ABC       &#8594;     DAF<br>DEF       &#8594;     GBI<br>GHI       &#8594;     CEH<br><br>The directions of the letters are these ones:<br><br><pre style="font-family: monospace">&#8594;&#8595;X<br>&#8593;&#8595;&#8593;<br>&#8593;&#8594;&#8593;</pre><br><br>X means that the letter replaces the first one in the list (ie the bottom left one).<br><br>With a four-letter sided square:<br><br><pre style="font-family: monospace">&#8594;&#8595;&#8594;&#8595;<br>&#8593;&#8595;&#8593;&#8595;<br>&#8593;&#8595;&#8593;&#8595;<br>&#8593;&#8594;&#8593;X</pre></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> <var>N</var>, the size of the square<br><strong>Line 2:</strong> <var>X</var>, the number of times you must encode<br><strong>Next <var>N</var> lines:</strong> A line of the text to encode</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><var>N</var> lines of the encoded text</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1&lt;=<var>N</var>&lt;=20<br>1&lt;=<var>X</var><br>The input text is composed of ASCII characters</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3&#10;1&#10;ABC&#10;DEF&#10;GHI</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">DAF&#10;GBI&#10;CEH</pre>
+         </div>
+      </div>
+   </div>
+</div>

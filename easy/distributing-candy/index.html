@@ -1,0 +1,37 @@
+<h1>Distributing Candy</h1>
+
+<a href="https://www.codingame.com/training/easy/distributing-candy">https://www.codingame.com/training/easy/distributing-candy</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">An elementary school teacher has <var>n</var> bags of candy with each bag containing a variable amount of candy. After the class, the teacher wants to distribute the candy amongst <var>m</var> students such that each student gets one bag.<br><br>Since the amount of candy in the bags is variable, the teacher wants to distribute the bags as fairly as possible, minimizing the difference between the kid obtaining the maximum amount of candy and the kid obtaining the minimum amount of candy. <br>Given <var>n</var>, <var>m</var> and the amount in each bag, what is the minimum unfairness achievable?<br><br>Example:<br><br>Suppose that we have <var>n</var>=<const>6</const>, <var>m</var>=<const>3</const> and the number of candy in each of the six bags as follows: <const>7 1 3 10 12 10</const>. The distribution that would minimize the unfairness is 10 10 12. Thus the difference between the kid getting a bag of 12 candy (maximum) pieces and the kid getting 10 (minimum) is 2. Therefore, unfairness is equal to 2.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Two integers separated by space, <var>n</var> and <var>m</var><br><strong>Line 2:</strong> A list of integers separated space, denoting the number of candy in each bag.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">An integer denoting the minimum unfairness achievable.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0&lt;<var>n</var>&lt;300<br>0&lt;<var>m</var>&lt;<var>n</var><br>0&lt;=<var>Ci</var>&lt;=200 with <var>Ci</var> the number of candy in bag <var>i</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">6 3
+7 1 3 10 12 10</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">2</pre>
+         </div>
+      </div>
+   </div>
+</div>

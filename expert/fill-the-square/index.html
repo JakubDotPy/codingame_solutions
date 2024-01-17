@@ -1,0 +1,43 @@
+<h1>Fill the square!</h1>
+
+<a href="https://www.codingame.com/training/expert/fill-the-square">https://www.codingame.com/training/expert/fill-the-square</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">James Bond needs to infiltrate the SPECTRE headquarters. The door lock looks like a square of <var>N</var>&times;<var>N</var> LEDs.<br>Some of those LEDs are lit, and each LED&rsquo;s state can be changed by touching it.<br><br>Unfortunately, when you touch an LED, not only does its state change, but the states of its horizontal and vertical neighbors change as well.<br><br>So for an input of<br><br><pre style="font-family: monospace">...<br>.*.<br>...</pre><br><br>If Bond were to press<br><br><pre style="font-family: monospace">...<br>.X.<br>...</pre><br><br>Then the next state would be<br><br><pre style="font-family: monospace">.*.<br>*.*<br>.*.</pre><br><br>Bond&rsquo;s only option is to light all the LEDs to unlock the door&hellip;<br><br>You are Q, and 007 contacts you to request your help. Try to find a way to quickly solve the puzzle (with the minimum number of touches) and get your agent into the house!</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong>: One integer <var>N</var>, the size of the square.<br><strong>Next <var>N</var> lines</strong>: A string containing <var>N</var> characters representing LEDs (<const>.</const> for not lit LEDs, <const>*</const> for lit LEDs).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Exactly <var>N</var> lines</strong>: <var>N</var> characters representing the LEDs of this line to touch to solve the puzzle with the minimum number of touches (<const>.</const> for no touch, <const>X</const> for touch).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">3&le;<var>N</var>&le;15<br>There will always be one and only one solution.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+...
+*..
+...
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">X..
+..X
+X..
+</pre>
+         </div>
+      </div>
+   </div>
+</div>

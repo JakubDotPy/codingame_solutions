@@ -1,0 +1,41 @@
+<h1>Hill Notation and Hill Order</h1>
+
+<a href="https://www.codingame.com/training/hard/hill-notation-and-hill-order">https://www.codingame.com/training/hard/hill-notation-and-hill-order</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Given a number of chemical formulas, convert them all  to Hill Notation and then sort them into Hill Order while eliminating duplicates.<br><br>Hill Notation is used to succinctly express chemical formulas in precisely one way.<br>Hill Order is a way to sort compounds that make them easy to index.<br>For more information&nbsp;&mdash; https://en.wikipedia.org/wiki/Hill_system<br><br>Hill Notation consists of condensing any parenthesis group, counting the total number of each element and reordering them according to the following rules:<br>* If the compound contains Carbon (C), then it is always listed first, followed by Hydrogen (H) if present. All other elements are then sorted alphabetically and appended. For example, CH3CH2OH becomes C2H6O.<br>* Else sort all elements (including Hydrogen) alphabetically.<br><br>Hill Order sorts elements in Hill Notation according to the following rules:<br>* Compounds are sorted alphabetically by element. So Al2O3 comes before CH4.<br>* If the elements are in the same order, the one with fewer of the element is sorted first. <br><br>The following compounds are in Hill Order:<br>BrF5 &rarr; CCl &rarr; C2H6 &rarr; C3H8 &rarr; C60 &rarr; CaO &rarr; ClH</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var> representing the number of compounds to sort<br><strong>Next <var>N</var> lines:</strong> A chemical formula consisting of uppercase and lowercase letters, parentheses, and numbers.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Up to <var>N</var> lines:</strong> of compounds expressed in Hill Notation and sorted in Hill Order</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>N</var> &le; 20</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+H2O
+Al2O3
+CCl4</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">Al2O3
+CCl4
+H2O</pre>
+         </div>
+      </div>
+   </div>
+</div>

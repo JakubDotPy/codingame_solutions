@@ -1,0 +1,36 @@
+<h1>Fractal Carpet</h1>
+
+<a href="https://www.codingame.com/training/hard/fractal-carpet">https://www.codingame.com/training/hard/fractal-carpet</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Aladdin was out celebrating last night and smashed his magic carpet into a spire. He managed to escape injury but he somehow managed to tear a chunk out of the fabric and can't find the missing piece. Unfortunately the cost of the magic thread used in the carpet is extremely expensive even for a prince so he'll have to patch the hole by providing the missing pattern. This wouldn't be such a big deal but due to the nature of magic the carpet has a very peculiar fractal pattern to it.  <br><br>As Aladdin inspects the whole carpet at various levels of detail this is what he would normally see:<br><br>Level 0:<br>0<br><br>Level 1:<br>000<br>0+0<br>000<br><br>Level 2:<br>000000000<br>0+00+00+0<br>000000000<br>000+++000<br>0+0+++0+0<br>000+++000<br>000000000<br>0+00+00+0<br>000000000<br><br>Level 3:<br>000000000000000000000000000<br>0+00+00+00+00+00+00+00+00+0<br>000000000000000000000000000<br>000+++000000+++000000+++000<br>0+0+++0+00+0+++0+00+0+++0+0<br>000+++000000+++000000+++000<br>000000000000000000000000000<br>0+00+00+00+00+00+00+00+00+0<br>000000000000000000000000000<br>000000000+++++++++000000000<br>0+00+00+0+++++++++0+00+00+0<br>000000000+++++++++000000000<br>000+++000+++++++++000+++000<br>0+0+++0+0+++++++++0+0+++0+0<br>000+++000+++++++++000+++000<br>000000000+++++++++000000000<br>0+00+00+0+++++++++0+00+00+0<br>000000000+++++++++000000000<br>000000000000000000000000000<br>0+00+00+00+00+00+00+00+00+0<br>000000000000000000000000000<br>000+++000000+++000000+++000<br>0+0+++0+00+0+++0+00+0+++0+0<br>000+++000000+++000000+++000<br>000000000000000000000000000<br>0+00+00+00+00+00+00+00+00+0<br>000000000000000000000000000<br><br>etc.<br><br>The seamstress will give you the level of detail that she needs and the top left and bottom right coordinates of the piece she needs the pattern for.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><var>L</var> an integer, the number of levels<br><var>X1</var>   <var>Y1</var>   <var>X2</var>   <var>Y2</var> , the top left and bottom right coordinates of the patch that is needed with the top left of the carpet being coordinates 0,0</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><var>N</var> lines of <var>M</var> characters consisting of either '0' or '+'  that represent the 2 thread colors of the carpet</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><const>0</const> &#8804; <var>L</var>&lt;<const>40</const><br><const>0</const> &#8804; <var>X1</var> &lt; <var>X2</var> &lt; <const>9*10^18</const><br><const>0</const> &#8804; <var>Y1</var> &lt; <var>Y2</var> &lt; <const>9*10^18</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2&#10;0 0 8 8</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">000000000&#10;0+00+00+0&#10;000000000&#10;000+++000&#10;0+0+++0+0&#10;000+++000&#10;000000000&#10;0+00+00+0&#10;000000000</pre>
+         </div>
+      </div>
+   </div>
+</div>

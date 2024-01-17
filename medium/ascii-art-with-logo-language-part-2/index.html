@@ -1,0 +1,42 @@
+<h1>ASCII Art with Logo Language, Part 2</h1>
+
+<a href="https://www.codingame.com/training/medium/ascii-art-with-logo-language-part-2">https://www.codingame.com/training/medium/ascii-art-with-logo-language-part-2</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Your job is to extend the Logo language developed in <strong>ASCII Art with Logo Language</strong> by giving the Turtle the ability to move diagonally and some new commands (to check your first implementation's resiliency to the never-ending dance of changing requirements).<br><br>Commands from part one (not modified):<br><strong>CS</strong> <const>character</const>: CLEARSCREEN. Clears the screen with the specified symbol (only printable ASCII excluding space).<br><strong>FD</strong> <const>times</const>: FORWARD. Moves Turtle forward for number of times specified (only positive integer).<br><strong>PU</strong>: PENUP. Sets the Turtle to move without drawing.<br><strong>PD</strong>: PENDOWN. Turtle leaves a symbol when moving.<br><br>Modified commands:<br><strong>SETPC</strong> <const>pen</const>: uses cyclically the characters in <const>pen</const> as Turtle pen, changing every Turtle's step (of length 1) with pen down. Default value for <const>pen</const> is <const>#</const>. <const>;</const> <const>[</const> <const>]</const> can't be used in <const>pen</const>. The index for cycling characters resets each time you use SETPC.<br><strong>RT</strong> <const>angle</const>: RIGHT. Turns Turtle right for number of degrees specified (only positive multiples of 45).<br><strong>LT</strong> <const>angle</const>: LEFT. Turns Turtle left for number of degrees specified (only positive multiples of 45).<br><br>New command:<br><strong>RP</strong> <const>loop</const> <const><strong>[</strong>commands<strong>]</strong></const>: REPEAT. This instruction repeats the commands that are inside the square brackets the number of times indicated by the <const>loop</const> parameter.<br><br>For example: <pre style="font-family: monospace">RP 2 [FD 2]</pre> is equivalent to <pre style="font-family: monospace">FD 2;FD 2</pre><br>REPEAT command can be nested. For example: <pre style="font-family: monospace">RP 2 [RP 2 [RT 90;FD 2]]</pre> is equivalent to <pre style="font-family: monospace">RT 90;FD 2;RT 90;FD 2;RT 90;FD 2;RT 90;FD 2</pre><br><pre style="font-family: monospace">setpc 12345;rt 90;fd 5</pre><br>produces<br><const>12345</const><br><br>As in part one, Turtle starts heading North, with the pen down and the initial symbol set to <const>#</const>.<br><br>Reference Part1:<br>https://www.codingame.com/training/medium/ascii-art-with-logo-language</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line</strong> 1: An integer <var>N</var>, indicating the program's number of lines.<br><strong>Next <var>N</var> lines</strong>: lines of text with Logo instructions.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The ASCII Art generated.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>N</var> &le; 2000<br><const>angle</const>: a positive integer multiple of 45.<br><const>loop</const>: a positive integer from 1 to 100.<br><const>pen</const>: an ASCII string excluding spaces and <const>;</const> <const>[</const> <const>]</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+rt 45 
+fd 5</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">    #
+   #
+  #
+ #
+#</pre>
+         </div>
+      </div>
+   </div>
+</div>

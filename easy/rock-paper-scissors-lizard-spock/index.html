@@ -1,0 +1,45 @@
+<h1>Rock Paper Scissors Lizard Spock</h1>
+
+<a href="https://www.codingame.com/training/easy/rock-paper-scissors-lizard-spock">https://www.codingame.com/training/easy/rock-paper-scissors-lizard-spock</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">An international Rock Paper Scissors Lizard Spock tournament is organized, all players receive a number when they register.<br><br>Each player chooses a sign that he will keep throughout the tournament among:<br>Rock (R)<br>Paper (P)<br>sCissors (C)<br>Lizard (L)<br>Spock (S)<br><br>Scissors cuts Paper<br>Paper covers Rock<br>Rock crushes Lizard<br>Lizard poisons Spock<br>Spock smashes Scissors<br>Scissors decapitates Lizard<br>Lizard eats Paper<br>Paper disproves Spock<br>Spock vaporizes Rock<br>Rock crushes Scissors<br>and in case of a tie, the player with the lowest number wins (it's scandalous but it's the rule).<br><br><strong>Example</strong><br><pre style="font-family: monospace"></pre><pre style="font-family: monospace">4 R \<br>      1 P \<br>1 P /      \<br>             1 P<br>8 P \      /     \<br>      8 P /       \<br>3 R /              \<br>                     2 L<br>7 C \              /<br>      5 S \       /<br>5 S /      \     /<br>             2 L<br>6 L \      /<br>      2 L /<br>2 L /</pre><pre style="font-family: monospace"></pre>The winner of the tournament is player 2. Before winning, he faced player 6, then player 5 and finally player 1.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> an integer <var>N</var> representing the number of participants in the competition<br><strong>Lines 2 to <var>N</var>+1:</strong> an integer <var>NUMPLAYER</var> indicating the player number (players have distinct numbers between 1 and <var>N</var>) followed by a letter '<const>R</const>', '<const>P</const>', '<const>C</const>', '<const>L</const>' or '<const>S</const>' indicating the chosen sign <var>SIGNPLAYER</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> the number of the winner<br><strong>Line 2:</strong> the list of its opponents separated by spaces</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><var>N</var> is a 2^k value (2, 4, 8, 16, ..., 1024)<br>2 &le; <var>N</var> &le; 1024</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">8
+4 R
+1 P
+8 P
+3 R
+7 C
+5 S
+6 L
+2 L</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">2
+6 5 1</pre>
+         </div>
+      </div>
+   </div>
+</div>

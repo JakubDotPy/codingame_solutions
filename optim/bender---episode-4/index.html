@@ -1,0 +1,183 @@
+<h1>Bender - Episode 4</h1>
+
+<a href="https://www.codingame.com/multiplayer/optimization/bender---episode-4">https://www.codingame.com/multiplayer/optimization/bender---episode-4</a>
+
+<div class="statement-body">
+    
+    <div class="statement-story" style="min-height:0px">
+        Bender wants to visit his friend Fry to drink some beer. Unfortunately he&#39;s stuck in a maze and professor Farnsworth is experimenting with magnetic fields that Bender doesn&#39;t want to enter. Help Bender by giving him a plan how to escape the
+        maze - but beware: because of
+        his movie
+        collection, there is only little space left on his disc for the program.
+    </div>
+    
+    <div class="statement-section statement-goal">
+        <h2>
+            <span class="icon icon-goal"> </span>
+            <span>The Goal</span>
+        </h2>
+        <div class="statement-goal-content">
+            Help Bender to find a path to a given point inside the maze. Compress the path as much as possible. There are switches on the ground that Bender will toggle by entering their cell. These switches make other fields passable or impassable.
+        </div>
+    </div>
+
+    
+    <div class="statement-section statement-rules">
+        <h2>
+            <span class="icon icon-rules"> </span>
+            <span>Rules</span>
+        </h2>
+        <div class="statement-rules-content">
+            You are given a maze with a starting and target point. Find a path through the maze. There are magnetic fields on some cells that have to be avoided. You can turn them off by hitting the corresponding switch.
+
+            <br /><br />
+            <strong>Coordinate system</strong> <br />
+            The top-left corner has position (0,0). <var>x</var> goes to the right, <var>y</var> increases downwards.
+
+            <br /><br />
+            <strong>Switches</strong> <br /> A switch has a location of its own as well as a location of the magnetic field it controls. Each time Bender enters the cell of the switch, he will toggle the state of the magnetic field, turning it on and
+            off.
+
+            <br /><br />
+            <strong>Garbage balls</strong> <br /> A garbage ball is a movable wall. Bender can move them by walking into them, if there is no wall or another garbage ball behind. If he pushes a garbage ball on a switch, it will toggle the switch. If
+            he pushes a garbage ball on Fry, it will squash Fry
+            and kill him.
+
+            <br /><br />
+            <strong>Movement</strong> <br /> Bender can go in the four directions
+            <const>UP</const>,
+            <const>DOWN</const>,
+            <const>RIGHT</const> and
+            <const>LEFT</const>. In case he hits a wall, he just stays at the current position. An active magnetic field erases his entire harddisc.
+
+            <br /><br />
+            <strong>Functions</strong> <br /> To encode the path more efficently, you can define functions as sequences of moves. Functions can call other functions as well as themselves. Functions will be executed char by char. When there is no more
+            char
+            left in the called function, the program will resume in the caller function, after the function call that was just performed.
+        </div>
+    </div>
+
+    
+    <div class="statement-section statement-expertrules">
+        <h2>
+            <span class="icon icon-expertrules"> </span>
+            <span>Advanced Details</span>
+        </h2>
+        <div class="statement-expert-rules-content">
+            Every map is solvable without moving any garbage balls. In this case the optimal solution without using functions will be above <const>150</const>.
+            <br />
+            You can see the game&#39;s source code on <a href="https://github.com/eulerscheZahl/Bender4" target="_blank" rel="nofollow noopener noreferrer">https://github.com/eulerscheZahl/Bender4</a>. <br />
+            <br />
+            <i>Thanks to <a href="https://www.codingame.com/profile/92527b7c89d3dfad092f889374894847496839" target="_blank" rel="nofollow noopener noreferrer">Zerplin</a> for helping me with the graphics</i> <br />
+        </div>
+    </div>
+
+
+    
+    <div class="statement-victory-conditions">
+        <div class="icon victory"></div>
+        <div class="blk">
+            <div class="title">Victory Conditions</div>
+            <div class="text">
+                <ul style="padding-bottom:0"><li>
+                        Bender reaches the cell, where Fry is
+                    </li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="statement-lose-conditions">
+        <div class="icon lose"></div>
+        <div class="blk">
+            <div class="title">Loss Conditions</div>
+            <div class="text">
+                <ul style="padding-bottom:0"><li>
+                        You enter a magnetic field.
+                    </li><li>
+                        You don&#39;t reach Fry&#39;s cell within
+                        <const>1000</const> turns.
+                    </li><li>
+                        You squash Fry with a garbage ball.
+                    </li><li>
+                        You do not respond in time or output an unrecognized command.
+                    </li></ul>
+            </div>
+        </div>
+    </div>
+    <br />
+
+    
+    <div class="statement-section statement-protocol">
+        <h2>
+            <span class="icon icon-protocol"> </span>
+            <span>Game Input</span>
+        </h2>
+        
+        <div class="blk">
+            <div class="text">
+
+                <span class="statement-lineno">First line</span>: the <var>width</var> and <var>height</var> of the maze
+                <br />
+                <span class="statement-lineno">Next <var>height</var> lines</span>: The board as strings of length <var>width</var>. The characters can be:
+                <ul><li>
+                        <const>.</const>: empty cell <br />
+                    </li><li>
+                        <const>#</const>: wall<br />
+                    </li><li>
+                        <const>&#43;</const>: garbage ball<br />
+                    </li></ul>
+                <span class="statement-lineno">Next line</span>: <var>startX</var>, <var>startY</var>, the starting position<br />
+                <span class="statement-lineno">Next line</span>: <var>targetX</var>, <var>targetY</var>, the target position<br />
+                <span class="statement-lineno">Next line</span>: <var>switchCount</var>, the number of switches<br />
+                <span class="statement-lineno">Next <var>switchCount</var> lines</span>: <var>switchX</var>, <var>switchY</var>, <var>blockX</var>, <var>blockY</var>, <var>initialState</var> <br />
+                <var>switchX</var>, <var>switchY</var> give the location of the switch,<br /> <var>blockX</var>, <var>blockY</var> define the location of the magnetic field.<br />
+                <var>initialState</var> is either
+                <const>1</const> (initially on) or
+                <const>0</const> (initially off).
+            </div>
+
+            <div class="title">Output</div>
+            <div class="text">
+                Print one single line: the path that Bender shall take.
+                <br /> Each character can be:
+                <ul style="padding-bottom:0"><li>
+                        <action>U</action> go up
+                    </li><li>
+                        <action>D</action> go down
+                    </li><li>
+                        <action>R</action> go right
+                    </li><li>
+                        <action>L</action> go left
+                    </li><li>
+                        <action>1</action>,
+                        <action>2</action>,...,
+                        <action>9</action> call functions 1,2,...,9 respectively
+                    </li></ul>
+                To define functions, just append them, separated by a semicolon:
+                <action>initial code</action>;
+                <action>function 1</action>;
+                <action>function 2</action>.
+                <br /><br /> The solution will be scored by the length of the string, the shorter the better.
+            </div>
+        </div>
+
+        
+        <div class="blk">
+            <div class="title">
+                Constraints
+            </div>
+            <div class="text">
+                <var>
+                    width
+                </var> &#61; <var>height</var> &#61;
+                <const>
+                    21
+                </const> (<const>10</const> for introduction levels)
+                <br />
+                <const>8</const> ≤ <var>switchCount</var> ≤ <const>11</const> (except for introduction levels)<br />
+                <const>5</const> ≤ <var>garbageBalls</var> ≤ <const>10</const> (except for introduction levels)<br />
+                <br /> Response time ≤
+                <const>1000</const> ms
+            </div>
+        </div>
+</div></div>

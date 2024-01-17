@@ -1,0 +1,40 @@
+<h1>Simple AI duels</h1>
+
+<a href="https://www.codingame.com/training/easy/simple-ai-duels">https://www.codingame.com/training/easy/simple-ai-duels</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You have to simulate a duel where two simple AI can either cooperate or defect in each turn, and determine which AI has won a duel (earned a higher total reward).<br><br>If they both cooperate (<const>C</const>), they both earn a reward of <var>c</var> each.<br>If they both defect (<const>D</const>), they both earn a reward of <var>d</var> each.<br>Else, the one that defects earns a reward of <var>t</var> and the one that cooperates earns a reward of <var>f</var>.<br>For the purpose of this puzzle, these four values will be fixed: <var>c=2</var>, <var>d=1</var>, <var>t=3</var> and <var>f=0</var>.<br><br>Each AI has its own strategy. A strategy is a set of commands, each of which is a condition followed by an action (<const>C</const>, <const>D</const> or <const>RAND</const>). In each turn, the conditions are evaluated one by one. The action associated with the first true condition is chosen. For example:<br><const>OPP -1 C C</const><br><const>* D</const><br>This means if the previous action of the opponent is <const>C</const>, then cooperate too.<br>Else, defect.<br><br>Below are the codes used to describe a strategy. They generally follow the global syntax of <const>Who</const> <const>What</const> <const>Action</const>.<br>(Assume it is the turn for Mya now. The opponent is called Opal.)<br>&bull; <const>* Y</const>: In all cases, do <const>Y</const>.<br>&bull; <const>OPP -1 X Y</const>: If the previous action of Opal is <const>X</const>, do <const>Y</const>.<br>&bull; <const>ME MAX X Y</const>: If the previous actions of Mya are dominated (&gt;, not ⩾) by <const>X</const>, do <const>Y</const>.<br>&bull; <const>OPP LAST N X Y</const>: If the previous <const>N</const> actions of Opal are dominated by <const>X</const>, do <const>Y</const>. (You may think of <const>LAST</const> as <const>MAX</const> with a short memory.) If less than <const>N</const> turns have been played, consider all the turns played (excluding the current turn).<br>&bull; <const>START Y</const>: At the start of a duel, do <const>Y</const>.<br>&bull; <const>ME WIN Y</const>: If Mya has earned a higher total reward than Opal, do <const>Y</const>.<br><br>Previous action(s) refer to action(s) up to the last turn. For example, in the first turn, if Mya plays first, Opal does not treat Mya's first chosen action as a previous action.<br><br>X may be <const>C</const> or <const>D</const> but Y may be <const>C</const>, <const>D</const> or <const>RAND</const>.<br><br><const>RAND</const> means that the AI acts pseudo randomly. The random choice is given by a linear congruential generator (LCG) (Knuth&rsquo;s pseudo random number generator) for which a, b and the modulus m are given.<br>The very first x = 12, which is not used for the first pseudo-random value.<br>If the current value in the LCG is x, the next one is 137*x+187 mod 256&rarr;x.<br>If the binary decomposition of the calculated x has an even number of 1, choose <const>D</const>. Else, choose <const>C</const>.<br>Both AI use the same LCG throughout all the turns.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> The number of turns<br><strong>Line 2:</strong> The number <var>n</var> of commands for the first AI and its name<br><strong>Next <var>n</var> lines:</strong> The first AI&rsquo;s strategy<br><strong>Next line:</strong> The number <var>m</var> of commands for the second AI and its name<br><strong>Next <var>m</var> lines:</strong> The second AI&rsquo;s strategy</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The name of the winner AI, or <var>DRAW</var> in case of equality, after the specified number of turns have been played</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">100
+1 NiceGuy1
+* C
+1 NiceGuy2
+* C</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">DRAW</pre>
+         </div>
+      </div>
+   </div>
+</div>

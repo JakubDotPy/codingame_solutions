@@ -1,0 +1,57 @@
+<h1>Particle Detection with Cloud Chamber</h1>
+
+<a href="https://www.codingame.com/training/medium/particle-detection-with-cloud-chamber">https://www.codingame.com/training/medium/particle-detection-with-cloud-chamber</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">A cloud chamber allows scientists to visualize the passage of ionizing radiation such as electrons, protons, alphas, etc.<br><br>Every particles should go straight without forces, but a magnetic field bends trajectories of electric charged particles. Then, trajectories of charged particles are (part of) circle.<br><br>Our cloud chamber is such that particles can only arrive from top side (other sides are behind thick lead wall), and one at a time.<br><br>The aim is to detect which particle has just passed through the cloud chamber.<br>The available measurement are<br>&mdash; <var>V</var>, the speed of the particle (in speed-of-light unit),<br>&mdash; <var>B</var>, the intensity of the magnetic field (in tesla),<br>&mdash; ASCII-art picture of the trajectory of the particle through the cloud chamber (<strong>characters are one meter wide and one meter high</strong>).<br><br>The radius of circle (in meters) of a charged particle is given by <pre style="font-family: monospace">R = 1e6 * gamma(V) * m * V / (abs(q) * B * c)</pre> where<br>&mdash; <strong>m</strong> is the mass of the particle (in MeV/c&sup2;),<br>&mdash; <strong>q</strong> is the charge of the particle (in unit-charge unit),<br>&mdash; <strong>c = 299792458.</strong> is the speed of light (in meters per second),<br>&mdash; <var>V</var> is the speed of the particle (in speed-of-light unit),<br>&mdash; <var>B</var> is the magnetic field strength (in tesla),<br>&mdash; <strong>gamma(V)</strong> is the Lorentz factor (dimensionless), given by <pre style="font-family: monospace">gamma(V) = 1 / sqrt(1 - V*V)</pre><br><br>The radius should be computed from the input ASCII-art picture, then, formula above gives the ratio <strong>g = abs(q) / m</strong> : <pre style="font-family: monospace">g = abs(q) / m = 1e6 * gamma(V) * V / (B * R * c)</pre><br>Thus, the cloud chamber allows only to measure the ratio <strong>g = abs(q) / m</strong>.<br>Mass and charges are given in the table below for every known particles (within this puzzle of course).<br><br><pre style="font-family: monospace">Particle    Charge    Mass  Symbol<br>                 q        m       <br>----------------------------------<br>Electron        -1    0.511     e- <br>Proton          +1  938.0       p+<br>Neutron          0  940.0       n0<br>Alpha           +2 3727.0    alpha<br>Pion &pi;⁺         +1  140.0      pi+</pre><br><br><strong>About uncertainty</strong><br><br>The code should <strong>return the symbol of the particle and the computed radius</strong> (if the particle is not neutral). In experimental physics, we can never get exact numeric values (especially if input data is ASCII-art picture!), therefore, the radius should be given <strong>rounded to the nearest multiple of 10</strong>.<br>Likewise, the ratio <strong>g = abs(q)/m</strong> could not be computed exactly. Let&rsquo;s note <strong>g_p</strong> the theoritical value of particle <strong>p</strong> (given in the table above) and <strong>G</strong> the computed value from ASCII-art picture with the formula above.<br>The particle <strong>p</strong> which just passed through the cloud chamber is the one with the minimal value of <pre style="font-family: monospace">abs(g_p - G) / g_p</pre> only if this value is stricly below <strong>.5</strong>, i.e. : <pre style="font-family: monospace">abs(g_p - G) / g_p &lt; .5</pre><br>If <strong>G</strong> is such that <pre style="font-family: monospace">abs(g_p - G) / g_p &gt;= .5</pre> for every known particles (those in the table above), one can conclude that the particle which just passed through the cloud chamber is unknown (as its value of <strong>abs(q)/m</strong> is too far from every known particle).</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> <var>w</var> width of the picture.<br><strong>Line 2:</strong> <var>h</var> height of the picture.<br><strong>Line 3:</strong> <var>B</var> magnetic field (tesla).<br><strong>Line 4:</strong> <var>V</var> speed of the particle (speed-of-light unit).<br><strong>Next <var>h</var> lines:</strong> <var>picture</var> : ASCII-art photography of cloud chamber, with space on particle path and <strong>#</strong> everywhere else.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">Output depends of the nature of the detected particle :<br>&mdash; <strong>symbol inf</strong> if neutral particle,<br>&mdash; <strong>symbol radius</strong> if charged particle,<br>&mdash; <strong>I just won the Nobel prize in physics !</strong> if unknown particle.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">16 &le; <var>w</var>, <var>h</var> &le; 128</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">32
+16
+0.2997064475852639
+0.9
+#### ###########################
+##### ##########################
+###### #########################
+####### ########################
+######## #######################
+######### ######################
+########## #####################
+########### ####################
+############ ###################
+############# ##################
+############## #################
+############### ################
+################ ###############
+################# ##############
+################## #############
+################### ############
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">n0 inf
+</pre>
+         </div>
+      </div>
+   </div>
+</div>

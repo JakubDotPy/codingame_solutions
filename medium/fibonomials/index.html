@@ -1,0 +1,42 @@
+<h1>Fibonomials</h1>
+
+<a href="https://www.codingame.com/training/medium/fibonomials">https://www.codingame.com/training/medium/fibonomials</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Let's define <strong>&quot;fibonomial sequence&quot;</strong> as a sequence of polynomials (<strong>P0(x), P1(x)...Pi(x),...</strong>) such that:<br><strong>P2(x) = P1(P0(x)) + P0(P1(x))</strong><br><strong>P3(x) = P2(P1(x)) + P1(P2(x))</strong><br>...<br><strong>P{n+2}(x) = P{n+1}(Pn(x)) + Pn(P{n+1}(x))</strong>.<br><br>Given either the coefficients or the roots of the first two polynomials <var>P0</var> and <var>P1</var>, output the fibonomials sequence of size <var>n</var> for a given integer <var>x</var> (i.e. <strong>P0(x), P1(x), P2(x), ..., P{n-1}(x)</strong>).<br>If an element of the sequence is quite big, i.e. abs(Pi(x)) &gt;= 10^12, format it in scientific notation with 6 decimal precision (7 significant figures, Cf. example 2 below).<br><br>The string entry <var>defined_by</var> takes one of the values <const>COEFS</const>, <const>ROOTS</const> to specify whether the polynomials are defined by their coefficients (increasing powers) or by their roots.<br><const>COEFS</const>  ===&gt; P0 = <var>a0</var> + <var>a1</var> x + <var>a2</var> x^2 + ... + <var>ai</var> x^i + ...<br>and likewise P1 = <var>b0</var> + <var>b1</var> x + <var>b2</var> x^2 + ... + <var>bi</var> x^i + ...<br><const>ROOTS</const> ===&gt; P0 = (x-<var>a0</var>) (x-<var>a1</var>) (x-<var>a2</var>) ... (x-<var>ai</var>) ...<br>and likewise P1 = (x-<var>b0</var>) (x-<var>b1</var>) (x-<var>b2</var>) ... (x-<var>bi</var>) ...<br><br><strong>Example 1:</strong><br><var>defined_by</var> = <const>COEFS</const><br><var>ai</var> = <strong>-1 2</strong>      ==&gt; P0 = <strong>2x-1</strong>          ...(eq. 1)<br><var>bi</var> = <strong>3 0 -1</strong>   ==&gt; P1 = <strong>-x^2+3</strong>     ...(eq. 2)<br><var>x</var> = <strong>-5</strong><br><var>n</var> = <strong>3</strong><br><br>Solution:<br>(eq. 1 &amp; 2) ==&gt; P1(P0(x)) = -P0^2+3= -(2x-1)^2+3    ... (eq. 3)<br>(eq. 1 &amp; 2) ==&gt; P0(P1(x)) = 2*P1-1 = 2*(-x^2+3)-1   ... (eq. 4)<br>(eq. 3 &amp; 4) ==&gt; P2(x) = P1(P0(x))+P0(P1(x)) = -(2*x-1)^2+3 + 2*(-x^2+3)-1  ... (eq. 5)<br>Thus, for x = -5:<br>(eq. 1) ==&gt; P0(-5) = 2*(-5)-1 = <strong>-11</strong><br>(eq. 2) ==&gt; P1(-5) = -(-5)^2+3 = <strong>-22</strong><br>(eq. 5) ==&gt; P2(-5) = -(2*(-5)-1)^2+3+2*(-(-5)^2+3)-1 = <strong>-163</strong><br><br><strong>Example 2:</strong><br><var>defined_by</var> = <const>ROOTS</const><br><var>ai</var> = <strong>0 0 0 1 -1</strong>   ==&gt; P0 = <strong>x^3 (x-1) (x+1)</strong> = <strong>x^5 - x^3</strong>   ...(eq. 1)<br><var>bi</var> = <strong>1000</strong>           ==&gt; P1 = <strong>x-1000</strong>                                            ...(eq. 2)<br><var>x</var> = <strong>-10</strong><br><var>n</var> = <strong>3</strong><br><br>Solution:<br>(eq. 1 &amp; 2) ==&gt; P1(P0(x)) = P0 - 1000 = x^5 - x^3 - 1000                     ... (eq. 3)<br>(eq. 1 &amp; 2) ==&gt; P0(P1(x)) = P1^5 - P1^3 = (x-1000)^5 - (x-1000)^3    ... (eq. 4)<br>(eq. 3 &amp; 4) ==&gt; P2(x) = x^5 - x^3 - 1000 + (x-1000)^5 - (x-1000)^3    ... (eq. 5)<br>Thus, for x = -10:<br>(eq. 1) ==&gt; P0(-10) = -10^5 - (-10)^3 = <strong>-99000</strong><br>(eq. 2) ==&gt; P1(-10) = -10 - 1000 = <strong>-1010</strong><br>(eq. 5) ==&gt; P2(-10) = -10^5 - (-10)^3 - 1000 + (-1010)^5 - (-1010)^3 = -1051009019899000 = <strong>-1.051009E+15</strong></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> The string <var>defined_by</var> <const>COEFS</const> or <const>ROOTS</const><br><strong>Line 2:</strong> Integers <var>ai</var> for all the coefficients or roots of the first polynomial <var>P0</var>, separated by a whitespace.<br><strong>Line 3:</strong> Integers <var>bi</var> for all the coefficients or roots of the second polynomial <var>P1</var>, separated by a whitespace.<br><strong>Line 4:</strong> An integer <var>x</var> for which the fibonomials are evaluated.<br><strong>Line 5:</strong> An integer <var>n</var> for the size of the sequence.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>n</var> lines:</strong> The <var>n</var> integers elements of the <strong>fibonomial sequence</strong>, one per line. Output an element in scientific notation <const>#.6#E+#</const> if the element's absolute value is greater than or equal to 10^12.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &lt;= <var>n</var> &lt; 32<br>-2^63 &lt;= <var>x</var> &lt; 2^63</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">COEFS
+-1 2
+3 0 -1
+-5
+3</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">-11
+-22
+-163</pre>
+         </div>
+      </div>
+   </div>
+</div>

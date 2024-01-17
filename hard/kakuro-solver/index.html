@@ -1,0 +1,41 @@
+<h1>Kakuro Solver</h1>
+
+<a href="https://www.codingame.com/training/hard/kakuro-solver">https://www.codingame.com/training/hard/kakuro-solver</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Kakuro puzzles are similar to crosswords, but use digits (from 1 to 9) instead of letters.<br><br>Rules :<br>- All empty cells need to be filled in with digits, in such a way that all the given sums are respected.<br>- You are not allowed to use the same digit more than once to obtain a given sum.<br><br>Notation :<br>- 'X' : represents a cell that you don't need to fill.<br>- Empty cell : represents a cell that you need to fill with a digit (1 - 9).<br>- Cell with digit : the given digit is part of the solution, don't change it.<br>- Cell with backslash : the required sum of the corresponding cells.<br>   - X\ : the vertical sum X of the cells downwards,<br>   - \X : the horizontal sum X of the cells to the right,<br>   - X\Y : the vertical sum X of the cells downwards, and the horizontal sum Y of the cells to the right.<br><br>Each Kakuro puzzle has an unique solution. Good luck!<br><br><strong>Example 1:</strong><br><var>height</var> = 3, <var>width</var> = 3<br><br><pre style="font-family: monospace">|   X  |  9\  |  11\  |<br>|  \17 |      |       |<br>|  \3  |      |       |</pre><br><br>For the horizontal sum to be 3 in the second row, we have 2 options: (2, 1) and (1, 2).<br>For the vertical sum to be 11 in the second column, we have 8 options: (9, 2), (2, 9), (8, 3), (3, 8), (7, 4), (4, 7), (6, 5) or (5, 6).<br>If we combine those options we find that the value in the bottom right cell has to be 2.<br><br><pre style="font-family: monospace">|   X  |  9\  |  11\  |<br>|  \17 |      |       |<br>|  \3  |      |   2   |</pre><br><br>Since 2 is now fixed, we can deduce the value of its neighbors : 11 - 2 = 9, and 3 - 2 = 1.<br><br><br><pre style="font-family: monospace">|   X  |  9\  |  11\  |<br>|  \17 |      |   9   |<br>|  \3  |  1   |   2   |</pre><br><br>Finally we can deduce the last value in the same way : 9 - 1 = 8, or 17 - 9 = 8.<br><br>So the solution is:<br><br><pre style="font-family: monospace">|   X  |  9\  |  11\  |<br>|  \17 |  8   |   9   |<br>|  \3  |  1   |   2   |</pre><br><br><strong>Example 2:</strong><br><var>height</var> = 5, <var>width</var> = 5<br><br><pre style="font-family: monospace">|  X   | 17\  | 6\   |   X   |  X   |<br>|  \9  |  8   |      | 24\   |  X   |<br>|  \20 |      |      |       | 4\   |<br>|  X   |  \14 |      |       |      |<br>|  X   |  X   |  \8  |       |      |</pre><br><br>In this kakuro grid we have a given digit, <strong>8</strong>, which means it's part of the solution and we can use it to solve the puzzle. <br>Substracting 8 from the vertical sum 17, we get 9 as the cell value beneath it.<br>Substracting 8 from the horizontal sum 9, we get 1 as the cell value to the right.<br><br><pre style="font-family: monospace">|  X   | 17\  | 6\   |   X   |  X   |<br>|  \9  |  8   |  1   | 24\   |  X   |<br>|  \20 |  9   |      |       | 4\   |<br>|  X   |  \14 |      |       |      |<br>|  X   |  X   |  \8  |       |      |</pre><br><br>Now by combining our options in each cell like we did in example 1, and using some guess work, we find that the solution is :<br><br><pre style="font-family: monospace">|  X   | 17\  | 6\   |   X   |  X   |<br>|  \9  |  8   |  1   | 24\   |  X   |<br>|  \20 |  9   |  3   |   8   | 4\   |<br>|  X   |  \14 |  2   |   9   |  3   |<br>|  X   |  X   |  \8  |   7   |  1   |</pre><br><br>You can find here more information: <strong>https://en.wikipedia.org/wiki/Kakuro</strong><br><br>Thanks to Djoums that helped me with the puzzle.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> integer <var>height</var>, integer <var>width</var><br><strong>Next <var>height</var> lines:</strong> string <var>line</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The kakuro grid with comma between cells.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">Sums are natural numbers (positive and integer)<br>1 &lt;= <var>height</var> &lt;= 18<br>1 &lt;= <var>width</var> &lt;= 15</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3 3
+|   X   |   9\  |  11\  |
+|  \17  |       |       |
+|  \3   |       |       |</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">X,9\,11\
+\17,8,9
+\3,1,2</pre>
+         </div>
+      </div>
+   </div>
+</div>

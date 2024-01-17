@@ -1,0 +1,37 @@
+<h1>Mitosis Mayhem</h1>
+
+<a href="https://www.codingame.com/training/medium/mitosis-mayhem">https://www.codingame.com/training/medium/mitosis-mayhem</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">A scientist has put you in charge of monitoring his experiment vat. You must follow their instructions and add more cells, and tell them the results when the experiment concludes.<br><br>The scientist will first tell you details about their experiment, namely <var>max</var>, how many cells can be in the vat at any one time, and <var>cycles</var>, how long the experiment will go for.<br>A cycle occurs whenever you receive input. During a cycle, all cells are doubled, after which you follow the scientists instructions.<br><br>The scientist may tell you to add a cell, in the format &quot;<var>name</var> <var>initialCount</var> <var>power</var>&quot;, where <var>name</var> is the name of the cell, <var>initialCount</var> is the initial number cells being added, and <var>power</var> is the strength of the cell.<br>If the scientist tells you to put in cells that there is not enough room for, you must print <const>OVERFLOW!</const> and disregard all results.<br><br>The scientist might have a breakthrough during the experiment, and tell you to <const>STOP!</const>. This message will <strong>always</strong> come in the format <const>STOP! 0 0</const>, and when you receive it you should disregard all further instructions and tell the scientist the results.<br><br>When multiple cells try to grow into the same space, the conflicted territory will be split evenly (floor division) among the cells with the highest power.<br><br>When the vat is <strong>exactly full</strong>, cells with higher power will begin to take the space of cells with lower power. When this occurs, a cell will take a tenth of its desired growth from the cell with the lowest power and count that can fully support the loss.<br><br>Results should follow this format:<br><br>EMPTY: (how many empty spaces there are remaining if &gt; 0)<br>Cell names: (how many cells of that type exist if &gt; 0)<br><br>Cell counts should be outputted in the same order you added them in.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Two space-separated integers, <var>max</var> and <var>cycles</var><br><strong>Next <var>cycles</var> lines:</strong> space-separated values for the added cell consisting of the word <var>name</var>, and two integers, <var>initialCount</var> and <var>power</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> &quot;OVERFLOW!&quot;, a value corresponding to EMPTY, or the value of the first cell<br><strong>Next <var>cycles</var> lines:</strong> If not overflowed, all non-printed cells</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>max</var> &le; 500<br>1 &le; <var>cycles</var> &le; 10<br>0 &le; <var>initialCount</var> &le; 100<br>0 &le; <var>power</var> &le; 2</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">10 1
+Red 10 0</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">Red: 10</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,42 @@
+<h1>A-star exercise</h1>
+
+<a href="https://www.codingame.com/training/medium/a-star-exercise">https://www.codingame.com/training/medium/a-star-exercise</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are given an undirected graph with weighted edges, a <var>start</var> and a <var>goal</var> node, and for each node the heuristic value, which is the estimated distance to the end. Your task is to trace a canonical A* execution (see https://en.wikipedia.org/wiki/A*_search_algorithm ) by computing a shortest path from the start to the goal.<br><br>We recall that the A* algorithm will rely on three values for each node <var>v</var>:<br>- the <const>g-value</const>, which is the minimum distance from the <var>start</var> to <var>v</var>;<br>- the <const>h-value</const>, which is an estimation of the minimum distance from <var>v</var> to the <var>goal</var> and is given by the heuristic provided in input;<br>- the <const>f-value</const>, which is the sum of the g-value and h-value.<br><br>There is always a path between the start and the goal. The given heuristic is admissible and consistent, meaning that the A* algorithm will always find a shortest path from the start to the goal.<br><br>When some nodes have the same f-value, the one with the smaller identifier is considered first.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> 4 space-separated integers: <br><var>N</var> - the number of nodes in the graph (nodes are identified by integers from <var>0</var> to <var>N-1</var>),<br><var>E</var> - the number of edges in the graph,<br><var>S</var> - the identifier of the <var>start</var> node,<br><var>G</var> - the identifier of the <var>goal</var> node<br><br><strong>Line 2:</strong> <var>N</var> space-separated integers - estimated distances to the goal (heuristics) for each node from <var>0</var> to <var>N-1</var><br><br><strong>Next <var>E</var> lines:</strong> three space-separated integers <var>X</var> <var>Y</var> <var>C</var> that indicate the edge between nodes <var>X</var> and <var>Y</var> with the cost <var>C</var>. Notice that, since the graph is undirected, there is also an edge from <var>Y</var> to <var>X</var> with the same cost.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">A sequence of lines containing information about the node expanded in each step of the algorithm: the node's identifier, followed by a space, followed by its f-value.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <var>N</var> &lt; 100<br>0 &lt; <var>E</var> &lt; 10000<br>0 &lt; <var>C</var> &lt; 1000</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3 3 0 2
+33 11 0
+0 1 10
+0 2 40
+1 2 20</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">0 33
+1 21
+2 30</pre>
+         </div>
+      </div>
+   </div>
+</div>

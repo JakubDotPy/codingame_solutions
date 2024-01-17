@@ -1,0 +1,43 @@
+<h1>The Holy Grail</h1>
+
+<a href="https://www.codingame.com/training/hard/the-holy-grail">https://www.codingame.com/training/hard/the-holy-grail</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">After years of searching, you have finally found the Holy Grail in a room of size <var>W</var> x <var>H</var> with <var>W</var> being the width and <var>H</var> the height.<br><br>You can see the grail in the far corner of the room, but there is a large chasm between your position and the Grail's position. Every several seconds a tile appears, hovering over the chasm.<br><br>At first, there are only 2 hovering tiles: one in position <const>(0,0)</const> where your bot is located, and one in position <const>(<var>W</var>-1, <var>H</var>-1)</const> where the Grail is resting. Your bot can only move horizontally or vertically between visible tiles.<br><br>Your task is to detect when a complete path has been created for your bot to get to the Holy Grail. Once the complete path is revealed, your bot must immediately sprint the entire distance from his current location to the tile containing the Holy Grail. If you send him too early, he will fall into the pit. Too late, and the Holy Grail will have disappeared.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Two space separated integers <var>W</var> and <var>H</var> for the width and height of the room.<br><strong>Next <const>?</const> lines:</strong> Two space separated integers <var>tileX</var> and <var>tileY</var> for the coordinates of a new tile.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> The number of new tiles that were needed to create a path.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &le; <var>W</var> &le; 40<br>2 &le; <var>H</var> &le; 40<br>0 &le; <var>tileX</var> &lt; <var>W</var><br>0 &le; <var>tileY</var> &lt; <var>H</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3 3
+0 1
+0 2
+1 2
+1 1
+1 0
+2 0
+2 1</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">3</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,36 @@
+<h1>deus Hex machina</h1>
+
+<a href="https://www.codingame.com/training/easy/deus-hex-machina">https://www.codingame.com/training/easy/deus-hex-machina</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">When written with seven-segment display (Cf. banner image), a <strong>hexadecimal digit</strong> may still read when <strong>flipped vertically or horizontally</strong>. What is the result of applying a <strong>sequence of horizontal and/or vertical flip instructions</strong> to a given <strong>hexadecimal</strong> <var><strong>number</strong></var>?<br><br>- The sequence of flips is the <strong><var>number</var> itself, but expressed in binary</strong>: <const>0</const> stands for horizontal and <const>1</const> for vertical.<br>- If the result is not a valid hex number, print <const>Not a number</const>.<br>- Should the result exceed 1000 hex digits, <strong>display only the initial 1000</strong>.<br>- Leading zeros in input and/or output are ok.<br><br>Below is how <strong>123456789abcdef0</strong> looks like <strong>after one flip</strong>:<br><br><strong><pre style="font-family: monospace">Horizontal flip:    123456789abcdef0  |  0#9b#d6e8#a2##51<br>                  -------------------<br>Vertical flip:      153#2e#8a9#c#6#0</pre></strong><br>The <strong><const>#</const></strong> symbol above means arbitrary shapes that don't look like a valid hex digit.<br><br><strong>Example:</strong> Let the hex <var>number</var> be <strong>15</strong> (0x15). Converting 0x15 to bin gives <strong>10101</strong> (0b10101).<br>The flipping sequence is therefore: vertical &rarr; horizontal &rarr; vertical &rarr; horizontal &rarr; vertical.<br><br><pre style="font-family: monospace">   <strong>15</strong><br>  ----<br>   12   |   51<br>           ----<br>            21   |   15<br>                    ----<br>                     <strong>12</strong></pre></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">The hexadecimal <var>number</var> to flip, written using the characters <const>123456789abcdef0</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The obtained hexadecimal (up to 1000 hex digits) or <const>Not a number</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; length of <var>number</var> &lt;= 10000 hex digits (up to 16^10000 😲 in base 10!)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">15</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">12</pre>
+         </div>
+      </div>
+   </div>
+</div>

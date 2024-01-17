@@ -1,0 +1,42 @@
+<h1>Lumen</h1>
+
+<a href="https://www.codingame.com/training/easy/lumen">https://www.codingame.com/training/easy/lumen</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">THEY put you in a square shape room, with <var>N</var> meters on each side.<br>THEY want to know everything about you.<br>THEY are observing you.<br>THEY placed some candles in the room. <br><br>Every candle makes <var>L</var> &quot;light&quot; in the spot they are, and every spot in square shape gets one less &quot;light&quot; as the next ones. If a spot is touched by two candles, it will have the larger &quot;light&quot; it can have. Every spot has the base light of 0.<br><br>You can hide only, if you find a dark spot which has 0 &quot;light&quot;. <br><strong> How many dark spots you have? </strong><br><br>You will receive a map of the room, with the empty places (X) and Candles (C) in <var>N</var> rows, each character separated by a space.<br><br>Example for the light spread <var>N</var> = 5, <var>L</var> = 3:<br>X X X X X<br>X C X X X<br>X X X X X<br>X X X X X<br>X X X X X<br><br>2 2 2 1 0<br>2 3 2 1 0<br>2 2 2 1 0<br>1 1 1 1 0<br>0 0 0 0 0</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var> for the length of one side of the room.<br><strong>Line 2:</strong> An integer <var>L</var> for the base light of the candles.<br><strong>Next <var>N</var> lines:</strong> <var>N</var> number of characters (as <var>c</var>), separated by one space.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1 :</strong> The number of places with zero light.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <var>N</var> &lt;= 25<br>0 &lt; <var>L</var> &lt; 10</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">5
+3
+X X X X X
+X C X X X
+X X X X X
+X X X X X
+X X X X X</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">9</pre>
+         </div>
+      </div>
+   </div>
+</div>

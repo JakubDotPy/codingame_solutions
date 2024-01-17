@@ -1,0 +1,41 @@
+<h1>The weight of words</h1>
+
+<a href="https://www.codingame.com/training/easy/the-weight-of-words">https://www.codingame.com/training/easy/the-weight-of-words</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You have to decrypt a <var>h</var> x <var>w</var> grid of encrypted text.<br><br>Each row/column of the grid has its own <strong>weight</strong>, which is the sum of the binary representation of its letters in ASCII (A=65, B=66, ...., Z=90). <br>For example the row ABCD has a weight of 266 (65 + 66 + 67 + 68). <br>The grid only contains uppercase letters from A to Z<br><br>To decrypt the grid you'll have to:<br>First, for each of the <var>w</var> columns move the letters down a row <var>weight of the column</var> times<br>And then, for each of the <var>h</var> rows move the letters to the column at their right <var>weight of the row</var> times<br><br>The rows/columns form a cycle, if a letter should leave the grid from one side, make it appear at the other side<br><br>For example (we'll assume for this example that all the weights are equal to 1): <br>ABC<br>DEF<br>GHI<br><br>The letters of each column move downward <strong>1</strong> time:<br>GHI<br>ABC<br>DEF<br><br>Then the letters of each row move to the right <strong>1</strong> time:<br>IGH<br>CAB<br>FDE<br><br>Note that in the tests, each row/columns will have its own <strong>weight</strong> !<br><br>Repeat this process <var>steps</var> times and you'll get the decrypted grid of text.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1 :</strong> An int <var>steps</var> for the number of times you'll have to repeat the process<br><strong>Line 2 :</strong> An int <var>h</var> for the number of rows<br><strong>Line 3 :</strong> An int <var>w</var> for the number of letters in a row<br><strong><var>h</var> next lines :</strong> A string of <var>w</var> uppercase letters</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>h</var> lines :</strong> A row of the decrypted grid</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">3 &lt;= <var>steps</var> &lt;= 5000<br>2 &lt;= <var>h</var> &lt;= 16<br>4 &lt;= <var>w</var> &lt;= 20</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+2
+4
+YDOS
+CEAE</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">EASY
+CODE</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,37 @@
+<h1>Risk odds calculator</h1>
+
+<a href="https://www.codingame.com/training/medium/risk-odds-calculator">https://www.codingame.com/training/medium/risk-odds-calculator</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You've already claimed Africa, and North America is nearly yours. Only Greenland remains between you and total victory. Can you seize this final territory before your enemies retaliate and obliterate you?<br><br>In a game of <strong>Risk</strong>, battles ensue between stacks of armies for world domination.<br>In your final Greenland conquest, You, the <strong>attacker</strong>, roll the following number of dice, according to the number of your <strong>attacking armies</strong> in the battleground:<br><pre style="font-family: monospace"></pre><pre style="font-family: monospace">+--------+---+---+---+---+----+<br>| Armies | 1 | 2 | 3 | 4 | 5+ |<br>+--------+---+---+---+---+----+<br>|  Dice  | 1 | 2 | 3 | 3 | 3  |<br>+--------+---+---+---+---+----+</pre><pre style="font-family: monospace"></pre><br>The <strong>defender</strong> rolls the following number of dice, according to the number of <strong>defending armies</strong> in the battleground:<br><pre style="font-family: monospace"></pre><pre style="font-family: monospace">+--------+---+---+---+---+----+<br>| Armies | 1 | 2 | 3 | 4 | 5+ |<br>+--------+---+---+---+---+----+<br>|  Dice  | 1 | 2 | 2 | 2 | 2  |<br>+--------+---+---+---+---+----+</pre><pre style="font-family: monospace"></pre><br>The highest value from the attacker's dice is compared with the highest value from the defender's dice. The player with the lower roll loses an army. In the event of a tie, the defender prevails, and the attacker loses an army.<br><br>If both parties have thrown at least two dice, the second-highest values are compared, following the same rules.<br><br>Each time a battle round ends, you initiate another round with the remaining armies. As the attacker, you're determined to claim Greenland this turn, vowing to fight until only one army stack remains.<br><br>For example:<br>You: <var>attack</var> = <strong>5</strong> armies, defender: <var>defense</var> = <strong>4</strong> armies:<br>You roll <const>1</const>, <const>5</const> &amp; <const>5</const>. Defender rolls <const>2</const> &amp; <const>5</const>. <const>5</const> &lt;= <const>5</const>, <const>5</const> &gt; <const>2</const>, both players lose one army.<br>You: <strong>4</strong> armies, defender: <strong>3</strong> armies:<br>You roll <const>4</const>, <const>2</const> &amp; <const>6</const>. Defender rolls <const>5</const> &amp; <const>3</const>. <const>6</const> &gt; <const>5</const>, <const>4</const> &gt; <const>3</const>, defender loses two armies.<br>You: <strong>4</strong> armies, defender: <strong>1</strong> army:<br>You roll <const>3</const>, <const>4</const> &amp; <const>2</const>. Defender rolls <const>6</const>. <const>4</const> &lt;= <const>6</const>, you lose one army.<br>You: <strong>3</strong> armies, defender: <strong>1</strong> army:<br>You roll <const>1</const>, <const>1</const> &amp; <const>5</const>. Defender rolls <const>4</const>. <const>5</const> &gt; <const>4</const>, defender loses last army.<br>At last, you capture Greenland and emerge victorious, as Africa + North America was your secret objective!<br><br>The aim of this exercise is to compute your probability of winning the game as the attacker at the start of the battle.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> the <var>attack</var> army size.<br><strong>Line 2:</strong> the <var>defense</var> army size.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The attacker victory odds in percentage, rounded to the nearest 0.01% (e.g., 73.68%).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <var>attack</var> &lt; 100<br>0 &lt; <var>defense</var> &lt; 100</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1
+1</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">41.67%</pre>
+         </div>
+      </div>
+   </div>
+</div>

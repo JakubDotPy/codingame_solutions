@@ -1,0 +1,38 @@
+<h1>River Crossing</h1>
+
+<a href="https://www.codingame.com/training/medium/river-crossing">https://www.codingame.com/training/medium/river-crossing</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">There is a farmer, a wolf, a goat and a cabbage.<br>They need to cross a river with the following restrictions:<br><br>* The farmer can move from one side to the other freely, and can optionally carry one other entity<br>* The wolf can&rsquo;t be on the same side with the goat without the farmer<br>* The goat can&rsquo;t stay at the same side with the cabbage without the farmer<br><br>The river has two sides <strong>L</strong> for Left and <strong>R</strong> for Right.<br><br>You are given the initial positions and the target positions, in the following order <strong>Farmer, Wolf, Goat, Cabbage</strong>.  For example you may be given the positions like so<br><br><strong>L L L R</strong> which would mean that the farmer, wolf, and goat are on the left side and the cabbage is on the right side.<br><br>Without breaking the restrictions, print out the minimum legal states starting at the initial state to get to the target state and including the target state.<br><br><strong>FOR MULTIPLE SOLUTIONS</strong><br>If there are multiple solutions with the same length, <strong>return the one that is alphabetically first</strong>.<br><br><strong>Example Input</strong><br><pre style="font-family: monospace">L L L R<br>L L L L</pre><br><strong>Desired Output</strong><br><pre style="font-family: monospace">L L L R<br>R L R R<br>L L R L<br>R L R L<br>L L L L</pre><br><strong>Explanation</strong><br><pre style="font-family: monospace">L L L R // Starting State<br>R L R R // Farmer takes goat to right<br>L L R L // Farmer takes cabbage left<br>R L R L // Farmer returns to goat<br>L L L L // Farmer takes goat to left</pre></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> 4 letters representing the initial state<br><strong>Line 2:</strong> 4 letters representing the target state</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Lines:</strong> Solution states, starting with the initial state and ending in the target state</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">All problems have a solution, and each solution has fewer than 20 transition states</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">L L L L
+R L R L</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">L L L L
+R L R L</pre>
+         </div>
+      </div>
+   </div>
+</div>

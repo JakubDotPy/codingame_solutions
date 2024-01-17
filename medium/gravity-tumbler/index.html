@@ -1,0 +1,60 @@
+<h1>Gravity Tumbler</h1>
+
+<a href="https://www.codingame.com/training/medium/gravity-tumbler">https://www.codingame.com/training/medium/gravity-tumbler</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">The program must output the result of tumbling a landscape a certain number of times.<br><br>Tumbling entails:<br>- rotating the landscape counterclockwise by 90&deg;<br>- letting the hash bits <const>#</const> fall down<br><br>The map is composed of <const>.</const> and <const>#</const>.<br><br>(This puzzle is a twist (hah!) on classic community puzzle &ldquo;Gravity&rdquo;. You may want to solve that one first.)</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> two space-separated integers: the map <var>width</var> and <var>height</var><br><strong>Line 2:</strong> the number <var>count</var> of tumbling actions to perform<br><strong>Next <var>height</var> lines:</strong> <var>width</var> characters (empty bits <const>.</const> and heavy bits <const>#</const>)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">If <var>count</var> is odd: <var>width</var> lines of <var>height</var> characters.<br>If <var>count</var> is even: <var>height</var> lines of <var>width</var> characters.<br><br>Obviously, in both cases, the <const>#</const> are at the bottom.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <var>width</var> &lt; 100<br>0 &lt; <var>height</var> &lt; 10<br>0 &lt; <var>count</var> &lt; 100<br>The input map is in a &ldquo;stable&rdquo; configuration, i.e. the heavy bits are already at the bottom.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">17 5
+1
+.................
+.................
+...##...###..#...
+.####..#####.###.
+#################
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">....#
+....#
+....#
+....#
+....#
+...##
+...##
+...##
+...##
+...##
+...##
+..###
+..###
+..###
+..###
+..###
+..###
+</pre>
+         </div>
+      </div>
+   </div>
+</div>

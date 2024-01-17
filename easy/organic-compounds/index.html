@@ -1,0 +1,37 @@
+<h1>Organic Compounds 🔬</h1>
+
+<a href="https://www.codingame.com/training/easy/organic-compounds">https://www.codingame.com/training/easy/organic-compounds</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement"><strong>The Problem:</strong><br><br>Write a program to input the condensed formula of an alicylic hydrocarbon, and decide whether it is valid or not.<br><br>--------------------------------------------------- xxx ---------------------------------------------------<br><br><strong>Condensed Formula:</strong><br><br>The condensed formula includes units of carbon linked to one another by one or more bonds.<br><br>1 unit of carbon is represented as <var>CH<const>n</const></var>.<br><br>The bonds are adjacent to the carbon units, either horizontally or vertically. Bonds are represented as <var>(<const>m</const>)</var>.<br><br>The inputs given will have a valid representation, but the bonds might not be matching. For example, a carbon unit with <const>n</const>=1 should have 3 adjacent bonds, one with <const>n</const>=2 should have 2 adjacent bonds, etc.<br><br>--------------------------------------------------- xxx ---------------------------------------------------<br><br><strong>Note:</strong> <br><br>To get a better understanding of organic compounds and condensed formulae, look it up on the web</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var>, denoting the number of lines <br><strong>Next <var>N</var> Lines:</strong> String <var>COMPOUND</var> representing the hydrocarbon</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">If the hydrocarbon is valid, a single line <var>VALID</var>.<br>If it is not valid, a single line <var>INVALID</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1&le;<var>N</var>&le;20<br>In carbon units, 0&le;<var>n</var>&le;4<br>In bonds, 0&lt;<var>m</var>&le;4</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1
+CH3(1)CH2(1)CH3</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">VALID</pre>
+         </div>
+      </div>
+   </div>
+</div>

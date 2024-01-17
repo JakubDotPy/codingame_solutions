@@ -1,0 +1,40 @@
+<h1>Dominoes solver</h1>
+
+<a href="https://www.codingame.com/training/hard/dominoes-solver">https://www.codingame.com/training/hard/dominoes-solver</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Dominoes have been placed on a grid.<br>All the dominoes with values between <var>0</var> and <var>n</var> appear exactly once, where <var>n</var> is given in the inputs.<br><br>We must find the disposition of these dominoes, given that all the problems have a unique solution.<br><br><br><strong>Example</strong><br><br>If <var>n</var> = 2, they are 6 dominoes: <const>0-0</const>, <const>0-1</const>, <const>0-2</const>, <const>1-1</const>, <const>1-2</const> and <const>2-2</const>.<br><br>With this grid:<br><br>0021<br>1120<br>0212<br><br>there is only one position for dominoes <const>0-0</const>, <const>1-1</const> and <const>2-2</const><br>(<const>0-0</const> and <const>1-1</const> horizontal, <const>2-2</const> vertical)<br><br>==|1<br>==|0<br>0212<br><br>Then, we can find dominoes <const>0-1</const>, <const>0-2</const> and <const>1-2</const><br>(<const>0-2</const> and <const>1-2</const> horizontal, <const>0-1</const> vertical)<br><br>which leads to the final solution:<br><br>==||<br>==||<br>====</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">Line 1:  highest value <var>n</var> on the dominoes<br>Line 2: height <var>h</var> and width <var>w</var> of the grid.<br><var>h</var> following lines: the content of the grid of domino's values.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><var>h</var> lines: with only <const>|</const> or<const>=</const><br><const>|</const> for a vertical domino, <const>=</const> for a horizontal domino</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &lt;= <var>n</var> &lt;= 6<br>2 &lt;= <var>h</var>, <var>w</var> &lt;= 8</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1
+2 3
+011
+100</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">|==
+|==</pre>
+         </div>
+      </div>
+   </div>
+</div>

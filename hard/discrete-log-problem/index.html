@@ -1,0 +1,36 @@
+<h1>Discrete Log Problem</h1>
+
+<a href="https://www.codingame.com/training/hard/discrete-log-problem">https://www.codingame.com/training/hard/discrete-log-problem</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">ElGamal encryption is a public-key cryptosystem. It uses asymmetric key encryption for a safe communication between two people.<br><br>Let us assume that Alice wants to communicate with Bob. Alice generates three large random integers:<br>- <var>Q</var> a prime used as the order of the key<br>- 0 &lt; <var>G</var> &lt; <var>Q</var> a generator<br>- <var>X</var> Alice's secret key<br><br>Alice computes <var>H</var> = <var>G</var>^<var>X</var> mod <var>Q</var> and <strong>publicly</strong> shares with Bob the public key (<var>G</var>, <var>H</var>, <var>Q</var>). As an attacker, you intercept this key and decide to spy on their communications. To do so, you need to find Alice's secret key <var>X</var>. This can be done by performing a discrete logarithm attack on this key. <br><br>Given the public key (<var>G</var>, <var>H</var>, <var>Q</var>), you are asked to perform this attack: find the <strong>lowest integer</strong> <var>X</var> such that <var>G</var>^<var>X</var> mod <var>Q</var> = <var>H</var>.<br><br>The rest of this protocol is not explained to avoid overload but it can be found on https://en.wikipedia.org/wiki/ElGamal_encryption</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> The public key (<var>G</var>, <var>H</var>, <var>Q</var>)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> Alice's private key <var>X</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &lt; <var>G</var>, <var>H</var> &lt; <var>Q</var><br>1 &lt; <var>X</var> &lt; <var>Q</var>-1.<br>0 &lt; <var>Q</var> &lt; 50.000.000.000</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">654 4547 11087</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">114</pre>
+         </div>
+      </div>
+   </div>
+</div>

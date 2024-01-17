@@ -1,0 +1,43 @@
+<h1>Binary image</h1>
+
+<a href="https://www.codingame.com/training/easy/binary-image">https://www.codingame.com/training/easy/binary-image</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are going to write a simple program to decode some arrays of data into a black-and-write graphic.<br><br>The graphic is composed of <var>n</var> lines of black and white pixels. We use <const>.</const> to represent a white pixel; <const>O</const> to represent a black pixel.<br><br>For example, here is one line of graphic<br><strong>....OOO.</strong><br><br>We shall encode it into an array <const>4 3 1</const> <br>because it starts with <const>4</const> whites, then <const>3</const> blacks, then <const>1</const> white.<br>We assume most lines shall start with white.<br><br>When there is a line starting with black, we add <const>0</const> at the beginning of the encoded data, to say there is no white pixel before the first black pixel.<br>For example<br><const>OO.OOOOO</const><br>will be encoded into <const>0 2 1 5</const>.<br><br>You must output <const>INVALID</const> if the graphic is not rectangular (this doesn't mean the input lines should be the same length, but the outputs lines should be).<br><br>In this puzzle, you will be given <var>n</var> lines of encoded data.<br>You are going to decode it into a graphic.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>First line :</strong> Number <var>n</var> of rows in the graphic (integer)<br><strong><var>n</var> next lines :</strong> An array of integers representing the encoded <var>n</var>th line of the graphic</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>If the grid is not a rectangle :</strong> <const>INVALID</const><br><strong>Otherwise : <var>n</var> lines</strong> of the grid (equal length), each pixel represented by <const>.</const>/<const>O</const>, no spaces</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><var>n</var> &lt; 200</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">4
+1 3 2 1
+1 3 2 1
+1 3 2 1
+1 3 2 1</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">.OOO..O
+.OOO..O
+.OOO..O
+.OOO..O</pre>
+         </div>
+      </div>
+   </div>
+</div>

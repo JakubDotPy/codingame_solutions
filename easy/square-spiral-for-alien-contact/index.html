@@ -1,0 +1,44 @@
+<h1>Square Spiral for Alien Contact 👽</h1>
+
+<a href="https://www.codingame.com/training/easy/square-spiral-for-alien-contact">https://www.codingame.com/training/easy/square-spiral-for-alien-contact</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement"><strong>Background:</strong><br>In the 1997 movie &quot;Contact&quot;, Jodie Foster portrays a SETI scientist who finds evidence of extraterrestrial life and is chosen to make first contact.<br><br>Her group is given cryptic instructions** for how aliens want them to build a machine to facilitate this contact.<br>(Maybe that worked, maybe not; no spoilers here.)<br><br><br><strong>This scenario:</strong><br>In a sequel to that story, the aliens once again attempt to communicate how they want us Earthlings to build something: <br>This time it's a Square Spiral (<var>squareSpiral</var>), as a potential-vehicle for some wild space-time multiverse travel adventures.<br><br><br><strong>Your task:</strong><br>Figure out what they mean, and build it.<br><br><br><strong>What to output:</strong><br>The output is generally the entire <var>squareSpiral</var>.<br>However if the <var>sideSize</var> is greater than 31, just output the top-left section (of size 31x31) of <var>squareSpiral</var>.<br><br>Caution: Letters don't wrap-around.  If you get to either end of the alphabet, there is no more &quot;material&quot; available after that.<br>(This variation is shown in Test/Validator #21 and #22)<br><br><br><br>~ ~ ~ <br>**NOT needed to solve this puzzle but see this clip for context: https://youtu.be/Q399v-pMG30?t=88</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> A String, the cryptic instructions in the format of <br><br>an Integer <var>sideSize</var>, which is the length of a side of the desired <var>squareSpiral</var>, followed by<br><br>a word which is either <const>topLeft</const> or <const>topRight</const> or <const>bottomRight</const> or <const>bottomLeft</const>, followed by<br><br>a word, which is either <const>clockwise</const> or <const>counter-clockwise</const>, followed by <br><br>two short Strings (separated by a space) ...hmmm.... what is this?? . . . it looks like maybe some sort of pattern</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>sideSize</var> Lines: </strong> <var>squareSpiral</var><br>(or a 31x31 section of it, if it's larger than that)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">5 &le; <var>sideSize</var> &le; 201 <br><br><var>sideSize</var> is an odd integer<br><br><var>squareSpiral</var> includes only spaces and uppercase letters</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">9 topRight clockwise F4 G4</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">LLLLMMM F
+K     M F
+K QQQ N F
+K P Q N F
+K P R N G
+J P   N G
+J POOOO G
+J       G
+JIIIIHHHH</pre>
+         </div>
+      </div>
+   </div>
+</div>

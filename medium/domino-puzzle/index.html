@@ -1,0 +1,40 @@
+<h1>Domino Puzzle</h1>
+
+<a href="https://www.codingame.com/training/medium/domino-puzzle">https://www.codingame.com/training/medium/domino-puzzle</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement"><strong>Determine how many dominoes will still stand after the push.</strong><br><br>We have a field of standing domino pieces, and we will push the top left corner piece. After the chain reaction, how many domino pieces  will still be standing?<br><br>You receive a square shape map of characters, with <var>N</var> lines, and <var>N</var> characters in every line.<br>The characters represent visually the domino pieces and their direction.<br>You can find these characters:<br>&quot;<const>.</const>&quot;, which represents a place without a domino piece.<br>&quot;<const>|</const>&quot;, which represents a vertical standing domino piece, which can hit something to the left or to the right of it. It can be hit from anywhere but from upwards and downwards.<br>&quot;<const>-</const>&quot;, which represents a horizontally standing domino piece, which can hit something in upward or downward direction to it. It can be hit from anywhere but from left and right.<br>&quot;<const>\</const>&quot;, which represents a diagonally standing domino piece, which can hit something to its left and downwards, or its right and upwards, including the diagonal place in those directions. It can be hit from anywhere but from left-top diagonally, or right-bottom diagonally.<br>&quot;<const>/</const>&quot;, which represents a diagonally standing domino piece, which can hit something to its left and upwards, or its right and downwards, including the diagonal place in those directions. It can be hit from anywhere but from right-top diagonally, or left-bottom diagonally.<br><br>The pieces will fall to the opposite direction to the direction they were hit from, and will hit other domino pieces from that direction.<br><br>We always hit the first domino on the top left corner, which can be either a vertical standing (falls to the right), horizontal standing (falls downwards), or a &quot;<const>/</const>&quot; piece, which falls downwards and  to the right and diagonally too. The first piece will never be a &quot;<const>\</const>&quot; piece.<br><br>I didn't add any other difficulties to the examples, for example order doesn't matter, because the answers will be the same. This is changed in the second version.<br><br><strong>Example explanation:</strong><br>- We push the first piece which will fall to the right, hitting the second piece, which is a &quot;<const>/</const>&quot;. <br>- This will hit three locations: downwards an empty place, to the right a vertical one (&quot;<const>I</const>&quot;), and another vertical one diagonally. The empty place will do nothing, and the diagonally placed vertical piece will cause no other reaction, because it would hit a horizontal piece, from the side.<br>- The other vertical piece will hit the last piece in the first row, which is a diagonal, and will hit the one downwards to it.<br>- This piece is horizontal, and will fall downwards, hitting the diagonal piece there.<br>- The diagonal piece will hit an empty place to the left, a diagonal piece downwards, and a vertical one left-downwards.<br>- The diagonal piece will hit nothing new, but the same vertical piece.<br>- And in the last line, the vertical pieces will hit each other falling to the left.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var> for the length of one side of the domino map.<br><strong>Next <var>N</var> lines:</strong> <var>N</var> space-separated characters.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> The number of pieces standing after the chain reaction.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <var>N</var> &le; 10</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">4
+| / | /
+- . | -
+| | . \
+| | | \</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">3</pre>
+         </div>
+      </div>
+   </div>
+</div>

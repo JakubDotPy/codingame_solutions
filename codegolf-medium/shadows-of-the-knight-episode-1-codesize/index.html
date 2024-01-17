@@ -1,0 +1,190 @@
+<h1>Shadows of the Knight - Episode 1 - Code Golf</h1>
+
+<a href="https://www.codingame.com/codegolf/medium/shadows-of-the-knight-episode-1-codesize">https://www.codingame.com/codegolf/medium/shadows-of-the-knight-episode-1-codesize</a>
+
+<div class="statement_back" id="statement_back" style="display:none">&nbsp;</div>
+
+<div class="statement-body"><!-- GOAL -->
+<div class="statement-section statement-goal">
+<h2><span class="icon icon-goal">&nbsp;</span> <span>The Goal</span></h2>
+
+<div class="statement-goal-content">You will look for the hostages on a given building by jumping from one window to another using your grapnel gun. Your goal is to jump to the window where the hostages are located in order to disarm the bombs. Unfortunately, you have a limited number of jumps before the bombs go off...</div>
+</div>
+<!-- RULES -->
+
+<div class="statement-section statement-rules">
+<h2><span class="icon icon-rules">&nbsp;</span> <span>Rules</span></h2>
+
+<div>
+<div class="statement-rules-content">Before each jump, the heat-signature device will provide you with the direction of the bombs based on your current position: 
+<ul>
+	<li><action>U</action> (Up)</li>
+	<li><action>UR</action> (Up-Right)</li>
+	<li><action>R</action> (Right)</li>
+	<li><action>DR</action> (Down-Right)</li>
+	<li><action>D</action> (Down)</li>
+	<li><action>DL</action> (Down-Left)</li>
+	<li><action>L</action> (Left)</li>
+	<li><action>UL</action> (Up-Left)</li>
+</ul>
+<br />
+Your mission is to program the device so that <b>it indicates the location of the next window you should jump to</b> in order to reach the bombs&#39; room <strong>as soon as possible</strong>.<br />
+<br />
+Buildings are represented as a rectangular array of windows, the window in the<strong> top left corner of the building is at index (0,0)</strong>.</div>
+</div>
+</div>
+<!-- WARNING -->
+
+<div class="statement-section statement-warning">
+<h2><span class="icon icon-warning">&nbsp;</span> <span>Note</span></h2>
+
+<div class="statement-warning-content">For some tests, <b>the bombs&#39; location may change from one&nbsp;execution to the other</b>: the goal is to help you find the best algorithm in all cases.<br />
+<br />
+The tests provided are similar to the validation tests used to compute the final score but remain different.</div>
+</div>
+<!-- PROTOCOL -->
+
+<div class="statement-section statement-protocol">
+<h2><span class="icon icon-protocol">&nbsp;</span> <span>Game Input</span></h2>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="text">The program must first read the initialization data from standard input. Then, within an infinite loop, read the device data from the standard input and provide to the standard output the next movement instruction.</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Initialization input</div>
+
+<div class="text">
+<p><span class="statement-lineno">Line 1 : </span> 2 integers <var>W H</var>. The (<var>W</var>, <var>H</var>) couple represents the width and height of the building as a number of windows.</p>
+
+<p><span class="statement-lineno">Line 2 : </span> 1 integer <var>N</var>, which represents the number of jumps you can make before the bombs go off.</p>
+
+<p><span class="statement-lineno">Line 3 : </span> 2 integers <var>X0</var> <var>Y0</var>, representing your starting position.</p>
+</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Input for one game turn</div>
+The direction indicating where the bomb is.</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Output for one game turn</div>
+
+<div class="text">A <span class="statement-lineno">single line</span> with 2 integers <var>X</var> <var>Y</var> separated by a space character. (<var>X</var>, <var>Y</var>) represents the location of the next window you should jump to. <var>X</var> represents the index along the horizontal axis, <var>Y</var> represents the index along the vertical axis. (0,0) is located in the top-left corner of the building.</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Constraints</div>
+
+<div class="text">1 &le; <var>W</var> &le; 10000<br />
+1 &le; <var>H</var> &le; 10000<br />
+2 &le; <var>N</var> &le; 100<br />
+0 &le; <var>X</var>, <var>X0</var> &lt; W<br />
+0 &le; <var>Y</var>, <var>Y0</var> &lt; H<br />
+Response time per turn &le; 150ms<br />
+Response time per turn &le; 150ms</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Example</div>
+
+<div class="text">
+<div class="statement-inout">
+<div class="statement-inout-in" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Initialization input</div>
+
+<pre>
+10 10     <i>Building has 100 windows (10x10)</i>
+6         <i>You have 6 jumps to find the bombs</i>
+2 5       <i>You start at position (2,5)</i>
+</pre>
+
+<div style="text-align: center; margin: 10px"><img src="https://code.codingame.com/fileservlet?id=1426529567951" /></div>
+</div>
+
+<div class="statement-inout-out" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">No output expected</div>
+</div>
+</div>
+
+<div class="statement-inout">
+<div class="statement-inout-in" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Input for turn 1</div>
+
+<pre>
+UR
+<i>Hostages are in the upward-right direction</i>
+</pre>
+
+<div style="text-align: center; margin: 10px"><img src="https://code.codingame.com/fileservlet?id=1426538812855" /></div>
+</div>
+
+<div class="statement-inout-out" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Output for turn 1</div>
+
+<pre>
+5 4
+<i>You jump to window (5,4)</i>
+</pre>
+</div>
+</div>
+
+<div class="statement-inout">
+<div class="statement-inout-in" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Input for turn 2</div>
+
+<pre>
+R
+<i>Hostages are located to your right</i>
+</pre>
+
+<div style="text-align: center; margin: 10px"><img src="https://code.codingame.com/fileservlet?id=1426542709190" /></div>
+</div>
+
+<div class="statement-inout-out" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Output for turn 2</div>
+
+<pre>
+7 4
+<i>You jump to window (7,4)</i>
+</pre>
+</div>
+</div>
+
+<div class="statement-inout">
+<div class="statement-inout-in" style="background-color: white">
+<div style="text-align: center; margin: 10px"><img src="https://code.codingame.com/fileservlet?id=1426558852824" /></div>
+</div>
+
+<div class="statement-inout-out" style="background-color: white;"><i>You found the hostages. You can defuse the bombs in time. You win!</i></div>
+</div>
+</div>
+</div>
+</div>
+<!-- STORY 
+
+<div class="statement-story-background">
+<div class="statement-story-cover" style="background-size: cover; background-image: url(https://www.codingame.com/servlet/fileservlet?id=2210346891055)">
+<div class="statement-story" style="min-height: 300px; position: relative">
+<h2>Synopsis</h2>
+
+<div class="story-text">
+<div style="line-height: 1.5em"><span style="color:#D80000;"><strong>Batman:</strong></span> &ldquo;<i>Come on Joker, give it up, I know you&#39;re hiding in here somewhere, you can&#39;t escape from me.</i>&rdquo;<br />
+<span style="color:#D80000;"><strong>Joker:</strong></span> &ldquo;<i>Oh, but I think I can Batman! Just look behind you. See these buildings over there? In each one of them there is a room full of hostages trapped with my sweet little Joker-BOMBS. They are about to go off any minute now in a marvellous firework! KA-BOOOM!!!</i>&rdquo;<br />
+<span style="color:#D80000;"><strong>Batman:</strong></span> &ldquo;<i>Damn you Joker, you won&#39;t get away with this.</i>&rdquo;<br />
+<span style="color:#D80000;"><strong>Joker:</strong></span> &ldquo;<i>So what will it be Batman? Do you want to waste time chasing me or will you try to save the poor, poor hostages? I&#39;d hurry if I were you...Ha-ha-ha</i>&rdquo;<br />
+<span style="color:#D80000;"><strong>Batman:</strong></span> &ldquo;<i>Alfred, I don&#39;t have time to check all the buildings&#39; windows: I need a gadget to help me.</i>&rdquo;<br />
+<span style="color:#D80000;"><strong>Alfred:</strong></span> &ldquo;<i>Certainly sir. I have the perfect device: it can track the bombs heat signature. I&#39;m sending it to you as soon as I&#39;m done reprogramming it.</i>&rdquo;<br />
+<span style="color:#D80000;"><strong>Joker:</strong></span> &ldquo;<i>So long Batman! Ha-ha-ha OH-OH-OH...</i>&rdquo;</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+-->

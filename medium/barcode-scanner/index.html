@@ -1,0 +1,36 @@
+<h1>Barcode scanner</h1>
+
+<a href="https://www.codingame.com/training/medium/barcode-scanner">https://www.codingame.com/training/medium/barcode-scanner</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are given a line of 95 bits sequence <var>scanline</var> representing an image received from a barcode scanner.<br>The sequence is in EAN-13 format barcode.<br><br><strong>NOTE</strong> The input sequence might be given in reversed order. This relates to a real life scenario when scanning the barcode upside-down.<br><br>Your mission is to decode this barcode into its decimal 13-digit representation.<br><br>Input binary sequence consist of the following blocks:<br><strong>LEFT GUARD</strong> + <strong>LEFT PART</strong> + <strong>CENTRAL GUARD</strong> + <strong>RIGHT PART</strong> + <strong>RIGHT GUARD</strong>.<br><br><strong>LEFT GUARD</strong> and <strong>RIGHT GUARD</strong> are 3-bit sequences and both should be equal to <const>101</const>.<br><strong>CENTRAL GUARD</strong> has a length of 5, having value <const>01010</const>.<br>Guards allow the scanner to identify the start and end of the barcode in an image as well as the width of the bits.<br><br><strong>LEFT PART</strong> and <strong>RIGHT PART</strong> each consist of 6 7-bit codes.<br>Left part may have digits coded with both <strong>L-code</strong> (which have odd parity) and <strong>G-code</strong> (even parity).<br>Right part consists of only even parity <strong>R-codes</strong>. <br>You may also notice that R-code is a reversed version of G-code and an inverted version of L-code.<br><pre style="font-family: monospace"></pre><pre style="font-family: monospace"><strong>Digit</strong> <strong>L-code</strong>  <strong>G-code</strong>  <strong>R-code</strong><br><strong>0</strong>     0001101 0100111 1110010<br><strong>1</strong>     0011001 0110011 1100110<br><strong>2</strong>     0010011 0011011 1101100<br><strong>3</strong>     0111101 0100001 1000010<br><strong>4</strong>     0100011 0011101 1011100<br><strong>5</strong>     0110001 0111001 1001110<br><strong>6</strong>     0101111 0000101 1010000<br><strong>7</strong>     0111011 0010001 1000100<br><strong>8</strong>     0110111 0001001 1001000<br><strong>9</strong>     0001011 0010111 1110100</pre><pre style="font-family: monospace"></pre><br>Please refer to <const>https://imgur.com/3kKOkIX</const> for a visual example.<br><br>So at this point you are able to reconstruct the last 12 digits.<br>The first EAN-13 digit is encoded by the pattern of L and G codes in <strong>LEFT PART</strong> using the table below.<br><pre style="font-family: monospace"></pre><pre style="font-family: monospace"><strong>First digit  First group of 6 digits  Last group of 6 digits</strong><br><strong>0</strong>            LLLLLL                   RRRRRR<br><strong>1</strong>            LLGLGG                   RRRRRR<br><strong>2</strong>            LLGGLG                   RRRRRR<br><strong>3</strong>            LLGGGL                   RRRRRR<br><strong>4</strong>            LGLLGG                   RRRRRR<br><strong>5</strong>            LGGLLG                   RRRRRR<br><strong>6</strong>            LGGGLL                   RRRRRR<br><strong>7</strong>            LGLGLG                   RRRRRR<br><strong>8</strong>            LGLGGL                   RRRRRR<br><strong>9</strong>            LGGLGL                   RRRRRR</pre><pre style="font-family: monospace"></pre><br><br>Finally, to verify a barcode after decoding, the following <strong>CHECKSUM</strong> calculation approach is used:<br>Multiply every second digit by 3, then add up all the digits. If barcode is correct its checksum would be a multiple of 10.<br><br><strong>Example</strong><br>It is easier to understand an example of encoding rather than decoding. <br>Suppose we want to encode the number 4003994155486.<br><br>The first digit is 4, so we will use the pattern LGLLGG in the left part.<br>We then look up codes 0(L), 0(G), 3(L), 9(L), 9(G), 4(G) in the table:<br>0001101 0100111 0111101 0001011 0010111 0011101<br><br>For the right part we look up 1(R), 5(R), 5(R), 4(R), 8(R), 6(R) :<br>1100110 1001110 1001110 1011100 1001000 1010000<br><br>Finally, add the guards.<br><br><strong>JFYI</strong><br>The first 3 digits of EAN-13 correspond to a country code. So, by reading barcodes printed on different products you may identify the country each product was manufactured in.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">A string <var>scanline</var> of 95 bits representing a scanned EAN-13 barcode line of pixels (0-white, 1-black)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">A single line of <strong>13 decimal numbers without spaces</strong> representing decoded EAN-13 barcode or <const>INVALID SCAN</const> in case any corruption of the input sequence detected.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">10100011010100111011110100010110010111001110101010110011010011101001110101110010010001010000101</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">4003994155486</pre>
+         </div>
+      </div>
+   </div>
+</div>

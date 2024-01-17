@@ -1,0 +1,47 @@
+<h1>Holey Times</h1>
+
+<a href="https://www.codingame.com/training/medium/holey-times">https://www.codingame.com/training/medium/holey-times</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You have to fill in <strong>all</strong> the unknown digits in a multiplication.<br>These unknown digits are marked as stars <const>*</const> in the operation.<br>Note that the numbers involved never begin with a zero, excepted when a line is null.<br>* For example, 234 is possible everywhere.<br>* 00 is accepted but only as a full line in a partial result.<br>* 0234 is not possible, neither as operand, partial result or result.<br><br>The multiplication symbol is an x.<br>The stars may appear everywhere in the operation:<br>* In the operands, in the partial results or in the result.<br>* In only one of the three, in two or three of them.<br><br>In the partial results, the first line has got no trailing zeroes (but might end by zero if you multiply 5&times;48). The second line has got one trailing zero, the second line has got two trailing zeroes, and so on. Why?<br>Because if you calculate 907&times;757, in fact, the operation is shown as 907&times;(7+50+700)=907&times;7 [first line] + 907&times;50 [second line] + 907&times;700 [third line]. Thus, the operation must be shown as:<br><pre style="font-family: monospace">   907<br>x  757<br>------<br>  6349 &rarr; 7&times;907<br> 45350 &rarr; 50&times;907<br>634900 &rarr; 700&times;907<br>------<br>686599</pre><br>And not as:<br><pre style="font-family: monospace">   907<br>x  757<br>------<br>  6350 &rarr; 50&times;907<br> 45349 &rarr; 7&times;907<br>634900 &rarr; 700&times;907<br>------<br>686599</pre></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong>: The number <const>n</const> of lines of the operation<br><strong>Next <const>n</const> lines</strong>: The holey multiplication</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">Write the input but with the stars replaced with digits.<br>No star shall be left.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">There is only one solution.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">6
+  25
+x  *
+----
+ 175
+----
+ 175</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">  25
+x  7
+----
+ 175
+----
+ 175</pre>
+         </div>
+      </div>
+   </div>
+</div>

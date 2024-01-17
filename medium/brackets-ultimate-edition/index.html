@@ -1,0 +1,41 @@
+<h1>Brackets, Ultimate Edition</h1>
+
+<a href="https://www.codingame.com/training/medium/brackets-ultimate-edition">https://www.codingame.com/training/medium/brackets-ultimate-edition</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You must determine the minimum number of bracket-flipping operations needed to make a given expression valid. An expression has a valid bracketing when all the parentheses <const>()</const>, square brackets <const>[]</const>, curly braces <const>{} </const> and angle brackets <const>&lt;&gt;</const> are correctly paired and nested.<br><br>You can flip a bracketing element in-place by replacing it with its counterpart, e.g. replace a <const>(</const> with a <const>)</const>, or a <const>&gt;</const> with a <const>&lt;</const>. For example, flipping both parentheses around in the expression below would make it valid with a cost of <const>2</const>: <pre style="font-family: monospace">&lt;{[)abc(]}&gt; &rarr; &lt;{[(abc)]}&gt;</pre><br>(This is an arguably harder variant of community puzzle &ldquo;Brackets, Enhanced Edition&rdquo;. You may want to complete that one first.)</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> the number <var>N</var> of expressions<br><strong>Next <var>N</var> lines:</strong> an expression</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>N</var> lines:</strong> the number <var>F</var> of flips needed to make the expression valid. If the expression cannot be made valid, output <const>-1</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><var>N</var> &le; 100<br>expression length &le; 10000<br>number of bracketing elements &le; 25<br>The expression contains no whitespace.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+&lt;{[(abc(]}&gt;
+&lt;{[(abc&gt;}])
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1
+-1
+</pre>
+         </div>
+      </div>
+   </div>
+</div>

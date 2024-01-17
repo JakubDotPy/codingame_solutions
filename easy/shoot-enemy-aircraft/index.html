@@ -1,0 +1,48 @@
+<h1>Shoot Enemy Aircraft</h1>
+
+<a href="https://www.codingame.com/training/easy/shoot-enemy-aircraft">https://www.codingame.com/training/easy/shoot-enemy-aircraft</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">There are enemy aircraft (<const>&gt;</const> or <const>&lt;</const>) in the sky (made of <const>.</const>). Each turn they move one cell forward. You are in charge of shooting them with a surface-to-air missile (<const>^</const>). You can only shoot vertically. Each turn your missiles move one cell up.<br><br><strong>Note:</strong> When you shoot, the missile appears at the same altitude as the launcher. Each turn, the missile moves one cell up. The plane disappears after being shot, so do the missiles after having shot a plane. Every plane is shootable. There isn't any collision between planes, you have to shoot them all.<br><br>You have to print, each turn, if you <const>WAIT</const> or if you <const>SHOOT</const>. You have to shoot all the enemy aircraft, and your stock is just enough, so don't <const>SHOOT</const> if you can't hit an aircraft. After shooting every missile, do not print the last <const>WAIT</const>s.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> the number <var>n</var> of lines<br><strong><var>n</var> following lines :</strong> the description of the situation.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">As many lines as necessary, made of <const>WAIT</const> or <const>SHOOT</const>, one instruction per line.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &lt;= <var>n</var> &lt;= 10<br>The sky is made of <var>n</var>-1 lines, the last line is the ground.<br>A sky line is made of <const>.</const> if no aircraft, <const>&gt;</const> or <const>&lt;</const> for each aircraft.<br>The ground line is made of <const>_</const>, and <const>^</const> for the surface-to-air missile launcher.<br>There is only one missile launcher, and it's always on the ground.<br>The lengths of the lines are always the same, and &lt;= 40.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">6
+....................
+.&gt;..................
+...................&lt;
+....................
+....................
+_________^__________</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">WAIT
+WAIT
+WAIT
+SHOOT
+WAIT
+WAIT
+SHOOT</pre>
+         </div>
+      </div>
+   </div>
+</div>

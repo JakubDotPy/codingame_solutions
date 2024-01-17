@@ -1,0 +1,41 @@
+<h1>2048 scores</h1>
+
+<a href="https://www.codingame.com/training/medium/2048-scores">https://www.codingame.com/training/medium/2048-scores</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement"><strong>2048:</strong><br><br>2048 is game played on a <var>4</var> by <var>4</var> grid. You start with <const>2</const> tiles placed randomly in the grid. Every turn, you can move all the tiles in the grid in a particular direction (On pressing a particular direction, all tiles get pushed to that side). At the end of each turn, a new tile is generated, in a random position in the grid. The goal of the game is to obtain the <var>2048</var> tile. However, the game can be continued even after the <var>2048</var> tile is formed.<br> When moving tiles in a direction, if 2 adjacent tiles of the same value come in contact, they get merged into 1 tile, with value = <var>2*value of old tile</var>. When 2 tiles merge, the user&rsquo;s score increases by the value of the new tile.This way, you can keep increasing the value of a tile. At the end of each turn, the randomly generated tile can only have value = <const>2</const> or <const>4</const>. Note that there may be empty positions in the grid (marked as value=0 for simplicity)<br><br>--------------------------------------------------- xxx ---------------------------------------------------<br><br><strong>The Problem:</strong><br><br>Given a 2048 grid and the number of 4s generated, you have to output the player&rsquo;s score and the number of turns played. <br><br>--------------------------------------------------- xxx ---------------------------------------------------<br><br><strong>Example:</strong><br><br>Consider the following game:<br><br><pre style="font-family: monospace">0 0 0 0<br>0 2 4 0<br>0 0 0 0<br>0 0 0 0<br></pre>4s generated = <const>1</const><br>turns played = <const>0</const><br>USER moves <var>DOWN</var><br>Grid becomes:<br><br><pre style="font-family: monospace">0 0 0 0<br>0 0 0 0<br>0 0 0 0<br>2 2 4 0<br></pre>4s generated = <const>1</const><br>turns played = <const>1</const><br>score = <const>0</const><br>newly created tile = <const>2</const>, placed at (<const>0</const>,<const>3</const>)<br>USER moves <var>LEFT</var><br>Grid becomes:<br><br><pre style="font-family: monospace">0 0 0 0<br>0 4 0 0<br>0 0 0 0<br>4 4 0 0 <br></pre>4s generated = <const>2</const><br>turns played = <const>2</const><br>score = <const>2</const>+<const>2</const> = <const>4</const><br>newly created tile = <const>4</const>, placed at (<const>1</const>,<const>1</const>)<br>So, given the following input:<br><br><pre style="font-family: monospace">0 0 0 0<br>0 4 0 0<br>0 0 0 0<br>4 4 0 0<br>2 <br></pre>Your program must output:<br><pre style="font-family: monospace"><const>4</const><br><const>2</const><br></pre><br>--------------------------------------------------- xxx ---------------------------------------------------<br><br><strong>The Game:</strong><br><br>Play the game from the link: <const>https://gabrielecirulli.github.io/2048/</const></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>First <var>4</var> Lines:</strong> 4 space-separated integers <var>CNT</var>, the value of the current tile<br><strong>Next Line:</strong> An integer <var>FOURS</var>, the number of 4s generated</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> An integer <var>SCORE</var>, the score of the user<br><strong>Line 2:</strong> An integer <var>TURNS</var>, the number of turns played</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &le; <var>CNT</var> &le; 2&sup3;&sup1;</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">0 0 0 0
+0 4 0 0
+0 0 0 0
+4 4 0 0
+2</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">4
+2</pre>
+         </div>
+      </div>
+   </div>
+</div>

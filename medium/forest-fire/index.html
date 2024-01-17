@@ -1,0 +1,157 @@
+<h1>Forest Fire</h1>
+
+<a href="https://www.codingame.com/training/medium/forest-fire">https://www.codingame.com/training/medium/forest-fire</a>
+
+<div class="statement_back"></div>
+<div class="statement-body">
+  
+  <div class="statement-story-background">
+      <div class="statement-story" style="min-height:300px">
+        <h1>Forest Fire</h1>
+        <div class="story-text">
+          <br />
+          A forest fire has broken out! The nearby Fire Station Service asked your help to manage the dispatch of units on the scene.
+          <br />The Fire Chief sent you the coordinates where the fires are located, you must decide which unit is best to send using the least amount of water possible.
+          <br /><br />The available units are:
+          <br /><br />- <strong><const>C</const> Canadair: covers</strong> a <strong>3x3</strong> area and uses <strong>2100</strong> Liters of water
+          <br />- <strong><const>H</const> Fire Helicopter:</strong> covers a <strong>2x2</strong> area and uses <strong>1200</strong> Liters
+          <br />- <strong><const>J</const> Smoke Jumpers Squad:</strong> covers a <strong>1x1</strong> area and uses <strong>600</strong> Liters</div>
+      </div>
+  </div>
+  
+  <div class="statement-section statement-goal">
+    <br />
+    <h1>
+      <span class="icon icon-goal"> </span>
+      <span>The Goal</span>
+    </h1>
+    <div class="statement-goal-content">
+      Your goal is to put out ALL the fires by using the least amount of water possible.
+        <br />On <strong>each turn</strong> you&#39;ll have to output the unit that should be called in and on which coordinates
+    </div>
+  </div>
+  
+  <div class="statement-section statement-rules">
+    <h1>
+      <span class="icon icon-rules"> </span>
+      <span>Rules</span>
+    </h1>
+    <div>
+      <div class="statement-rules-content">
+        <br />
+        <strong>Coordinate system</strong> <br />
+        The top-left corner has position (0,0). <var>x</var> goes to the right, <var>y</var> increases downwards
+        <br />
+        To attack an area you must give the top-left coordinate of the 3x3 or 2x2 area you want to attack
+        <br />
+        <ul><li>Sending a Canadair to (0;0): <var>C 0 0</var> will extinguish:<br />0;0  0;1  0;2<br />1;0  1;1  1;2<br />2;0  2;1  2;2</li><li>Sending a Fire Helicopter to (0;0): <var>H 0 0</var> will extinguish:<br />0;0  0;1<br />1;0  1;1</li><li>Sending a Smoke Jumpers Squad to (0;0): <var>J 0 0</var> will extinguish:<br />0;0</li></ul>
+        <br />
+        <strong>Be careful!</strong>
+        <br />The attacking area MUST be inside the forest area, you can&#39;t exceed it or you would damage the nearby areas!
+      </div>
+    </div>
+  </div>
+  
+  <div class="statement-section statement-expertrules">
+    <h1>
+      <span class="icon icon-expertrules"> </span>
+      <span>Extra Detail</span>
+    </h1>
+    <div class="statement-expert-rules-content">
+      <br />
+      All maps are square shaped (L x L)
+      <br />
+      <br />
+      <i>Huge thanks to <a href="https://www.codingame.com/profile/8374201b6f1d19eb99d61c80351465b65150051" target="_blank" rel="nofollow noopener noreferrer">eulerscheZahl</a> for helping me with the graphics!</i> <br />
+    </div>
+  </div>
+
+
+<div class="statement-victory-conditions">
+  <div class="icon victory"></div>
+  <div class="blk">
+    <div class="title">Victory Conditions</div>
+    <div class="text">
+      <ul style="padding-bottom:0"><li>
+          All fires are extinguished
+        </li></ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="statement-lose-conditions">
+  <div class="icon lose"></div>
+  <div class="blk">
+    <div class="title">Loss Conditions</div>
+    <div class="text">
+      <ul style="padding-bottom:0"><li>
+            Your water supplies goes to 0 and you still have fires to put out.
+        </li><li>
+            You do not have enough water to send a specific unit
+        </li><li>
+            You attack an area outside the forest zone
+        </li><li>
+            You do not respond in time or output an unrecognized command.
+        </li></ul>
+    </div>
+  </div>
+</div>
+<br />
+
+  
+  <div class="statement-section statement-protocol">
+    <h1>
+      <span class="icon icon-protocol"> </span>
+      <span>Game Input</span>
+    </h1>
+
+    
+    <div class="blk">
+      <div class="title">Input</div>
+      <div class="text">
+          <br /><strong>At the beginning of the game:</strong>
+
+        <p><span class="statement-lineno">Line 1: </span>an int <var>L</var>, the size of one side of the map</p>
+        <p><span class="statement-lineno">Line 2: </span>an int <var>water</var>, the total amount of water available</p>
+
+          <strong>On each turn</strong>
+          <p><span class="statement-lineno">Line 1: </span>an int <var>N</var>, the amount of fires on the map</p>
+        <span class="statement-lineno">Next <var>N</var> lines</span>: The coordinates of each fire in the format <var>fireX fireY</var>
+      </div>
+    </div>
+
+    
+    <div class="blk">
+      <div class="title">Output</div>
+      <div class="text">
+        <span class="statement-lineno">A single line</span> containing the unit code that you want to send and the coordinates of the top left cell
+        <br />
+        <br />
+        The unit codes are:
+        <ul style="padding-bottom:0"><li>
+            <const>C</const> Canadair;
+          </li><li>
+            <const>H</const> Fire Helicopter;
+          </li><li>
+            <const>J</const> Smoke Jumpers Squad;
+          </li></ul>
+      </div>
+    </div>
+
+    
+    <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="text">
+        2 ≤ <var>L</var> ≤ 20
+        <br /><br />
+          0 ≤ <var>fireX</var> &lt; <var>L</var>
+          <br /><br />
+          0 ≤ <var>fireY</var> &lt; <var>L</var>
+        <br /><br />
+          <var>N</var> ≤ <var>L</var>*<var>L</var>
+        <br />
+      </div>
+    </div>
+  </div>
+</div>

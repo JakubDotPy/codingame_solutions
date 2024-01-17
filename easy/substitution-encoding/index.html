@@ -1,0 +1,39 @@
+<h1>Substitution Encoding</h1>
+
+<a href="https://www.codingame.com/training/easy/substitution-encoding">https://www.codingame.com/training/easy/substitution-encoding</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You want to easily encode and decode messages with a simple and personalized method. To do so, you will use a substitution method.<br><br>The principle is simple, you have a comparison table like this one:<br><br><const>A B</const><br><const>C D</const><br><br>and a message to encode written with the characters available in your table:<br><br><const>CBA</const><br><br>You are going to take each of the characters that compose the message and replace them by its position in the table:<br><br>C =&gt; 10 (row 1 column 0)<br>B =&gt; 01 (row 0 column 1)<br>A =&gt; 00 (row 0 column 0)<br><br>The message becomes: <const>100100</const></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>rows</var> for the number of rows of the table.<br><strong>Lines 2 to <var>rows</var> + 1:</strong>  A string for each row of the table. This string is composed of characters separated by one space.<br><strong>Final line:</strong> The <var>message</var> to encode.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> The encoded message.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>rows</var> &le; 10</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+A B
+C D
+CBA</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">100100</pre>
+         </div>
+      </div>
+   </div>
+</div>

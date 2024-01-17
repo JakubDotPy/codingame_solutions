@@ -1,0 +1,37 @@
+<h1>Faro shuffle</h1>
+
+<a href="https://www.codingame.com/training/easy/faro-shuffle">https://www.codingame.com/training/easy/faro-shuffle</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You just have got into cardistry and discovered a shuffle named <strong>Faro shuffle</strong><br>(See <const>https://www.youtube.com/watch?v=YNim5GjQ610</const> for more details)<br><br><br><strong>Faro shuffle</strong> is done as follow:<br><br><strong>1. Split</strong> the deck of cards into two decks of the same size.<br>(If the original deck has an <strong>odd</strong> number of cards the first deck will have one more card than the second deck)<br><strong>2. Merge</strong> the two decks picking alternatively one card from each, starting with the first deck.<br><br><br>You grab a fresh deck of cards and start practicing this shuffle.<br>After a while, you wonder if you can create a trick based on this shuffle, a pattern might emerged if you do it a certain number of times.<br><br><br>Given a deck of cards, print out the resulting deck after <var>N</var> shuffles.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var> for the number of Faro shuffle to perform.<br><strong>Line 2:</strong> Space separated cards.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>A single line</strong> representing the deck of cards gone through <var>N</var> Faro shuffles.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>N</var> &le; 100</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1
+AS AH AD AC</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">AS AD AH AC</pre>
+         </div>
+      </div>
+   </div>
+</div>

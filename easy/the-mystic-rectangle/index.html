@@ -1,0 +1,37 @@
+<h1>The Mystic Rectangle</h1>
+
+<a href="https://www.codingame.com/training/easy/the-mystic-rectangle">https://www.codingame.com/training/easy/the-mystic-rectangle</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Ataria lives on a <strong>toroidal map</strong> known as the Mystic Rectangle, where <strong>opposite edges</strong> of the map are <strong>connected</strong>. Crossing an edge teleports her to the opposite side. Ataria can move in any of the four <strong>cardinal</strong> directions or along the four <strong>diagonals</strong> of 45 degrees.<br><br>Given Ataria's coordinates and the coordinates of the goal, find the fastest <var>time</var> for her to reach the goal, assuming no obstacles.<br><br>Moving East or West &plusmn;1 unit in <var>x</var> takes <const>0.3</const> seconds.<br>Moving North or South &plusmn;1 unit in <var>y</var> takes <const>0.4</const> seconds.<br>It takes <const>0.5</const> seconds to move diagonally, 1 unit East/West plus 1 unit North/South.<br><br>After travelling for <strong>1 minute</strong> in any single cardinal direction (that is, <const>200</const> units East/West, or <const>150</const> units North/South), she ends up returning to the same place.<br><br><br><strong>Example</strong><br><br>Suppose Ataria starts near the top of the map and travels diagonally <const>15</const> units NorthEast and then straight <const>5</const> units due North. In doing so, she <strong>wraps around</strong> to the bottom of the map, arriving at the goal. Then at <const>9.5</const> seconds, this direct route makes the best <var>time</var> to the goal.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Two space separated integers <var>x</var> and <var>y</var> for the current position<br><strong>Line 2:</strong> Two space separated integers <var>u</var> and <var>v</var> for the location of the goal</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> The decimal <var>time</var> to the goal in seconds, with precision of tenths</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &le; <var>x</var>, <var>u</var> &lt; 200<br>0 &le; <var>y</var>, <var>v</var> &lt; 150</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">50 15
+65 145</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">9.5</pre>
+         </div>
+      </div>
+   </div>
+</div>

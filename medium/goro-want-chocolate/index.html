@@ -1,0 +1,36 @@
+<h1>Goro Want Chocolate</h1>
+
+<a href="https://www.codingame.com/training/medium/goro-want-chocolate">https://www.codingame.com/training/medium/goro-want-chocolate</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Goro hungry.  Goro want chocolate.<br><br>Goro picky.  Goro only like chocolate shape like square.  Goro like few big square better than mucho little square.<br><br>You smart.  You help Goro find best chocolate chop so squares bigger, no waste.<br><br><strong>──────────</strong><br><br>You are provided with Goro's chocolate bar's dimensions.  You are to answer with the minimal number of squares it's possible to chop out of it, with no leftovers allowed.<br><br>Goro chopping works karate-style:<br><br>&emsp;&bull; Goro picks a piece of chocolate among those available.<br>&emsp;&bull; Goro holds it firmly between his lower-left and lower-right hands.<br>&emsp;&bull; Goro grunts loudly.<br>&emsp;&bull; Goro forcefully slashes down the chocolate with his upper-right arm and breaks it in two new rectangular pieces.<br><br>Goro is very strong, yet he is disciplined enough that he only splits the chocolate rectangle along its major axes (horizontal and vertical), on the lines.<br><br>Example on a <const>3&times;5</const> chocolate grid:<br><br><pre style="font-family: monospace">┌─────────────────────┬──────┬──────┐<br>│                     │      │      │<br>│                     │   1  │   1  │<br>│                     │      │      │<br>│                     ├──────┴──────┤<br>│                     │             │<br>│          3          │             │<br>│                     │             │<br>│                     │      2      │<br>│                     │             │<br>│                     │             │<br>│                     │             │<br>└─────────────────────┴─────────────┘<br></pre>It's possible to split down to <const>4</const> square pieces, of sides <const>3</const>, <const>2</const>, <const>1</const> and <const>1</const>: first split the 3-sided square from the rest, then split the 2-sided one out, then separate the 1-sided remnants from each other.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Single line:</strong> <var>H</var> and <var>W</var>, dimensions of the chocolate rectangle, space-separated.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><var>N</var> the minimal number of squares we can chop out with no waste.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>H</var>, <var>W</var> &le; 150</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3 5</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">4</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,47 @@
+<h1>Ancestors & Descendants</h1>
+
+<a href="https://www.codingame.com/training/medium/ancestors-descendants">https://www.codingame.com/training/medium/ancestors-descendants</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Print the names of a family's descendants.<br><br>An individual in the family is represented by a line of input. The parent/child relationship of that individual is determined by the number of dots preceding his or her name.<br><br>Each dot represents a previously mentioned ancestor in the family tree. So if a name is preceded by two dots, then the first dot represents the most recently mentioned name with zero dots before it, and the second dot represents the most recently mentioned name with a single dot before it.<br><br>An example set of input lines to represent a family would be:<br><br>Jade<br>.Andrew<br>..Rose<br>.Mark<br>Heidi<br><br>The explanation for this input is:<br><br>Jade is a grandfather.<br>Andrew is Jade's son.<br>Rose is Andrew's daughter.<br>Mark is Jade's son.<br>Heidi has no children.<br><br>The correct output lines to represent this family's descendants would be:<br><br>Jade &gt; Andrew &gt; Rose<br>Jade &gt; Mark<br>Heidi</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var> for the number of family members.<br><strong>Next <var>N</var> lines:</strong> Each line represents one family member.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">Output the family descendants full names each on a separate line.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">8
+a
+.b
+..c
+d
+.e
+..f
+.g
+h</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">a &gt; b &gt; c
+d &gt; e &gt; f
+d &gt; g
+h</pre>
+         </div>
+      </div>
+   </div>
+</div>

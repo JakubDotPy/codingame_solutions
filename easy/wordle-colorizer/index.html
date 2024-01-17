@@ -1,0 +1,44 @@
+<h1>Wordle colorizer</h1>
+
+<a href="https://www.codingame.com/training/easy/wordle-colorizer">https://www.codingame.com/training/easy/wordle-colorizer</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are given the <var>answer</var> to today's <strong>Wordle</strong> and a list of <var>N</var> <var>attempt</var>s to solve it.<br><br>For each <var>attempt</var>, you must print the result (5 characters) corresponding to the 5 letters of <var>attempt</var> consisting of:<br>- <const>#</const> if the letter is at the right place<br>- <const>O</const> if the letter is in <var>answer</var> but at another place<br>- <const>X</const> for all other cases<br><br>Example:<br>If <var>answer</var> is <const>POLKA</const> and <var>attempt</var> is <const>SOLAR</const>, then result should be <const>X##OX</const>:<br> - <const>S</const> is not in <var>answer</var><br> - <const>O</const> is at the right place<br> - <const>L</const> is at the right place<br> - <const>A</const> is in <var>answer</var> but at another place<br> - <const>R</const> is not in <var>answer</var><br><br>Additionally, if a particular letter appears in <var>attempt</var> and in <var>answer</var> a different number of times, the result should be based on the following priority:<br>1. <const>#</const> for correctly placed letters<br>2. <const>O</const> for misplaced letters which appear earlier in <var>attempt</var><br>3. <const>X</const> for any excess appearances</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An uppercase word which is the <var>answer</var> to today's Wordle<br><strong>Line 2:</strong> An integer <var>N</var>, the number of attempts to solve the Wordle<br><strong><var>N</var> next lines:</strong> An uppercase word which is an <var>attempt</var> to solve the Wordle</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>N</var> Lines:</strong> Each containing the result for an <var>attempt</var> to solve the Wordle</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>N</var> &le; 6<br><strong><var>answer</var> and <var>attempt</var></strong> always have a length of 5 letters</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">POLKA
+4
+QUICK
+BROWN
+GLADY
+POLKA</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">XXXXO
+XXOXX
+XOOXX
+#####</pre>
+         </div>
+      </div>
+   </div>
+</div>

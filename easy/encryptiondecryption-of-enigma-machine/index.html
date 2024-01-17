@@ -1,0 +1,41 @@
+<h1>Encryption/Decryption of Enigma Machine</h1>
+
+<a href="https://www.codingame.com/training/easy/encryptiondecryption-of-enigma-machine">https://www.codingame.com/training/easy/encryptiondecryption-of-enigma-machine</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">During World War II, the Germans were using an encryption code called Enigma &ndash; which was basically an encryption machine that encrypted messages for transmission. The Enigma code went many years unbroken. Here's How the basic machine works:<br><br>First Caesar shift is applied using an incrementing number:<br>If String is <const>AAA</const> and starting number is <const>4</const> then output will be <const>EFG</const>. <br><pre style="font-family: monospace"><const>A + 4 = E</const><br><const>A + 4 + 1 = F</const><br><const>A + 4 + 1 + 1 = G</const></pre><br>Now map <const>EFG</const> to first ROTOR such as:<br><pre style="font-family: monospace">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>BDFHJLCPRTXVZNYEIWGAKMUSQO</pre>So <const>EFG</const> becomes <const>JLC</const>. Then it is passed through 2 more rotors to get the final value.<br><br>If the second ROTOR is <const>AJDKSIRUXBLHWTMCQGZNPYFVOE</const>, we apply the substitution step again thus:<br><pre style="font-family: monospace">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>AJDKSIRUXBLHWTMCQGZNPYFVOE</pre>So <const>JLC</const> becomes <const>BHD</const>.<br><br>If the third ROTOR is <const>EKMFLGDQVZNTOWYHXUSPAIBRCJ</const>, then the final substitution is:<br><pre style="font-family: monospace">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>EKMFLGDQVZNTOWYHXUSPAIBRCJ</pre>So <const>BHD</const> becomes <const>KQF</const>.<br><br>Final output is sent via Radio Transmitter.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong>  <const>ENCODE</const> or <const>DECODE</const><br><strong>Line 2:</strong> Starting shift <var>N</var><br><strong>Lines 3-5:</strong><br><const>BDFHJLCPRTXVZNYEIWGAKMUSQO</const> ROTOR I<br><const>AJDKSIRUXBLHWTMCQGZNPYFVOE</const> ROTOR II<br><const>EKMFLGDQVZNTOWYHXUSPAIBRCJ</const> ROTOR III<br><strong>Line 6:</strong> <var>Message</var> to Encode or Decode</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">Encoded or Decoded String</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &le; <var>N</var> &lt; 26<br><var>Message</var> consists only of uppercase letters (A-Z)<br>1 &le; <var>Message</var> length &lt; 50</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">ENCODE
+4
+BDFHJLCPRTXVZNYEIWGAKMUSQO
+AJDKSIRUXBLHWTMCQGZNPYFVOE
+EKMFLGDQVZNTOWYHXUSPAIBRCJ
+AAA</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">KQF</pre>
+         </div>
+      </div>
+   </div>
+</div>

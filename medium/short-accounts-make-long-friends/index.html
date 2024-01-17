@@ -1,0 +1,38 @@
+<h1>Short accounts make long friends</h1>
+
+<a href="https://www.codingame.com/training/medium/short-accounts-make-long-friends">https://www.codingame.com/training/medium/short-accounts-make-long-friends</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">The purpose of this puzzle is to find the result (profit) asked from 6 supplied figures. You have at your disposal the four standard operators: addition (bill), subtraction, multiplication (increase) and division.<br><br>Only subtractions resulting in a positive number are considered.<br>Only divisions resulting in an integer are considered.<br><br><strong>Example 1:</strong><br>if input is<br><var>Result</var> : <const>862</const><br><var>a</var> : <const>7</const>, <var>b</var> : <const>9</const>, <var>c</var> : <const>100</const>, <var>d</var> : <const>25</const>, <var>e</var> : <const>3</const>, <var>f</var> : <const>3</const><br><br>100 - 7 = 93<br>93 &times; 9 = 837<br>837 + 25 = 862<br><br>output would be<br><const>POSSIBLE<br>3</const><br><br><strong>Example 2:</strong><br>if input is<br><var>Result</var> : <const>862</const><br><var>a</var> : <const>3</const>, <var>b</var> : <const>5</const>, <var>c</var> : <const>6</const>, <var>d</var> : <const>2</const>, <var>e</var> : <const>1</const>, <var>f</var> : <const>7</const><br><br>3 &times; 7 = 21<br>5 + 2 = 7<br>7 &times; 6 = 42<br>42 - 1 = 41<br>41 &times; 21 = 861<br><br>output would be<br><const>IMPOSSIBLE<br>1</const></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> 1 integer <var>Result</var> giving the expected result<br><strong>Line 2:</strong> 6 integers (<var>a</var>, <var>b</var>, <var>c</var>, <var>d</var>, <var>e</var>, <var>f</var>) giving the available numbers for the operation</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> <const>POSSIBLE</const> or <const>IMPOSSIBLE</const> whether the operation is possible or not<br><strong>Line 2:</strong> min distance from result if the expected result is impossible to obtain <strong>or</strong> minimal number of operations if the expected result is possible to achieve</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">100 &le; <var>Result</var> &le; 999<br><var>a</var>, <var>b</var>, <var>c</var>, <var>d</var>, <var>e</var>, <var>f</var> in (1,2,3,4,5,6,7,8,9,10,25,50,75,100)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">101
+100 5 2 3 4 1</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">POSSIBLE
+1</pre>
+         </div>
+      </div>
+   </div>
+</div>

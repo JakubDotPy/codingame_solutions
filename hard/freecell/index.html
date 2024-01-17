@@ -1,0 +1,212 @@
+<h1>🃏 FreeCell 🃏</h1>
+
+<a href="https://www.codingame.com/training/hard/freecell">https://www.codingame.com/training/hard/freecell</a>
+
+
+<div class="statement_back"></div>
+<div class="statement-body">
+
+  
+  <div class="statement-story-background">
+    <div class="statement-story-cover" style="background-image:url(&#39;https://cdn-games.codingame.com/community/154906-1603583324682/04e99f9cb772142f3d4f18b561547da487143a16a5a5ad8808c297fd98663dcb.jpeg&#39;)">
+      <div class="statement-story" style="max-width:36em;margin-left:auto;margin-right:auto">
+        <h1>Royale-les-Eaux, 1953</h1>
+        <div class="story-text">
+          <p style="margin-bottom:0.25ex">“So you&#39;re back in one piece”, observed Le Chiffre patronisingly.  “You are not equipped, my dear boy, to play baccarat with the grown-ups, and it is very foolish of—”</p>
+          <p style="text-indent:2em;margin-bottom:0.25ex">“I thought the game was Texas Hold&#39;em”, interrupted 007.</p>
+          <p style="text-indent:2em;margin-bottom:0.25ex">“The capitalist Multi-Player?  How delightfully naive”, goaded Le Chiffre.  “Just exactly where do you think you are, my dear boy?  No, tonight you play FreeCell, or the bitch dies.”</p>
+          <p style="text-indent:2em;margin-bottom:0.25ex">“FreeCell?  That doesn&#39;t make any sense!  The game doesn&#39;t even exist yet!”</p>
+          <p style="text-indent:2em">“You can expect nothing else from playing Solo games.  The contribution moderators wanted a story, so here&#39;s yours.  I only work here, ok?  Now play and win, or else…  Смерть шпиону!”</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="statement-section statement-goal" style="padding-top:30px">
+    <h1>
+      <span class="icon icon-goal"> </span>
+      <span>FreeCell</span>
+    </h1>
+    <div class="statement-goal-content">
+      The aim of this patience game is to move an entire 52-card standard deck from the cascades to the foundations.
+    </div>
+  </div>
+
+  
+  <div class="statement-section statement-rules">
+    <h1>
+      <span class="icon icon-rules"> </span>
+      <span>Rules</span>
+    </h1>
+    <div>
+      <div class="statement-rules-content">
+        The playing area is divided in three zones:
+        <ul><li>the cascades: 8 columns of zero or more cards
+          </li><li>the foundations: 4 stacks of zero or more cards, one stack per suit, ordered from aces upwards
+          </li><li>the cells: 4 slots of zero or one card
+        </li></ul>
+        <p> 
+          Game actions consist exclusively of moving a card from a place to another.  Each zone has specific constraints as to what cards can move from and to it.
+        </p>
+        <p>
+          <strong>The cascades.</strong>  Only the bottommost card of a cascade is available for moving.  Moving it <em>away</em> is never restricted. To move a card <em>to</em> a cascade, either the cascade must be empty, or the added card must be ranked <em>one beneath</em> the cascade&#39;s bottommost card, and of <em>opposite color</em>.
+        </p>
+        <p>
+          <strong>The foundations.</strong>  Cards there are stacked, with only the topmost one being visible.  Moving a card <em>away</em> from a foundation is never possible.  To move a card <em>to</em> a foundation, it must be ranked one above the current topmost card, and of matching suit.  If a foundation is empty, an ace may be placed there.
+        </p>
+        <p>
+          <strong>The cells.</strong>  Only a single card may be in a cell at any given time.  There is no other restriction as to which card may move in and out of it.
+        </p>
+        <br />
+        <p>
+          The game features <strong>autoplay</strong>: available cards that are candidates for foundations will automatically be played there after every move.
+        </p>
+      </div>
+    </div>
+    <div class="statement-victory-conditions">
+      <div class="icon victory"> </div>
+      <div class="blk">
+        <div class="title">Victory Condition</div>
+        <div class="text">All cards are in the foundations.</div>
+      </div>
+    </div>
+    <div class="statement-lose-conditions">
+      <div class="icon victory"> </div>
+      <div class="blk">
+        <div class="title">Defeat Condition</div>
+        <div class="text">You have no possible move left.</div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="statement-section statement-hint">
+    <h1>
+      <span class="icon icon-hint"> </span>
+      <span>Noob Rules</span>
+    </h1>
+    <div class="statement-hint-content">
+      <p>
+        A <strong>card</strong> is a piece of two-sided <a href="https://en.wikipedia.org/wiki/ISO_216" target="_blank" rel="nofollow noopener noreferrer">B8</a> laminated paper.  A group of cards is called a <strong>deck</strong>.  One side of the card is called the <strong>front</strong> and displays the card&#39;s attributes, that are pairwise distinct within a deck.  (The other side is called the <em>back</em> and shows a motif intended for decoration that is shared by all cards in the deck; but it is not involved in this game.)  A card has two <em>attributes</em>.  The first attribute is the card&#39;s <strong>suit</strong>: a symbol among ♣ “clubs” ♦ “diamonds” ♥ “hearts” and ♠ “spades”.  Spaces and clubs have the <strong style="color:black;background-color:white">color black ♠♣</strong>.  Hearts and diamonds have the <strong style="color:red;background-color:#252e38">color red ♥♦</strong>.  The second attribute is the card&#39;s <strong>rank</strong>: an integer between <const>1</const> and <const>13</const>.  Ranks 1 to 10 display their attributes as <strong>pips</strong>: their suit&#39;s symbol, one for each of their rank&#39;s index, laid out symetrically.  Ranks 11 to 13 display as a <strong>face</strong>, one for each rank×suit combination.  Rank 1 is abbreviated as an “A” for “ace”; ranks 11 to 13 as “J”, “Q”, “K” for “jack”, “queen”, “king” respectively.
+      </p>
+      <p>
+        The standard deck thus comprises 4 suits × 13 ranks &#61; 52 cards.
+    </p></div>
+  </div>
+
+  
+  <div class="statement-section statement-expertrules">
+    <h1>
+      <span class="icon icon-expertrules"> </span>
+      <span>Expert Rules</span>
+    </h1>
+    <div class="statement-expert-rules-content">
+      <p>
+        A sequence of stacked, descending-rank, alternating-color cards is called a <em>tableau</em>.  Tableaux form organically at the bottom of cascades throughout normal game course.  If enough free cells and/or empty cascades are available, you may move a tableau as a unit, by making use of free space as temporary storage.  This is known as a <strong>supermove</strong>.  The game will automatically recognize them as moves and use them when appropriate.
+      </p>
+    </div>
+  </div>
+
+  
+  <div class="statement-section statement-examples">
+    <h1>
+      <span class="icon icon-example"> </span>
+      <span>Example</span>
+    </h1>
+
+    <div class="statement-examples-text">
+      You may solve the first test case with the following move sequence: 26, 76, 72, 72, 5a, 27, 57, 67, 1b, 61,
+41, 4h, 4h, 41, 45, 34, 3c, 6d, 5b.
+    </div>
+  </div>
+
+  
+  <div class="statement-section statement-protocol">
+    <h1>
+      <span class="icon icon-protocol"> </span>
+      <span>Game Protocol</span>
+    </h1>
+
+    
+    <div class="blk">
+      <div class="text">
+        This is a turn-based game.  At each turn you must read the provided input, and provide your move on the standard output.
+      </div>
+    </div>
+
+    
+    <div class="blk">
+      <div class="title">Input</div>
+      <div class="text">
+        <span class="statement-lineno">Line 1:</span>
+        <var>foundationCountPlusOne</var>, the number of foundations with more than zero cards plus one
+        <br />
+        <span class="statement-lineno">Line 2:</span>
+        8 space-separated integers <var>cascadeCountPlusOne<sub>i</sub></var>: the number of cards per cascade plus one
+        <br />
+        <span class="statement-lineno">Line 3:</span>
+        <q><const>Foundations:</const></q>, then <var>foundationCountPlusOne</var>-<const>1</const> words representing the foundations&#39; levels.
+        <br />
+        <span class="statement-lineno">Line 4:</span>
+        the cells&#39; contents, a sole dash <const>-</const> for empty cells
+        <br />
+        <span class="statement-lineno">Lines 5 to 12:</span>
+        a colon <q><const>:</const></q>, then <var>cascadeCountPlusOne<sub>i</sub></var>-<const>1</const>space-separated integers representing the cascades&#39; contents, one line per cascade; cards reported deepest to topmost (<i>i.e.</i>, downwards as displayed in the game viewer)
+        <br />
+        <span class="statement-lineno">Line 13:</span>
+        <var>M</var>, the number of possible moves
+        <br />
+        <span class="statement-lineno">Line 14:</span>
+        <var>M</var> space-separated words: the possible moves
+        <br />
+      </div>
+      <br />
+      <div class="text">
+        Cards in cells or cascades are represented as a two-character word: one among <const>A23456789TJQK</const> for the card&#39;s rank, one among <const>CDHS</const> for the card&#39;s suit.<br />
+        The foundations&#39; levels are represented as 3-character words: one character to represent the suit; one sole dash character <const>-</const>; one character to represent the rank of the highest card in that foundation.
+      </div>
+      <br />
+      <div class="text">
+        If you&#39;re stuck, lines 3 to 12 are valid input to <a href="https://fc-solve.shlomifish.org/" target="_blank" rel="nofollow noopener noreferrer"><tt>fc-solve</tt></a>.
+      </div>
+    </div>
+
+    
+    <div class="blk">
+      <div class="title">Output</div>
+      <div class="text">
+        <span class="statement-lineno">A single line</span> containing one or more space-separated moves in <a href="https://freecellgamesolutions.com/notation.html" target="_blank" rel="nofollow noopener noreferrer">standard notation</a>: each move is a two-character word, with:
+        <ul><li>digits <const>1</const> through <const>8</const> representing the cascades
+          </li><li>letters <const>a</const> through <const>d</const> representing the cells
+          </li><li>letter <const>h</const> (for home) representing the foundations
+        </li></ul>
+      </div>
+    </div>
+
+    
+    <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="text">
+        Try to win before reaching the turn or time limit.
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="statement-section statement-download" style="padding-top:30px">
+    <h1>
+      <span class="icon icon-download statement-icon_statement_download"> </span>
+      <span>Credits and meta</span>
+    </h1>
+
+    <div class="statement-download-text">
+      <ul><li><a href="" target="_blank" rel="nofollow noopener noreferrer">Making of the backend</a>
+        </li><li><a href="" target="_blank" rel="nofollow noopener noreferrer">Making of the visuals</a>
+        </li><li>The playing cards are derived from <a href="https://commons.wikimedia.org/w/index.php?title&#61;File:English_pattern_playing_cards_deck.svg&amp;oldid&#61;509578585" target="_blank" rel="nofollow noopener noreferrer">the SVG set by Dmitry Fomin on WikiMedia Commons</a>, CC0 1.0.
+        </li><li>The cover story background is derived from <a href="https://flic.kr/p/dBYKxw" target="_blank" rel="nofollow noopener noreferrer">Simon Tunbridge&#39;s photograph</a>, CC BY-NC-SA 2.0.
+      </li></ul>
+    </div>
+  </div>
+
+</div>

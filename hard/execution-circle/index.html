@@ -1,0 +1,37 @@
+<h1>Execution Circle</h1>
+
+<a href="https://www.codingame.com/training/hard/execution-circle">https://www.codingame.com/training/hard/execution-circle</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">People are standing in a circle waiting to be executed. Counting begins at a specified point in the circle and proceeds around the circle in a specified direction. starting from <var>S</var>, the next person is executed. The procedure is repeated with the remaining people, starting with the next person alive and going in the same direction, until only one person remains, and is freed.<br><br>The problem &mdash; given the <var>N</var>umber of people , <var>S</var>tarting point and <var>D</var>irection &mdash; is to choose the position in the initial circle to avoid execution.<br><br>example:<br><br><var>N</var>=8<br><var>S</var>=5<br><var>D</var>=LEFT<br><br><pre style="font-family: monospace">  1<br> 8 2<br>7   3<br> 6 4<br>  5</pre><br><br>5 kills 6<br><br><pre style="font-family: monospace">  1<br> 8 2<br>7   3<br> X 4<br>  5</pre><br><br>7 kills 8<br><br><pre style="font-family: monospace">  1<br> X 2<br>7   3<br> X 4<br>  5</pre><br><br>1 kills 2<br><br><pre style="font-family: monospace">  1<br> X X<br>7   3<br> X 4<br>  5</pre><br><br>3 kills 4<br><br><pre style="font-family: monospace">  1<br> X X<br>7   3<br> X X<br>  5</pre><br><br>5 kills 7<br><br><pre style="font-family: monospace">  1<br> X X<br>X   3<br> X X<br>  5</pre><br><br>1 kills 3<br><br><pre style="font-family: monospace">  1<br> X X<br>X   X<br> X X<br>  5</pre><br><br>5 kills 1<br><br><pre style="font-family: monospace">  X<br> X X<br>X   X<br> X X<br>  5</pre><br><br>5 is freed</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Two space-separated long integers indicating the <var>N</var>umber of people and the <var>S</var>tarting point<br><strong>Line 2:</strong> The word <const>LEFT</const> (clockwise) or <const>RIGHT</const> (counter-clockwise) for the <var>D</var>irection to take</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The winning position</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0&lt;N&lt;10000000000000<br>0&lt;S&lt;10000000000000</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">8 5
+LEFT</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">5</pre>
+         </div>
+      </div>
+   </div>
+</div>

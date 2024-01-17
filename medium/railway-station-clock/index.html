@@ -1,0 +1,36 @@
+<h1>Railway Station Clock</h1>
+
+<a href="https://www.codingame.com/training/medium/railway-station-clock">https://www.codingame.com/training/medium/railway-station-clock</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">The old clock in the railway station is too ancient to be refurbished but too nice to be replaced with a modern one.<br>But it is a little slow. To be precise, <strong>every four minutes it goes behind by one more second</strong>.<br><br>The clock is stable in its delay. In addition the station administrator adjusts the clock <strong>daily at 8AM</strong>.<br>So it's not that bad.<br>But still all the train events recorded in the official station log are timewise wrong.<br><br>You need to create a script to recover <strong>true times</strong> having <strong>times observed from the station clock</strong> as input.<br><br>Please note, you don't need to worry about fractions of a second (all tests are guaranteed to have whole seconds for both <strong>observed</strong> and <strong>true</strong> times).</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">A line containing <var>time</var> observed from the clock in the form:<br>HH:MM:SS PP</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">A single line with respective true time in the form:<br>HH:MM:SS PP</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><var>time</var> as well as <strong>true time</strong> is 12-hour time from <strong>12:00:00 AM</strong> to <strong>11:59:59 PM</strong>.<br>If hour is less than 10 then no leading zero is used, e.g. <strong>6:30:00 PM</strong></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">8:03:59 AM</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">8:04:00 AM</pre>
+         </div>
+      </div>
+   </div>
+</div>

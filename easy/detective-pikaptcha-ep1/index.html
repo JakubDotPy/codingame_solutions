@@ -1,0 +1,110 @@
+<h1>Detective Pikaptcha EP1</h1>
+
+<a href="https://www.codingame.com/training/easy/detective-pikaptcha-ep1">https://www.codingame.com/training/easy/detective-pikaptcha-ep1</a>
+
+
+
+<div class="statement_back"></div>
+<div class="statement-body">
+
+  
+  <div class="statement-section statement-goal">
+    <h1>
+      <span class="icon icon-goal"> </span>
+      <span>The Goal</span>
+    </h1>
+    <div class="statement-goal-content">
+      <p>
+        <b>Detective Pikaptcha</b> is investigating a disturbance in the spacetime continuum. It seems a powerful
+        <em>pokébot</em> is being used to warp space around our hero to keep him trapped. Help him map his surroundings
+        in order to escape and uncover the culprit!
+      </p>
+      Your objective is to write a program that will compute, for each cell of a grid, the number of adjacent passages.
+
+
+    </div>
+  </div>
+  
+  <div class="statement-section statement-rules">
+    <h1>
+      <span class="icon icon-rules"> </span>
+      <span>Rules</span>
+    </h1>
+    <div class="statement-rules-content">
+      <p>
+        You&#39;re given a grid filled with <const>0</const> and <const>#</const>, where <const>0</const> represents a
+        passage, and <const>#</const> represents a wall: an impassable cell.
+      </p>
+
+      <div>
+
+
+      </div>
+      <p>
+        We&#39;re considering the <const>4-adjacency</const>, meaning a cell has a maximum of 4 adjacent cells (a diagonal
+        cell is not adjacent).
+      </p>
+
+
+
+      You must analyze the given grid and return it with a small transformation: for each empty cell, instead of a
+      <const>0</const>, you must return the number of its adjacent passable cells. For each impassable cell, you
+      change
+      nothing: you still return <const>#</const>.
+    </div>
+  </div>
+
+  
+  <div class="statement-section statement-protocol">
+    <h1>
+      <span class="icon icon-protocol"> </span>
+      <span>Game Protocol</span>
+    </h1>
+    
+    <div class="blk">
+      <div class="title">Game Input</div>
+      <div class="text">
+        <div>
+          <span class="statement-lineno">
+            First line:
+          </span>
+          2 integers <var>width</var> and <var>height</var> for the size of
+
+          the grid.
+
+        </div>
+        <div>
+          <span class="statement-lineno">Next <var>height</var> lines:</span> a string <var>line</var> of length
+          <var>width</var>
+          where <const>0</const> is a passage and <const>#</const> is a
+          wall.
+        </div>
+        <div>
+          The maze is enclosed in impassable rocks that are not included in the data.
+        </div>
+      </div>
+    </div>
+    
+    <div class="blk">
+      <div class="title">Game Output</div>
+      <div class="text">
+        <span class="statement-lineno"><var>height</var> line of <var>width</var> characters each</span> containing the
+        transformed grid.
+
+      </div>
+    </div>
+    
+    <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="text">
+        <p>
+          <const>1</const> ≤ <var>width</var> &amp; <var>height</var> ≤ <const>100</const>
+        </p>
+        <p>
+          Allotted response time to output is &#61; <const>2s</const>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<h1>Constrained Latin Squares</h1>
+
+<a href="https://www.codingame.com/training/medium/constrained-latin-squares">https://www.codingame.com/training/medium/constrained-latin-squares</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement"><strong>Count all solutions to a partially filled Latin square.</strong><br><br>A Latin square of order n is a n x n array filled with n different symbols, each occurring exactly once in each row and exactly once in each column. In this puzzle, you are given a n x n grid filled with digits between 0 and n. This grid forms a partially filled Latin square where digits above 0 cannot be changed (they are constrained) and zeroes can take any value between 1 and n. Your goal is to find the number of Latin squares that are solutions to this grid.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong> : an integer <var>n</var>, dimension of the square grid.<br><strong><var>n</var> lines</strong> : a string <var>row</var> with <var>n</var> digits corresponding to that row. A &quot;0&quot; is used for an unconstrained cell.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> The number of solutions to the puzzle.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">3 &lt;= <var>n</var> &lt;= 9</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+123
+200
+300</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,39 @@
+<h1>Dolbear's Law</h1>
+
+<a href="https://www.codingame.com/training/easy/dolbears-law">https://www.codingame.com/training/easy/dolbears-law</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement"><strong>Dolbear's law</strong> states the relationship between the <strong>air temperature</strong> and the <strong>rate at which crickets chirp</strong> (source: Wikipedia).<br><br>Dolbear expressed the relationship as the following formula, which provides a way to estimate the temperature <strong>TC</strong> in degrees Celsius from the number of chirps per minute, called <var>N60</var>:<br><strong>TC</strong> = <const>10</const> + (<var>N60</var> - <const>40</const>) / <const>7</const>.<br><br>Another method is to count the number of chirps in <strong>8</strong> seconds, called <var>N8</var>, and add <const>5</const><br>(this is fairly accurate between <const>5</const> and <const>30</const>&deg;C):<br><strong>TC</strong> = <var>N8</var> + <const>5</const>.<br><br>We are in August and it is very hot.<br>With the help of Jiminy Cricket, you want to estimate the air temperature while staying cool at home.<br>You then take a stopwatch, a pencil and a paper, and every <const>4</const> seconds, you note the number of chirps of Jiminy.<br><br>For example, if you noted the following series: <strong>3 2 3</strong>, then Jiminy chirped <strong>3</strong> times in the first 4 seconds, then <strong>2</strong> times in the next 4 seconds, and finally <strong>3</strong> times in the last 4 seconds.<br><br>In order to have a good estimate of the air temperature, you take a lot of measurements: one measure every <const>4</const> seconds during <var>M</var> minutes.<br><br>Once you're done with the measurements, you can compute the estimated temperature using the correct formula!<br>Unfortunately, Jiminy chirps whenever he wants, driving you crazy and distorting your calculations... so do not take your results too seriously!</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong>: an integer <var>M</var> for the number of minutes your measurements lasted.<br><strong>Next</strong> <var>M</var> <strong>lines</strong>: series of <const>15</const> integers separated by a <strong>space</strong>, each integer representing the number of times that Jiminy has chirped in <const>4</const> seconds (each line thus represents 1 minute).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">On the <strong>first line</strong>, you must return the <strong>average</strong> of the estimates calculated every minute using the <var>N60</var> <strong>formula</strong>.<br><br>On the <strong>second line</strong>, if the result on the first line is <strong>between</strong> <const>5</const> and <const>30</const> (inclusive), then return the <strong>average</strong> of the estimates calculated every <const>8</const> seconds using the <var>N8</var> <strong>formula</strong>. If your total number of measurements is <strong>odd</strong>, then <strong>ignore the very last measure</strong> because it makes the total duration of your measurements non-divisible by 8 seconds.<br><br>The results must be printed <strong>rounded</strong> with <strong>1</strong> decimal place:<br><strong>16.0</strong> and <strong>16.1</strong> are <strong>valid</strong> outputs.<br><strong>16</strong> and <strong>16.12</strong> are <strong>invalid</strong> outputs.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>M</var> &le; 60<br>For every measure, 0 &le; <strong>measure</strong> &le; 20</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+8 8 6 3 2 4 8 6 9 5 2 1 5 2 8
+8 3 3 6 7 2 8 1 7 4 5 4 2 3 9</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">14.9
+14.9</pre>
+         </div>
+      </div>
+   </div>
+</div>

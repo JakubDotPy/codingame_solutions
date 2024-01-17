@@ -1,0 +1,40 @@
+<h1>Drawing Polygons</h1>
+
+<a href="https://www.codingame.com/training/hard/drawing-polygons">https://www.codingame.com/training/hard/drawing-polygons</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You have to print the direction (<const>CLOCKWISE</const> or <const>COUNTERCLOCKWISE</const>) used to construct a polygon defined by a specified sequence of points.<br><br>Consider that the points represent the vertices of an arbitrary polygon, and you can draw the polygon if you take the points pairwise, in the order they are given. So, every two consecutive points form an edge, and the last edge is formed by the last and the first points.<br><br><strong>Sample 1</strong><br><br>P(1)  =&gt;  x=6, y=5<br>P(2)  =&gt;  x=11, y=5<br>P(3)  =&gt;  x=11, y=2<br>P(4)  =&gt;  x=3, y=2<br><pre style="font-family: monospace"><br>│ &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot;<br>│ &middot; &middot; &middot; &middot; &middot; 1 &middot; &middot; &middot; &middot; 2 &middot; &middot;<br>│ &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot;<br>│ &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot;<br>│ &middot; &middot; 4 &middot; &middot; &middot; &middot; &middot; &middot; &middot; 3 &middot; &middot;<br>│ &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot;<br>┼───────────────────────────<br></pre><br>The polygon is in the <const>CLOCKWISE</const> direction.<br><br><strong>Sample 2</strong><br><br>P(1)  =&gt;  x=6, y=5<br>P(2)  =&gt;  x=11, y=5<br>P(3)  =&gt;  x=11, y=2<br>P(4)  =&gt;  x=16, y=7<br><pre style="font-family: monospace"><br>│ &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot;<br>│ &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; 4 &middot; &middot;<br>│ &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot;<br>│ &middot; &middot; &middot; &middot; &middot; 1 &middot; &middot; &middot; &middot; 2 &middot; &middot; &middot; &middot; &middot; &middot; &middot;<br>│ &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot;<br>│ &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot;<br>│ &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; 3 &middot; &middot; &middot; &middot; &middot; &middot; &middot;<br>│ &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot; &middot;<br>┼─────────────────────────────────────<br></pre><br>The polygon is in the <const>COUNTERCLOCKWISE</const> direction.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:&nbsp;</strong>an integer&nbsp;<var>N</var>&nbsp;indicating the number of points in the polygon<br><strong>Next&nbsp;<var>N</var>&nbsp;lines: </strong>a pair of integers <var>X</var> <var>Y</var> giving the location of a point<br>The polygon is formed by connecting all the points in a sequential manner. The last point is connected to the first one.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">One line:&nbsp; <const>CLOCKWISE</const> or <const>COUNTERCLOCKWISE</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">- <var>N</var> ranges from <const>4</const> to <const>20</const><br>- <var>X</var> and <var>Y</var> range from <const>0</const> to <const>20</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">4
+6 5
+11 5
+11 2
+3 2</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">CLOCKWISE</pre>
+         </div>
+      </div>
+   </div>
+</div>

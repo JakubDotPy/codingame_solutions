@@ -1,0 +1,39 @@
+<h1>By train or by car ?</h1>
+
+<a href="https://www.codingame.com/training/easy/by-train-or-by-car">https://www.codingame.com/training/easy/by-train-or-by-car</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are planning a journey from your current city to a destination city. This involves selecting which routes to take (some routes may be irrelevant to you), as well as choosing between the train and the car, whichever is faster to reach your destination. Make the right decision according to the following benefits and constraints.<br><br>Train:<br>- Average speed: <const>284</const> km/h<br>- Average speed when crossing a city: <const>50</const> km/h at +/-<const>3</const> km of the city<br>- Pause at each stop: <const>8</const> minutes<br>- To reach final destination from the final train station : <const>30</const> minutes (walk, bus, car...)<br>- To go from your home to the first train station: <const>35</const> minutes (walk, bus, car...)<br><br>Car:<br>- Average speed: <const>105</const> km/h<br>- Average speed when crossing a city: <const>50</const> km/h at +/-<const>7</const> km of the city<br><br>Example: <br>&lt;&lt;Paris ---- 133 km ----&gt; Orl&eacute;ans ---- 218 km -----&gt; Tours&gt;&gt;<br><br>Details by train:<br>- 35 minutes to reach the train station at Paris<br>- Train starts at 50 km/h for the first 3 km<br>- Train runs at 284 km/h for the next 127 km<br>- Train runs at 50 km/h for the 3 km before Orl&eacute;ans<br>- Train stops at Orl&eacute;ans for 8 minutes<br>- Train starts at 50 km/h for the first 3 km after Orl&eacute;ans<br>- Train runs at 284 km/h for the next 212 km<br>- Train speed decreases to 50 km/h for the last 3 km before arriving at Tours<br>- 30 minutes to reach your final destination<br>Time by train =&gt; 35 + 3*60/50 + 127*60/284 + 3*60/50 + 8 + 3*60/50 + 212*60/284 + 3*60/50 + 30 = 159.01 minutes (2:39)<br><br>Details by car:<br>- First 7 km at 50 km/h to reach highway<br>- Average speed of 105 km/h for 119 km to reach Orl&eacute;ans<br>- To cross Orl&eacute;ans, I drive at 50 km/h for 14 km<br>- Then average speed of 105 km/h for 204 km to reach Tours<br>- Arriving at Tours, I drive at 50 km/h for the last 7 km<br>Time by car: 7*60/50 + 119*60/105 + 14*60/50 + 204*60/105 + 7*60/50=218.17 minutes (3:38)<br><br>So it will be faster by train, and the answer is: <strong>TRAIN 2:39</strong></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">line 1: <const>starting city</const> <const>destination</const>: starting city is the city where you come from. destination is the city where you want to go.<br>line 2: one integer <var>N</var> for the number of lines below<br>following lines: <const>city1</const> and <const>city2</const> and <const>distance</const> between the cities in km</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">one line with <strong>CAR</strong> or <strong>TRAIN</strong>+<strong>duration</strong> to go from starting city to destination</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">Format for the <strong>duration</strong>: <strong>h:mm</strong>.<br>All cities will appear only one time as starting point and/or end point. (no loop possible).<br>For all tests, there is only one solution.<br>values for duration are rounded down: Math.floor() and not Math.ceil()</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">Paris Tours
+2
+Paris Orleans 133
+Orleans Tours 218</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">TRAIN 2:39</pre>
+         </div>
+      </div>
+   </div>
+</div>

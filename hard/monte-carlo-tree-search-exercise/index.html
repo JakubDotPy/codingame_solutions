@@ -1,0 +1,39 @@
+<h1>Monte Carlo Tree Search exercise</h1>
+
+<a href="https://www.codingame.com/training/hard/monte-carlo-tree-search-exercise">https://www.codingame.com/training/hard/monte-carlo-tree-search-exercise</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Assume we are dealing with (nondeterministic) one-player game. To find an optimal sequence of movements we could use Monte Carlo Tree Search algorithm (https://en.wikipedia.org/wiki/Monte_Carlo_tree_search). <br><br>Thus, we perform a number of so-called playouts, and gradually build an MCTS tree that will help us choosing statistically best choices for each turn of the game. A playout is a sequence of moves reaching the game tree leaf, so it has assigned a true score. It consists of two parts: the beginning, which is selected by the algorithm using the UCT formula; and the remaining part which is usually a random sequence of movements.<br><br>In this puzzle, we are given a list of playouts (encoded as words, where each letter is a single move) with assigned scores, that should be used to build an MCTS tree. After building a tree, the task is to return the sequence of moves, reaching the MCTS tree leaf, that will be chosen using UCT policy given exploration/exploitation constant <const>C</const>.<br><br>For given node <var>N</var> visited <var>N.v</var> times, according to the UCB1 formula we should choose a child <var>M</var> that maximizes the value given by: <var>M.s/M.v + C*sqrt(ln(N.v)/M.v)</var>, where <var>M.v</var> is number of visits in node <var>M</var> and <var>M.s</var> is sum of scores obtained for this node (so the first component of the sum is average score for node <var>M</var>).<br><br><strong>Final remarks:</strong><br>- Note that this puzzle differs form the real-life-scenario where the playouts are not given, but they are also computed using UCT+random policies.<br>- In standard implementations you are forced to choose an unexplored move if such exists. Here we assume that after reading the playout data we do not have such moves in the non-leaf nodes of the MCTS tree.<br>- A tie-breaking rules when comparing UCT values is the ordering on letters (i.e. smaller letter should be chosen).<br><br><strong>Example explanation:</strong><br>- Reading <const>baa 30</const> will create child node labeled <const>b</const> with avg. score 30 and one visit. The MCTS tree root will have the same statistics. Note that we are adding only one new node at a time.<br>- Reading <const>ab 20</const> will create another child node for the root, updating its statistics.<br>- Finally, reading <const>bbb 4</const> will create a new node on a path <const>bb</const> from the root, updating all statistics on a way to the root, so the root will have 3 visits, and <const>b</const> node 2 visits.<br>- Choosing move from the root based on the UCB1 formula will favor move <const>a</const> (average score 20), instead of move <const>b</const> (average score 17). This is because the small value of constant <const>C</const>, makes the exploration part of the equation not significant.<br>- As there are no further nodes in MCTS tree along that paths, the 1-move sequence <const>a</const> is the answer.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> 2 space-separated values: <br>an integer <var>N</var> - the number of performed playouts<br>a real number <var>C</var> - the constant C (the exploration parameter)<br><br><strong>Next <var>N</var> lines:</strong> Sequence of movements performed in this playout, followed by a space, followed by the playout's result</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">Sequence of movements that will be chosen in the MCTS tree using UCB1 selection.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <var>N</var> &lt; 500<br>0 &lt; playout length  &lt; 50<br>1 &lt; branching factor  &lt; 10<br>-100.1 &lt; score (playout's result) &lt; 100.1</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3 0.1
+baa 30
+ab 20
+bbb 4</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">a</pre>
+         </div>
+      </div>
+   </div>
+</div>

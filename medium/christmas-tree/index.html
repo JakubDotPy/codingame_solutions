@@ -1,0 +1,37 @@
+<h1>Christmas Tree</h1>
+
+<a href="https://www.codingame.com/training/medium/christmas-tree">https://www.codingame.com/training/medium/christmas-tree</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Warning:<br>&quot;Extreme tree..&quot; testcases might be harder to solve, if language of your choice out of the box do not support numbers bigger than 9223372036854775807. At the moment of writing it I know it's possible to solve it in JVM languages and Python.<br><br>Having <var>n</var> stars build a Christmas Tree.<br>All stars have to be used.<br>Top of the tree begins with 1 star.<br>Each row is greater than previous by <var>i</var> stars.<br>On the bottom of the tree there is at least 1 star which creates root.<br>You need to add as many stars as possible to the top layers, only remaining ones could be used for root.<br>You need to find minimum height <var>h</var> of Christmas Tree created with these conditions. <br><br><br>Example:<br><var>n</var> = 38<br><var>i</var> = 2<br><br><pre style="font-family: monospace">     *<br>    ***<br>   *****<br>  *******<br> *********<br>***********<br>     *<br>     *</pre><br><br>Answer:<br><var>h</var> = 8</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> A long <var>n</var> available stars to build the Christmas Tree.<br><strong>Line 1:</strong> A long <var>i</var> stars added to next branch comparing to previous one.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><var>h</var> height of the Christmas Tree</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &lt;=  <var>i</var> &lt; <var>n</var> &lt; 2^63</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">38
+2</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">8</pre>
+         </div>
+      </div>
+   </div>
+</div>

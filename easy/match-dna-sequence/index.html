@@ -1,0 +1,39 @@
+<h1>Match DNA Sequence</h1>
+
+<a href="https://www.codingame.com/training/easy/match-dna-sequence">https://www.codingame.com/training/easy/match-dna-sequence</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You must find a substring corresponding to a DNA sequence <var>gene</var> inside another DNA sequence <var>chr</var>.<br>Because every individual is different, the <var>gene</var> can have <var>delta</var> differences of swapped characters with the aligned <var>chr</var>.<br><br>If the last characters of <var>genes</var> are out of the bounds of <var>chr</var> (chr is too short), it counts as a delta corresponding to the missing characters. No other removal or insertion of characters is allowed.<br><br>For example if <var>gene</var> is <const>AATTAATTAATT</const> and you only have one <var>chr</var> which is <const>GAATTAACCAATTGGGGGGGGGG</const> and the authorized <var>delta</var> is <const>3</const> then the output should be :<br><const>0 1 2</const><br>- <const>0</const> because it is the first (and only) <var>chr</var> matching<br>- <const>1</const> because the <var>gene</var> starts at the 2nd character of the <var>chr</var><br>- <const>2</const> because 2 errors (delta) exists in the match (<const>CC</const> instead of <const>TT</const>)</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>delta</var> for the maximum number of difference accepted with the reference<br><strong>Line 2:</strong> A string <var>gene</var> corresponding to the gene to search<br><strong>Line 3:</strong> An integer <var>n</var> for the number of <var>chr</var><br> <strong>Next <var>n</var> lines:</strong> A string <var>chr</var> corresponding to the DNA in which to search it</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">3 integers space separated :<br>- The index of the <var>chr</var> the gene was found in<br>- The <var>start</var> index of <var>gene</var> in the <var>chr</var><br>- The number of <var>difference</var> with the <var>gene</var><br><br>Or in case of no match: <const>NONE</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt;= <var>delta</var> &lt;= 10<br>length(<var>gene</var>) == 42<br>1 &lt;= <var>n</var> &lt;= 20<br>length(<var>chr</var>) == 128</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">0
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+1
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACCTCGTGGAGGAGGGTGTCTCCTGCTTGCTGAACATGACTAAAGAATTATTAAATTTTACGTAGGAAATCTTATGTCATAGGGGTG</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">0 0 0</pre>
+         </div>
+      </div>
+   </div>
+</div>

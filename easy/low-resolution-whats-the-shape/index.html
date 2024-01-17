@@ -1,0 +1,40 @@
+<h1>Low Resolution: What's The Shape?</h1>
+
+<a href="https://www.codingame.com/training/easy/low-resolution-whats-the-shape">https://www.codingame.com/training/easy/low-resolution-whats-the-shape</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Nowadays, there are many ways to identify things in an image.<br>However, given a very small image, which has only a few pixels, there are still some tricks to identify the shape in it, to further process it.<br>You will try to find such a trick in this puzzle.<br><br>In the images of this puzzle<br>a. '<const>.</const>' means empty.<br>b. '<const>X</const>' means full.<br>c. All other characters means half-full. In real usage, it would be an expression of &quot;background is black, foreground is white, and this pixel is grey, so find any letter to express this middle value&quot;.<br><br>The program should identify 3 shapes:<br><strong>1: Rectangle.</strong> It will cover all the image:<br>4&times;3:<br><pre style="font-family: monospace">XXXX<br>XXXX<br>XXXX</pre><br><strong>2: Triangle.</strong> At least one edge is along the image edge, and the opposite angle will be at the opposite edge of image:<br>6&times;3:<br><pre style="font-family: monospace">\XXXX/<br>.\XX/.<br>..\/..</pre><br>8&times;3:<br><pre style="font-family: monospace">..../\..<br>../XXX\.<br>/XXXXXX\</pre><br>4&times;3: (sometimes, the artist may choose to use '<const>X</const>' and '<const>.</const>' only, as long as statements are satisfied)<br><pre style="font-family: monospace">X...<br>XXXX<br>X...</pre><br>4&times;4:<br><pre style="font-family: monospace">\XXX<br>.\XX<br>..\X<br>...\</pre><br><strong>3: Ellipse.</strong> It will touch all edges of the image:<br>3&times;3:<br><pre style="font-family: monospace">/X\<br>XXX<br>\X/</pre><br>8&times;7:<br><pre style="font-family: monospace">..XXXX..<br>.XXXXXX.<br>XXXXXXXX<br>XXXXXXXX<br>XXXXXXXX<br>.XXXXXX.<br>..XXXX..</pre><br><br><strong>Note:</strong> The 3 shapes are not generic, but all have some strong limitations. Base on them, there is one way that you do not need to detect edges or angles.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> 2 integers <var>W</var> <var>H</var> for the width and height of image, separated by a space.<br><strong>Next <var>H</var> lines:</strong> The image. Each line have width <var>W</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>One line</strong> containing <const>Rectangle</const>, <const>Triangle</const> or <const>Ellipse</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">3 &le; <var>W</var>, <var>H</var> &le; 10</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">4 3
+XXXX
+XXXX
+XXXX
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">Rectangle</pre>
+         </div>
+      </div>
+   </div>
+</div>

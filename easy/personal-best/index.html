@@ -1,0 +1,39 @@
+<h1>Personal Best</h1>
+
+<a href="https://www.codingame.com/training/easy/personal-best">https://www.codingame.com/training/easy/personal-best</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">The puzzle input provides one or more gymnasts' names and competition categories, for example &quot;<const>Simone Biles</const>&quot; and &quot;<const>bars</const>&quot;, following which will be a set of competition records. Each record contains a gymnast's name and the points they scored on the bars, the balance beam, and for floor work. There may be more than one competition record per gymnast.<br><br>The puzzle requires that you read through all the records, and find the highest score for each of the given gymnast/s in the given category/categories.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> The name of one or more <var>gymnasts</var> for whom to provide a personal best<br><strong>Line 2:</strong> One or more <var>categories</var> for which to find the personal best; these can be &quot;<const>bars</const>&quot;, &quot;<const>beam</const>&quot;, or &quot;<const>floor</const>&quot;<br><strong>Line 3:</strong> An integer <var>N</var> for the number of competition records provided<br><strong>Next <var>N</var> lines:</strong> One string and three floating point values, separated by commas, representing a gymnast and the number of points they scored in each category. These values represent a gymnast's <var>name</var>, and their score on the <var>bars</var>, <var>beam</var>, and <var>floor</var> work in a competition.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">One or more lines, each one a comma-separated list of the maximum points for the given gymnasts for the requested categories, in the same order.<br><br>For example, given the input:<br><const>Paris Berelc</const>,<const>Ariana Berlin</const><br><const>bars</const>,<const>floor</const><br><br>The output would be:<br><const>bars score for Paris Berelc</const>,<const>floor score for Paris Berelc</const><br><const>bars score for Ariana Berlin</const>,<const>floor score for Ariana Berlin</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>N</var> &le; 40<br>6 &le; <var>bars</var>, <var>beam</var>, <var>floor</var> &lt; 10<br><br>Each of the gymnasts in <var>gymnasts</var> will always have their <var>name</var> included in the competition records.<br>Points scores (<var>bars</var>, <var>beam</var>, <var>floor</var>) will have between 0 and 2 decimal places, sometimes mixed.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">Simone Biles
+floor
+1
+Simone Biles,8,7,9</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">9</pre>
+         </div>
+      </div>
+   </div>
+</div>

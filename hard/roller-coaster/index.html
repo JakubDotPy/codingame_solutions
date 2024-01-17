@@ -1,0 +1,152 @@
+<h1>Roller Coaster</h1>
+
+<a href="https://www.codingame.com/training/hard/roller-coaster">https://www.codingame.com/training/hard/roller-coaster</a>
+
+<div class="statement_back" id="statement_back" style="display:none">&nbsp;</div>
+
+<div class="statement-body"><!-- GOAL -->
+<div class="statement-section statement-goal">
+<h2><span class="icon icon-goal">&nbsp;</span> <span>The Goal</span></h2>
+
+<div class="statement-goal-content">You have recently been assigned to a new amusement park&rsquo;s center of analysis and supervision. Your mission is to estimate each day what the earnings will be for each ride that day. You start by looking at the roller coaster.</div>
+</div>
+<!-- RULES -->
+
+<div class="statement-section statement-rules">
+<h2><span class="icon icon-rules">&nbsp;</span> <span>Rules</span></h2>
+
+<div>
+<div class="statement-rules-content">You notice that people like the roller coaster so much that as soon as they have finished a ride, they cannot help but go back for another one.
+<ul>
+	<li>People queue up in front of the attraction</li>
+	<li>They can either be alone or in a group. When groups are in the queue, they necessarily want to ride together, without being separated.</li>
+	<li>People never overtake each other in the queue.</li>
+	<li>When there isn&rsquo;t enough space in the attraction for the next group in the queue, the ride starts (so it is not always full).</li>
+	<li>As soon as the ride is finished, the groups that come out, go back into the queue in the same order.</li>
+</ul>
+
+<p>The attraction contains a limited number <var>L</var> of places.<br />
+The attraction can only function <var>C</var> number of times per day.<br />
+The queue contains a number <var>N</var> of groups.<br />
+Each group contains a number <var>Pi</var> of people.<br />
+Each person spends <const>1</const> dirham per ride.</p>
+</div>
+</div>
+</div>
+<!-- EXAMPLES -->
+
+<div class="statement-section statement-examples">
+<h2><span class="icon icon-example">&nbsp;</span> <span>Example</span></h2>
+
+<div class="statement-examples-text">With <var>L</var>=<const>3</const>, <var>C</var>=<const>3</const> and <const>4</const> groups (<var>N</var>=<const>4</const>) of the following sizes [3,1,1,2]:<br />
+&nbsp;
+<p><b>Ride 1: </b>for the first roller coaster ride, only the first group can get on and takes all the places. At the end of the ride, this group returns to the back of the queue that now looks as follows [1,1,2,3].<br />
+<i>Earnings of the ride : 3 dirhams.</i></p>
+
+<p><b>Ride 2 : </b>on the second ride, the following two single-person groups can get on, leaving one place empty (the group of 2 people that follows cannot be separated) At the end of the ride, they return to the back of the queue: [2,3,1,1]<br />
+<i>Earnings of the ride : 2 dirhams.</i></p>
+
+<p><b>Ride 3: </b>for the last ride (C=3), only the group of 2 people can get on, leaving one place empty. <i>Earnings of the ride : 2 dirhams.</i></p>
+
+<p><b>Total earnings: </b>3+2+2 = 7 dirhams</p>
+</div>
+</div>
+<!-- PROTOCOL -->
+
+<div class="statement-section statement-protocol">
+<h2><span class="icon icon-protocol">&nbsp;</span> <span>Game Input</span></h2>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Input</div>
+
+<div class="text">
+<p><span class="statement-lineno">Line 1: </span>The integers <var>L</var>, <var>C</var> and <var>N</var> separated by a space.</p>
+
+<p><span class="statement-lineno"><var>N</var> following lines: </span>Each line contains an integer <var>Pi</var> representing the number of people in a group. The lines are ordered in the same way as the queue. (The first lines correspond to the first groups that can get on the ride).</p>
+</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Output</div>
+
+<div class="text">An integer representing the number of dirhams earned at the end of the day on the roller coaster (after <var>C</var> roller coaster rides)</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Constraints</div>
+
+<div class="text"><var>Pi</var> &le; <var>L</var><br />
+1 &le; <var>L</var> &le; 10^7<br />
+1 &le; <var>C</var> &le; 10^7<br />
+1 &le; <var>N</var> &le; 1000<br />
+1 &le; <var>Pi</var> &le; 10^6</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Examples</div>
+
+<div class="text">
+<div class="statement-inout">
+<div class="statement-inout-in" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Input</div>
+
+<pre>
+3 3 4
+3
+1
+1
+2</pre>
+</div>
+
+<div class="statement-inout-out" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Output</div>
+
+<pre>
+7</pre>
+</div>
+</div>
+
+<div class="statement-inout">
+<div class="statement-inout-in" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Input</div>
+
+<pre>
+5 3 4
+2
+3
+5
+4</pre>
+</div>
+
+<div class="statement-inout-out" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Output</div>
+
+<pre>
+14</pre>
+</div>
+</div>
+
+<div class="statement-inout">
+<div class="statement-inout-in" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Input</div>
+
+<pre>
+10 100 1
+1</pre>
+</div>
+
+<div class="statement-inout-out" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Output</div>
+
+<pre>
+100</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

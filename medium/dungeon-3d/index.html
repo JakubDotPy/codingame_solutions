@@ -1,0 +1,45 @@
+<h1>Dungeon 3D</h1>
+
+<a href="https://www.codingame.com/training/medium/dungeon-3d">https://www.codingame.com/training/medium/dungeon-3d</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Anya and her team of adventurers are battling in a multi-layered labyrinth beneath Waterdeep. Skeletons and Kobolds are lurking around every corner. Luckily Anya found the dungeon map which shows the structure of all layers of the dungeon including the location of a health-restoring Hot Spring.<br><br>Anya identified the team's current location on the map. She has to find the path to the Hot Spring to rebuild the team's health for prolonged battles.<br><br>All layers of the dungeon have the same rectangular dimension composed of cubic cells. The layers are connected by vertical ladders for climbing up or down.<br><br>The team takes 1 minute to fight their way to move from one cell to the adjacent cell, which is the cell at any of the four directions of their current cell as well as the cells at the vertically upper and lower layers, if there is a path to. They cannot move to diagonal cells directly.<br><br>What is the minimum time needed for the team to reach the Hot Spring?</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Three integers <var>L</var> <var>R</var> <var>C</var><br><var>L</var> is the number of levels making up the dungeon.<br><var>R</var> and <var>C</var> are the number of rows and columns making up the plan of each level.<br><br><strong>Line 2:</strong> <var>ln</var> calculated from <var>L</var> * (<var>R</var>+1), which is the total number of lines below it.<br><br><strong>The following <var>ln</var> lines:</strong> These are the floor plans of all levels, arranged in order from the surface layer to the deepest underground layer.<br>Each level floor plan starts with a blank line and then <var>R</var> lines of characters.<br><br>Each character describes one cell of the dungeon. An accessible cell, a passage, is represented by a dot. An inaccessible cell, a wall, is represented by '#'.<br><br>The current location of Anya is indicated by 'A' and the Hot Spring by the letter 'S'.<br>The boundary of the dungeon is hard rock, not drawn on the map.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> Write an integer, the shortest time in minutes for the team to arrive at the Spring.<br>In case it is impossible, write a line:<br><pre style="font-family: monospace">NO PATH</pre></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>L</var>, <var>R</var>, <var>C</var> &le; 30<br>2 &le; <var>L</var> * <var>R</var> * <var>C</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2 3 3
+8
+
+..#
+.##
+A##
+
+#.#
+#.S
+#..</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">6</pre>
+         </div>
+      </div>
+   </div>
+</div>

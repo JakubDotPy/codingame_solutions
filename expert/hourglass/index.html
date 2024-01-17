@@ -1,0 +1,81 @@
+<h1>Hourglass</h1>
+
+<a href="https://www.codingame.com/training/expert/hourglass">https://www.codingame.com/training/expert/hourglass</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You will be given the ASCII representation of a hourglass followed by a number of seconds <var>N</var>. You have to output the representation of the hourglass <strong>exactly</strong> as it should look like after <var>N</var> seconds have passed.<br><br>The <strong>hourglass</strong> will be received as input of <strong>23</strong> <strong>lines</strong> composing its body . (Check the example)<br><br><strong>The following apply:</strong><br><br>- the capacity of the hourglass is <strong>100</strong> grains of sand<br>- an '<const>o</const>' is the representation of one grain of sand which is <strong>1 second</strong><br>- &quot;7 seconds have passed&quot; means 7 <const>o</const>'s have moved from the top half of the hourglass to the bottom half<br><br>There are rules as to which grain of sand is the next one to leave the top half and to where it should be placed in the bottom half. <br><br><strong>TOP HALF</strong><br><br>The sand empties from the middle of the hourglass to the sides 1 grain at a time.<br>Let's consider a full TOP HALF.  The order grains are being removed is as follows:<br><strong>1.</strong> middle grain from topmost line that's not missing any grains<br><strong>2.</strong> 4 middlemost grains from all lines from top to bottom that are missing grains until  a line that's not missing any grains (don't touch that line)<br><strong>3.</strong> Repeat from 1<br>The pattern for removing consecutive grains on the same horizontal line is as follows:<pre style="font-family: monospace">ooo<const>o</const>ooo -&gt; ooo <const>o</const>oo -&gt; oo<const>o</const>  oo -&gt; oo   <const>o</const>o -&gt; o<const>o</const>    o -&gt; o     o</pre><const>o</const> - the grain that will be removed next<br><br><strong>BOTTOM HALF</strong><br><br>The sand fills this half from the middle of the hourglass to the sides 1 grain at a time.<br>Let's consider an empty BOTTOM HALF. First 10 grains make up a vertical trail from the middle of the hourglass until they reach the bottom. (check the example) The order grains are being inserted after the trail is as follows:<br><strong>1.</strong> 2 middlemost grains on the bottom line<br><strong>2.</strong> 2 middlemost grains on the bottom line going up adding 2 middlemost grains on every line until a triangle is formed with it's tip being a grain from the vertical trail<br><strong>3.</strong> Repeat from 2<br>The pattern for inserting consecutive grains on the same horizontal line is as follows:<pre style="font-family: monospace">o -&gt; o<const>o</const> -&gt; <const>o</const>oo -&gt; ooo<const>o</const> -&gt; <const>o</const>oooo -&gt; ooooo</pre><br><br><strong>Important notes:</strong><br>- every line from your hourglass should end with either <const>/</const>, <const>X</const>, <const>\</const>, <const>+</const>. Watch out for leftover spaces.<br>- only the output must respect the above rules, meaning that the input can have random placed grains<br>- if the amount of grains in the hourglass received from the input is not equal to 100 the program should output the message <const>BROKEN HOURGLASS</const> instead of a hourglass<br>- <var>N</var> can be greater than the amount of grains in the TOP HALF which means that the sand will fill the BOTTOM HALF completely before <var>N</var> seconds. In that case the output should still be a normal BOTTOM HALF full hourglass.<br><br>Suggestion: draw a full top hourglass in notepad and apply the rules until you understand them.<br><br>To finish with a quote:<br>The more sand that has escaped from the hourglass of our life, the clearer we should see through it. <strong>Good luck!</strong></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>First 23 lines :</strong> 23 strings <var>hLine</var> composing the body of the hourglass<br><strong>Next line :</strong> An integer <var>N</var> representing the number of seconds to pass</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The representation of the hourglass as given in the input, modified to resemble the <var>N</var> seconds that have passed or the message <const>BROKEN HOURGLASS</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &le; <var>N</var> &le; 100</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">+=====================+
+ \ooooooooooooooooooo/
+  \ooooooooooooooooo/
+   \ooooooooooooooo/
+    \ooooooooooooo/
+     \ooooooooooo/
+      \ooooooooo/
+       \ooooooo/
+        \ooooo/
+         \ooo/
+          \o/
+           X
+          / \
+         /   \
+        /     \
+       /       \
+      /         \
+     /           \
+    /             \
+   /               \
+  /                 \
+ /                   \
++=====================+
+15</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">+=====================+
+ \ooooo         ooooo/
+  \oooooo     oooooo/
+   \ooooooo ooooooo/
+    \ooooooooooooo/
+     \ooooooooooo/
+      \ooooooooo/
+       \ooooooo/
+        \ooooo/
+         \ooo/
+          \o/
+           X
+          /o\
+         / o \
+        /  o  \
+       /   o   \
+      /    o    \
+     /     o     \
+    /      o      \
+   /       o       \
+  /        oo       \
+ /       ooooo       \
++=====================+</pre>
+         </div>
+      </div>
+   </div>
+</div>

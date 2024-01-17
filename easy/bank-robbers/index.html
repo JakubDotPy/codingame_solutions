@@ -1,0 +1,38 @@
+<h1>Bank Robbers</h1>
+
+<a href="https://www.codingame.com/training/easy/bank-robbers">https://www.codingame.com/training/easy/bank-robbers</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">A gang of <var>R</var> foolish robbers decides to heist a bank. In the bank there are <var>V</var> vaults (indexed from <const>0</const> to <const>V - 1</const>). The robbers have managed to extract some information from the bank's director:<br>- The combination of a vault is composed of <var>C</var> characters (digits/vowels).<br>- The first <var>N</var> characters consist of digits from <const>0</const> to <const>9</const>.<br>- The remaining characters consist of vowels (<const>A</const>, <const>E</const>, <const>I</const>, <const>O</const>, <const>U</const>).<br>- <var>C</var> and <var>N</var> may be the same or different for different vaults.<br><br>All the robbers work at the same time. A robber can work on one vault at a time, and a vault can be worked on by only one robber. Robbers deal with the different vaults in increasing order.<br><br>A robber tries the combinations at the speed of <const>1</const> combination per second. He tries <strong>all</strong> the possible combinations, i.e. he continues to try the untried combinations even after he has found the correct combination. Once he finishes one vault, he moves on to the next available vault, that is the vault with the smallest index among all the vaults that have not been worked on yet. The heist is finished when the robbers have worked on all the vaults.<br><br>Assume it takes no time to move from one vault to another.<br><br>You have to output the total time the heist takes.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>R</var> for the number of robbers.<br><strong>Line 2:</strong> An integer <var>V</var> for the number of vaults.<br><strong>Next <var>V</var> lines:</strong> For each vault, one line of two space-separated integers <var>C</var> and <var>N</var> for the total number of characters (<var>C</var>) and the total number of digits (<var>N</var>) in the vault's combination. The vaults are ordered by their index.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> An integer for the total time the heist takes in seconds.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>R</var> &le; 5<br>1 &le; <var>V</var> &le; 20<br>3 &le; <var>C</var> &le; 8<br>0 &le; <var>N</var> &le; <var>C</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1
+1
+3 1</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">250</pre>
+         </div>
+      </div>
+   </div>
+</div>

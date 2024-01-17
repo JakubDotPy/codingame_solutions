@@ -1,0 +1,38 @@
+<h1>Derivative time !!! - part1</h1>
+
+<a href="https://www.codingame.com/training/medium/derivative-time---part1">https://www.codingame.com/training/medium/derivative-time---part1</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Story:<br>Louise is learning calculus in her maths courses and she likes the idea. When doing her homework, she is not sure and she wants to check her answers with yours. Could you create a program so that we can check the answers?<br><br>Calculate, evaluate the partial derivative of a given formula.<br><br>For instance, <br>given the function formula &quot;(5*(x*(y^2)))&quot;                              <br>and &quot;y x&quot;, the variables in respect with you must derive it<br>So here f(x,y) = 5xy&sup2;<br>and you have to calculate:<br><pre style="font-family: monospace"></pre><pre style="font-family: monospace">    d&sup2;f(x,y)<br>   ----------<br>     dxdy</pre><pre style="font-family: monospace"></pre><br>it gives you the formula 10*y,<br>At last &quot;x 2 y 6&quot; means x=2, y=6,<br>gives you the values with which you must evaluate the obtained derivative<br>So the answer should be 60<br><br>Note:<br><br>To simplify the task, only consider <const>+</const>, <const>*</const> and <const>^</const>. And assume that <const>+</const>, <const>*</const> and <const>^</const> always take two arguments and that expressions are fully parenthesized. <br><br>Negative power has no parenthesis. <br>e.g. (((18*(x^<const>-1</const>))+y)+z)<br><br><var>var</var>s may be in other forms other than x, y, and z. Similar to identifiers in many programming languages, the <var>var</var> would be some letter followed by letters, numbers or underscore.<br><br>link about calculus rules: <strong>https://en.wikipedia.org/wiki/Differentiation_rules</strong><br>The rules needed here:<br>a'=0<br>(a*x)'=a<br>(x^a)'=a*x^(a-1)  (when a is not 0)<br>(u+v)'=u'+v'<br>(u*v)'=u'*v+v'*u</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong>: <var>formula</var><br><strong>Line 2</strong>: list of <var>var</var>s for partial derivative, separated by space, length of the list will be 1, 2 or 3.<br><strong>Line 3</strong>: <var>var</var>s' values, paired and separated by space</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The result (always an <var>integer</var>).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">All numbers are integers.<br><br><strong>Line 2</strong> would give a list from 1 to 3 different/same <var>var</var>s to do partial derivative.<br><br>You can assume that the second argument of ^ is constant, to be simple and avoid &quot;ln&quot; or &quot;e^x&quot;.<br>e.g.:<br>will appear:<br>(x^y)<br>x<br>x 1 y 1<br>won't appear (this could be too complex):<br>(x^y)<br>y<br>x 1 y 1</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">(5*(x*y))
+x
+x 2 y 6</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">30</pre>
+         </div>
+      </div>
+   </div>
+</div>

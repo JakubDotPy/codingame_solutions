@@ -1,0 +1,38 @@
+<h1>Random Time Travel</h1>
+
+<a href="https://www.codingame.com/training/medium/random-time-travel">https://www.codingame.com/training/medium/random-time-travel</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">A linear congruential generator (LCG) is a pseudorandom number generator algorithm defined by the recurrence relation:<br><pre style="font-family: monospace">lcg(seed) = (a * seed + c) % m</pre><br>LCGs are notably used by Java's Math.random(). It is sometimes useful to be able to check the value given by the random number generator a number of steps in the future or in the past, given the current internal seed of the LCG.<br><br>You are given the <var>seed</var>, the parameters <var>a</var>, <var>c</var> and <var>m</var> of an LCG and the number of <var>steps</var>.<br><br>If <var>steps</var> is positive you must return the result of the composition of the lcg function <var>steps</var> times.<br><pre style="font-family: monospace">lcg(lcg(...lcg(seed)))</pre><br>If <var>steps</var> is negative you must return the result of the composition of the reverse of the lcg function.<br> <pre style="font-family: monospace">lcg^-1(lcg^-1(...lcg^-1(seed)))</pre><br><br>Hint: The reverse of an LCG is also an LCG. The composition of two LCGs is also an LCG.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Three space separated integers <var>a</var>, <var>c</var> and <var>m</var> for the LCG parameters.<br><strong>Line 2:</strong> An integer <var>seed</var><br><strong>Line 3:</strong> An integer <var>steps</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1 :</strong> The output of the LCG, starting at <var>seed</var> and repeating <var>steps</var> times.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &le; <var>a</var> &lt; 2^64<br>0 &le; <var>c</var> &lt; 2^64<br>1 &le; <var>m</var> &lt; 2^64, <var>m</var> is a power of 2<br>0 &le; <var>seed</var> &lt; 2^64<br>-2^63 &lt;= <var>steps</var> &lt; 2^63</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">5 3 8
+0
+1</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">3</pre>
+         </div>
+      </div>
+   </div>
+</div>

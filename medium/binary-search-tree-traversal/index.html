@@ -1,0 +1,40 @@
+<h1>Binary Search Tree Traversal</h1>
+
+<a href="https://www.codingame.com/training/medium/binary-search-tree-traversal">https://www.codingame.com/training/medium/binary-search-tree-traversal</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement"><strong>Insert <var>n</var> values in a given order one after the other into an initially empty binary seach tree. Then, output all values in Pre-Order, In-Order, Post-Order and Level-Order.</strong><br><br>A binary search tree is a tree-like data structure. Values are represented as nodes and every node can have at most 2 child nodes (leaves), one left and one right. The firstly inserted node is called root node. It is usually the upmost node (the tree is visualized upside down compared to an actual tree in the real world).<br><br>When inserting a new value into a binary search tree, start by comparing the new value to the root node's value. If it's smaller, continue to the left. Else, continue to the right. Repeat the process with the appropriate root child (left or right) and continue until there is no more child to compare the value to. At this position in the tree, actually insert the value as a new node.<br><br>The example test case of inserting [8, 6, 13, 10, 5] can be visualized like this:<br><br>........8..........<br>....../....\.......<br>....6.....13....<br>../........./......<br>5........10......<br><br>There are different ways to run through (&quot;traverse&quot;) all nodes of a binary search tree, always starting at the root node:<br>* Pre-Order: output current value, consider left subtree, consider right subtree<br>* In-Order: consider left subtree, output current value, consider right subtree<br>* Post-Order: consider left subtree, consider right subtree, output current value<br>* Level-Order: output all values from top to bottom level and from left to right within each level<br><br>Need more context? https://en.wikipedia.org/wiki/Tree_traversal</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var> for the number of values.<br><strong>Line 2:</strong> <var>N</var> space-separated values <var>vi</var> for the values to be inserted into a binary search tree.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">4 lines of <var>N</var> space-separated values each.<br><strong>Line 1:</strong> Pre-Order-Traversal.<br><strong>Line 2:</strong> In-Order-Traversal.<br><strong>Line 3:</strong> Post-Order-Traversal.<br><strong>Line 4:</strong> Level-Order-Traversal.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>N</var> &le; 50<br>-10^9 &lt; <var>vi</var> &lt; 10^9<br>All values <var>vi</var> are distinct.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">5
+8 6 13 10 5</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">8 6 5 13 10
+5 6 8 10 13
+5 6 10 13 8
+8 6 13 5 10</pre>
+         </div>
+      </div>
+   </div>
+</div>

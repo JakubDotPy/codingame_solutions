@@ -1,0 +1,114 @@
+<h1>Defibrillators</h1>
+
+<a href="https://www.codingame.com/training/easy/defibrillators">https://www.codingame.com/training/easy/defibrillators</a>
+
+<div class="statement_back" id="statement_back" style="display:none">&nbsp;</div>
+
+<div class="statement-body"><!-- GOAL -->
+<div class="statement-section statement-goal">
+<h2><span class="icon icon-goal">&nbsp;</span> <span>The Goal</span></h2>
+
+<div class="statement-goal-content">The city of Montpellier has equipped its streets with defibrillators to help save victims of cardiac arrests. The data corresponding to <a href="http://data.montpellier3m.fr/dataset/d%C3%A9fibrillateurs-de-montpellier" style="color: #1a99aa; font-size: 12px; font-family: 'Nobile', Sans" target="_blank">the position of all defibrillators</a> is available online.<br />
+<br />
+Based on the data we provide in the tests, write a program that will allow users to find the defibrillator nearest to their location using their mobile phone.</div>
+</div>
+<!-- RULES -->
+
+<div class="statement-section statement-rules">
+<h2><span class="icon icon-rules">&nbsp;</span> <span>Rules</span></h2>
+
+<div>
+<div class="statement-rules-content">The input data you require for your program is provided in text format.<br />
+This data is comprised of lines, each of which represents a defibrillator. Each defibrillator is represented by the following fields:
+<ul>
+	<li>A number identifying the defibrillator</li>
+	<li>Name</li>
+	<li>Address</li>
+	<li>Contact Phone number</li>
+	<li>Longitude (degrees)</li>
+	<li>Latitude (degrees)</li>
+</ul>
+These fields are separated by a semicolon (<const>;</const>).<br />
+<br />
+<i><strong>Beware</strong>: the decimal numbers use the comma (<const>,</const>) as decimal separator. Remember to turn the comma (<const>,</const>) into dot (<const>.</const>) if necessary in order to use the data in your program.</i><br />
+&nbsp;
+<div><b>DISTANCE</b></div>
+The distance <var>d</var> between two points <var>A</var> and <var>B</var> will be calculated using the following formula:
+
+<div style="border: dashed 1px black; padding: 5px; padding-left: 10px; margin-right: 5px; background-color: #eeeeee">
+<div style="height: 40px"><img alt="" src="https://www.codingame.com/fileservlet?id=333750697029" style="width: 385px; height: 32px;" /></div>
+
+<div style="height: 26px"><img alt="" src="https://www.codingame.com/fileservlet?id=327016981042" style="width: 176px; height: 16px;" /></div>
+
+<div><img alt="" src="https://www.codingame.com/fileservlet?id=327025222227" style="width: 142px; height: 19px;" />​</div>
+</div>
+<i>Note: In this formula, the latitudes and longitudes are expressed in <strong>radians</strong>. 6371 corresponds to the radius of the earth in km.</i><br />
+<br />
+The program will display the name of the defibrillator located the closest to the user&rsquo;s position. This position is given as input to the program.</div>
+</div>
+</div>
+<!-- PROTOCOL -->
+
+<div class="statement-section statement-protocol">
+<h2><span class="icon icon-protocol">&nbsp;</span> <span>Game Input</span></h2>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Input</div>
+
+<div class="text">
+<p><span class="statement-lineno">Line 1: </span> User&#39;s longitude (in degrees)</p>
+
+<p><span class="statement-lineno">Line 2: </span> User&#39;s latitude (in degrees)</p>
+
+<p><span class="statement-lineno">Line 3: </span> The number N of defibrillators located in the streets of Montpellier</p>
+
+<p><span class="statement-lineno"><var>N</var> next lines: </span>a description of each defibrillator</p>
+</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Output</div>
+
+<div class="text">
+<div>The name of the defibrillator located the closest to the user&rsquo;s position.</div>
+</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Constraints</div>
+
+<div class="text">0 &lt; <var>N</var> &lt; 10000</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Example</div>
+
+<div class="text">
+<div class="statement-inout" style="table-layout: fixed;">
+<div class="statement-inout-in" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Input</div>
+
+<pre style="line-height:14px;overflow-x: auto;">
+3,879483
+43,608177
+3
+1;Maison de la Prevention Sante;6 rue Maguelone 340000 Montpellier;;3,87952263361082;43,6071285339217
+2;Hotel de Ville;1 place Georges Freche 34267 Montpellier;;3,89652239197876;43,5987299452849
+3;Zoo de Lunaret;50 avenue Agropolis 34090 Mtp;;3,87388031141133;43,6395872778854</pre>
+</div>
+
+<div class="statement-inout-out" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Output</div>
+
+<pre>
+Maison de la Prevention Sante</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,46 @@
+<h1>Haunted Manor</h1>
+
+<a href="https://www.codingame.com/training/expert/haunted-manor">https://www.codingame.com/training/expert/haunted-manor</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Given a grid representing a haunted manor filled with mirrors, empty cells, and cells containing different types of monsters, you must determine the type and position of each monster.<br><br>The different types of monsters are:<br>- <const>V</const>: Vampire, who can be seen directly, but not inside a mirror.<br>- <const>Z</const>: Zombie, who can be seen both directly and in a mirror.<br>- <const>G</const>: Ghost, who cannot be seen directly but can be seen in a mirror.<br><br>Each cell on the border of the grid has a window through which you can peer into the manor. For each border, you are given the number of monsters visible through that window. Line of sight will bounce off the mirrors, making it possible or impossible to see certain monsters.<br><br>There are two types of mirror:<br>-<const>\</const>: Diagonal down. <br>-<const>/</const>: Diagonal up.<br><br>The manor is always a square grid. None of the cells are empty.<br><br>Example:<br>This 3 by 3 manor has 0 vampires, 4 zombies and 2 ghosts. 3 mirrors are present.<br><br><pre style="font-family: monospace">   0   0   0<br> ┌───┬───┬───┐<br>0│ / │ \ │ / │2<br> ├───┼───┼───┤<br>1│   │   │   │1<br> ├───┼───┼───┤<br>3│   │   │   │3<br> └───┴───┴───┘<br>   3   3   2</pre><br>No monster can be seen from the top because of the mirrors.<br>The middle row seems to contain the two ghosts since only 1 monster is visible from either side.<br>Using all the reported sightings of monsters through the windows, we can easily come to the configuration below.<br><br><pre style="font-family: monospace">   0   0   0<br> ┌───┬───┬───┐<br>0│ / │ \ │ / │2<br> ├───┼───┼───┤<br>1│ G │ G │ Z │1<br> ├───┼───┼───┤<br>3│ Z │ Z │ Z │3<br> └───┴───┴───┘<br>   3   3   2</pre><br>The input for this case would be:<br><pre style="font-family: monospace">0 4 2<br>3<br>0 0 0<br>3 3 2<br>0 1 3<br>2 1 3<br>/\/<br>...<br>...</pre><br>And the required output would be:<br><pre style="font-family: monospace">/\/<br>GGZ<br>ZZZ</pre></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong>:  Three integers <var>vampireCount</var>, <var>zombieCount</var>, <var>ghostCount</var>, the number of each type of monster in the grid.<br><strong>Line 2</strong>:  One integer <var>size</var>, the number of cells in each row/column of the grid.<br><strong>Line 3</strong>: <var>size</var> integers, each for the number of visible monsters from the top of the grid, from left to right.<br><strong>Line 4</strong>: <var>size</var> integers, each for the number of visible monsters from the bottom of the grid, from left to right.<br><strong>Line 5</strong>: <var>size</var> integers, each for the number of visible monsters from the left of the grid, from top to bottom.<br><strong>Line 6</strong>: <var>size</var> integers, each for the number of visible monsters from the right of the grid, from top to bottom.<br><strong>Next <var>size</var> lines:</strong> A string containing <var>size</var> characters. <const>.</const> containing one of the monsters. <const>\</const> or <const>/</const> for a mirror.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Exactly <var>size</var> lines:</strong> <var>size</var> characters for one row of the grid, with each monster in its place. <const>V</const> for a vampire, <const>Z</const> for a zombie, <const>G</const> for a ghost. <const>\</const> or <const>/</const> for a mirror.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">3 &le; <var>size</var> &le; 7<br>0 &le; <var>vampireCount</var> &le; <var>size</var><br>0 &le; <var>zombieCount</var> &le; <var>size</var><br>0 &le; <var>ghostCount</var> &le; <var>size</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">0 3 3
+3
+2 1 2
+2 1 0
+1 2 2
+2 2 0
+../
+...
+/./</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">ZG/
+ZZG
+/G/</pre>
+         </div>
+      </div>
+   </div>
+</div>

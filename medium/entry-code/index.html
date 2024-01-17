@@ -1,0 +1,37 @@
+<h1>Entry code</h1>
+
+<a href="https://www.codingame.com/training/medium/entry-code">https://www.codingame.com/training/medium/entry-code</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You're going back home late and unfortunately, you forgot your entry code. So you decide to try all the possibilities. It is not the smartest choice but your neighbors are sleeping...<br><br>The challenge is to find one of the shortest sequences of digits that contains all those possibilities.<br><br>There are <var>x</var> digits, from 0 to <var>x</var>-1, available for your entry code, and the code is composed of <var>n</var> of them.<br><br>For instance, there are eight possible codes for <var>x</var> = <const>2</const> and <var>n</var> = <const>3</const> : &quot;<const>000</const>&quot;, &quot;<const>001</const>&quot;, &quot;<const>010</const>&quot;, &quot;<const>011</const>&quot;, &quot;<const>100</const>&quot;, &quot;<const>101</const>&quot;, &quot;<const>110</const>&quot;, and &quot;<const>111</const>&quot;. And you can try all of them with the sequence &quot;<const>0001011100</const>&quot;.<br><br>As there are multiple sequences of the same length that are solutions to this problem, you need to find the sequence describing the smallest possible number. For the previous example, the expected answer is not &quot;<const>0010111000</const>&quot; because <const>0010111000</const> &gt; <const>0001011100</const>.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> The number <var>x</var> describing the available digits of the pad.<br><strong>Line 2:</strong> The length <var>n</var> of your entry code.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> The sequence to try all the codes.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>x</var> &le;10<br>1 &le; <var>n</var> &lt;10<br><var>x</var>^<var>n</var> &lt; 1000</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+3</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">0001011100</pre>
+         </div>
+      </div>
+   </div>
+</div>

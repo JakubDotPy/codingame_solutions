@@ -1,0 +1,45 @@
+<h1>Horn-SAT solver</h1>
+
+<a href="https://www.codingame.com/training/hard/horn-sat-solver">https://www.codingame.com/training/hard/horn-sat-solver</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">In formal logic, Horn-satisfiability, or Horn-SAT, is the problem of deciding whether a given Horn formula is satisfiable or unsatisfiable. Our purpose here is to code a program solving the Horn-SAT problem.<br><br>A <strong>literal</strong> is a boolean variable or its negation. For the variable <var>X</var> we have the <strong>positive literal</strong> <var>X</var> and the <strong>negative literal</strong> <var>-X</var> (NOT).<br>A <strong>Horn clause</strong> is finite disjunction (OR) of literals with <strong>at most one positive literal</strong>, called the head of the clause, and any number of negative literals, forming the body of the clause.<br>A <strong>Horn formula</strong> is a finite conjunction (AND) of Horn clauses.<br><br>For a given formula with <var>C</var> Horn clauses and <var>V</var> variables, you should find if it is satisfiable or not (unsatisfiable). A Horn formula is satisfiable if there exists at least one assignment of the variables of the formula that makes it true, this assignment is a <strong>model</strong> of the formula.<br><br>An algorithm for Horn-SAT is based on the rule of <strong>unit propagation</strong>. If the formula contains a clause composed of a single literal <var>L</var> (called unit clause) the value of the variable should be forced in order to satisfied this clause. Hence, all clauses containing <var>L</var> can be removed because they are now satisfied.  Secondly, all clauses containing <var>-L</var> have this literal removed, because this literal has became false and can not satisfied these clauses any more. The result of the second rule may generate new unit clauses, which are propagated in the same manner. If there are no unit clauses left, the formula can be satisfied by simply setting all remaining variable to false, the resulting model is the <strong>minimal model</strong> of the formula. The formula is unsatisfiable if the propagation generates an empty clause, and forces a variable to be set simultaneously to true and false.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">The input respects the DIMACS format.<br>Note that variable are numbered from <const>1</const> to <var>V</var>.<br><br><strong>Line 1</strong> is a header giving the number of variables and clauses.<br><const>p cnf</const> <var>V</var> <var>C</var><br><br><strong><var>C</var> lines</strong>, one per Horn-clause.<br>Each line is the list of literal(s) of the current clause. The line always finishes by a <const>0</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The output should respects the DIMACS format.<br><br>If the formula is <strong>satisfiable</strong>:<br><const>s SATISFIABLE</const><br><strong>Plus one line</strong> corresponding to the minimal model of the formula.<br>The line begins by a <const>v</const>, gives the values for the <var>V</var> variables in increasing order, and ends by a <const>0</const>.<br>For example if the variables <const>1</const>, <const>3</const>, <const>4</const> are false, and the variable <const>2</const> and <const>5</const> are true, the resulting line will be:<br><const>v -1 2 -3 -4 5 0</const><br><br>Otherwise, the formula is <strong>unsatisfiable</strong>:<br><const>s UNSATISFIABLE</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <var>V</var> &lt; 150<br>0 &lt; <var>C</var> &lt; 500</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">p cnf 5 8
+-1 -2 -3 -4 -5 0
+-1 -2 -3 -4 0
+3 0
+-3 -5 0
+-1 -3 -4 0
+-2 -3 -4 5 0
+-3 4 0
+-1 -2 -3 -5 0</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">s SATISFIABLE
+v -1 -2 3 4 -5 0</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,43 @@
+<h1>Is the King In Check? (Part 2)</h1>
+
+<a href="https://www.codingame.com/training/medium/is-the-king-in-check-part-2">https://www.codingame.com/training/medium/is-the-king-in-check-part-2</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement"><strong>Part 2 of a series, please solve Part 1 first to understand this problem fully https://www.codingame.com/training/easy/is-the-king-in-check-part-1</strong><br><br>8 x 8 space-separated character rows of <strong>a chessboard with three pieces on the board</strong>. Your King and <strong>two</strong> enemy pieces. Print &quot;Check&quot; or &quot;No Check&quot; depending on whether one of the enemy pieces is able to attack your king on the next turn (remembering that pieces that are 'in the way' of an enemy's line of attack at your king will block each other - excluding Knights which can't be blocked).<br><br>The King will be a <const>k</const> character (<strong>Note:</strong> it was &quot;K&quot; in the previous challenge, please update your code). The possible enemy pieces are Bishop (<const>B</const>), Knight (<const>N</const>), Rook (<const>R</const>) or Queen (<const>Q</const>). The empty positions will be <const>_</const> in the input. The only two non-<const>_</const> characters will be <const>k</const> and two of <const>B</const>/<const>N</const>/<const>R</const>/<const>Q</const>.<br><br><strong>Bishops</strong> (<const>B</const>): Attack diagonally in all four directions.<br><strong>Rooks</strong> (<const>R</const>): Attack horizontally/verically in all four directions (can attack along same row or column)<br><strong>Queens</strong> (<const>Q</const>): Attack in all eight of the above directions.<br><br><strong>Knights</strong> (<const>N</const>): Attack in <strong>L-shapes</strong> - squares that are two rows and one column away (L), or one row and two columns away (∟). (These happen to be the only eight squares in a 5x5 sub-grid that a Queen can't attack from the same spot).<br><br><strong>Example</strong><br>_ _ _ _ _ _ _ _<br>_ _ _ Q _ _ _ _<br>_ _ _ _ _ _ _ _<br>_ _ _ N _ _ _ _<br>_ k _ _ _ _ _ _<br>_ _ _ _ _ _ _ _<br>_ _ _ _ _ _ _ _<br>_ _ _ _ _ _ _ _<br><br>In the above diagram, the Queen is not able to attack the King, but the Knight is, so the repsonse is &quot;Check&quot;.<br><br><strong>Example</strong><br>_ _ _ _ _ _ _ _<br>_ k N _ Q _ _ _<br>_ _ _ _ _ _ _ _<br>_ _ _ _ _ _ _ _<br>_ _ _ _ _ _ _ _<br>_ _ _ _ _ _ _ _<br>_ _ _ _ _ _ _ _<br>_ _ _ _ _ _ _ _<br><br>Here the Queen would be able to attack the King if it weren't for the fact that the Knight is in the way. The knight cannot attack the king either so the answer is &quot;No Check&quot;.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>8 lines of :</strong> 8 space-separated characters, mostly underscores with exactly one <const>k</const> and two of <const>B</const>/<const>N</const>/<const>R</const>/<const>Q</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>1 line :</strong> &quot;Check&quot; if the King is in check (by either enemy) or &quot;No Check&quot; if not.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">Always three pieces on the board. Only non-space characters in input are <const>_</const>, one <const>k</const> and two of <const>B</const>/<const>N</const>/<const>R</const>/<const>Q</const>. Always an 8x8 size board, always three pieces.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">_ _ _ _ _ _ _ Q
+_ _ _ _ R _ _ _
+_ _ _ _ _ _ _ _
+_ _ _ _ _ _ _ _
+_ _ _ _ _ _ _ _
+_ _ k _ _ _ _ _
+_ _ _ _ _ _ _ _
+_ _ _ _ _ _ _ _</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">Check</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,45 @@
+<h1>|Build A Bookcase|🔨</h1>
+
+<a href="https://www.codingame.com/training/easy/build-a-bookcase">https://www.codingame.com/training/easy/build-a-bookcase</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are building a bookcase of a certain <var>height</var> and <var>width</var>, with a certain <var>numberOfShelves</var>:<br>&bull; Except for the decorative top, you will use only the underline (<const>_</const>) and pipe (<const>|</const>) characters (and of course spaces) to do this.<br>&bull; Divide the bookcase into <strong>as evenly distributed</strong> shelf-spaces <strong>as possible</strong>.<br>&bull; If some have to be larger, put those below the others so they can hold the bigger heavier books.<br>		<br>NOTES: <br>&bull; The decorative top of the bookcase (which is included in the <var>height</var> measurement) does <strong>not</strong> count as a shelf.<br>&bull; The bottom of the bookcase <strong>does</strong> count as a shelf.<br>&bull; For simplicity, assume a shelf itself doesn't take up any space.<br><br>The decorative top consists of <const>/</const> on the left side and <const>\</const> on the right side, and a single <const>^</const> in the middle if needed.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> integer <var>height</var><br><strong>Line 2:</strong> integer <var>width</var><br><strong>Line 3:</strong> integer <var>numberOfShelves</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><var>height</var> lines, drawing the bookcase</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><var>height</var>,<var>width</var>  &ge; 3<br><var>numberOfShelves</var> &ge; 2<br><var>height</var> &gt; <var>numberOfShelves</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">8
+13
+3</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">//////^\\\\\\
+|           |
+|___________|
+|           |
+|___________|
+|           |
+|           |
+|___________|</pre>
+         </div>
+      </div>
+   </div>
+</div>

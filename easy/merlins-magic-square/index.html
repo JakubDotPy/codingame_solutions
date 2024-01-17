@@ -1,0 +1,39 @@
+<h1>Merlin's Magic Square</h1>
+
+<a href="https://www.codingame.com/training/easy/merlins-magic-square">https://www.codingame.com/training/easy/merlins-magic-square</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement"><strong>Background and Symbols:</strong><br>Merlin was a hand-held electronic gaming-device from 1978.  It played multiple games with the kids back then, including &quot;Magic Square&quot;<br><br>We will refer to each location (aka button) within Merlin's Magic Square using this numbering system (which is the same as the instructions from the original game):<br>1  2  3<br>4  5  6<br>7  8  9<br>(This is also shown in the banner image)<br><br>asterisk <const>*</const> = lit<br>tilde <const>~</const> = unlit (not lit)<br><br><strong>Situation:</strong><br>You and your friend Lizzo are given a starting &quot;Merlin's Magic Square&quot;, which consists of:<br>3 rows of 3 characters (characters are separated by a space), such as....<const><pre style="font-family: monospace">~ * ~</pre><pre style="font-family: monospace">~ ~ ~</pre><pre style="font-family: monospace">~ * ~</pre></const>And y'all want to solve it by changing it into The Solved State, which is:<const><pre style="font-family: monospace">* * *</pre><pre style="font-family: monospace">* ~ *</pre><pre style="font-family: monospace">* * *</pre></const><br><strong>Your Task:</strong><br>Lizzo presses some buttons, such as 884 (meaning: first she presses 8, then 8, then 4).<br>You only need to press one more button to solve it; what button is that?<br><br><br><strong>The Rules of Merlin's Magic Square:</strong><br>&bull; When you press a corner button (1, 3, 7 or 9), it reverses the 4 buttons in the 2x2 corner square it's in<br>&bull; When you press a side button (2, 4, 6 or 8), it reverses the 3 buttons in that border row<br>&bull; When you press the middle button (5), it reverses the 5 buttons in the middle &quot;<strong>+</strong>&quot; shape<br>&bull; (&quot;Reverse&quot; means that if it's lit, it becomes unlit; if it's unlit, it becomes lit.)<br>&bull; The Solved State is when all buttons are lit except for the middle one (5) ; this is shown above in blue<br><br><br><strong>See someone play it, or play it yourself, to better understand:</strong><br>&bull; 1-minute long example of a person playing this: https://youtu.be/M2pSiuIKn6k?t=462<br>&bull; Play it yourself in this simulator I made: https://openprocessing.org/sketch/1643473</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Lines 1 to 3:</strong> The starting Merlin's Magic Square, in 3 rows<br><strong>Line 4:</strong> The numbers of the buttons that Lizzo presses</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The number of the final button you should press to solve it</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">Lizzo presses at least one button</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">~ * ~
+~ ~ ~
+~ * ~
+884</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">6</pre>
+         </div>
+      </div>
+   </div>
+</div>

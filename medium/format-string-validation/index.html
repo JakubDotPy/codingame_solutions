@@ -1,0 +1,37 @@
+<h1>Format string validation</h1>
+
+<a href="https://www.codingame.com/training/medium/format-string-validation">https://www.codingame.com/training/medium/format-string-validation</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are given a line of <var>text</var> and a &quot;string format&quot;. The <var>format</var> seems to be heavily inspired from <strong>LIKE clauses from SQL</strong> and uses two special characters, <const>?</const> and <const>~</const>:<br><br><const>?</const>: Matches exactly one character.<br><const>~</const>: Matches any number of characters, from zero (none) to the entire string.<br><strong>Any other characters:</strong> Matches exactly that character.<br><br>It seems that the format <strong>does not include escaping special characters</strong> (good for you!) so <const>?</const> and <const>~</const> in <var>text</var> may only be matched by <const>?</const> and <const>~</const> under the right circumstances. The backslash character will match only the backslash character itself.<br><br>The <var>text</var> is considered to <const>MATCH</const> if the <var>format</var> describes the <var>text</var> <strong>from start to end</strong> with no characters rejected by the pattern. If it does not match, write <const>FAIL</const> instead.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> <var>Text</var>, a String<br><strong>Line 2:</strong> <var>Format</var>, a String</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">One of either <const>MATCH</const> or <const>FAIL</const>, depending on whether <var>Format</var> describes <var>Text</var> fully.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><var>Text</var>, <var>Format</var> are both composed of ASCII characters only<br>0 &lt; Length of <var>Text</var> &lt; 1000<br>0 &lt; Length of <var>Format</var> &lt; 100</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">Clash of Code
+~ of ~</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">MATCH</pre>
+         </div>
+      </div>
+   </div>
+</div>

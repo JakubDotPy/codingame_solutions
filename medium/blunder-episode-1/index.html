@@ -1,0 +1,168 @@
+<h1>Blunder - Episode 1</h1>
+
+<a href="https://www.codingame.com/training/medium/blunder-episode-1">https://www.codingame.com/training/medium/blunder-episode-1</a>
+
+<div class="statement_back" id="statement_back" style="display:none">&nbsp;</div>
+
+<div class="statement-body"><!-- GOAL -->
+<div class="statement-section statement-goal">
+<h2><span class="icon icon-goal">&nbsp;</span> <span>The Goal</span></h2>
+
+<div class="statement-goal-content">
+<p>Blunder is a depressed robot who heals his depression by partying and drinking alcohol. To save him from a life of debauchery, his creators have reprogrammed the control system with a more rudimentary intelligence. Unfortunately, he has lost his sense of humor and his former friends have now rejected him.<br />
+<br />
+Blunder is now all alone and is wandering through the streets with the intention of ending it all in a suicide booth.<br />
+<br />
+To intercept him and save him from almost certain death, the authorities have given you a mission: write a program that will make it possible to foresee the path that Blunder follows. To do so, you are given the logic for the new intelligence with which Blunder has been programmed as well as a map of the city.</p>
+</div>
+</div>
+<!-- RULES -->
+
+<div class="statement-section statement-rules">
+<h2><span class="icon icon-rules">&nbsp;</span> <span>Rules</span></h2>
+
+<div>
+<div class="statement-rules-content">
+<p>The 9 rules of the new Blunder system:</p>
+
+<ol>
+	<li>Blunder starts from the place indicated by the <const>@</const> symbol on the map and heads SOUTH.</li>
+	<li>Blunder finishes his journey and dies when he reaches the suicide booth marked <const>$</const>.</li>
+	<li>Obstacles that Blunder may encounter are represented by <const>#</const> or <const>X</const>.</li>
+	<li>When Blunder encounters an obstacle, <strong>he changes direction</strong> using the following priorities: SOUTH, EAST, NORTH and WEST. So he first tries to go SOUTH, if he cannot, then he will go EAST, if he still cannot, then he will go NORTH, and finally if he still cannot, then he will go WEST.</li>
+	<li>Along the way, Blunder may come across path modifiers that will <strong>instantaneously make him change direction</strong>. The <const>S</const> modifier will make him turn SOUTH from then on, <const>E</const>, to the EAST, <const>N</const> to the NORTH and <const>W</const> to the WEST.</li>
+	<li>The circuit inverters (<const>I</const> on map) produce a magnetic field which will reverse the direction priorities that Blunder should choose when encountering an obstacle. Priorities will become WEST, NORTH, EAST, SOUTH. If Blunder returns to an inverter <const>I</const>, then <strong>priorities are reset to their original state</strong> (SOUTH, EAST, NORTH, WEST).</li>
+	<li>Blunder can also find a few beers along his path (<const>B</const> on the map) that will give him strength and put him in &ldquo;Breaker&rdquo; mode. Breaker mode allows Blunder to destroy and automatically pass through the obstacles represented by the character <const>X</const> (only the obstacles <const>X</const>). When an obstacle is destroyed, it remains so permanently and Blunder maintains his course of direction. If Blunder is in Breaker mode and passes over a beer again, then he <strong>immediately goes out of Breaker mode</strong>. The beers remain in place after Blunder has passed.</li>
+	<li>2 teleporters <const>T</const> may be present in the city. If Blunder passes over a teleporter, then he is automatically teleported to the position of the other teleporter and he retains his direction and Breaker mode properties.</li>
+	<li>Finally, the space characters are blank areas on the map (no special behavior other than those specified above).</li>
+</ol>
+Your program must display the sequence of moves taken by Blunder according to the map provided as input.<br />
+<br />
+The map is divided into lines (<var>L</var>) and columns (<var>C</var>). The contours of the map are always unbreakable <const>#</const> obstacles. The map always has a starting point <const>@</const> and a suicide booth <const>$</const>.<br />
+<br />
+If Blunder cannot reach the suicide booth because he is indefinitely looping, then your program must only display <action>LOOP</action>.</div>
+</div>
+</div>
+<!-- EXAMPLES -->
+
+<div class="statement-section statement-examples">
+<h2><span class="icon icon-example">&nbsp;</span> <span>Example</span></h2>
+
+<div class="statement-examples-text">
+<p>Let the map below:</p>
+
+<div style="font-size: 18px; font-family: 'Inconsolata', monospace; margin-left: 30px; line-height: 18px;">
+<div><span style="color: rgb(204, 0, 0);">######</span></div>
+
+<div><span style="color: rgb(204, 0, 0);">#</span><span style="color: rgb(153, 0, 255); font-weight: bold;">@</span><span>E&nbsp;</span><span style="color: rgb(153, 0, 255); font-weight: bold;">$</span><span style="color: rgb(204, 0, 0);">#</span></div>
+
+<div><span style="color: rgb(204, 0, 0);">#</span><span>&nbsp;N&nbsp;&nbsp;</span><span style="color: rgb(204, 0, 0);">#</span></div>
+
+<div><span style="color: rgb(204, 0, 0);">#</span><span>X&nbsp;&nbsp;&nbsp;</span><span style="color: rgb(204, 0, 0);">#</span></div>
+
+<div><span style="color: rgb(204, 0, 0);">######</span></div>
+</div>
+
+<p>In this example, Blunder will follow this sequence of moves:</p>
+
+<ul>
+	<li><action>SOUTH</action> (initial direction)</li>
+	<li><action>EAST</action> (because of the obstacle <const>X</const>)</li>
+	<li><action>NORTH</action> (change of direction caused by <const>N</const>)</li>
+	<li><action>EAST</action> (change of direction caused by <const>E</const>)</li>
+	<li><action>EAST</action> (current direction, until end point <const>$</const>)</li>
+</ul>
+</div>
+</div>
+<!-- PROTOCOL -->
+
+<div class="statement-section statement-protocol">
+<h2><span class="icon icon-protocol">&nbsp;</span> <span>Game Input</span></h2>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Input</div>
+
+<div class="text">
+<p><span class="statement-lineno">Line 1</span>: the number of lines <var>L</var> and columns <var>C</var> on the map, separated by a space.</p>
+
+<p><span class="statement-lineno">The following <var>L</var> lines</span>: a line of the length <var>C</var> representing a line on the map. A line can contain the characters <const>#</const>, <const>X</const>, <const>@</const>, <const>$</const>, <const>S</const>, <const>E</const>, <const>N</const>, <const>W</const>, <const>B</const>, <const>I</const>, <const>T</const> and space character.</p>
+</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Output</div>
+
+<div class="text">
+<ul>
+	<li>If Blunder can reach <const>$</const>, then display the sequence of moves he has taken. One move per line: <action>SOUTH</action> for the South, <action>EAST</action> for the East, <action>NORTH</action> for the North and <action>WEST</action> for the west.</li>
+	<li>If Blunder cannot reach <const>$</const>, then only display <action>LOOP</action>.</li>
+</ul>
+</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Constraints</div>
+
+<div class="text">
+<div>4 &le; <var>C</var> &le; 100</div>
+
+<div>4 &le; <var>L</var> &le; 100</div>
+</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Example</div>
+
+<div class="text">
+<div class="statement-inout">
+<div class="statement-inout-in" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Input</div>
+
+<pre>
+10 10
+##########
+#        #
+#  S   W #
+#        #
+#  $     #
+#        #
+#@       #
+#        #
+#E     N #
+##########</pre>
+</div>
+
+<div class="statement-inout-out" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Output</div>
+
+<pre>
+SOUTH
+SOUTH
+EAST
+EAST
+EAST
+EAST
+EAST
+EAST
+NORTH
+NORTH
+NORTH
+NORTH
+NORTH
+NORTH
+WEST
+WEST
+WEST
+WEST
+SOUTH
+SOUTH</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

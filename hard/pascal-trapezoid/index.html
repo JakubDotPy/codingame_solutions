@@ -1,0 +1,33 @@
+<h1>Pascal Trapezoid</h1>
+
+<a href="https://www.codingame.com/training/hard/pascal-trapezoid">https://www.codingame.com/training/hard/pascal-trapezoid</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">In the Pascal Triangle number series, each line of the triangle contains one more element than the previous line, and all the elements are based on the elements of the previous line like so:<br><br><pre style="font-family: monospace">lineElement[n] = prevLineElement[n-1] + prevLineElement[n]</pre><br>The endpoints (n = 0 and n = nMax) are calculated by inserting  an implied 0 element at the beginning and end of the previous line. So, for example, a five-line Pascal Triangle looks like:<br><pre style="font-family: monospace"><br>    1<br>   1 1<br>  1 2 1<br> 1 3 3 1<br>1 4 6 4 1</pre><br>A Pascal Trapezoid follows the same rules, but has a starting line with more than one element, like so:<br><pre style="font-family: monospace"><br>   2  3  4  5<br>  2  5  7  9  5<br> 2  7 12 16 14  5</pre><br>In this puzzle, the sequence can contain textual elements as well. The rules for dealing with element combination are as follows:<br><br> - If both input elements can be interpreted as a number, then they are summed.<br> - If either input element can not be interpreted as a number, then the inputs are concatenated. Element n-1 remains before element n in the concatenation.<br> - If a textual element is at the beginning or end of a line, then the elements n-1 or nMax+1 are implied empty strings instead of zeros.<br><br>Here is an example of a completely textual Pascal Trapezoid sequence:<br><pre style="font-family: monospace"><br>red violet blue<br>red redviolet violetblue blue<br>red redredviolet redvioletvioletblue violetblueblue blue<br>red redredredviolet redredvioletredvioletvioletblue redvioletvioletbluevioletblueblue violetblueblueblue blue</pre><br>And here is an example of a mixed textual and numerical Pascal Trapezoid:<br><pre style="font-family: monospace"><br>2 5 a 9 2 4 8 b<br>2 7 5a a9 11 6 12 8b b<br>2 9 75a 5aa9 a911 17 18 128b 8bb b<br>2 11 975a 75a5aa9 5aa9a911 a91117 35 18128b 128b8bb 8bbb b</pre><br>Your job will be to calculate the <var>N</var>th element on the <var>L</var>th line of a Pascal Trapezoid, based on a given starting line.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Three space-separated integers: <var>E</var> representing the number of elements in the starting line, <var>L</var> the line to calculate for the output, and <var>N</var> the element on line <var>L</var> to calculate.<br><strong>Line 2:</strong> The starting line, consisting of <var>E</var> space-separated elements.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The <var>N</var>th element of the <var>L</var>th line of the Pascal Trapezoid.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1 5 2
+1</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">4</pre>
+         </div>
+      </div>
+   </div>
+</div>

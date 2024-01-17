@@ -1,0 +1,38 @@
+<h1>The Total is Right - Weird edition</h1>
+
+<a href="https://www.codingame.com/training/hard/the-total-is-right---weird-edition">https://www.codingame.com/training/hard/the-total-is-right---weird-edition</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Your goal is to build an arithmetic expression which evaluates to <var>N</var>. This expression can only contain copies of <var>a</var>, the four arithmetic operations (<const>+</const>, <const>-</const>, <const>*</const> and <const>/</const>) and parentheses <const>( )</const>.<br><br>What is the minimum number of copies of <var>a</var> needed to reach the target number <var>N</var>?<br><br><strong>Note:</strong> Divisions are valid only if the result is an integer. Thus, 8 / 4 is valid and 10 / 3 is not.<br><br>Examples:<br>N = 69, a = 3<br>( 3 * 3 + 3 ) * ( 3 + 3 ) - 3 = 69<br>Answer is <strong>6</strong><br><br>N = 41, a = 6<br>6 * 6 + 6 - 6 / 6 = 41<br>Answer is <strong>5</strong><br><br>N = 888, a = 8<br>( 8 + 8 ) * ( 8 * 8 - 8 ) - 8 = 888 <br>Answer is <strong>6</strong><br><br>N = 1000, a = 11<br>( 11 * 11 - 11 - 11 + 11 / 11 ) * ( 11 - 11 / 11 ) = 1000<br>Answer is <strong>9</strong><br><br>N = 666, a = 7<br>7 * 7 * ( 7 + 7 ) - 7 - 7 - 7 + 7 / 7 = 666<br>Answer is <strong>9</strong><br><br>This problem could get tough. example:<br>N = 3662, a = 71 needs 17 '71'...<br>But none of the test cases proposed here are that bad!</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> the target integer <var>N</var><br><strong>Line 2:</strong> the integer <var>a</var> to use in your computation</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> the minimum number of <var>a</var> used to obtain <var>N</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &lt; <var>N</var> &lt;= 10000<br>1 &lt;= <var>a</var> &lt;= 100<br>solution &lt;= 12</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">69
+3
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">6</pre>
+         </div>
+      </div>
+   </div>
+</div>

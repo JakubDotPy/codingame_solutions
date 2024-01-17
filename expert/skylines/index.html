@@ -1,0 +1,37 @@
+<h1>Skylines</h1>
+
+<a href="https://www.codingame.com/training/expert/skylines">https://www.codingame.com/training/expert/skylines</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Count the <strong>number of lines</strong> needed to draw the skyline of a city.<br><br>The city skyline (or silhouette) as seen from a distance consists of a series of buildings with rectangular shape which might overlap each other.<br>Each building is described by its height (<var>h</var>) above ground level and the horizontal position of the left (<var>x1</var>) and right (<var>x2</var>) walls.<br><br><strong>Line drawing rules:</strong><br><br>To draw the skyline of a city with a single building <const>3</const> lines are required: One for the left wall, one for the roof and one for the right wall.<br><pre style="font-family: monospace">      ____<br>     |    |<br>     |    |<br>     |    |</pre><br>Two separate buildings can be drawn using <const>7</const> lines: 3 lines for each of the two buildings and one line connecting the buildings on ground level.<br><pre style="font-family: monospace">      ____<br>     |    |      ______<br>     |    |     |      |<br>     |    |_____|      |</pre><br>Two partially overlapping or adjacent buildings of different heights require <const>5</const> lines to be drawn. One for the left wall of the first building, two for the roofs, one for the wall connecting the roofs and one for the right wall of the second building.<br>The dotted lines in the picture below show the actual shape of the two buildings.<br><pre style="font-family: monospace">      ____<br>     |    |____<br>     |  &brvbar;&uml;&brvbar;    |<br>     |  &brvbar; &brvbar;    |</pre><br>Two buildings are called adjacent (i.e. touching each other) if their opposing walls have the same horizontal position.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>n</var> for the number of buildings in the city.<br><strong>Next <var>n</var> lines:</strong> Three space separated integers <var>h</var>, <var>x1</var> and <var>x2</var> for the height and the two positions of the walls respectively.<br><br>The buildings are given in no particular order.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">One line containing the number of lines needed to draw the city skyline.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>n</var> &le; 100<br>1 &le; <var>h</var> &le; 200<br>0 &le; <var>x1</var> &lt; <var>x2</var> &le; 5000</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1
+10 100 110</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">3</pre>
+         </div>
+      </div>
+   </div>
+</div>

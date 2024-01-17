@@ -1,0 +1,36 @@
+<h1>Order of Oopserations!</h1>
+
+<a href="https://www.codingame.com/training/hard/order-of-oopserations">https://www.codingame.com/training/hard/order-of-oopserations</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Will has a low IQ. In order to show everyone what he is made of, he decided to write his own programming language. However, his low IQ got the better of him and he implemented the order of operations incorrectly!<br><br>From highest to lowest priority, here are the operators and what they mean:<br><const><strong>- (Unary)</strong></const>: Negation<br><const><strong>+</strong></const>: Addition<br><const><strong>/</strong></const>: Division<br><const><strong>-</strong></const>: Subtraction<br><const><strong>*</strong></const>: Multiplication<br><br>For example, the statement <const>6+-3*5</const> would be interpreted as <const>(6 + (-3)) * 5</const> because <const><strong>- (Unary)</strong></const> has a higher priority than <const><strong>+</strong></const>, which has a higher priority than <const><strong>*</strong></const>.<br><br>Your goal is to evaluate the given expression and output the correct answer with these jumbled order of operations.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">An <const>N</const> character string <var>expression</var> containing the expression you need to evaluate.<br><br>The expressions contains only decimal digits and operators. No whitespace or parentheses.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">A number representing the result of the expression.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &lt;= <const>N</const> &lt;= 200<br>Operations are left-associative.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1+2</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">3</pre>
+         </div>
+      </div>
+   </div>
+</div>

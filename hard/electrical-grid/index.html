@@ -1,0 +1,41 @@
+<h1>Electrical grid</h1>
+
+<a href="https://www.codingame.com/training/hard/electrical-grid">https://www.codingame.com/training/hard/electrical-grid</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Edison is bringing electricity to <var>N</var> houses. He has already set up a power generator in house 1 and wants to connect it to the other houses. There are <var>M</var> pairs of houses that can be connected together, and we know how much making a link between each pair costs. Your job is to find which houses to link so that all the houses are connected to house 1 (directly or through other houses), while minimizing the total cost.<br><br>* **there is always a solution that connects all houses**<br>* **the total distance from the generator to a house does not matter, as long as there is a path between them**</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> two integers, <var>N</var> and <var>M</var>, respectively the number of houses, and the number of connectable pairs<br><strong> Next <var>M</var> lines </strong> three integers <var>House1</var>, <var>House2</var> and <var>Cost</var> representing a possible connection between two houses</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> two integers, <var>K</var> and <var>C</var>, respectively the number of connections to make, and the total cost<br><strong>Next <var>K</var> lines:</strong> the connections, as given, numerically sorted (on House1, then on House2)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>N</var> &le; 5000<br>0 &le; <var>M</var> &le; 50000<br>1 &le; <var>House1</var>, <var>House2</var>, &le; <var>N</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3 3
+1 2 1
+2 3 99
+1 3 7</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">2 8
+1 2 1
+1 3 7</pre>
+         </div>
+      </div>
+   </div>
+</div>

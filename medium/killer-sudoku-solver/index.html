@@ -1,0 +1,53 @@
+<h1>Killer Sudoku Solver</h1>
+
+<a href="https://www.codingame.com/training/medium/killer-sudoku-solver">https://www.codingame.com/training/medium/killer-sudoku-solver</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You may know the sudoku puzzle. Killer sudoku adds a new rule with cages. A cage is a group of cells, the sum of which must equal the cage value. Numbers cannot repeat within cages.<br><br>Here are the 4 rules of killer sudoku:<br>1. Each row must have numbers from 1 to 9 with no repetition<br>2. Each column must have numbers from 1 to 9 with no repetition<br>3. Each region (3x3 square) must have numbers from 1 to 9 with no repetition<br>4. Each cage's cell numbers must sum to the cage value, with no repetition among numbers<br><br>The cages are represented in a 9x9 grid with an identifier from a to z and A to Z as follows (first test case):<br><pre style="font-family: monospace"></pre><pre style="font-family: monospace"><br>56..1..2. aabbccdde<br>..72..68. afghhiide<br>..2.87.15 jfggklmme<br>......3.9 jjgnklopp<br>.7....2.. qqgnooorr<br>9.634.8.. stuuvwwxx<br>2.9..8... stuuvvwyz<br>..41.2... sAuuByyyz<br>.8.4...3. CADDBEEFF<br><br>*-----------------------------------*   *-----------------------------------*<br>| 5   6 |       | 1     |     2 |   |   | a   a | b   b | c   c | d   d | e |<br>|   +---+---+---+---+---+---+   +   |   |   +---+---+---+---+---+---+   +   |<br>|   |   | 7 | 2     |     6 | 8 |   |   | a | f | g | h   h | i   i | d | e |<br>|---+   +   +---+---+---+---+---+   |   |---+   +   +---+---+---+---+---+   |<br>|   |   | 2     | 8 | 7 |     1 | 5 |   | j | f | g   g | k | l | m   m | e |<br>|   +---+   +---+   +   +---+---+---|   |   +---+   +---+   +   +---+---+---|<br>|       |   |   |   |   | 3 |     9 |   | j   j | g | n | k | l | o | p   p |<br>|---+---+   +   +---+---+   +---+---|   |---+---+   +   +---+---+   +---+---|<br>|     7 |   |   |         2 |       |   | q   q | g | n | o   o   o | r   r |<br>|---+---+---+---+---+---+---+---+---|   |---+---+---+---+---+---+---+---+---|<br>| 9 |   | 6   3 | 4 |     8 |       |   | s | t | u   u | v | w   w | x   x |<br>|   +   +       +   +---+   +---+---|   |   +   +       +   +---+   +---+---|<br>| 2 |   | 9     |     8 |   |   |   |   | s | t | u   u | v   v | w | y | z |<br>|   +---+       +---+---+---+   +   |   |   +---+       +---+---+---+   +   |<br>|   |   | 4   1 |   | 2         |   |   | s | A | u   u | B | y   y   y | z |<br>|---+   +---+---+   +---+---+---+---|   |---+   +---+---+   +---+---+---+---|<br>|   | 8 |     4 |   |       | 3     |   | C | A | D   D | B | E   E | F   F |<br>*-----------------------------------*   *-----------------------------------*<br></pre><pre style="font-family: monospace"></pre><br>You can find playable killer sudoku here: https://sudoku.com/fr/killer.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>First 9 lines:</strong> First 9 characters: the sudoku grid with empty cells represented by <const>.</const> character, Last 9 characters: <var>cage ID</var> for each of the nine cells in this row of the sudoku grid.<br><strong>Line 10:</strong> The list of the cages with sum of the cells <var>cage ID</var>=<var>value</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>9 lines:</strong> Solution for the sudoku</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">Each test case has only one solution</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">56..1..2. aabbccdde
+..72..68. afghhiide
+..2.87.15 jfggklmme
+......3.9 jjgnklopp
+.7....2.. qqgnooorr
+9.634.8.. stuuvwwxx
+2.9..8... stuuvvwyz
+..41.2... sAuuByyyz
+.8.4...3. CADDBEEFF
+a=12 b=17 c=4 d=14 e=15 f=13 g=19 h=7 i=10 j=16 k=10 l=13 m=10 n=15 o=15 p=13 q=11 r=11 s=18 t=3 u=28 v=15 w=20 x=8 y=22 z=12 A=11 B=13 C=6 D=9 E=10 F=5</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">568913427
+197254683
+342687915
+851726349
+473891256
+926345871
+219538764
+734162598
+685479132</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,257 @@
+<h1>The Bridge</h1>
+
+<a href="https://www.codingame.com/training/hard/the-bridge-episode-2">https://www.codingame.com/training/hard/the-bridge-episode-2</a>
+
+<div class="statement_back" style="background-image:url(https://www.codingame.com/html/challenges/29/conceptart_full.jpg)">&nbsp;</div>
+
+<div class="story_box"><button class="view_more" onclick="$('.story').toggle(); if ($('.story').css('display') === 'none') { this.innerHTML='VIEW MORE &lt;span class=\'symbol\'&gt;+&lt;/span&gt;';} else {this.innerHTML='VIEW LESS&lt;span class=\'symbol\'&gt;-&lt;/span&gt;';}">VIEW MORE <span class="symbol">+</span></button><span class="story_opening">BOBNET - THE BRIDGE</span>
+
+<div class="story"><strong>Excellent work!</strong>&nbsp;Thanks to you, we have managed to hijack four motorbikes!&nbsp;Their source code has been modified to carry our virus back to&nbsp;<em>Bobnet</em>.<br />
+<br />
+<em>Bobnet&#39;s</em>&nbsp;headquarters are on the other end of the next bridge, but a recent acid rain storm has gravely damaged the structural integrity of the road, leaving it scattered with&nbsp;<strong>many holes</strong>.<br />
+The motorbikes are perfectly capable of crossing the damaged bridge but, because of our virus, it&#39;s up to you to code the evasive maneuvers of the motorbikes.<br />
+<br />
+<strong>Humankind is relying on you to see as many&nbsp;motorbikes safely across the bridge&nbsp;as possible!</strong></div>
+</div>
+
+<div class="explanation">
+<div class="part_title">The program:</div>
+
+<div class="explanation_text"><br />
+There are 4 lanes on the bridge road and 1 to 4 bikes to control. There can only be one moto per lane and they are always vertically aligned.<br />
+<br />
+Each game turn, you can send a single instruction to every bike.&nbsp;<strong>Since &nbsp;the bikes operate on the same frequency, they will all synchronize on the commands you send them.</strong><br />
+<br />
+The possible commands are:
+<ul>
+	<li><code>SPEED</code>&nbsp;to speed up by 1.</li>
+	<li><code>SLOW</code> to slow down by 1.</li>
+	<li><code>JUMP</code>&nbsp;to jump.</li>
+	<li><code>WAIT</code>&nbsp;to go straight on.</li>
+	<li><code>UP</code>&nbsp;to send all motorbikes one lane up.</li>
+	<li><code>DOWN</code>&nbsp;to send all motorbikes one lane down.</li>
+</ul>
+<br />
+The starting speeds of the bikes are synced, and can be 0. After every game turn, the bikes will move a number of squares equal to their current speed across the X axis.<br />
+<br />
+The <code>UP</code> and <code>DOWN</code> instructions will make the bikes move across the Y axis in addition to the movement across the X axis (Y = 0 corresponds to the highest lane). If a motorbike is prevented from moving up or down by the bridge&#39;s guard rails, none of the bikes will move on the Y axis that turn.<br />
+<br />
+When a motorbike goes in a straight line and does not jump, if there is a hole between the current position and the next position (after the move), <strong>then the motorbike is lost forever</strong>. For example, if X=2 and S=3, the next position of the bike will have X=5: if there is a hole in X=3, X=4 or X=5, the bike will be destroyed.<br />
+<br />
+Going up or down will put you at risk of falling in any hole situated in the black zone (consider the holes on the current and next lane):<br />
+<img alt="" src="https://www.codingame.com/servlet/fileservlet?id=1211165059887" style="opacity: 0.9; font-family: monospace; width: 168px; height: 220px;" /><br />
+&nbsp;
+<ul>
+	<li>The mission is a success if the minimum amount of required bikes gets to the far side of the bridge.</li>
+	<li>You fail if too many motorbikes fall&nbsp;into holes.</li>
+	<li>You fail if the motorbikes do not cross the entire bridge after 50 turns.</li>
+</ul>
+</div>
+</div>
+
+<div class="disclaimer">The program must first read the initialization data from standard input. Then,&nbsp;<strong>within an infinite loop</strong>, read the data from the standard input related to the bike&#39;s&nbsp;current state and provide to the standard output the next instruction.<br />
+<br />
+The tests provided are similar to the validation tests used to compute the final score but remain different.</div>
+
+<div class="protocol">
+<div class="protocol_title">INITIALIZATION INPUT:</div>
+
+<div class="protocol_line"><b>Line 1 :</b> <span class="init_line"><var>M</var> the amount of motorbikes to control. </span></div>
+
+<div class="protocol_line"><b>Line 2 :</b> <span class="init_line"><var>V</var> the minimum amount of motorbikes that must survive. </span></div>
+
+<div class="protocol_line"><b>Lines 3 through 6:</b> <span class="init_line">the road ahead. Each line represents one&nbsp;lane of the road. A dot character <action>.</action> represents a safe space, a zero <action>0</action> represents a hole in the road. </span></div>
+
+<div class="protocol_title">INPUT FOR ONE GAME TURN:</div>
+
+<div class="protocol_line"><b>Line 1 :</b> <span class="init_line"><var>S</var> the motorbikes&#39; speed. </span></div>
+
+<div class="protocol_line"><b>Next <span class="initNCount">M</span> lines:</b>
+
+<div class="initNText"><var>X Y A</var> two integers and a boolean seperated by spaces. <var>X</var>,<var> Y</var> the coordinates of the motorbike on the road and <var>A</var> to indicate whether the motorbike is activated &quot;<strong>1</strong>&quot; or detroyed &quot;<strong>0</strong>&quot;.</div>
+</div>
+
+<div class="protocol_title">OUTPUT FOR ONE GAME TURN:</div>
+
+<div class="output_text protocol_line">A single line containing one of 6 keywords: <action>SPEED</action> <action>SLOW</action> <action>JUMP</action> <action>WAIT</action> <action>UP</action> <action>DOWN</action>.</div>
+
+<div class="protocol_title">CONSTRAINTS:</div>
+
+<div class="constraints_text">The initial positions of the motorbikes are always <var>X</var>= <const>0</const>.<br />
+0 &le; <var>S</var> &lt; 50<br />
+1 &le; <var>M</var> &le; 4<br />
+1 &le; <var>V</var> &le; M<br />
+0 &le; <var>X</var> &lt; 500<br />
+0 &le; <var>Y</var> &lt; 4
+
+<div class="timeout_text">Response time for one game turn &le; 150ms</div>
+</div>
+
+<div class="protocol_title">EXAMPLE:</div>
+There are 2 AI motorbikes to begin with, you only need one to cross the bridge.<br />
+<img alt="" src="https://www.codingame.com/servlet/fileservlet?id=1094951122874" style="width: 250px; height: 103px;" />
+<div style="font-family: Helvetiva, Arial, sans-serif; border: 1px solid black; background-color: rgb(221, 221, 221); color: #000000;">
+<div style="margin-left: 5px; padding-left: 5px; padding-right: 5px; font-family: monospace;">
+<table style="width:100%; border: 0px;table-layout:fixed;">
+	<colgroup>
+		<col style="width:380px;" />
+		<col style="width:auto;" />
+	</colgroup>
+	<tbody>
+		<tr>
+			<td style="padding-top: 2px;"><strong>Initialization input</strong>&nbsp;<i>(outside the loop)</i></td>
+			<td style="padding-top: 2px;"><b><i>No output expected</i></b></td>
+		</tr>
+		<tr>
+			<td style="padding-bottom: 3px;">
+			<table style="width:100%;">
+				<tbody>
+					<tr>
+						<td style="width: 177px;">2</td>
+						<td style="width: 183px;"><i>(M)</i></td>
+					</tr>
+					<tr>
+						<td style="width: 177px;">1</td>
+						<td style="width: 183px;"><i>(V)</i></td>
+					</tr>
+					<tr>
+						<td style="width: 177px;"><span style="font-family: monospace; background-color: rgb(221, 221, 221);">...0......</span><br style="font-family: monospace; background-color: rgb(221, 221, 221);" />
+						<span style="font-family: monospace; background-color: rgb(221, 221, 221);">...00.....</span><br style="font-family: monospace; background-color: rgb(221, 221, 221);" />
+						<span style="font-family: monospace; background-color: rgb(221, 221, 221);">...0..0...</span><br style="font-family: monospace; background-color: rgb(221, 221, 221);" />
+						<span style="font-family: monospace; background-color: rgb(221, 221, 221);">...0......</span></td>
+						<td style="width: 183px;"><em>Road</em></td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+			<td><strong>&nbsp;</strong></td>
+		</tr>
+		<tr>
+			<td style="padding-top: 2px; border-top: 1px solid black;"><b>Input for turn 1</b></td>
+			<td style="padding-top: 2px; border-top: 1px solid black;"><b>Output for turn 1</b></td>
+		</tr>
+		<tr>
+			<td style="padding-bottom: 3px;">
+			<table style="width:100%;">
+				<colgroup>
+					<col style="width:180px;" />
+					<col style="width:auto;" />
+				</colgroup>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td><i>(S)</i></td>
+					</tr>
+					<tr>
+						<td>0 1 1</td>
+						<td><em>(X Y A) bike 1</em></td>
+					</tr>
+					<tr>
+						<td>0 2 1</td>
+						<td><em style="font-family: monospace; background-color: rgb(221, 221, 221);">(X Y A) bike 2</em></td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+			<td>SPEED<br />
+			<em>Accelerate to have enough momentum to jump the gap</em><br />
+			&nbsp;</td>
+		</tr>
+		<tr>
+			<td style="padding-top: 2px; border-top: 1px solid black;"><strong><b style="font-family: monospace; background-color: rgb(221, 221, 221);">Input for turn</b><b> 2</b></strong></td>
+			<td style="padding-top: 2px; border-top: 1px solid black;"><strong><b style="font-family: monospace; background-color: rgb(221, 221, 221);">Output for turn 2</b></strong></td>
+		</tr>
+		<tr>
+			<td style="padding-bottom: 3px;">
+			<table style="width:100%;">
+				<colgroup>
+					<col style="width:180px;" />
+					<col style="width:auto;" />
+				</colgroup>
+				<tbody>
+					<tr>
+						<td>2</td>
+						<td><i>(S)</i></td>
+					</tr>
+					<tr>
+						<td>2 1 1</td>
+						<td><em>(X Y A) bike 1</em></td>
+					</tr>
+					<tr>
+						<td>2 2 1</td>
+						<td><em>(X Y A) bike 2</em></td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+			<td>JUMP<br />
+			<em>The next space for both bikes is a hole, jump now</em><br />
+			&nbsp;</td>
+		</tr>
+		<tr>
+			<td style="padding-top: 2px; border-top: 1px solid black;"><strong><b style="font-family: monospace; background-color: rgb(221, 221, 221);">Input for turn</b><b> 3</b></strong></td>
+			<td style="padding-top: 2px; border-top: 1px solid black;"><strong><b style="font-family: monospace; background-color: rgb(221, 221, 221);">Output for turn 3</b></strong></td>
+		</tr>
+		<tr>
+			<td style="padding-bottom: 3px;">
+			<table style="width:100%;">
+				<colgroup>
+					<col style="width:180px;" />
+					<col style="width:auto;" />
+				</colgroup>
+				<tbody>
+					<tr>
+						<td>2</td>
+						<td><i>(S)</i></td>
+					</tr>
+					<tr>
+						<td>4 1 0</td>
+						<td><em>(X Y A) bike 1</em></td>
+					</tr>
+					<tr>
+						<td>4 2 1</td>
+						<td><em style="color: rgb(51, 51, 51); font-family: monospace; font-size: 13px; line-height: 20.799999237060547px; background-color: rgb(221, 221, 221);">(X Y A) bike 2</em></td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+			<td>DOWN<br />
+			<em>One motorbike has been sacrificed. The remaining bike steers down to avoid oncoming hole</em><br />
+			<strong>&nbsp;</strong></td>
+		</tr>
+		<tr>
+			<td style="padding-top: 2px; border-top: 1px solid black;"><strong><b style="font-family: monospace; background-color: rgb(221, 221, 221);">Input for turn</b><b> 3</b></strong></td>
+			<td style="padding-top: 2px; border-top: 1px solid black;"><strong><b style="font-family: monospace; background-color: rgb(221, 221, 221);">Output for turn 4</b></strong></td>
+		</tr>
+		<tr>
+			<td style="padding-bottom: 3px;">
+			<table style="width:100%;">
+				<colgroup>
+					<col style="width:180px;" />
+					<col style="width:auto;" />
+				</colgroup>
+				<tbody>
+					<tr>
+						<td>2</td>
+						<td><i>(S)</i></td>
+					</tr>
+					<tr>
+						<td>4 1 0</td>
+						<td><em>(X Y A) bike 1</em></td>
+					</tr>
+					<tr>
+						<td>6 3 1</td>
+						<td><em style="color: rgb(51, 51, 51); font-family: monospace; font-size: 13px; line-height: 20.799999237060547px; background-color: rgb(221, 221, 221);">(X Y A) bike 2</em></td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+			<td>WAIT<br />
+			<em>The bike is out of trouble</em><br />
+			<strong>&nbsp;</strong></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>
+</div>

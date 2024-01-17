@@ -1,0 +1,43 @@
+<h1>Insert to String</h1>
+
+<a href="https://www.codingame.com/training/easy/insert-to-string">https://www.codingame.com/training/easy/insert-to-string</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You're given a string and a list of changes to do on that string.<br>Each change includes a line number, a column number, and a string to add at that location.<br>Commit all of the changes to the given string so they wouldn't interfere with each other.<br><br>(&quot;\n&quot; should be replaced with a newline.)</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> A string <var>s</var> to manipulate.<br><strong>Line 2:</strong> An integer <var>changeCount</var> for the number of changes.<br><strong>Next <var>changeCount</var> lines:</strong> A string <var>rawChange</var> that manipulates the string.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The manipulated string.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><var>s</var> String of length &ge; 1<br>1 &le; <var>changeCount</var> &le; 10<br><var>rawChange</var> = {Line number (int)}|{Column number (int)}|{String to add at the position (string)}</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">Hello world
+4
+0|11|!
+0|5|,\n
+0|7| w
+0|10|\n</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">Hello,
+ w worl
+d!</pre>
+         </div>
+      </div>
+   </div>
+</div>

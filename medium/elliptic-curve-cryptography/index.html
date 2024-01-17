@@ -1,0 +1,37 @@
+<h1>Elliptic curve cryptography</h1>
+
+<a href="https://www.codingame.com/training/medium/elliptic-curve-cryptography">https://www.codingame.com/training/medium/elliptic-curve-cryptography</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Elliptic-Curve Cryptography (ECC) is a recent approach to asymmetric cryptography. Its main benefit is an excellent ratio between the level of security and the key size. For example, the NSA recommends 384-bit keys for a top-secret level encryption using ECC, while achieving the same level of security using RSA requires 7680-bit keys. RSA is currently mostly used with 1024-bit keys, which is equivalent to 160-bit keys with ECC (Ref #1).<br><br><strong>How it works</strong><br><br>Given a prime number <const>P</const>, an elliptic curve (over a finite field) is the set of points (X,Y), 0 &le; X,Y &lt; <const>P</const>, verifying an equation of the form Y&sup2; = X^3 + <const>A</const>*X + <const>B</const> mod <const>P</const> (sometimes expressed in a different way, see Ref #2) for some fixed parameters 0 &le; <const>A</const>,<const>B</const> &lt; <const>P</const>. In this puzzle, we use one of the most common curve (used for bitcoin): secp256k1 having the equation Y&sup2; = X^3 + 7, usually modulo a 256-bit prime number which we replace here by a 62-bit prime (for an easier manipulation in any programming language).<br><br>Let us define an addition operator on the curve points (see Ref #3 for a visual illustration).<br>To double a point C: Consider the tangent to the curve at point C. Let (X,Y) be its intersection with the curve, the point S = 2C is defined as (X,<strong>-</strong>Y).<br>To add two distinct points C and D: Consider the line passing through both points. Let (X,Y) be its intersection with the curve, the point S = C+D is defined as (X,<strong>-</strong>Y).<br><br>Let us consider a starting point <const>G</const> on the curve and generate a public key as <var>k</var>*<const>G</const> (i.e. <const>G</const>+<const>G</const>+...+<const>G</const> <var>k</var> times) for some randomly chosen integer <var>k</var> which will be the private key. This pair of public/private keys can be used to encrypt or sign messages (e.g. through ElGamal cryptosystem), yet this is out of the scope of this puzzle. The safety of the private key is not based on the public value <const>G</const> but on the difficulty of retrieving <var>k</var> given <var>k</var>*<const>G</const> (known as the Discrete Log problem). <var>k</var> is often above 2^200 to make sure not to be able to bruteforce it. As a result, to compute your key in an efficient way, you should use the <strong>double-and-add</strong> method (Ref #4).<br><br><strong>Explicit formulas</strong><br><br>To compute S = (Xs,Ys) = C+D given two distinct points C = (Xc,Yc) and D = (Xd,Yd):<br><pre style="font-family: monospace"></pre><pre style="font-family: monospace">L  = (Yd - Yc) / (Xd - Xc)  mod P<br>Xs = L&sup2; - Xc - Xd           mod P<br>Ys = L * (Xc - Xs) - Yc     mod P<br></pre><pre style="font-family: monospace"></pre>To double a point, i.e. when C = D, L becomes (here <const>A</const> = 0):<br><pre style="font-family: monospace"></pre><pre style="font-family: monospace">L  = (3*Xc^2 + A) / (2*Yc)  mod P<br></pre><pre style="font-family: monospace"></pre>Note: You will have to compute a modular division, a division modulo <const>P</const>.<br><br><strong>Instructions</strong><br>Write an EC key generator: For each of the <var>N</var> given <var>k</var> values, you should provide the X-coordinate of the point <var>k</var>*<const>G</const>.<br><br><strong>References</strong><br>ECC security level: https://www.ripublication.com/ijaer17/ijaerv12n19_140.pdf<br>List of EC: https://safecurves.cr.yp.to<br>Maths on EC: https://www.youtube.com/watch?v=NF1pwjL9-DE<br>Maths on EC: https://en.wikipedia.org/wiki/Elliptic_curve_point_multiplication#Double-and-add</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var>, the number of keys to generate.<br><strong>Next <var>N</var> lines:</strong> An hexadecimal integer <var>k</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>N</var> lines:</strong> An hexadecimal integer <var>X</var> corresponding to the generated point X-coordinate.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><const>A</const> = 0<br><const>B</const> = 7<br><const>P</const> = 0x3fddbf07bb3bc551<br><const>G</const> = (0x69d463ce83b758e, 0x287a120903f7ef5c)<br><br>1 &lt; <var>N</var> &le; 50<br>1 &lt; <var>k</var> &lt; 0x3000000000000000</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1
+0x2</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">0x2544b2250b8b1e1c</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,38 @@
+<h1>Rotating arrows</h1>
+
+<a href="https://www.codingame.com/training/easy/rotating-arrows">https://www.codingame.com/training/easy/rotating-arrows</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">A <var>W</var> x <var>H</var> grid is filled with arrows, each arrow will point to any one direction (<const>UP</const>, <const>DOWN</const>, <const>RIGHT</const> or <const>LEFT</const>).<br>You can know which direction the arrow is pointing to by knowing its ascii image,<br><const>^</const>, <const>&gt;</const>, <const>v</const>, <const>&lt;</const> represent <const>UP</const>, <const>RIGHT</const>, <const>DOWN</const> and <const>LEFT</const>.<br><br>You can <strong>rotate</strong> an arrow clockwise, for example: <const>^</const> after rotation will become <const>&gt;</const>.<br>After you rotate the arrow, the other arrow that the arrow is pointing at will start rotating clockwise too, this process continues until the last rotated arrow points back to the first arrow you rotate or the last rotated arrow points to the edge of the grid.<br><br>After you rotated the arrow at position (<var>x</var>, <var>y</var>), how many times of rotation will occur?<br>(Index starts with <const>0</const>)<br><br>For example:<br><var>W</var>=<const>2</const>, <var>H</var>=<const>2</const><br><var>x</var>=<const>0</const>, <var>y</var>=<const>0</const><br><br>Grid:<br><const>^&gt;</const><br><const>&lt;v</const><br><br>First we start at the arrow at position <const>(0, 0)</const>, after rotating the arrow clockwise, the arrow now points to the right. New grid:<br><const>&gt;&gt;</const><br><const>&lt;v</const><br><br>Now we rotate the arrow at <const>(1, 0)</const>, and it will now point down, and we now rotate the arrow at <const>(1, 1)</const>, and the arrow will point to the left. Next, we rotate the arrow at (0, 1), and the arrow will point to up, which is the arrow at <const>(0, 0)</const>.<br><br>The arrow points back to the first arrow you rotate! So the result is <const>4</const>, <const>4</const> rotation occurs!</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Two integers <var>W</var> and <var>H</var><br><strong>Line 2:</strong> Two integers <var>x</var> and <var>y</var><br><strong>Next </strong><var>H</var> <strong>lines:</strong> A <var>line</var> with <var>W</var> arrows represented by ascii char <const>^v&lt;&gt;</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The number of rotation times</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>W</var>, <var>H</var> &le; 10<br>0 &le; <var>x</var> &lt; <var>W</var><br>0 &le; <var>y</var> &lt; <var>H</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2 1
+0 0
+^v</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">2</pre>
+         </div>
+      </div>
+   </div>
+</div>

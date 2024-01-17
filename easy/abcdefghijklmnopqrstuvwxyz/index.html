@@ -1,0 +1,55 @@
+<h1>abcdefghijklmnopqrstuvwxyz</h1>
+
+<a href="https://www.codingame.com/training/easy/abcdefghijklmnopqrstuvwxyz">https://www.codingame.com/training/easy/abcdefghijklmnopqrstuvwxyz</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">This program problem find out the consecutive string from <const>a</const> to <const>z</const> in alphabetical order in a multi-line <strong>string</strong> <var>m</var> of <var>n</var> lines of length <var>n</var>.<br>You can move <const>up</const>, <const>right</const>, <const>left</const> or <const>down</const>. First, you find the <const>a</const>.<br>if there is a <const>b</const> either <const>up</const>, <const>down</const>, <const>left</const> or <const>right</const> from the position of <const>a</const>, you can move there. if there is a <const>c</const> either <const>up</const>, <const>down</const>, <const>left</const> or <const>right</const> from the position of <const>b</const>, you can move there. continues below to <const>z</const>.<br>Rewrites all nonconsecutive strings of letters <const>a</const> through <const>z</const> to <const>-</const>.<br>In other words, this problem only displays the consecutive string from <const>a</const> to <const>z</const> in a multi-line string <var>m</var> of <var>n</var> lines of length <var>n</var>.<br>Answer to output , as follows.<br><br>Example:<br><br><pre style="font-family: monospace"></pre><pre style="font-family: monospace"><br>10<br>qadnhwbnyw<br>iiopcygydk<br>bahlfiojdc<br>cfijtdmkgf<br>dzhkliplzg<br>efgrmpqryx<br>loehnovstw<br>jrsacymeuv<br>fpnocpdkrs<br>jlmsvwvuih<br></pre><pre style="font-family: monospace"></pre><br><br>The answer to this is...<br><br><pre style="font-family: monospace"></pre><pre style="font-family: monospace"><br>----------<br>----------<br>ba--------<br>c-ij------<br>d-hkl---z-<br>efg-mpqryx<br>----no-stw<br>--------uv<br>----------<br>----------<br></pre><pre style="font-family: monospace"></pre><br><br>As above, only the string alphabetically from <const>a</const> to <const>z</const> should be displayed, and the other parts should be <const>-</const>.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An <strong>integer</strong> <var>n</var> for the size of the string figure.<br><strong>Next <var>n</var> Lines:</strong> multi-line string <var>m</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">Output only strings alphabetically from <const>a</const> to <const>z</const> should be displayed in multi-line <strong>string</strong> <var>m</var>, and the other parts should be <const>-</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">10&lt;=<var>n</var>&lt;=30<br><var>m</var> consists only of lowercase alphabetical characters.<br>There may be more than one <const>a</const>.<br>There is only one <const>abcdefghijklmnopqrstuvwxyz</const> in the string figure.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">10
+vkbjbzmbgb
+abcccpzouv
+fedopwlmcl
+glmnqrszyw
+hkrhiutymj
+ijqcmvwxoc
+pcvlpqzphl
+hsgvoklcxy
+urdjusmbmz
+rchbcausnp</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">----------
+abc-------
+fedop-----
+glmnqrsz--
+hk---uty--
+ij---vwx--
+----------
+----------
+----------
+----------</pre>
+         </div>
+      </div>
+   </div>
+</div>

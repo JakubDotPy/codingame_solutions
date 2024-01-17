@@ -1,0 +1,43 @@
+<h1>Erdős Number</h1>
+
+<a href="https://www.codingame.com/training/hard/erdos-number">https://www.codingame.com/training/hard/erdos-number</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Le nombre d'Erdős d&eacute;crit la &laquo; distance de collaboration &raquo; minimale entre le scientifique Paul Erdős et une autre personne, mesur&eacute;e par publication conjointe. Ce math&eacute;maticien hongrois est l'auteur le plus prolifique de son domaine puisqu'il r&eacute;digea dans sa vie plus de 1 500 articles.<br><br>Si une personne a un nombre d'Erdős qui vaut 1, cela signifie qu'elle a &eacute;crit un article de recherche avec Erdős ; un nombre d'Erdős &eacute;gal &agrave; 2 signifie qu'elle a cosign&eacute; un article avec un collaborateur direct d'Erdős mais pas avec Erdős lui-m&ecirc;me, etc.<br><br>Si une personne n'est pas collaborateur direct ou indirect d'Erdős, son nombre d'Erdős est infini.<br><br>&Agrave; partir d'une liste de publications et de leurs auteurs, vous devez donner le nombre d'Erdős du scientifique re&ccedil;u en entr&eacute;e. Si ce nombre n'est pas nul ou infini, vous devez lister dans l'ordre le titre des articles permettant cette liaison.<br><br>/////////////////////////////////////////////////////////////////////////////////////////////////<br><br>The Erdős number describes the minimum &quot;collaborative distance&quot; between the scientist Paul Erdős and another person, as measured by co-authored publications. The Hungarian mathematician is the most prolific author of his field since he wrote more than 1500 papers  in his lifetime.<br><br>If a person has an Erdős number of 1, it means that he has written a research paper with Erdős; a Erdős number equal to 2 means that he co-authored an article with a direct collaborator of Erdős but not with Erdős himself, etc.<br><br>If a person is not a direct or indirect collaborator with Erdős, their Erdős number is infinite.<br><br>From a list of publications and their authors, you need to give the Erdős number of the scientist given in the input. If this number is not zero or infinity, you must output the list of ordered article titles (from the scientist's paper to the paper written by Erdős).</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Ligne 1 :</strong> Une cha&icirc;ne de caract&egrave;res pour le nom du scientifque <var>scientist</var> dont on souhaite conna&icirc;tre le nombre d'Erdős .<br><strong>Ligne 2 :</strong> Un entier <var>N</var> pour le nombre de publications (la liste en contenant au moins une de Paul Erdős et une du scientifique).<br><strong><var>N</var> prochaines lignes :</strong> Le titre <var>title</var> de chaque publication entre <const>&quot;</const>.<br><strong><var>N</var> prochaines lignes :</strong> Les auteurs <var>authors</var> des publications associ&eacute;es, s&eacute;par&eacute;s par des espaces.<br><br>/////////////////////////////////////////////////////////////////////////////////////////////////<br><br><strong>Line 1:</strong> A string for the name of the <var>scientist</var> whose Erdős number is requested.<br><strong>Line 2:</strong> An int <var>N</var> for the number of publications (the list contains at least one paper from Paul Erdős and one from the scientist).<br><strong>Next <var>N</var> lines:</strong> The <var>title</var> of each publications between <const>&quot;</const>.<br><strong>Next <var>N</var> lines:</strong> The <var>authors</var> of the corresponding publication, separated by spaces.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Ligne 1 :</strong> Le nombre d'Erdős <var>e</var> du scientifique demand&eacute; ou bien <const>infinite</const>.<br><strong><var>e</var> prochaines lignes :</strong> Les titres des publications, &agrave; partir de celle du scientifique demand&eacute; jusqu'&agrave; celle de Paul Erdős.<br><br>/////////////////////////////////////////////////////////////////////////////////////////////////<br><br><strong>Line 1:</strong> The Erdős number <var>e</var> of the requested scientist or <const>infinite</const>.<br><strong>Next <var>e</var> lines:</strong> The titles of publications, from the one that the scientist published to the one published by Paul Erdős.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>N</var> &le; 100</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">Einstein
+2
+&quot;On linear independence of sequences in a Banach space&quot;
+&quot;The influence of the expansion of space on the gravitation fields surrounding the individual stars&quot;
+Erdős Straus
+Straus Einstein</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">2
+&quot;The influence of the expansion of space on the gravitation fields surrounding the individual stars&quot;
+&quot;On linear independence of sequences in a Banach space&quot;</pre>
+         </div>
+      </div>
+   </div>
+</div>

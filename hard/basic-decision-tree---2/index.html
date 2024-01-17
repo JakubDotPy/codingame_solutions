@@ -1,0 +1,40 @@
+<h1>Basic Decision Tree - 2</h1>
+
+<a href="https://www.codingame.com/training/hard/basic-decision-tree---2">https://www.codingame.com/training/hard/basic-decision-tree---2</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are a beetle scientist and you have to identify the species of a lot of male beetles in your research.<br>Currently, you can easily identify these beetles after they are fully grown up.<br>However, in your research, you want to identify the species of the male beetles while they are still pupae.<br><br>You had already done a one-dimensional decision tree to separate the pupae:<br>https://www.codingame.com/training/hard/basic-decision-tree---1<br>However, the paper got rejected because the result is not significant enough.<br>You decide to include more features to see if you can improve the accuracy of the decision tree.<br><br>Before you start this puzzle, it is highly recommended to finish the first one,<br>since we will follow the same entropy algorithm.<br><br>You will have <const>PN</const> pupae with their <const>index</const>, <const>species</const>, and features.<br><br>This time, instead of using only horn length as the separator,<br>you are given <const>FN</const> features and you will want to select <const>FM</const> features that will have the lowest entropy.<br>If 2 different sets of features can have the same entropy, we will choose those features with a smaller index.<br>The output features index should be in numerical order.<br><br>The index of features are from <const>1</const> to <const>FN</const>.<br><br>For example:<br><br>You have <const>4</const> pupae each with <const>3</const> features, (<const>PN</const> and <const>FN</const>)<br>and you need to select the <const>2</const> best features. (<const>FM</const>)<br>Pupa-0 is species <const>1</const> and has feature values <const>1</const>, <const>1</const>, <const>2</const><br>Pupa-1 is species <const>1</const> and has feature values <const>1</const>, <const>2</const>, <const>1</const><br>Pupa-2 is species <const>2</const> and has feature values <const>1</const>, <const>2</const>, <const>2</const><br>Pupa-3 is species <const>2</const> and has feature values <const>1</const>, <const>2</const>, <const>2</const><br><br>By selecting feature <const>1</const> and <const>2</const>, we scan through both features with the method in the previous puzzle.<br>The best separator will be pupa-1's feature <const>2</const>,<br>and can separate the pupae into [(0), (1, 2, 3)] with entropy <const>0.6887</const>.<br>After that, we are not able to find any other separator to decrease the entropy.<br><br>By selecting feature <const>1</const> and <const>3</const>, we get similar result as get entropy <const>0.6887</const>.<br><br>By selecting feature <const>2</const> and <const>3</const>, we first separate pupae into [(0), (1, 2, 3)] with pupa-1's feature <const>2</const>.<br>And then further separate pupa-1,2,3 into [(1), (2, 3)] with pupa-2's feature <const>3</const>.<br>The tree at the end will be [(0), [(1), (2, 3)]], with entropy <const>0</const>.<br><br>Therefore, the output should be <const>2</const> and <const>3</const>.<br><br>P.S. pupa index is not used in this puzzle</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>PN</var> for the number of pupae<br><strong>Line 2:</strong> An integer <var>FN</var> for the number of given features<br><strong>Line 3:</strong> An integer <var>FM</var> for the number of features to be select<br><strong>Next <var>PN</var> Lines:</strong> Space separated parameters in the order of<br>  <var>pupa index</var>, <var>species id</var>, <var><strong>FN</strong> number of features</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> Space separated parameters <var><strong>FM</strong> number of feature ids</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &lt;= <var>PN</var> &lt;= 20<br>2 &lt;= <var>FN</var> &lt;= 8<br>1 &lt;= <var>FM</var> &lt;= 4<br>0 &lt;= <var>index</var> &lt; 20<br>0 &lt;= <var>feature value</var> &lt;= 100<br>1 &lt;= <var>species ID</var> &lt;= 4</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+2
+1
+0 1 1 1
+1 2 1 2</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">2</pre>
+         </div>
+      </div>
+   </div>
+</div>

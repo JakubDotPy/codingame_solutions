@@ -1,0 +1,39 @@
+<h1>Pirate's treasure</h1>
+
+<a href="https://www.codingame.com/training/easy/pirates-treasure">https://www.codingame.com/training/easy/pirates-treasure</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">The goal of this puzzle is to find a pirate's treasure. The pirate surrounded his treasure by obstacles.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Width <var>W</var> of the treasure map.<br><strong>Line 2:</strong> Height <var>H</var> of the treasure map.<br><strong>Next <var>H</var> lines:</strong> <var>W</var> symbols (<strong>0</strong> or <strong>1</strong>) indicating free space (<strong>0</strong>) or obstacle (<strong>1</strong>). <br><br>Treasure is placed on free space surrounded by only obstacles.<br><br>There are three possible ways in which the treasure can be surrounded:<br>By <strong>3</strong> obstacles when the treasure is in the corner of the map.<br>By <strong>5</strong> obstacles when the treasure is on the edge of the map.<br>By <strong>8</strong> obstacles when the treasure is inside the map.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The coordinates of the treasure on the map are represented by indices separated by a space. For example: &quot;12 5&quot;<br><br>Position &quot;0 0&quot; is in the top left corner, so the maximum index <strong>x</strong> is <strong><var>W-1</var></strong> and the maximum index <strong>y</strong> is <strong><var>H-1</var></strong>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">* 2 &lt;= <var>W</var> &lt;= 25<br>* 2 &lt;= <var>H</var> &lt;= 25<br>* Only 1 treasure in map.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+2
+0 1
+1 1</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">0 0</pre>
+         </div>
+      </div>
+   </div>
+</div>

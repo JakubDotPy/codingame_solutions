@@ -1,0 +1,36 @@
+<h1>Chebyshev Orbiting</h1>
+
+<a href="https://www.codingame.com/training/medium/chebyshev-orbiting">https://www.codingame.com/training/medium/chebyshev-orbiting</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Spaceship is orbiting the planet in the <strong>Discrete Chebyshev 2D Space</strong>. By given initial spaceship position and velocity predict its position after <var>time</var> seconds.<br><br><strong>Physics</strong><br><br>Planet has its center in <const>(0, 0)</const>. All points with Chebyshev distance to planet center less than or equal to <var>radius</var>, belongs to planet. Chebyshev distance between (x1, y1) and (x2, y2) is Max(Abs(x1 - x2), Abs(y1 - y2))<br><br>Spaceship works as follows:<br><br>1. Every turn spaceship moves if it is not crashed yet: velocity vector is added to ship position.<br>2. Spaceship crashed if its final position has chebyshev distance to planet center less than or equal to <var>radius</var>.<br>3. Chebyshev gravity is applied. Denote ship position as (<var>x</var>, <var>y</var>) and velocity as (<var>vx</var> <var>vy</var>). Then <var>vx</var> (and <var>vy</var>) is decreased by 1 if <var>x</var> &gt; 0 (respectively <var>y</var> &gt; 0) and increased by 1 if <var>x</var> &lt; 0 (respectively <var>y</var> &lt; 0).<br><br><strong>Sample</strong><br>Spaceship coordinates sequence after simulation for planet radius 1 and start velocity (2, 0):<br><br>(0; &minus;3) &rarr; (2; &minus;3) &rarr; (3; &minus;2) &rarr; (3; 0) &rarr; (2; 2) &rarr; (0; 3) &rarr; (&minus;2; 3) &rarr; (&minus;3; 2) &rarr; (&minus;3; 0) &rarr; (&minus;2; &minus;2) &rarr; ...<br><br>See image with this trajectory below.<br><pre style="font-family: monospace"></pre><pre style="font-family: monospace"><br>.........<br>....0.1..<br>..9....2.<br>...PPP...<br>.8.PPP.3.<br>...PPP...<br>.7....4..<br>..6.5....<br>.........<br></pre><pre style="font-family: monospace"></pre><br>P &mdash; is planet point, number &mdash; ship position after that number of seconds. Center of the planet is at (0; 0)</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">Single line with 6 space separated integers: <var>radius</var>, <var>x</var>, <var>y</var>, <var>vx</var>, <var>vy</var>, <var>time</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">Single line with 3 space separated integers: <var>x</var> <var>y</var> <var>crashed</var><br>Crashed is 1 if spaceship is crashed in the planet and 0 otherwise.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">-50 &le; <var>x</var>, <var>y</var>, <var>vx</var>, <var>vy</var> &le; 50<br>0 &le; <var>radius</var> &le; 10<br>0 &le; <var>time</var> &le; 1000000000</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1 0 -3 2 0 9</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">-2 -2 0</pre>
+         </div>
+      </div>
+   </div>
+</div>

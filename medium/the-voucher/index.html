@@ -1,0 +1,41 @@
+<h1>the voucher</h1>
+
+<a href="https://www.codingame.com/training/medium/the-voucher">https://www.codingame.com/training/medium/the-voucher</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Given a voucher and a list of products, find the number of combinations of products that match with the exact amount of money available on the voucher.<br><br>Rule : product can be picked 0, 1, 2 or 3 times.<br><br>Output : print the number of different combinations of products.<br><br>Example:<br>Given the list of products:<br>- bread 90<br>- green salad 115<br>- sugar 750g 95<br>- rice 500g 299<br><br>If I have an amount of 300 cents  on my voucher, I can only buy:<br>1 bread + 1 green salad + 1 bag of sugar =&gt; 90 + 115 + 95 = 300 cents <br>So the answer is 1 combination of products.<br><br>All prices are in cents .</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>v</var> for the voucher value in cents<br><strong>Line 2:</strong> An integer <var>n</var> for the number of products<br><strong>Next <var>n</var> lines:</strong> string <var>l</var> and <var>p</var> for the label and price of each product in cents</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><var>c</var> Number of different combinations of products that you can buy.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &lt;= <var>n</var> &lt;= 16</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">300
+4
+bread 90
+green salad 115
+sugar 750g 95
+rice 500g 299</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1</pre>
+         </div>
+      </div>
+   </div>
+</div>

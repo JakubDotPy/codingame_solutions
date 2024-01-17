@@ -1,0 +1,55 @@
+<h1>Saving Snoopy</h1>
+
+<a href="https://www.codingame.com/training/easy/saving-snoopy">https://www.codingame.com/training/easy/saving-snoopy</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Snoopy has once again been shot down by the Red Baron and is trapped behind enemy lines.  Decode encrypted messages to help rescue Snoopy using the following rules:<br><br>The encoded message must be read from left to right.<br><br>Character swap rules provided in program input must be honored.  Character swaps are case sensitive.  Only honor the exact cases specified in the program input.<br><br>All plus signs (<const>+</const>) may be ignored in the encoded message.<br><br>Stars (<const>*</const>) are never part of the decoded message.  However, any time a star (<const>*</const>) is observed in the encoded message, the most recently observed (but not discarded) character should be added to the end of the decoded message.  You may then discard the star (<const>*</const>) and the character you just added to the decoded message.<br><br>For instance, an encoded message equal to <const>t+c+*+a+*+*</const> would be decoded to <const>cat</const>.   Moving from left to right, upon observing the first <const>*</const>, the <const>c</const> would be added to the decoded message (and then discarded) as it was most recently observed.  Upon observing the second <const>*</const>, the <const>a</const> would be added to the decoded message as it was the most recently observed character that has not yet been discarded.  When you get to the last <const>*</const>, you only have a single character left that has not yet been discarded and you add the <const>t</const> to the decoded message resulting in <const>cat</const>.<br><br>Your commanding officer is very particular about formatting.  When printing the decoded message, make sure no line has beginning or trailing spaces and make sure each line is as close to 75 characters as possible without going over.<br><br>These messages are extremely important.  <strong>Make sure your commanding officer reads every word!</strong></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>n</var> for the number of character swaps.<br><strong>Next <var>n</var> lines:</strong> A string <var>swap</var> containing a character <var>a</var>, an arrow <const>-&gt;</const> and a second character <var>b</var>, all three separated by spaces, indicating that any time <var>a</var> is seen in an encoded message, it should be replaced with <var>b</var><br><strong>Next line:</strong> An integer <var>length</var> indicating the length of the encoded message.<br><strong>Next line:</strong> A string <var>encoded_message</var> containing the encoded message.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The decoded message, broken into multiple strings separated by line breaks if necessary, where no string has leading or trailing spaces and each string is as close to 75 characters as possible without going over.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &le; <var>n</var> &le; 26<br>10 &le; <var>length</var> &le; 2000</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">13
+v -&gt; m
+e -&gt; v
+g -&gt; e
+l -&gt; g
+s -&gt; l
+f -&gt; h
+a -&gt; f
+y -&gt; a
+z -&gt; y
+i -&gt; z
+k -&gt; i
+m -&gt; s
+h -&gt; k
+1419
+m+g+W+*+*+k+s+*+t+ +g+v+o+c+*+*+*+*+o+t+ +*+*+*+*+*+ +g+f+*+*+*+m+g+r+*+*+*+*+*+s+y+t+*+*+g+g+c+n+*+*+*+u+o+Y+ +!+*+*+*+*+*+f+ +r+*+*+*+*+*+m+k+p+*+ +*+*+*+o+.+y+k+g+r+g+r+l+ +*+*+*+*+s+t+y+*+*+*+z+*+p+p+y+ +*+*+*+*+*+*+c+*+*+*+t+*+d+g+*+*+*+a+n+U+ +*+*+*+*+*+k+n+s+g+n+u+t+r+*+*+*+*+t+y+*+*+*+*+S+ +,+z+*+*+*+*+*+y+l+y+z+p+o+o+*+*+*+*+ +f+ +*+*+o+ +m+y+*+*+*+*+g+c+n+*+*+*+*+*+*+*+*+B+ + +m+ + +n+*+*+n+g+g+b+*+*+*+*+*+*+n+t+o+f+*+*+*+w+o+d+ +*+*+*+*+*+*+g+z+b+*+*+f+t+ +*+*+*+*+R+ +*+*+d+g+*+*+*+*+f+ +r+y+*+*+ +n+o+*+*+*+z+ +d+n+y+*+*+*+*+*+r+u+o+*+*+*+*+*+r+o+d+g+g+k+ +p+s+g+*+*+*+*+*+g+n+ +m+*+*+*+*+*+d+*+*+*+w+g+r+y+W+ +.+*+*+*+ +g+*+*+*+*+*+ +*+*+*+*+p+m+g+d+ +k+h+*+*+l+n+*+*+*+*+*+*+*+g+*+z+s+g+y+r+*+*+t+*+*+*+*+g+d+ +*+o+t+*+*+ +*+*+*+ +y+f+k+v+r+g+t+*+*+*+*+*+ +g+n+*+*+*+*+ +m+k+*+*+s+ +*+*+n+o+k+t+y+c+o+*+*+*+*+*+*+*+*+*+d+n+*+*+*+o+o+c+*+*+*+c+y+ +n+d+r+*+*+y+t+y+n+k+*+*+*+*+ +g+*+*+*+*+*+t+x+g+*+*+*+r+*+*+*+m+o+k+t+*+*+*+o+t+ +d+ +g+p+ +n+*+*+*+W+ +n+y+s+*+*+*+.+*+*+*+*+*+g+g+n+*+*+*+*+*+*+*+o+u+c+m+g+r+ +*+*+*+*+*+*+ +g+*+*+o+n+S+*+*+*+*+s+s+y+r+g+b+ +z+p+*+*+*+*+*+o+a+*+*+*+f+ +g+*+*+*+ +g+*+*+a+*+*+*+*+*+g+g+ +o+t+n+k+ +*+*+*+*+*+*+*+g+h+ +z+v+g+n+*+*+*+*+*+n+y+f+*+*+*+!+m+d+*+*+*+ +y+g+s+P+ +*+*+*+*+*+g+m+*+*+*+*+*+*+v+o+c+ +p+*+*+*+*+v+*+*+o+k+c+k+n+u+*+*+*+*+t+y+*+*+*+*+o+ +n+*+m+*+*+*+p+*+ + + +n+g+*+*+*+d+n+y+*+*+*+*+z+d+ +b+*+g+*+*+y+g+r+*+*+*+*+*+o+t+ +*+*+*+*+!+g+o+v+*+*+e+*+*+*</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">Welcome to the resistance! Your help is greatly appreciated. Unfortunately,
+Snoopy has once again been shot down by the Red Baron and your help is
+needed. We are working desperately to determine his location and coordinate
+an extraction plan. We need to rescue Snoopy before he falls into enemy
+hands! Please keep communications open and be ready to move!</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,37 @@
+<h1>Nature of quadrilaterals</h1>
+
+<a href="https://www.codingame.com/training/easy/nature-of-quadrilaterals">https://www.codingame.com/training/easy/nature-of-quadrilaterals</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You have to print the nature of the quadrilaterals whose vertices&rsquo; coordinates are given.<br>The nature can be:<br>* nothing, in which case you should write &quot;quadrilateral&quot;,<br>* parallelogram (opposite sides are parallel to each other),<br>* rhombus (all four sides are equal),<br>* rectangle (all four angles are right) or<br>* square (it is a rectangle and a rhombus).</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong>: The number of quadrilaterals (<var>n</var>)<br><strong>Next <var>n</var> lines</strong>: Each vertex followed by its coordinates, one quadrilateral per line. In the format:<br><br><var>A</var> <var>xA</var> <var>yA</var> <var>B</var> <var>xB</var> <var>yB</var> <var>C</var> <var>xC</var> <var>yC</var> <var>D</var> <var>xD</var> <var>yD</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The name of the quadrilateral followed by its nature. For example:<br><br>ABCD is a rhombus.<br>DEFA is a quadrilateral.<br><br>The vertices are printed in the given order. Note that ABCD, ABDC and ACBD are three distinct quadrilaterals. Just follow the order of the vertices.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">The coordinates are integers between -20 and 20, you have no more than 3 quadrilaterals.<br>You won&rsquo;t have to test if a quadrilateral is degenerate or convex.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1
+A -14 -3 B 5 -9 C 11 4 D -7 13</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">ABCD is a quadrilateral.</pre>
+         </div>
+      </div>
+   </div>
+</div>

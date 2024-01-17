@@ -1,0 +1,65 @@
+<h1>TXT2HTML</h1>
+
+<a href="https://www.codingame.com/training/hard/txt2html">https://www.codingame.com/training/hard/txt2html</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+<h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+<span class="question-statement">Transform a given array to text form in html code.<br />
+<br />
+Corners of each cell of the array are represented by the character <const>+</const>.<br />
+Horizontal lines between two corners of a cell are represented by the character <const>-</const>.<br />
+Verticals lines between two corners of a cell are represented by the character <const>|</const>.<br />
+<br />
+Cells can be empty or contain (anywhere between the four corners) one or more lines of data. In the case of more than one line of data, carriage returns between lines are replaced by spaces in the html code. Spaces before and after data of each line are ignored.</span></div>
+
+<div class="statement-section statement-protocol">
+<div class="blk">
+<div class="title">Input</div>
+
+<div class="question-statement-input"><strong>Line 1 :</strong> An integer <var>N</var> for the number of lines.<br />
+<strong><var>N</var> next lines :</strong> A String <var>s</var> representing a part of the array to be transform in HTML.</div>
+</div>
+
+<div class="blk">
+<div class="title">Output</div>
+
+<div class="question-statement-output"><strong>Line 1 :</strong> the tag <const>&lt;table&gt;</const><br />
+<strong>Next lines:</strong> The representation HTML of each line of the array in the form :<br />
+&lt;tr&gt;&lt;td&gt;Content of cell 1&lt;/td&gt;&lt;td&gt;Content of cell 2&lt;/td&gt;&lt;/tr&gt;<br />
+<strong>Last line :</strong> the tag <const>&lt;/table&gt;</const></div>
+</div>
+
+<div class="blk">
+<div class="title">Constraints</div>
+
+<div class="question-statement-constraints">3 &le; <var>N</var> &le; 20<br />
+Length of <var>s</var> &le; 50</div>
+</div>
+
+<div class="blk">
+<div class="title">Example</div>
+
+<div class="statement-inout">
+<div class="statement-inout-in">
+<div class="title">Input</div>
+
+<pre class="question-statement-example-in">
+3
++-------+
+|   1   |
++-------+</pre>
+</div>
+
+<div class="statement-inout-out">
+<div class="title">Output</div>
+
+<pre class="question-statement-example-out">
+&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+</div>

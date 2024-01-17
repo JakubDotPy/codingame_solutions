@@ -1,0 +1,43 @@
+<h1>Join the Dots</h1>
+
+<a href="https://www.codingame.com/training/medium/join-the-dots">https://www.codingame.com/training/medium/join-the-dots</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Have you ever played Join the Dots (or &quot;Connect the Dots&quot;) as a kid? Well, now you get to do it again!<br><br>You will be given a rectangular board with some numbers and letters on it, you must join them in order with the appropriate ASCII characters.<br><br>---------------------------------<br><br>Your input contains a rectangular board made only of digits, letters, and &quot;<const>.</const>&quot; <br><const>.</const> represents an empty space.<br>Digits <const>1</const> to <const>9</const> and uppercase letters <const>A</const> to <const>Z</const> represent the dots you must connect in order. <br><br>The order is <const>1</const> -&gt; <const>2</const> -&gt; ... -&gt; <const>8</const> -&gt; <const>9</const> -&gt; <const>A</const> -&gt; <const>B</const> -&gt; ... -&gt; <const>Y</const> -&gt; <const>Z</const><br><br>The digits and letters will always start from <const>1</const>, but may stop before <const>Z</const>.<br><br>---------------------------------<br><br>You must output the board after connecting the dots, with characters replaced as follow:<br>- each digit or letter in the original board must be replaced by a lowercase <const>o</const>;<br>- <const>.</const> characters between two consecutive digits/letters must be replaced by a line drawn with the rules explained below (remember that <const>A</const> comes right after <const>9</const>);<br>- each other <const>.</const> character must be replaced with a space;<br>- spaces at the end of a line must be trimmed.<br><br>Two consecutive digits/letters are always aligned horizontally, vertically, or diagonally.<br>Note that in some cases they may be in adjacent positions.<br><br>Each line that joins two dots must be entirely made of one of these characters: <const>- | / \ + X *</const>.<br><br>Join dots with:<br>- <const>-</const> if on the same row;<br>- <const>|</const> if on the same column;<br>- <const>/</const> or <const>\</const> if on the same diagonal (moving of the same number of rows and columns).<br><br>Examples:<br><br><pre style="font-family: monospace">1...23.4  becomes  o---oo-o</pre> (2 and 3 are adjacent, so nothing is drawn between them)<br><br><pre style="font-family: monospace">..9.               o<br>....              /<br>A..C             o  o<br>....   becomes    \ |<br>....               \|<br>...B                o</pre><br><br>Whenever lines cross with each other, apply these substitutions:<br>- if a horizontal line crosses a vertical one, the character becomes <const>+</const>;<br>- if a diagonal line crosses another, the character becomes <const>X</const>;<br>- if a diagonal crosses a horizontal or vertical line, or 3 or more lines meet in a point, the character becomes <const>*</const>.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Two integers <var>H</var> and <var>W</var> for the height and width of the board.<br><strong>Next <var>H</var> lines:</strong> Exactly <var>W</var> characters on each line, which can be one of:<br>- <const>.</const> to represent an empty space;<br>- a digit <const>1</const> to <const>9</const>;<br>- an uppercase letter <const>A</const> to <const>Z</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><var>H</var> lines, each with up to <var>W</var> character following the rules described above.<br>Each character is a either a space or one of <const>o - | / \ + X *</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">3 &le; <var>W</var>,<var>H</var> &le; 40</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">4 4
+1..2
+5...
+....
+4..3</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">o--o
+o  |
+|  |
+o--o</pre>
+         </div>
+      </div>
+   </div>
+</div>

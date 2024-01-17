@@ -1,0 +1,55 @@
+<h1>Coastline</h1>
+
+<a href="https://www.codingame.com/training/medium/coastline">https://www.codingame.com/training/medium/coastline</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement"><strong>Background</strong><br>We have a long coast facing the ocean. Near the coast there are islets or rocks emerging out of water, posing threats to sea vessels.<br>We plan to install signal lights and sensor instruments on the islets, powered by solar energy, to enhance sail safety. It could also provide data for weather and current forecast. Ideally, we wish all the off-shore instruments be network connected via a number of mobile data transmitters to be installed along the coastline.<br><br><strong>Data model</strong><br>To ease modelling, assume the coast is a straight line and is infinitely long for our calculation purpose.<br>We are using Cartesian coordinates system, defining the coastline as the x-axis. South of the line is land. North of it is water. We further assume that the coastline is static, not changing by tidal effects.<br>The islets locations are given by (x,y) coordinates.<br><br>Mobile data transmitters have a fixed effective radius, <var>r</var>. If we use a transmitter as the center to draw a circle with radius <var>r</var>, the area of the circle is the effective data coverage of the transmitter.<br><br>The distance between transmitters is not an issue because they are connected by cables. However, an islet has to be within the radius <var>r</var> of at least one transmitter to enable connection. To cover all islets within data range, we would need one or more transmitters to be installed alone the coast.<br><br><strong>Problem</strong><br>Given the locations of all islets together with the effective radius of transmitters, find out the minimum number of transmitters needed to be installed, if we want all islets be covered within range.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">There are multiple test cases for each test set. Each test set has the following structure.<br><br><strong>Line 1</strong>: Integer <var>n</var> for the number of lines to follow.<br><strong>The following <var>n</var> lines</strong>: Each line is an independent test case, having a number of space-separated integers:<br><var>p</var> <var>r</var> <var>x1</var> <var>y1</var> <var>x2</var> <var>y2</var> ... <var>xp</var> <var>yp</var><br><br>where <var>p</var> is an integer, for the number of islet points in the test;<br><var>r</var> is an integer, for the radius of transmitter data range;<br>then followed by <var>p</var> pairs of integers, <var>x</var> and <var>y</var>, each pair for one islet point's coordinates.<br><br>There is no duplicate coordinates in each test case.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>n</var> lines</strong>: Each line is an integer for the <strong>minimum</strong> number of coastline transmitters necessary to cover all islets points in the corresponding test case.<br>In case it is not possible to cover all given islets within range, <strong>output <const>-1</const></strong> to indicate an exception.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>n</var> &le; 50<br>1 &le; <var>p</var> &le; 100<br>1 &le; <var>r</var> &le; 1000<br>-1000 &le; <var>x</var> &le; 1000<br>1 &le; <var>y</var> &le; 1000</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">10
+1 11 27 8
+2 11 -37 9 -6 7
+3 14 -32 3 -26 11 -75 1
+4 29 27 14 -68 20 -41 18 68 13
+5 29 -39 30 -19 11 -51 20 -29 18 -77 13
+6 12 -61 10 24 9 9 1 13 6 41 11 -70 7
+7 10 63 5 -57 4 -38 4 51 6 -63 4 -67 4 -40 5
+8 7 34 5 -36 1 4 7 -52 5 -61 3 44 3 27 3 59 5
+9 15 43 9 76 7 33 12 56 9 24 10 -57 7 -5 10 -6 1 52 9
+10 27 51 11 -22 12 -36 17 44 4 -25 3 26 4 -56 17 3 7 72 18 75 11</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1
+2
+2
+2
+-1
+3
+3
+6
+4
+3</pre>
+         </div>
+      </div>
+   </div>
+</div>

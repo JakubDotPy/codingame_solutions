@@ -1,0 +1,41 @@
+<h1>Porcupine Fever</h1>
+
+<a href="https://www.codingame.com/training/medium/porcupine-fever">https://www.codingame.com/training/medium/porcupine-fever</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You have a hobby of visiting a porcupine farm. Porcupines are kept in cages and regularly fed. They are usually healthy and have been one of the rodents with longest lifespans, but <strong>some of these porcupines are sick</strong>.<br><br>Every year, each porcupines who were sick last year will <strong>cause <const>2</const> healthy porcupines</strong> in the same cage to be <strong>sick</strong>, and then <strong>die</strong>.<br><br>Simulate to find the <strong>total amount</strong> of surviving porcupines after every year. Stop if all the porcupines are dead (do not repeat <const>&quot;0&quot;</const>s after the first time).</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Integer <var>N</var>, the amount of cages.<br><strong>Line 2:</strong> Integer <var>Y</var>, the number of years.<br><strong>Next <var>N</var> lines:</strong> Three space-separated integers <var>S</var>, <var>H</var> and <var>A</var>, the amounts of sick, healthy and alive porcupines in the cage respectively.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>Y</var> or fewer lines</strong> of integers of porcupines alive.<br>Line 1 is year 1, not year 0. Any sick porcupines die first.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &le; <var>N</var> &lt; 500<br>0 &lt; <var>Y</var> &lt; 100<br>0 &le; <var>S</var>, <var>H</var>, <var>A</var> &lt; 10,000,000<br><var>S</var> + <var>H</var> is <var>A</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+3
+2 118 120
+0 50 50</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">168
+164
+156</pre>
+         </div>
+      </div>
+   </div>
+</div>

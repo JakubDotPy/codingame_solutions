@@ -1,0 +1,58 @@
+<h1>Object Insertion</h1>
+
+<a href="https://www.codingame.com/training/easy/object-insertion">https://www.codingame.com/training/easy/object-insertion</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You have an object to insert into a partially filled 2D grid.<br><br>You need to count the number of ways the object can fit into the empty areas of the grid.<br>If there is one and only one way, you also must display the grid with the inserted object.<br>Flips and rotations are NOT allowed on the object.<br><br>The object is represented as a series of strings, in which dots &quot;<const>.</const>&quot; are empty areas and stars &quot;<const>*</const>&quot; are physical parts of the object.<br><br><strong>Example:</strong><br><pre style="font-family: monospace">*.<br>**<br>.*</pre><br>The grid is provided in a similar fashion, dots &quot;<const>.</const>&quot; are empty areas and number signs &quot;<const>#</const>&quot; are filled areas of the grid.<br><br>Notes:<br>- The representation of the object never presents empty rows or columns.<br>- The dimensions of the object are always less than or equal to the dimensions of the grid.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>First line:</strong> Two integers <var>a</var> and <var>b</var> separated by a space, denoting the numbers of rows and columns of the representation of the object.<br><strong>Next <var>a</var> lines:</strong> Line of length <var>b</var> composed of the characters &quot;<const>.</const>&quot; and &quot;<const>*</const>&quot;.<br><strong>Next line:</strong> Two integers <var>c</var> and <var>d</var> separated by a space, denoting the numbers of rows and columns of the grid.<br><strong>Next <var>c</var> lines:</strong> Line of length <var>d</var> composed of the characters &quot;<const>.</const>&quot; and &quot;<const>#</const>&quot;.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>First line:</strong> Number of ways to insert the object in the grid.<br>If this number equals <strong>1</strong>:<br><strong>Next <var>c</var> lines:</strong> Line of length <var>d</var> composed of the characters &quot;<const>.</const>&quot;, &quot;<const>#</const>&quot; and &quot;<const>*</const>&quot;, showing grid state after object insertion.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>a</var> &le; <var>c</var> &le; 10<br>1 &le; <var>b</var> &le; <var>d</var> &le; 10</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3 2
+.*
+**
+.*
+8 10
+#..#######
+#.##..####
+###..##...
+####.#####
+##.#######
+##......##
+##.....###
+########..
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1
+#..#######
+#.##*.####
+###**##...
+####*#####
+##.#######
+##......##
+##.....###
+########..
+</pre>
+         </div>
+      </div>
+   </div>
+</div>

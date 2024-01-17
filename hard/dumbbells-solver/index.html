@@ -1,0 +1,42 @@
+<h1>Dumbbells solver</h1>
+
+<a href="https://www.codingame.com/training/hard/dumbbells-solver">https://www.codingame.com/training/hard/dumbbells-solver</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Dumbbells <const>o-o</const> should be stored in a big box.<br><br>Each dumbbell occupies three squares aligned horizontally or vertically: the boxes on both ends contain the weights, the bar is placed in the central square.<br>The dumbbells can touch but not cross each other.<br>Each box contains at most one weight, each weight being the end of a single dumbbell.<br>The weight locations are marked at the bottom of the box. Unfortunately, some of them have been erased.<br><br>Find the dumbbells in the grid (the number of dumbbells to put in the box is indicated above).<br>All problems have a unique solution.<br><br><strong>Example</strong><br><br>With this grid :<br><br><pre style="font-family: monospace">....<br>o...<br>..oo</pre><br><br>there are two dumbbells easy to find (1 horizontal and 1 vertical) :<br><br><pre style="font-family: monospace">...o<br>o-o|<br>..oo</pre><br><br>Now, we can find a new horizontal dumbbell :<br><br><pre style="font-family: monospace">...o<br>o-o|<br>o-oo</pre><br><br>If there were 3 dumbbells to find, that would be the final solution...<br><br>But, if there were 4 dumbbells to find, the final solution would be :<br><br><pre style="font-family: monospace">o-oo<br>o-o|<br>o-oo</pre></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong> :  Number  <var>n</var> of dumbells.<br><strong>Line 2</strong> : height <var>h</var> and width <var>w</var> of the grid.<br><var>h</var> following lines: the content of the grid of dumbells. (<const>.</const> or <const>o</const>)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>h</var> lines</strong> : with only  <const>.</const>, <const>o</const>, <const>|</const> or <const>-</const><br><const>o</const><br><const>|</const> for a vertical dumbell, <const>o-o</const> for a horizontal dumbell, <const>.</const> for a empty square<br><const>o</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">3 &lt;= <var>n</var> &lt;= 15<br>3 &lt;= <var>h</var>, <var>w</var> &lt;= 8</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+3 4
+....
+o...
+..oo</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">...o
+o-o|
+o-oo</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,44 @@
+<h1>Bust speeding vehicles</h1>
+
+<a href="https://www.codingame.com/training/medium/bust-speeding-vehicles">https://www.codingame.com/training/medium/bust-speeding-vehicles</a>
+
+<div class="statement_wrapping_div" style="position: relative;"> 
+
+<style type="text/css"> 
+.statement_wrapping_div, .statement {font-size: 14px;font-weight: 400;}  
+.statement_wrapping_div {margin-bottom: 10px;}
+.statement_wrapping_div ul {padding-left: 40px;}
+.statement {background-color:rgba(255, 255, 255, 0.85);padding: 20px;padding-top:0px;}
+code, span.const {display:inline-block;font-family:Inconsolata,consolas,monospace;padding-left:5px;padding-right:5px;padding-top:1px;padding-bottom:1px;background-color:#18a1ea;white-space: nowrap;margin-right:2px;color: white;}
+span.var {display: inline-block;padding-left:5px;padding-right:5px;padding-top:1px;padding-bottom:2px;background-color:#f2dd00;white-space:nowrap;margin-left:1px;margin-right:2px;color:black;}
+.stat_mid_title {font-weight:700;margin-bottom:5px;}
+.protocol_title{color:#ffd200;}
+.cross-statementBlock{position:relative;}</style>
+
+<div class="stat_mid_title">The program:</div>
+<div class="question-statement">You must detect speeding vehicles by computing their average speed between two or more consecutive cameras on a given road.<br />You must print the License plate and the position of the camera where the excess speed has been detected.<br /><br />Your inputs contain all camera timestamped recordings for one or more license plates. All records are grouped by license plates and all camera distances are sorted in ascending order inside this group.<br />If no excess speed is detected, your program must print OK.</div><br />
+</div>
+
+<div style="background-color: rgba(0, 0, 0, 0.85);padding: 20px;color: white;margin-top: 10px;">
+<div class="protocol_title"><b>INPUT:</b></div>
+<div class="question-statement-input"><strong>Line 1:</strong> An integer <span class="var">L</span> for the Speed Limit for the given road (in Kilometers per hour).<br /><strong>Line 2:</strong> An integer <span class="var">N</span> which represents the total number of camera readings.<br /><strong>Next <span class="var">N</span> Lines:</strong> 3 space separated values: The license plate recorded <span class="var">L</span>, the camera distance (in Kilometers from the begining of the road) <span class="var">C</span> and the timestamp of the camera capture (number of seconds since 01/01/1970) <span class="var">T</span>.</div><br /> 
+
+<div class="protocol_title"><b>OUTPUT:</b></div>
+<div class="question-statement-output">For each speeding vehicles: print the license plate <span class="var">L</span> with the detecting camera distance <span class="var">C</span>, seperated by spaces, in the same order as input.<br />When no vehicle is speeding: print <span class="const">OK</span></div><br /> 
+
+<div class="protocol_title"><b>CONSTRAINTS:</b></div>
+<div class="question-statement-constraints">10 &#8804; <span class="var">L</span> &#8804; 100<br />0 &#8804; <span class="var">N</span> &#8804; 100<br />0 &#8804; <span class="var">C</span> &#8804; 1000</div><br /> 
+
+<div class="protocol_title"><b>EXAMPLE:</b></div>
+<div style="border: 1px solid white; width: 440px;">
+<div style="float: left; margin-left: 10px; padding-left: 10px; width: 200px; font-family: monospace;">
+<div><b>Input</b></div>
+<div class="question-statement-example-in">50<br />3<br />RSLJ97 134 1447409503<br />RSLJ97 268 1447411388<br />RSLJ97 403 1447412242</div>
+</div>
+<div style="margin-left: 10px; float: left; padding-left: 5px; width: 200px; font-family: monospace;">
+<div><b>Output</b></div>
+<div class="question-statement-example-out">RSLJ97 268</div>
+</div>
+<div style="clear: both;">&nbsp;</div>
+</div>
+</div>

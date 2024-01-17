@@ -1,0 +1,37 @@
+<h1>Hooch Clash</h1>
+
+<a href="https://www.codingame.com/training/easy/hooch-clash">https://www.codingame.com/training/easy/hooch-clash</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Wizarding is a full-time job when you're an elf. Collecting ingredients, refining spells, mixing potions, uncursing travellers&hellip;<br><br>At the end of a busy day's work, elven wizards like to gather together at the magic tavern and play hooch clash. A clash works as follows:<br><br>&bull; the current king of the hill picks two glowing orbs and places them side by side on the table<br>&bull; the challenger picks two sparkling orbs and places them opposite<br>&bull; the bartender empties the hooch from each contender's orbs into a cauldron<br><br>If the glowing and sparkling liquids are provided in the exact same volume, the clash is <strong>valid</strong> and the winner is determined by fair coin toss. A valid clash is deemed <strong>fun</strong> if the four orbs on the table have a different size. A fun clash is as <strong>interesting</strong> as the challenger's two orbs are heterogeneous (different-sized), as measured by their outside, sparkling, surface area.<br><br>This tavern only has orbs of integral diameter from <var>orbSizeMin</var> to <var>orbSizeMax</var>. As many of each as you want, it's magic!<br><br>Can you help the challenger make a valid clash? Can you make it fun and interesting too?<br><br><strong>Examples</strong><br>A clash opposing {9,10} to {1,12} is fun: all orbs are different-sized.<br>A clash opposing {5,7} to {5,7} is valid: the contenders brought up equal volumes of glowing and sparkling hooch.<br>A clash opposing {1,2} to {2,2} is possible: at least three size-2 orbs are available.<br><br>Assuming you could use them for a fun clash, challenging using {31,37} would be <strong>more</strong> interesting than using {25,32}.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> <var>orbSizeMin</var> and <var>orbSizeMax</var>, orb diameter bounds<br><strong>Line 2:</strong> <var>glowingSize1</var> and <var>glowingSize2</var>, the king of the hill's glowing orb diameters</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">If you can produce a fun clash, <var>sparklingSize1</var> and <var>sparklingSize2</var> orbs' diameters in increasing order. If you can produce multiple fun clashes, stick to the most interesting one.<br>If you can merely produce a valid clash, <const>VALID</const><br>Else just print any string you want.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <var>orbSizeMin</var> &le; <var>glowingSize1</var> &le; <var>glowingSize2</var> &le; <var>orbSizeMax</var> &le; 10⁵<br><var>orbSizeMax</var> - <var>orbSizeMin</var> &le; 3500<br>Orbs are perfectly spherical.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1 1000
+9 10</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1 12</pre>
+         </div>
+      </div>
+   </div>
+</div>

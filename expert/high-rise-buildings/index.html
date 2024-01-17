@@ -1,0 +1,49 @@
+<h1>High-rise buildings</h1>
+
+<a href="https://www.codingame.com/training/expert/high-rise-buildings">https://www.codingame.com/training/expert/high-rise-buildings</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Given a grid of dimension NxN, you must build towers on each square in such a way that:<br>- The heights of the towers range from 1 to N;<br>- Each row contains every possible height of tower exactly once;<br>- Each column contains every possible height of tower exactly once;<br>- Each numeric clue describes the number of towers that can be seen if you look into the square from that position. Taller towers block your view of shorter towers behind them.<br><br>Clues are given in this order North, West, East and South. <br><br><pre style="font-family: monospace">   a  b  c                  2  1  2<br>d  .  .  .  g            2  .  3  .  2<br>e  .  .  .  h            1  .  .  .  3<br>f  .  .  .  i            2  .  .  .  1<br>   j  k  l                  2  3  1<br></pre><br><br>Here we must put a building of height 3 because we can see only one tower from position b.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong>: One integer <var>N</var> for the size of the grid.<br><strong>Line 2</strong>: <var>N</var> integers for the numbers of visible towers from the North, given from left to right.<br><strong>Line 3</strong>: <var>N</var> integers for the numbers of visible towers from the West, given from top to bottom.<br><strong>Line 4</strong>: <var>N</var> integers for the numbers of visible towers from the East, given from top to bottom.<br><strong>Line 5</strong>: <var>N</var> integers for the numbers of visible towers from the South, given from left to right.<br><strong>Next <var>N</var> lines:</strong> A string containing <var>N</var> digits indicating the heights of the towers (0 means unknown)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">Grid with the buildings heights<br><strong><var>N</var> lines</strong> <var>N</var> space-separated digits</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">5 &le; <var>N</var> &le; 8</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">5
+2 2 4 2 1
+3 4 2 1 2
+1 2 4 3 2
+2 2 1 3 4
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">3 4 1 2 5
+1 2 3 5 4
+2 5 4 3 1
+5 1 2 4 3
+4 3 5 1 2</pre>
+         </div>
+      </div>
+   </div>
+</div>

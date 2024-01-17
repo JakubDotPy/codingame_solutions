@@ -1,0 +1,45 @@
+<h1>Snail Run</h1>
+
+<a href="https://www.codingame.com/training/easy/snail-run">https://www.codingame.com/training/easy/snail-run</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">We have a snail race we will have to determine the winner !<br>- The number of snails is given in the variable <var>numberSnails</var>.<br>- Each snail has a speed given in the variable <var>speedSnail</var><br>- You have a map of the game with a height of <var>mapHeight</var> and a width of <var>mapWidth</var>.<br><br>On the map we have:<br><const>number</const> that represents a snail from 1 to <var>numberSnails</var><br><const>*</const> which represents a place where the snail can go<br><const>#</const> which represents the destination<br><br><pre style="font-family: monospace">Snails can go right, left, up, down. Snails cannot go diagonally.<br>The snail takes the path closest to it.</pre><br><br>example of the game :<br><br>snail <const>1</const> speed <const>2</const><br>snail <const>2</const> speed <const>1</const><br><br>start :<br><br>1****#<br>2****#<br><br>time = 1<br><br>**1**#<br>*2***#<br><br>time = 2<br><br>****1#<br>**2**#<br><br>time=3<br><br>*****1<br>***2*#<br><br>End : <br><br>return <const>1</const><br><br>For each race there is only one winner.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>numberSnails</var> for the number of snails.<br><strong>Next <var>numberSnails</var> lines:</strong> An integer <var>speedSnail</var> for the speed of a snail.<br><strong>Next line:</strong> An integer <var>mapHeight</var> which is the height of the map.<br><strong>Next line:</strong> An integer <var>mapWidth</var> which is the width of the map.<br><strong>Next <var>mapHeight</var> lines:</strong> A string <var>ROW</var> for one line of the map.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">A number that represents the winner of the race</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &le; <var>numberSnails</var> &le; 6<br>0 &le; <var>speedSnail</var> &le; 6<br>2 &le; <var>mapHeight</var> &le; 6<br>5 &le; <var>mapWidth</var> &le; 9</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+2
+3
+5
+3
+6
+1****#
+2****#
+3****#
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">3</pre>
+         </div>
+      </div>
+   </div>
+</div>

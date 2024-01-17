@@ -1,0 +1,38 @@
+<h1>Knights Jam</h1>
+
+<a href="https://www.codingame.com/training/medium/knights-jam">https://www.codingame.com/training/medium/knights-jam</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">The <strong>knight</strong> is a chess piece that, when placed on the <strong>o</strong>-marked square, can move to any of the <strong>x</strong>-marked squares (as long as they are inside the board):<pre style="font-family: monospace"></pre><pre style="font-family: monospace">.x.x.<br>x...x<br>..o..<br>x...x<br>.x.x.</pre><pre style="font-family: monospace"></pre><br>Eight knights, numbered from <const>1</const> to <const>8</const>, have been placed on a <const>3</const>&times;<const>3</const> board, leaving one single square empty (<const>.</const>).<br>They can neither attack each other, nor share the same square, nor leave the board: the only valid moves are <strong>jumps to the empty square</strong>.<br><br>Compute the <strong>minimum number of valid moves</strong> required to reach the following ordered configuration by any sequence of valid moves:<pre style="font-family: monospace"></pre><pre style="font-family: monospace">123<br>456<br>78.</pre><pre style="font-family: monospace"></pre>Output <const>-1</const> if it is not reachable.<br><br><strong>Example detailed:</strong> Possible in 3 moves<pre style="font-family: monospace"></pre><pre style="font-family: monospace">128       12.       123       123<br>356  --&gt;  356  --&gt;  .56  --&gt;  456<br>7.4       784       784       78.</pre><pre style="font-family: monospace"></pre></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">Three lines of three characters (containing each of the characters <const>1</const>-<const>8</const> and <const>.</const> exactly once).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">One single integer corresponding to the smallest number of moves needed to reach the ordered configuration.<br><const>-1</const> if it is not reachable.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">128
+356
+7.4</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">3</pre>
+         </div>
+      </div>
+   </div>
+</div>

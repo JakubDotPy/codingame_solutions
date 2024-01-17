@@ -1,0 +1,39 @@
+<h1>1×1×1 Rubik’s cube movements</h1>
+
+<a href="https://www.codingame.com/training/easy/111-rubiks-cube-movements">https://www.codingame.com/training/easy/111-rubiks-cube-movements</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">A 2&times;2&times;2 Rubik's cube is quite complicated. In this puzzle, we will focus on the mono-cube, the 1&times;1&times;1 Rubik's cube!<br><br>You are given a set of <var>rotations</var> and two <var>faces</var>. Apply the <var>rotations</var> to the cube and locate the two <var>faces</var> after the <var>rotations</var>.<br><br><strong>Face notation</strong><br><const>F</const> (Front): the side currently facing the observer<br><const>B</const> (Back): the side opposite the front<br><const>U</const> (Up): the side above or on top of the front side<br><const>D</const> (Down): the side opposite the top, underneath the cube<br><const>L</const> (Left): the side directly to the left of the front<br><const>R</const> (Right): the side directly to the right of the front<br><br><strong>Rotation notation</strong><br>A rotation without the prime symbol <const>'</const> is a quarter turn clockwise.<br>A rotation with the prime symbol <const>'</const> is a quarter turn counter-clockwise.<br><const>x</const>, <const>x'</const>: rotate cube on <const>R</const> (<const>R</const> and <const>L</const> still face the same directions after rotation)<br><const>y</const>, <const>y'</const>: rotate cube on <const>U</const> (<const>U</const> and <const>D</const> still face the same directions after rotation)<br><const>z</const>, <const>z'</const>: rotate cube on <const>F</const> (<const>F</const> and <const>B</const> still face the same directions after rotation)<br><br><strong>Example 1</strong><br><const>z</const><br><const>D</const><br><const>L</const><br>Means: rotate cube clockwise on <const>F</const> and identify the new directions of <const>D</const> and <const>L</const>.<br>Answer: Output <const>L</const> in line 1 because the initial down face now faces left. Output <const>U</const> in line 2 because the initial left face now faces up.<br><br><strong>Example 2</strong><br><const>z z'</const><br><const>U</const><br><const>R</const><br>Means: rotate cube clockwise on <const>F</const> then counter-clockwise on <const>F</const>, and identify the new directions of <const>U</const> and <const>R</const>.<br>Answer: Output <const>U</const> in line 1 and <const>R</const> in line 2 because both faces do not change directions after the rotations.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Space-separated <var>rotations</var> in <const>xyz</const> notation.<br><strong>Line 2:</strong> Initial direction of <var>face1</var> the first queried face.<br><strong>Line 3:</strong> Initial direction of <var>face2</var> the second queried face.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> Direction of <var>face1</var> after the <var>rotations</var>.<br><strong>Line 2:</strong> Direction of <var>face2</var> after the <var>rotations</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; length of <var>rotations</var> &le; 100</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">z
+D
+L</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">L
+U</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,46 @@
+<h1>Minesweeper</h1>
+
+<a href="https://www.codingame.com/training/medium/minesweeper">https://www.codingame.com/training/medium/minesweeper</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Find the hidden mines in the grid, knowing that :<br><const>.</const> means no danger in any of the 8 spaces around that spot.<br><const>n</const> means there are exactly <const>n</const> mines hidden in the 8 spaces around that spot.<br><const>?</const> means we don't know anything about that spot.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">Line 1 : The size of the grid, <var>h</var> : height &amp; <var>w</var> : width .<br>Line 2 : The number of hidden mines, <var>nb</var>.<br><var>h</var> following lines : Content of the grid made of <const>.</const>, <const>?</const> and <const>n</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><var>nb</var> lines including mine's location : <var>col</var> &amp; <var>lin</var> separated by a space.<br>In column ascending order, then in line ascending order for the same column.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">3 &le; <var>h,</var> <var>w</var> &le; 20<br>1 &le; <var>nb</var> &le; 20</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">6 6
+4
+.1???1
+.11211
+11....
+?2....
+?2....
+11....</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">0 3
+0 4
+2 0
+4 0</pre>
+         </div>
+      </div>
+   </div>
+</div>

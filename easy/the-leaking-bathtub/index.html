@@ -1,0 +1,41 @@
+<h1>The leaking bathtub</h1>
+
+<a href="https://www.codingame.com/training/easy/the-leaking-bathtub">https://www.codingame.com/training/easy/the-leaking-bathtub</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Bob has a bathtub.<br>He wants to fill it with water but there are some leaks that let the water flow.<br>Given the dimensions <var>S</var> and <var>h</var> of the bathtub, the tap water <var>flow</var> and the <var>leakHeight</var> and <var>leakFlow</var> of each leak, calculate the <var>time</var>, rounded to the second down, Bob needs to fill his bathtub.<br>A leak does not leak the water flow until the water has reached the leak height.<br>The bathtub is a rectangular parallelepiped of surface area <var>S</var> and height <var>h</var>.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1 :</strong> An integer <var>S</var> for the surface area of the bathtub in cm&sup2;.<br><strong>Line 2 :</strong> An integer <var>h</var> for the height of the bathtub in cm.<br><strong>Line 3 :</strong> An integer <var>flow</var> for the tap water flow in L/minute.<br><strong>Line 4 :</strong> An integer <var>N</var> for the number of leaks.<br><strong><var>N</var> next lines :</strong> 2 space-separated integers <var>leakHeight</var> and <var>leakFlow</var> for the height of the leak in cm and the flow allowed by the leak (in L/minute).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">If the bathtub can be filled, output one line :<br>The <var>time</var>, in HH:MM:SS format, rounded to the second down, that Bob needs to fill his bathtub.<br>if the bathtub cannot be filled entirely, output one line :<br><const>Impossible, <var>filling height</var> cm.</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0&le;<var>N</var>&le;1000<br>0&le;<var>leakHeight</var>&lt;h<br>0&lt;<var>time</var>&le;99:59:59<br>0&lt;<var>S</var>x<var>h</var>&lt;2^32</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">12750
+60
+12
+2
+20 1
+45 3</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">01:14:08</pre>
+         </div>
+      </div>
+   </div>
+</div>

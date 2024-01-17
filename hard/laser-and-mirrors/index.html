@@ -1,0 +1,36 @@
+<h1>Laser and mirrors</h1>
+
+<a href="https://www.codingame.com/training/hard/laser-and-mirrors">https://www.codingame.com/training/hard/laser-and-mirrors</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You find yourself in a corner of a gigantic dark room. You don't see anything at a distance, only the cold surface of both corner walls. On the floor you see something shining.<br>It's a strange small gold cylinder.<br>You pick it, observe it, and discover a small button on the side. You press it, and ghosh! You had a blight red light flashing into your eyes.<br><br>After some times, when the surprise is past, you understand that this small cylinder is a laser. You try it in your room, and discovers by pointing to different angles (0&deg;, 90&deg;, 180&deg; and 270&deg;) that the laser beam goes back at you. It probably means that this room is a rectangle, and that all sides are covered by a reflecting surface.<br><br>But at some angles you do not get back your beam. Maybe the corners are not reflexive? Maybe there are other people on each corner, and the laser beam stops at them?<br><br>If you knew the size <var>U</var>x<var>V</var> of the rectangle, could you guess at which <var>corner</var> the laser beam stopped and the <var>length</var> of the beam?<br><br><strong>Note:</strong> for simplicity, the angle is 45&deg;. If the angle was different (except for 0&deg; and 90&deg;), it would be the same problem as with an angle of 45&deg; and a different shape (but probably not integers). And you can also forget the square root of 2 from the <var>length</var>.<br><br><strong>Examples:</strong> (<const>S</const> is the starting corner, where you are)<br><var>U</var>=<var>V</var>=2 =&gt; <var>corner</var>=<const>B</const> <var>length</var>=2<br><pre style="font-family: monospace">A██B<br>█ /█<br>█/ █<br>S██C</pre><br><br><br><var>U</var>=2 <var>V</var>=3  =&gt; <var>corner</var>=<const>A</const> <var>length</var>=6<br><pre style="font-family: monospace"> A███B<br>U█\/\█<br> █/\/█<br> S███C<br>   V</pre><br><br><var>U</var>=2 <var>V</var>=4  =&gt; <var>corner</var>=<const>C</const> <var>length</var>=4<br><pre style="font-family: monospace"> A████B<br>U█ /\ █<br> █/  \█<br> S████C<br>   V</pre></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>One line:</strong> Two integers <var>U</var> and <var>V</var> for the size of the rectangle.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>One line:</strong> The <var>corner</var> (<const>A</const> or <const>B</const> or <const>C</const>) at which the laser beam stopped, and the <var>length</var> (divided by &radic;2) of the beam.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>U</var>, <var>V</var> &le; 100 000<br><var>length</var> &le; <var>U</var>x<var>V</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2 2</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">B 2</pre>
+         </div>
+      </div>
+   </div>
+</div>

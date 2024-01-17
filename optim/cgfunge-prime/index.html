@@ -1,0 +1,107 @@
+<h1>CGFunge Prime</h1>
+
+<a href="https://www.codingame.com/multiplayer/optimization/cgfunge-prime">https://www.codingame.com/multiplayer/optimization/cgfunge-prime</a>
+
+<div class="statement_back"></div>
+<div class="statement-body">
+    
+    <div class="statement-section statement-goal">
+        <h1>
+            <span class="icon icon-goal"> </span>
+            <span>The Goal</span>
+        </h1>
+        <div class="statement-goal-content">
+            You will be given an integer and have to decide whether it is a prime number or not. <br />
+            But beware, you have to write your program in a slightly modified version of <a href="https://www.codingame.com/training/medium/cgfunge-interpreter" target="_blank" rel="nofollow noopener noreferrer">CG Funge</a> (description below).
+            <br />
+            <br />
+            This is an optimization problem, your program should use as few execution steps as possible to find the correct answer.            
+        </div>
+    </div>
+    
+    <div class="statement-section statement-rules">
+        <h1>
+            <span class="icon icon-rules"> </span>
+            <span>Rules</span>
+        </h1>
+        <div>
+            <div class="statement-rules-content">
+                CGFunge is a 2-dimensional, positional programming language. This means that execution of a CGFunge program follows a designated pattern on a grid of ASCII characters. Execution always starts on the first character of the first line and proceeds to the right. Each command in the language is a single character. The commands
+                are as follow:
+                <br />
+                <table style="width:100%;border-spacing:10px;border-collapse:separate"><tbody><tr><th>Command</th><th>Effect</th></tr><tr><td>
+                            <const>&gt;</const>
+                        </td><td>Continue to the right</td></tr><tr><td>
+                            <const>&lt;</const>
+                        </td><td>Continue to the left</td></tr><tr><td>
+                            <const>^</const>
+                        </td><td>Continue up</td></tr><tr><td>
+                            <const>v</const>
+                        </td><td>Continue down</td></tr><tr><td>
+                            <const>S</const>
+                        </td><td>Skip the next character and continue with the subsequent character</td></tr><tr><td>
+                            <const>E</const>
+                        </td><td>End the program immediately</td></tr><tr><td>
+                            <const>0</const>-<const>9</const>
+                        </td><td>Push a number onto the stack</td></tr><tr><td>
+                            <const>&#43;</const>
+                        </td><td>Add the first two numbers of the stack (e.g. <const>43&#43;</const> results in a <const>7</const> on the stack)</td></tr><tr><td>
+                            <const>-</const>
+                        </td><td>Subtract the first two numbers of the stack (e.g. <const>43-</const> results in a <const>1</const> on the stack)</td></tr><tr><td>
+                            <const>*</const>
+                        </td><td>Multiply the first two numbers of the stack (e.g. <const>43*</const> results in a <const>12</const> on the stack)</td></tr><tr><td>
+                            <const>/</const>
+                        </td><td>Divide the first two numbers of the stack (e.g. <const>43/</const> results in a <const>1</const> on the stack) - division will truncate to form an integer</td></tr><tr><td>
+                            <const>P</const>
+                        </td><td>Pop the top of the stack</td></tr><tr><td>
+                            <const>X</const>
+                        </td><td>Removes the top value of the stack and takes it as an index. Then removes the value at the index from the stack and push it on top (e.g.: <const>1X</const> switches the order of the top two stack values)</td></tr><tr><td>
+                            <const>D</const>
+                        </td><td>Push a duplicate of the top value onto the stack</td></tr><tr><td>
+                            <const>:</const>
+                        </td><td>Pop the top value of the stack. If it is negative, turn left. If it is positive, turn right. If it is <const>0</const>, keep the current direction</td></tr><tr><td>
+                            <const>I</const>
+                        </td><td>Pop the top integer from the stack and print it</td></tr><tr><td>
+                            <const>C</const>
+                        </td><td>Pop the top integer from the stack and print it as a character (using the ASCII code)</td></tr><tr><td>
+                            <const>&#34;</const>
+                        </td><td>Toggle string mode. In string mode, every character will push the corresponding ASCII value on the stack</td></tr></tbody></table>
+                <br />
+                Any other character will simply be ignored.
+            </div>
+        </div>
+    </div>
+    
+    <div class="statement-section statement-protocol">
+        <h1>
+            <span class="icon icon-protocol"> </span>
+            <span>Game Input</span>
+        </h1>
+        
+        <div class="blk">
+            <div class="text">Initially the program will hold one single value <var>N</var> on the stack: the number which shall be tested for being prime.</div>
+        </div>
+
+        
+        <div class="blk">
+            <div class="title">Output</div>
+            <div class="text">
+                <span class="statement-lineno">A single line</span> saying PRIME or NOT PRIME
+                <br />
+                To submit your solution, write a program in any language that prints CGFunge code to stdout. The first line of output should be the <var>lineCount</var>. The next <var>lineCount</var> lines should be the actual program. <br />
+                It is recommended to code in PHP, then you can write CGFunge code directly (you have to delete <const>&lt;?php</const> as well).
+            </div>
+        </div>
+
+        
+        <div class="blk">
+            <div class="title">Constraints</div>
+            <div class="text">
+                <const>1</const> ≤ <var>N</var> ≤ <const>10000</const><br />
+                <var>lineCount</var> ≤ <const>30</const> <br />
+                <var>lineLength</var> ≤ <const>40</const> <br />
+                <var>maximum number of turns</var> ≤ <const>3000</const>
+            </div>
+        </div>
+    </div>
+</div>

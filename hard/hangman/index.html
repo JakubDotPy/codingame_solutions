@@ -1,0 +1,41 @@
+<h1>Hangman</h1>
+
+<a href="https://www.codingame.com/training/hard/hangman">https://www.codingame.com/training/hard/hangman</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Hangman is a paper and pencil guessing game for two or more players. One player thinks of a word, phrase or sentence and the other tries to guess it by suggesting letters, within a certain number of guesses.<br><br>You are the moderator. Given an entry word or sentence, check the input letters in order. If the entry is completed, the game is won: display the resulting hangman and the final entry. The player is allowed 5 mistakes, corresponding to hangman's head, body, left arm, right arm, left leg. At the 6th mistake, the right leg is drawn and the game is over. If a letter is repeated more than once, the repeating occurrences are always considered as an error, even if the first time was correct.<br><br>A hangman will look like this after 0 to 6 errors. There should be no whitespace at the end of lines.<br><br><pre style="font-family: monospace">+--+   +--+   +--+   +--+   +--+   +--+   +--+<br>|      |  o   |  o   |  o   |  o   |  o   |  o<br>|      |      |  |   | /|   | /|\  | /|\  | /|\<br>|\     |\     |\     |\     |\     |\/    |\/ \</pre></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1 :</strong> a string <var>entry</var> to be guessed.<br><strong>Line 2 :</strong> a list of lowercase letters, separated by whitespace.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>First 4 lines :</strong> a depiction of the hangman in ASCII.<br><strong>5th line :</strong> the entry as guessed by the player. In case of loss, missing characters will be replaced by an underscore <const>_</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &le; len(<var>entry</var>) &le; 100<br>1 &le;  len(list of chars) &le; 26</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">hangman
+a e s m g n h</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">+--+
+|  o
+|  |
+|\
+hangman</pre>
+         </div>
+      </div>
+   </div>
+</div>

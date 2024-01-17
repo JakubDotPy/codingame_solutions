@@ -1,0 +1,38 @@
+<h1>Jumping Frogs</h1>
+
+<a href="https://www.codingame.com/training/medium/jumping-frogs">https://www.codingame.com/training/medium/jumping-frogs</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">There are three frogs sitting on a two-dimensional plane. The ith frog starts at coordinates <var>xi</var>, <var>yi</var>. Whenever the ith frog jumps, it jumps in such a way that each of its coordinates either remains unchanged or it changes by exactly <var>ki</var>. If all three frogs can eventually meet at the same coordinates, print &quot;Possible&quot;. Otherwise, print &quot;Impossible&quot;.<br><br><strong>Jumping example:</strong><br>If a frog is at (4,0) and its jumping distance (k) is 2. Then during the next step the frog can be at one of the nine positions: (4,0), (4,2), (4,-2), (6,0), (6,2), (6,-2), (2,0), (2, 2), (2,-2).</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Three space-separated integers <var>x1</var>, <var>y1</var> and <var>k1</var>.<br><strong>Line 2:</strong> Three space-separated integers <var>x2</var>, <var>y2</var> and <var>k2</var>.<br><strong>Line 3:</strong> Three space-separated integers <var>x3</var>, <var>y3</var> and <var>k3</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">For each test case, print &quot;Possible&quot; if all 3 frogs can eventually meet, &quot;Impossible&quot; otherwise.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">-10000 &le; <var>xi</var>,<var>yi</var> &le; 10000 <br>1 &le; <var>ki</var> &le; 100<br>All 3 frogs start at different locations.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">7 0 1
+2 -6 1
+-1 0 2</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">Possible</pre>
+         </div>
+      </div>
+   </div>
+</div>

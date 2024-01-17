@@ -1,0 +1,40 @@
+<h1>Gerrymandering</h1>
+
+<a href="https://www.codingame.com/training/hard/gerrymandering">https://www.codingame.com/training/hard/gerrymandering</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You're in charge of redefining electoral districts in your county, in order to win the next elections.<br><br>The county starts as a single rectangular district. A single district can be split vertically or horizontally in two new districts. This ensures that all districts remain rectangular. Your objective is to find the optimal cuts to maximize the number of voters granted by your districts.<br><br>Each district will grant you a certain amount of voters, <strong>depending solely on its dimensions.</strong> The input is a table of number of voters for each possible shape. The dimensions are not symmetrical, i.e. a 5x3 area may not have the same value as a 3x5 one.<br><br>Example: in the first testcase, a 1x1 rectangle is worth 7 voters, a 2x1 is worth 8, a 1x2 is worth 10, a 2x2 is worth 41, etc.<br>The optimal solution in that case is to split the initial 5x4 district vertically into a 4x4 and a 1x4 district. Then, the resulting 4x4 district is split horizontally in two districts of size 4x2. The resulting score is then 39 + 96 + 96 = 231, which is the highest possible amount of voters in that case.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Two integers <var>W</var> and <var>H</var>, the width and height of your county.<br><br><strong>Next <var>H</var> lines:</strong> <var>W</var> integers representing the amount of voters given by a district of shape <var>h</var>x<var>w</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> A single integer representing the maximum amount of voters you can get by redefining electoral districts.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>W</var> &le; 40<br><br>1 &le; <var>H</var> &le; 40<br><br>0 &le; <var>voters</var> &le; 10000</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">5 4
+7 8 18 39 40
+10 41 60 96 81
+24 54 114 87 154
+39 56 140 135 162</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">231</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,36 @@
+<h1>Continued Fractions</h1>
+
+<a href="https://www.codingame.com/training/medium/continued-fractions">https://www.codingame.com/training/medium/continued-fractions</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">A continued fraction is a particular way of representing any standard fraction as an expanded out complex fraction with unit numerators. <br><br><const>p</const>/<const>q</const> = <const>x0</const>+1/(<const>x1</const>+1/(<const>x2</const>+1/(<const>x3</const>+...+1/<const>xn</const>))...) <br><br>where each <const>xi</const> is a positive integer (except potentially <const>x0</const> which is just an integer and <const>xn</const> which is greater than 1). For compactness, this is represented as <br><br><const>p</const>/<const>q</const> = [<const>x0</const>; <const>x1</const>, <const>x2</const>, ..., <const>xn</const>].<br><br>For example:<br><br>[2; 3, 2, 4] = 2 + 1/(3+1/(2+1/4)) <br>= 2 + 1/(3+1/(9/4)) <br>= 2 + 1/(3+(4/9)) <br>= 2 + 1/(31/9) <br>= 2 + (9/31) <br>= 71/31<br><br>Similarly:<br><br>[-2; 1, 1, 3] = -10/7<br><br><br>If supplied a standard fraction, you must find the continued fraction representation or if supplied a continued fraction representation, you must find the standard fraction (in lowest terms) it represents.<br><br>Every rational number has a unique, terminating (finite) continued fraction as described and each continued fraction represents a unique standard fraction.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">String <var>fraction</var> either of the form &quot;<const>p</const>/<const>q</const>&quot; or of the form &quot;[<const>x0</const>; <const>x1</const>, <const>x2</const>, ..., <const>xn</const>]&quot;</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">If you are given a standard fraction &quot;<const>p</const>/<const>q</const>&quot;, you must return a string with the continued fraction representation in the form &quot;[<const>x0</const>; <const>x1</const>, <const>x2</const>, ..., <const>xn</const>] where <const>x0</const> is an integer and each other <const>xi</const> is a positive integer and <const>xn</const> &gt; 1.<br><br>If you are given a continued fraction, you must return a string with the standard fraction that it represents (as an improper fraction in lowest terms: <const>p</const>/<const>q</const>). If the fraction is negative, return it with the negative out front. ex: &quot;-2/3&quot;</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">-1000 &le; <const>x0</const> &le; 1000<br>0 &lt; <const>xi</const> &le; 1,000  for 0 &lt; i &lt; n<br>1 &lt; <const>xn</const> &le; 1,000<br><br>-1,000,000 &le; <const>p</const> &le; 1,000,000<br>0 &lt; <const>q</const> &le; 1,000,000</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">10/7</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">[1; 2, 3]</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,38 @@
+<h1>Texas Holdem</h1>
+
+<a href="https://www.codingame.com/training/medium/texas-holdem">https://www.codingame.com/training/medium/texas-holdem</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You must determine the winner of a hand in Texas Holdem Poker. Output the winning player, their hand type and the five winning card values.<br><br><strong>CARDS</strong><br>A card is represented by two characters, one for the value and one for the suit. <br>&bull; values (descending order): <const>A</const>, <const>K</const>, <const>Q</const>, <const>J</const>, <const>T</const>, <const>9</const>, <const>8</const>, <const>7</const>, <const>6</const>, <const>5</const>, <const>4</const>, <const>3</const>, <const>2</const><br>&bull; suits (no order): <const>C</const>, <const>D</const>, <const>H</const>, <const>S</const><br><br><strong>HANDS</strong><br>A player's hand is the best 5 card-card combination from the 7 card combination of their own 2 hole cards with the 5 community cards. A hand is one of the following types, in descending order of value:<br>&bull; <const>STRAIGHT_FLUSH</const> - 5 consecutive cards of the same suit<br>&bull; <const>FOUR_OF_A_KIND</const> - 4 cards of matching values and 1 kicker*<br>&bull; <const>FULL_HOUSE</const> - 3 cards of matching values, and 2 of a different matching value<br>&bull; <const>FLUSH</const> - 5 non-consecutive cards, all the same suit<br>&bull; <const>STRAIGHT</const> - 5 consecutive cards<br>&bull; <const>THREE_OF_A_KIND</const> - 3 cards of matching values and 2 kickers*<br>&bull; <const>TWO_PAIR</const> - 2 cards of a matching value, 2 of a different matching value and 1 kicker*<br>&bull; <const>PAIR</const> - 2 cards of matching values and 3 kickers*, e.g. <var>66T42</var><br>&bull; <const>HIGH_CARD</const> - The absence of any better hand means that the highest value card counts with 4 kickers*, e.g. <var>Q7432</var><br><br>* = A kicker is a leftover card which does not contribute to determining the type of a hand, but is used to break ties. The highest kicker is considered first, then the next, and so on. Only if none of the kickers are larger might a hand be considered a <const>DRAW</const>. For convenience, we call cards in the 5 card combination that are not kicker cards, &quot;non-kickers&quot;.<br><br>Note that there's no need to implement a special case for a royal flush.<br><br><strong>DETERMINING WINNING HANDS</strong><br>A higher <const>HandType</const> beats all lower hand types. If the <const>HandType</const> is the same:<br>&bull; Place cards in the order given below<br>&bull; Iterate each card in turn, e.g. 1st card Player 1 vs 1st card player 2<br>&bull; If one value is higher then that player is the winner, else continue to the next card<br>&bull; If no such win is found, the hand is a <const>DRAW</const><br><br><strong>ORDERING CARDS</strong><br>Cards are ordered by descending non-kicker values, followed by descending kicker values. In case of a <const>FULL_HOUSE</const>, list the set of 3 before the pair. If an Ace counts a low in determining a hand, this is also represented in the ordering.<br><br><strong>WORKED EXAMPLE</strong><br><br><strong>Line 1 :</strong> TC JC<br><strong>Line 2 :</strong> AD 4S<br><strong>Line 3 :</strong> 2H 7H TH QS KC<br><br>Player 1's 7-card hand: <var>TC</var> <var>JC</var> + <var>2H</var> <var>7H</var> <var>TH</var> <var>QS</var> <var>KC</var>.<br>Player 2's 7-card hand: <var>AD</var> <var>4S</var> + <var>2H</var> <var>7H</var> <var>TH</var> <var>QS</var> <var>KC</var>.<br><br>Player 1's best 5-card hand is a <const>PAIR</const> of tens (<var>TC</var> &amp; <var>TH</var>), and the kickers are <var>KC</var>, <var>QS</var> &amp; <var>JC</var>.<br>Player 2's best 5-card hand is a <const>HIGH_CARD</const> (<var>AD</var>), and the kickers are <var>KC</var>, <var>QS</var>, <var>TH</var> &amp; <var>7H</var>.<br><br>A <const>PAIR</const> beats a <const>HIGH_CARD</const> so Player 1 wins. Thus the output would be:<br><pre style="font-family: monospace">1 PAIR TTKQJ</pre></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1 :</strong> <var>holeCardsPlayer1</var>, the 2 hole cards for Player 1, separated by a space.<br><strong>Line 2 :</strong> <var>holeCardsPlayer2</var>, the 2 hole cards for Player 2, separated by a space.<br><strong>Line 3 :</strong> <var>communityCards</var>, the 5 cards on the board, separated by a space.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">If there's a winner, the output is <var>WinningPlayerId</var> <var>HandType</var> <var>OrderedFiveCardHand</var>, space-separated. If not, the output is simply <const>DRAW</const>.<br><var>WinningPlayerId</var> is <const>1</const> or <const>2</const>.<br><var>HandType</var> is as specified above.<br><var>OrderedFiveCardHand</var> is the winning 5 cards combination's values, in the order specified above.<br><br>Examples:<br><pre style="font-family: monospace">1 HIGH_CARD AKQ72<br>2 PAIR 55AKQ<br>1 FULL_HOUSE 22233<br>DRAW<br>2 FLUSH 97643<br>1 STRAIGHT 76543</pre></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">All deals are valid. (all cards exist, no duplicate cards are dealt)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">8D 7C
+7D 6C
+KS 9D 5C 3S 2D</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1 HIGH_CARD K9875</pre>
+         </div>
+      </div>
+   </div>
+</div>

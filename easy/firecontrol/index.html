@@ -1,0 +1,41 @@
+<h1>FireControl</h1>
+
+<a href="https://www.codingame.com/training/easy/firecontrol">https://www.codingame.com/training/easy/firecontrol</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You need to cut down some trees in a forest fire to stop the fire from spreading. Write code to help you determine the least amount of trees to cut to contain the fire.<br><br>The size of the forest is a <strong>6 by 6 grid</strong>.<br>Fire can spread sideways as well as diagonally.<br>To stop the fire, you need to remove <strong>two layers</strong> of trees.<br><br><const>#</const> Tree<br><const>=</const> Cut-down tree<br><const>o</const> Empty space<br><const>*</const> Fire<br><br>If there are no trees that can be saved by blocking the fire, output: '<const>JUST RUN</const>'.<br>if there is no fire, output: '<const>RELAX</const>'.<br><br><strong>Example</strong><br><br>Input:<br><pre style="font-family: monospace">*#####<br>######<br>######<br>######<br>######<br>######</pre><br>To be cut:<br><pre style="font-family: monospace">*12###<br>345###<br>678###<br>######<br>######<br>######</pre><br>Output: <br><pre style="font-family: monospace">8</pre></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>6 lines of 6 characters</strong> for the 6x6 grid of the forest.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The number of trees to be cut<br>or '<const>JUST RUN</const>'<br>or '<const>RELAX</const>'</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">######
+######
+######
+######
+######
+******</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">12</pre>
+         </div>
+      </div>
+   </div>
+</div>

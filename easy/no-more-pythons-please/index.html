@@ -1,0 +1,45 @@
+<h1>No More Pythons, Please!</h1>
+
+<a href="https://www.codingame.com/training/easy/no-more-pythons-please">https://www.codingame.com/training/easy/no-more-pythons-please</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Given an ASCII drawing of <var>N</var>x<var>M</var> characters. You must output the longest snake size in the image. It is also necessary to output the number of snakes with such size.<br><br>On the field &quot;<const>.</const>&quot; means an empty space (no snake)<br><br>The snake is depicted by the following constant symbols:<br><br>&quot;<const>o</const>&quot; - a snake's head<br>&quot;<const>-</const>&quot;,&quot;<const>|</const>&quot; - intermediate part of the snake in horizontal/vertical position<br>&quot;<const>v</const>&quot;,&quot;<const>&lt;</const>&quot;,&quot;<const>&gt;</const>&quot;,&quot;<const>^</const>&quot; - a snake's tail<br>&quot;<const>*</const>&quot; - a curved part of the snake, i.e. a turn. Example:<br><const><pre style="font-family: monospace"></pre><pre style="font-family: monospace"><br>..*-o<br>..|..<br>*-*..<br>|....<br>v....</pre><pre style="font-family: monospace"></pre></const><br><br><strong>It is guaranteed</strong> that it's possible to unambiguously determine which symbol refers to which snake:<br><br>The second character from the head and from the tail <strong>cannot be</strong> a &quot;<const>*</const>&quot;.<br>Also, one snake <strong>cannot have two &quot;<const>*</const>&quot;s in a row</strong>.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Two space-separated integers <var>N</var> and <var>M</var> for the height and the width of the figure.<br><strong>Next <var>N</var> lines:</strong> The <var>M</var> characters which can only be <const>o</const>, <const>|</const>, <const>-</const>, <const>*</const>, <const>&lt;</const>, <const>v</const>, <const>^</const>, <const>&gt;</const>, or <const>.</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1 :</strong> The size of the largest snake in the input figure.<br><strong>Line 2 :</strong> Count of snakes with the largest size.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">5 &le; <var>N</var> &le; 80<br>5 &le; <var>M</var> &le; 80</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">7 7
+.......
+.......
+.......
+&lt;-----o
+.......
+.......
+.......
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">7
+1</pre>
+         </div>
+      </div>
+   </div>
+</div>

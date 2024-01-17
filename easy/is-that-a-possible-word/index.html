@@ -1,0 +1,66 @@
+<h1>Is that a possible word?</h1>
+
+<a href="https://www.codingame.com/training/easy/is-that-a-possible-word">https://www.codingame.com/training/easy/is-that-a-possible-word</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are an examiner for different languages. Every year you get a lot of texts and should check if the words are in the language. Since you are lazy but highly motivated, you decide to automate this process.<br><br>Fortunately, the languages are pretty simple. So you want to build a state machine for every language, which can tell you quickly whether a word is in the language or not.<br><br>Now you have already built the languages, but you don't want to write code for each language individually. So now you have to come up with a flexible system that accepts your language and uses it to build a functioning machine.<br><br><strong>Tip:</strong> draw the machine to better understand what is meant by status and transitions<br><strong>Hint:</strong> https://en.wikipedia.org/wiki/Deterministic_finite_automaton<br><br><br><strong>The following example refers to the example at the bottom (first test)</strong><br><br>Just the necessary information from the input:<br><var>Word</var>: &quot;abc&quot;<br><var>states</var> : A B<br><var>startState</var> : A<br><var>endState</var> : B<br><var>Transitions</var> :<br>A a B<br>A c B<br>B b A<br><br>You start in <strong>state</strong> A (<var>startState</var>). The first character found is an 'a'. According to the corresponding <strong>transition</strong> ( A a B ), you move to <strong>state</strong> B.<br><br>You are now in <strong>state</strong> B. The next character found is a 'b'. According to the corresponding <strong>transition</strong> ( B b A ), you move to <strong>state</strong> A.<br><br>Back in <strong>state</strong> A. The last character found is a 'c'. According to the corresponding <strong>transition</strong> ( A c B ), you move to <strong>state</strong> B again.<br><br>The word is over, the final <strong>state</strong> is B. This is in the set of the allowed <strong>final states</strong> (<var>endStates</var>), so the <var>word</var> &quot;abc&quot; is valid, and you print <strong>&quot;true&quot;</strong>.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> A string <var>input</var> for the alphabet which can lead to changes in state, separated with space<br><br><strong>Line 2:</strong> A string <var>states</var> for the possible states, separated with space<br><br><strong>Line 3:</strong> An integer <var>numberOfTransitions</var> for the number of transitions<br><br><strong>Next <var>numberOfTransitions</var> lines:</strong> A string <var>transition</var> for the transition from one state to the next<br><br><strong>Next line:</strong> A string <var>startState</var> for the state in which you start<br><br><strong>Next line:</strong> A string <var>endStates</var> for all allowed final states, separated with space<br><br><strong>Next line:</strong> An integer <var>numberOfWords</var> for the number of words<br><br><strong>Next <var>numberOfWords</var> lines:</strong> A string <var>word</var> for the word which should be tested</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">&quot;<strong>true</strong>&quot; or &quot;<strong>false</strong>&quot;, depending on whether the tested  <var>word</var> is in the language or not.<br><br>If the <var>word</var> contains a character that is not in the alphabet, &quot;<strong>false</strong>&quot; is expected.<br><br>If you are in a state and get a character that is in the alphabet but no transition, also return &quot;<strong>false</strong>&quot;</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><var>input</var>: always lower case<br><br><var>states</var>: always upper case<br><br><var>numberOfTransitions</var> &gt; 0<br><br><var>startState</var>: there will always be exactly one<br><br><var>numberOfEndStates</var> &gt; 0<br><br>0 &lt; <var>numberOfWords</var> &le; 10<br><br><strong>Warning</strong>: the <var>word</var> can contain characters which are not in the <var>input</var>!<br><br><strong>Warning</strong>: Not every <strong>state</strong> has a subsequent <strong>state</strong> for every <strong>input</strong>! <strong>But</strong> every <strong>input</strong> leads to at most one different <strong>state</strong> in every state! There is no input that leads to 2 or more other states. <strong>So if you are in state A, the input a points either to none or one state!</strong></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">a b c
+A B
+6
+A a B
+A b B
+A c B
+B a A
+B b A
+B c A
+A
+B
+10
+a
+ab
+abc
+abcd
+abcde
+aabbcc
+aabbcca
+abcabcabc
+z
+abcabcabo</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">true
+false
+true
+false
+false
+false
+true
+true
+false
+false</pre>
+         </div>
+      </div>
+   </div>
+</div>

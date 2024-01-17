@@ -1,0 +1,51 @@
+<h1>BobTheScience and the Food Stack</h1>
+
+<a href="https://www.codingame.com/training/medium/bobthescience-and-the-food-stack">https://www.codingame.com/training/medium/bobthescience-and-the-food-stack</a>
+
+<div class="statement-body">
+
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal"> </span><span>Goal </span></h2>
+   <span class="question-statement">
+BobTheScience went to a food store. He saw a food store which sells <var>m</var> colorful pancakes, each weigh <var>p</var>[<var>i</var>].
+ He wants to eat all the pancakes,
+but with the following exceptions:<br />
+      <b>1. </b>You need to serve the <var>m</var> pancakes in <var>n</var> stacks.<br />
+      <b>2. </b>You need to make it so that the difference between the maximum weight and the minimum weight doesn&#39;t exceed <var>d</var>.<br /><br />
+<b>Example: </b>You need to rearrange 7 pancakes into 3 different stacks, and <var>d</var> is 3. The weights of the pancakes are <b>[1, 2, 3, 1, 2, 3, 1]</b>.
+1 optimal solution for this testcase is:<br />
+<b>1. </b>Place the 1st pancake in the 1st stack.<br />
+<b>2. </b>Place the 2nd pancake in the 1st stack.<br />
+<b>3. </b>Place the 3rd pancake in the 2nd stack.<br />
+<b>4. </b>Place the 4th pancake in the 2nd stack.<br />
+<b>5. </b>Place the 5th pancake in the 3rd stack.<br />
+<b>6. </b>Place the 6th pancake in the 3rd stack.<br />
+<b>7. </b>Place the 7th pancake in the 3rd stack.<br />
+The total weight of each stack is now <b>[3, 4, 6]</b>, and the difference between the maximum stack and the minimum stack does not exceed <var>d</var>,
+which is 3<br /><br />
+<b>Note:</b><br />Each pancake&#39;s weight doesn&#39;t exceed <var>d</var>.<br />
+Make sure you add an end line character (&#39;\n&#39;) to the code. (For some programming languages only)<br />
+<b><u>*ALL INDEXES ARE STARTING WITH 1.*</u></b><span class=""></span>
+</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">
+<b>Line 1:</b> 3 space-separated unsigned integers <var>m</var>, <var>n</var>, <var>d</var><br />
+<b>Line 2:</b> <var>m</var> space-separated unsigned integers <var>p</var>[<var>i</var>]
+</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">
+<b>Line 1:</b> <var>m</var> space-separated unsigned integers, each corresponding to the index of the stack of the <var>i</var>th pancake, starting with 1.
+</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">
+<span style="font-family:&#39;consolas&#39;">1&lt;&#61;<var>n</var>&lt;&#61;<var>m</var>&lt;&#61;2500<br />1&lt;&#61;<var>p</var>[<var>i</var>]&lt;&#61;<var>d</var>&lt;&#61;5000</span><br />
+</div>
+   </div>
+</div></div>

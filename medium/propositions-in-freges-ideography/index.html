@@ -1,0 +1,38 @@
+<h1>Propositions in Frege’s ideography</h1>
+
+<a href="https://www.codingame.com/training/medium/propositions-in-freges-ideography">https://www.codingame.com/training/medium/propositions-in-freges-ideography</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Gottlob Frege is a German mathematician and logician who created a graphical language for the first order and second order logic. Look at the right of the cover image.<br>In this puzzle, we will only use propositional calculus.<br><br>The following graph means &quot;B implies A&quot;:<br><pre style="font-family: monospace">--- A<br> '- B</pre><br>This one means &quot;not(B implies A)&quot;:<br><pre style="font-family: monospace">+-- A<br> '- B</pre><br>And now &quot;B implies not A &quot;:<br><pre style="font-family: monospace">--+ A<br> '- B</pre><br>This bigger one means &quot;C implies (B implies A)&quot;, that is also &quot;(C and B) implies A&quot;:<br><pre style="font-family: monospace">----- A<br> | '- B<br> '--- C</pre><br>This last one is not the previous one, it means &quot;(C implies B) implies A&quot;:<br><pre style="font-family: monospace">----- A<br> '--- B<br>   '- C</pre><br>Note that &quot;B implies A&quot; means &quot;A or not B&quot;, ie &quot;the case that (B is true and A is False) is False&quot;. Every three other cases makes the formula True: &quot;B is True and A is True&quot;, &quot;B is False and A is False&quot; and &quot;B is False and A is True&quot;.<br>Your task is to tell if such a proposition is a tautology or not.<br>If it is a tautology (ie True for every possible truth-values of the letters), answer <const>TAUTOLOGY</const>.<br>If it is not a tautology, write down each case for which the statement is False, ordered lexicographically.<br>Here is an example if the statement has three letters A, B and C and is False if and only if exactly one of the letter is True:<br><pre style="font-family: monospace">A False B False C True<br>A False B True C False<br>A True B False C False</pre></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> the number <var>n</var> of lines of the ideography formula<br><strong>Next <var>n</var> lines:</strong> The ideography formula itself</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><const>TAUTOLOGY</const><br>or<br>one line for each case that makes the formula false (lexicographically ordered)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">The letters are always upper-cased.<br>The formulas are justified, the length of the lines are all equal.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+--- A
+ '- A</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">TAUTOLOGY</pre>
+         </div>
+      </div>
+   </div>
+</div>

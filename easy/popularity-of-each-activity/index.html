@@ -1,0 +1,49 @@
+<h1>Popularity of each activity</h1>
+
+<a href="https://www.codingame.com/training/easy/popularity-of-each-activity">https://www.codingame.com/training/easy/popularity-of-each-activity</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Here is a rectangle (<var>eventArea</var>) divided (in a wonky &quot;Tic-Tac-Toe-style&quot;) into 9 smaller rectangles (<var>activityArea</var>s).<br><br>It is an aerial-view snapshot of a kids-event, with 9 activities that attendees can do: face-painting, pony-rides, fort-building, magic show, corn-maze, giant bubbles, etc.<br><br>Each attendee is a <const>*</const><br><br>The dividing lines are shown as <const>:</const> or <const>-</const><br>The points where dividing lines intersect are shown as <const>+</const><br><br><br><strong>Your Task:</strong><br><br>We want to know (for this moment in time):<br>‣ the total number of attendees (<var>totalAttendees</var>) and<br>‣ what percentage of attendees were in each <var>activityArea</var>.  These 9 percentages are called <var>percentageAtThisActivity</var>.<br><br><strong>How to display each <var>percentageAtThisActivity</var>:</strong><br>It is rounded to nearest integer<br>It is followed by <const>%</const><br>It is exactly 4 characters long. If necessary, pad the left with one or more underscores (<const>_</const>) to force proper alignment<br><br>Note: The percentages may not add up to 100% after rounding.<br><br><br><strong>Your impact:</strong><br>We'll use this output to help quantify how popular each activity was.  <br>Based on that, some activities may (or may not) be included at next year's event.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1: </strong> An integer <var>height</var> of <var>eventArea</var><br><strong>Next  <var>height</var> Lines: </strong> A string representing a row of <var>eventArea</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> An integer <var>totalAttendees</var>, followed by  <const> attendees</const><br><strong>Lines 2-4:</strong> <var>percentageAtThisActivity</var> in the same ordering/configuration as the input <var>eventArea</var>.<br>(Each is separated by a space)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">There will be no attendees (<const>*</const>) on the dividing borders, i.e., it will be clear which <var>activityArea</var> each attendee belongs to.<br><br>There are always at least 2 attendees</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">10
+  *:   :  
+   :   :  
+---+---+--
+   :*  :  
+   :   :  
+   : * :  
+---+---+--
+   :   :  
+   : * :  
+   :   :  </pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">4 attendees
+_25% __0% __0%
+__0% _50% __0%
+__0% _25% __0%</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,56 @@
+<h1>Stall tilt</h1>
+
+<a href="https://www.codingame.com/training/easy/stall-tilt">https://www.codingame.com/training/easy/stall-tilt</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">During motorcycle competitions, the speeds achieved are incredible. But this speed is often the cause of accidents, especially in bends. Indeed, when entering a bend, the motorcycle undergoes the centrifugal force that drives the motorcycle out of the bend. To combat this, riders use a technique called &quot;centripetal tilt&quot; which consists in tilting the bike towards the inside of the bend to compensate for this force. This technique reaches its limits when the speed is too high, which can lead to slippages that lead to falls. Hence the importance of controlling your speed ;)<br><br>The purpose of this puzzle is to define the maximum constant speed that your bike must have to pass all the bends of the circuit without stalling and while being the first in the competition. In addition, your job will be to develop the ranking for this competition.<br><br>The ranking of this competition is done in this way:<br>V=Speed<br>- If Va&gt;Vb&gt;Vc then &quot;a&quot; first, &quot;b&quot; second, &quot;c&quot; third.<br>- If Va&gt;Vb&gt;Vc and &quot;a&quot; falls then &quot;b&quot; first, &quot;c&quot; second, &quot;a&quot; third<br>- If Va&gt;Vb&gt;Vc and &quot;b&quot; falls at bend 2 and &quot;a&quot; at bend 5  then &quot;c&quot; first, &quot;a&quot; second, &quot;b&quot; third<br>- If Va&gt;Vb&gt;Vc and &quot;b&quot; falls at the same bend as &quot;a&quot; then &quot;c&quot; first, &quot;a&quot; second, &quot;b&quot; third<br>In the final ranking, you are also counted and represented by the letter &quot;y&quot; (as the goal of this puzzle is that you are the optimal speed you will always be in the first position).<br><br>Finally, to know the angle for vertical relation you will need this:<br><pre style="font-family: monospace"></pre><pre style="font-family: monospace">tan(&theta;) = v&sup2; / (r &times; g)</pre><pre style="font-family: monospace"></pre>v = speed (m/s) / r = radius of the bend (m) / g = 9.81 (m/s&sup2;) / &theta; = angle with respect to the vertical (degrees)<br>A motorcycle will stall if the angle to the ground is &lt; 30 degrees.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>First line:</strong> Number <var>n</var> of motorcycles (other than yours) participating in the competition.<br><strong>Second line:</strong> Number <var>v</var> of curves in the circuit.<br><strong>Next <var>n</var> lines:</strong> The constant speed of each motorcycle (The first speed of the list given by the loop is that of competitor a, the second that of competitor b...) (m/s).<br><strong>Next <var>v</var> lines:</strong> The radius of each curve of the circuit (m).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>First line:</strong> The maximum constant speed to avoid stalling in the circuit.<br><strong>Last <var>n+1</var> lines:</strong> The ranking of the competition.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <var>n</var>, <var>v</var> &lt; 13<br>0 &lt; <var>speed</var> &lt; 70<br>0 &lt; <var>r</var> &lt; 200<br>The output angles are always <const>integers</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">8
+2
+56
+6
+2
+23
+9
+25
+41
+15
+40
+30</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">22
+y
+h
+e
+b
+c
+f
+d
+a
+g</pre>
+         </div>
+      </div>
+   </div>
+</div>

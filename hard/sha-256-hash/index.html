@@ -1,0 +1,36 @@
+<h1>SHA-256 Hash</h1>
+
+<a href="https://www.codingame.com/training/hard/sha-256-hash">https://www.codingame.com/training/hard/sha-256-hash</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Implement a slightly modified version of the SHA-256 hash.<br><br>A full description of the SHA-256 algorithm can be found on Wikipedia: https://en.wikipedia.org/wiki/SHA-2#Pseudocode<br><br>A detailed walkthrough can be found here: https://qvault.io/cryptography/how-sha-2-works-step-by-step-sha-256/<br><br>The only difference between the <strong>standard implementation</strong> (detailed in the 2 links above) and our implementation is in the definition of the <strong>initial hash values</strong> (referred to as h0 - h7 in the links above).<br><br>The <strong>standard implementation</strong> uses the first 32 bits of the fractional parts of the square roots of the <strong>first</strong> 8 primes (2, 3, 5, 7, 11, 13, 17, 19). We will instead use the first 32 bits of the fractional parts of the square roots of the <strong>next</strong> 8 primes (23, 29, 31, 37, 41, 43, 47, 53), given here in hexadecimal form:<br><br><pre style="font-family: monospace">0xcbbb9d5d<br>0x629a292a<br>0x9159015a<br>0x152fecd8<br>0x67332667<br>0x8eb44a87<br>0xdb0c2e0d<br>0x47b5481d</pre><br>The reason we're using different initial hash values is so that you can't use built-in hash functions, e.g. python's hashlib.sha256.<br><br>Apart from this change in initial hash values, the algorithm proceeds <strong>exactly the same as the standard implementation</strong>. Note: the &quot;round constants&quot; are not changed, i.e. they are the same as in the standard implementation.<br><br>You will be given a string, you must convert that string to a sequence of bits (using ASCII) and hash it using our version of the SHA-256 algorithm.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>One line:</strong> a string <var>S</var> to hash.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>One line:</strong> the 64-character hash value <var>H</var> output by our version of the SHA-256 algorithm in lowercase hexadecimal form.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">All characters of the string will be printable ASCII characters in the range [32 - 126] inclusive.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">Ravenclaw</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">70ac5b0feb57d7b1823a905a398863318594dd996d5c40ecced5089935e7a922</pre>
+         </div>
+      </div>
+   </div>
+</div>

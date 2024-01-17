@@ -1,0 +1,61 @@
+<h1>Bin packing</h1>
+
+<a href="https://www.codingame.com/training/medium/bin-packing">https://www.codingame.com/training/medium/bin-packing</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">There is an array of items of various weights.<br>There is a number of identical bins. The bins are large enough to hold any combinations of items.<br><br>Instead of throwing all items into one bin, the requirement is to meticulously distribute the weights of the items into the given bins <strong>evenly</strong>. <br><br>After loading, all the bins should have the same weight. No one bin is heavier or lighter than the others.<br><br>Each item must be placed in exactly one bin. Items cannot be split into parts.<br><br>Mathematicians described bin packing as an NP-hard problem. To mitigate the difficulty, you do not need to tell how the items should be distributed. You just need to tell whether &quot;even distribution&quot; is achievable.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">There are multiple test cases in each test set.<br><br><strong>Line 1: </strong> an integer <var>n</var> for the number of test cases.<br><strong>Following <var>n</var> lines: </strong> each line is an independent test case, having space-separated integers <br><var>b</var> <var>m</var> <var>w1</var> <var>w2</var> <var>w3</var> ... <var>wm</var><br><br><var>b</var> is the number of bins for items to fill in,<br><var>m</var> is the number of items to pack into bins,<br>followed by <var>m</var> integers for the weights of every item.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>n</var> lines: </strong> for each test case, write a line either <const>yes</const> or <const>no</const>. <br>Write <const>yes</const> if all the items can be evenly distributed by weight among all the bins. Write <const>no</const> if it is impossible.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>n</var> &le; 100<br>1 &le; <var>b</var> &le; 6<br>1 &le; <var>m</var> &le; 20<br>1 &le; <var>w1</var> <var>w2</var> <var>w3</var> ... <var>wm</var> &le; 1000</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">12
+1 6 1 2 3 4 5 6
+2 2 3 3
+2 5 50 10 20 20 20
+3 6 100 110 120 130 140 150
+4 5 100 50 100 100 50
+5 11 2 5 17 8 13 7 7 2 3 17 4
+2 5 36 22 27 38 37
+3 6 10 22 19 25 15 2
+4 9 18 34 20 33 39 27 28 19 2
+5 8 21 28 31 38 31 22 36 3
+3 13 101 100 11 205 36 65 29 95 68 168 145 39 25
+4 15 17 52 43 41 201 234 59 32 296 26 38 29 152 383 311
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">yes
+yes
+yes
+yes
+yes
+yes
+no
+no
+no
+no
+no
+no
+</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,56 @@
+<h1>Word Search for Programmers</h1>
+
+<a href="https://www.codingame.com/training/easy/word-search-for-programmers">https://www.codingame.com/training/easy/word-search-for-programmers</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Word Search is a type of puzzle that asks the player to search for various words within a grid of letters.<br>They can be vertical, horizonal, backwards, diagonal, etc.<br>If you are unfamiliar with it, see banner image and/or https://en.wikipedia.org/wiki/Word_search<br><br>But as a computer geek, that doesn't interest you; you want to program a way to find those words instead.<br><br>Input will be a square grid of <var>size</var> lines (each line is <var>size</var> letters long), followed by all the words to find.<br><br>Output the same square grid but hide any letters that aren't included in those words.<br><br>~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~<br><br>NOTE: If you enjoy this puzzle, see this similar one: https://www.codingame.com/training/medium/hidden-word</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong>: An integer <var>size</var>, denoting the number of lines of input<br><strong>Next <var>size</var> lines:</strong> A string <var>ROW</var> of that square grid<br><strong>Next line:</strong> A string <var>clues</var> of all the words to find, separated by spaces</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>size</var> lines:</strong> <var>ROW</var> with the unused letters hidden.<br>In other words, all unused characters should be replaced by a <const>space</const> character.<br>Trailing spaces should NOT be trimmed.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">&bull; Each clue of <var>clues</var> has only letters (no spaces).<br>&bull; <var>clues</var> are given in capitalized case (but look for the all-caps version within the grid).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">10
+IPLUCJMCNY
+AAFIIVADZN
+TFUUSWGHWE
+UBARTAGDOG
+YSAJIGIUGR
+DTEMRFEOKA
+HYTEBKZCHM
+BOMAHARBAL
+WOOQPUERNE
+HEZUYIJHNS
+Abraham Bart Homer Lisa Maggie Marge Patty Selma</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">  L   M   
+   I  A   
+    S G  E
+ BARTAG  G
+Y     I  R
+ T  R E  A
+  TE     M
+  MAHARBAL
+ O  P    E
+H        S</pre>
+         </div>
+      </div>
+   </div>
+</div>

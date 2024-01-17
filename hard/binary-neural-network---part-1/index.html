@@ -1,0 +1,42 @@
+<h1>Binary neural network - Part 1</h1>
+
+<a href="https://www.codingame.com/training/hard/binary-neural-network---part-1">https://www.codingame.com/training/hard/binary-neural-network---part-1</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You will build a neural network that takes binary <var>inputs</var> and produces binary <var>outputs</var>. The network follows a specified topology, and learns from a provided training set using backpropagation.<br><br><strong>NOTATION</strong><br><br> - <strong>Input node</strong>: I1 - 1st input node, top to bottom<br> - <strong>Output node</strong>: O2 - 2nd output node, top to bottom<br> - <strong>Hidden layer node</strong>: H2:3 - 3rd node (top to bottom) in the 2nd hidden layer (left to right)<br> - <strong>Bias node</strong>: &theta;<br> - <strong>Output</strong>: o[O2] - output of O2<br> - <strong>Weight</strong>: w[I1, O2] - weight of link from I1 to O2 (left to right)<br> - <strong>Training data</strong>: t2 - expected output of O2<br> - <strong>Learning rate</strong>: &eta; = <const>0.5</const><br><br><strong>TOPOLOGY</strong><br><br> - The input nodes are in a column at the left, followed by the hidden layers (0 - 2 columns), followed by output nodes in a column on the right<br><br> - There is a single bias node, &theta;, which is linked to every hidden and output node<br><br> - Each node is linked to every node in the previous column to the left. So a network with 2 <var>inputs</var> and 2 <var>outputs</var> has 6 links. Their associated weights are: w[I1, O1], w[I2, O1], w[&theta;, O1], w[I1, O2], w[I2, O2], w[&theta;, O2]<br><br><strong>NODE OUTPUT</strong><br><br> - The input nodes output unmodified input values<br><br> - &theta; always outputs <const>1</const><br><br> - The un-normalized outputs of hidden and output nodes are the sum of all inputs multiplied by the associated weights. For example, in a network with 2 inputs, the node H1:1 outputs:<br><br><pre style="font-family: monospace">o'[H1:1] = o[I1]*w[I1, H1:1] + o[I2]*w[I2, H1:1] + w[&theta;, H1:1]</pre><br> - This value is then normalized with a sigmoid activation function:<br><br><pre style="font-family: monospace">o[H1:1] = 1 / (1 + exp(-o'[H1:1]))</pre><br><strong>BACKPROPAGATION</strong><br><br> - For output node k:<br><br><pre style="font-family: monospace">&delta;[k] = o[k]*(1 - o[k])*(o[k] - tk)</pre><br> - For hidden node j (sum for all nodes k in the next layer to the right):<br><br><pre style="font-family: monospace">&delta;[j] = o[j]*(1 - o[j])*<br>       ( &delta;[k1]*w[j, k1] + &delta;[k2]*w[j, k2] + ... + &delta;[kn]*w[j, kn] )</pre><br> - For link, w[j, k]:<br><br><pre style="font-family: monospace">∆w = &minus;&eta;*&delta;[k]*o[j]</pre><br> - Since o[&theta;] is always <const>1</const>, ∆w for w[&theta;, k] is:<br><br><pre style="font-family: monospace">∆w = &minus;&eta;*&delta;[k]</pre><br><strong>TRAINING</strong><br><br>Repeat <var>trainingIterations</var> times the following:<br> - For each line of <var>trainingInputs</var> and <var>expectedOutputs</var>:<br>  1) Run the network forward with the provided inputs to get the outputs<br>  2) Calculate the ∆w's for all links, based on expected output<br>  3) Apply the ∆w's to all link weights<br><br><strong>WEIGHTS</strong><br><br>Weights are initialized using a linear congruential generator with a seed of <const>1103527590</const>. The LCG works as follows:<br><br><pre style="font-family: monospace">X(0) = 1103527590<br>X(n+1) = 1103515245 * X(n) + 12345 [mod 2^31]</pre><br>Each LCG value is normalized to [0, 1] by dividing by 0x7fffffff.<br><br>Weights are initialized on each node in each layer, top to bottom, left to right. Each node links to every node in the column to the left, top to bottom, and then to &theta;. So for a network with 2 inputs, 2 hidden nodes, and 2 outputs, the initialization order is:<br><br><pre style="font-family: monospace">w[I1, H1:1]<br>w[I2, H1:1]<br>w[&theta;, H1:1]<br>w[I1, H1:2]<br>w[I2, H1:2]<br>w[&theta;, H1:2]<br>w[H1:1, O1]<br>w[H1:2, O1]<br>w[&theta;, O1]<br>w[H1:1, O2]<br>w[H1:2, O2]<br>w[&theta;, O2]</pre><br><strong>MORE INFO</strong><br><br>https://www.youtube.com/watch?v=aVId8KMsdUU<br>https://www.youtube.com/watch?v=bxe2T-V8XRs</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Six space-separated integers specifying the number of <var>inputs</var>, <var>outputs</var>, <var>hiddenLayers</var>, <var>testInputs</var>, <var>trainingExamples</var>, and <var>trainingIterations</var>.<br><strong>Line 2:</strong> <var>hiddenLayers</var> space-separated integers specifying the number of <var>nodes</var> in each hidden layer, from closest-to-input to closest-to-output.<br><strong>Next <var>testInputs</var> lines:</strong> a binary number of <var>inputs</var> digits, specifying each <var>testInput</var> to the neural network<br><strong>Next <var>trainingExamples</var> lines:</strong> One set of training data per line, each consisting two binary numbers. The first binary number has <var>inputs</var> digits, and specifies the <var>trainingInputs</var> to the neural network. The second binary number has <var>outputs</var> digits, and specifies the <var>expectedOutputs</var> for the provided inputs.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>testInputs</var> lines:</strong> Each containing  a binary number of <var>outputs</var> digits, specifying the calculated outputs from the neural network (rounded to the nearest integer) for the provided test inputs, after being trained by the examples</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>inputs</var>,<var>outputs</var> &le; 16<br>0 &le; <var>hiddenLayers</var> &le; 2<br>1 &le; <var>testInputs</var> &le; 16<br>1 &le; <var>trainingExamples</var> &le; 100<br>1 &le; <var>trainingIterations</var> &le; 10000<br>1 &le; <var>nodes</var> &le; 4</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1 1 0 2 2 7
+
+0
+1
+0 0
+1 1</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">0
+1</pre>
+         </div>
+      </div>
+   </div>
+</div>

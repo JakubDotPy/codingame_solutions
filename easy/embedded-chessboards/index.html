@@ -1,0 +1,45 @@
+<h1>Embedded Chessboards</h1>
+
+<a href="https://www.codingame.com/training/easy/embedded-chessboards">https://www.codingame.com/training/easy/embedded-chessboards</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">In a visit to a gallery I saw a contemporary art painting such that the whole picture is full of checker-pattern tiles, with alternating squares of darker and lighter colors (like the one in the banner). Though I was unable to appreciate how this painting was worth the quoted dollar value, I envisioned plenty of chessboards embedded in the pattern.<br><br>How many chessboards can be found in the painting? I was wondering.<br><br>A chessboard is defined as an area of 8x8 tiles and <strong>MUST</strong> have a white (or a lighter color) tile at the bottom-right corner. The painting has its strict orientation. One cannot rotate the painting to count nor count a rotated area as a valid chessboard.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1 :</strong> An integer <var>n</var>, for the number of lines to follow.<br><strong>Following <var>n</var> lines :</strong> Each line is an independent test carrying three integers <br><var>row</var> <var>col</var> <var>isWhite</var>.<br><br><var>row</var> is the number of rows of tiles in the painting.<br><var>col</var> is the number of columns of tiles in the painting.<br><var>isWhite</var> is either 0 or 1. 0 means false; 1 means true. It indicates whether the lower-right corner of the painting is white (or is a lighter color).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">Write <var>n</var> lines. For each test, write an integer showing the number of valid chessboards that can be found in the painting.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">8 &le; <var>row</var>, <var>col</var> &le; 10000<br>1 &le; <var>n</var> &le; 100</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">5
+8 8 0
+9 8 1
+8 10 0
+10 9 0
+10 11 1</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">0
+1
+1
+3
+6</pre>
+         </div>
+      </div>
+   </div>
+</div>

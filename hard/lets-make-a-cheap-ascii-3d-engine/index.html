@@ -1,0 +1,58 @@
+<h1>Let's make a cheap ASCII 3D engine!</h1>
+
+<a href="https://www.codingame.com/training/hard/lets-make-a-cheap-ascii-3d-engine">https://www.codingame.com/training/hard/lets-make-a-cheap-ascii-3d-engine</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You're given a map of a squared room, seen from above, split in <var>N</var> rows of <var>N</var> tiles of size 100 x 100.<br>Each tile is either empty (<const>&quot;.&quot;</const>) or filled (<const>&quot;#&quot;</const>).<br>The border tiles are always filled.<br><br><strong>Your task:</strong> create a frame of ASCII chars to render a 3D view of this room.<br><br>You're given the coordinates <var>X</var>, <var>Y</var> and the angle <var>A</var> (in degrees) of the camera, which only rotates horizontally.<br>(0, 0) indicated the top left corner of the room seen from above and the angle of the camera is given relatively to the x axis, with clockwise angles being positive.<br><br>The frame you want to create will have 15 rows of 61 chars. Each column of the frame is generated with a <strong>Ray Casting</strong> method.<br>You must send 61 rays, one for each degree from <var>A</var> - 30 to <var>A</var> + 30. Each ray will search for the closest wall and must determine:<br><br>- the distance <var>D</var> between the camera and the point P where the ray hits the wall,<br>- the type of the wall, parallel to the x axis (<strong>h-wall</strong>) or to the y axis (<strong>v-wall</strong>).<br><br>The corresponding column of the frame consists in a block of 2 * <var>H</var> + 1 identical chars (maxed out at 15) , centered vertically, surrounded by spaces. The char displayed is <const>&quot;.&quot;</const> for a h-wall and <const>&quot;,&quot;</const> for a v-wall.<br><var>H</var> is an integer that evaluates the height of the wall as you see it from the camera. The further the wall, the smaller <var>H</var> will be. More precisely, <var>H</var> is 1500 / <var>D'</var> (rounded) where <var>D'</var> denotes the distance, not between the camera and P but between <strong>the plane of the screen</strong> and P. Seen from above, the plane of the screen is the line that goes through the camera perpendicularly to the angle of the camera.<br>A sub-task will be to understand how <var>D'</var> can be calculated directly from <var>D</var>.<br><br>An image to help visualizing the problem : https://i.imgur.com/M7YNW9P.png (Left part of the screen : top view, in blue, the angle of the camera, in red: rays that hit a v-wall, in green: rays that hit a h-wall. Right part of the screen: the ASCII rendition.)<br><br><strong>Note:</strong> if a ray hits a point with coordinates that are both multiples of 100, you must decide if you chose it to be a h-wall or a v-wall so it could lead to different renderings, but this case won't happen in the testcases and validators.<br><strong>Note 2:</strong> the rendering here will be awfull due to the limitations in the inputs, but it's much better with higher resolution and more rays. And of course you can use columns of colored pixels in place of chars for a way better result, an example here with 601 rays: https://i.imgur.com/oDjX0hG.png.<br><strong>Note 3:</strong> if you use <var>D</var> instead of <var>D'</var>, there will be a <strong>fisheye</strong> effect in your 3D rendition. If later on you want to create a 3D engine and keep this fisheye effect, just use <var>D</var>, example here: https://i.imgur.com/II7kO7C.png. You can even accentuate it by reversing the process you use to turn <var>D</var> into <var>D'</var>, example here: https://i.imgur.com/BMcBeGK.png.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> 3 integers <var>X</var>, <var>Y</var>, <var>A</var> for the coordinates and angle of the camera.<br><strong>Line 2:</strong> An integers <var>N</var> for the number of rows in the map.<br><strong>Next <var>N</var> lines:</strong> A string of length <var>N</var> describing a row of the map.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">15 lines of length 61.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">7 &le; <var>N</var> &le; 20<br>-180 &lt; <var>A</var> &le; 180<br><var>X</var> and <var>Y</var> always indicate a point within an empty tile.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">150 550 0
+7
+#######
+#..#..#
+#..#.##
+#.....#
+#...###
+#.....#
+#######</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">                                           ..................
+,,,,,,,,,,,,,,,,,,,.                     ....................
+,,,,,,,,,,,,,,,,,,,...                 ......................
+,,,,,,,,,,,,,,,,,,,.....             ........................
+,,,,,,,,,,,,,,,,,,,.....,,,,,,,,,,,,,........................
+,,,,,,,,,,,,,,,,,,,.....,,,,,,,,,,,,,........................
+,,,,,,,,,,,,,,,,,,,.....,,,,,,,,,,,,,........................
+,,,,,,,,,,,,,,,,,,,.....,,,,,,,,,,,,,........................
+,,,,,,,,,,,,,,,,,,,.....,,,,,,,,,,,,,........................
+,,,,,,,,,,,,,,,,,,,.....,,,,,,,,,,,,,........................
+,,,,,,,,,,,,,,,,,,,.....,,,,,,,,,,,,,........................
+,,,,,,,,,,,,,,,,,,,.....             ........................
+,,,,,,,,,,,,,,,,,,,...                 ......................
+,,,,,,,,,,,,,,,,,,,.                     ....................
+                                           ..................</pre>
+         </div>
+      </div>
+   </div>
+</div>

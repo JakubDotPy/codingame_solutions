@@ -1,0 +1,50 @@
+<h1>Dungeons and Maps</h1>
+
+<a href="https://www.codingame.com/training/easy/dungeons-and-maps">https://www.codingame.com/training/easy/dungeons-and-maps</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Your adventure path led you to an inn in a small, forgotten town somewhere to the North of Golem Hills.<br>After gulping the last drop from the 9th mug of elf wine a shady old man materializes out of nowhere, in-front of you.<br>You start to doubt the wine.<br><strong>The old man (throwing a pack of old maps on the table):</strong> Do you want to earn some good coins?<br><strong>You (without looking at him):</strong> I've enough for food and wine!<br><strong>The old man:</strong> What about a whole inn...!<br><strong>You:</strong> Hm...<br><strong>The old man:</strong> Yeees and you'll get the glory of being the first one to get to this treasure!<br><strong>You (looking at the bunch of maps):</strong> But they look the same!?<br><strong>The old man:</strong> Or do they, you must choose wisely.<br><strong>The voice of the old man (from nowhere):</strong> Ah right, one more thing, beware of the Dragons!<br>You grab your staff and sword, swallow one more whole mug of wine:<br><strong>Well, it's glory time!</strong><br><br>You are given <var>N</var> maps for a dungeon. Each map may contain a path to a treasure <const>T</const>, from starting position [ <var>startRow</var>; <var>startCol</var> ]. Determine the <var>index</var> of the map which holds the shortest path from the starting position to <const>T</const>, but be careful a map may lead you to a <const>TRAP</const>.<br><br>A path is marked on the map with <const>^</const>, <const>v</const>, <const>&lt;</const>, <const>&gt;</const> symbols, each corresponding to <strong>UP, DOWN, LEFT, RIGHT</strong> directions respectively, i.e. each symbol shows you the next cell to move on.<br><br>A valid path must start from [ <var>startRow</var>; <var>startCol</var> ] and end on <const>T</const>.<br><br>The path length is the count of direction symbols plus <const>1</const>, for the <const>T</const> cell.<br><br>Example:<br><var>W</var> = 4 <var>H</var> = 4<br><var>startRow</var> = 1 <var>startCol</var> = 1<br><var>N</var> = 3 <br><br>Maps:<br><pre style="font-family: monospace"><const>0</const><br>.&gt;&gt;v<br>.^#v<br>..#v<br>...T<br><br><const>1</const><br>....<br>.v#.<br>.v#.<br>.&gt;&gt;T<br><br><const>2</const><br>....<br>v&lt;#.<br>v.#.<br>..&gt;T</pre><br><br>In the above example map <const>2</const> does not contain a valid path from [<const>1</const>; <const>1</const>] to <const>T</const>, map <const>0</const> contains a valid path with length <const>7</const> (the count of the direction symbols + <const>T</const>) and map <const>1</const> contains a valid path with length <const>5</const>, so the answer is <const>1</const>.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Width <var>W</var> and height <var>H</var> of the maps<br><strong>Line 2:</strong> <var>startRow</var> and <var>startCol</var> for the starting position on the map<br><strong>Line 3:</strong> An integer <var>N</var> for the number of maps to check<br><strong><var>N</var> * <var>H</var> Lines:</strong> Each <var>H</var> consecutive lines are representing a single map. Each line contains <var>W</var> characters representing a row of a map.<br><br>Characters can be:<br><pre style="font-family: monospace"><const>.</const> - Empty square<br><const>#</const> - Wall<br><const>^</const> - Move UP<br><const>v</const> - Move DOWN<br><const>&lt;</const> - Move LEFT<br><const>&gt;</const> - Move RIGHT<br><const>T</const> - The treasure square</pre></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><var>index</var> of the map with the shortest path. If there isn't a map with valid path from [ <var>startRow</var>; <var>startCol</var> ] to <const>T</const> output <const>TRAP</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">There is always a <const>T</const> on the maps.<br>If there are maps with valid path from [ <var>startRow</var>; <var>startCol</var> ] to <const>T</const> only <strong>one</strong> map holds the shortest path.<br>The given maps are representing the same dungeon, but the position for <const>T</const> may differ.<br>0 &lt; <var>N</var> &lt; 10<br>2 &lt; <var>W</var>, <var>H</var> &lt; 20</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">4 4
+1 1
+3
+.&gt;&gt;v
+.^#v
+..#v
+...T
+....
+.v#.
+.v#.
+.&gt;&gt;T
+....
+v&lt;#.
+v.#.
+..&gt;T</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1</pre>
+         </div>
+      </div>
+   </div>
+</div>

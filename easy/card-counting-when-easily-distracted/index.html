@@ -1,0 +1,37 @@
+<h1>Card Counting when easily distracted</h1>
+
+<a href="https://www.codingame.com/training/easy/card-counting-when-easily-distracted">https://www.codingame.com/training/easy/card-counting-when-easily-distracted</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">In this simplified version of &quot;Card Counting&quot;, you are playing Blackjack at a casino table that uses only one standard deck of 52 cards.<br><br>Fortunately, you have an amazing memory and incredible math skills.<br>Unfortunately, you are easily distracted and there's a lot going on.<br><br>Your <var>streamOfConsciousness</var> is what you observe intermingled with your thoughts.<br>Each thought or observation (separated by a period <const>.</const>) might be a series of cards or something else. It is a series of cards if it consists solely of valid cards; see abbreviations used below.<br><br>With your knowledge of all the observed cards, calculate the <var>percentageChance</var> (rounded to the nearest whole number) that the value of the next card will be <strong>less than</strong> the <var>bustThreshold</var>.<br>(The <var>bustThreshold</var> is what would make your hand &quot;go-bust&quot;/lose by going over 21. It isn't anything you need to calculate; it is provided.)<br><br><strong>Abbreviations used, and values:</strong><br>&bull; <const>K</const> = King<br>&bull; <const>Q</const> = Queen<br>&bull; <const>J</const> = Jack<br>&bull; <const>T</const> = Ten<br>(each of the above has a value of 10)<br>&bull; <const>A</const> = Ace (has a value of 1)<br>&bull; Each number card (<const>2</const> through <const>9</const>, inclusive) has its own face value<br><br><strong>Examples:</strong><br>&bull; <strong>JT7A44</strong> means: a Jack, a Ten, a 7, an Ace, and two 4s<br>&bull; <strong>JAKE</strong> might be your buddy, but it's not a series of cards, since &quot;E&quot; isn't a valid abbreviation<br>&bull; <strong>AT&amp;T</strong> might be your cell-service provider, but it's not a series of cards, since &quot;&amp;&quot; isn't a valid abbreviation<br>&bull; <strong>T1</strong> might be a data/telecom line, but it's not a series of cards, since &quot;1&quot; isn't a valid abbreviation</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1: </strong> a string <var>streamOfConsciousness</var><br><strong>Line 2: </strong> an integer <var>bustThreshold</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1: </strong> an integer <var>percentageChance</var><const>%</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &le; <var>bustThreshold</var> &le; 10</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">222.333.444.some distraction.555.5.678.678.678.678.another distraction.9999.TTTT.JJJJ.QQQQ.KKKK.AAAA
+4</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">67%</pre>
+         </div>
+      </div>
+   </div>
+</div>

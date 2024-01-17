@@ -1,0 +1,39 @@
+<h1>Guessing n Cheating</h1>
+
+<a href="https://www.codingame.com/training/medium/guessing-n-cheating">https://www.codingame.com/training/medium/guessing-n-cheating</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Alice and Bob are playing a guessing game. Alice thinks of a number between 1 and 100 (both inclusive). Bob guesses what it is. Alice then replies &quot;<strong>too high</strong>&quot;, &quot;<strong>too low</strong>&quot; or &quot;<strong>right on</strong>&quot;. After repeated rounds of guessing and replying, Bob should be able to hit right on the number.<br><br>After some games, Bob suspects Alice is cheating - that she changed the number in the middle of the game, or just gave a false response. To collect evidence against Alice, Bob recorded the transcripts of several games. You are invited to help Bob to determine whether Alice cheated in each game.<br><br>An example game between <strong>B</strong>ob and <strong>A</strong>lice:<br><br>A game of 3 rounds<br><pre style="font-family: monospace">┌───┬──────────┐<br>│ B │    A     │<br>├───┼──────────┤<br>│ 5 │ too high │<br>│ 1 │ too high │&lt;-- round 2<br>│ 2 │ right on │<br>└───┴──────────┘</pre>Alice cheated in round 2<br><br>(...because numbers below 1 are not allowed in the game)</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong> An integer <var>R</var> for the number of rounds in the transcript<br><strong>Next <var>R</var> lines:</strong> Each line is a conversation between Bob and Alice, to form one round in the game.<br><br>The conversation lines format is given by this example:<br>50 too low<br>=&gt; Bob says &quot;50&quot;, followed by Alice saying &quot;too low&quot;.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">If there is no evidence showing Alice was dishonest, write <strong>No evidence of cheating</strong>.<br><br>As soon as you can prove Alice was cheating, write <strong>Alice cheated in round X</strong> where <strong>X</strong> is the first round number indicating Alice did cheat.<br><br>Round number counts from 1, to 2, to 3, and so on.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><var>R</var> &le;50</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+5 too high
+1 too high
+2 right on</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">Alice cheated in round 2</pre>
+         </div>
+      </div>
+   </div>
+</div>

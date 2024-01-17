@@ -1,0 +1,40 @@
+<h1>TicTacToe</h1>
+
+<a href="https://www.codingame.com/training/easy/tictactoe">https://www.codingame.com/training/easy/tictactoe</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Find the winning move for the <strong>O</strong> player on the following tic-tac-toe board.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>3 lines:</strong> a 3-character string (ex: &quot;<const>.OX</const>&quot;) displaying the board current state <br>- &quot;<const>.</const>&quot; for an empty square<br>- &quot;<const>X</const>&quot; for square occupied by X player<br>- &quot;<const>O</const>&quot; for square occupied by O player</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>3 lines:</strong> a 3-character string (ex: &quot;<const>.OX</const>&quot;) displaying the board state after an <strong>O</strong> winning move.<br>- &quot;<const>.</const>&quot; for an empty square<br>- &quot;<const>X</const>&quot; for square occupied by X player<br>- &quot;<const>O</const>&quot; for square occupied by O player<br><br>If there is no winning move, print &quot;<const>false</const>&quot;.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">- The final board must be the input board plus a new square for O player.<br>- The board cannot be already in a won situation in the inputs.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">OO.
+...
+...</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">OOO
+...
+...</pre>
+         </div>
+      </div>
+   </div>
+</div>

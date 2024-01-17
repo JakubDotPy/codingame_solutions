@@ -1,0 +1,42 @@
+<h1>Let's Go To The Cinema!</h1>
+
+<a href="https://www.codingame.com/training/medium/lets-go-to-the-cinema">https://www.codingame.com/training/medium/lets-go-to-the-cinema</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">There is a cinema with <var>maxRow</var> * <var>maxColumn</var> seats (all rows having same number of seats). <var>n</var> groups of people are arriving in order and trying to sit down. For each group, you get as input the <var>numPersons</var> number of peoples it consists of, and the <var>row</var> and <var>seat</var> their ticket is issued for. (Meaning they purchased the seats from ( <var>row</var> , <var>seat</var> ) to ( <var>row</var> ,  <var>seat</var> + <var>numPersons</var> - 1), these seats included.) The same seat might have been sold several times!<br><br><strong>You have to simulate and output how many groups and how many persons could sit on their original appointed seat.</strong><br><br><strong>If a group cannot sit to its place</strong> because it is already occupied, they try to find another place using a seat finding method:<br>- To understand the procedure, consult the diagram at: <br>       <const>https://www.aviationfanatic.com/cg/cinema.png</const><br>- The group sits ONLY if ALL of them can sit next to each other.<br>- They try to shift together: <const>left by 1</const>, <const>right by 1</const>, <const>left by 2</const>, <const>right by 2</const>, etc.<br>- If unsuccessful in the row, then try <const>1 row towards the front</const>, then <const>by 1 row to back</const>, <const>2 rows to front</const>, etc.<br>- In each row use the same seat-finding procedure (starting at the same <var>seat</var> position). <br><br><strong>If they tried every possible places but still without success:</strong><br>- They adapt to the situation and split into two subgroups of same size  (the first subgroup shall be bigger, if the size of the group was odd.). <br>- Now the first subgroup tries to sit on the original <var>row</var> <var>seat</var> position using the same seat-finding procedure as above. <br>- As the group size is now smaller, they might succeed this time. <br>- If they don't succeed, they keep splitting the subgroupsize by another half, and continue trying, BEFORE the original another half subgroup gets the chance to try.<br>- Note: Latest when the subgroup size reaches 1 person, it will always succeed to find a place.<br>- After the whole original group got seated, the next group arrives, and so on.<br><br><strong>You have to output two numbers:</strong><br><var>groupSuccess</var> is the number of groups, who could sit instantly in their original places. (If a split subgroup can sit later on the original place, that does not count towards this counter.)<br><var>personSuccess</var> is the number of individuals, who could find a place on their original group ticket. A person shall be counted as successful, no matter after how many iterations (s)he found the place, if and only if the seat is any of the places appointed to the original group:  ( <var>row</var> , <var>seat</var> ) to ( <var>row</var> , <var>seat</var> + <var>numPersons</var> - 1).<br><br>Note: no performance optimization is needed for this puzzle. Just make a simple seat-finding simulator.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Space separated integers  <var>maxRow</var> <var>maxColumn</var> for the size of the cinema.<br><strong>Line 2:</strong> Integer <var>n</var> the number of groups arriving to the cinema.<br><strong>Next <var>n</var> lines:</strong> Three space separated integers <var>numPersons</var> <var>row</var>and <var>column</var> for the size of the group and their (leftmost) appointed seat position.<br><br>Note: Rows and seats are counted from 0. The 0 0 seat is the leftmost one, immediately in front of the screen.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> Two space separated integers <var>groupSuccess</var> and <var>personSuccess</var> as defined in the statement.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>maxRow</var> &le; 100<br>1 &le; <var>maxColumn</var> &le; 100<br>1 &le; <var>n</var> &le; 1000<br>1 &le; <var>numPersons</var> &le; <var>maxColumn</var><br>0 &le;  <var>row</var> &le; <var>maxRow</var> - 1<br>0 &le;  <var>column</var> &le; <var>maxColumn</var> - 1<br><var>column</var> + <var>numPersons</var> &le; <var>maxColumn</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2 4
+4
+2 1 2
+2 1 1
+2 0 1
+2 1 1
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">2 5</pre>
+         </div>
+      </div>
+   </div>
+</div>

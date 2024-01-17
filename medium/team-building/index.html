@@ -1,0 +1,44 @@
+<h1>Team Building</h1>
+
+<a href="https://www.codingame.com/training/medium/team-building">https://www.codingame.com/training/medium/team-building</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Given a list of names of available players, print all possible ways to construct <var>N</var> different teams of <var>K</var> different players each (a player can only belong to one team at a time).<br><br>The output should contain one possible way to form the teams per line, represented by team names separated by commas. The names of the teams on each line should be in alphabetical order. A team name is constructed by taking the first letter of each player's name (in alphabetical order). For example, a team of &quot;Zidane&quot;, &quot;Maradona&quot; and &quot;Ronaldo&quot; would be called &quot;MRZ&quot;, and a team of &quot;Anna&quot; and &quot;Alfred&quot; would be called &quot;AA&quot;. Print the results in alphabetical order.<br><br>Note that some players may be left without a team!</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Number of teams <var>N</var><br><strong>Line 2:</strong> Number of players per team <var>K</var><br><strong>Line 3:</strong> Number of players available <var>M</var><br><strong>Next <var>M</var> lines</strong> Names of the available players</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>O</var> (number of possible teamings) lines:</strong> Names of the teams separated by comma</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &lt;= <var>N</var> &lt;= 16<br>1 &lt;= <var>K</var> &lt;= 8<br><var>N</var> * <var>K</var> &lt;= <var>M</var><br><var>M</var> &lt; 20<br>1 &lt;= <var>O</var> &lt;= 100</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+2
+4
+Alice
+Bob
+Chris
+Diana</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">AB,CD
+AC,BD
+AD,BC</pre>
+         </div>
+      </div>
+   </div>
+</div>

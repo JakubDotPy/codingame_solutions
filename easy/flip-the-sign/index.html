@@ -1,0 +1,46 @@
+<h1>Flip The Sign</h1>
+
+<a href="https://www.codingame.com/training/easy/flip-the-sign">https://www.codingame.com/training/easy/flip-the-sign</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You're in the middle of a chase after the famous thief &quot;James&quot;.<br>You hear a slamming of a door and realize he has passed through the door to your left.<br>You run to the door and find a keyboard next to the door that has only two options: true or false.<br>You notice a bomb on your right and find that you have exactly two minutes to enter the correct answer without exploding, you have only one attempt.<br>You look for clues and you find a sheet of paper with numbers arranged in the form of a grid and letters arranged in the form of a grid and a sign of plus and a sign of minus next to it.<br>In that moment you realize what you need to do.<br><br>You get 2 grids with the same height and width, one is filled with integers (non-zero) and the other one contains the characters 'X' and '0'. After taking all the integers from the first grid that correspond to an X in the second grid, sequentially row by row and left to right, output <strong>true</strong> if those integers alternate sign at each step, otherwise output <strong>false</strong>.<br><br><strong>Example 1:</strong><br><var>height</var> = 5, <var>width</var> = 4<br><br><pre style="font-family: monospace"> 12 -1   4   -21<br> 3   8   99   4<br> 96 -92  1   -31<br> 18 -69 -15   26<br> 23  7  -77  -73</pre><br>  X X X X<br>  0 0 0 0<br>  0 0 0 0<br>  0 0 0 0<br>  0 0 0 0<br><br>Going row by row and left to right, following the 'X' marks we get this sequence of integers: 12, -1, 4, -21.<br><br>We can see that each number has a sign opposite from the previous one :<br>-1 is <strong>negative</strong> and the previous one, 12, is <strong>positive</strong>.<br>4 is <strong>positive</strong> and the previous one, -1, is <strong>negative</strong>.<br>-21 is <strong>negative</strong> and the previous one, 4, is <strong>positive</strong>.<br>Thus this sequence alternates sign at each step and the output is <strong>true</strong>.<br><br><br><strong>Example 2:</strong><br><var>height</var> = 3, <var>width</var> = 5<br><br><pre style="font-family: monospace">  36   324   -140   33    37<br>  115 -289   -225  -372   6<br> -302  198   -403  -202   48</pre><br>  X X X X X<br>  0 X X X 0<br>  0 0 X 0 0<br><br>Going row by row and left to right, following the 'X' marks we get this sequence of integers: 36, 324, -140, 33, 37, -289, -225, -372, -403.<br><br>We can see that not each number has a sign opposite from the previous one :<br>324 is <strong>positive</strong> and the previous one, 36, is also <strong>positive</strong>.<br>Thus this sequence does not alternate sign at each step and the output is <strong>false</strong>.<br><br><strong>Note:</strong> the examples aligned for ease of understanding.<br>In real case there is just one space between each integer.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong>: two space-separated integers :  height and width<br><strong>Next <var>height</var> lines</strong>: a line of spaced integers (non-zero). (length of line: width)<br><strong>Next <var>height</var> lines</strong>: a line of spaced characters ('X' or '0'). (length of line: width)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>true</strong> or <strong>false</strong>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &le; <var>height</var> &le; 60<br>2 &le; <var>width</var> &le; 90<br>There is no zero in the first grid.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">5 4
+12 -1 4 -21
+3 8 99 4
+96 -92 1 -31
+18 -69 -15 26
+23 7 -77 -73
+X X X X
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">true</pre>
+         </div>
+      </div>
+   </div>
+</div>

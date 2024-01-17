@@ -1,0 +1,117 @@
+<h1>Nintendo Sponsored Contest</h1>
+
+<a href="https://www.codingame.com/training/expert/nintendo-sponsored-contest">https://www.codingame.com/training/expert/nintendo-sponsored-contest</a>
+
+<div class="statement_back" id="statement_back" style="display:none">&nbsp;</div>
+
+<div class="statement-cover" style="background-size: cover; min-height: 300px; background-image: url(https://cdn-games.codingame.com/nintendo/background_nintendo.jpg);background-position: center">&nbsp;</div>
+
+<div class="statement-container">
+<div class="statement-body"><!-- GOAL -->
+<div class="statement-section statement-goal">
+<h2><span class="icon icon-goal">&nbsp;</span> <span>The Goal</span></h2>
+
+<div class="statement-goal-content"><b>Big News!</b><br />
+<br />
+The SETI program has received a series of messages from Alpha Centauri. The most frequent message seems to be:
+<pre style="padding: 5px; margin-top: 10px; margin-bottom: 10px; border: 1px solid #dadada; display: inline-block">
+541a4231 5d324646 27219a26 12497b0e 724eddcb 0e131617 9521bedf 55544dc7
+</pre>
+<br />
+It is not known why these messages are encoded, but there is a good chance that the Alpha Centaurians are trying to evaluate our cognitive abilities before establishing advanced contact.<br />
+<br />
+Our best engineers are working to decode these messages, and they&#39;ve already succeeded at identifying the program that the Centaurians use to encode the messages. This program takes a size and a list of numbers as inputs. It then outputs the encoded message (see the pseudo-code below).<br />
+<br />
+But so far, no one has been able to decode the messages. We are well aware that this task is by far the hardest that we&rsquo;ve encountered, and that only a true NERD will be able to pull it off!</div>
+</div>
+<!-- RULES -->
+
+<div class="statement-section statement-rules">
+<h2><span class="icon icon-rules">&nbsp;</span> <span>Rules</span></h2>
+
+<div>
+<div class="statement-rules-content"><b>Here is a pseudo-code version of the encoding program:</b><br />
+&nbsp;
+<pre style="padding: 5px; margin-top: 10px; margin-bottom: 10px; border: 1px solid #dadada; overflow: auto">
+READ size
+READ size / 16 integers in array a
+WRITE size / 16 zeros in array b
+
+For i from 0 to size - 1:
+    For j from 0 to size - 1:
+        b[(i+j)/32] ^= ((a[i/32] &gt;&gt; (i%32)) &amp; (a[j/32 + size/32] &gt;&gt; (j%32)) &amp; 1) &lt;&lt; ((i+j)%32)
+
+PRINT b
+</pre>
+<br />
+You can download a C++ version of the program <a href="https://www.codingame.com/servlet/fileservlet?id=1915207099028" target="_blank">here</a>.<br />
+<br />
+The goal is to determine the series of numbers entered (array a) from the encoded output of the program (array b). The numbers &ndash; input and output &ndash; should be displayed in hexadecimal, 8 characters padded with 0 (for example, 42 would be displayed as 0000002a).<br />
+If you pass the output of your program as input to the encoder above, you should obtain the input provided to your program.<br />
+<br />
+If there are several possible decoded values, you should display all the possibilities in alphabetical order.</div>
+</div>
+</div>
+<!-- PROTOCOL -->
+
+<div class="statement-section statement-protocol">
+<h2><span class="icon icon-protocol">&nbsp;</span> <span>Game Input</span></h2>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Input</div>
+
+<div class="text">
+<p><span class="statement-lineno">Line 1: </span> size <var>S</var></p>
+
+<p><span class="statement-lineno">Line 2: </span> <var>N1</var> integers in hexadecimal format, separated by blank spaces</p>
+</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Output</div>
+
+<div class="text"><var>N2</var> integers in hexadecimal format, representing the decoded message.</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Constraints</div>
+
+<div class="text">
+<p>0 &lt; <var>S</var> &lt;= 256</p>
+
+<p>0 &lt; <var>N1</var> &lt;= 16</p>
+
+<p>0 &lt; <var>N2</var> &lt;= 32</p>
+</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Example</div>
+
+<div class="text">
+<div class="statement-inout">
+<div class="statement-inout-in" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Input</div>
+
+<pre>
+32
+46508fb7 6677e201</pre>
+</div>
+
+<div class="statement-inout-out" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Output</div>
+
+<pre>
+b0c152f9 ebf2831f
+ebf2831f b0c152f9</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

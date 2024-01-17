@@ -1,0 +1,221 @@
+<h1>The Labyrinth</h1>
+
+<a href="https://www.codingame.com/training/hard/the-labyrinth">https://www.codingame.com/training/hard/the-labyrinth</a>
+
+<div class="statement_back" id="statement_back" style="display:none">&nbsp;</div>
+
+<div class="statement-body"><!-- GOAL -->
+<div class="statement-section statement-goal">
+<h2><span class="icon icon-goal">&nbsp;</span> <span>The Goal</span></h2>
+
+<div class="statement-goal-content">
+<div>Once teleported inside the structure, your mission is to:
+<ul>
+	<li><b>find the control room</b> from which you will be able to deactivate the tracker&nbsp;beam</li>
+	<li><b>get back to your starting position</b> once you&#39;ve deactivated the tracker beam</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- RULES -->
+
+<div class="statement-section statement-rules">
+<h2><span class="icon icon-rules">&nbsp;</span> <span>Rules</span></h2>
+
+<div>
+<div class="statement-rules-content">The structure is arranged as a <strong>rectangular maze</strong> composed of cells. Within the maze Rick can go in any of the following directions: <action>UP</action>, <action>DOWN</action>, <action>LEFT</action> or <action>RIGHT</action>.<br />
+<br />
+Rick is using his tricorder to scan the area around him but due to a disruptor field, <b>he is only able to scan the cells located in a 5-cell wide square centered on him</b>.<br />
+<br />
+Unfortunately, Spock was correct, there is a trap! <b>Once you reach the control room an alarm countdown is triggered and you have only a limited number of rounds before the alarm goes off</b>. Once the alarm goes off, Rick is doomed...<br />
+<br />
+Rick will die if any of the following happens:
+<ul>
+	<li><strong>Rick&#39;s jetpack runs out of fuel</strong>. You have enough fuel for <strong>1200</strong> movements.</li>
+	<li><strong>Rick does not reach the starting position before the alarm goes off</strong>. The alarm countdown is triggered once the control room has been reached.</li>
+	<li><strong>Rick touches a wall or the ground</strong>: he is ripped apart by a mechanical trap.</li>
+</ul>
+You will be successful if you reach the control room and get back to the starting position before the alarm goes off.<br />
+<br />
+<strong>Maze format</strong><br />
+A maze in ASCII format is provided as input. The character <const>#</const> represents a wall, the letter <const>.</const> represents a hollow space, the letter <const>T</const> represents your starting position, the letter <const>C</const> represents the control room and the character&nbsp;<const>?</const> represents a cell that you have not scanned yet. For example:
+
+<div class="statement-example-horizontal" style="background-color: transparent">
+<div style="width: 280px;display: table-cell;background-color: transparent;vertical-align: middle;padding: 0;text-align: center">
+<pre style="background-color: transparent;border: none">
+??????????????????????????????
+#..............???????????????
+#.#############???????????????
+#.....T........???????????????
+#.......................#.#..#
+#.#######################.#..#
+#.....##......##......#....###
+#...####..##..##..##..#..#...#
+#.........##......##.....#.C.#
+##############################</pre>
+</div>
+
+<div class="legend" style="text-align: center">Starting position is at row 3, column 6.<br />
+Control room is at row 8, column 27.<br />
+(Indexes start at zero)</div>
+</div>
+</div>
+</div>
+</div>
+<!-- WARNING -->
+
+<div class="statement-section statement-warning">
+<h2><span class="icon icon-warning">&nbsp;</span> <span>Note</span></h2>
+
+<div class="statement-warning-content">The tests provided are similar to the validation tests used to compute the final score but remain different.</div>
+</div>
+<!-- PROTOCOL -->
+
+<div class="statement-section statement-protocol">
+<h2><span class="icon icon-protocol">&nbsp;</span> <span>Game Input</span></h2>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="text">The program must first read the initialization data from standard input. Then, within an infinite loop, read the data from the standard input related to the maze&#39;s current state and provide to the standard output the next movement instruction.</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Initialization input</div>
+
+<div class="text">
+<p><span class="statement-lineno">Line 1: </span> 3 integers: <var>R</var> <var>C</var> <var>A</var><br />
+<var>R</var>,<var>C</var> are the numbers of rows and columns of the maze.<br />
+<var>A</var>, is the number of rounds between the time the alarm countdown is activated and the time the alarm goes off.</p>
+</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Input for one game turn</div>
+
+<div class="text">
+<p><span class="statement-lineno">Line 1: </span> 2 integers: <var>KR</var> and <var>KC</var>. Rick is located at row <var>KR</var> and column <var>KC</var> within the maze. The cell at row <const>0</const> and column <const>0</const> is located in the top left corner of the maze.</p>
+
+<p><span class="statement-lineno">Next R lines: </span> <var>C</var> characters&nbsp; <const>#</const> or&nbsp; <const>.</const> or&nbsp; <const>T</const> or&nbsp; <const>C</const> or&nbsp; <const>?</const> (i.e. one line of the ASCII maze)</p>
+</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Output for one game turn</div>
+
+<div class="text">A <span class="statement-lineno">single line</span> containing one of: <action>UP</action> <action>DOWN</action> <action>LEFT</action> or <action>RIGHT</action></div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Constraints</div>
+
+<div class="text">10 &le; <var>R</var> &le; 100<br />
+20 &le; <var>C</var> &le; 200<br />
+1 &le; <var>A</var> &le; 100<br />
+0 &le; <var>KR</var> &lt; R<br />
+0 &le; <var>KC</var> &lt; C
+
+<div class="timeout_text">Response time per turn &le; 150ms</div>
+There at a single <const>T</const> character and a single <const>C</const> character within a maze</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Example</div>
+
+<div class="text">
+<div class="statement-inout">
+<div class="statement-inout-in" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Initialization input</div>
+
+<pre>
+10 30 23</pre>
+</div>
+
+<div class="statement-inout-in" style="background-color: white">Maze has <const>10</const> rows and <const>30</const> columns.<br />
+Alarm count down is <const>23</const>.</div>
+
+<div class="statement-inout-out" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">No output expected</div>
+</div>
+</div>
+
+<div class="statement-inout">
+<div class="statement-inout-in" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Input for turn 1</div>
+
+<pre>
+3 6
+??????????????????????????????
+????.....?????????????????????
+????#####?????????????????????
+????..T..?????????????????????
+????.....?????????????????????
+????#####?????????????????????
+??????????????????????????????
+??????????????????????????????
+??????????????????????????????
+??????????????????????????????</pre>
+</div>
+
+<div class="statement-inout-in" style="background-color: white">Rick starts at row <const>3</const>, column <const>6</const>.<br />
+Only <const>25</const> cells are visible.</div>
+
+<div class="statement-inout-out" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Output for turn 1</div>
+<action>RIGHT</action> : Rick moves to the right</div>
+</div>
+
+<div class="statement-inout">
+<div class="statement-inout-in" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Input for turn 2</div>
+
+<pre>
+3 7
+??????????????????????????????
+????......????????????????????
+????######????????????????????
+????..T...????????????????????
+????......????????????????????
+????######????????????????????
+??????????????????????????????
+??????????????????????????????
+??????????????????????????????
+??????????????????????????????</pre>
+</div>
+
+<div class="statement-inout-in" style="background-color: white">Rick starts at row <const>3</const>, column <const>7</const>.<br />
+Now <const>30</const> cells are visible.</div>
+
+<div class="statement-inout-out" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Output for turn 2</div>
+<action>RIGHT</action> : Rick moves to the right</div>
+</div>
+</div>
+</div>
+</div>
+<!-- STORY 
+
+<div class="statement-story-background">
+<div class="statement-story-cover" style="background-size: cover; background-image: url(https://www.codingame.com/servlet/fileservlet?id=2210430800300)">
+<div class="statement-story" style="min-height: 300px; position: relative">
+<h2>Synopsis</h2>
+
+<div class="story-text">
+<div style="line-height:1.5em"><span style="color:#D80000;"><strong>Lt. Sulu:</strong></span> &ldquo;<i>After scanning the area, it appears that the tracker&nbsp;beam holding the ship down originates from a large metallic structure buried beneath the surface. The scans show&nbsp;that the structure contains hollow parts so I think someone&nbsp;could be teleported inside and reach what appears to be a control room. Unfortunately I cannot pinpoint the exact location of this control room due to massive interferences.</i>&rdquo;<br />
+<span style="color:#D80000;"><strong>Spock:</strong></span> &ldquo;<i>Captain, it is only logical to assume that this is another trap. I would not recommend sending anyone in there without further analyzing the situation.</i>&rdquo;<br />
+<span style="color:#D80000;"><strong>Rick:</strong></span> &ldquo;<i>Spock, we are too much at risk stranded on this planet, at the mercy of anyone. I am going in!</i>&rdquo;<br />
+<span style="color:#D80000;"><strong>Lt. Sulu:</strong></span> &ldquo;<i>Captain, scanners shows some kind of mechanical activity in the walls of the structure. I would not recommend touching them.</i>&rdquo;<br />
+<span style="color:#D80000;"><strong>Rick:</strong></span> &ldquo;<em>Understood! Then&nbsp;I will use a jet pack to navigate within the structure.</em>&rdquo;<br />
+<span style="color:#D80000;"><strong>Rick, activating his comlink:</strong></span> &ldquo;<i>Scotty, beam me down.</i>&rdquo;<br />
+<span style="color:#D80000;"><strong>Scotty:</strong></span> &ldquo;Aye, sir. But whatever you do down there, you have to&nbsp;come back at your starting location. Otherwise the interferences wiil prevent me from getting a lock on you and transporting you back up.&rdquo;<br />
+<span style="color:#D80000;"><strong>Rick:</strong></span> &ldquo;<i>OK. All set... Energize...</i>&rdquo;</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+-->

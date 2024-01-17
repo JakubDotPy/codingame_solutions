@@ -1,0 +1,46 @@
+<h1>Fishing With A Stick</h1>
+
+<a href="https://www.codingame.com/training/medium/fishing-with-a-stick">https://www.codingame.com/training/medium/fishing-with-a-stick</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Your goal is to count how many fish you have caught.<br>You are fishing in a water with an altitude of <var>H</var><br>and a length of <var>W</var> and a current<br>pointing towards <var>currentD</var> with a very cheap fishing rod,<br>It is broken by touching any garbage, but at least it is used to catch fish.<br><br><strong>INFORMATION: </strong><br><strong>*</strong> &quot;.&quot;: water<br><strong>*</strong> &quot;&gt;&quot;: a fish that goes to the right<br><strong>*</strong> &quot;&lt;&quot;: a fish that goes to the left<br><strong>*</strong> &quot;|&quot;: fishing rod<br><strong>*</strong> &quot;C&quot;: hook. If it is just below the fishing rod or if it is the first &quot;C&quot; in the first row and there is no &quot;|&quot;, it is considered to be the fishing rod, otherwise it is garbage.<br><strong>*</strong> any other character: garbage<br><br><strong>RULES:</strong><br><strong>1. Fishing rod:</strong><br><strong>*</strong> Fish can touch any part of your fishing rod to be caught<br><strong>*</strong> If the trash touches the fishing rod it breaks (you can not fish anymore)<br><strong>*</strong> If garbage and fish touch the fishing rod at the same time, fish is caught (and then the rod breaks)<br><strong>*</strong> There always has to be a hook<br><br><strong>2. Fish:</strong><br><strong>*</strong> Fish can move in both directions regardless of the current<br><strong>*</strong> If two fish collide with each other, they get stuck (they stop moving and disappear)<br><strong>*</strong> The fish die when colliding with the garbage (the fish and garbage stop moving and disappear)<br><br><strong>3. Garbage:</strong><br><strong>*</strong> Trash moves in the direction of the current</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line1: </strong><var>H</var> Height<br><strong>Line2: </strong><var>W</var> Width<br><strong>Line3: </strong> <var>currentD</var> current direction<br><strong>H Lines: </strong><var>row</var> string</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">the number of fish caught</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0&lt;<var>H</var>&lt;256<br>0&lt;<var>W</var>&lt;256<br><var>currentD</var> = <const>LEFT</const>(right to left) or <const>RIGHT</const>(left to right)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">7
+11
+LEFT
+.....|.....
+...&gt;.|....&lt;
+..&gt;&lt;.|...#.
+.&gt;.&lt;.|....&lt;
+.....|.&lt;..&lt;
+.....C.....
+...........
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">2</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,196 @@
+<h1>Code vs Zombies</h1>
+
+<a href="https://www.codingame.com/multiplayer/optimization/code-vs-zombies">https://www.codingame.com/multiplayer/optimization/code-vs-zombies</a>
+
+<div class="statement_back" id="statement_back" style="display:none">&nbsp;</div>
+
+<div class="statement-body"><!-- GOAL -->
+<div class="statement-section statement-goal">
+<h2><span class="icon icon-goal">&nbsp;</span> <span>The Goal</span></h2>
+
+<div class="statement-goal-content">Destroy zombies quickly to earn points and make sure to keep the humans alive to get the highest score that you can manage.</div>
+</div>
+<!-- RULES -->
+
+<div class="statement-section statement-rules">
+<h2><span class="icon icon-rules">&nbsp;</span> <span>Rules</span></h2>
+
+<div>
+<div class="statement-rules-content">The game is played in a zone <const>16000</const> units wide by <const>9000</const> units high. You control a man named Ash, wielding a gun that lets him kill any zombie within a certain range around him.<br />
+<br />
+Ash works as follows:
+<ul>
+	<li>Ash can be told to move to any point within the game zone by outputting a coordinate <action>X Y</action>. The top-left point is <const>0 0</const>.</li>
+	<li>Each turn, Ash will move exactly <const>1000</const> units towards the target coordinate, or onto the target coordinates if he is less than <const>1000</const> units away.</li>
+	<li>If at the end of a turn, a zombie is within <const>2000</const> units of Ash, he will shoot that zombie and destroy it. More details on combat further down.</li>
+</ul>
+<br />
+Other humans will be present in the game zone, but will not move. If zombies kill all of them, you lose the game and score <const>0</const> points for the current test case.<br />
+<br />
+Zombies are placed around the game zone at the start of the game, they must be destroyed to earn points.<br />
+<br />
+Zombies work as follows:
+<ul>
+	<li>Each turn, every zombie will target the closest human, <b>including Ash</b>, and step <const>400</const> units towards them. If the zombie is less than <const>400</const> units away, the human is killed and the zombie moves onto their coordinate.</li>
+	<li>Two zombies may occupy the same coordinate.</li>
+</ul>
+<br />
+The order in which actions happens in between two rounds is:
+<ol>
+	<li>Zombies move towards their targets.</li>
+	<li>Ash moves towards his target.</li>
+	<li>Any zombie within a <const>2000</const> unit range around Ash is destroyed.</li>
+	<li>Zombies eat any human they share coordinates with.</li>
+</ol>
+<br />
+Killing zombies earns you points. The number of points you get per zombie is subject to a few factors.<br />
+<br />
+Scoring works as follows:
+<ul>
+	<li>A zombie is worth the number of humans still alive squared <const>x10</const>, not including Ash.</li>
+	<li>If several zombies are destroyed during on the same round, the n<sup>th</sup> zombie killed&#39;s worth is multiplied by the (n+2)<sup>th</sup> number of the <a href="https://wikipedia.org/wiki/Fibonacci_number" target="_blank">Fibonnacci sequence</a> (1, 2, 3, 5, 8, and so on). As a consequence, you should kill the maximum amount of zombies during a same turn.</li>
+</ul>
+<br />
+Note: You may activate gory mode in the settings panel (<img height="18" src="https://www.codingame.com/servlet/fileservlet?id=3463235186409" style="opacity:.8;background:#20252a;" width="18" />) if you have the guts for it.</div>
+<!-- Victory conditions -->
+
+<div class="statement-victory-conditions">
+<div class="icon victory">&nbsp;</div>
+
+<div class="blk">
+<div class="title">Victory Conditions</div>
+
+<div class="text">You destroy every zombie on screen with at least 1 other living human remaining.</div>
+</div>
+</div>
+<!-- Lose conditions -->
+
+<div class="statement-lose-conditions">
+<div class="icon lose">&nbsp;</div>
+
+<div class="blk">
+<div class="title">Lose Conditions</div>
+
+<div class="text">The zombies kill every human other than you.</div>
+</div>
+</div>
+</div>
+</div>
+<!-- EXPERT RULES -->
+
+<div class="statement-section statement-expertrules">
+<h2><span class="icon icon-expertrules">&nbsp;</span> <span>Expert Rules</span></h2>
+
+<div class="statement-expert-rules-content">The coordinate system of the game uses whole numbers only. If Ash or a zombie should land in a non whole coordinate, that coordinate is rounded down.<br />
+<br />
+For example, if a zombie were to move from <const>X=0, Y=0</const> towards <const>X=500, Y=500</const>, since it may only travel 400 units in one turn it should land on <const>X=282.843, Y=282.843</const> but will in fact land on <const>X=282, Y=282</const>.<br />
+<br />
+To help, each zombie&#39;s future coordinates will be sent along side the current coordinates.</div>
+</div>
+<!-- EXAMPLES -->
+
+<div class="statement-section statement-examples">
+<h2><span class="icon icon-example">&nbsp;</span> <span>Example</span></h2>
+
+<div class="statement-examples-text">The player starts at position <const>X=8043, Y=976</const>. Two zombies are close by but the player decides to go near a human at <const>X=0, Y=4500</const>.</div>
+
+<div class="statement-example-container">
+<div class="statement-example"><img src="https://cdn-games.codingame.com/code-vs-zombies/A1.png" />
+<div class="legend">
+<div class="title">Turn 1</div>
+
+<div class="description">Action: <action>0 3433</action>.<br />
+Zombies 0 and 1 both aim for the player.</div>
+</div>
+</div>
+
+<div class="statement-example"><img src="https://cdn-games.codingame.com/code-vs-zombies/A2.png" />
+<div class="legend">
+<div class="title">Turn 2</div>
+
+<div class="description">Action: <action>0 3833</action>.<br />
+The player gets closer to zombie 1 and further away from zombie 0.</div>
+</div>
+</div>
+
+<div class="statement-example"><img src="https://cdn-games.codingame.com/code-vs-zombies/A3.png" />
+<div class="legend">
+<div class="title">Turn 3</div>
+
+<div class="description">Action: <action>0 4233</action>.<br />
+Zombie 1 enters player&#39;s range and is destroyed!</div>
+</div>
+</div>
+
+<div class="statement-example statement-example-empty" style="height: 0; margin-top: 0; margin-bottom: 0">&nbsp;</div>
+
+<div class="statement-example statement-example-empty" style="height: 0; margin-top: 0; margin-bottom: 0">&nbsp;</div>
+
+<div class="statement-example statement-example-empty" style="height: 0; margin-top: 0; margin-bottom: 0">&nbsp;</div>
+
+<div class="statement-example statement-example-empty" style="height: 0; margin-top: 0; margin-bottom: 0">&nbsp;</div>
+</div>
+</div>
+<!-- WARNING -->
+
+<div class="statement-section statement-warning">
+<h2><span class="icon icon-warning">&nbsp;</span> <span>Note</span></h2>
+
+<div class="statement-warning-content"><b>Don&rsquo;t forget to run the tests by launching them from the &ldquo;Test cases&rdquo; window</b>. You do not have to pass all tests to enter the leaderboard. <b>Each test you pass will earn you some points</b>.<br />
+<br />
+<strong>Warning:</strong> the tests provided are similar to the validation tests used to compute the final score <strong>but remain different</strong>. This is a &ldquo;hardcoding&rdquo; prevention mechanism. Harcoded solutions will not get any points.<br />
+<br />
+Your score is computed from the total points earned across all test cases.<br />
+<br />
+Do not hesitate to switch to debug mode (<img height="18" src="https://www.codingame.com/servlet/fileservlet?id=3463235186409" style="opacity:.8;background:#20252a;" width="18" />) if you get stuck. In debug mode, hover over a zombie or human to see their coordinates.</div>
+</div>
+<!-- PROTOCOL -->
+
+<div class="statement-section statement-protocol">
+<h2><span class="icon icon-protocol">&nbsp;</span> <span>Game Input</span></h2>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="text">The program must, within an infinite loop, read the contextual data from the standard input (human and zombie positions) and provide to the standard output the desired instruction.</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Input for one game turn</div>
+
+<div class="text">
+<p><span class="statement-lineno">Line 1: </span>two space-separated integers <var>x</var> and <var>y</var>, the coordinate of your character.</p>
+
+<p><span class="statement-lineno">Line 2: </span>one integer <var>humanCount</var>, the amount of other humans still alive.</p>
+
+<p><span class="statement-lineno">Next <var>humanCount</var> lines : </span> three space-separated integers <var>humanId</var>, <var>humanX</var> &amp; <var>humanY</var>, the unique id and coordinates of a human.</p>
+
+<p><span class="statement-lineno">Next line: </span>one integer <var>zombieCount</var>, the amount of zombies left to destroy.</p>
+
+<p><span class="statement-lineno">Next <var>zombieCount</var> lines: </span>five space-separated integers <var>zombieId</var>, <var>zombieX</var>, <var>zombieY</var>, <var>zombieXNext</var> &amp; <var>zombieYNext</var>, the unique id, current coordinates and future coordinates of a zombie.</p>
+</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Output for one game turn</div>
+
+<div class="text"><span class="statement-lineno">A single line: </span> two integers <var>targetX</var> and <var>targetY</var>, the coordinate you want your character to move towards. You may also some text <var>message</var> which will be displayed on screen.</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Constraints</div>
+
+<div class="text">
+<p>0 &le; <var>x</var> &lt; 16000</p>
+
+<p>0 &le; <var>y</var> &lt; 9000</p>
+
+<p>1 &le; <var>humanCount</var> &lt; 100</p>
+
+<p>1 &le; <var>zombieCount</var> &lt; 100</p>
+Response time per game turn &le; 100ms</div>
+</div>
+</div>
+</div>

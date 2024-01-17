@@ -1,0 +1,42 @@
+<h1>Misère Nim</h1>
+
+<a href="https://www.codingame.com/training/hard/misere-nim">https://www.codingame.com/training/hard/misere-nim</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">In a game of <strong>Nim</strong>, two players take turns removing objects from distinct heaps. On each turn, a player must remove at least one object, and may remove any number of objects provided they all come from the same heap. The goal of the normal game is to be the player to remove the last object.<br><br>In the <strong>Mis&egrave;re Nim</strong> variant of the game, the player who takes the last object loses.<br><br>Given a list of starting game positions, for each position find all possible moves that will ensure your victory.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Two space separated Integers <var>N</var> and <var>K</var>.<br><var>N</var> is the number of heaps; it is shared between all of the following positions.<br><var>K</var> is number of positions.<br><strong>Next <var>K</var> Lines:</strong> <var>N</var> space separated integers <var>Mi</var>, the number of objects in each heap.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>K</var> lines</strong>: Solutions for each board position, in the order they were given.<br>If the position has no winning moves, its solution is the word <const>CONCEDE</const>.<br>If the position has winning moves, its solution is a line of one or more space-separated moves. Each move is a colon-separated pair of integers <var>i</var><const>:</const><var>a</var>, where:<br>- <var>i</var> is the number of the heap to remove objects from: 1 &le;<var>i</var> &le; <var>N</var>.<br>- <var>a</var> is the amount of objects to take: 1 &le; <var>a</var> &le; <var>Mi</var>.<br>Moves must be sorted by heap number <var>i</var> first, number of objects <var>a</var> second.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>N</var> &le; 3<br>1 &le; <var>Mi</var> &le; 50<br>1 &le; <var>K</var> &le; 5<br>The positions are provided in ascending order of initial heap size.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1 3
+5
+1
+7
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1:4
+CONCEDE
+1:6</pre>
+         </div>
+      </div>
+   </div>
+</div>

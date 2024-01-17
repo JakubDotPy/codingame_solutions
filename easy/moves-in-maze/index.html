@@ -1,0 +1,45 @@
+<h1>Moves in maze</h1>
+
+<a href="https://www.codingame.com/training/easy/moves-in-maze">https://www.codingame.com/training/easy/moves-in-maze</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are in a maze. You have to find the minimum number of moves to reach each cell from the starting point, and output those numbers in the initial maze.<br><br>The number of moves is represented using a character: <const>0-9</const> then <const>A-Z</const> (A=10, B=11, ... Z=35).<br><br>You may move from a cell to a neighbouring cell which is not a wall in any one of the four directions: left, right, up or down. The maze is periodic: if you go left you appear on the right if there is no wall, and vice versa, similarly with up/down.<br><br>There may be unreachable points.<br><br>The input maze is made of <const>#</const> for walls, <const>.</const> for free spaces and <const>S</const> for the starting position.<br>The output must be made of <const>#</const> for walls, <const>.</const> for unreachable points, and numbers <const>0-9</const>, <const>A-Z</const>.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>First line:</strong> two space-separated integers <var>w</var> and <var>h</var>, the width and height of the maze.<br><strong><var>h</var> following lines:</strong> the maze.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>h</var> lines:</strong> the maze with numbers for the reachable points.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">3 &le; <var>w</var>, <var>h</var> &le; 30<br>There are no more than 35 moves needed to reach a point.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">10 5
+##########
+#S.......#
+##.#####.#
+##.#.....#
+##########</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">##########
+#01234567#
+##2#####8#
+##3#DCBA9#
+##########</pre>
+         </div>
+      </div>
+   </div>
+</div>

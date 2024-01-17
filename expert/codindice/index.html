@@ -1,0 +1,38 @@
+<h1>CodinDice</h1>
+
+<a href="https://www.codingame.com/training/expert/codindice">https://www.codingame.com/training/expert/codindice</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Rossi is a cute chibi devil who rolls giant dice, arranged on a grid, by walking across the top of them.<br><br>Your goal is to help Rossi solve the puzzle with the minimum number of die rolls.<br><br>The puzzle is solved when the following two conditions hold true:<br>- The value of each die is 6, i.e. they all have 6 pips showing on the <const>TOP</const> as such: ⚅<br>- All dice form a single connected group.<br><br><br>==============================<br>Moving around<br>==============================<br><br>- Rossi's position is on top of the <strong>last die he moved</strong>. If he hasn't moved yet, he's on top of the <strong>first die of the list</strong>.<br>- Dice form a group when they are standing adjacent to one another. Diagonals do not count.<br>- Rossi can walk freely between dice in the same group. Walking is not counted against the solution's length.<br>- The map is always a <const>4</const> x <const>4</const> square map; the coordinates range from 0 to 3. Rossi is not allowed to move outside of the boundaries.<br><br><br>==============================<br>Rolling dice<br>==============================<br><br>- If there is a free grid space from Rossi's standing position on a die, he can roll the die there. Since he can walk freely among the group, he can thus roll any &quot;free&quot; die within the group boundary.<br>- When a die is rolled, one of its bottom edges (the one between the old and new position) stays still, causing it to <strong>tumble and 'roll' in the relevant direction</strong>.<br>- Therefore rolling a die can <strong>change where the number 6 face is</strong>.<br><br>For example, if the die is rolled to the <strong>RIGHT</strong> and the 6 face was <const>TOP</const>, it will then be <const>EAST</const>. If the 6 face was <const>BOTTOM</const>, it will become <const>WEST</const>. If it was <const>NORTH</const> or <const>SOUTH</const>, it would twist but remain in the same relative position. (Pick a die and roll it in one direction, you'll see that two faces stay)<br><br>- Rolling a die adds one to the solution's length.<br>- We're only interested in the 6 faces' ending position, so you only need to track that face on each die.<br>- Each time Rossi rolls a die, output the position of that die and the direction in which it was rolled to to STDOUT.<br><br><br>==============================<br> <const>IRON</const> dice<br>==============================<br><br>Some dice are made of <const>IRON</const>. They are very heavy.<br><br>- Rossi cannot roll <const>IRON</const> dice. He cannot &quot;jump&quot; from an <const>IRON</const> die to an empty spot either.<br>- Their 6 face is always on <const>TOP</const>.<br><br><br>==============================<br>Output to STDOUT<br>==============================<br><br>You must find the shortest solution to the puzzle. The puzzles are designed so that there is always only one &quot;shortest&quot; solution.<br><br>- The shortest solution is based on the <strong>number of times a die was rolled</strong>.<br><br>Try checking the test cases with real dice if you are confused! :)</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var>, the number of dice on the 4 x 4 board.<br><strong>Next <var>N</var> lines:</strong> <var>x</var>, <var>y</var> and <var>face</var>, separated with spaces. <var>x</var> and <var>y</var> are a die's position, with <var>x</var> increasing <const>EAST</const>ward and <var>y</var> <const>SOUTH</const>ward. <var>face</var> is either the relative position of that die's 6 face <const>WEST</const>, <const>EAST</const>, <const>NORTH</const>, <const>SOUTH</const>, <const>TOP</const> or <const>BOTTOM</const>, or <const>IRON</const>, indicating that the 6 face is <const>TOP</const> and the die cannot be rolled.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The shortest possible solution to the puzzle - a list of the die rolls that were performed by Rossi, <strong>one roll per line with the following format:</strong><br><br><var>id</var> <var>direction</var> &mdash; separated with spaces.<br><br><var>id</var> is the identifier number of the die being rolled. The dice are 0-indexed by their ordering in the input, so <var>id</var> ranges from 0 to <var>N</var> - 1. <br><var>direction</var> is the direction in which it was rolled: <const>LEFT</const>, <const>RIGHT</const>, <const>UP</const> or <const>DOWN</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &le; <var>N</var> &le; 15<br>0 &le; <var>x</var> &le; 3<br>0 &le; <var>y</var> &le; 3<br>There is a single shortest possible solution to the puzzle.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+0 0 WEST
+2 0 TOP</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">0 RIGHT</pre>
+         </div>
+      </div>
+   </div>
+</div>

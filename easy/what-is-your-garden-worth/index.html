@@ -1,0 +1,44 @@
+<h1>What 🌼 is 🌷 your 🌸  garden 💐 worth?</h1>
+
+<a href="https://www.codingame.com/training/easy/what-is-your-garden-worth">https://www.codingame.com/training/easy/what-is-your-garden-worth</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You have planted an emoji <var>garden</var>, but it has some empty spots and some ASCII-weeds growing in it too.<br><br>The local buying co-op has published its <var>offeringStatement</var> which shows the <var>emoji</var>s it will buy this season, and how much it is offering for each (<var>dollarAmount</var>) .<br>(It likely won't buy every type of <var>emoji</var> and of course it doesn't buy weeds or empty space.)<br><br>Calculate the <var>worth</var> of your <var>garden</var>.<br><br>NOTE: <var>garden</var> is not necessarily a perfect rectangle.<br><br><br>.<br><br><br>.<br><br><br>.<br><br><br>~ ~ ~ ~ ~<br>Hint if needed: <br>Currently the console of CodinGame cannot display non-ASCII characters properly. One way to print (debug) the input in the console is to convert the input characters to their character codes and print those codes instead.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>numOfLinesOfOfferingStatement</var>, which is the number of lines of <var>offeringStatement</var><br><strong>Next <var>numOfLinesOfOfferingStatement</var>:</strong> A string consisting of <const>$</const><var>dollarAmount</var> (an integer), followed by <const> = </const> (with a space on either side), followed by each <var>emoji</var> that is worth that <var>dollarAmount</var>.  (There is no space between <var>emoji</var>s.)<br><br><strong>Next Line:</strong> An integer, <var>gardenHeight</var>, representing the number of rows that are the <var>garden</var><br><strong>Next <var>gardenHeight</var> Lines:</strong> the <var>garden</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> An integer, the <var>worth</var> of your <var>garden</var>.  Include <const>$</const> and include a comma (<const>,</const>) as needed for &quot;thousands separator&quot;</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">All <var>emoji</var>s in the cases can be found on https://emojipedia.org/</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+$12 = 🍓🥒🌿🌹
+$10 = 🍃🍍
+5
+🌱 #~
+%+ @🍓
+&gt;{~🌱
+};-🥜
+ ?!${</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">$12</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,38 @@
+<h1>Ukulele/Guitar converter</h1>
+
+<a href="https://www.codingame.com/training/easy/ukuleleguitar-converter">https://www.codingame.com/training/easy/ukuleleguitar-converter</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">In this puzzle you have to create a ukulele/guitar converter.<br>Given the position of a finger on the neck of a guitar, you will need to find the set of positions on the ukulele that produce the same frequency. And vice versa.<br><br>We consider here a guitar with six strings and 21 frets with classical tuning (E2, A2, D3, G3, B3, E4) and a ukulele with 4 strings and 15 frets with classical tuning as well (G4, C4, E4, A4). <br><br>I'm just going to give the following indications : Going from fret <var>N</var> to fret <var>N+1</var> on a ukulele or guitar neck for a given string is going to the next note and fret 0 corresponds to an &quot;open&quot; string, and therefore to the note specified in the part on tuning. The notes follow this pattern : <br>C0&rarr;C0#&rarr;D0&rarr;D0#&rarr;E0&rarr;F0&rarr;F0#&rarr;G0&rarr;G0#&rarr;A0&rarr;A0#&rarr;B0&rarr;C1&rarr;C1#&rarr;D1&rarr;...<br><br><br>Here is a representation of a guitar neck, the frets are the vertical bars and the strings are the horizontal ones, we place the fingers at the intersections between the strings and the frets:<br><br><pre style="font-family: monospace">  21 20 19 18 17 16 15 14 13 12 11 10 9  8  7  6  5  4  3  2  1  </pre> <pre style="font-family: monospace">--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|-- E2</pre> <pre style="font-family: monospace">--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|-- A2</pre> <pre style="font-family: monospace">--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|-- D3</pre> <pre style="font-family: monospace">--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|-- G3</pre> <pre style="font-family: monospace">--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|-- B3</pre> <pre style="font-family: monospace">--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|-- E4</pre><br><br>Same thing for a ukulele:<br><br><pre style="font-family: monospace">   15  14  13  12  11  10  9   8   7   6   5   4   3   2   1  </pre> <pre style="font-family: monospace">---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|--- G4</pre> <pre style="font-family: monospace">---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|--- C4</pre> <pre style="font-family: monospace">---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|--- E4</pre> <pre style="font-family: monospace">---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|--- A4</pre><br><br>Step-by-step explanation of the first test case:<br><br>You have to find where to put your finger on a ukulele neck to get the same note as if we placed our finger on the 8th fret of the third string of the guitar.<br>First, we must calculate the note given by this position on the guitar. The note for this string when played without any resting fret is G3. We press the 8th fret so we get D4# (because G3&rarr;G3#&rarr;A3&rarr;A3#&rarr;B3&rarr;C4&rarr;C4#&rarr;D4&rarr;D4#).<br><br>Then we move on to the ukulele. For strings n&deg;1, 2 and 4 of the ukulele, the notes of the strings played without pressed frets are already after the desired notes in the scale (too high) and there is therefore no correspondence on these strings.<br>The note of the third open string, which is C4, is well before the desired note. To obtain the desired note, you must move 3 times to the next note (C4&rarr;C4#&rarr;D4&rarr;D4#).<br>So the third fret of the third string is the solution. As we number the strings from 0, the output must be 2/3.<br><br><br>To solve this puzzle it is possible to focus on the note-frequency relationships rather than the order of the notes (even though it is not necessary). So here is some additional information about the frequencies:<br>-Moving to the next note in the scale means multiplying the frequency by 2^(1/12)<br>-You will find in the &quot;Table of note frequencies&quot; part of this article the note/frequency correspondence: https://en.wikipedia.org/wiki/Scientific_pitch_notation</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1 :</strong> Either <const>guitar</const> or <const>ukulele</const>. <const>guitar</const> if you need to convert from guitar to ukulele, <const>ukulele</const> if otherwise.<br><br><strong>Line 2 :</strong> An integer <var>n</var> for the number of positions to convert.<br><br><strong><var>n</var> next lines :</strong> Two integers <var>string</var>  and <var>fret</var>, separated  by a space, <var>string</var> describes the string played and <var>fret</var> the fret pressed. <br><br>If <var>string</var> is 0, it corresponds to the string at the bottom of the neck (E4 for guitar or A4 for ukulele), and then they are numbered from bottom to top.<br><br>If <var>fret</var> is 0, it corresponds to a string played without any resting fret, if <var>fret</var> is 1, it corresponds to a string played with the first fret and so on...</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>n</var> lines :</strong> Each line is a list of pairs of integers <var>string_out</var> and <var>fret_out</var>, which correspond to a string and a fret on the other instrument which produce the same note. Each pair must be must be written in the form <var>string_out</var><const>/</const><var>fret_out</var> and pairs are separated by a space. Pairs must be given in ascending order. If there is no match, return <const>no match</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1&le;<var>n</var>&lt;10</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">guitar
+1
+2 8</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">2/3</pre>
+         </div>
+      </div>
+   </div>
+</div>

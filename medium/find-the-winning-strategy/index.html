@@ -1,0 +1,105 @@
+<h1>Find the winning strategy</h1>
+
+<a href="https://www.codingame.com/training/medium/find-the-winning-strategy">https://www.codingame.com/training/medium/find-the-winning-strategy</a>
+
+
+<div class="statement_back"></div>
+<div class="statement-body">
+    
+    <div class="statement-section statement-goal">
+        <h2>
+            <span class="icon icon-goal"> </span>
+            <span>Objectif</span>
+        </h2>
+        <div class="statement-goal-content">
+            You will play a game that has a winning strategy and against a boss who knows the winning strategy. Your goal is to find this strategy in order to win. <br />
+            Hint : You can see the <a href="https://en.wikipedia.org/wiki/Sprague%E2%80%93Grundy_theorem" target="_blank" rel="nofollow noopener noreferrer">Sprague-Grundy theorem</a>.
+        </div>
+    </div>
+    
+    <div class="statement-section statement-rules">
+        <h2>
+            <span class="icon icon-rules"> </span>
+            <span>Rules</span>
+        </h2>
+
+        <div class="statement-rules-content">
+            You will play on a grid. <br />
+            On each row, each player has a token of his color that he can move only in direction of the opponent&#39;s token of this row (it can&#39;t move back) without going beyond.
+            In other words, when the two tokens of a row are side by side, no more move is possible for this row.<br />
+            Each player plays in turn only one token. <br />
+            If a player can&#39;t play anymore, he loses.<br />
+            You always begin and start on a winning position.
+        </div>
+    </div>
+    <br />
+
+    
+    <div class="statement-victory-conditions">
+        <div class="icon victory"></div>
+        <div class="blk">
+            <div class="title">Victory conditions</div>
+            <div class="text">
+                <ul style="padding-bottom:0"><li>
+                        You manage to block you opponent.
+                    </li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="statement-lose-conditions">
+        <div class="icon lose"></div>
+        <div class="blk">
+            <div class="title">Loss conditions</div>
+            <div class="text">
+                <ul style="padding-bottom:0"><li>
+                        You can&#39;t play anymore.
+                    </li><li>
+                        You do not respond in time or output an unrecognized command.
+                    </li></ul>
+            </div>
+        </div>
+    </div>
+    <br />
+    
+    <div class="statement-section statement-protocol">
+        <h2>
+            <span class="icon icon-protocol"> </span>
+            <span>Input</span>
+        </h2>
+        
+        <div class="blk">
+            <div class="title">Initial input</div>
+            <div class="text">
+                <span class="statement-lineno">Line 1 :</span> The number  <var>rows</var> of lines. <br />
+                <span class="statement-lineno">Line 2 :</span> The number <var>columns</var> of columns.  <br />
+            </div>
+        </div>
+        
+        <div class="blk">
+            <div class="title">Input for one game turn</div>
+            <div class="text">
+                For each game turn, in a loop for each row you have :<br />
+                The position  <var>xPlayer</var> of your token followed by the position  <var>xBoss</var> of your opponent&#39;s token.  <br />
+                The numbering starts at <const>0</const>.
+            </div>
+        </div>
+        
+        <div class="blk">
+            <div class="title">Output for a game turn</div>
+            <div class="text">
+                <span class="statement-lineno">Line 1:</span> 2 integers separated by a space <var>row</var> and <var>newX</var> corresponding to the row of the moved token and to it&#39;s new position on this row.
+            </div>
+        </div>
+        
+        <div class="blk">
+            <div class="title">Constraints</div>
+            <div class="text">
+                <const>1</const> ≤ <var>rows</var> ≤ <const>40</const><br />
+                <const>3</const> ≤ <var>columns</var> ≤ <const>35</const><br />
+                <const>0</const> ≤ <var>xPlayer</var> &lt; <var>xBoss</var> ≤ <var>columns</var>-<const>1</const><br />
+                Response time per turn ≤ <const>50</const>ms
+            </div>
+        </div>
+    </div>
+</div>

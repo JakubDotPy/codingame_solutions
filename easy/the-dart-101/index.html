@@ -1,0 +1,40 @@
+<h1>The Dart 101</h1>
+
+<a href="https://www.codingame.com/training/easy/the-dart-101">https://www.codingame.com/training/easy/the-dart-101</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Everybody knows the dart game 101. But this times the rules have changed.<br><br>Every player shoot 3 darts a round, unless you reach or exceed 101 points, in which case your round immediately ends.<br><br>When a dart hits the target you tentatively collect points. There are multiplier rings that increase the points of some darts.<br>For example :<br>When you touch the 19, your total is increased by 19.<br>When you touch the double 19 (2*19) , your total is increased by 2*19=38.<br>When you touch the triple 19 (3*19), your total is increased by 3*19=57.<br><br>Each time you miss the target, your total is decreased by 20 points.<br>If you miss twice <strong>consecutively</strong> in the same round, your total is decreased by another 10 points.<br>If you miss three times in the same round, your whole total is reset at 0.<br>In other words X.X means -40 but XX. and .XX means -50 in the same round.<br><br>To win, you must score exactly 101 points.<br><br>If you exceed the score of 101 after a shoot, you revert to your total before your current round and your round ends here. Your round may therefore end before your third shoot.<br><br>The player who has reached 101 in the fewest rounds wins the game.<br>You have to print the winner's name.<br><br>Example of calculation : <br>10 5 3*18 20 X 2*14 17 4<br>In the round 1, the player scores 10 + 5 + 3*18 = 10 + 5 + 54 = 69 points<br>In the round 2, the player scores 20 - 20 + 28 = 28 points. The total is 69 + 28 = 97 points<br>In the round 3, the player cannot score 17. The total stays at 97 points.<br>In the round 4, the player scores 4 points and reaches exactly 101. <br>This player finishes in 4 rounds.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line1 :</strong> A number N of player<br><strong>Next <var>N</var> lines :</strong> name of player<br><strong>Next <var>N</var> lines : </strong> shoots of a player separated with space  (<const>X</const> when a player missed the target).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1 :</strong> The name of the winner</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>N</var> &le; 8</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+Hugo
+Guillaume
+10 5 3*18 15 5 4 8
+5 5 10 2*19 5 6 2*5 1 20 1</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">Hugo</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,45 @@
+<h1>Asteroids</h1>
+
+<a href="https://www.codingame.com/training/easy/asteroids">https://www.codingame.com/training/easy/asteroids</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You have been tasked with studying a region of space to detect potentially dangerous asteroids.<br>You are given two pictures of the night sky of dimensions <const>W</const>*<const>H</const>, taken at two different times <const>t1</const> and <const>t2</const>.<br>For your convenience, asteroids have been marked with capital letters <const>A</const> to <const>Z</const>, the rest is empty space represented by a <strong>dot</strong> (<strong><const>.</const></strong>) .<br>Using the information contained in those two pictures, determine the position of the asteroids at <const>t3</const>, and output a picture <strong>of the same region of the sky</strong>.<br><br>If necessary, the final coordinates are to <strong>be rounded-down</strong> (floor).<br>Asteroids travel at different altitudes (with <const>A</const> being the closest and <const>Z</const> the farthest from your observation point) and therefore cannot collide with each other during their transit.<br>If two or more asteroids have the same final coordinates, output <strong>only the closest one</strong>.<br>It is guaranteed that all asteroids at <const>t1</const> will still be present at <const>t2</const>, that <strong>no asteroids are hidden</strong> in the given pictures, and that there is only <strong>one asteroid per altitude</strong>.<br><br><strong>NB:</strong> Because of the flooring operation, it is important that you choose a coordinate system with the origin at the top left corner and the y axis increasing in the downward direction.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong>: five ints separated by a space, <const>W</const> <const>H</const> <const>t1</const> <const>t2</const> <const>t3</const><br><strong>Next H lines</strong>: a row of picture 1 and picture 2, separated by a white space.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><const>H</const> lines for the state of the sky at <const>t3</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0&lt;<const>W</const>&lt;=<const>H</const>&lt;=20<br>0&lt;=<const>t1</const>&lt;<const>t2</const>&lt;=<const>t3</const>&lt;=10000</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">5 5 1 2 3
+A.... .A...
+..... .....
+..... .....
+..... .....
+..... .....</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">..A..
+.....
+.....
+.....
+.....</pre>
+         </div>
+      </div>
+   </div>
+</div>

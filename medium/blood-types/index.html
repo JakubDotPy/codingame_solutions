@@ -1,0 +1,43 @@
+<h1>Blood Types</h1>
+
+<a href="https://www.codingame.com/training/medium/blood-types">https://www.codingame.com/training/medium/blood-types</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Your blood type is comprised of two blood groups: ABO  (A, B, AB, or O) and Rh (+ or -), which are inherited from parents.<br><br>Inheritance is closely related to the genes pairing mechanism. Each person has two genes to determine his/her ABO blood type, as listed below:<br><br><pre style="font-family: monospace">AA = A blood type<br>AO = A blood type<br>BB = B blood type<br>BO = B blood type<br>OO = O blood type<br>AB = AB blood type</pre><br><br>Each biological parent donates one of two ABO genes to their child. For example, a parent of O blood type with genes OO and a parent of A blood type with genes AA will have a child with one A gene and one O gene (AO), which is an A blood type.<br><br>Suppose the A blood type parent in the above example is having genes AO, it is possible to have a child of blood type either A or O.<br><br><strong>Rh Factor</strong><br>Rh factor refers to a protein that may be found on the covering of red blood cells. If your red blood cells have this protein, you are Rh+. Otherwise, you are Rh-.<br><br>Just as everyone inherits ABO genes, every person inherits one Rh gene from each biological parent, which finally determines whether the Rh protein is present.<br><br><pre style="font-family: monospace">++ = Rh+<br>+- = Rh+<br>-- = Rh-</pre><br><br>Combining ABO type and Rh factor, there are eight blood types:<br><strong>A+, A-, B+, B-, AB+, AB-, O+, O-</strong><br><br>We use this expression to describe the blood type inheritance relationship:<br>parent + parent = child<br><br>There are 3 variables in the equation. Two variables will be given. You are going to determine all possible values in the unknown variable.<br><br>For example, A- + O+ = ?<br>Answer is A+, A-, O+, O-</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1: </strong><var>N</var>, the number of lines to follow<br><strong>The following <var>N</var> lines: </strong>Each line contains 3 strings, space separated.<br>The first 2 strings are the blood types of parents. The third string is the blood type of their child.<br>One of these strings will be a question mark (?) which is the unknown variable.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">Write <var>N</var> lines.<br>For each line of input, write a line of output showing <strong>all possible blood types</strong>, separated by a space, to fit in the unknown variable. <br><br>When there are more than one possible blood type as answer, sort them by ASCII order. If there is no blood type fitting the equation, write output as: <br><pre style="font-family: monospace">impossible</pre></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>N</var> &le; 100</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">4
+A- O+ ?
+A- ? A+
+? O+ A+
+AB- ? O-</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">A+ A- O+ O-
+A+ AB+ B+ O+
+A+ A- AB+ AB-
+impossible</pre>
+         </div>
+      </div>
+   </div>
+</div>

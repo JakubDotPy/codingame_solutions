@@ -1,0 +1,39 @@
+<h1>Dice probability calculator</h1>
+
+<a href="https://www.codingame.com/training/medium/dice-probability-calculator">https://www.codingame.com/training/medium/dice-probability-calculator</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Each Friday, you play the famous 'Fix your Dungeon' RPG with friends. You'd like to optimize your character: you need to know the probability of success of each test involving dice throws.<br><br>Your program takes in input an expression (possibly with dice throws) and must print all possible outcomes along with their probabilities.<br><br>The expression is an arithmetic expression <strong>with parentheses</strong> and the following operators, from highest to lowest precedence:<br><const>*</const> multiplication<br><const>+</const> and <const>-</const> addition and subtraction<br><const>&gt;</const> greater-than comparison: evaluates to 1 if true, 0 if false<br><br>The operands are one of:<br><var>n</var>: a decimal positive integer<br><const>d</const><var>n</var>: a 'd' followed by a strict positive number, representing a die throw from 1 to <var>n</var> by a uniform distribution<br><br>Examples of expressions:<br>   <const>3*2+5</const> evaluates to 11 <br>   <const>d6</const>: evaluates to an integer from 1 to 6, uniform<br>   <const>d6+d6</const>: represents a double-dice throw<br>   <const>5&gt;2</const>: evaluates to 1</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">A unique line containing the input expression.<br>The expression contains no spaces.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><var>N</var> <strong>lines</strong>: an integer (outcome), a space and a float (percent probability of this outcome)<br><br>Outcomes are sorted in ascending order.<br>Floats are formatted with 2 decimal figures, rounded.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">The inputs are all valid expressions: no error handling is needed.<br>Maximum length of expression: <const>100</const> chars</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1+d4+1</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">3 25.00
+4 25.00
+5 25.00
+6 25.00</pre>
+         </div>
+      </div>
+   </div>
+</div>

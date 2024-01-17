@@ -1,0 +1,45 @@
+<h1>The Burglar's Dilemna</h1>
+
+<a href="https://www.codingame.com/training/hard/the-burglars-dilemna">https://www.codingame.com/training/hard/the-burglars-dilemna</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement"><strong>You're a talented burglar attempting to crack a safe combination by listening to the clicks it makes at each of your attempts. Suddenly, the alarm goes off, and you have only time for one last try. Analysing the results of the previous attempts, you must give the correct combination if only one is possible. Otherwise, lacking time to try them all, you must flee.</strong><br><br>Each previous attempt (which is always a failed one) is represented by a series of numbers between 0 and 9 (inclusive) and their associated sound : <const>CLICK</const>, <const>CLACK</const> or <const>CLUCK</const>.<br>During a test, each sound has the same meaning and every meaning is different, but you never know which sound is associated with wich meaning.<br>The possible meanings of a sound are the following :<br>- The number is correct.<br>- The number is adjacent to the correct number (note that 0 and 9 are adjacent).<br>- The number is incorrect and not adjacent to the correct number.<br><br>Given these information, if only one combination is possible, you must output it. If more than one combination is possible, you must output <const>FLEE</const>. There is always at least one possibility. <br><br><strong>### Example: ###</strong><br>Considering the following attemps :<br>1 2 3 4<br>1 2 4 5<br>1 2 4 8<br>CLICK CLICK CLACK CLUCK<br>CLICK CLICK CLUCK CLICK<br>CLICK CLICK CLUCK CLACK<br><br>Let's make assumptions :<br><strong>Assumption 1 -</strong> <const>CLICK</const> is the sound for a correct number:<br>This means that 1, 2, and the last 5 are correct. Since the 4 of the first line is associated with a <const>CLUCK</const> and 4 is next to 5, we know that <const>CLUCK</const> has the adjacent meaning, and <const>CLACK</const> the failed meaning. From this, considering the 3rd number, we know that 3 is a bad number, and 4 is adjacent, so the 3rd number is 5.<br>This assumption leads to only one possibility : 1 2 5 5. But maybe the next assumptions will also have a different possibility... Let's check.<br><br><br><strong>Assumption 2 -</strong> <const>CLACK</const> is the sound for a correct number:<br>This means that 3 is the correct third number, and looking at the second and third line, that <const>CLUCK</const> means adjacent, so <const>CLICK</const> must mean 'wrong number'. But looking at the fourth number, we guess that 4 is adjacent to the correct number and 8 is the correct number, which is absurd. So this assumption is false.<br><br><strong>Assumption 3 -</strong> <const>CLUCK</const> is the sound for a correct number:<br>This means that 4 is the correct 3rd and 4th number. Looking at the first line, 3 being next to 4, we guess that <const>CLACK</const> has the adjacent meaning. But looking at the second line, me make the same reasoning with 5 and <const>CLICK</const>. Since two sounds can't have the same meaning, the assumption is false too.<br><br><br>Since only one assumption makes sense and leads to only one possibility, the correct code is 1 2 5 5.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var> representing the number of attempts.<br><strong>Line 2:</strong> An integer <var>C</var> representing the length of the safe combination.<br><strong>Next <var>N</var> lines:</strong> A line <var>NUMBERS</var> containing the numbers of each attempt.<br><strong>Next <var>N</var> lines:</strong> A line <var>CLICKS</var> containing the corresponding clicks.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The space separated safe combination if there is only one solution, or <const>FLEE</const> if more than one combination is possible.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>N</var> &le; 10<br>1 &le; <var>C</var> &le; 10</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+4
+1 2 3 4
+1 2 4 5
+1 2 4 8
+CLICK CLICK CLACK CLUCK
+CLICK CLICK CLUCK CLICK
+CLICK CLICK CLUCK CLACK
+
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1 2 5 5</pre>
+         </div>
+      </div>
+   </div>
+</div>

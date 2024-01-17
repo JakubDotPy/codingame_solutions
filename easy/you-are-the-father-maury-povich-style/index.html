@@ -1,0 +1,43 @@
+<h1>You are the Father: Maury Povich Style</h1>
+
+<a href="https://www.codingame.com/training/easy/you-are-the-father-maury-povich-style">https://www.codingame.com/training/easy/you-are-the-father-maury-povich-style</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement"><pre style="font-family: monospace">~ ~ ~ P o p   C u l t u r e   B a c k g r o u n d ~ ~ ~</pre><br>Maury Povich hosted a popular talk show in America for decades.  <br><br>A famous and common theme for an episode was helping a new mom figure out which of her past &quot;gentleman callers&quot; is her child's biological father.  Maury&rsquo;s staff would swab and paternity-test a sample from each possible man and then Maury would announce with much fanfare either &quot;You are NOT the father!&quot; or &quot;You ARE the father!&quot;<br><br>(For your amusement only, see banner image and video link far below for clips of that; it isn't needed to solve this puzzle.)<br><br><br><br><pre style="font-family: monospace">~ ~ ~ B i o l o g y   B a c k g r o u n d ~ ~ ~</pre><br>Every creature has multiple &quot;Pairs of Chromosomes,&quot; henceforth called <var>chromPair</var>s.<br><br>For each <var>chromPair</var>,<br>Mother and Father each contribute 1 chromosome to form the child's <var>chromPair</var>.<br><br>In the very simplified world of this puzzle, a chromosome is simply 1 character and a <var>chromPair</var> is simply 2 characters.<br><br><br><br><pre style="font-family: monospace">~ ~ ~ E x a m p l e ~ ~ ~</pre><br>The species has 2 <var>chromPair</var>s.<br>Mother is:  <strong>ab cd</strong><br>Father is:  <strong>wx yz</strong><br><br>Their child is created by having:<br>‣ 1 of <strong>ab</strong> plus 1 of <strong>wx</strong> for its 1st <var>chromPair</var>, and <br>‣ 1 of <strong>cd</strong> plus 1 of <strong>yz</strong> for its 2nd <var>chromPair</var>.<br><br>So the child could be: <strong>aw cy</strong> or <strong>bw cz</strong> ... or any of 14 other combinations.<br><br>However, their child <strong>cannot</strong> be:<br>‣ <strong>aq cy</strong> ... because <strong>q</strong> is not a chromosome from either parent.<br>‣ <strong>ab cy</strong> ... because it doesn't have anything from Father's 1st <var>chromPair</var>.<br>‣ <strong>az cy</strong> ... because even though Father has <strong>z</strong>, it's not in his 1st <var>chromPair</var>.<br><br>NOTE: Order in <var>chromPair</var> doesn't matter: <strong>aw</strong> is exactly equal to <strong>wa</strong>.<br><br><br><br><pre style="font-family: monospace">~ ~ ~ Y o u r   T a s k ~ ~ ~</pre><br>Given the above rules, help Maury Povich tell each single <var>mother</var> who the <var>actualFather</var> of her <var>child</var> is.<br><br><br><br><br><br><br>~ ~ ~ ~ ~<br>For your amusement, see the inspiration for this puzzle: https://www.youtube.com/watch?v=br4kx6yrPzo<br><br>Reportedly, Maury Povich was especially proud of cases where men would own up to their paternity, get involved in their child's life, and reunite with the mother to form a stable nuclear family.  Much of his focus on paternity tests came from his steadfast belief in the virtues of the nuclear family and his stance that children were best served with both parents involved in the child's life.<br>Source: https://en.wikipedia.org/wiki/Maury_(talk_show)</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong><const>Mother</const> <var>mother</var>'s name<const>:</const> some spaces, followed by some number of <var>chromPair</var>s (each separated by a space)<br><br><strong>Line 2:</strong><const>Child</const> <var>child</var>'s name<const>:</const> some spaces, followed by some number of <var>chromPair</var>s (each separated by a space)<br><br><strong>Line 3:</strong> An integer, the number of possible fathers (<var>numOfPossibleFathers</var>)<br><br><strong>Next <var>numOfPossibleFathers</var> Lines:</strong> Possible father's name<const>:</const> some spaces, followed by some number of <var>chromPair</var>s (each separated by a space)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> <var>actualFather</var><const>, you are the father!</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">‣  All names are one word (no spaces).<br><br>‣  All creatures in a given test/validator have the same number of <var>chromPair</var>s.<br><br>‣  There is only one that can be the father; in other words, there is always exactly one <var>actualFather</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">Mother Julie:        Uj $7
+Child Brandon:       Wj =$
+5
+Garrett:             #; wc
+Macallister:         P2 zv
+Jeffrey:             KI J&amp;
+Scott:               WW :=
+Angus:               Xm N1</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">Scott, you are the father!</pre>
+         </div>
+      </div>
+   </div>
+</div>

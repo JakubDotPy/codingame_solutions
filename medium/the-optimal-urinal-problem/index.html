@@ -1,0 +1,36 @@
+<h1>The Optimal Urinal Problem</h1>
+
+<a href="https://www.codingame.com/training/medium/the-optimal-urinal-problem">https://www.codingame.com/training/medium/the-optimal-urinal-problem</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You and your schoolmates from an all-boys school are going for a very exciting trip by bus. After some time, your bus stops so that the students can relieve themselves in a nearby public toilet.<br><br>It happens that there are <var>n</var> urinals in a row in the public toilet.<br><br>Every guy knows that feeling: you enter the toilet, then you find the free urinal furthest away from all other occupied urinals.<br><br>Your schoolmates take it even further: they do not want to use a urinal if any of the urinals next to it is occupied.<br><br>You are the first guy among your schoolmates to enter the public toilet, initially all empty. Being the first, you have the privilege of choosing any urinal you want. You know that everyone is very excited and wants to continue the trip as soon as possible, and so you want to accommodate as many guys as possible at one time in the toilet.<br><br>Now, the question is: <strong>which urinal should you choose to maximize the number of guys that will use the toilet at one time</strong>, assuming all your schoolmates line up behind you and they will enter the toilet one by one, following these rules?<br><br><strong>Rules</strong><br>1. Other than you, each guy will pick the free urinal <strong>furthest away from any occupied urinals</strong>. If there are multiple such urinals, he will just pick any.<br>2. <strong>No</strong> guy will use a urinal if <strong>any of the urinals next to it is occupied</strong>.<br><br>Note that the urinals are <strong>1-indexed</strong>, so the first urinal has index 1, the second one has index 2, and so on.<br><br>If there are multiple urinal indices that you can choose to achieve the objective, output the <strong>smallest</strong> one.<br><br><strong>Example</strong><br>If there are <const>7</const> urinals and you choose urinal with index 1, you can fit 3 guys, as they enter in the following manner:<br><br>Time 1: <pre style="font-family: monospace">1000000</pre><br>Time 2: <pre style="font-family: monospace">1000001</pre><br>Time 3: <pre style="font-family: monospace">1001001</pre><br>Note that no more guys will use the urinals at this point, since it will violate rule 2.<br><br>However, if you choose urinal with index 3, you can fit 4 guys:<br><br>Time 1: <pre style="font-family: monospace">0010000</pre><br>Time 2: <pre style="font-family: monospace">0010001</pre><br>Time 3: <pre style="font-family: monospace">1010001</pre><br>Time 4: <pre style="font-family: monospace">1010101</pre><br><br>This is the maximum, so you should output <const>4 3</const>.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">An integer <var>n</var> representing the number of urinals in the public toilet.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">Two integers <var>k</var> and <var>i</var> separated by a space.<br><var>k</var> represents the maximum number of guys that can use the toilet at one time.<br><var>i</var> represents the smallest index of the urinal that you should choose.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &lt;= <var>n</var> &lt;= 1500000</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">2 1</pre>
+         </div>
+      </div>
+   </div>
+</div>

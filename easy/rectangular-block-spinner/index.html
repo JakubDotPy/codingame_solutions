@@ -1,0 +1,51 @@
+<h1>Rectangular block spinner</h1>
+
+<a href="https://www.codingame.com/training/easy/rectangular-block-spinner">https://www.codingame.com/training/easy/rectangular-block-spinner</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You have to rotate <var>size</var>X<var>size</var> block counterclockwise by an angle <var>angle</var>.  The block is filled with single ASCII characters. Angle is provided in degrees and is an odd multiple of 45.  The output will always have a diamond shape.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">Line 1: Size of the block, <var>size</var>.<br>Line 2: Angle <var>angle</var>.<br><var>size</var> following lines: Content of the block. ASCII characters are separated with spaces.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">Rotated block with spaces on both ends.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 =&lt; <var>size</var> &lt;= 100 <br>45 =&lt; <var>angle</var> &lt;= 2295 <br><var>angle</var> % 90 == 45  (Dimond shape)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">5
+45
+# # # # #
+# - . . #
+# # - . #
+# # # - #
+# # # # #</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">    #    
+   # #   
+  # . #  
+ # . . # 
+# - - - #
+ # # # # 
+  # # #  
+   # #   
+    #    
+</pre>
+         </div>
+      </div>
+   </div>
+</div>

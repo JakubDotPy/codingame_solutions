@@ -1,0 +1,36 @@
+<h1>Count as I count</h1>
+
+<a href="https://www.codingame.com/training/easy/count-as-i-count">https://www.codingame.com/training/easy/count-as-i-count</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">In recent years a very old game has become more and more famous: M&ouml;lkky. It is an authentic Finnish game that combines skill and luck. The goal is simple. Players must throw a wooden cylinder called M&ouml;lkky, in order to knock down the pin group (consisted of 12 pins numbered from 1 to 12) located 3 or 4 meters from the pitcher to score points and reach exactly 50 points.<br><br>Points are scored in this way:<br>- If a player knocks down only one pin, he scores the number of points marked on that pin.<br>- If a player knocks down more than one pin, he scores the number of pins knocked down (the numbers marked on the pins become irrelevant).<br><br><strong>The purpose of this puzzle is to know how many possibilities there are to make <const>50</const> points from an initial score in <const>4</const> rounds or fewer.</strong><br><br>We count only those possibilities which do not exceed 4 rounds, otherwise, the player would take too long to succeed and risk losing the game.<br><br>Also, we count only those possibilities where in each round at least 1 pin is knocked down, that is, at least 1 point is scored.<br><br>Example<br><br>When <const>P</const> is placed in front of a number, it means that only one pin is knocked down and the number following the letter <const>P</const> is the number marked on the pin. On the contrary when the number is not accompanied it means the number of pins knocked down. The spaces separate the rounds. Before each round, all pins are put back in place.<br><br>If we start from a score of 47 then the possibilities are:<br><pre style="font-family: monospace">P1 P1 P1 <br>P2 P1<br>P1 P2<br>2  P1<br>P1 2<br>P3<br>3</pre><br>There are 7 possibilities.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">An integer <var>N</var> that matches the initial score.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">An integer corresponding to the number of possibilities to reach <const>50</const> from the initial score in <const>4</const> rounds or fewer.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &le; <var>N</var> &le; 49</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">47</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">7</pre>
+         </div>
+      </div>
+   </div>
+</div>

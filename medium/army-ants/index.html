@@ -1,0 +1,41 @@
+<h1>Army ants</h1>
+
+<a href="https://www.codingame.com/training/medium/army-ants">https://www.codingame.com/training/medium/army-ants</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">It is a well known fact that ants always move in a straight line. However, not many people know what happens when two groups of ants meet face to face in a passage which is too narrow for any two ants to evade laterally each other. One theory suggests that they start jumping over each other.<br><br>From the moment the groups meet, every second, ants which are facing an ant moving in opposite direction jump (or gets jumped over, depending on the deal they made) over it.<br><br>For example, given two groups, say ABC and DEF.<br>When they meet it's like this: CBADEF<br>Since they can't bypass each other, they start jumping:<br>After 1 second, it becomes CBDAEF<br>After 2 seconds, it becomes CDBEAF<br>After 3 seconds, it becomes DCEBFA<br>After 4 seconds, it becomes DECFBA<br>And finally, it becomes DEFCBA<br><br>From this point on, groups have jumped over each other and any seconds after this, the state remains the same.<br><br><br>Your job is to determine the order of ants in the passage after T seconds.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Two integers <var>N1</var> and <var>N2</var>, lengths of two groups.<br><strong>Line 2:</strong> String <var>S1</var>, first group of ants.<br><strong>Line 3:</strong> String <var>S2</var>, second group of ants.<br><strong>line 4:</strong> An integer <var>T</var>, the number of seconds passed.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Single line:</strong> Containing the state of groups after <var>T</var> seconds</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt;  <var>N1</var>, <var>N2</var> &lt; 50<br>0 &le; <var>T</var> &lt; 50</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3 3
+ABC
+DEF
+2
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">CDBEAF
+</pre>
+         </div>
+      </div>
+   </div>
+</div>

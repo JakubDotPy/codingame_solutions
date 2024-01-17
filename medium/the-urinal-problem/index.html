@@ -1,0 +1,37 @@
+<h1>The Urinal Problem</h1>
+
+<a href="https://www.codingame.com/training/medium/the-urinal-problem">https://www.codingame.com/training/medium/the-urinal-problem</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Often times, when confronted with a large line of urinals, you must find the open urinal that is furthest away from all other occupied urinals in order to minimize awkwardness. (See https://blog.xkcd.com/2009/09/02/urinal-protocol-vulnerability/ for inspiration)<br><br>Write a program that accepts information about a line of urinals and provides the correct urinal index to use.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var> for the number of urinals in the bathroom.<br><strong>Line 2:</strong> A string <var>B</var> containing <var>N</var> characters of either a <const>U</const> for unoccupied or a <const>!</const> for occupied.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> The index of the unoccupied urinal that is furthest away from any occupied urinals. (If two unoccupied urinals are equally isolated, print the index of the leftmost one)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &le; <var>N</var> &le; 100<br><var>B</var> will contain at least one <const>U</const> and one <const>!</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+UU!</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">0</pre>
+         </div>
+      </div>
+   </div>
+</div>

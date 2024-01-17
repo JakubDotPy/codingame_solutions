@@ -1,0 +1,38 @@
+<h1>Target Firing</h1>
+
+<a href="https://www.codingame.com/training/medium/target-firing">https://www.codingame.com/training/medium/target-firing</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement"><strong>&laquo;Story&raquo;</strong><br>Your spaceship is under attack by aliens! (It's actually your friend's spaceship, so the situation is even worse) Luckily your spaceship is equipped with an antimatter beam, while the aliens only have cheap (but still dangerous) laser pointers. Can you destroy all alien spaceships safely, or should you flee?<br><br><strong>&laquo;Prompt&raquo;</strong><br>As the AI within the ship's computer, your goal is to <strong>determine the optimal order of alien spaceships to destroy</strong> such that you leave the encounter with the maximum strength of your shields. <strong>Print the remaining strength of the shields</strong>, or <const>FLEE</const> if your spaceship is predicted to take <strong>more damage than your shields</strong> can handle. Your friend will not forgive you if the ship is damaged.<br><br><strong>&laquo;Details&raquo;</strong><br>The encounter can be modeled by turn-based combat. Your spaceship's shields begin with <const>5000</const> strength. You are fighting against <var>N</var> alien spaceships of various properties. These properties are:<br><br>    <var>SHIP</var> - the type of the spaceship, which can be either <const>FIGHTER</const> or <const>CRUISER</const>,<br>    <var>HP</var> - the amount of damage the spaceship can receive before being destroyed,<br>    <var>ARMOR</var> - the damage reduction of the spaceship, and<br>    <var>DAMAGE</var> - the amount of damage the spaceship deals per turn.<br><br>On each turn, all alien spaceships reduce your ship's shields by <var>DAMAGE</var> as your antimatter beam charges, and then one spaceship takes damage from your antimatter beam. Your beam deals <const>10</const> base damage to a spaceship. The actual damage that the spaceship receives is decreased by the spaceship's <var>ARMOR</var>. Luckily, your antimatter beam does double damage to <const>FIGHTER</const>-class spaceships; hence, the damage that <const>FIGHTER</const>-class spaceships receives is <const>20</const> - <var>ARMOR</var>. Your antimatter beam always deals <strong>at least</strong> <const>1</const> damage, even if the target spaceship's <var>ARMOR</var> is greater than your beam's damage.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var> for the number of alien spaceships.<br><strong>Next <var>N</var> lines:</strong> One string followed by three integers, space-separated, representing the <var>SHIP</var> type, <var>HP</var>, <var>ARMOR</var>, and <var>DAMAGE</var> of the alien spaceship.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">An integer representing the maximum strength of shields left after an optimal encounter, or <const>FLEE</const> if your spaceship will take hull damage (shield strength &lt; 0).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &le; <var>N</var> &le; 50<br>1 &le; <var>HP</var>,<var>DAMAGE</var> &lt; 1000<br>0 &le; <var>ARMOR</var> &lt; 50<br><var>SHIP</var> = <const>FIGHTER</const> or <const>CRUISER</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+FIGHTER 10 0 500
+FIGHTER 10 0 800</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">3200</pre>
+         </div>
+      </div>
+   </div>
+</div>

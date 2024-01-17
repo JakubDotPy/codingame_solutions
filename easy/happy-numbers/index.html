@@ -1,0 +1,39 @@
+<h1>Happy Numbers</h1>
+
+<a href="https://www.codingame.com/training/easy/happy-numbers">https://www.codingame.com/training/easy/happy-numbers</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">A <strong>happy number</strong> is defined by the following process: <br>Starting with any positive integer, replace the number by the sum of the squares of its digits in base-ten, and repeat the process until the number either equals 1 (where it will stay), or it loops endlessly in a cycle that does not include 1. Those numbers for which this process ends in 1 are <strong>happy</strong> numbers, while those that do not end in 1 are <strong>unhappy</strong> numbers.<br><br>Given a list of numbers, classify each of them as happy or unhappy.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var> for the number of numbers to test.<br><strong>Following <var>N</var> Lines</strong>: Each line has a non-zero positive integer you should test whether it is happy or not.<br><br>Be aware that some input numbers are really BIG, much bigger than your Integer types can handle. Find a way to overcome it.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">Output <var>N</var> lines.<br>Following the same order as inputs, each line starts with a given number from the list, a space, and then an ascii art <const><strong>:)</strong></const> or <const><strong>:(</strong></const> to indicate this number is happy or unhappy.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>N</var> &le; 100<br>0 &lt; each number &le; 10^26</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+23
+24</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">23 :)
+24 :(</pre>
+         </div>
+      </div>
+   </div>
+</div>

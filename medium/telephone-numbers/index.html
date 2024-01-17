@@ -1,0 +1,142 @@
+<h1>Telephone Numbers</h1>
+
+<a href="https://www.codingame.com/training/medium/telephone-numbers">https://www.codingame.com/training/medium/telephone-numbers</a>
+
+<div class="statement_back" id="statement_back" style="display:none">&nbsp;</div>
+
+<div class="statement-body"><!-- GOAL -->
+<div class="statement-section statement-goal">
+<h2><span class="icon icon-goal">&nbsp;</span> <span>The Goal</span></h2>
+
+<div class="statement-goal-content">By joining the iDroid smartphone development team, you have been given the responsibility of developing the contact manager. Obviously, what you were not told is that there are strong technical constraints for iDroid: the system doesn&rsquo;t have much memory and the processor is as fast as a Cyrix from the 90s...<br />
+<br />
+In the specifications, there are two points in particular that catch your attention:<br />
+<br />
+<b>1. Intelligent Assistance for entering numbers</b><br />
+The numbers corresponding to the first digits entered will be displayed to the user almost instantly.<br />
+&nbsp;
+<div style="text-align: center"><img alt="" src="https://www.codingame.com/fileservlet?id=250713201118" style="width: 360px; height: 363px;" /></div>
+<br />
+<b>2. Number storage optimization</b><br />
+First digits which are common to the numbers should not be duplicated in the memory.<br />
+<br />
+Fortunately, the specifications also have this little chart to guide you in the implementation:<br />
+&nbsp;
+<div style="background-color: #eee; text-align: center; font-size: 11px; width: 402px; padding: 2px; color: #20252a; margin: auto"><img alt="" src="https://www.codingame.com/fileservlet?id=266985027077" style="width: 399px; height: 152px;" /><br />
+Fig 1. Structure of data to stock phone numbers on <i>iDroid</i></div>
+<br />
+Your task is to write a program that displays the number of items (which are numbers) required to store a list of telephone numbers with the structure presented above.</div>
+</div>
+<!-- PROTOCOL -->
+
+<div class="statement-section statement-protocol">
+<h2><span class="icon icon-protocol">&nbsp;</span> <span>Game Input</span></h2>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Input</div>
+
+<div class="text">
+<p><span class="statement-lineno">Line 1: </span>The number <var>N</var> of telephone numbers.</p>
+
+<p><span class="statement-lineno"><var>N</var> following lines: </span>Each line contains a phone number, with a maximum length <var>L</var>. Telephone numbers consist of only the digits <const>0</const> to <const>9</const> included, without any spaces.</p>
+</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Output</div>
+
+<div class="text">The number of elements (referencing a number) stored in the structure.</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Constraints</div>
+
+<div class="text">0 &le; <var>N</var> &le; 10000<br />
+2 &le; <var>L</var> &le; 20</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Examples</div>
+
+<div class="text">
+<div class="statement-inout">
+<div class="statement-inout-in" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Input</div>
+
+<pre>
+1
+0467123456</pre>
+</div>
+
+<div class="statement-inout-out" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Output</div>
+
+<pre>
+10</pre>
+</div>
+</div>
+
+<div class="statement-inout">
+<div class="statement-inout-in" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Input</div>
+
+<pre>
+2
+0123456789
+1123456789</pre>
+</div>
+
+<div class="statement-inout-out" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Output</div>
+
+<pre>
+20</pre>
+</div>
+</div>
+
+<div class="statement-inout">
+<div class="statement-inout-in" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Input</div>
+
+<pre>
+2
+0123456789
+0123</pre>
+</div>
+
+<div class="statement-inout-out" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Output</div>
+
+<pre>
+10</pre>
+</div>
+</div>
+
+<div class="statement-inout">
+<div class="statement-inout-in" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Input</div>
+
+<pre>
+5
+0412578440
+0412199803
+0468892011
+112
+15</pre>
+</div>
+
+<div class="statement-inout-out" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Output</div>
+
+<pre>
+28</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

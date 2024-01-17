@@ -1,0 +1,184 @@
+<h1>There is no Spoon - Episode 1</h1>
+
+<a href="https://www.codingame.com/training/medium/there-is-no-spoon-episode-1">https://www.codingame.com/training/medium/there-is-no-spoon-episode-1</a>
+
+<div class="statement_back" id="statement_back" style="display:none">&nbsp;</div>
+
+<div class="statement-body"><!-- GOAL -->
+<div class="statement-section statement-goal">
+<h2><span class="icon icon-goal">&nbsp;</span> <span>The Goal</span></h2>
+
+<div class="statement-goal-content">The game is played on a rectangular grid with a given size. Some cells contain power nodes. The rest of the cells are empty.<br />
+<br />
+The goal is to find, when they exist, the horizontal and vertical neighbors of each node.</div>
+</div>
+<!-- RULES -->
+
+<div class="statement-section statement-rules">
+<h2><span class="icon icon-rules">&nbsp;</span> <span>Rules</span></h2>
+
+<div>
+<div class="statement-rules-content">To do this, you must find each (x1,y1) coordinates containing a node, and display the (x2,y2) coordinates of <strong>the next node to the right</strong>, and the (x3,y3) coordinates of <strong>the next node to the bottom</strong> within the grid.<br />
+<br />
+<strong>If a neighbor does not exist</strong>, you must output the coordinates <action>-1</action> <action>-1</action> instead of (x2,y2) and/or (x3,y3).<br />
+<br />
+You <strong>lose</strong> if:
+
+<ul>
+	<li>You give an incorrect neighbor for a node.</li>
+	<li>You give the neighbors for an empty cell.</li>
+	<li>You compute the same node twice.</li>
+	<li>You forget to compute the neighbors of a node.</li>
+</ul>
+</div>
+<!-- Victory conditions -->
+
+<div class="statement-victory-conditions">
+<div class="icon victory">&nbsp;</div>
+
+<div class="blk">
+<div class="title">Victory Conditions</div>
+
+<div class="text">You win when all nodes have been correctly displayed.</div>
+</div>
+</div>
+</div>
+</div>
+<!-- EXAMPLES -->
+
+<div class="statement-section statement-examples">
+<h2><span class="icon icon-example">&nbsp;</span> <span>Example</span></h2>
+
+<div class="statement-examples-text">
+<div class="statement-example-horizontal">
+<div style="width: 280px;display: table-cell;background-color: transparent;vertical-align: middle;padding: 0;"><img src="https://cdn-games.codingame.com/no-spoon-game/example/0.png" style="width: 100%" /></div>
+
+<div class="legend" style="text-align: center; vertical-align: middle">In this example, there are three nodes in a 2 by 2 grid. The cell at (1,1) is empty.<br />
+&nbsp;
+<pre>
+<const>00</const>
+<const>0.</const></pre>
+</div>
+</div>
+</div>
+
+<div class="statement-example-container">
+<div class="statement-example"><img src="https://cdn-games.codingame.com/no-spoon-game/example/1.png" />
+<div class="legend">
+<div class="title">&nbsp;</div>
+
+<div class="description">The node at (0,0) has 2 neighbors.<br />
+<action>0 0</action> <action>1 0</action> <action>0 1</action></div>
+</div>
+</div>
+
+<div class="statement-example"><img src="https://cdn-games.codingame.com/no-spoon-game/example/2.png" />
+<div class="legend">
+<div class="title">&nbsp;</div>
+
+<div class="description">The node at (1,0) has no neighbors.<br />
+<action>1 0</action> <action>-1 -1</action> <action>-1 -1</action></div>
+</div>
+</div>
+
+<div class="statement-example"><img src="https://cdn-games.codingame.com/no-spoon-game/example/3.png" />
+<div class="legend">
+<div class="title">&nbsp;</div>
+
+<div class="description">The node at (0,1) has no neighbors.<br />
+<action>0 1</action> <action>-1 -1</action> <action>-1 -1</action></div>
+</div>
+</div>
+</div>
+</div>
+<!-- WARNING -->
+
+<div class="statement-section statement-warning">
+<h2><span class="icon icon-warning">&nbsp;</span> <span>Note</span></h2>
+
+<div class="statement-warning-content">Don&rsquo;t forget to run the tests by launching them from the &ldquo;Test cases&rdquo; window.<br />
+<br />
+<strong>Warning:</strong> the tests provided are similar to the validation tests used to compute the final score <strong>but remain different</strong>. This is a &quot;hardcoding&quot; prevention mechanism. Harcoded solutions will not get any points.
+
+<div><br />
+Regarding the viewer, note that:
+<ul>
+	<li>A debug mode is available from the settings panel (the dented wheel)</li>
+	<li>You can zoom/unzoom with the mouse wheel and move using drag&#39;n drop (useful for large grids)</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- PROTOCOL -->
+
+<div class="statement-section statement-protocol">
+<h2><span class="icon icon-protocol">&nbsp;</span> <span>Game Input</span></h2>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="text">The program must first read the initialization data from standard input. Then, provide to the standard output one line per instruction.</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Initialization input</div>
+
+<div class="text">
+<p><span class="statement-lineno">Line 1:</span> one integer <var>width</var> for the number of cells along the x axis.</p>
+
+<p><span class="statement-lineno">Line 2:</span> one integer <var>height</var> for the number of cells along the y axis.</p>
+
+<p><span class="statement-lineno">Next <var>height</var> lines:</span> A string&nbsp;&nbsp;<var>line</var>&nbsp;&nbsp;containing&nbsp;&nbsp;<var>width</var>&nbsp;&nbsp;characters. A dot <const>.</const> represents an empty cell. A zero <const>0</const> represents a cell containing a node.</p>
+</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Output for one game turn</div>
+
+<div class="text"><span class="statement-lineno">One line per node</span>. Six integers on each line:&nbsp;&nbsp; <var>x1</var>&nbsp;&nbsp;<var>y1</var>&nbsp;&nbsp;<var>x2</var>&nbsp;&nbsp;<var>y2</var>&nbsp;&nbsp;<var>x3</var>&nbsp;&nbsp;<var>y3</var><br />
+<br />
+Where:
+<ul>
+	<li>(<var>x1</var>,<var>y1</var>) the coordinates of a node</li>
+	<li>(<var>x2</var>,<var>y2</var>) the coordinates of the closest neighbor on the right of the node</li>
+	<li>(<var>x3</var>,<var>y3</var>) the coordinates of the closest bottom neighbor</li>
+</ul>
+If there is no neighbor, the coordinates should be <const>-1</const> <const>-1</const>.</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Constraints</div>
+
+<div class="text">0 &lt; <var>width</var> &le; 30<br />
+0 &lt; <var>height</var> &le; 30<br />
+0 &le; <var>x1</var> &lt; <var>width</var><br />
+0 &le; <var>y1</var> &lt; <var>height</var><br />
+-1 &le; <var>x2</var>, <var>x3</var> &lt; <var>width</var><br />
+-1 &le; <var>y2</var>, <var>y3</var> &lt; <var>height</var><br />
+Alloted response time to first output line &le; 1s.<br />
+Response time between two output lines &le; 100ms</div>
+</div>
+</div>
+<!-- STORY 
+
+<div class="statement-story-background">
+<div class="statement-story-cover" style="background-size: cover; background-image: url(https://www.codingame.com/servlet/fileservlet?id=2210361556836)">
+<div class="statement-story" style="min-height: 300px; position: relative">
+<h2>25th of April 2699, 12:01 - Zion...</h2>
+
+<div class="story-text">The machines are closing in on Zion, the human defenses are setting up for one last stand.<br />
+The human army is largely comprised of APUs (Armored Personal Unit), giant exoskeletons equipped with fully automatic firearms controlled via a grip-sensor relayed to a mechanical machine gun trigger. Every single one of the pilot&#39;s movements is mapped onto the robotic bones of the APU, effectively creating a super-soldier.<br />
+<br />
+Each APU is equipped with an &#39;R-Chip&#39;. These contain a little group of programs that regulate ammunition flow, namely to avoid bullets getting stuck in the mechanism during the chaos of battle. A single squib would cause immediate neutralization of the soldier.<br />
+There are several layers of abstraction on the R-Chips from low-level hardware programming to high-level software.<br />
+<br />
+You are part of the team of programmers for the top abstraction layer of the R-Chips.<br />
+<br />
+Your assignment is as follows: Create the initialization code for the R-Chip which must verify the connections in the APU&#39;s systems and output all the links between components.<br />
+This will enable the soldiers to activate their weapons. Without a working piece of code, many soldiers will be lost without having been able to fire a single shot.</div>
+</div>
+</div>
+</div>
+</div> -->

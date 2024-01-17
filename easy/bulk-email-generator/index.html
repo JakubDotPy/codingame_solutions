@@ -1,0 +1,43 @@
+<h1>Bulk Email Generator</h1>
+
+<a href="https://www.codingame.com/training/easy/bulk-email-generator">https://www.codingame.com/training/easy/bulk-email-generator</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You're coding on CG, minding your own business, when a notification pops out of nowhere. Some level 6 PHP coder is following you! It's all fine and dandy. You click on the dismiss button and move on.<br><br>Except it doesn't work. The dreaded red popup appears: &ldquo;Error 492, please send us an email at coders@codingame.com&rdquo;. Being the disciplined coder you are, you comply.<br><br>But the notification is still there. So you click it again. And read the popup again. And email coders again. But the notification is still there&hellip; You can't really send them the same email all the time, that would be boring!<br><br><strong>It's time for some automation!</strong><br><br>You are given a bulk email template. You are to expand it to an actual email by selecting a clause randomly when given a choice.<br><br>Choices are indicated by <const>(</const>parenthesized text<const>)</const>, with clauses separated by pipe symbols <const>|</const>.<br><br>Random is defined as using the JBM level-0 twister: &ldquo;for the <var>i</var>th choice, pick the <var>i</var>th clause (modulo the number of clauses)&rdquo;.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> the number <var>N</var> of lines of text to follow<br><strong>Next <var>N</var> lines:</strong> the email template<br><br><strong>Important:</strong> the email template is the <var>N</var> lines as a whole. This is *not* a line-based problem!</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The expanded email.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">N &lt; 10000<br>Total template size is less than 10000 characters as well.<br>Choices don't nest.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+This is the (first|second|third) choice.
+This is the (first|second|third) choice.
+This is the (first|second|third) choice.
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">This is the first choice.
+This is the second choice.
+This is the third choice.
+</pre>
+         </div>
+      </div>
+   </div>
+</div>

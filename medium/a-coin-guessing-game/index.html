@@ -1,0 +1,41 @@
+<h1>A Coin Guessing Game</h1>
+
+<a href="https://www.codingame.com/training/medium/a-coin-guessing-game">https://www.codingame.com/training/medium/a-coin-guessing-game</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Yulia has annotated both sides of <var>N</var> identical coins with the numbers from 1 to 2&times;<var>N</var>. Each number has been used exactly <strong>once</strong> and each coin has received an <strong>odd</strong> number on one side and an <strong>even</strong> number on the other side. She asks Zack, who is aware of these rules but does not know the chosen distribution of numbers, to guess all the even/odd combinations by playing a little game.<br><br>Yulia shakes and throws the coins on the table and reveals the resulting (seemingly random) configuration to Zack, letting him see the numbers on the visible side of each coin. No other information can allow Zack to identify or distinguish the coins.<br><br>Yulia repeats that operation several times and, after <var>T</var> throws in total, stops and informs Zack he has seen enough to guess all the pairs of numbers on the coins.<br><br><strong>Can you help Zack guess the numbers that were written on all of the coins?</strong><br><br><strong>Example</strong>: <var>N</var> = 3 coins, the numbers from <const>1</const> to <const>6</const> are used.<br>- First throw: <const>3 1 6</const>.<br>Zack learns that the even number <const>6</const> is not associated with the odd numbers <const>1</const> or <const>3</const>, hence it has to be paired with <const>5</const>.<br>- Second throw: <const>4 1 6</const>.<br>Zack learns that <const>1</const> is not paired with <const>4</const>. He also sees, for the second time, that it is not paired with <const>6</const>. So <const>1</const> it has to be paired with <const>2</const>, and consequently <const>3</const> is paired with <const>4</const>.<br>Solution: <const>1</const>/<const>2</const>, <const>3</const>/<const>4</const>, <const>5</const>/<const>6</const>. Expected output: <const>2 4 6</const>.<br><strong>========</strong><br><br>That said, Yulia has a secret criterion. She calls &quot;coins ring&quot; a sequence of numbers <const>i1</const>, <const>i2</const>, <const>i3</const>, ..., <const>ik</const>, such that all the coins <const>i1</const>/<const>i2</const>, <const>i2</const>/<const>i3</const>, ..., <const>ik</const>/<const>i1</const> are still acceptable assuming all possible &quot;deductions&quot; are made from the configurations that have been seen until now. She never stops before making sure that Zack can deductively get rid of all the coins rings.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Two space-separated integers <var>N</var> and <var>T</var> corresponding to the number of coins and the number of configurations to follow.<br><strong>Next <var>T</var> lines:</strong> <var>N</var> space-separated integers, in no particular order, corresponding to the coin sides that Zack sees after each throw.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">One line of <var>N</var> space-separated <strong>even</strong> integers corresponding to the even numbers written on the other side of the coin sides carrying the odd numbers 1, 3, 5, ..., 2&times;<var>N</var>-1 in order.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &le; <var>N</var> &le; 150<br>1 &le; <var>T</var> &le; 15<br>The given data guarantees a <strong>unique</strong> solution.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2 3
+4 2
+2 4
+4 3
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">4 2
+</pre>
+         </div>
+      </div>
+   </div>
+</div>

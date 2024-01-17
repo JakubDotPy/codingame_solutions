@@ -1,0 +1,50 @@
+<h1>Dead men's shot</h1>
+
+<a href="https://www.codingame.com/training/easy/dead-mens-shot">https://www.codingame.com/training/easy/dead-mens-shot</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Captain Jack Sparrow and his pirate friends have been drinking one night. After plenty of rum, they got into an argument about who is the best shot. Captain Jack takes up some paint and paints a target on a nearby wall. The pirates take out their guns and start shooting.<br><br>Your task is to help the drunk pirates find out which shots hit the target.<br><br>Captain Jack Sparrow drew the target by drawing <var>N</var> lines. The lines form a convex shape defined by <var>N</var> corners. A convex shape has all internal angles less than 180 degrees. For example, all internal angles in a square are 90 degrees. <br><br>A shot within the convex shape or on one of the lines is considered a hit.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var> for the number of corners.<br><strong>Next <var>N</var> lines:</strong> Two space-separated integers <var>x</var> and <var>y</var> for the coordinates of a corner. The corners are listed in a counterclockwise manner. The target is formed by connecting the corners together with lines and connecting the last corner with the first one.<br><strong>Line <var>N</var>+1:</strong> An integer <var>M</var> for the number of shots.<br><strong>Next <var>M</var> lines:</strong> Two space-separated integers <var>x</var> and <var>y</var> for the coordinates of each shot.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><var>M</var> lines with either &quot;hit&quot; or &quot;miss&quot; depending on whether the shot hit the target or not.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">3 &le; <var>N</var> &le; 10<br>1 &le; <var>M</var> &le; 10<br>-10000 &lt; <var>x</var>,<var>y</var> &lt; 10000</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">4
+-100 -100
+100 -100
+100 100
+-100 100
+5
+0 0
+99 99
+101 101
+80 -101
+0 -100</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">hit
+hit
+miss
+miss
+hit</pre>
+         </div>
+      </div>
+   </div>
+</div>

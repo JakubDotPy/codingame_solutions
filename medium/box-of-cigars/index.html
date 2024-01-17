@@ -1,0 +1,46 @@
+<h1>Box of Cigars</h1>
+
+<a href="https://www.codingame.com/training/medium/box-of-cigars">https://www.codingame.com/training/medium/box-of-cigars</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement"><strong>Story:</strong><br><br><strong>Hercule Poirot</strong> is a man of order and precision. He has a number of cigars, and he keeps them strictly in increasing height order.<br>As a New Year present, Poirot decides to gift his friend, Captain Hastings, a box of cigars. He has decided to give Hastings a set of cigars, such that the difference between every 2 consecutive cigars is same.<br>Find out the maximum number of cigars Poirot can gift Hastings.<br><br>--------------------------------------------------- xxx ---------------------------------------------------<br><br><strong>The Problem:</strong><br><br>Given the lengths of <var>N</var> cigars (sorted in ascending order), find the maximum number of cigars which have a common difference.<br><br>--------------------------------------------------- xxx ---------------------------------------------------<br><br><strong>Rules:</strong><br><br>There are <var>N</var> cigars.<br>Each cigar has a length <var>LNT</var>.<br>Display the largest number of cigars which are increasing with the same difference.<br><br>--------------------------------------------------- xxx ---------------------------------------------------<br><br><strong>Example:</strong><br><br>Let there be <const>10</const> cigars of length:<br><var>3</var>, <var>5</var>, <var>6</var>, <var>7</var>, <var>10</var>, <var>12</var>, <var>14</var>, <var>15</var>, <var>18</var>, <var>20</var><br>In this case the maximum number of cigars Poirot can gift is <const>4</const>. (<var>5</var> - <var>10</var> - <var>15</var> - <var>20</var>)</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var>, the number of cigars<br><strong>Next <var>N</var> Lines:</strong> An integer <var>LNT</var>, the length of a cigar <br>(<strong>Note:</strong> The lengths of the cigars are sorted in ascending order)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> An integer <var>MAX</var>, the maximum number of cigars Poirot can gift</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &le; <var>N</var> &le; 1000<br>1 &le; <var>LNT</var> &le; 1000<br>(<strong>Note:</strong> The lengths of the cigars may not be unique)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">10
+3
+5
+6
+7
+10
+12
+14
+15
+18
+20</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">4</pre>
+         </div>
+      </div>
+   </div>
+</div>

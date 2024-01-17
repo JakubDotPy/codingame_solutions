@@ -1,0 +1,40 @@
+<h1>DAWG</h1>
+
+<a href="https://www.codingame.com/training/hard/dawg">https://www.codingame.com/training/hard/dawg</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">A directed acyclic word graph (DAWG) is a data structure that represents a set of strings, often used as a compact way to store a dictionary.  Each word starts from the source node and ends at the sink node.  In between the source and sink is a network of nodes, connected by directed edges labeled either with a letter or as EOW (end-of-word) when connecting to the sink. Each node has at most one outgoing edge for each letter or EOW.  Following every possible path from the source node to the sink node gives you the list of words in the dictionary.<br><br>Given a set of strings, determine the minimum number of nodes needed to store them in a DAWG.<br><br>A graph for the example can be found here: https://en.wikipedia.org/wiki/Deterministic_acyclic_finite_state_automaton</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> The number of words <var>N</var><br><strong>Next <var>N</var> lines:</strong> The word list</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The number of nodes needed</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><var>N</var> &le; 1300</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">4
+tap
+taps
+top
+tops</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">6</pre>
+         </div>
+      </div>
+   </div>
+</div>

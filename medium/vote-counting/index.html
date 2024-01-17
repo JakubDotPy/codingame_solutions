@@ -1,0 +1,36 @@
+<h1>Vote counting</h1>
+
+<a href="https://www.codingame.com/training/medium/vote-counting">https://www.codingame.com/training/medium/vote-counting</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Your program must output the number of <strong>Yes</strong> <strong>No</strong> valid votes.<br><br>Voters can have proxy votes. Input gives you how many votes each voter has.<br>A list of votes following the format &#34;&lt;Voter name&gt; &lt;Vote&gt;&#34; is given.<br><br>One vote is invalid if :<br>- it is neither <strong>Yes</strong>, nor <strong>No</strong>;<br>- the voter voted more than he is allowed to (all his votes are invalid);<br>- the person that voted is not in the list of voters.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1: </strong>The number <var>N</var> of voters as integer.<br><strong>Line 2: </strong>The number <var>M</var> of votes as integer.<br><strong>The N following lines: </strong>The name of a voter <var>person_name</var> as a string, and his number of votes <var>nb_vote</var> he can use.<br><strong>The M following lines: </strong>Two string, the voter name <var>voter_name</var>, and his vote <var>vote_value</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1: </strong>The number of <const>Yes</const> and <const>No</const> votes.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <var>N</var> &lt; 10<br>0 &lt; <var>M</var> &lt; 10</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2&#10;3&#10;Albert 2&#10;Roger 1&#10;Albert Yes&#10;Roger No&#10;Albert Yes</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">2 1</pre>
+         </div>
+      </div>
+   </div>
+</div>

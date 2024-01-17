@@ -1,0 +1,45 @@
+<h1>One for his Nobs</h1>
+
+<a href="https://www.codingame.com/training/medium/one-for-his-nobs">https://www.codingame.com/training/medium/one-for-his-nobs</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">It's two years into the apocalypse and you've been living alone in a bunker.  The only soul you can talk to is an AI bot named Nobs.  To pass the time you play games against Nobs.  But he only knows how to play Solitaire and Minesweeper which you've grown tired of.  You decide to teach him your favorite pre-apocalypse game, Cribbage.  <br><br>Cribbage is a two-player card and board game where you make combinations to count points and get to the target before your opponent.<br>See here for all the details: <strong>https://en.wikipedia.org/wiki/Cribbage</strong> and here for the rules: <strong>https://en.wikipedia.org/wiki/Rules_of_cribbage</strong>.<br><br>Using a stack of security keycards as a deck, toothpicks for pegs, and an old pizza box for a board you start to play against Nobs.  At first, Nobs is incredibly bad at playing since he has no idea how to play and simply discards at random into the crib.  You decide that the only way Nobs will ever be a challenge to you is if you teach him the rules for scoring hands so that he can best decide which cards to keep.<br><br>Write the algorithm that Nobs should use to score his hand.<br><br>Scoring:<br><br>You hold <strong>4</strong> cards in your hand and a fifth common <strong>starter card</strong> is cut and included when scoring your hand.<br> <br> Fifteens: 2 points for every distinct group of cards whose totals adds up to 15, (<const>A</const> is 1, <const>J</const>, <const>Q</const>, <const>K</const> are 10, all others are face value).  Ex: <const>7H</const> + <const>8D</const> = <strong>2</strong> points, <const>AS</const> + <const>4C</const> + <const>KS</const> = <strong>2</strong> points<br><br>Runs: <strong>3</strong> or more consecutive cards by rank, 1 point for each card.  Ex: <const>AH</const> + <const>2D</const> + <const>3S</const> = <strong>3</strong> points, <const>TC</const> + <const>JD</const> + <const>QS</const> + <const>KC</const> = <strong>4</strong> points.  <br><br>Pairs: <strong>2</strong> points for every distinct pair of cards with identical ranks.  This means that a triplet gives <strong>6</strong> points and a quadruplet <strong>12</strong> points.  Ex: <const>AH</const> + <const>AD</const> = <strong>2</strong> points, <const>AH</const> + <const>AD</const> + <const>AS</const> = <strong>6</strong> points (<const>AH</const> + <const>AD</const>, <const>AH</const> + <const>AS</const>, and <const>AD</const> + <const>AS</const>), and <const>AH</const> + <const>AD</const> + <const>AS</const> + <const>AC</const> = <strong>12</strong> points.<br><br>Flushes: <strong>4</strong> points if all <strong>4</strong> cards in your hand are of the same suit, <strong>5</strong> points if the starter card is also the same suit.  Ex: <const>AH</const> <const>2H</const> <const>6H</const> <const>TH</const> <const>JC</const> = <strong>4</strong> points, <const>AH</const> <const>2H</const> <const>6H</const> <const>TH</const> <const>JH</const> = <strong>5</strong> points, <const>AH</const> <const>2C</const> <const>6H</const> <const>TH</const> <const>JH</const> = <strong>0</strong> points<br><br>His nobs: <strong>1</strong> point if you have a <const>J</const> in your hand with the same suit as the starter card. Ex: <const>AH 2H JC TH 6C</const> = <strong>1</strong> point<br><br><strong>29</strong> Hand: All five <strong>5</strong>'s and the <const>J</const> for nobs yields the highest possible hand score of <strong>29</strong>.  <br><br>   Ex: <const>JH 5D 5S 5C 5H</const>:<br><br>     <const>JH</const> + <const>5H</const> = <strong>1</strong> point for his nobs and fifteen for <strong>2</strong><br>    <const>JH</const> + <const>5S</const> = fifteen for <strong>2</strong><br>     <const>JH</const> + <const>5C</const> = fifteen for <strong>2</strong><br>     <const>JH</const> + <const>5H</const> = fifteen for <strong>2</strong><br>     <const>5D</const> + <const>5S</const> + <const>5C</const> = fifteen for <strong>2</strong><br>     <const>5D</const> + <const>5S</const> + <const>5H</const> = fifteen for <strong>2</strong><br>     <const>5D</const> + <const>5C</const> + <const>5H</const> = fifteen for <strong>2</strong><br>     <const>5S</const> + <const>5C</const> + <const>5H</const> = fifteen for <strong>2</strong><br>     <const>5D</const> + <const>5S</const> = <strong>2</strong> for a pair<br>     <const>5D</const> + <const>5C</const> = <strong>2</strong> for a pair<br>     <const>5D</const> + <const>5H</const> = <strong>2</strong> for a pair<br>     <const>5S</const> + <const>5C</const> = <strong>2</strong> for a pair<br>     <const>5S</const> + <const>5H</const> = <strong>2</strong> for a pair<br>     <const>5C</const> + <const>5H</const> = <strong>2</strong> for a pair<br><br>Add it all up and you get <strong>29</strong>!  The chances to get a twenty-nine hand are 1 in 216580.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var> for the number of hands to score<br><strong><var>N</var> Lines:</strong> 5 Space-separated values describing the cards in the hand (The first 4 cards for the player, the 5th is the starter card).<br>Cards are input as a two-character string.  The first character is the card's rank (<const>A</const>, <const>2</const>, <const>3</const>, <const>4</const>, <const>5</const>, <const>6</const>, <const>7</const>, <const>8</const>, <const>9</const>, <const>T</const>,<const> J</const>, <const>Q</const>, <const>K</const>) and the second is its suit (<const>H</const>earts, <const>D</const>iamonds, <const>C</const>lubs, <const>S</const>pades).  <const>A</const> has a value of <strong>1</strong>, <const>T</const>, <const>J</const>, <const>Q</const>, <const>K</const> are all <strong>10</strong>, the rest are all face value.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>N</var> Lines:</strong> The score for the given hand.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>N</var> &le; 10</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">5
+7H 8D TS 2H 4C
+5C TD KS 2H 4C
+6H AS 9C TS KH
+2C TS 3D 6S 8C
+2C TS 3D QH 8C</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">2
+4
+2
+2
+4</pre>
+         </div>
+      </div>
+   </div>
+</div>

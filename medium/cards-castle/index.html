@@ -1,0 +1,40 @@
+<h1>Cards castle</h1>
+
+<a href="https://www.codingame.com/training/medium/cards-castle">https://www.codingame.com/training/medium/cards-castle</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Your goal is to determine if a card castle structure is stable or not.<br>You're given a 2D map composed of &quot;.&quot; (dots), &quot;/&quot; and &quot;\&quot;,  representing a card castle of height <var>H</var> and width <const>H * 2</const>.<br><br>A card castle is unstable if :<br>- a &quot;/&quot; card is missing before a &quot;\&quot; card (&quot;.\&quot; is <const>UNSTABLE</const>)<br>- a &quot;\&quot; card is missing after a &quot;/&quot; card (&quot;/.&quot; is <const>UNSTABLE</const>)<br>- two cards side by side have the same orientation (&quot;//\&quot; or &quot;/\\&quot; is <const>UNSTABLE</const>)<br>- neither another card nor the ground are below (aka. a &quot;flying card&quot;)<br>- the card below has the same orientation<br><br>The structure is <const>STABLE</const> if and only if all cards are <const>STABLE</const>.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>H</var>, the number of lines in the map<br><strong><var>H</var> next lines:</strong> Each line of the map as a string</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> <const>STABLE</const> if the structure is stable, <const>UNSTABLE</const> otherwise</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <var>H</var> &lt;= 30</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">4
+.../\...
+../\/\..
+./\/\/\.
+/\/\/\/\</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">STABLE</pre>
+         </div>
+      </div>
+   </div>
+</div>

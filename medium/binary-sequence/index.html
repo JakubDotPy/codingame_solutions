@@ -1,0 +1,45 @@
+<h1>Binary Sequence</h1>
+
+<a href="https://www.codingame.com/training/medium/binary-sequence">https://www.codingame.com/training/medium/binary-sequence</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Find the digit at the given indexes in the sequence of the bits of the binary natural numbers in order.<br><br>The binary sequence starts with <strong>0</strong>=0, <strong>1</strong>=1, <strong>10</strong>=2, <strong>11</strong>=3, <strong>100</strong>=4, <strong>101</strong>=5, <strong>110</strong>=6, <strong>111</strong>=7, <strong>1000</strong>=8, <strong>1001</strong>=9, ...<br>Putting it all together it gives<br><pre style="font-family: monospace">01101110010111011110001001...<br>| |   |   |</pre><br>Indexes are given in binary (zero based).<br>So for example, the bits at indexes <strong>0</strong>=0, <strong>10</strong>=2, <strong>110</strong>=6 and <strong>1010</strong>=10 (the ones marked) are <strong>0</strong>, <strong>1</strong>, <strong>1</strong> and <strong>0</strong>.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong>: An integer <var>N</var> for the number of indexes.<br><strong>Next <var>N</var> lines</strong>: The binary integer of each index.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><var>N</var> lines: The digit (<const>0</const> or <const>1</const>) present at the corresponding index</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>N</var> &le; 20<br>0 &le; index &lt; 2^31</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">4
+0
+1
+10
+11
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">0
+1
+1
+0
+</pre>
+         </div>
+      </div>
+   </div>
+</div>

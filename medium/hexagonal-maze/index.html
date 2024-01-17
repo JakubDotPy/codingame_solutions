@@ -1,0 +1,47 @@
+<h1>Hexagonal Maze</h1>
+
+<a href="https://www.codingame.com/training/medium/hexagonal-maze">https://www.codingame.com/training/medium/hexagonal-maze</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are in a maze, made of hexagonal cells.<br>The following grid :<br><pre style="font-family: monospace">4 4<br>ABCD<br>EFGH<br>IJKL<br>MNOP</pre><br>has to be understood like this :<br><pre style="font-family: monospace">  / \   / \   / \   / \<br> /   \ /   \ /   \ /   \<br>|     |     |     |     |<br>|  A  |  B  |  C  |  D  |    Line 0<br>|     |     |     |     |<br> \   / \   / \   / \   / \<br>  \ /   \ /   \ /   \ /   \<br>   |     |     |     |     |<br>   |  E  |  F  |  G  |  H  | Line 1<br>   |     |     |     |     |<br>  / \   / \   / \   / \   /<br> /   \ /   \ /   \ /   \ /<br>|     |     |     |     |<br>|  I  |  J  |  K  |  L  |    Line 2<br>|     |     |     |     |<br> \   / \   / \   / \   / \<br>  \ /   \ /   \ /   \ /   \<br>   |     |     |     |     |<br>   |  M  |  N  |  O  |  P  | Line 3<br>   |     |     |     |     |<br>    \   / \   / \   / \   /<br>     \ /   \ /   \ /   \ /</pre><br>This means each cell has 6 neighbours : for example, cell F is surrounded by B, C, E, G, J, K.<br>The grid is periodic, if you go left you appear on the right if there is no wall, and vice versa, similarly with up/down.<br>So cell B also has 6 neighbours : M, N, A, C, E, F.<br>Even lines are left-aligned, odd lines are right-aligned.<br><br>You are given a grid made by walls and free spaces, you have to draw the shortest path to go from the start to the end.<br>There may be more than one path, but only one shortest path.<br>There is always a solution.<br><br>The grid contains following symbols :<br><const>#</const> : wall<br><const>_</const> : free space<br><const>S</const> : start<br><const>E</const> : end<br>You must output the same grid with symbols <const>.</const> on cells which are on the shortest way.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>First line:</strong> two integers <var>w</var> and <var>h</var>, width and height of the grid.<br><br><strong><var>h</var> following lines:</strong> the grid.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>h</var> lines :</strong> the grid with the answer.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">4 &le; <var>w</var>, <var>h</var> &le; 25<br><var>h</var> is always even.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">5 6
+#####
+#S#E#
+#_#_#
+#_#_#
+#___#
+#####</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">#####
+#S#E#
+#.#.#
+#.#.#
+#_..#
+#####</pre>
+         </div>
+      </div>
+   </div>
+</div>

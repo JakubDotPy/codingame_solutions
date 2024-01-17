@@ -1,0 +1,42 @@
+<h1>Turing machine</h1>
+
+<a href="https://www.codingame.com/training/hard/turing-machine">https://www.codingame.com/training/hard/turing-machine</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">A Turing machine is an abstract machine that manipulates symbols on a strip of tape according to a table of rules. It was invented by Alan Turing in 1936, and, despite its simplicity, can simulate any computer algorithm.<br>A Turing machine consists of the following elements:<br>1. A <strong>tape</strong> divided into cells, one next to the other. Each cell contains a symbol from some finite alphabet. In the mathematical model, the tape is infinitely long, but we will restrict it to some fixed size. The symbols are represented by integers.<br>2. A <strong>head</strong> that can read and write symbols on the tape and move left and right one cell at a time.<br>3. A <strong>state register</strong> that stores the state of the Turing machine, one of finitely many. One of these states is the special start state with which the state register is initialized.<br>4. A finite <strong>table</strong> of instructions that, given the state the machine is currently in and the symbol it is reading on the tape, tells the machine to do the following in sequence:<br>  - Either erase or write a symbol, then<br>  - Move the head left or right, and then<br>  - Go to a specified state<br><br>The alphabet consists of <var>S</var> symbols: 0, 1, ... , <var>S</var>-1. The tape is initially filled with 0s.<br>The tape has <var>T</var> cells. Its initial position is <var>X</var>, with 0 being the left edge.<br>There are <var>N</var> states. Each state has <var>S</var> actions, one for each symbol. An action is represented by:<br><var>W</var> <var>M</var> <var>NEXT</var><br>where <var>W</var> is the symbol the machine will write, <var>M</var> is the direction the head will move (<const>L</const> and <const>R</const> for left and right, respectively), and <var>NEXT</var> is the state the machine will go to. <var>NEXT</var> can be <const>HALT</const>, in which case the machine will stop the simulation upon performing this action.<br>The action the machine will perform depends on the symbol it is currently reading. For example, if the current symbol is 0, it will perform the first action associated with the current state, if it's 1 - the second action, etc.<br>The machine will start in the state <var>START</var> (provided in the input).<br><br>Your task is to simulate the machine until it halts or goes out of bounds of the tape, and output the number of actions it has performed, the position of the head after the last move (or <const>-1</const> if it went out of bounds to the left, <var>T</var> (the number of cells on the tape, not letter 'T') if to the right), as well as the contents of the tape after the simulation.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> <var>S</var> <var>T</var> <var>X</var> - space separated integers - number of symbols, tape length, and the initial position of the head.<br><strong>Line 2:</strong> <var>START</var> - the initial state the machine is in.<br><strong>Line 3:</strong> <var>N</var> - number of states.<br><strong>Next <var>N</var> lines:</strong> <var>STATE</var>: <var>ACTIONS</var> - the name of the state and <var>S</var> actions separated by semicolon. An action has the format <var>W</var> <var>M</var> <var>NEXT</var> - symbol to write, direction to move, and state to go to.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> The number of actions the machine has performed before halting.<br><strong>Line 2:</strong> The position of the head after the last move.<br><strong>Line 3:</strong> <var>T</var> characters representing the tape after the simulation.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><var>S</var> &le; 5<br>0 &le; <var>X</var> &lt; <var>T</var> &le; 500<br><var>N</var> &le; 100</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2 4 0
+A
+2
+A:1 R B;1 R HALT
+B:1 L A;1 R B</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">3
+1
+1100</pre>
+         </div>
+      </div>
+   </div>
+</div>

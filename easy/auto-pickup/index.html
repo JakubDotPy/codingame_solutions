@@ -1,0 +1,37 @@
+<h1>Auto pickup</h1>
+
+<a href="https://www.codingame.com/training/easy/auto-pickup">https://www.codingame.com/training/easy/auto-pickup</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You have been looking on the network <var>packet</var> a game is sending, and you have been thinking about making a system to automatically pick things up for you!<br><br>You have found the <var>packet</var> is one big string of binary data of instructions.<br>Each instruction is formatted in this way:<br><strong>[instruction id (3 bits)][packet length (4 bits)][packet info (packet length bits)]</strong>.<br><br>What you need to do is extract the item drop instructions, they have id <strong>101</strong>, and their <strong>packet info</strong> is the item id you will need! This id might be different lengths, so look at the <strong>packet length</strong>.<br><br>What you need to send back is a set of pickup instructions, id <strong>001</strong>. Remember the packet length!<br><strong>001[item id length][item id]</strong><br><br>For example: &quot;10100010101001011&quot; we have the id and length:<br>&quot;101 0001 0101001011&quot; which means we should take 1 bit for the item id, so<br>&quot;101 0001 0&quot;.<br> Then we look at the rest of the packet<br>&quot;101001011&quot; and split that up into &quot;101 0010 11&quot; and get the second id &quot;11&quot;.<br><br>Then we just send the response &quot;001 0001 0&quot; and &quot;001 0010 11&quot;.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> the length of the packet<br><strong>Line 2:</strong> the <var>packet</var> to inspect</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> The packet you send to the game to pick up your items<br>The ids should be sent in the order they were found in the input <var>packet</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">There will always be at least one item drop</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">9
+101001010</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">001001010</pre>
+         </div>
+      </div>
+   </div>
+</div>

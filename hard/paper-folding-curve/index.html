@@ -1,0 +1,37 @@
+<h1>Paper-folding curve</h1>
+
+<a href="https://www.codingame.com/training/hard/paper-folding-curve">https://www.codingame.com/training/hard/paper-folding-curve</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Get a stripe of paper. Fold it into half. Fold it into half again in the same direction. Fold it the third time into half, in the same direction. Then open it, so that every fold is at a right angle. Viewing it from the edge you could see a pattern like this:<br><pre style="font-family: monospace">   _ <br>|_| |_<br>     _|</pre><br>Since we made 3 folds to create this curve, we call it an order-3 curve.<br><br>Following the same procedure we can arrive at different orders of the curve.<br><strong>order-1</strong><br><br><pre style="font-family: monospace">_|</pre><br><br><br><strong>order-2</strong><br><pre style="font-family: monospace">   _<br>|_|</pre><br><br><br><strong>order-3</strong><br><pre style="font-family: monospace"> _<br>|_   _<br>  |_| |</pre><br><br><br><strong>order-4</strong><br><pre style="font-family: monospace">   _   _<br>  |_|_| |_<br>   _|    _|<br>|_|</pre><br><br>The curve can expand to infinite orders.<br><br>If you follow one end of the curve to go along the path, you will meet either <strong>LEFT</strong> or <strong>RIGHT</strong> turns.  We write <strong>LEFT</strong> as <strong>1</strong>, and <strong>RIGHT</strong> as <strong>0</strong>. We describe a curve by a sequence of <strong>0</strong> and <strong>1</strong>.<br><br>Depending on which end you are viewing the paper, and from which end you start walking through the path, the same curve can be represented in four different ways. We arbitrarily choose one as the &quot;correct&quot; representation:<br><br>The <const>sequence</const> of <strong>order-1</strong> curve is: <strong>1</strong><br>The <const>sequence</const> of <strong>order-2</strong> curve is: <strong>110</strong><br>The <const>sequence</const> of <strong>order-3</strong> curve is: <strong>1101100</strong><br><br>Your task is to find the <const>Sequence</const> of higher order curves using the same representation scheme as above.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong> An integer <var>N</var> for the order of the curve<br><strong>Line 2</strong> A <var>starting index</var> and an <var>ending index</var> (both 0-based and inclusive) of a sub-string of the <const>Sequence</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">You do not need to output the full sequence. You only need to output a <const>sub-Sequence</const> as defined above.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>N</var> &le; 50<br><var>ending index</var> - <var>starting index</var> &le; 255<br><var>starting index</var>, <var>ending index</var> &le; 1,000,000,000,000,000</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+3 6</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1100</pre>
+         </div>
+      </div>
+   </div>
+</div>

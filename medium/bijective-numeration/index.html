@@ -1,0 +1,37 @@
+<h1>Bijective Numeration</h1>
+
+<a href="https://www.codingame.com/training/medium/bijective-numeration">https://www.codingame.com/training/medium/bijective-numeration</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Decimal isn't the only base ten positional numbering system!<br><br>Write a simple calculator that operates entirely in &quot;decimary&quot; notation to sum a list of positive integer values. Decimary is a fun name for what mathematics calls <strong>bijective numeration</strong> base ten, which uses <const>A</const> to represent ten and lacks a zero digit.<br><br>The system is better illustrated than explained. Starting from one, these numerals are written:<br><br><const>1</const>, <const>2</const>, <const>3</const>, <const>4</const>, <const>5</const>, <const>6</const>, <const>7</const>, <const>8</const>, <const>9</const>, <const>A</const> = ten, <const>11</const>, <const>12</const>, <const>13</const>, <const>14</const>, <const>15</const>, <const>16</const>, <const>17</const>, <const>18</const>, <const>19</const>, <const>1A</const> = ten plus ten = twenty, <const>21</const>, <const>22</const>, <const>23</const>, <const>24</const>, <const>25</const>, <const>26</const>, <const>27</const>, <const>28</const>, <const>29</const>, <const>2A</const> = thirty, <const>31</const>, ...<br><br><const>88</const>, <const>89</const>, <const>8A</const> = ninety, <const>91</const>, <const>92</const>, <const>93</const>, <const>94</const>, <const>95</const>, <const>96</const>, <const>97</const>, <const>98</const>, <const>99</const>, <const>9A</const> = ninety plus ten = one hundred, <const>A1</const> = a hundred and one, <const>A2</const>, <const>A3</const>, <const>A4</const>, <const>A5</const>, <const>A6</const>, <const>A7</const>, <const>A8</const>, <const>A9</const>, <const>AA</const> = a hundred and ten, <const>111</const>, ...<br><br><const>199</const>, <const>19A</const> = two hundred, <const>1A1</const> = two hundred and one, ...</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>count</var> representing the number of input values<br><strong>Line 2:</strong> A string of <var>decimary</var> values, separated by spaces</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> A string in &quot;decimary&quot; notation representing the <var>summation</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &lt;= <var>count</var> &lt; 10<br>1 &lt;= length of each <var>decimary</var> representation &lt; 10</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+A A 12</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">32</pre>
+         </div>
+      </div>
+   </div>
+</div>

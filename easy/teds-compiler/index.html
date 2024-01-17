@@ -1,0 +1,36 @@
+<h1>Ted's compiler</h1>
+
+<a href="https://www.codingame.com/training/easy/teds-compiler">https://www.codingame.com/training/easy/teds-compiler</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Ted wants to develop a compiler and knows that one of the most important elements in a compiler is its <strong>parser</strong><br><br>Parsing, syntax analysis, or syntactic analysis is the process of analyzing a string of symbols, either in natural language, computer languages or data structures, conforming to the rules of a formal grammar.<br><br>https://en.wikipedia.org/wiki/Parsing<br><br>Today, Ted is concerned with an abstract instruction which is composed of the characters <const>&lt;</const> and <const>&gt;</const> , which he will use on the design of his language, T++ :D.<br><br>He understand that, for an expression to be valid, a <const>&lt;</const> symbol must always have a matching <const>&gt;</const> character somewhere (nested expression are valid) after it. In addition, each <const>&gt;</const> symbol must exactly match a <const>&lt;</const> symbol.<br><br>So, for instance, the instructions:<br><br><const><strong>&lt;&lt;</strong>&gt;&gt;</const><br><br><const>&lt;&gt;</const><br><br><const>&lt;&gt;&lt;&gt;</const><br><br>are all valid. While:<br><br><const>&gt;&gt;</const><br><br><const>&gt;&lt;&gt;&lt;</const><br><br>are not.<br><br><strong>Given expression which represent some instructions to be analyzed by Ted's compiler, you should tell the length of the longest prefix of this expression that is valid, or 0 if there is not such a prefix.</strong></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">Input will consist of a single <var>line</var>, representing a possible expression in T++.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">You should output the <var>length</var> of the longest prefix that is valid or <const>0</const> if there is not such a prefix</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; The length of <var>line</var> &le; 100</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">&lt;&lt;&gt;&gt;&gt;</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">4</pre>
+         </div>
+      </div>
+   </div>
+</div>

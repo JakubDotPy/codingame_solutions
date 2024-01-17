@@ -1,0 +1,37 @@
+<h1>String balls</h1>
+
+<a href="https://www.codingame.com/training/medium/string-balls">https://www.codingame.com/training/medium/string-balls</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement"><strong>Note:</strong> You can find the second part of this puzzle, made by @Timinator, at: <br><br><const>https://www.codingame.com/training/hard/string-balls-ii</const><br><br><strong>Statement:</strong><br>Let's name the string <const>abcdefghijklmnopqrstuvwxyz</const> the alphabet, and let <strong>d</strong> be the distance between two elements in the alphabet defined by the absolute value of the difference of their indexes. For example: <br><pre style="font-family: monospace">  <br>  d(&quot;b&quot;, &quot;d&quot;) = d(&quot;d&quot;, &quot;b&quot;) = 2<br>  d(&quot;f&quot;, &quot;f&quot;) = 0<br>  d(&quot;a&quot;, &quot;z&quot;) = 25<br></pre><br>We can extend <strong>d</strong> to strings <strong>of equal length</strong> as follows: given two strings sa, sb of equal length <strong>len</strong>, d(sa, sb) is the <strong>sum of the pairwise d(sa[i], sb[i]) for all index values (i) from 0 to len-1</strong>. For example:<br><pre style="font-family: monospace"><br>  d(&quot;fb&quot;, &quot;fd&quot;) = d(&quot;f&quot;, &quot;f&quot;) + d(&quot;b&quot;, &quot;d&quot;) = 0 + 2 = 2<br>  d(&quot;ab&quot;, &quot;ac&quot;) = d(&quot;ac&quot;, &quot;ab&quot;) = 1<br>  d(&quot;ac&quot;, &quot;bb&quot;) = 2<br></pre><br>We can now define a (closed) ball of <var>center</var> a given string and of (integer) <var>radius</var>. A point <var>p</var> (i.e. a string with letters in the alphabet and of same length as the <var>center</var>) is inside the ball if d(<var>center</var>, <var>p</var>) &lt;= <var>radius</var>.<br><br>Find the number of points contained in the ball of center <var>center</var> and radius <var>radius</var>.<br><br><strong>Example (Test 4):</strong> <br>2<br>ab<br><br>The points at distance less or equal to <const>2</const> of <const>ab</const> are:<br>- at distance 0: ab<br>- at distance 1: bb, aa, ac<br>- at distance 2: cb, ad, bc, ba<br><br>For a total of <strong>8</strong> points contained in the (closed) ball of center <const>ab</const> and radius <const>2</const>.<br><br><strong>NB:</strong> Tests 1-7 cover simple cases and should help you debug your program. Tests 8-11 check the performance.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>radius</var>, the radius of the ball.<br><strong>Line 2:</strong> A string <var>center</var>, the center of the ball.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The number of points inside the ball of center <var>center</var>&nbsp;and radius <var>radius</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <var>radius</var> &lt;= 100<br>0 &lt; length(<var>center</var>) &lt; 20<br>0 &lt;= answer &lt;= 1e6<br>The string <var>center</var> contains only lowercase English letters.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1
+a</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">2</pre>
+         </div>
+      </div>
+   </div>
+</div>

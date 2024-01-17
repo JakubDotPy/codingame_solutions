@@ -1,0 +1,37 @@
+<h1>Horse-hyperracing Hyperduals</h1>
+
+<a href="https://www.codingame.com/training/medium/horse-hyperracing-hyperduals">https://www.codingame.com/training/medium/horse-hyperracing-hyperduals</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">The Casablanca hyperduals are a great success.  Such a huge hit that hamburger-heaving horse hoards were heard heading for the harbor, hampering heavy hearses from herding horny hens hither, and also helping hinder the hyper-hullabaloo hovering around the hippodrome. And registering to compete, obviously.<br><br>In addition to the regular horses whose velocity and elegance are directly provided in input, a waitlist of new applicants is provided in compressed form. You are provided with the seed to a linear congruential generator, whose even terms (starting at <const>0</const>) represent the new horses' velocity, and whose odd terms represent their elegance. The LCG works as follows:<br><br>X(0) = <var>X</var>, the seed provided in input<br>X(n+1) = 1103515245 * X(n) + 12345 [mod 2^31]<br><br>As before, given a horse pair with strengths <var>(V1,E1)</var> and <var>(V2,E2)</var>, the race is assumed to be as interesting as <var>abs(V2-V1)+abs(E2-E1)</var> is small.<br><br>Write a program which, using a given number of strengths, identifies the two closest strengths and shows their difference with an integer.<br><br>(This is a harder version of community puzzle &ldquo;Horse-racing Hyperduals&rdquo;. You may want to solve that problem first.)<br><br><strong>Example</strong><br><br>You are given a classical horse of strength <const>(0,0)</const>, and two congruential horses seeded by <const>42424242</const>. The congruential sequence is thus:<br>X(0) = 42424242<br>X(1) = 1443152643<br>X(2) = 717496960<br>X(3) = 654696633<br><br>So we are comparing horses of strengths <const>(0,0)</const>, <const>(42424242,1443152643)</const> and <const>(717496960,654696633)</const>. Interestingness of a race between the first and second horse is <const>1485576885</const>; the first and third <const>1372193593</const>; the second and third <const>1463528728</const>. Therefore the most interesting race is between first and third, and you should output <const>1372193593</const>.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> the number <var>N</var> of classical horses, the number <var>M</var> of congruential horses, the seed <var>X</var> of the generator, space-separated<br><strong><var>N</var> following lines:</strong> the velocity <var>Vi</var> and elegance <var>Ei</var> of each classical horse, space-separated</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> the difference <var>D</var> between the two closest strengths</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &le;  <var>N</var>+<var>M</var> &le; 100000<br>0 &le; <var>N</var>, <var>M</var> <br>0 &le; <var>Vi</var>,<var>Ei</var> &lt; 2^31<br><var>D</var> &ge; 0<br>All values are integral.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1 2 42424242
+0 0</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1372193593</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,51 @@
+<h1>An adventure in the fantasy world</h1>
+
+<a href="https://www.codingame.com/training/easy/an-adventure-in-the-fantasy-world">https://www.codingame.com/training/easy/an-adventure-in-the-fantasy-world</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are a Warrior in the fantasy world.<br><br>You have a little money (<const>50G</const>) at the beginning.<br><br>The world is represented by a rectangular grid. A position is denoted by its row number and its column number like this: <const>row number column number</const>. Your initial position is <const>0 0</const>.<br><br>You can move 1 unit in any one direction (Right or Left or Up or Down) at a time. You have planned the path you will take, and written it down in shorthand, using <const>R</const>, <const>L</const>, <const>U</const>, <const>D</const> to represent Right, Left, Up, Down respectively.<br><br>Each position in the world may contain money, an enemy or nothing. You have gathered the information in the following format:<br><strong>position</strong> <const>enemy</const> <strong>type of enemy</strong>, or<br><strong>position</strong> <const>money</const> <strong>amount of money</strong>, for example:<br><const>0 1 enemy slime</const><br><const>2 5 money 10G</const><br><br>When you get to a point of money or an enemy, you do the following:<br>&bull; If you find some <strong>money</strong>, you pick up all the money. so after you got the money, it disappears from the map.<br>&bull; If you encounter an <strong>enemy which is not a goblin</strong> e.g. a slime, you fight it and stop moving further (i.e. ignore the remaining untaken path).<br>&bull; If you encounter a <strong>goblin</strong> and you have less than <const>50G</const>, you also fight it and stop moving further.<br>&bull; If you encounter a <strong>goblin</strong> and you have enough money, you pay the goblin <const>50G</const>. It will then let you pass and continue your adventure. Note though, the goblin does not go away, so if you revisit the point later on, you will have to pay it again or fight it!<br><br>Output the result of your adventure:<br>&bull;&nbsp;If you complete the planned path safely without fighting any enemies, output <const>GameClear</const>, <strong>your final position</strong> and <strong>the final amount of money you have</strong>, e.g. <const>GameClear 2 5 30G</const>.<br>&bull; If you have to stop and fight an enemy, output <strong>your final position</strong>, <strong>the final amount of money you have</strong> and <strong>the name of the enemy</strong>, e.g. <const>2 3 32G goblin</const>.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> A string <var>s</var> for the path you have planned to take.<br><strong>Line 2:</strong> An integer <var>n</var> for the number of positions which you have information.<br><strong>Next <var>n</var> lines:</strong> A string <var>m</var> for the information on a position.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> A string for the result of the adventure.<br>If you complete the planned path: <const>GameClear</const>, your final position and the final amount of money you have<br>Otherwise: your final position, the final amount of money you have and the name of the enemy</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>s</var>.length &le; 100<br><var>s</var>.length &le; <var>n</var> &le; <var>s</var>.length * 2<br><strong>row number</strong> and <strong>column number</strong> in <var>m</var> are always integers<br>-50 &le; <strong>row number</strong>, <strong>column number</strong> in <var>m</var> &le; 50<br>1 &le; money in <var>m</var> &le; 100</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">ULULRDDLRU
+14
+-2 -3 enemy goblin
+-1 0 money 83G
+2 -1 enemy goblin
+-2 2 enemy slime
+-1 1 money 31G
+-4 -2 enemy slime
+-3 0 enemy goblin
+-4 -1 money 17G
+1 -3 money 60G
+3 0 enemy slime
+1 -2 enemy slime
+3 -1 enemy goblin
+-1 -3 enemy slime
+3 3 enemy goblin</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">GameClear -1 -1 133G</pre>
+         </div>
+      </div>
+   </div>
+</div>

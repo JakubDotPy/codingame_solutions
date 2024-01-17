@@ -1,0 +1,36 @@
+<h1>Anagrams</h1>
+
+<a href="https://www.codingame.com/training/medium/anagrams">https://www.codingame.com/training/medium/anagrams</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You will be given a scrambled word phrase. You must <strong>unscramble</strong> the letters to reveal the original phrase. Each phrase has been scrambled by the following process:<br><br>1) Find every 2nd letter of the alphabet in the phrase (B, D, F, etc.) and reverse their order within the phrase.<br><br>For example:<br><br>Phrase: <strong>MOSTLY HARMLESS</strong><br>2nd letters: <strong>TLHRL</strong><br>Reversed: <strong>LRHLT</strong><br>Result: <strong>MOSLRY HALMTESS</strong><br><br>2) Find every 3rd letter of the alphabet in the phrase (C, F, I, etc.) and shift their positions one to the right, with the last letter wrapped around to the first position.<br><br>For example:<br><br>Phrase: <strong>MOSLRY HALMTESS</strong><br>3rd letters: <strong>OLRL</strong><br>Shifted: <strong>LOLR</strong><br>Result: <strong>MLSOLY HARMTESS</strong><br><br>3) Find every 4th letter of the alphabet in the phrase (D, H, L, etc.) and shift their positions one to the left, with the first letter wrapped around to the last position.<br><br>For example:<br><br>Phrase: <strong>MLSOLY HARMTESS</strong><br>4th letters: <strong>LLHT</strong><br>Shifted: <strong>LHTL</strong><br>Result: <strong>MLSOHY TARMLESS</strong><br><br>4) Count the number of letters in each word, and reverse that list of numbers, re-applying the revised word lengths to the letter sequence.<br><br>For example:<br><br>Phrase: <strong>MLSOHY TARMLESS</strong><br>Word lengths: <strong>6</strong>, <strong>8</strong><br>Reversed: <strong>8</strong>, <strong>6</strong><br>Result: <strong>MLSOHYTA RMLESS</strong><br><br><br><br>Therefore, if your input is scrambled phrase <strong>MLSOHYTA RMLESS</strong>, you must return <strong>MOSTLY HARMLESS</strong>.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> A scrambled word phrase</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The unscrambled phrase</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">Only upper-case characters [A-Z] are used.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">ENID OL FNE</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">END OF LINE</pre>
+         </div>
+      </div>
+   </div>
+</div>

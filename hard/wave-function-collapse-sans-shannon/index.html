@@ -1,0 +1,60 @@
+<h1>Wave Function Collapse (sans Shannon)</h1>
+
+<a href="https://www.codingame.com/training/hard/wave-function-collapse-sans-shannon">https://www.codingame.com/training/hard/wave-function-collapse-sans-shannon</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement"><strong>This is not ASCII art!</strong>  For this in/out puzzle pixels are not available, so instead we will use characters to represent colours.  Imagine each character as a pixel of a specific colour.<br><br>Procedural generation via wave function collapse (WFC) is a way of generating content based off of a few &quot;prototypical&quot; examples&quot;.  Given an image prototype of something as small as 16x16 pixels, WFC can make a 30x300 image with very similar structures drawn from the single prototype.  This is not limited to flowers  or maps but anything with small repeating patterns.  After completing this puzzle you will be able to use this same code to generate a wide variety of content, from dungeon maps, to pixel art.<br><br>See cover art and<br>https://github.com/mxgmn/WaveFunctionCollapse/blob/master/images/wfc.gif<br><br>The task is to read in a prototype image as well as a partially filled solution.  Use the prototype image and WFC (kernel size of 3) to fill in the missing parts of the solution.  The prototype and partial solution will both be printable characters.  The missing parts are designated with the <var>?</var> character.<br><br>Example<br><br><pre style="font-family: monospace">Prototype<br>12 x 8<br>+----------+<br>|          |<br>|  *       |<br>| \|    *  |<br>|  |/   |/ |<br>|  |    |  |<br>| \|    |  |<br>+----------+</pre><br><pre style="font-family: monospace">Partial          Expected<br>Solution          Output<br>+----------+    +----------+<br>|??????????|    |          |<br>|??????????|    |  *       |<br>|??????????|    | \|       |<br>|?????  ?  |    |  |/   *  |<br>|? ? ??\| ?|    |  |   \|  |<br>| ??    ?? |    | \|    |/ |<br>|  ?/   ?  |    |  |/   |  |<br>|??????\???|    |  |   \|  |<br>+----------+    +----------+</pre><br><pre style="font-family: monospace">Partial                     Expected<br>Solution                     Output<br>+--------------------+   +--------------------+<br>|     ???????????????|   |                    |<br>|  *         *       |   |  *         *       |<br>| \|        \|   ????|   | \|        \|    *  |<br>|  |/  ????  ?/   ?/ |   |  |/        |/   |/ |<br>|  |  ?????? ?    ?  |   |  |         |    |  |<br>|  |         ?    ?  |   |  |         |    |  |<br>|  |  ?????  ?    ?  |   |  |    *    |    |  |<br>|  |   ?|??  ?    ?  |   |  |    |/   |    |  |<br>| \??   |?  \|?   ?? |   | \|    |   \|    |  |<br>+--------------------+   +--------------------+</pre><br><br><strong>NOTE</strong> There are three features to this puzzle that make this easier than a full WFC implementation.  First, the border will always be included in the partial solution and it will be identical to the prototypes border.  Second, the procedure outlined by mxgmn (link below) includes using Shannon Entropy.  Skip that step for this puzzle and only collapse states that are certain.  Third, no reflection or rotation is used in this puzzle.<br><br><strong>RESOURCES</strong> <br>Github repo https://github.com/mxgmn/WaveFunctionCollapse<br>youtube video https://www.youtube.com/watch?v=fnFj3dOKcIQ<br>and https://www.youtube.com/watch?v=t1O0_yHe-6Y<br>and suggested by ninjadip https://www.youtube.com/watch?v=2SuvO4Gi7uY<br><br><strong>REPRODUCIBILITY</strong> In order to achieve full reproducibility of the test and validation output, process the image in these steps.  These steps will make more sense once you've read the background resources.<br>1 * Calculate possible 3x3 patches.  A 5x6 prototype would generate 12 patches<br>2 * Constrain patches from left to right, then from top to bottom<br>3 * After a patch has been constrained, constrain all symbols that are covered by the 3x3 patch<br>4 * If there are still uncertain symbols goto step 2<br><br><strong>A symbol</strong> is something like &quot;#&quot; or &quot;|&quot;.<br><br><strong>Constraining in step 2 means</strong> reduce the list of possible patches to only those patches that are possible given the symbols in the blocks they cover.  For example, if all the blocks are unknown (can be any symbol) except the centre block is known to be either '#' or &quot;|&quot; and the lower right is known to be '*' or '/', then reduce the possible patches to be only patches that have the centre as either '#' or '|' and the lower right to be '*' or '/'.<br><br><strong>Constraining in step 3 means</strong> if, for example, all remaining possible overlapping 3x3 patches are the following 2<br><pre style="font-family: monospace"></pre><pre style="font-family: monospace">Patch   Patch<br>#..    .*.<br>#..    .|.<br>###    ###<br></pre><pre style="font-family: monospace"></pre><br>then the blocks are reduced to these lists<br><pre style="font-family: monospace"></pre><pre style="font-family: monospace">[#.] [.*] [.]<br>[#.] [.|] [.]<br>[#]  [#]  [#]</pre><pre style="font-family: monospace"></pre><br>We now know for certain that the bottom is all '#' and the right side is '.'<br>And the other positions are constrained to [#.] [.*] and [.|]<br><br><strong>HINT</strong> The hint is ROT13 encoded so it won't spoil your fun.  This site can decode them for you https://rot13.com<br><br>Hint 1 : &quot;Xrrc gjb 2q qngnfrgf, bar sbe gur erznvavat yrtny flzobyf sbe rnpu fdhner, bar sbe gur erznvavat yrtny 3k3 cngpurf pragrerq ng rnpu fdhner.&quot;<br><br>Hint 2 : &quot;Sbe qrohttvat vg vf urycshy gb ercynpr gur &quot;?&quot; jvgu gur ahzore bs cbffvoyr flzobyf (be cbffvoyr cngpurf).  Rnpu vgrengvba bs gur pbafgenvagf fubhyq erfhygf va n erqhpgvba fbzr bs gur ahzore bs cbffvoyr flzobyf naq cngpurf.&quot;<br><br>Hint 3 : &quot;Gur svefg grfg pnfr unf 47 havdhr cngpurf&quot;<br><br>Hint 4 : &quot;Gur rqtrf ner vzcbegnag.  Vapyhqr gur rqtrf va gur perngvba bs naq hfr bs cngpurf&quot;</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">Line 1 : width and height of the prototype<br>Next height lines : text of prototype<br>Next Line : height and width of partial solution<br>Next height lines : text of partial solution<br>Line H+4 : height of output<br>Lines : height lines of output</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">Lines of output</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">input<br>5 &lt; W,H &lt; 20<br><br>output<br>kernel size &lt; W,H &lt; 200</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">12 8
++----------+
+|          |
+|  *       |
+| \|    *  |
+|  |/   |/ |
+|  |    |  |
+| \|    |  |
++----------+
+12 8
++----------+
+|??????????|
+|  *       |
+| \|   ????|
+|  ?/   ?/ |
+|  ?    ?  |
+| \|   ????|
++----------+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">+----------+
+|          |
+|  *       |
+| \|    *  |
+|  |/   |/ |
+|  |    |  |
+| \|    |  |
++----------+</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,36 @@
+<h1>Bruce Lee</h1>
+
+<a href="https://www.codingame.com/training/medium/bruce-lee">https://www.codingame.com/training/medium/bruce-lee</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Your program must decode the encoded message from the Chuck Norris encoding project.<br><br>It is strongly recommended to have done the Chuck Norris project. <br>Link -&gt; <strong>https://www.codingame.com/training/easy/chuck-norris</strong><br><br><br>Here are some reminders about the Chuck Norris encoding method:<br>- The encoded message is unary, containing only sequences of zeroes separated by spaces.<br>- These sequences of zeroes always come in pairs.<br>- The first sequence of a pair can be either <const>0</const> or <const>00</const>, which represent the binary bits <const>1</const> and <const>0</const> respectively.<br>- The second sequence of a pair is made of <const>k</const> zeroes, where <const>k</const> is the number of time the previous bit has to be printed in order to decode the message.<br><br>For instance, if we want to encode the character <strong>A</strong>, we first start to write down the 7-bit ASCII code for <strong>A</strong> which is  <const>1000001</const> in binary. (We only use <const>7</const> bits because the first bit is always zero so it's ignored).<br>Then we turn the binary into unary as follows:<br><strong>1</strong>000001   -&gt;    <const>0</const> <const>0</const> (bit 1, one time)<br>1<strong>00000</strong>1    -&gt;    <const>00</const> <const>00000</const> (bit 0, five times)<br>100000<strong>1</strong>    -&gt;    <const>0</const> <const>0</const> (bit 1, one time)<br>Therefore, the encoded message is  <strong>0 0 00 00000 0 0</strong>.<br><br><br>You are asked to do the reverse process, and thus print A when given the message <strong>0 0 00 00000 0 0</strong>.<br>If the input is invalid, just print <strong>INVALID</strong>.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> The encoded message of <const>N</const> characters.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> The decoded message, or the word <strong>INVALID</strong> when the input is not valid.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <const>N</const> &lt; 4096</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">0 0 00 00000 0 0</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">A</pre>
+         </div>
+      </div>
+   </div>
+</div>

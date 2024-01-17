@@ -1,0 +1,51 @@
+<h1>Video Assistant Referee</h1>
+
+<a href="https://www.codingame.com/training/easy/video-assistant-referee">https://www.codingame.com/training/easy/video-assistant-referee</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">In <strong>football</strong> (Soccer), the <strong>offside</strong> rule is one of the most contentious and a frequent topic of heated debate among fans. The advent of <strong>Video Assistant Referee (VAR)</strong> technology is supposed to reduce the offside uncertainty.<br><br>You are tasked with implementing the VAR system for <strong>identifying offside situations</strong>, based on data supplied by both the video (screenshot at the moment the ball is played) and the human referees (players eventually considered as <strong>&quot;actively involved&quot;</strong> once the ball is released).<br><br><br><pre style="font-family: monospace"><strong>Offside position</strong></pre>- A player is in an offside position if, at the moment the ball is released, they are <strong>nearer to the opponent's goal line than both the ball and the second last opponent</strong> (the last opponent is usually, but not necessarily, the goalkeeper).<br>- There is no offside position if the play (the last ball release) is a <strong>throw-in</strong>.<br>- The offside rule applies only to players in the <strong>opponent's half of the pitch</strong>. This makes sense since you can't be offside if you are positioned in your own camp. Only players who &quot;transgress&quot; the middle line and &quot;attack&quot; the other camp might fall in an offside trap :)<br><br><br><pre style="font-family: monospace"><strong>Offside offence</strong></pre>Being in an <strong>offside position is not an offence in itself</strong>, but a player so positioned when the ball is played by a teammate can be judged guilty of an offside offence if they are <strong>&quot;involved in active play&quot; (i.e. receive the ball, interfere with an opponent, ...)</strong>. In this case, the referee calls offside.<br><br><br><pre style="font-family: monospace"><strong>VAR data</strong></pre>The input provides information (<var>screenshot</var>) on how all the players of <const>TEAM_A</const> and <const>TEAM_B</const> are positioned in the pitch the moment the ball is played.<br>The <var>screenshot</var> is encoded using the characters <const>#.aAbBoO</const> as follows:<br><const>#</const> for boundary lines (goal lines, 18-yard box, touch lines, half-way line)<br><const>.</const> for unoccupied parts of the pitch<br><const>a</const> for players of the <const>TEAM_A</const><br><const>b</const> for players of the <const>TEAM_B</const><br><const>A</const> for <strong>&quot;active&quot;</strong> players of the <const>TEAM_A</const> (as judged by a human referee), if any<br><const>B</const> for <strong>&quot;active&quot;</strong> players of the <const>TEAM_B</const> (as judged by a human referee), if any<br><const>o</const> <strong>or</strong> <const>O</const> for the <strong>ball at the moment it is released</strong> by a player from <const>TEAM_A</const> or <const>TEAM_B</const> <strong>respectively</strong>.<br>- If the ball is represented by lowercase <const>o</const>, then the attacking team is <const>TEAM_A</const> and the opponent team is <const>TEAM_B</const>. if the ball is uppercase <const>O</const>, then it is the other way around.<br>- The size of the pitch (screenshot) is <const>width=51 x height=15</const>. The half-way line is therefore at X=51//2=25.<br>- <const>TEAM_A</const> attacks from right to left. The <const>TEAM_A</const>'s half of the pitch is therefore <strong>25 &lt;= X &lt;= 50</strong> and its second-to-last is the player with the 2nd highest X coordinate.<br>- <const>TEAM_B</const> attacks from left to right. The <const>TEAM_B</const>'s half of the pitch is therefore <strong>0 &lt;= X &lt;= 25</strong> and its second-to-last is the player with the 2nd lowest X coordinate.<br>- If the ball is at the touch line, i.e. the <strong>first or the last row (Y = 0 or Y=14)</strong>, then it is a <strong>throw-in</strong>.<br><br><br><pre style="font-family: monospace"><strong>Requested output</strong></pre>You always need to print two lines:<br><strong>Line 1:</strong> <const>No player in an offside position.</const> or <var>n</var> <const>player(s) in an offside position.</const>, where <var>n</var> is the number of players offside.<br><strong>Line 2:</strong> <const>VAR: OFFSIDE!</const> if an offside position should be sanctioned (<strong>offside offence</strong>) or <const>VAR: ONSIDE!</const> otherwise.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Lines 1 to 15</strong>: string of 51 characters among <const>#.aAbBoO</const> to represent a row of the VAR <var>screenshot</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1</strong>: <const>No player in an offside position.</const> or <var>n</var><const> player(s) in an offside position.</const>, where <var>n</var> is the number of players offside.<br><strong>Line 2</strong>: <const>VAR: OFFSIDE!</const> if an offside position should be sanctioned (<strong>offside offence</strong>). Otherwise: <const>VAR: ONSIDE!</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">###################################################
+#........................#........................#
+#.......................a#........................#
+#...............b.o......#........................#
+#######..................#..................#######
+#.....#......a...b.......b...........a......#.....#
+#.....#......b.......a..a#....b.............#.....#
+#..b..#........A.........#..................#.....#
+#.....#...........b....b.#..............a...#.....#
+#.....#....A.............#..................#.....#
+#######.......b..........#..................#######
+#.....................a..#.......b................#
+#........................#..........a.............#
+#........................#....b...................#
+###################################################</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1 player(s) in an offside position.
+VAR: OFFSIDE!</pre>
+         </div>
+      </div>
+   </div>
+</div>

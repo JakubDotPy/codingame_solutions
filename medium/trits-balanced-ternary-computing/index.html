@@ -1,0 +1,38 @@
+<h1>Trits (Balanced Ternary Computing)</h1>
+
+<a href="https://www.codingame.com/training/medium/trits-balanced-ternary-computing">https://www.codingame.com/training/medium/trits-balanced-ternary-computing</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Although ternary computing has fallen out of favor these last 40 years or more, there is reason to think that it may be an important part of the future. Whereas each digit in a binary system has two possible states, ternary digits have three possible states. In the Balanced Ternary system, each digit represents either -1, 0, or +1.<br><br>In binary, each digit is worth its face value (1 or 0) multiplied by a power of two determined by its position:<br><br><strong>Binary</strong><br><pre style="font-family: monospace">┌──────&gt; 1 * (2^3) = 8<br>│┌─────&gt; 1 * (2^2) = 4<br>││┌────&gt; 0 * (2^1) = 0<br>│││┌───&gt; 1 * (2^0) = 1<br>1101               = 13</pre><br>In Balanced Ternary, the system is similar except each value (-1, 0, or +1) is multiplied by a power of <strong>3</strong> determined by its position. &quot;1&quot; and &quot;0&quot; represent themselves and &quot;T&quot; represents  -1 (it sort of looks like &quot;-1&quot;, right?):<br><br><strong>Balanced Ternary</strong><br><pre style="font-family: monospace">┌───────&gt; +1 * (3^4) = 81<br>│┌──────&gt; -1 * (3^3) = -27<br>││┌─────&gt;  0 * (3^2) = 0<br>│││┌────&gt; +1 * (3^1) = 3<br>││││┌───&gt; -1 * (3^0) = -1<br>1T01T                = 56</pre><br>In order to be able to use Balanced Ternary, we need to be able to do some rudimentary operations. You must develop an application that can evaluate expressions using five binary operators: left shift, right shift, addition, subtraction, and multiplication. The shift operators do not wrap. Some examples:<br><br><strong>Examples</strong><br><pre style="font-family: monospace">1T0 &gt;&gt; 1 = 1T<br>1T0 &gt;&gt; 1T = 1<br>1T0 &lt;&lt; 1 = 1T00<br>1T0 + 1 = 1T1<br>1T1 + 1 = 10T<br>1T0 - 1 = 1TT<br>1T * 1T = 11</pre><br><br>Note: You may want to complete the easier related puzzle first: https://www.codingame.com/training/easy/balanced-ternary-computer-encode</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> The first operand, <var>lhs</var>.<br><strong>Line 2:</strong> The operator, <var>op</var>.<br><strong>Line 3:</strong> The second operand, <var>rhs</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">A single line containing the evaluation of the input expression in Balanced Ternary, <var>ret</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><strong>In Decimal:</strong><br>-3280 &lt;= <var>lhs</var> &lt;= 3280<br>-3280 &lt;= <var>rhs</var> &lt;= 3280<br>-3280 &lt;= <var>ret</var> &lt;= 3280<br><strong>In Balanced Ternary:</strong><br>TTTTTTTT &lt;= <var>lhs</var> &lt;= 11111111<br>TTTTTTTT &lt;= <var>rhs</var> &lt;= 11111111<br>TTTTTTTT &lt;= <var>ret</var> &lt;= 11111111<br><br><var>op</var> is one of <const>+</const>, <const>-</const>, <const>&gt;&gt;</const> , <const>&lt;&lt;</const> , <const>*</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1T1
++
+11</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">11T</pre>
+         </div>
+      </div>
+   </div>
+</div>

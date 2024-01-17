@@ -1,0 +1,66 @@
+<h1>Breach</h1>
+
+<a href="https://www.codingame.com/training/expert/breach">https://www.codingame.com/training/expert/breach</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <i>All locks have been reverse-engineered from the hacking game Intercept. Big thanks to <a href="https://bubmet.itch.io/" target="_blank" rel="nofollow noopener noreferrer">bubmet</a> for permission!</i><br /><br />
+   <h2><span class="icon icon-goal"> </span><span>Goal </span></h2>
+   <span class="question-statement">An anonymous game development company has hired you to break into 
+   a rival company&#39;s servers. Fortunately, your target decided to forego standard security software
+   and instead implement a series of puzzles designed to be difficult to solve. 
+   You decide to use your programming skills to automate the solving of these puzzles.<br /><br />
+   
+   
+   From your initial probes, you have determined there are 10 different locks, grouped into 3 categories.<br />
+   - <strong>ss_f</strong>: int<br />
+   - <strong>ss_m</strong>: int<br />
+   - <strong>ss_n</strong>: int<br />
+   - <strong>ss_asc</strong>: int<br />
+   - <strong>ss_con</strong>: series, state machine, 1<br />
+   - <strong>ss_colv</strong>: str<br />
+   <br />
+   - <strong>rs_f</strong>: int<br />
+   - <strong>rs_n</strong>: int<br />
+   - <strong>rs_colv</strong>: str<br />
+   <br />
+   - <strong>gs_m</strong>: str, 2<br />
+   <br />
+   
+   Your probes have also shown you what type of input these locks expect. They are listed in the table above.<br /><br />
+   Unfortunately, you don&#39;t know how to solve these locks. You need to figure out how to do so in order to complete this puzzle!
+   <br /><br />
+   
+   <div class="title">Color Codes</div>
+   Colors are represented by 2 characters: <const>\u00AC</const> and a char representing the color.<br />
+   There are 15 colors, along with 1 modifier:<br />
+   - <strong>GRAY: W</strong><br />
+   - <strong>WHITE: w</strong><br />
+   - <strong>RED: R</strong><br />
+   - <strong>LIGHT_RED: r</strong><br />
+   - <strong>GREEN: G</strong><br />
+   - <strong>LIGHT_GREEN: g</strong><br />
+   - <strong>BLUE: B</strong><br />
+   - <strong>LIGHT_BLUE: b</strong><br />
+   - <strong>YELLOW: y</strong><br />
+   - <strong>ORANGE: o</strong><br />
+   - <strong>PINK: P</strong><br />
+   - <strong>LIGHT_PINK: p</strong><br />
+   - <strong>VIOLET: V</strong><br />
+   - <strong>LIGHT_VIOLET: v</strong><br />
+   - <strong>CORRUPT: ?</strong><br />
+   - <strong>RESET (modifier): * - resets the color to the default (green)</strong><br />
+   Hint: Some locks require colors to be solved!
+   </span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">The number of lines to read, <var>numLines</var>.</div>
+      <div class="question-statement-input">Next <var>numLines</var> lines: a series of strings representing the raw lock.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">A single line containing the solution to the lock</div>
+   </div>
+</div></div>

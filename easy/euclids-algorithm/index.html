@@ -1,0 +1,38 @@
+<h1>Euclid's Algorithm</h1>
+
+<a href="https://www.codingame.com/training/easy/euclids-algorithm">https://www.codingame.com/training/easy/euclids-algorithm</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">In this puzzle you will have to calculate the greatest common divisor (GCD) of two numbers (<var>a</var> and <var>b</var>) thanks to Euclid's algorithm, but you will not have to return just the result but also the different calculation steps.<br><br><strong>Example:</strong><br>If you are asked to calculate the GCD of 25 and 3 you must return:<br><br>25=3*8+1<br>3=1*3+0<br>GCD(25,3)=1<br><br><strong>Reminder:</strong><br>In mathematics, Euclid's algorithm is an algorithm that calculates the GCD of two integers, that is, the largest integer that divides the two integers, leaving a zero remainder. Euclid's algorithm follows a simple method which is defined by the following equality:<br><br>GCD(a,b) = GCD(b,<const>r</const>) with <const>r</const> = a%b<br><br>Divide b by the remainder of the division of b by a and continue until you get r=0.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>a</var> and integer <var>b</var> separated by a space</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">the different stages of calculating Euclid's algorithm</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><var>a</var> &gt; <var>b</var><br><var>a</var>,<var>b</var>&gt;0</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">25 3</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">25=3*8+1
+3=1*3+0
+GCD(25,3)=1</pre>
+         </div>
+      </div>
+   </div>
+</div>

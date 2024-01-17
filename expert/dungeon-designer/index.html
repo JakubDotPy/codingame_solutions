@@ -1,0 +1,41 @@
+<h1>Dungeon Designer</h1>
+
+<a href="https://www.codingame.com/training/expert/dungeon-designer">https://www.codingame.com/training/expert/dungeon-designer</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Topics: <const>Maze creation algorithm</const>, <const>Pseudo-random number generator</const>, <const>Longest path search</const>, <const>Shortest path search</const>, <const>Path intersection</const><br> <br>The adventurers have raided the dungeon. They've destroyed almost everything with multiple fireballs: doors, traps and monsters. And they've stolen the treasure! Their levels were probably too high.<br>Luckily, at the last moment the Dungeon Master invoked gigantic cavern trolls that slew those pesky adventurers in order to secure the stolen gold. But in the battle, the rest of the dungeon has collapsed.<br><br>The Dungeon Master asks you, his trusted servant, to redesign the dungeon. He wants to better hide the treasure, so there is more time to react the next time the dungeon is raided.<br><br>The dungeon has a rectangular shape, <var>W</var> cells wide by <var>H</var> cells high, with the adventurers' entrance in the north west corner, so it's a good fit to create a labyrinth in.<br><br>You find a relatively simple algorithm&nbsp;: in each cell except the eastern and southern ones, the building slaves will toss a coin. If &ldquo;heads&rdquo; they will build a wall to the east; if &ldquo;tails&rdquo; they will build a wall to the south.<br><br>This creates a simple maze, with long corridors in the south and east since no wall is built from <var>x</var>=<var>W-1</var> or <var>y</var>=<var>H-1</var>. The monsters barracks being on the south east corner, this makes for a perfect confrontation stage.<br><br>After designing this labyrinth, you need to find the location furthest away from the adventurers' entrance&nbsp;: that's where the treasure <const>T</const> will be hidden. Then you need to mark with an <const>X</const> the spot where the garrisoned monsters can easily intercept any adventurer&nbsp;: the point of the entrance-treasure path closest to the barracks. If the closest point is already the treasure's location, place only a <const>T</const>.<br><br>Your Master will be proud of you.<br><br><strong>Note 1:</strong> You are asked to draw the maze formed from a <var>W</var>&zwj;&times;&zwj;<var>H</var> cell grid. Each cell of the grid may have a wall <const>#</const> to the north, east, west or south, which leads to a <var>(2&times;H+1)</var>&zwj;&times;&zwj;<var>(2&times;W+1)</var> map:<br><br><pre style="font-family: monospace">Grid 2&times;2  Map 5&times;5<br>           #.###<br>   .T      #.#T#<br>   .X      #.#.#<br>           #..X#<br>           ###.#</pre><br><strong>Note 2:</strong> For the reproducibility of the map across languages, you are given two primes <var>P</var> and <var>Q</var>, and a seed <var>R</var>, and you will generate pseudo-random numbers using the Blum Blum Shub algorithm (its name goes well with the theme&hellip; more information here: https://en.wikipedia.org/wiki/Blum_Blum_Shub )<br>Tossing a coin in <var>(x,y)</var> (where <const>(0,0)</const> is the top left corner): compute <var>(R^(2^(x+y&times;W+1) mod lcm(P-1,Q-1)) mod P&times;Q)</var>.<br>If odd (&ldquo;heads&rdquo;) build a wall to the east; if even (&ldquo;tails&rdquo;) build a wall to the south.<br><br><strong>Note 3:</strong> Take care that the expression given above for Blum Blum Shub, taken literally, involves numbers greater than can fit in 64 bits. You are invited to optimize it. :-)</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Size of the labyrinth <var>W</var> and <var>H</var> as integers<br><strong>Line 2:</strong> Random number generator arguments <var>P</var>, <var>Q</var> and <var>R</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>2&times;H+1</var> lines:</strong> The labyrinth map, with <const>.</const> for empty passage, <const>#</const> for a wall, <const>T</const> for the treasure, and <const>X</const> for the monster's intersection with the adventurers' way back.<br>There is wall all around the maze, except for an empty passage <const>.</const> on the north of cell <const>0,0</const>, and to the south of cell <const>W-1, H-1</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <var>H</var>, <var>W</var> &le; 40<br>1000 &lt; <var>P</var>, <var>Q</var> &le; 3000<br>0 &lt; <var>R</var> &le; 100000<br>There is only one position where the treasure is furthest away from the entrance.<br>The treasure is forbidden from being in the entrance or in the passage to the monsters' barracks.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3 2
+1723 1579 100000</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">#.#####
+#.#.#T#
+#.#.#.#
+#....X#
+#####.#</pre>
+         </div>
+      </div>
+   </div>
+</div>

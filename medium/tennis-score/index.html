@@ -1,0 +1,40 @@
+<h1>Tennis score</h1>
+
+<a href="https://www.codingame.com/training/medium/tennis-score">https://www.codingame.com/training/medium/tennis-score</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">https://en.wikipedia.org/wiki/Tennis_scoring_system<br><br>Given a record of points scored in a tennis match, determine the current score, whether the match is complete, and who won.<br><br><strong>* &quot;Normal&quot; match :</strong><br>The maximum number of sets in a match is either 3 or 5. The player who wins a majority of the sets wins the match.<br><br><strong>* &quot;Normal&quot; set :</strong><br>To win a normal tennis set, you must win 6 games with a difference greater than or equal to 2.<br>After the score reaches 6-5 the next score is either 7-5 (first player wins the set) or 6-6 ( (see below for tie-breaks)). When one player wins the tie-break the set score is either 6-7 or 7-6. <br><br><strong>* &quot;Normal&quot; game :</strong><br>To win a normal tennis game (see below for tie-breaks), you must score at least 4 points, with at least 2 points more than your opponent. The score being noted: 0, 15, 30, 40.<br>If the score comes to 3-3, 4-4, 5-5... note: 40 40 (there is equality)<br>If the score comes to 4-3, 5-4, 6-5... note: AV - (the first player has the advantage)<br>If the score comes to 3-4, 4-5, 5-6... note: - AV (the second player has the advantage)<br><br><strong>* Tie-break rules:</strong><br>when we arrive at the score 6 6 in a set, then a &quot;tie-break&quot; is played. it no longer takes 4 points but 7 points to win the game (always with a difference of at least two points, the score in the tie-break is unlimited !) unless it is the last game (the 3rd for women, the 5th for men), in this case there it takes at least 10 points to win the game.<br>The winner of the game then wins the set on the score 7 6.<br>Note: game points are counted normally and no longer with 0, 15, 30, 40 but 0, 1, 2, 3, 4, 5, ...<br><br><strong>* Example :</strong><br><br>=&gt; <strong>Entry</strong><br><br>Serena Venus<br>3<br>1A<br><br>=&gt; <strong>Analysis</strong><br><br>1A -&gt; 0001 1010<br><br>0 : Serena scores 1 point<br><pre style="font-family: monospace">Serena......... 0 | 15<br>Venus.......... 0 | 0</pre><br>0 : Serena scores 1 point<br><pre style="font-family: monospace">Serena......... 0 | 30<br>Venus.......... 0 | 0</pre><br>0 : Serena scores 1 point<br><pre style="font-family: monospace">Serena......... 0 | 40<br>Venus.......... 0 | 0</pre><br>1 : Venus scores 1 point<br><pre style="font-family: monospace">Serena......... 0 | 40<br>Venus.......... 0 | 15</pre><br>1 : Venus scores 1 point<br><pre style="font-family: monospace">Serena......... 0 | 40<br>Venus.......... 0 | 30</pre><br>0 : Serena scores 1 point and wins the first game<br><pre style="font-family: monospace">Serena......... 1 | 0<br>Venus.......... 0 | 0</pre><br>1 : Venus scores 1 point<br><pre style="font-family: monospace">Serena......... 1 | 0<br>Venus.......... 0 | 15</pre><br>0 : Serena scores 1 point<br><pre style="font-family: monospace">Serena......... 1 | 15<br>Venus.......... 0 | 15</pre><br>=&gt; <strong>Exit</strong><br><br><pre style="font-family: monospace">Serena......... 1 | 15<br>Venus.......... 0 | 15<br>Game in progress</pre></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong>: <var>names</var> of the two players separated by a space<br><br><strong>Line 2</strong>: maximum number <var>n</var> of sets to play.<br>(&quot;Best of <const>3</const>&quot; for women and &quot;Best of <const>5</const>&quot; for men)<br><br><strong>Line 3</strong>:  each <var>point</var> in the match is represented by a sequence of binary digits: <const>0</const> if the first player won the point, or <const>1</const> if the second player won the point, written in hexadecimal (possibly completed by <const>0</const> for the last byte), pairs of hex digits separated by spaces.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1</strong>:  the current score of the first player:<br>player name (completed with &quot;.&quot; up to 15 characters), the games won, and if the match is not over, the character &quot;|&quot; and the score of the current game, separated by spaces.<br><br><strong>Line 2</strong>:  the current score of the second player:<br>player name (completed with &quot;.&quot; up to 15 characters), the games won, and if the match is not over, the character &quot;|&quot; and the score of the current game, separated by spaces.<br><br><strong>Line 3</strong>:  &quot;Game in progress&quot; or &quot;[Player_name] wins&quot;</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &lt;= len(points) &lt;= 111</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">Serena Venus
+3
+1A</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">Serena......... 1 | 15
+Venus.......... 0 | 15
+Game in progress</pre>
+         </div>
+      </div>
+   </div>
+</div>

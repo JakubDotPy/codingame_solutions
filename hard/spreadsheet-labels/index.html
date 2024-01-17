@@ -1,0 +1,36 @@
+<h1>Spreadsheet Labels</h1>
+
+<a href="https://www.codingame.com/training/hard/spreadsheet-labels">https://www.codingame.com/training/hard/spreadsheet-labels</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Spreadsheets commonly use numeric labels for each row, and alphabetic labels for each column. The alphabetic labels follow this pattern:<br><br><pre style="font-family: monospace">A, B, C... Z,<br>AA, AB, AC... AZ<br>BA, BB, BC... ZZ<br>AAA, AAB, AAC...</pre><br>Your program should consume a list of labels and transform each label to the opposite label type:<br>When a number is provided, output the corresponding alphabetic label.<br>When an alphabetic label is provided, output the corresponding number.<br><br>Keep in mind, the numeric labels are one-indexed (1 = A, 2 = B, etc). There is no zero.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> an integer <var>N</var><br><strong>Line 2:</strong> a space-separated string of <var>N</var> labels (mix of numeric and alphabetic labels)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> a space-separated string of <var>N</var> labels in the order they appeared in the input string, but with each converted to the opposite label type (numeric to alphabetic and vice versa).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &#8804; <var>N</var> &#8804; 100</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">6&#10;1 26 27 52 53 702</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">A Z AA AZ BA ZZ</pre>
+         </div>
+      </div>
+   </div>
+</div>

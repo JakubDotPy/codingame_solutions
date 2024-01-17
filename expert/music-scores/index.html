@@ -1,0 +1,98 @@
+<h1>Music Scores</h1>
+
+<a href="https://www.codingame.com/training/expert/music-scores">https://www.codingame.com/training/expert/music-scores</a>
+
+<div class="statement_wrapping_div">
+<div style="font-family: Helvetiva, Arial, sans-serif; font-size:13px;"><img alt="" src="fileservlet?id=855239257985" style="width: 267px; height: 151px; float: right; margin-left: 10px" />To rest from his stressful last adventure, <em>Doctor Who</em> decides to attend a music recital performed by Her Majesty the Queen&rsquo;s Royal Orchestra. Since he doesn&rsquo;t want to be seen in public, the Doctor uses the TARDIS to channel the music directly from the Opera to his home.<br />
+<br />
+But behold! The infamous <a href="http://tardis.wikia.com/wiki/Graske" style="color: #222244" target="cgwiki">Graske</a> has detected an opportunity to do evil: the sound waves channelled by the TARDIS have created a space-time crack that the alien is using to travel through dimensions. He should soon reach Earth and annihilate the human race. Nothing less could have been expected from this vile creature!<br />
+<br />
+The Doctor soon realizes that the only way to prevent this terrible fate is to make the TARDIS play the melodies backwards. This will reverse the polarity of the neutron flow and banish the Graske to the other side of the universe.<br />
+<br />
+Unfortunately the melodies are only available on musical scores on paper and the TARDIS is not (yet) equipped with a score reader.<br />
+<br />
+Your mission is to help <em>Doctor Who</em> defeat the Graske. To do so, <strong>you have to implement an interface that can read scanned musical scores directly from paper and translate them into musical notes</strong>.<br />
+&nbsp;
+<div style="text-align:center;"><img alt="" src="fileservlet?id=798437117788" style="width: 244px; height: 131px;" /></div>
+
+<div style="clear:both;text-align: center;">
+<hr style="width:160px;margin: 10px auto;" /></div>
+The musical scores are fairly simple and only feature half notes (<img alt="" src="fileservlet?id=808178814416" style="width: 16px; height: 16px;" />)&nbsp;and quarter notes <span style="font-family: Helvetiva, Arial;">(</span><img alt="" src="fileservlet?id=808165036238" style="font-family: Helvetiva, Arial; width: 16px; height: 16px;" /><span style="font-family: Helvetiva, Arial;">)</span>. Notes are all represented on a staff and are limited to the following musical notes (either half or quarter):
+
+<div style="text-align: center;"><img alt="" src="fileservlet?id=819288278844" style="width: 516px; height: 156px;" /></div>
+<br />
+Notes are labelled using the English convention: <code>A</code> <code>B</code> <code>C</code> <code>D</code> <code>E</code> <code>F</code> and <code>G</code><br />
+<br />
+As a reminder (for those not familiar with reading music):
+<ul>
+	<li>On a score, a &quot;staff&quot; always contains 5 lines. Notes are either located accross a line or between two lines.</li>
+	<li>The first <code>C</code> note is located on a specific segment - a ledger line - below the 5 other lines.</li>
+	<li>The notes have tails which can either go up -&nbsp;until the first <code>A</code> - or down -&nbsp;from the second <code>C</code>. The tail of the <code>B</code> can go either way.</li>
+	<li>The label of a note (<code>A</code>, <code>B</code>, <code>C</code>, etc.) is independant of whether the note is a half or quarter note.</li>
+</ul>
+
+<div style="clear:both;text-align: center;">
+<hr style="width:160px;margin: 10px auto;" /></div>
+You are provided with scanned images of the scores in <strong>black and white</strong> encoded in a simple, yet efficient, form of <a href="http://en.wikipedia.org/wiki/Run-length_encoding" style="color: #222244" target="cgwiki2">RLE</a> (Run-Length Encoding): the <strong>DWE</strong> (Doctor Who Encoding) algorithm.<br />
+In the DWE, consecutive pixels of the same color are encoded using a letter (<code>B</code> for black pixels, <code>W</code> for white pixels) followed by a space followed by the number of pixels of that color.<br />
+<br />
+For example: <code>W 5 B 20 W 16</code> means 5 white pixels, followed by 20 black pixels, followed by 16 white pixels.<br />
+<br />
+Encoding is done from top to bottom. When the image width is known, reconstructing the original image is straightforward.
+<div style="clear:both;text-align: center;">&nbsp;</div>
+Within the images, the scores and notes have various sizes. To fully understand the challenge at hand, you should check all the images from this &nbsp;<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAKCAYAAABi8KSDAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAD2gAAA9oBEbmgvAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAANdEVYdFRpdGxlAEdvIE5leHTrLZR+AAAAFHRFWHRBdXRob3IASmFrdWIgU3RlaW5lcub79y8AAAAhdEVYdFNvdXJjZQBodHRwOi8vamltbWFjLm11c2ljaGFsbC5jemlm414AAABJdEVYdENvcHlyaWdodABQdWJsaWMgRG9tYWluIGh0dHA6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL3B1YmxpY2RvbWFpbi9Zw/7KAAABKElEQVQYlWP4//8/AzJmYGDQFlHkPMrAwMCDLsfEgAl402r8zS28NE4xMjLKI0uwMDIyCjEwMLAhiQkx8Xz/H9SioCkpK3yYU5Q19vvr3wcZGBgYWGy9DK6Zeiix/P/PwPD//3/G//8YGESVOJnv/D7KYJylKiuh6LFaRIm1+c2935NZ1I3kGP5aHBP+9/8P3Og7/yD0yx+3GQTdPohmyQa3yusKaGFzMwr4+/8PAwPjf2ZWNmYelqsn7jMY81q+QVagZMMleJ9lJ7MwmxzDmz0y7xfM3tT14ub3DgYGBgYeBgYGASRsWz4/4Gv7ecf/oXn2zwRlmD1hQcfy////L8imMjIyfmb6yc24q+Xe7WO7L3n9+Pj/DlwSS6SoiCnxnGBgYOBDlwMAvciNHsg6YKMAAAAASUVORK5CYII=" />&nbsp;<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAKCAYAAABi8KSDAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAD2gAAA9oBEbmgvAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAANdEVYdFRpdGxlAEdvIE5leHTrLZR+AAAAFHRFWHRBdXRob3IASmFrdWIgU3RlaW5lcub79y8AAAAhdEVYdFNvdXJjZQBodHRwOi8vamltbWFjLm11c2ljaGFsbC5jemlm414AAABJdEVYdENvcHlyaWdodABQdWJsaWMgRG9tYWluIGh0dHA6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL3B1YmxpY2RvbWFpbi9Zw/7KAAABKElEQVQYlWP4//8/AzJmYGDQFlHkPMrAwMCDLsfEgAl402r8zS28NE4xMjLKI0uwMDIyCjEwMLAhiQkx8Xz/H9SioCkpK3yYU5Q19vvr3wcZGBgYWGy9DK6Zeiix/P/PwPD//3/G//8YGESVOJnv/D7KYJylKiuh6LFaRIm1+c2935NZ1I3kGP5aHBP+9/8P3Og7/yD0yx+3GQTdPohmyQa3yusKaGFzMwr4+/8PAwPjf2ZWNmYelqsn7jMY81q+QVagZMMleJ9lJ7MwmxzDmz0y7xfM3tT14ub3DgYGBgYeBgYGASRsWz4/4Gv7ecf/oXn2zwRlmD1hQcfy////L8imMjIyfmb6yc24q+Xe7WO7L3n9+Pj/DlwSS6SoiCnxnGBgYOBDlwMAvciNHsg6YKMAAAAASUVORK5CYII=" />&nbsp;<a href="https://files.codingame.com/pub/dw/dw2-allimages.html" target="_blank">page</a>&nbsp;<span id="docs-internal-guid-53798336-7acf-fa2b-61bb-8f6d037c1bda"><img height="10px;" src="https://lh3.googleusercontent.com/fZt36ACYlX4Ep1JFINprlSUqWmJHLogD6Jqi4p4R9HNz_lf70UIPTGd8mpNOMu3cGtFzEwpafneckAFUrPvlvDfm2gqdPnT4fsR11aBm6Nv7dzAPocRI-aQOzQ" width="11px;" />&nbsp;<img height="10px;" src="https://lh3.googleusercontent.com/fZt36ACYlX4Ep1JFINprlSUqWmJHLogD6Jqi4p4R9HNz_lf70UIPTGd8mpNOMu3cGtFzEwpafneckAFUrPvlvDfm2gqdPnT4fsR11aBm6Nv7dzAPocRI-aQOzQ" width="11px;" /></span>. They correspond to the challenge tests further down.&nbsp;<br />
+<br />
+<strong>All the test cases are contained within these 12 images and if your code can process them all, then you are good to go!</strong>
+
+<div style="clear:both;text-align: center;">
+<hr style="width:160px;margin: 10px auto;" /></div>
+
+<div><b style="font-size:12px;">INPUT:</b></div>
+
+<div><b>Line 1: </b>the width <strong><font face="monospace">W</font></strong> and height <strong><font face="monospace">H</font></strong> of the image in pixels.</div>
+
+<div><b>Line 2:&nbsp;</b>the image encoded from top to bottom using the DWE algorithm: several couples of &quot;<strong><font face="monospace">C L</font></strong>&quot; separated by spaces. C is the color of the pixels (either <code>B</code> for black or <code>W</code> for white), L is the number of contiguous pixels of the same color (may encompass&nbsp;multiple image lines).</div>
+
+<div>&nbsp;</div>
+
+<div><b style="font-size:12px;">OUTPUT:</b></div>
+
+<div>Notes read from left to right&nbsp;separated by space characters.<br />
+<strong>Each note is composed of two characters</strong>. First the note itself: <code>A</code> <code>B</code> <code>C</code> <code>D</code> <code>E</code> <code>F</code> or <code>G</code>. Then its type: <code>H</code> for a half note or <code>Q</code> for a quarter note. There is no distinction between the first <code>C</code> and the second <code>C</code> (same goes for <code>D</code>, <code>E</code>, <code>F</code>, <code>G</code>).</div>
+
+<div>&nbsp;</div>
+
+<div><b style="font-size:12px;">CONSTRAINTS:</b></div>
+<span style="font-size:12px; font-family: monospace">100 &lt; W &lt; 5000<br />
+70 &lt; H &lt; 300</span>
+
+<div>Lines and tails have a width of at least 1 pixel.<br />
+Notes are separated by at least 1 pixel.<br />
+The space between two lines is at least 8 pixels wide and at least 4 times the width of a line.<br />
+&nbsp;</div>
+
+<div><b style="font-size:12px;">EXAMPLE:</b></div>
+
+<div style="font-size: 13px; border: 1px solid black; width: 98%; margin-top: 5px; margin-left: auto; margin-right: auto; display:inherit;padding:5px;">
+<table style="table-layout:fixed;width:100%;vertical-align: top;">
+	<tbody>
+		<tr>
+			<td style="width:auto;vertical-align: top;">
+			<div><b>Input</b></div>
+
+			<div style="overflow-x:auto;font-family: monospace;white-space: nowrap;">120 176<br />
+			W 4090 B 100 W 20 B 100 W 20 B 100 W 20 B 100 W 1020 B 2 W 118 B 2 W 118 B 2 W 118 B 2 W 118 B 2 W 26 B 10 W 82 B 2 W 25 B 12 W 81 B 2 W 23 B 4 W 8 B 4 W 79 B 2 W 23 B 2 W 12 B 2 W 79 B 2 W 22 B 2 W 14 B 2 W 78 B 2 W 21 B 3 W 14 B 3 W 77 B 2 W 21 B 2 W 16 B 2 W 77 B 2 W 20 B 3 W 16 B 3 W 36 B 64 W 18 B 18 W 20 B 64 W 18 B 18 W 20 B 64 W 18 B 18 W 20 B 64 W 18 B 18 W 60 B 2 W 20 B 2 W 18 B 2 W 76 B 2 W 20 B 3 W 16 B 3 W 76 B 2 W 20 B 3 W 16 B 2 W 77 B 2 W 20 B 4 W 14 B 3 W 77 B 2 W 20 B 4 W 14 B 2 W 78 B 2 W 20 B 2 W 1 B 2 W 12 B 2 W 79 B 2 W 20 B 2 W 1 B 4 W 8 B 4 W 79 B 2 W 20 B 2 W 3 B 12 W 81 B 2 W 20 B 2 W 4 B 10 W 82 B 2 W 20 B 2 W 96 B 2 W 20 B 2 W 96 B 2 W 20 B 2 W 96 B 2 W 20 B 2 W 96 B 2 W 20 B 2 W 96 B 2 W 20 B 2 W 96 B 2 W 20 B 2 W 96 B 2 W 20 B 2 W 96 B 2 W 20 B 2 W 96 B 2 W 20 B 2 W 96 B 2 W 20 B 2 W 56 B 100 W 20 B 100 W 20 B 100 W 20 B 100 W 46 B 10 W 4 B 2 W 20 B 2 W 81 B 12 W 3 B 2 W 20 B 2 W 79 B 16 W 1 B 2 W 20 B 2 W 79 B 16 W 1 B 2 W 20 B 2 W 78 B 20 W 20 B 2 W 77 B 21 W 20 B 2 W 77 B 21 W 20 B 2 W 76 B 22 W 20 B 2 W 76 B 22 W 20 B 2 W 76 B 22 W 20 B 2 W 76 B 22 W 20 B 2 W 76 B 22 W 20 B 2 W 76 B 22 W 20 B 2 W 76 B 22 W 20 B 2 W 77 B 20 W 21 B 2 W 77 B 20 W 21 B 2 W 78 B 18 W 22 B 2 W 79 B 16 W 23 B 2 W 79 B 16 W 23 B 2 W 81 B 12 W 25 B 2 W 56 B 100 W 20 B 100 W 20 B 100 W 20 B 100 W 2420 B 100 W 20 B 100 W 20 B 100 W 20 B 100 W 5050</div>
+			</td>
+			<td style="overflow:hidden;width:210px;padding-left:10px;">
+			<div><b>Output</b></div>
+
+			<div>AQ DH</div>
+			<img alt="" src="fileservlet?id=826996882468" style="width: 120px; height: 176px; margin-left: 10px; margin-right: 20px; float: right; border:1px solid black" />
+			<div style="clear:both;text-align: center;">&nbsp;</div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</div>
+</div>

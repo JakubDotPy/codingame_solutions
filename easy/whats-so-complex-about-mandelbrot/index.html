@@ -1,0 +1,37 @@
+<h1>What's so complex about Mandelbrot?</h1>
+
+<a href="https://www.codingame.com/training/easy/whats-so-complex-about-mandelbrot">https://www.codingame.com/training/easy/whats-so-complex-about-mandelbrot</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">The Mandelbrot Set is the most well known set of complex numbers with fractal properties.<br><br>Members of the set are the complex numbers <var>c</var> such that the absolute value of the equation f(n) = f(n-1)^2 + c does not diverge as n approaches infinity, with f(0) = 0.<br><br>One property of this equation is that if its absolute value ever becomes larger than 2, we can be confident that it will diverge and therefore conclude that c is not in the set. However, an absolute value less than 2 does not guarantee that it will not diverge. Only additional iterations of the equation can help determine that.<br><br>Since the equation will never diverge for numbers in the set, we would run an infinite number of iterations if we only stopped based on the absolute value. Therefore, we select another number, <var>m</var>, and give up after running <var>m</var> iterations of the equation. Higher values of <var>m</var> could have given us greater confidence that our number is in the set, but we don't have infinite time so we have to draw a line somewhere.<br><br>For this puzzle, you will need to determine how many iterations are necessary to decide if a given complex number <var>c</var> is in the Mandelbrot set, using the absolute value heuristic described above, and given a maximum number of iterations <var>m</var>.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> The complex number to evaluate <var>c</var> represented as (<var>x</var>+<var>y</var>i) where <var>x</var> and <var>y</var> are floating point values. If y is negative, the + will become a -.<br><strong>Line 2:</strong> An integer <var>m</var> indicating the maximum number of iterations to evaluate.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1 :</strong> An integer <var>i</var> indicating how many times you need to iterate to determine if the complex number <var>c</var> is in the Mandelbrot set or not.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">length(<var>c</var>) &lt; 30<br>-5 &lt; <var>x</var>, <var>y</var> &lt; 5<br>0 &lt; <var>m</var> &lt; 1000<br>0 &lt; <var>i</var> &lt;= <var>m</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">4.5+0i
+10</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1</pre>
+         </div>
+      </div>
+   </div>
+</div>

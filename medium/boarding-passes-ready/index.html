@@ -1,0 +1,41 @@
+<h1>Boarding passes ready!</h1>
+
+<a href="https://www.codingame.com/training/medium/boarding-passes-ready">https://www.codingame.com/training/medium/boarding-passes-ready</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">CodinGame Airlines are always trying to improve efficiency. To that end, they are trying a new way of boarding passengers onto their planes:<br><br><strong>Boarding group 1:</strong> Starting from the back row of the plane, and working up to the front, board the <strong>left-most</strong> waiting passenger whose seat is on the <strong>left</strong> half of the row. <br><strong>Boarding group 2:</strong> Starting from the back row of the plane, and working up to the front, board the <strong>right-most</strong> waiting passenger whose seat is on the <strong>right</strong> half of the row<br><br>Repeat for the next boarding groups, until everyone is on board. Empty boarding groups do not need to be called.<br><br><strong>You must call the <var>name</var> of the passengers in each boarding group, in the order the passengers should board, when it's that group's turn.</strong><br><br><strong>Notes:</strong><br>- Seat <const>1A</const> is the left-most seat of the front row of the plane.<br>- The aisle always divides the seats evenly: In a plane with 6 seats to a row, seats <const>A</const>,<const>B</const>,<const>C</const> are on the left, and <const>D</const>,<const>E</const>,<const>F</const> are on the right.<br>- Some seats may be unsold. If a seat is unsold, the next eligible passenger in that half of the row boards.<br><br><strong>Example</strong><br><pre style="font-family: monospace">4<br>4<br>8<br>Alice,1A<br>Brian,2C<br>Cathy,2D<br>Debra,4C<br>Ellen,4D<br>Frank,2B<br>Geoff,1C<br>Helen,3A</pre><br><var>w</var>=4, so the seats are <const>A</const> &amp; <const>B</const> on the left, <const>C</const> &amp; <const>D</const> on the right<br>After boarding, the passengers will be seated like this:<br><pre style="font-family: monospace">             FRONT<br>    A     B         C     D  <br>1 Alice ----- xxx Geoff -----<br>2 ----- Frank xxx Brian Cathy<br>3 Helen ----- xxx ----- -----<br>4 ----- ----- xxx Debra Ellen</pre><br><strong>Boarding Group 1: Left hand side, from row <const>4</const> to row <const>1</const></strong><br>- There is no passenger in <const>4A</const>, or <const>4B</const>. Nobody boards<br>- Call <strong>Helen</strong> to board seat <const>3A</const><br>- There is no passenger in <const>2A</const>; Call <strong>Frank</strong> to board seat <const>2B</const><br>- Call <strong>Alice</strong> to board seat <const>1A</const><br><br><pre style="font-family: monospace">Now boarding: Helen,Frank,Alice</pre><br><strong>Boarding Group 2: Right hand side, from row <const>4</const> to row <const>1</const></strong><br>- Call <strong>Ellen</strong> to board seat <const>4D</const><br>- There is no passenger in <const>3D</const>, or <const>3C</const>. Nobody boards<br>- Call <strong>Cathy</strong> to board seat <const>2D</const><br>- There is no passenger in <const>1D</const>; Call <strong>Geoff</strong> to board seat <const>1C</const><br><br><pre style="font-family: monospace">Now boarding: Ellen,Cathy,Geoff</pre><br>Not everyone is on the plane - another round of boarding is needed.<br><br><strong>Boarding Group 3: Left hand side, from row <const>4</const> to row <const>1</const></strong><br>- There is still no passenger in <const>4A</const>, or <const>4B</const>; nobody boards<br>- <const>3A</const> has already boarded, there is no passenger in <const>3B</const>; nobody boards<br>- <const>2B</const> has already boarded; nobody boards<br>- <const>1A</const> has already boarded, there is no passenger in <const>1B</const>; nobody boards<br><br>(No boarding announcement here, as nobody is getting on.)<br><br><strong>Boarding Group 4: Right hand side, from row <const>4</const> to row <const>1</const></strong><br>- <const>4D</const> has already boarded; Call <strong>Debra</strong> to board seat <const>4C</const><br>- There is no passenger in <const>3D</const>, or <const>3C</const>; nobody boards<br>- <const>2D</const> has already boarded; Call <strong>Brian</strong> to board seat <const>2C</const><br>- <const>1C</const> has already boarded; nobody boards<br><br><pre style="font-family: monospace">Now boarding: Debra,Brian</pre></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>h</var>, the number of rows of seating on the plane<br><strong>Line 2:</strong> An integer <var>w</var>, the number of seats in each row of the plane.<br><strong>Line 3:</strong> An integer <var>n</var>, the number of passengers boarding.<br><strong>Next <var>n</var> lines:</strong> A string <var>passenger</var> containing each passenger's details in the format: <pre style="font-family: monospace"><var>name</var><const>,</const><var>seat</var></pre><br><var>seat</var> is an integer followed by a letter, eg. <const>14C</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">A line for each non-empty boarding group, in order of boarding.<br>- Each line starts &quot;<const>Now boarding: </const>&quot; followed by the comma-separated passenger names, in the order they should board<br><var>n</var> names should be listed in total.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1&lt;=<var>h</var>&lt;=20<br>2&lt;=<var>w</var>&lt;=8; <var>w</var> is even<br><var>n</var>&gt;0<br>Every passenger has a different <var>name</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1
+2
+2
+Hutch,1B
+Starsky,1A</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">Now boarding: Starsky
+Now boarding: Hutch</pre>
+         </div>
+      </div>
+   </div>
+</div>

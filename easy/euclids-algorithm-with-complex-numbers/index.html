@@ -1,0 +1,38 @@
+<h1>Euclid's algorithm with complex numbers</h1>
+
+<a href="https://www.codingame.com/training/easy/euclids-algorithm-with-complex-numbers">https://www.codingame.com/training/easy/euclids-algorithm-with-complex-numbers</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">This puzzle assumes that you have solved: <const>https://www.codingame.com/training/easy/euclids-algorithm</const>, or simply that you know how the GCD works for integers.<br><br>None of the math is explained nor needed. For those interested the references are at the bottom.<br><br>You will have to implement an analog of the euclidian division for Gaussian integers (complex numbers of the form <strong>x + iy</strong> with <strong>x</strong> and <strong>y</strong> integers). The pseudocode:<br><br>You are given two Gaussian integers <var>a</var> and <var>b</var>:<br><strong>1:</strong> Compute <var>a/b</var> = x + iy.<br><strong>2:</strong> Find the closest integer <var>cx</var> to <var>x</var> and <var>cy</var> to <var>y</var>. <strong>*</strong><br><strong>3:</strong> The quotient <var>q</var> is then <var>cx + icy</var>.<br><strong>4:</strong> The rest <var>r</var> is just <var>a</var> - <var>q</var> * <var>b</var>.<br><br>You can now compute the GCD of <var>a</var> and <var>b</var>. Print the steps in the suitable format. <strong>**</strong><br><br><strong>*</strong> If there are two possible choices pick the highest one. That is, if <var>x</var> = <const>0.5</const>, pick <const>1</const>. If <var>x</var> = <const>-1.5</const>, pick <const>-1</const> etc.<br><strong>**</strong> This puzzle follows the Python conventions for printing complex numbers. The tests are more telling than a detailed explanation.<br><br><strong>Reference:</strong> https://www.cut-the-knot.org/arithmetic/int_domain4.shtml</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> A space separated string containing two integers, the first representing the real part <var>xa</var> and the second the imaginary part <var>ya</var> of a Gaussian integer <var>a</var>.<br><strong>Line 2:</strong> A space separated string containing two integers, the first representing the real part <var>xb</var> and the second the imaginary part <var>yb</var> of a Gaussian integer <var>b</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The steps of the GCD computation of <var>a</var> and <var>b</var> in the suitable format. This puzzle follows the Python conventions for printing complex numbers.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><var>xa</var>, <var>ya</var>, <var>xb</var> and <var>yb</var> are all between <const>-10000</const> and <const>10000</const> included.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2 0
+1 -1</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">(2+0j) = (1-1j) * (1+1j) + 0j
+GCD((2+0j), (1-1j)) = (1-1j)</pre>
+         </div>
+      </div>
+   </div>
+</div>

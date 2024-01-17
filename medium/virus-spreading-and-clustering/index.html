@@ -1,0 +1,40 @@
+<h1>Virus spreading and clustering</h1>
+
+<a href="https://www.codingame.com/training/medium/virus-spreading-and-clustering">https://www.codingame.com/training/medium/virus-spreading-and-clustering</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Given a population size and a network of connections between its members, determine the breakdown of cluster sizes of the population.<br><br>Imagine that each member of a population is one person. Now consider that one member of the population becomes &quot;infected&quot; by a virus. Provided a set of connections (i.e. &quot;member A is linked to member B&quot;), the subset of members of the population infected by the virus can be simulated (we will assume that transmission is guaranteed to occur between linked members). This subset is effectively like an &quot;outbreak&quot; of a virus.<br><br>Your job is to assess these subsets, or <strong>clusters</strong> and provide the breakdown of the distribution of cluster sizes in the given population.<br><br>NOTE: All links are two-way (reciprocal), there are no one-way links.<br><br>Given a population size <var>N</var>, with members indexed from <const>0</const> to <const>N-1</const>, calculate the size of every outbreak/cluster within the population.<br><br>Input:<br><br><strong>Line 1:</strong> A number, <var>N</var>, of members of the population<br><strong>Line 2:</strong> A number, <var>L</var>, of links within the population<br><strong>Next L lines:</strong> Two space-separated integers representing the indexes of two linked members of the population<br><br>Output: &quot;cluster size&quot; and &quot;cluster count&quot; for each cluster, separated by a space; in descending order of size.<br><br><strong>Line 1:</strong> Two space-separated integers representing the size and frequency of the largest sized cluster.<br><strong>Line 2:</strong> Two space-separated integers representing the size and frequency of the 2-nd largest sized cluster<br>... and so on:<br><strong>Last Line:</strong> Two space-separated integers representing the size and frequency of the smallest sized cluster<br><br>Constraints:<br><br><const>5</const> &lt;= <var>N</var> &lt;= <const>500</const><br><const>800</const> &gt; L<br>Every member of the population belongs to a cluster even if its size is of 1 (a cluster with only one member).</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1 :</strong> : the number <var>n_people</var> of elements in the structure<br><strong>Line 2 :</strong> : the number <var>n_links</var> of existing relations between elements in the structure <br><strong><var>n_links</var> next lines :</strong> two integers  <var>i</var> and <var>j</var> for two elements linked</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The distribution of clusters in descending order by size of cluster. Each lines containing two integers, &quot;cluster size&quot; and &quot;cluster count&quot; for this cluster size, separated by a space.<br><strong>Line 1 :</strong>  the size of the biggest clusters <strong>space</strong> the number of clusters of this size<br>...<br><strong>Line n :</strong> the size of the smallest clusters  <strong>space</strong> the number of clusters of this size</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><strong>Number of people</strong> <const>5</const> &lt;= <var>n_people</var> &lt;= <const>500</const><br><strong>Number of links</strong> <var>n_links</var> &lt; <const>800</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">5
+2
+4 0
+0 2</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">3 1
+1 2</pre>
+         </div>
+      </div>
+   </div>
+</div>

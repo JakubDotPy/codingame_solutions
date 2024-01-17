@@ -1,0 +1,36 @@
+<h1>Quaternion Multiplication</h1>
+
+<a href="https://www.codingame.com/training/medium/quaternion-multiplication">https://www.codingame.com/training/medium/quaternion-multiplication</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">The quaternions belong to a number system that extends the complex numbers. A quaternion is defined by the sum of scalar multiples of the constants <const>i</const>,<const>j</const>,<const>k</const> and <const>1</const>.<br>More information is available at http://mathworld.wolfram.com/Quaternion.html<br><br>Consider the following properties:<br><const>j</const><const>k</const> = <const>i</const><br><const>k</const><const>i</const> = <const>j</const><br><const>i</const><const>j</const> = <const>k</const><br><const>i</const>&sup2; = <const>j</const>&sup2; = <const>k</const>&sup2; = <const>-1</const><br><br>These properties also imply that:<br><const>k</const><const>j</const> = <const>-i</const><br><const>i</const><const>k</const> = <const>-j</const><br><const>j</const><const>i</const> = <const>-k</const><br><br>The order of multiplication is important.<br><br>Your program must output the result of the product of a number of bracketed simplified quaternions.<br><br><strong>Pay attention to the formatting</strong><br>The coefficient is appended to the left of the constant.<br>If a coefficient is <const>1</const> or <const>-1</const>, don't include the <const>1</const> symbol.<br>If a coefficient or scalar term is <const>0</const>, don't include it.<br>The terms must be displayed in order: a<const>i</const> + b<const>j</const> + c<const>k</const> + d.<br><br><strong>Example Multiplication</strong><br>(2i+2j)(j+1) = (2ij+2i+2j&sup2; +2j) = (2k+2i-2+2j) = (2i+2j+2k-2)</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong>:The expression <var>expr</var> to evaluate. This will always be the product of simplified bracketed expressions.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">A single line containing the simplified result of the product expression. No brackets are required.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">All coefficients in any part of evaluation will be less than <const>10^9</const><br>The input contains no more than 10 simplified bracketed expressions</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">(i+j)(k)</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">i-j</pre>
+         </div>
+      </div>
+   </div>
+</div>

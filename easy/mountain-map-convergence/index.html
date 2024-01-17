@@ -1,0 +1,38 @@
+<h1>Mountain Map Convergence</h1>
+
+<a href="https://www.codingame.com/training/easy/mountain-map-convergence">https://www.codingame.com/training/easy/mountain-map-convergence</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">&quot;We don't make mistakes, just happy little accidents.&quot; - Bob Ross<br><br>While creating mountains in ASCII, you realized that taller mountains could start off from the smaller ones,  so why not make some more mountains?<br><br><br><br><strong>Rules:</strong><br><br>- You will be given a list of the heights of mountain peaks along a row.<br><br>- The starting height is considered as 0. <br><br>- Each step of rise in altitude is represented by '/' and fall by '\'.<br><br>- Each peak consists of a rise and fall '/\' at the appropriate height.<br><br>- Once a peak has been drawn, proceed either up or down to the next peak. Do not return to 0 between peaks.  <br><br>- After generating the mountains, end at height 0.<br><br>- You may need to draw below 0. Remember, mountains are made from a step lower than their peak. Example, for <var>-1</var> :<br><pre style="font-family: monospace">\    /   <br> \/\/</pre> which demonstrates the tip of the mountain at -1 height, given that the starting and ending point are at height 0.<br><br><br>This is an extension of &quot;Mountain Map&quot;: https://www.codingame.com/ide/puzzle/mountain-map</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> A single integer <var>n</var> representing the number of mountains<br><strong>Line 2:</strong> <var>n</var>, space-separated integers that represent the <var>height</var> of each mountain in sequential order</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">An ASCII representation of the mountains where each rise in altitude is represented by '/' and fall by '\'.<br>(Output lines shouldn't contain trailing spaces)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <var>n</var> &lt; 15<br>-15 &lt; <var>height</var> &lt;15<br><br>Note: The height must always end at 0.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+1 2 1</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">   /\
+/\/  \/\</pre>
+         </div>
+      </div>
+   </div>
+</div>

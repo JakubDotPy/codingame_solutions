@@ -1,0 +1,91 @@
+<h1>Minesweeper</h1>
+
+<a href="https://www.codingame.com/training/medium/minesweeper-1">https://www.codingame.com/training/medium/minesweeper-1</a>
+
+<div class="statement_back"></div>
+<div class="statement-body">
+  
+  <div class="statement-section statement-goal">
+    <h1>
+      <span class="icon icon-goal"> </span>
+      <span>The Goal</span>
+    </h1>
+    <div class="statement-goal-content">
+      Find all mines without detonating any of them.
+    </div>
+  </div>
+  
+  <div class="statement-section statement-rules">
+    <h1>
+      <span class="icon icon-rules"> </span>
+      <span>Rules</span>
+    </h1>
+    <div>
+      <div class="statement-rules-content">You are given a grid of size <const>30</const>x<const>16</const>. There are <const>99</const> mines hidden on the board. <br />
+        You can reveal any cell. If said cell is a mine, you lose the game. Otherwise you will be told the amount of mines neighboring it (including diagonal neighbors).
+      </div>
+    </div>
+  </div>
+  
+  <div class="statement-section statement-expertrules">
+    <h1>
+      <span class="icon icon-expertrules"> </span>
+      <span>Expert Rules</span>
+    </h1>
+    <div class="statement-expert-rules-content">
+      The top left corner has the coordinates (0, 0) <br />
+      You can find the source code of the game on <a href="https://github.com/eulerscheZahl/minesweeper" target="_blank" rel="nofollow noopener noreferrer">https://github.com/eulerscheZahl/minesweeper</a>. <br /><br />
+      There is one single testcase that&#39;s randomly generated after your first action. Your first action will always reveal multiple cells at once. <br />
+      Due to the randomness you may have to submit multiple times to solve the puzzle but a good solver won&#39;t require many attempts.
+    </div>
+  </div>
+
+   
+  <div class="statement-section statement-warning">
+    <h1>
+      <span class="icon icon-warning"> </span>
+      <span>Note</span>
+    </h1>
+    <div class="statement-warning-content">
+      Don&#39;t hesitate to change the viewer&#39;s options to help debug your code (<img style="background:#20252a" height="18" src="https://www.codingame.com/servlet/fileservlet?id&#61;3463235186409" width="18" />).
+    </div>
+  </div>
+  
+  
+  <div class="statement-section statement-protocol">
+    <h1>
+      <span class="icon icon-protocol"> </span>
+      <span>Game Input</span>
+    </h1>
+
+    
+    <div class="blk">
+      <div class="title">Input</div>
+      <div class="text">
+        <p><span class="statement-lineno">16 lines with 30 space separated characters each: </span>
+        </p><ul><li><const>?</const> for an unknown cell</li><li><const>.</const> for a revealed cell without any mines next to it</li><li><const>1</const>-<const>8</const> for a revealed cell with the corresponding amount of mines next to it</li></ul>
+      </div>
+    </div>
+
+    
+    <div class="blk">
+      <div class="title">Output</div>
+      <div class="text">
+        <span class="statement-lineno">A single line</span> <action>x y</action> indicating that you want to reveal that cell. <br />
+        You can add further points to indicate mines. These are purely visual and have no effect on the game. <br />
+        Example: <action>1 2 3 4</action> will reveal the cell (1, 2) and place a flag at (3, 4).
+        <br />
+      </div>
+    </div>
+
+    
+    <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="text"><var>width</var> &#61; <const>30</const><br />
+      <div class="text"><var>height</var> &#61; <const>16</const><br />
+      <div class="text"><var>mineCount</var> &#61; <const>99</const><br />
+        <br />Allotted response time to output
+        is ≤ <const>50</const>ms per turn (<const>1</const>s for the first turn).</div>
+    </div>
+  </div>
+</div></div></div>

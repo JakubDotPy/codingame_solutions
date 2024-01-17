@@ -1,0 +1,40 @@
+<h1>Remainder Fantasy</h1>
+
+<a href="https://www.codingame.com/training/medium/remainder-fantasy">https://www.codingame.com/training/medium/remainder-fantasy</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">This was a puzzle invented and solved by Chinese during the 3rd to 5th centuries AD, with innovative solution steps recorded in Mathematical treaties of that era. Translated the text into modern terminologies:<br><br><strong>Let x be an integer. Divide x by 3, remains 2; divide x by 5, remains 3; divide x by 7, remains 2. Find the minimum value of x.</strong><br><br>You are going to solve similar puzzles with the aid of state-of-the-art technologies and know-how. Take the challenge?<br><br><br>Beware, the moduli you are given may not be pairwise coprime. Moreover, your answer must always be as small as possible while being <strong>greater than or equal to</strong> every modulo in input. For instance, if you are asked for an integer x such that:<br>- it remains 3 when dividing x by 8<br>- it remains 11 when dividing x by 15<br>- it remains 1 when dividing x by 10,<br>then the answer is 131. In this example, 11 is not a valid answer since it is less than 15 (the modulo in the second constraint).</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var> for the number of given conditions.<br><strong>Next <var>N</var> lines:</strong> Two space separated integers <var>m</var> and <var>r</var> for the divisor and remainder of a condition where <br><var>x</var> mod <var>m</var> = <var>r</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1 :</strong> The minimum value of <var>x</var> fulfilling all the given conditions, <strong>and</strong> at the same time <var>x</var> &gt;= all of the given <var>m</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>N</var> &le; 10<br>0 &le; <var>r</var><br>0 &lt; <var>x</var> &lt; 2 ^32</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+3 2
+5 3
+7 2
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">23</pre>
+         </div>
+      </div>
+   </div>
+</div>

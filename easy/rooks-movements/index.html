@@ -1,0 +1,52 @@
+<h1>Rooks Movements</h1>
+
+<a href="https://www.codingame.com/training/easy/rooks-movements">https://www.codingame.com/training/easy/rooks-movements</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">In chess, the board is split in 8 rows and 8 columns. Considering the view of the game to be from the white side, the utmost top left cell is called <strong>a8</strong> and the utmost top rightcell is called <strong>h8</strong>. Decreasing from top to bottom of the chessboard, the utmost down left cell is then called <strong>a1</strong> and the utmost down right cell is called <strong>h1</strong>. <br><br>A rook is a piece than can move as many cells as it want to vertically or horizontally. A rook can't go past an ally unit but can replace an opponent one.<br><br>Each position must be a valid chessboard-position notation (Algebraic notation) such that it is identified by a <const>column</const> identifier from <strong>a</strong> to <strong>h</strong> and a <const>row</const> identifier from <strong>1</strong> to <strong>8</strong>.<br><br>Given a white rook and a set of chess pieces that can be yours (white) or not (black), print all available movements for the rook in the current configuration.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>First line : </strong> the position of the white rook<br><strong>Second line : </strong> the amount <var>P</var> of pieces to be placed on the board<br><strong>Next <var>P</var> lines : </strong> <var>P</var> space-separated lines containing attributes for each piece : <var>color</var> <var>position</var><br><br><var>color</var> is either <const>0</const> (WHITE) or <const>1</const> (BLACK)<br><var>position</var> is the chessboard-notation of the position of the given piece</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">A list of space-separated <var>combination</var> where <var>combination</var> has the following shape :<br><br>R<var>from_position</var><var>action</var><var>to_position</var> with <var>from_position</var> being the actual position of the white rook and <var>to_position</var> being a possible destination for the white rook, both in the chessboard-position format. <var>action</var> should be <const>x</const> if the movement involves taking an opponent pieces, <const>-</const> otherwise.<br><br>For instance, if the white rook is in <strong>d5</strong> and can move to <strong>d6</strong>, then the output must be <strong>Rd5-d6</strong>.<br>If the white rook is in <strong>e4</strong> and can capture an opponent piece in <strong>e3</strong>, then the output must be <strong>Re4xe3</strong><br><br>Moves must be sorted in <strong>ascending lexicographical ASCII order</strong></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">The grid is always an <const>8</const>*<const>8</const> matrix</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">d5
+2
+0 c1
+1 e8</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">Rd5-a5
+Rd5-b5
+Rd5-c5
+Rd5-d1
+Rd5-d2
+Rd5-d3
+Rd5-d4
+Rd5-d6
+Rd5-d7
+Rd5-d8
+Rd5-e5
+Rd5-f5
+Rd5-g5
+Rd5-h5</pre>
+         </div>
+      </div>
+   </div>
+</div>

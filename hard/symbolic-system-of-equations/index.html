@@ -1,0 +1,43 @@
+<h1>Symbolic system of equations</h1>
+
+<a href="https://www.codingame.com/training/hard/symbolic-system-of-equations">https://www.codingame.com/training/hard/symbolic-system-of-equations</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Write a program that outputs the general <var>solution</var> to a symbolic system of <var>equations</var>. The general <var>solution</var> is one which <strong>cannot be simplified</strong>.<br><br>If a <var>variable</var> is not declared in any of the <var>equations</var>, the <var>solution</var> for that <var>variable</var> is itself (e.g. <const>x -&gt; x</const>).<br><br>There is <strong>no solution</strong> if any <var>equation</var> in the system contains <strong>circular reference or self reference</strong> (please refer to the test cases for the examples).</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var> for the number of <var>variables</var>.<br><strong>Line 2:</strong> <var>N</var> space-separated <var>variables</var> in lexicographical order.<br><strong>Line 3:</strong> An integer <var>M</var> for the number of <var>equations</var>.<br><strong>Next <var>M</var> lines:</strong> One line for each <var>equation</var> in the format of <var>variable</var> <const>=</const> <var>function</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>N</var> lines:</strong> One line for the <var>solution</var> for each <var>variable</var> in lexicographical order, in the format of <var>variable</var> <const>-&gt;</const> <var>solution</var>.<br><strong>Or</strong> in the case of no solution:<br><strong>Line 1:</strong> <const>No solution!</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>N</var> &le; 10<br>0 &le; <var>M</var> &le; 10<br>1 &le; length of each <var>variable</var> name &le; 2, and the name is in lowercase letters.<br>1 &le; length of each <var>function</var> name &le; 2, and the name is in lowercase letters.<br>All <var>variable</var> names and <var>function</var> names are distinct.<br>A <var>variable</var> appears in the left side of at most one <var>equation</var> in the system.<br>A <var>function</var> may appear in different <var>equations</var> but always contains the same number (between <const>1</const> and <var>N</var>) of different <var>variables</var> as its arguments.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+x y z
+2
+z = f ( x y )
+y = h ( x )</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">x -&gt; x
+y -&gt; h ( x )
+z -&gt; f ( x h ( x ) )
+</pre>
+         </div>
+      </div>
+   </div>
+</div>

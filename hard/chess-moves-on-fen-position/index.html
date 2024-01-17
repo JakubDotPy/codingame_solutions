@@ -1,0 +1,38 @@
+<h1>Chess moves on FEN position</h1>
+
+<a href="https://www.codingame.com/training/hard/chess-moves-on-fen-position">https://www.codingame.com/training/hard/chess-moves-on-fen-position</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement"><strong>Make several moves on a chessboard and print the final position as an FEN string.</strong><br><br><pre style="font-family: monospace"><const>8</const> r n b q k b n r<br><const>7</const> p p p p p p p p<br><const>6</const> . . . . . . . .<br><const>5</const> . . . . . . . .<br><const>4</const> . . . . . . . .<br><const>3</const> . . . . . . . .<br><const>2</const> P P P P P P P P<br><const>1</const> R N B Q K B N R<br>  <const>a</const> <const>b c</const><const> d e</const><const> f g</const><const> h</const></pre><br><br>The above position is represented in FEN by the string:<br><br><const>rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR</const><br><br>FEN describes a Chess Position with a one-line ASCII string.<br>The piece placement is determined rank-by-rank, starting at rank <const>8</const> and proceeding down to rank <const>1</const>.<br>Each rank string is separated by the terminal symbol '/' (slash).<br>Each rank string scans piece placement from column <const>a</const> to column <const>h</const>.<br>A decimal digit counts consecutive empty spaces.<br>The pieces are identified by a single letter. (k=king, q=queen, r=rook, b=bishop, n=knight, p=pawn)<br>Uppercase letters are for white pieces, lowercase letters for black pieces.<br><br><br>The moves you have to make are defined by a string with either 4 or 5 chars, where:<br> - The first two chars represent the starting square, <br> - The next two chars represent the target square and <br> - The last (optional) char represents the piece you get if / when a pawn promotion occurs.<br><br><strong>Example: &quot;<const>e7e8Q</const>&quot;</strong> - you must remove the pawn on the <const>e7</const> square and place a white queen on the <const>e8</const> square.<br><br><strong>Example: &quot;<const>e1g1</const>&quot;</strong> - you must remove the king on the <const>e1</const> square and place it on the <const>g1</const> square. But a king can't move more than <const>1</const> square unless he is castling, so you must also move the rook on the <const>h1</const> square to the <const>f1</const> square in order to complete the castling move.<br><br><strong>Example: &quot;<const>h5g6</const>&quot;</strong> - you must remove the pawn on the <const>h5</const> square and place on the <const>g6</const> square. If there is not a piece on <const>g6</const> but there is a pawn on <const>g5</const> then you must remove the pawn on <const>g5</const> in order to complete the &quot;en passant&quot; move.<br><br><strong>Note:</strong><br>All the moves are legal and can be made following standard chess rules.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An FEN string <var>B</var> describing the initial board position.<br><strong>Line 2:</strong> An integer <var>N</var> for the number of moves to make.<br><strong>Next <var>N</var> lines:</strong> A string <var>M</var> for the coordinates (and optional promotion piece) of a move.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> An FEN string describing the final board position.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>N</var> &le; 100</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR
+1
+e2e4</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR</pre>
+         </div>
+      </div>
+   </div>
+</div>

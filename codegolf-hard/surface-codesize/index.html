@@ -1,0 +1,112 @@
+<h1>Surface - Code Golf</h1>
+
+<a href="https://www.codingame.com/codegolf/hard/surface-codesize">https://www.codingame.com/codegolf/hard/surface-codesize</a>
+
+<div class="statement_back" id="statement_back" style="display:none">&nbsp;</div>
+
+<div class="statement-body"><!-- GOAL -->
+<div class="statement-section statement-goal">
+<h2><span class="icon icon-goal">&nbsp;</span> <span>The Goal</span></h2>
+
+<div class="statement-goal-content">&quot;The wars of the 21st century will be fought over water.&quot;<br />
+Although freshwater is available in limited quantity, it&rsquo;s not actually scarce. There&rsquo;s more than enough to satisfy the current needs of the global population, but only if it were possible to locate and measure the bodies of water available in a geographical area!<br />
+<br />
+Your mission is to pinpoint the surface areas of water. You have a map which describes the contents of each square meter of a geographical zone. One square meter is composed of either land or water. One map can contain several bodies of water.</div>
+</div>
+<!-- RULES -->
+
+<div class="statement-section statement-rules">
+<h2><span class="icon icon-rules">&nbsp;</span> <span>Rules</span></h2>
+
+<div>
+<div class="statement-rules-content">Your program receives as input a list of coordinates. For each one you must determine the surface area of the lake which is located there. If there is no lake, then the surface area equals 0.<br />
+<br />
+Here&#39;s an example of a map. The green squares represent land, and the blue squares represent water. A lake is made up of a set of water squares which are horizontally or vertically adjacent. Two squares which are only diagonally adjacent are not part of the same lake.
+<div style="text-align: center"><img src="fileservlet?id=348862097370" /></div>
+In this example, the lake which is located in coordinates (1, 2) has a surface area of 3 square meters.<br />
+<br />
+A map in ASCII format is provided as input. The character # represents land and the letter O (uppercase) represents water. In this format, the map shown above will be represented as follows:
+<pre style="margin-top: 10px;">
+####
+##O#
+#OO#
+####
+</pre>
+</div>
+</div>
+</div>
+<!-- PROTOCOL -->
+
+<div class="statement-section statement-protocol">
+<h2><span class="icon icon-protocol">&nbsp;</span> <span>Game Input</span></h2>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Input</div>
+
+<div class="text">
+<p><span class="statement-lineno">Line 1: </span> the width <var>L</var> of the map</p>
+
+<p><span class="statement-lineno">Line 2: </span> the height <var>H</var> of the map</p>
+
+<p><span class="statement-lineno">H following lines: </span><var>L</var> characters <const>#</const> or <const>O</const></p>
+
+<p><span class="statement-lineno">Following line: </span>the number <var>N</var> of coordinates to be tested</p>
+
+<p><span class="statement-lineno">N following lines: </span>the coordinates <var>X Y</var> to be tested, separated by a space</p>
+</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Output</div>
+
+<div class="text"><span class="statement-lineno">N lines: </span> each displaying the surface area of the lake located at the coordinates given in input.</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Constraints</div>
+
+<div class="text">0 &lt; <var>L</var> &lt; 10000<br />
+0 &lt; <var>H</var> &lt; 10000<br />
+0 &le; <var>X</var> &lt; L<br />
+0 &le;<var> Y</var> &lt; H<br />
+0 &lt; <var>N</var> &lt; 1000</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Example</div>
+
+<div class="text">
+<div class="statement-inout">
+<div class="statement-inout-in" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Input</div>
+
+<pre>
+4
+4
+####
+##O#
+#OO#
+####
+3
+0 0
+1 2
+2 1</pre>
+</div>
+
+<div class="statement-inout-out" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Output</div>
+
+<pre>
+0
+3
+3</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

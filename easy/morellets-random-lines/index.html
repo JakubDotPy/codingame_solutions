@@ -1,0 +1,38 @@
+<h1>Morellet’s random lines</h1>
+
+<a href="https://www.codingame.com/training/easy/morellets-random-lines">https://www.codingame.com/training/easy/morellets-random-lines</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are a modern artist and you like drawing random lines on a sheet of paper like Fran&ccedil;ois Morellet.<br>These lines draw a somewhat strange chess board that you fill with only two colours.<br>You are given the lines and the coordinates of two point A and B and you have to tell if the points have the same colour or not or if one of them is on one line.<br>You will be given the coefficients of each line (Cartesian style, ie ax+by+c=0, a, b and c given).<br><br>Count each line once because sometimes, some lines might have more than one equation in the list.<br>For example, 2x+4y+6=0 is the same line than x+2y+3=0.<br>a and b can&rsquo;t be null at the same time.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong>: <var>xA</var> <var>yA</var> <var>xB</var> <var>yB</var><br><strong>Line 2</strong>: <var>n</var>, the number of straight lines<br><strong>Next n lines</strong>: <var>a</var> <var>b</var> <var>c</var> for each line</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">If at least A or B is on one line, print <const>ON A LINE</const><br>If not, print <const>YES</const> if A and B have the same colour, else <const>NO</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1 1 0 0
+1
+1 2 3</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">YES</pre>
+         </div>
+      </div>
+   </div>
+</div>

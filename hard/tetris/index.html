@@ -1,0 +1,44 @@
+<h1>Tetris</h1>
+
+<a href="https://www.codingame.com/training/hard/tetris">https://www.codingame.com/training/hard/tetris</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Given a Tetris shape and an existing playfield, your program must output the lowest position for that shape that will clear most lines without being rotated.<br><br>It is always possible to clear at least one line and the correct position is always accessible and valid: you do not need to ensure that a path effectively exists or that the shape is effectively resting on another one.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong>:<var>SW</var> <var>SH</var>, the height and width of the shape description.<br><strong><var>SH</var> next lines</strong>: one row of the shape<br><strong>Next line</strong>:<var>FW</var> <var>FH</var>, the height and width of the playfield description.<br><strong><var>FH</var> next lines</strong>: one row of the playfield<br>For both the shape and playfield descriptions, a block is represented by a '<const>*</const>' and an empty space is represented by a '<const>.</const>'.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1</strong>:<var>X</var> <var>Y</var>, the position of the top-left corner of the shape in the playfield.<br><strong>Line 2</strong>: <var>N</var>, the number of cleared lines.<br>The Y axis starts at 0 on the bottom line of the playfield and increases upwards.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><const>1</const>&lt;=<var>SW</var>&lt;=<const>4</const><br><const>1</const>&lt;=<var>SH</var>&lt;=<const>4</const><br><const>10</const>&lt;=<var>FW</var>&lt;=<const>20</const><br><const>1</const>&lt;=<var>FH</var>&lt;=<const>4</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2 2
+**
+**
+10 4
+..........
+..........
+*****..***
+*****..***</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">5 1
+2</pre>
+         </div>
+      </div>
+   </div>
+</div>

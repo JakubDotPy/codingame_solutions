@@ -1,0 +1,58 @@
+<h1>3D printer</h1>
+
+<a href="https://www.codingame.com/training/medium/3d-printer">https://www.codingame.com/training/medium/3d-printer</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You get 3 pictures made by # in sizes <var>width</var>*<var>height</var>, <var>length</var>*<var>height</var> and <var>width</var>*<var>length</var>. The first one is the front view, the second one is the view from the right side and the third one is the view from the top. You need to print the 3D model based on the pictures you get; one by one layer separated by two dashes from bottom to the top layer and two dashes at the end.<br><br><strong>Example Input</strong><br><pre style="font-family: monospace">2    // width<br>5    // height<br>1    // length<br>##   // start of front view, always height number of lines<br>##<br>##<br>##<br>##<br>#    // start of right side view, always height number of lines<br>#<br>#<br>#<br>#<br>##    // start of top view, always length number of lines</pre><br>So from these inputs, your code should guess what is the 3D model. In the example it's a block 2x5x1.<br><strong>Example Solution</strong><br><pre style="font-family: monospace">##    // the lowest layer<br>--<br>##<br>--<br>##<br>--<br>##<br>--<br>##    // the highest layer<br>--</pre><br>If the three pictures cannot define some parts of the model as solid or hollow, assume these parts are solid, so that output '#' to fill-in.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>width</var> of the 3D model<br><strong>Line 2:</strong> An integer <var>height</var> of the 3D model<br><strong>Line 3:</strong> An integer <var>length</var> of the 3D model<br><strong>Next <var>height</var> lines:</strong> Strings - part of the front view<br><strong>Next <var>height</var> lines:</strong> Strings - part of the view from the right<br><strong>Next <var>length</var> lines:</strong> Strings - part of the view from the top<br><br><strong>NOTE</strong> There is no trailing space in the input.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">Layers of the 3D model separated by two dashes and two dashes at the end.<br>Write no trailing space in output.<br>If the three pictures cannot define some parts of the model as solid or hollow, assume these parts are solid, so that output '#' to fill-in.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <var>width</var>, <var>height</var>, <var>length</var> &le; 20</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+5
+1
+##
+##
+##
+##
+##
+#
+#
+#
+#
+#
+##</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">##
+--
+##
+--
+##
+--
+##
+--
+##
+--</pre>
+         </div>
+      </div>
+   </div>
+</div>

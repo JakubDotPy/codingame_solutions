@@ -1,0 +1,46 @@
+<h1>Neighbor-Sum Grids</h1>
+
+<a href="https://www.codingame.com/training/hard/neighbor-sum-grids">https://www.codingame.com/training/hard/neighbor-sum-grids</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">A <strong>(2-)neighbor-sum grid</strong> is a 5&times;5 matrix containing each number from <const>1</const> to <const>25</const> <strong>exactly once</strong> and where each value that is at least <const>3</const> can be obtained as the <strong>sum of two distinct values among its direct neighbors</strong> (horizontally, vertically and diagonally, so that an inner cell has 8 neighbors, a border cell has 5 neighbors and a corner cell has 3 neighbors).<br><br><strong>Example:</strong> (21 = 4+17, 14 = 4+10, 10 = 4+6, 16 = 6+10, 22 = 6+16, etc for every value &gt;2 of the grid)<br><pre style="font-family: monospace">21 14 10 16 22<br>17  4  1  6 19<br>12  3  5 11 13<br>15  8  2  7 18<br>23 24  9 20 25</pre><br>It can be proven that there are 56816 such grids (or 7102 up to the 8 symmetries of the square).<br><br>In this problem, you are given a <strong>partially completed grid</strong> (in which unknown values are indicated by a <const>0</const> in the input) and you are asked to <strong>complete it</strong>. It is guaranteed for each given testcase that there <strong>exists</strong> a <strong>unique</strong> solution.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>5 lines</strong> of 5 space-separated numbers between <const>0</const> and <const>25</const>, <const>0</const> indicating an unknown value.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>5 lines</strong> of 5 space-separated numbers between <const>1</const> and <const>25</const> corresponding to the unique complete solution.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">21 14 10 0 0
+0 4 1 6 0
+0 3 5 11 13
+15 0 0 0 0
+23 24 0 20 25
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">21 14 10 16 22
+17 4 1 6 19
+12 3 5 11 13
+15 8 2 7 18
+23 24 9 20 25
+</pre>
+         </div>
+      </div>
+   </div>
+</div>

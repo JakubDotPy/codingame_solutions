@@ -1,0 +1,38 @@
+<h1>Find the missing plus signs in addition</h1>
+
+<a href="https://www.codingame.com/training/medium/find-the-missing-plus-signs-in-addition">https://www.codingame.com/training/medium/find-the-missing-plus-signs-in-addition</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">The sum of a set of <var>N</var> integers is <var>S</var>.<br>Unfortunately, the plus signs have disappeared and the integers have been concatenated in a string <var>O</var>...<br>You have to find the positions of the plus signs to recover the addition.<br>If there is no solution , then print <const>No solution</const>, otherwise print the solution(s) in lexicographic order ( 1+11 before 11+1 ).</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1 :</strong> An integer <var>N</var> as the number of terms in the addition<br><strong>Line 2 :</strong> A long integer <var>S</var> as the sum of the <var>N</var> integers<br><strong>Line 3 :</strong> A string <var>O</var> as the concatenation of the <var>N</var> integers</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">If there is no solution, print <const>No solution</const>.<br>Otherwise, print the solution(s), one per line, ordered in lexicographic order (<const>+</const> before <const>0</const>,<const>1</const>,<const>2</const>,<const>3</const>...) , formatted as a valid equation a1<const>+</const>a2<const>+</const>...<const>+</const>aN<const>=</const><var>S</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &lt;= <var>N</var> &lt;= 10</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+177
+44133</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">44+133=177</pre>
+         </div>
+      </div>
+   </div>
+</div>

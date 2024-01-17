@@ -1,0 +1,99 @@
+<h1>Blunder - Episode 3</h1>
+
+<a href="https://www.codingame.com/training/hard/blunder-episode-3">https://www.codingame.com/training/hard/blunder-episode-3</a>
+
+<div class="statement_back" id="statement_back" style="display:none">&nbsp;</div>
+
+<div class="statement-body"><!-- GOAL -->
+<div class="statement-section statement-goal">
+<h2><span class="icon icon-goal">&nbsp;</span> <span>The Goal</span></h2>
+
+<div class="statement-goal-content">Blunder is happy because hundreds of CodinGamers have re-programmed his natural behavior. The problem is that these programs aren&rsquo;t all equal. Evidently, most are too fast for Blunder to fully revel in his inactivity...<br />
+<br />
+Using performance measures carried out on the execution time of the programs for Blunder, your mission is to determine what&#39;s the most likely <a href="http://en.wikipedia.org/wiki/Big_O_notation#Orders_of_common_functions" target="_blank">computational complexity</a> from a family of fixed and known algorithmic complexities.</div>
+</div>
+<!-- EXAMPLES -->
+
+<div class="statement-section statement-examples">
+<h2><span class="icon icon-example">&nbsp;</span> <span>Example</span></h2>
+
+<div class="statement-examples-text">
+<div class="statement-example-horizontal">
+<div style="width: 280px;display: table-cell;background-color: transparent;vertical-align: middle;padding: 0;"><img src="https://code.codingame.com/fileservlet?id=524363455385" style="width: 100%" /></div>
+
+<div class="legend">Here is an example of performance measures recorded when running a program with different volumes of data.<br />
+<br />
+In this example, the program was run with data volumes ranging from 0 to 5000 items and we see that the execution time, measured in microseconds, varies significantly depending on the number of items that the program processed. Here, the curve suggests that the most likely algorithmic complexity is <action>O(log n)</action>.</div>
+</div>
+</div>
+</div>
+<!-- PROTOCOL -->
+
+<div class="statement-section statement-protocol">
+<h2><span class="icon icon-protocol">&nbsp;</span> <span>Game Input</span></h2>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Input</div>
+
+<div class="text">
+<p><span class="statement-lineno">Line 1: </span>the number <var>N</var> of performance measures carried out on the same program.</p>
+
+<p><span class="statement-lineno">N following lines: </span>one performance measure per line. Each line contains two values: an integer <var>num</var> representing the number of items that the program has processed and an integer <var>t</var> representing the execution time measured to process these items in microseconds. These values are separated by a space. Values of <var>n</var> are unique and sorted in ascending order.</p>
+</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Output</div>
+
+<div class="text">The most probable computational complexity among the following possibilities: <action>O(1)</action>, <action>O(log n)</action>, <action>O(n)</action>, <action>O(n log n)</action>, <action>O(n^2)</action>, <action>O(n^2 log n)</action>, <action>O(n^3)</action>, <action>O(2^n)</action></div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Constraints</div>
+
+<div class="text">
+<p>5 &lt; <var>N</var> &lt; 1000</p>
+
+<p>5 &lt; num &lt; 15000</p>
+
+<p>0 &lt; t &lt; 10000000</p>
+</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Example</div>
+
+<div class="text">
+<div class="statement-inout">
+<div class="statement-inout-in">
+<div class="title">Input</div>
+
+<pre>
+10
+5 341
+1005 26324
+2005 52585
+3005 78877
+4005 104925
+4805 125920
+6105 159156
+7205 188017
+8105 211417
+9905 258991</pre>
+</div>
+
+<div class="statement-inout-out">
+<div class="title">Output</div>
+
+<pre>
+O(n)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

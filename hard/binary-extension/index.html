@@ -1,0 +1,128 @@
+<h1>Binary Extension</h1>
+
+<a href="https://www.codingame.com/training/hard/binary-extension">https://www.codingame.com/training/hard/binary-extension</a>
+
+<div class="statement_back"></div>
+<div class="statement-body">
+  
+  <div class="statement-section statement-goal">
+    <h1>
+      <span class="icon icon-goal"> </span>
+      <span>The Goal</span>
+    </h1>
+    Given an integer <var>n</var> and the coordinates of some goals and some bombs, you must build a binary search tree
+    containing the integers from 1 to  <var>n</var> in such a way that the graphical representation of the tree
+    reaches the goals and does not touch bombs.
+  </div>
+  
+  <div class="statement-section statement-rules">
+      <div class="statement-rules-content">
+
+        <h3>Outputs</h3>
+
+        You give, one by one, a list of distinct integers, from 1 to <var>n</var>, in any order. Each integer <const>
+        k</const> is added to the binary search tree using the classical definition of how to add a number to a
+        binary search tree:
+        <ul><li>If the tree has no root, a root <const>r</const> is added to the tree, with empty left and right
+            subtrees, and is attached to the value <const>v(r) &#61; k</const>;</li><li>Otherwise, the integer is recursively added to the left subtree of <const>r</const> if <const>v(r) &lt;
+            k</const>, and to the right subtree if <const>v(r) &gt; k.</const></li></ul>
+        Due to this definition, each new node is always a new leaf of the tree.
+        <br />
+        The tree is initially empty.
+
+        <br />
+        <br />
+
+        <h3>Graphical representation of the tree</h3>
+
+        The tree, the bombs and the goals are drawn on a grid with integer coordinates.
+
+        <br />
+
+
+        Each time an integer is added to the tree, the drawing is updated using the following rules.
+        The tree is drawn in a rectangle with a given odd <var>width</var> and a given <var>height</var>, the
+        coordinates vary between <b>(0, 0)</b> and <b>(<var>width</var> - 1, <var>height</var> - 1)</b>. The root of the
+        tree is always placed at coordinates <b>((<var>width</var>  - 1)/ 2, 0)</b>. The left child (respectively the
+        right child) of a node with coordinates <b>(x, y)</b> is placed at coordinates <b>(x - 1, y &#43; 1)</b>
+        (respectively <b>(x &#43; 1, y &#43; 1)</b>).
+
+        <br />
+          On the graphical interface of the game, the root is drawn in blue, some coordinates are unreachable (for
+        instance the coordinate <b>(0, 0)</b> and are drawn in gray.
+
+        <h3>Winning/loosing conditions</h3>
+        <br />
+        You <strong>loose</strong> if
+        <ul><li>by adding an integer to the tree, it is placed out of the bounds (the x-coordinate should be between 0 and
+            <var>width</var>-1, and the y-coordinate should be between 0 and <var>height</var> - 1;</li><li>by adding an integer to the tree, it is placed on a bomb;</li><li>after adding all the integers to the tree, a goal is not reached;</li><li>by adding an integer to the tree, it is placed at the same coordinates than another integer;</li><li>you do not supply an integer between 1 and n;</li><li>you supply the same integer twice;</li><li>you do not supply a valid integer in time.</li></ul>
+        You <strong>win</strong> when all the goals are reached. <strong>It is allowed to place only a part of the
+        integers between 1 and n.</strong>
+      </div>
+    </div>
+  
+  <div class="statement-section statement-examples">
+    <h1>
+      <span class="icon icon-example"> </span>
+      <span>Example</span>
+    </h1>
+
+    If you are given the following values:
+    <ul><li>5 for the <var>width</var> and 3 for the <var>height</var></li><li>4 for <var>n</var> </li><li>1 bomb at (3, 1) </li><li>1 goal at (2, 2) </li></ul>
+
+    <br />
+    If you output 4 then 1 then 2:
+    <ul><li>The 4 is placed at the root of the tree, at position ((<var>width</var> - 1)/ 2, 0) &#61; (2, 0).</li><li>The 1 is placed as a left child of 4, thus at position (1, 1).</li><li>The 2 is placed as a right child of 1, thus at position (2, 2).</li></ul>
+    The goal is reached, and the bomb has not exploded. You <strong>win</strong>.
+
+    <br />
+    <br />
+    If you output 3 then 1 then 4 then 2:
+    <ul><li>The 3 is placed at the root of the tree, at position ((<var>width</var> - 1)/ 2, 0) &#61; (2, 0).</li><li>The 1 is placed as a left child of 3, thus at position (1, 1).</li><li>The 4 is placed as a right child of 3, thus at position (3, 1).</li></ul>
+    The bomb is touched and explodes. The 2 is not placed. You <strong>loose</strong>.
+
+  </div>
+
+
+  
+  <div class="statement-section statement-protocol">
+    <h1>
+      <span class="icon icon-protocol"> </span>
+      <span>Inputs and outputs</span>
+    </h1>
+
+    
+    <div class="blk">
+      <div class="title">Input</div>
+      <div class="text">
+        <p><span class="statement-lineno">Line 1: </span>five integers <var>width</var>, <var>height</var>, <var>n
+        </var>, <var>bombsCount</var> and <var>goalsCount</var>.</p>
+        <p><span class="statement-lineno">Next <var>bombsCount</var> lines</span>: two integers <var>x</var> and <var>y</var>
+        corresponding to the coordinates of each bomb.
+        </p><p><span class="statement-lineno">Next <var>goalsCount</var> lines</span>: two integers <var>x</var> and <var>y</var>
+          corresponding to the coordinates of each goal.
+      </p></div>
+    </div>
+
+    
+    <div class="blk">
+      <div class="title">Output</div>
+      <div class="text">
+        <p><span class="statement-lineno">At most <var>n</var> lines</span> containing each a distinct integer between
+          1 and n</p>
+        <br />
+      </div>
+      </div>
+
+    
+    <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="text">
+        <var>width</var> ≤ 15<br />
+        <var>height</var> ≤ 12<br />
+        <var>n</var> ≤ 50<br />
+        <var>goalsCount</var> ≤ 20<br />
+      </div>
+    </div>
+  </div>
+</div>

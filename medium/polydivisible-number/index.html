@@ -1,0 +1,49 @@
+<h1>Polydivisible number</h1>
+
+<a href="https://www.codingame.com/training/medium/polydivisible-number">https://www.codingame.com/training/medium/polydivisible-number</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">A polydivisible number (or magic number) is a number with digits abcde... that has the following properties :<br><br>- Its first digit a is not 0.<br>- The number formed by its first two digits ab is a multiple of 2.<br>- The number formed by its first three digits abc is a multiple of 3.<br>- The number formed by its first four digits abcd is a multiple of 4.<br>- etc...<br><br>For example, 567 is polydivisible because :<br>- 5 is divisible by 1<br>- 56 is divisible by 2<br>- 567 is divisible by 3<br><br>Your program will have to determine in which bases the input number may be, knowing that it is polydivisible in base 10</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">One line containing the number consisting of pairs of numbers separated by spaces<br><br>01 02 03 =&gt; 123 in base 10<br>01 02 03 =&gt; 123 in base 16 =&gt; 291 in base 10<br>01 10 02 =&gt; 1A2  in base 16 =&gt; 418 in base 10</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The values ​​of the bases by numeric order (one value &lt;=&gt; one line)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &le; <var>base</var> &le;36<br>number of digits &lt; 18</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">04 04 00</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">5
+6
+8
+9
+11
+12
+14
+15
+16
+20
+24
+28
+29
+35</pre>
+         </div>
+      </div>
+   </div>
+</div>

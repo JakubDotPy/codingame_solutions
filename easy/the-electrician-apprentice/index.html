@@ -1,0 +1,39 @@
+<h1>The Electrician Apprentice</h1>
+
+<a href="https://www.codingame.com/training/easy/the-electrician-apprentice">https://www.codingame.com/training/easy/the-electrician-apprentice</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">After working with your apprentice Tom on a very bizarre electrical installation, you are about to turn on the power to carry out the final checks. As a professional, you labelled all switches beforehand and made sure they were off before you disconnected the power supply.<br><br>However during the intervention, Tom flipped the switches all over the place! Fortunately, you had asked him to take notes, so you should be able to find out which equipment will trigger when the power supply is turned back on.<br><br>Switches can be mounted in series or in parallel. For a circuit to be on, all switches in series must be on and at least one switch for each parallel derivation must be on.<br><br>Wiring description is a space-delimited sequence of:<br>   &bull; the <const>-</const> character followed by the identifiers of the switches mounted in series  <br>   &bull; the <const>=</const> character followed by the identifiers of the switches mounted in parallel<br>Each <var>SWITCH</var> has a unique label.<br><br>Eg. for the following circuit:<br><br><br><pre style="font-family: monospace">                      +-[A1]-+        +-[A4]--[RADIO]---+<br>                      |      |        |                 |<br>                      |      +--[A3]--+----------[TV]---+<br>                   +--+      |        |                 |<br>                   |  |      |        +-----[CONSOLE]---+<br>                   |  |      |                          |<br>                   |  +-[A2]-+                          |<br>                   |                                    |<br>                   +------------[POWER SUPPLY]----------+<br>                   |                                    |<br>                   +--[B1]--[B2]-------------[LIGHTS]---+</pre><br><br>The wiring description is:<br><br><pre style="font-family: monospace">    TV = A1 A2 - A3<br>    RADIO = A1 A2 - A3 A4<br>    CONSOLE = A1 A2 - A3<br>    LIGHTS - B1 B2</pre></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>First line:</strong> the number of circuits <var>C</var><br><strong>Next <var>C</var> lines:</strong> name of the <var>EQUIPMENT</var> and wiring description<br><strong>Next line:</strong> the number of Tom's actions <var>A</var><br><strong>Next <var>A</var> lines:</strong> the <var>SWITCH</var> that Tom toggled</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>C</var> lines</strong>, one for each equipment in the same order.<br>Each line should read <const><var>EQUIPMENT</var> is ON</const> or <const><var>EQUIPMENT</var> is OFF</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>C</var> &le; 25<br>0 &le; <var>A</var> &le; 25<br>Length of <var>SWITCH</var> &le; 20<br>Length of <var>EQUIPMENT</var> &le; 40<br>Max input line length = 1024</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1
+LIGHT - A1
+1
+A1</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">LIGHT is ON</pre>
+         </div>
+      </div>
+   </div>
+</div>

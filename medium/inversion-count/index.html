@@ -1,0 +1,36 @@
+<h1>Inversion count</h1>
+
+<a href="https://www.codingame.com/training/medium/inversion-count">https://www.codingame.com/training/medium/inversion-count</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">In array sorting algorithms, an inversion count is a measure of how far an array is from being sorted.<br><br>Assuming we're sorting from lowest to highest, two values a[i] and a[j] form an inversion if a[i] &gt; a[j] and i &lt; j.<br>An already sorted array has an inversion count of 0, and an array sorted in the exact opposite order has the maximum inversion count.<br><br>Your goal is to compute the inversion count of the given arrays.<br><br>-------------------------------------------------------------------------------------<br><br>For all the tests and validators :<br> - Always assume a lowest to highest sort.<br> - The array values are generated with a simple LCG (https://en.wikipedia.org/wiki/Linear_congruential_generator).<br> - The LCG formula is X(n+1) = A * X(n) % M, with <var>M</var>, <var>A</var> and <var>S</var> (=X(0), the seed) given as part of the inputs.<br> - All the generated values are unique in their array.<br><br>-------------------------------------------------------------------------------------<br>Example : with <var>M</var> = 251, <var>A</var> = 33, <var>S</var> = 13 and <var>N</var> = 5<br><br>Using our LCG, we obtain the following array : 178 101 70 51 177<br>178 forms an inversion with 4 values (101, 70, 51 and 177).<br>101 forms an inversion with 2 values (70 and 51).<br>70 forms an inversion with 1 value (51).<br>51 doesn't form any inversion.<br>177 doesn't form any inversion.<br>So the inversion count of the array is <strong>7</strong>, which is our output.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">1 line with 4 space separated integers : <var>M</var>, <var>A</var>, <var>S</var> and <var>N</var>.<br><var>M</var> and <var>A</var> are the parameters of the LCG. <var>S</var> is the seed (=X(0)).<br><var>N</var> is the length of the array, also equal to the number of values to generate. Note that the seed itself should not be included in the array.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The inversion count of the array, for a lowest to highest sort.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &lt; <var>M</var>, <var>A</var>, <var>S</var> &lt; 10^7<br>1 &lt; <var>N</var> &lt; 10^6</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">251 33 13 5</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">7</pre>
+         </div>
+      </div>
+   </div>
+</div>

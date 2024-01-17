@@ -1,0 +1,56 @@
+<h1>1. NGR - Basic Radar</h1>
+
+<a href="https://www.codingame.com/training/easy/1--ngr---basic-radar">https://www.codingame.com/training/easy/1--ngr---basic-radar</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">The NGR company experiments next generation radars.<br>They plan to place some plate readers on the road and calculate speed by elapsed time between two points.<br>For testing, they put two plate readers on the A21. One at km 42 called <const>A21-42</const> and One at km 55 called <const>A21-55</const>.<br>The distance between them is <const>13km</const>.<br><br>Find and report all cars over <const>130km/h</const> with their plate sorted alphabetically.<br><br>Timestamp is the number of milliseconds elapsed since January 1, 1970.<br>All speed value will be truncated to integer. ( 137.89 -&gt; 137 )</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Integer <var>N</var>: Scanned Plate Count<br><strong>Next <var>N</var> lines:</strong> <var>Plate</var> <var>Radarname</var> <var>Timestamp</var> separated by space</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><var>Plate</var> <var>Speed</var> separated by space, ordered alphabetically by <var>Plate</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">10 &lt; <var>N</var> &lt; 1000</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">20
+FH-790-HH A21-42 1620040132000
+ET-318-NQ A21-42 1620040623000
+BV-670-GV A21-42 1620040665000
+FH-790-HH A21-55 1620040747000
+DV-046-YY A21-42 1620040839000
+ET-318-NQ A21-55 1620041044000
+BV-670-GV A21-55 1620041071000
+FZ-792-EC A21-42 1620041284000
+DV-046-YY A21-55 1620041326000
+FZ-792-EC A21-55 1620041633000
+BP-301-UL A21-42 1620041863000
+BV-047-TT A21-42 1620042133000
+BP-301-UL A21-55 1620042487000
+BV-047-TT A21-55 1620042570000
+FT-918-CZ A21-42 1620042842000
+DZ-507-JZ A21-42 1620043072000
+DF-857-ZR A21-42 1620043398000
+FT-918-CZ A21-55 1620043609000
+DZ-507-JZ A21-55 1620043803000
+DF-857-ZR A21-55 1620043835000</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">FZ-792-EC 134</pre>
+         </div>
+      </div>
+   </div>
+</div>

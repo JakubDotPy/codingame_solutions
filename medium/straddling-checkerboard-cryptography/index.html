@@ -1,0 +1,41 @@
+<h1>Straddling Checkerboard Cryptography</h1>
+
+<a href="https://www.codingame.com/training/medium/straddling-checkerboard-cryptography">https://www.codingame.com/training/medium/straddling-checkerboard-cryptography</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">A straddling checkerboard is a device for converting an alphabetic plaintext into digits. Our checkerboard will look like this :<br><pre style="font-family: monospace"><br>  	0  1  2  3  4  5  6  7  8  9<br>(0) 	E  T     A  O  N     R  I  S<br> 2 	B  C  D  F  G  H  J  K  L  M<br> 6 	P  Q  /  U  V  W  X  Y  Z  . <br></pre><br><strong>Filling the checkerboard</strong><br><br>The first line is filled using a passphrase that contains 2 spaces. We remove letters already used from alphabet to fill the second and the third lines with &quot;/&quot; and &quot;.&quot; inserted in.<br><br>Each board cell has a value, whose tens digits is given by the row it's on, and whose units digits is given by the column. First row is always 0; the empty cells in the first row give the values for the second and third lines (2 and 6 here).<br><br><strong>Using the checkerboard</strong><br><br>When encrypting, unsupported characters need to be removed from input message<br>The valid characters are letters, digits and the period '.'<br>The digits have to be prefixed by the character &quot;/&quot;.<br><br>It is now easy to use the grid to encrypt a word :<br>- Column value is the units digit<br>- Row value is the tenths digit<br><br>By example :<br>I am 1 brut =&gt; IAM<strong>/1</strong>BRUT =&gt; 8 3 29 <strong>62 1</strong> 20 7 63 1 =&gt; 8329621207631<br>The digit is represented by &quot;/&quot; and its value<br> <br>Decrypting is easy too :<br>8 =&gt; I<br>3 =&gt; A<br>2 =&gt; empty so we take 20 and add next value = 29 =&gt; M<br>6 =&gt; 62 =&gt; &quot;/&quot; so we take next value =&gt; 1<br>...<br><br><strong>Let's make it harder to crack</strong><br><br>To complicate the cracking of the code, let's take a key number : 0432 and use it to modify by addition and modulo 10 the code :<br><pre style="font-family: monospace"><br>  8 3 2 9 6 2 1 2 0 7 6 3 1<br>+ 0 4 3 2 0 4 3 2 0 4 3 2 0<br>-------------------------------<br>  8 7 5 1 6 6 4 4 0 1 9 5 1<br></pre><br><br>To construct the number to add , concatenate the key number as many times as necessary. If it is too long, remove the excess numbers at the end (if the code is 059731, the number will be 043204)<br><br><strong>Last step</strong><br><br>The last thing to do is using the checkerboard to convert to characters (letters, slash or period, no digits) :<br>8751664401951 =&gt; IRNTXOOETSNT<br><br><strong>What do we need</strong><br><br>So in fact, all you need to encrypt/decrypt is :<br>- a header number containing the 10 digits (0 to 9), for the checkerboard header<br>- a passphrase with 8 letters and 2 spaces<br>- the positions of &quot;/&quot; and &quot;.&quot;<br>- the key number for add/modulo<br>- the message</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong> <var>action</var> to do : 1 to encrypt, 0 to decrypt<br><strong>Line 2</strong>  <var>header</var> numbers<br><strong>Line 3</strong> <var>passphrase</var><br><strong>Line 4</strong> <var>posslash</var> and <var>posdot</var> : positions in remaining letters list where we insert &quot;/&quot; and &quot;.&quot; (indexed at 0)<br><strong>Line 5</strong> <var>key</var> number<br><strong>Line 6</strong> <var>message</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">message after encrypting or decrypting</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1
+0123456789
+ET AON RIS
+12 19
+0432
+IAMABRUT</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">IRNTAUSYO</pre>
+         </div>
+      </div>
+   </div>
+</div>

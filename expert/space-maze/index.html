@@ -1,0 +1,136 @@
+<h1>Space Maze</h1>
+
+<a href="https://www.codingame.com/training/expert/space-maze">https://www.codingame.com/training/expert/space-maze</a>
+
+<div class="statement_back"></div>
+<div class="statement-body">
+    
+    <div class="statement-section statement-goal">
+        <h1>
+            <span class="icon icon-goal"> </span>
+            <span>The Goal</span>
+        </h1>
+        <div class="statement-goal-content">
+            Help the car to reach the target tile.
+        </div>
+    </div>
+    
+    <div class="statement-section statement-rules">
+        <h1>
+            <span class="icon icon-rules"> </span>
+            <span>Rules</span>
+        </h1>
+        <div>
+            <div class="statement-rules-content">
+                You are given a board with solid ground tiles, void cells, a car and floating platforms.
+                You can navigate the car as well as the platforms.
+                The car will always move by exactly one cell at a time.
+                The platforms move, until they hit a solid cell or another platform.
+                Platforms can only move in certain directions.
+                If the car is on a platform, they will both move together.
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="statement-section statement-expertrules">
+        <h2>
+            <span class="icon icon-expertrules"> </span>
+            <span>Advanced Details</span>
+        </h2>
+        <div class="statement-expert-rules-content">
+            It is possible to move a platform out of the game, into orbit. Every map is solvable without doing so, but for some maps such an action can make it easier to solve.
+            <br />
+            You can see the game&#39;s source code on <a href="https://github.com/eulerscheZahl/SpaceJam" target="_blank" rel="nofollow noopener noreferrer">https://github.com/eulerscheZahl/SpaceJam</a>.
+        </div>
+    </div>
+
+
+    
+    <div class="statement-victory-conditions">
+        <div class="icon victory"></div>
+        <div class="blk">
+            <div class="title">Victory Conditions</div>
+            <div class="text">
+                <ul style="padding-bottom:0"><li>
+                        The car reaches the target cell
+                    </li></ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="statement-lose-conditions">
+        <div class="icon lose"></div>
+        <div class="blk">
+            <div class="title">Loss Conditions</div>
+            <div class="text">
+                <ul style="padding-bottom:0"><li>
+                        The car gets lost in space by moves on a void cell or by sending a platform with the car on it into orbit
+                    </li><li>
+                        You don&#39;t reach the target cell within
+                        <const>200</const> turns.
+                    </li><li>
+                        You do not respond in time or output an unrecognized command.
+                    </li></ul>
+            </div>
+        </div>
+    </div>
+    <br />
+
+    
+    <div class="statement-section statement-protocol">
+        <h1>
+            <span class="icon icon-protocol"> </span>
+            <span>Initial input</span>
+        </h1>
+        
+        <div class="blk">
+            <div class="text">
+                <p><span class="statement-lineno">Line 1: </span><var>width</var>: the width of the board </p>
+                <p><span class="statement-lineno">Line 2: </span><var>height</var>: the height of the board </p>
+                <p><span class="statement-lineno">Next <var>height</var> lines: </span>the grid.
+                    A cell can be:
+                    </p><ul><li>
+                            <const>#</const> for a void cell
+                        </li><li>
+                            <const>.</const> for a ground cell
+                        </li><li>
+                            <const>0</const> for the target cell (exactly one such cell exists)
+                        </li></ul>
+                
+            </div>
+        </div>
+
+        
+        <div class="blk">
+            <div class="title">Turn input</div>
+            <div class="text">
+                <p><span class="statement-lineno">Line 1: </span><var>entityCount</var>, the number of entities in the game</p>
+                <p><span class="statement-lineno">Next <var>entityCount</var> lines: </span> <var>id</var>, <var>x</var>, <var>y</var>, <var>directions</var> <br />
+                    <var>directions</var> is either <const>CAR</const> for the car, or a combination of the letters <const>U</const>, <const>D</const>, <const>R</const> and <const>L</const>. <br />
+                    There are <const>7</const> different types of platforms: <const>U</const>, <const>D</const>, <const>R</const>, <const>L</const>, <const>UD</const>, <const>RL</const>, <const>UDRL</const>.
+                </p>
+            </div>
+        </div>
+
+        
+        <div class="blk">
+            <div class="title">Output</div>
+            <div class="text">
+                <span class="statement-lineno">A single line</span> containing an <var>id</var> and <var>direction</var> (<const>U</const>, <const>D</const>, <const>R</const> or <const>L</const>) to indicate what and where to move.
+                <br />
+            </div>
+        </div>
+
+        
+        <div class="blk">
+            <div class="title">Constraints</div>
+            <const>2</const> ≤ <var>entityCount</var> ≤ <const>10</const> <br />
+            <var>width</var> &#61; <const>19</const> <br />
+            <var>height</var> &#61; <const>10</const> <br />
+            Response time ≤
+            <const>1000</const> ms for the first turn, <const>50</const> ms for every turn after <br />
+            <const>200</const> turns to reach the target
+        </div>
+    </div>
+</div>

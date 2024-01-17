@@ -1,0 +1,38 @@
+<h1>Kids Blocks</h1>
+
+<a href="https://www.codingame.com/training/medium/kids-blocks">https://www.codingame.com/training/medium/kids-blocks</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Given a set of <strong>KIDS BLOCKS</strong>,<br><br>The blocks pieces can be categorized into exactly <const><strong>THREE</strong> SUBSETS</const> based on their widths:<br>- One inch pieces.<br>- Two inches pieces.<br>- and Three inches pieces.<br>All have the same height (One inch).<br><br><br>The <strong>problem</strong> is to determine if it is feasible to build a perfect rectangular wall (or square), with below conditions:<br>- Must use all pieces.<br>- The wall height must be two inches or more (two rows of blocks pieces at minimum).<br><br><br><strong>Note 1:</strong> If all available pieces were of the same size, It is considered a correct solution to stack them vertically, But not a solution to just queue them horizontally. <br><br><br>The program takes three integers as inputs which are: <br><var>x1</var> , <var>x2</var>, and <var>x3</var> --&gt; the count of pieces in each subset respectively.<br><br>The program should print either &quot;<const>POSSIBLE</const>&quot; or &quot;<const>NOT POSSIBLE</const>&quot; to indicate if a rectangular wall is buildable based on above rules.<br><br><br><strong>Note 2:</strong> The given set of pieces might produce several solutions (different possible walls with different dimensions), so you can simply consider the wall is buildable once <strong>ANY</strong> solution found.<br><br><br><strong>Example:</strong><br>Pieces:<br><pre style="font-family: monospace"> 5 &times; [_&quot;_]<br> 2 &times; [_&quot;____&quot;_]<br> 1 &times; [_&quot;____&quot;____&quot;_]</pre><br>Examples of wall:<br>6&times;2<br><pre style="font-family: monospace">[_&quot;_][_&quot;_][_&quot;____&quot;____&quot;_][_&quot;_]<br>[_&quot;____&quot;_][_&quot;_][_&quot;____&quot;_][_&quot;_]</pre><br>3&times;4<br><pre style="font-family: monospace">[_&quot;_][_&quot;_][_&quot;_]<br>[_&quot;_][_&quot;____&quot;_]<br>[_&quot;____&quot;_][_&quot;_]<br>[_&quot;____&quot;____&quot;_]</pre></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>x1</var> for the count of one-inch pieces (can be zero).<br><strong>Line 2:</strong> An integer <var>x2</var> for the count of two-inches pieces (can be zero).<br><strong>Line 3:</strong> An integer <var>x3</var> for the count of three-inches pieces (can be zero).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">A single line contains one string &quot;<const>POSSIBLE</const>&quot; or &quot;<const>NOT POSSIBLE</const>&quot;.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &le; <var>x1</var>, <var>x2</var>, <var>x3</var> &le; 30<br>- The wall should make use of all these pieces.<br>- The wall should consist of two rows or more (not a solution to just queue all pieces in one row!)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1
+1
+1</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">POSSIBLE</pre>
+         </div>
+      </div>
+   </div>
+</div>

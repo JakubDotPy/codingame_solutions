@@ -1,0 +1,38 @@
+<h1>Another Road Construction Site - 1</h1>
+
+<a href="https://www.codingame.com/training/easy/another-road-construction-site---1">https://www.codingame.com/training/easy/another-road-construction-site---1</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Mario is enjoying a nice ride on a European motorway. The road runs fast, the landscapes follow each other, it's a really nice day!<br><br>At one point, however, he encounters a road construction site and has to slow down. No problem Mario, just a few kilometers and you will be free to pick up speed! Ah no, wait, there's another one, slow down again... ugh, still more on the horizon!<br><br>How much time do these road construction sites make Mario waste?<br><br><br><strong>Rules</strong><br><br>The exercise provides the distance traveled and a summary of each construction site encountered, in the form of the exact kilometer it was encountered and the speed limit to be maintained.<br><br>Mario wants to enjoy the ride, but nevertheless always wants to keep the maximum allowed speed. For simplicity, let's assume that when the speed limit changes, Mario will adapt his speed instantly.<br><br><strong>Remark</strong>: on European highways the standard limit is <const>130 km/h</const>.<br><br>Let's give an example with a distance of 130 km.<br>The unobstructed travel time is 130 km / 130 km/h = 1 h, thus 60 minutes.<br><br>However, there is a road construction site starting at kilometer 60, and Mario must reduce his speed to 120km/h. This lasts 70 kilometers, until the end of the road. So we have two <strong>sections</strong>:<br>1) 60 km at 130 km/h =&gt; 27.69 minutes<br>2) 70 km at 120 km/h =&gt; 35.00 minutes<br><br>for a total of 62.69 minutes.<br><br>The difference to be provided in output is  62.69 - 60.00 = 2.69<br><br>Mario lost 3 minutes due to the road construction site!</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>roadLength</var> for the total kilometers of the route<br><strong>Line 2:</strong> An integer <var>zoneQuantity</var> for the number of road construction sites<br><strong>Next <var>zoneQuantity</var> lines:</strong> Two space separated integers <var>zoneKm</var> and <var>zoneSpeed</var>, respectively for the kilometer in which the road construction site begins, and the relative speed limit in km/h</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The difference between the theoretical time (without the delays due to construction sites) and the actual travel time.<br>It must be rounded to the nearest minute (as integer)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <var>roadLength</var> &lt; 1000<br>0 &lt; <var>zoneQuantity</var> &lt; 100<br>0 &lt; <var>zoneKm</var> &lt; <var>roadLength</var><br>0 &lt; <var>zoneSpeed</var> &lt;= 130</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">130
+1
+60 120</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">3</pre>
+         </div>
+      </div>
+   </div>
+</div>

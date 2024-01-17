@@ -1,0 +1,36 @@
+<h1>Carmichael numbers</h1>
+
+<a href="https://www.codingame.com/training/medium/carmichael-numbers">https://www.codingame.com/training/medium/carmichael-numbers</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You might know Fermat&rsquo;s small theorem:<br>If <var>n</var> is prime, then for any integer <var>a</var>, we have <var>a^n</var> &equiv; <var>a</var> mod <var>n</var>, that means that <var>a^n</var> and <var>a</var> have the same remainder in the euclidian division by <var>n</var>.<br><br>There are numbers, called Carmichael numbers, that are not prime but for which the equality remains true for any integer <var>a</var>.<br>For example, 561 is a Carmichael numbers because for any integer <var>a</var>, <var>a^561</var> &equiv; <var>a</var> mod <var>561</var>. It&rsquo;s in fact the smallest Carmichael number.<br><br>You have to tell if the given number is a Carmichael number or not. Beware, you might be given a prime number.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">A single number <var>n</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><const>YES</const> if <var>n</var> is a Carmichael number, or <const>NO</const> if it&rsquo;s not.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1⩽n⩽1000000</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">12</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">NO</pre>
+         </div>
+      </div>
+   </div>
+</div>

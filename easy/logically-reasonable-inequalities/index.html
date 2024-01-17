@@ -1,0 +1,38 @@
+<h1>Logically reasonable inequalities</h1>
+
+<a href="https://www.codingame.com/training/easy/logically-reasonable-inequalities">https://www.codingame.com/training/easy/logically-reasonable-inequalities</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">We are looking at a system of inequalities. Here all inequalities are simple and consist of one variable on each side. Considering a system of strict inequalities, determine whether this system is inherently consistent or if there is a flaw. A flaw is a contradiction of two or more inequalities, e.g. A &gt; B &gt; C &gt; A. This is not possible from a logical point of view.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> a positive integer <var>n</var><br><strong>The following <var>n</var> lines:</strong> inequalities of format <const>LETTER</const> &gt; <const>LETTER</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">A string &quot;<const>consistent</const>&quot; if all inequalities are consistent or &quot;<const>contradiction</const>&quot; if there is a contradiction found.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <var>n</var> &lt; 26<br><const>LETTER</const> is a single letter in uppercase</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+A &gt; B
+B &gt; C</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">consistent</pre>
+         </div>
+      </div>
+   </div>
+</div>

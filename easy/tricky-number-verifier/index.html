@@ -1,0 +1,42 @@
+<h1>Tricky  Number Verifier</h1>
+
+<a href="https://www.codingame.com/training/easy/tricky-number-verifier">https://www.codingame.com/training/easy/tricky-number-verifier</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Social insurance numbers in Austria (Europe) are 10 digits long: LLLxDDMMYY<br><br>- The rightmost 6 digits represent the person's birthday <var>DDMMYY</var>. <br>- The leftmost 3 digits <var>LLL</var> represent a unique identifier starting with 100. Therefore the very first digit is never 0.<br>- The fourth digit is a check digit <var>x</var> which is computed from <var>LLL</var> and <var>DDMMYY</var> by a specific algorithm.<br><br>A string supposed to contain a social insurance number could be invalid for four reasons:<br><br>1. The check digit <var>x</var> is incorrect.<br>2. The length of the string is inappropriate.<br>3. The string contains invalid or misplaced characters.<br>4. The birthday <var>DDMMYYYY</var> is an invalid date. Consider that dates like the 31st of April or the 29th February 2002 do not exist. It is assumed that <var>YY</var> = 00 represents 2000 rather than 1900. This might be important since 1900 was no leap year while 2000 was one. ;-)<br><br>For a valid identifier and a valid birthdate, the check digit <var>x</var> is computed according the following algorithm:<br><br><strong>1.</strong> Multiply each digit of the identifier and the birthday with an individual factor.<br><var>LLL</var>: The 1st digit is multiplied by 3, the 2nd digit by 7 and the 3rd digit by 9.<br><var>DDMMYY</var>: Multiply the 1st digit by 5, the 2nd by 8, ... and so on by 4, 2, 1, and 6.<br><br><strong>2.</strong> Sum up all the results of step 1.<br><br><strong>3.</strong> Now the check digit <var>x</var> is the remainder obtained by dividing the sum by 11. If the result is 10, the identifier <var>LLL</var> is dismissed. The rejected <var>LLL</var> is increased by 1 and the social number is recalculated by starting at step 1.<br><br><br><br><strong>Sample 1</strong>: identifier = 123, birthday = 21st January 2006 -&gt; <strong>123</strong>x<strong>210106</strong><br><br><strong>1.</strong><br><strong>1</strong>*3   <strong>2</strong>*7    <strong>3</strong>*9    <strong>2</strong>*5    <strong>1</strong>*8    <strong>0</strong>*4    <strong>1</strong>*2    <strong>0</strong>*1    <strong>6</strong>*6<br><br>3   14   27   10   8   0   2   0   36<br><br><strong>2.</strong> <br>3 + 14 + 27 + 10 + 8 + 0 + 2 + 0 + 36 -&gt; 100<br><br><strong>3.</strong><br>100 mod 11 -&gt; check digit <var>x</var> = 1<br><br>The social insurance number is 1231210106.<br><br><br><strong>Sample 2</strong>: identifier = 536, birthday = 24th December 1998 -&gt; <strong>536</strong>x<strong>241298</strong><br><br><strong>1.</strong><br><strong>5</strong>*3    <strong>3</strong>*7    <strong>6</strong>*9    <strong>2</strong>*5    <strong>4</strong>*8    <strong>1</strong>*4    <strong>2</strong>*2    <strong>9</strong>*1    <strong>8</strong>*6<br><br>15   21   54   10   32   4   4   9   48<br><br><strong>2.</strong> <br>15 + 21 + 54 + 10 + 32 + 4 + 4 + 9 + 48 -&gt; 197<br><br><strong>3.</strong><br>197 mod 11 -&gt; 10<br><br>The identifier cannot be used. So increment 536 to 537 and rerun the algorithm again.<br><br>537x241298 -&gt; sum = 206 -&gt; check digit <var>x</var> = 8<br><br>The social insurance number is 5378241298.<br><br>Your task is to read strings from the input and to check each social insurance number's validity, to correct it or to write a specific error to the output.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var> for the number of social insurance numbers.<br><strong>Next <var>N</var> lines:</strong> One line for each social insurance number to be verified.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>N</var></strong> lines: For each string, write one of the four outputs:<br><br>1. <const>OK</const>: If the input string is a valid social insurance number.<br>2. The corrected social insurance number if the input string was not a valid social insurance number.<br>3. <const>INVALID SYNTAX</const>: If the input string has an incorrect length or contains an invalid character.<br>4. <const>INVALID DATE</const>: The input string contains an invalid birth date. <br><br>Note: The test cases do not address the issue of an identifier overflow at 999.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &le; <var>N</var> &le; 1000</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+1231210106
+5378241298
+3872231176
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">OK
+OK
+OK</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,43 @@
+<h1>Playfair Cipher</h1>
+
+<a href="https://www.codingame.com/training/medium/playfair-cipher">https://www.codingame.com/training/medium/playfair-cipher</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Edith and Norman have decided to encrypt all of their messages through 'Playfair cipher'. While Norman can encrypt and decrypt on his own, Edith asks for your help with the process. Now you and Edith are both on your desk figuring it out.<br><br>This encryption method requires the use of a <strong>key table</strong> - a grid of 25 alphabets in a 5 &times; 5 square.<br><br>Example:<pre style="font-family: monospace">A B C D E<br>F G H I K<br>L M N O P<br>Q R S T U<br>V W X Y Z</pre><br>In Playfair cipher the message is <strong>split into digraphs</strong>, pairs of two letters, and then encrypted by following these <strong>rules</strong> in order:<br><br><strong>1)</strong> If the letters appear on the same row of your table, replace them with the letters to their immediate right respectively. (Also applies for the cases with same letters)<br><br>Example:<pre style="font-family: monospace">A B C D E<br>F G H I K<br>L M N O P<br>Q R S T U<br>V W X Y Z<br>Message: MO<br>Output:  NP</pre><br><strong>2)</strong> If the letters appear on the same column of your table, replace them with the letters immediately below respectively.<br><br>Example:<pre style="font-family: monospace">A B C D E<br>F G H I K<br>L M N O P<br>Q R S T U<br>V W X Y Z<br>Message: GR<br>Output:  MW</pre><br><strong>Note:</strong> In cases where letters are at the edges, replace the value of the key whose isn't present, with the key that is at the start of the row/column (according to the rules given).<br><br>Example:<pre style="font-family: monospace">A B C D E<br>F G H I K<br>L M N O P<br>Q R S T U<br>V W X Y Z<br>Message: CE BW<br>Output:  DA GB</pre><br><strong>3)</strong> If neither of the preceding two rules is true, form an imaginary rectangle with the two letters as edge points. Then, replace them with the letters on the same row respectively but at the other pair of corners of the rectangle. The order is important &ndash; the first letter of the encrypted pair is the one that lies on the same row as the first letter of the plaintext pair.<br><br>Example:<pre style="font-family: monospace">A B C D E<br>F G H I K<br>L M N O P<br>Q R S T U<br>V W X Y Z<br>Message: GT<br>Output:  IR</pre><br>In addition, Norman has also created some <strong>additional rules</strong> to increase credibility:<br> - If the letters in the message are in lower case, they are supposed to be changed to their respective upper case.<br> - If all the letters cannot be kept in pairs, the message is a <strong>dud</strong>.<br> - Any characters that are not present in the key table are ignored from the message.<br><br><strong> For decryption, you simply do the process in reverse. </strong><br><br>If you wish to understand it further, here is a link: https://en.wikipedia.org/wiki/Playfair_cipher</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1 - 5:</strong> The 5 rows of the key table where letters are space-separated.<br><strong>Line 6:</strong> The action to be preformed, <const>ENCRYPT</const> or <const>DECRYPT</const>.<br><strong>Line 7:</strong> <var>N</var>, the number of messages to read.<br><strong>The following <var>N</var> lines:</strong> Each line contains a message.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>N</var> lines:</strong> Each message after decryption or encryption. In the case where the message is a dud, print out <const>DUD</const> as output.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <var>N</var> &lt; 50<br>0 &lt; size of each message &lt; 200</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">A B C D E
+F G H I K
+L M N O P
+Q R S T U
+V W X Y Z
+ENCRYPT
+1
+HK</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">IF</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,36 @@
+<h1>The Stonemason</h1>
+
+<a href="https://www.codingame.com/training/medium/the-stonemason">https://www.codingame.com/training/medium/the-stonemason</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are a Middle-Age stonemason and you have to shape stones with a special ruler.<br>The ruler uses anthropomorphic lengths:<br><br>The (small) <strong>palm</strong> of the hand (its width)<br>The <strong>full palm</strong> (from forefinger to little finger)<br>The <strong>span</strong> (from thumb to little finger)<br>The <strong>foot</strong><br>The <strong>cubit</strong> (from elbow to little finger)<br><br>They have the following feature:<br>A <strong>palm</strong> and a <strong>full palm</strong> are a <strong>span</strong><br>A <strong>full palm</strong> and a <strong>span</strong> are a <strong>foot</strong><br>A <strong>span</strong> and a <strong>foot</strong> are a <strong>cubit</strong><br><br>For this puzzle, we will place the units on a line, from left to right, the biggest on the left, the smallest on the right. The <strong>span</strong> is the central unit, the <strong>full palm</strong> is on its right and the <strong>foot</strong> on its left.<br>Two following units have the same added length than the one on their immediate left, including subdivisions of the <strong>palm</strong> or of the bigger units.<br>A rectangular stone whose dimensions are a <strong>palm</strong> and a <strong>full palm</strong> has got the same shape than a rectangular stone whose dimensions are a <strong>full palm</strong> and a <strong>span</strong>. It&rsquo;s just the same stone but bigger.<br><br>For the purpose of this puzzle, we won&rsquo;t use their real name but their position in the set:<br>The <strong>span</strong> in the centre, just call it <var>C</var>.<br>The <strong>foot</strong> is one unit on the left of the <strong>span</strong>, call it <var>1L</var>. The <strong>cubit</strong> is <var>2L</var>.<br>The <strong>full palm</strong> is one unit on the right of the <strong>span</strong>, it&rsquo;s <var>1R</var> and the <strong>palm</strong> is <var>2R</var>.<br>The unnamed units are <var>3L</var>, <var>4R</var> and so on.<br>You only own one unit of each in your set. And you want the least amount of units used.<br><br>You are given a multiple of the <strong>span</strong>, for example three <strong>span</strong>s, and you must measure it, using the set of units, but you must not use two adjacent units, because the previous one can replace it. For example, if you have to use a <strong>span</strong> and a <strong>foot</strong>, replace them by a <strong>cubit</strong>.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">length</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">set of units needed to measure the length</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">C</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,55 @@
+<h1>Advanced Tree</h1>
+
+<a href="https://www.codingame.com/training/medium/advanced-tree">https://www.codingame.com/training/medium/advanced-tree</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Your goal is to recreate the behaviour of the UNIX tree program with support for some flags.<br>You'll be given a starting path <var>S</var>, a list of flags <var>F</var>, and a list of files.<br><br>The tree will be printed with characters pipe <const>|</const> backtick <const>`</const> hyphen <const>-</const> and with spaces.<br>Refer to the first example to understand how you need to print the tree.<br><br>You'll also need to handle three flags inspired by the original tree program:<br>- <const>-a</const> : Display hidden directories and files.<br>- <const>-d</const>: Only display directories (modifies the report line, see below).<br>- <const>-L</const> <var>depth</var>: Limit the &quot;depth&quot; of the tree.<br><br>A hidden file or directory has a name starting with a dot: <const>.</const><br><br>The input path <var>S</var> must be printed followed by the text <const>[error opening dir]</const> <strong>if</strong>:<br>- the path is a file, or<br>- the path doesn't exist<br><br>Finally, you'll need to print a new line plus the number of directories and files found as follows:<br><br><const><var>x</var> directories, <var>y</var> files</const><br><br>where <var>x</var> is the number of directories and <var>y</var> is the number of files. If the <const>-d</const> option is in effect, that last line reads like this instead:<br><br><const><var>x</var> directories</const><br><br>If <var>x</var> or <var>y</var> are equal to <const>1</const>, then you need to print <const>directory</const> and <const>file</const> respectively.<br><br>The tree needs to be sorted in <strong>ascending, alphabetical, case insensitive order</strong> and <strong>without considering</strong> the leading and first character '.' (dot) from hidden files or directories names.<br><br>Incorrect flags must be ignored.<br>You're only given valid paths, which are only starting with <strong>one &quot;current directory&quot; (./)</strong> and <strong>without &quot;parent directory&quot; (../)</strong><br>There are no empty directories.<br>There are no spaces in files or directory names.<br>There are no duplicated directories or files with the same name as either a hidden or non-hidden file/directory <strong>on the same depth</strong> (i.e: you will never see both <strong>.Directory1</strong> and <strong>Directory1</strong> in the same folder)</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> A string <var>S</var> - a path to execute &quot;tree&quot; in<br><strong>Line 2:</strong> An string <var>F</var> - a list of flags, possibly null, for the tree program separated with commas <const>,</const><br><strong>Line 3:</strong> An integer <var>N</var> - the number of files<br><strong>Next <var>N</var> lines:</strong> A list of files; each line is a single file</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The tree output</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><var>N</var> &gt;= 0<br>When provided, <var>depth</var> &gt; 0</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">.
+
+6
+./Directory1/File1
+./Directory1/File2
+./Directory2/File3
+./Directory1/File4
+./Directory2/Directory3/File5
+./File6</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">.
+|-- Directory1
+|   |-- File1
+|   |-- File2
+|   `-- File4
+|-- Directory2
+|   |-- Directory3
+|   |   `-- File5
+|   `-- File3
+`-- File6
+
+3 directories, 6 files</pre>
+         </div>
+      </div>
+   </div>
+</div>

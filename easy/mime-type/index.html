@@ -1,0 +1,94 @@
+<h1>MIME Type</h1>
+
+<a href="https://www.codingame.com/training/easy/mime-type">https://www.codingame.com/training/easy/mime-type</a>
+
+<div id="statement_back" class="statement_back" style="display:none"></div>  <div class="statement-body"> 
+      <!-- GOAL --> 
+      <div class="statement-section statement-goal"> 
+        <h2> 
+          <span class="icon icon-goal">&nbsp;</span> 
+          <span>The Goal</span> 
+        </h2> 
+        <div class="statement-goal-content"> 
+          <em>MIME types</em>&nbsp;are used in numerous internet protocols to associate a media type (html, image, video ...) with the content sent. The <em>MIME type</em> is generally inferred from the extension of the file to be sent.<br />
+<br />
+You have to write a program that makes it possible to detect the MIME type of a file based on its name.
+        </div> 
+      </div> 
+      <!-- RULES --> 
+      <div class="statement-section statement-rules"> 
+        <h2> 
+          <span class="icon icon-rules">&nbsp;</span> 
+          <span>Rules</span> 
+        </h2> 
+        <div><div class="statement-rules-content">You are provided with a table which associates <em>MIME types</em> to file extensions. You are also given a list of names of files to be transferred and for each one of these files, you must find the <em>MIME type</em> to be used.<br />
+<br />
+The extension of a file is defined as the substring which follows the last occurrence, if any, of the dot character within the file name.<br />
+If the extension for a given file can be found in the association table (case insensitive, e.g. TXT is treated the same way as txt), then print the corresponding <em>MIME type</em>. If it is not possible to find the <em>MIME type</em> corresponding to a file, or if the file doesn&rsquo;t have an extension, print&nbsp;<action>UNKNOWN</action>.</div> 
+        </div> 
+      </div> 
+      <!-- PROTOCOL --> 
+      <div class="statement-section statement-protocol"> 
+        <h2> 
+          <span class="icon icon-protocol">&nbsp;</span> 
+          <span>Game Input</span> 
+        </h2> 
+        <!-- Protocol block --> 
+        <div class="blk"> 
+  <div class="title">Input</div> 
+          <div class="text"><p><span class="statement-lineno">Line 1</span>: Number <var>N</var> of elements which make up the association table.</p>
+<p><span class="statement-lineno">Line 2</span>: Number <var>Q</var> of file names to be analyzed.</p>
+<p><span class="statement-lineno"><var>N</var> following lines:</span> One file extension per line and the corresponding <i>MIME type</i> (separated by a blank space).</p>
+<p><span class="statement-lineno"><var>Q</var> following lines:</span> One file name per line.</p></div> 
+        </div> 
+ 
+        <!-- Protocol block --> 
+        <div class="blk"> 
+  <div class="title">Output</div> 
+          <div class="text"><div>For each of the <var>Q</var> filenames, display on a line the corresponding <i>MIME type</i>. If there is no corresponding type, then display <action>UNKNOWN</action>.</div></div> 
+        </div> 
+ 
+        <!-- Protocol block --> 
+        <div class="blk"> 
+  <div class="title">Constraints</div> 
+          <div class="text">0 &lt; <var>N</var> &lt; 10000 <br/>
+0 &lt; <var>Q</var> &lt; 10000
+
+<ul>
+	<li>File extensions are composed of a maximum of 10 alphanumerical ASCII characters.</li>
+	<li><i>MIME types</i> are composed of a maximum 50 alphanumerical and punctuation&nbsp;ASCII characters.</li>
+	<li>File names are composed of a maximum of 256 alphanumerical ASCII characters and dots (full stops).</li>
+	<li>There are no spaces in the file names, extensions or&nbsp;<i>MIME types</i>.</li>
+</ul></div> 
+        </div> 
+ 
+        <!-- Protocol block --> 
+        <div class="blk"> 
+  <div class="title">Example</div> 
+          <div class="text"><div class="statement-inout">
+<div class="statement-inout-in" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Input</div>
+
+<pre>3
+3
+html text/html
+png image/png
+gif image/gif
+animated.gif
+portrait.png
+index.html
+</pre>
+</div>
+
+<div class="statement-inout-out" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Output</div>
+
+<pre>image/gif
+image/png
+text/html
+</pre>
+</div>
+</div></div> 
+        </div> 
+      </div>
+  </div>

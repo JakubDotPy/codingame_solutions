@@ -1,0 +1,46 @@
+<h1>ISBN Check digit</h1>
+
+<a href="https://www.codingame.com/training/easy/isbn-check-digit">https://www.codingame.com/training/easy/isbn-check-digit</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">International Standard Book Number (<strong>ISBN</strong>) is a unique numeric commercial book identifier.<br><br>Before year 2007 ISBNs were <const>10</const>-digit long. After that year ISBNs extended to <const>13</const> digits. In both ISBN-10 and ISBN-13 standards, the last digit is the check digit, for error detection.<br><br>ISBN-10 check digit is calculated by Modulus <const>11</const> with decreasing weights on the first 9 digits.<br>Example: <strong>030640615?</strong><br>0&times;10 + 3&times;9 + 0&times;8 + 6&times;7 + 4&times;6 + 0&times;5 + 6&times;4 + 1&times;3 + 5&times;2 = 130.<br>130 / <const>11</const> = 11 remainder <const>9</const>.<br>Check digit is the value needed to add to the sum to make it dividable by 11. In this case it is <const>2</const>.<br>So the valid ISBN is <strong>0306406152</strong>.<br>In case 10 being the value needed to add to the sum, we use <const>X</const> (upper case X) as the check digit instead of 10.<br><br>ISBN-13 check digit is calculated by Modulus <const>10</const> with alternate weights of <const>1</const> and <const>3</const> on the first 12 digits.<br>Example: <strong>978030640615?</strong><br>9&times;1 + 7&times;3 + 8&times;1 + 0&times;3 + 3&times;1 + 0&times;3 + 6&times;1 + 4&times;3 + 0&times;1 + 6&times;3 + 1&times;1 + 5&times;3 = 93.<br>93 / <const>10</const> = 9 remainder <const>3</const>.<br>Check digit is the value needed to add to the sum to make it dividable by 10. So the check digit is <const>7</const>. The valid ISBN is <strong>9780306406157</strong>.<br><br><strong>Your task is to validate a list of ISBNs.</strong><br><br>A valid ISBN should contain the digits <const>0</const> to <const>9</const> only, except for the check digit <const>X</const> which is determined as explained above. <const>X</const> or other improper characters appearing in the wrong place will render an ISBN invalid.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong>: An integer <var>N</var> for the number of ISBNs to verify.<br><strong>Next <var>N</var> lines</strong>: One line for each ISBN to verify.<br><br>In this puzzle we assume all ISBNs have been normalized - have spaces and dash characters removed.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1</strong>: A string <const>Y invalid:</const> where <var>Y</var> is the number of invalid ISBNs.<br><strong>Next <var>Y</var> lines</strong>: One line for each invalid ISBN, in the same order as given in the inputs.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>N</var> &le; 500<br>1 &le; <var>Y</var> &le; <var>N</var> (i.e. there will always be at least one invalid ISBN in each case)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">6
+0306406152
+013603599X
+1145185215X
+9780306406157
+9780306406154
+978043551907X
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">3 invalid:
+1145185215X
+9780306406154
+978043551907X</pre>
+         </div>
+      </div>
+   </div>
+</div>

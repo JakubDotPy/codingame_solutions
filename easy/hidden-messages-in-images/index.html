@@ -1,0 +1,48 @@
+<h1>Hidden Messages In Images</h1>
+
+<a href="https://www.codingame.com/training/easy/hidden-messages-in-images">https://www.codingame.com/training/easy/hidden-messages-in-images</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Steganography in images is to hide information in pixels of images imperceptibly to the human eye. In this problem there are ASCII messages hidden in the image pixels. More specifically, the least significant bit of each pixel represents a piece of the ASCII message.<br><br>Every 8 consecutive bits we have a byte, convert that byte into an ASCII value. To make your life easier, images will always have a number of pixels multiple of 8. Print all ASCII characters extracted from the image.<br><br><strong>Example</strong><br>Given an input image with <var>w</var>idth = 4 and <var>h</var>eight = 4<br>106 19 134 22<br>161 192 98 184<br>52 51 97 88<br>208 63 58 25<br><br>106 =&gt; 01101010 =&gt; less significant bit =&gt; 0<br>19 =&gt; 00010011 =&gt; less significant bit =&gt; 1<br>134 =&gt; 10000110 =&gt; less significant bit =&gt; 0<br>22 =&gt; 00010110 =&gt; less significant bit =&gt; 0<br>161 =&gt; 10100001 =&gt; less significant bit =&gt; 1<br>192 =&gt; 11000000 =&gt; less significant bit =&gt; 0<br>98 =&gt; 01100010 =&gt; less significant bit =&gt; 0<br>184 =&gt; 10111000 =&gt; less significant bit =&gt; 0<br>52 =&gt; 00110100 =&gt; less significant bit =&gt; 0<br>51 =&gt; 00110011 =&gt; less significant bit =&gt; 1<br>97 =&gt; 01100001 =&gt; less significant bit =&gt; 1<br>88 =&gt; 01011000 =&gt; less significant bit =&gt; 0<br>208 =&gt; 11010000 =&gt; less significant bit =&gt; 0<br>63 =&gt; 00111111 =&gt; less significant bit =&gt; 1<br>58 =&gt; 00111010 =&gt; less significant bit =&gt; 0<br>25 =&gt; 00011001 =&gt; less significant bit =&gt; 1<br><br>Extracted bits =&gt; 0100100001100101<br>Split binary information into bytes =&gt; [ &quot;01001000&quot;,  &quot;01100101&quot;]<br>Map bytes to ASCII =&gt; [&quot;H&quot;, &quot;e&quot;]<br><br>Output =&gt; He</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Two integers <var>w</var>, <var>h</var> for the dimensions of the image.<br><strong>Next <var>h</var> lines:</strong> <var>w</var> space separated integers for the pixels of the image.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">ASCII message extracted from the image</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">8 &le; <var>w</var>,<var>h</var> &le; 50<br><var>w</var>*<var>h</var> % 8 == 0</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">8 12
+220 251 30 182 233 122 150 30
+132 101 135 212 246 201 128 203
+62 33 39 70 73 175 218 140
+44 165 9 140 83 67 34 100
+142 75 125 242 49 175 209 37
+252 26 123 6 186 72 230 94
+218 85 228 205 146 67 219 187
+194 159 81 190 51 235 41 121
+208 33 245 71 172 218 97 130
+122 31 135 198 135 249 174 28
+162 109 149 216 156 195 140 10
+100 252 1 164 150 22 144 109</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">Hello World!</pre>
+         </div>
+      </div>
+   </div>
+</div>

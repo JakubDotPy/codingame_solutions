@@ -1,0 +1,53 @@
+<h1>Maze for the Champions</h1>
+
+<a href="https://www.codingame.com/training/medium/maze-for-the-champions">https://www.codingame.com/training/medium/maze-for-the-champions</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Your objective is to send the fastest champion to solve the maze. The champions have different capabilities and speed.<br><br>- The <strong>WARRIOR</strong> has no special capability but he is the fastest and he can cross a cell in <strong>2</strong> seconds!<br>- The <strong>DWARF</strong> can break walls if the wall thickness is only 1 cell. He needs <strong>3</strong> seconds to cross a cell.<br>- The <strong>ELF</strong> can make diagonal moves. Because he can make a lot of different moves, he must think twice before moving and it will cost <strong>4</strong> seconds to decide which move to make. When both give same result, prioritize straight moves as opposed to diagonal moves.<br>- The <strong>MAGE</strong> can fly straight forward as many cells as he wants without crossing any walls. Because of his long wizard robe, he moves very slowly and each cell marked will cost <strong>5</strong> seconds.<br><br><strong>Rules:</strong><br><br>- Entry is given by an arrow (<const>&lt;</const>, <const>&gt;</const>, <const>v</const>, <const>^</const>)  that points inside the maze.<br>- Exit is given by an arrow (<const>&lt;</const>, <const>&gt;</const>, <const>v</const>, <const>^</const>)  that points outside the maze. <br>- Empty cells are shown with <const>.</const><br>- Walls are shown with <const>#</const><br>- The borders of the maze can't be broken by the dwarf.<br>- First step and last step are mandatory and can't be changed, even for the mage who needs to land on the end point.<br><br><strong>Some Examples:</strong><br><br><pre style="font-family: monospace">With WARRIOR:<br>Input      Output<br>#######    #######<br>#.....#    #.....#<br>&gt;.....&gt;    &gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>#.....#    #.....#<br>#######    #######<br>score: 14 (7 steps x 2 seconds)<br><br><br>With DWARF:<br>Input      Output<br>#######    #######<br>#...#.#    #...#.#<br>&gt;.#.#.&gt;    &gt;&gt;&gt;&gt;&gt;&gt;&gt;<br>#.#...#    #.#...#<br>#######    #######<br>score: 21 (7 steps x 3 seconds)<br><br><br>With ELF:<br>Input      Output<br>#######    #######<br>#.....&gt;    #...&gt;&gt;&gt;<br>#.#.###    #.#o###<br>&gt;..#..#    &gt;&gt;o#..#<br>#######    #######<br>score: 28 (7 steps x 4 seconds)<br><br><br>With MAGE:<br>Input      Output<br>#######    #######<br>#.....&gt;    #....&gt;&gt;<br>#####.#    #####.#<br>&gt;.....#    &gt;....^#<br>#######    #######<br>score: 20 (4 x 5 seconds)<br></pre></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>W</var> for the width of the maze<br><strong>Line 2:</strong> An integer <var>H</var> for the height of the maze<br><strong>Next <var>H</var> lines:</strong> Details for the maze</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> The <strong>champion</strong> and his <strong>score</strong>, separated with a space<br><strong>Next <var>H</var> lines:</strong> The complete maze with the path travelled by the champion. The path is represented using the arrows denoting the directions (<const>&lt;</const>, <const>&gt;</const>, <const>v</const>, <const>^</const>) except for the elf's diagonal moves which are denoted with <const>o</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">All champions can complete all the mazes.<br>There is always only one champion (no draw between two champions)<br><const>0</const> &lt; <var>W</var> &lt; <const>25</const><br><const>0</const> &lt; <var>H</var> &lt; <const>25</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">8
+8
+########
+#......#
+#.####.&gt;
+#.######
+#.######
+#.####.#
+&gt;......#
+########</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">WARRIOR 28
+########
+#&gt;&gt;&gt;&gt;&gt;v#
+#^####&gt;&gt;
+#^######
+#^######
+#^####.#
+&gt;^.....#
+########</pre>
+         </div>
+      </div>
+   </div>
+</div>

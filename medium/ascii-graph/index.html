@@ -1,0 +1,44 @@
+<h1>Ascii Graph</h1>
+
+<a href="https://www.codingame.com/training/medium/ascii-graph">https://www.codingame.com/training/medium/ascii-graph</a>
+
+<div class="statement_wrapping_div" style="position: relative;"> 
+
+<style type="text/css"> 
+.statement_wrapping_div, .statement {font-size: 14px;font-weight: 400;}  
+.statement_wrapping_div {margin-bottom: 10px;}
+.statement_wrapping_div ul {padding-left: 40px;}
+.statement {background-color:rgba(255, 255, 255, 0.85);padding: 20px;padding-top:0px;}
+code, span.const {display:inline-block;font-family:Inconsolata,consolas,monospace;padding-left:5px;padding-right:5px;padding-top:1px;padding-bottom:1px;background-color:#18a1ea;white-space: nowrap;margin-right:2px;color: white;}
+span.var {display: inline-block;padding-left:5px;padding-right:5px;padding-top:1px;padding-bottom:2px;background-color:#f2dd00;white-space:nowrap;margin-left:1px;margin-right:2px;color:black;}
+.stat_mid_title {font-weight:700;margin-bottom:5px;}
+.protocol_title{color:#ffd200;}
+.cross-statementBlock{position:relative;}</style>
+
+<div class="stat_mid_title">The program:</div>
+<div class="question-statement">Display the given list of points in an orthonormal basis as an ASCII graph.<br /><br />The X axis is represented by dash characters <span class="const">-</span>.<br />The Y axis is represented by vertical bar (pipe) characters <span class="const">|</span>.<br />The origin of the graph is represented by a plus character <span class="const">+</span>.<br />Every point of the given list is represented by a star character <span class="const">*</span>.<br />Every empty cell of the graph is represented by a dot character <span class="const">.</span>.<br /><br />If one of the given points is on an axis, the star character <span class="const">*</span> must be chosen over the one corresponding to the axis.<br /><br />The size of the graph to display is defined by the following rules:<br />The minimal coordinate on the X axis is: (Minimal X axis coordinate of any given point and/or origin) - 1<br />The maximal coordinate on the X axis is: (Maximal X axis coordinate of any given point and/or origin) + 1<br />The minimal coordinate on the Y axis is: (Minimal Y axis coordinate of any given point and/or origin) - 1<br />The maximal coordinate on the Y axis is: (Maximal Y axis coordinate of any given point and/or origin) + 1</div><br />
+</div>
+
+<div style="background-color: rgba(0, 0, 0, 0.85);padding: 20px;color: white;margin-top: 10px;">
+<div class="protocol_title"><b>INPUT:</b></div>
+<div class="question-statement-input"><strong>Line 1:</strong> An integer <span class="var">N</span>, the number of points on the graph<br /><strong>Next <span class="var">N</span> lines:</strong> Two integers <span class="var">x</span> and <span class="var">y</span>, separated by a space, for the coordinates of every given points.</div><br /> 
+
+<div class="protocol_title"><b>OUTPUT:</b></div>
+<div class="question-statement-output">Strings, each one representing one ligne of the ASCII graph.</div><br /> 
+
+<div class="protocol_title"><b>CONSTRAINTS:</b></div>
+<div class="question-statement-constraints">0 &#8804; <span class="var">N</span> &#8804; 20<br />-20 &#8804; <span class="var">x</span> &#8804; 20<br />-20 &#8804; <span class="var">y</span> &#8804; 20</div><br /> 
+
+<div class="protocol_title"><b>EXAMPLE:</b></div>
+<div style="border: 1px solid white; width: 440px;">
+<div style="float: left; margin-left: 10px; padding-left: 10px; width: 200px; font-family: monospace;">
+<div><b>Input</b></div>
+<div class="question-statement-example-in">1<br />1 1</div>
+</div>
+<div style="margin-left: 10px; float: left; padding-left: 5px; width: 200px; font-family: monospace;">
+<div><b>Output</b></div>
+<div class="question-statement-example-out">.|..<br />.|*.<br />-+--<br />.|..</div>
+</div>
+<div style="clear: both;">&nbsp;</div>
+</div>
+</div>

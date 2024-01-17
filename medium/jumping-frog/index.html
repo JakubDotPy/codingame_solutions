@@ -1,0 +1,41 @@
+<h1>Jumping  Frog</h1>
+
+<a href="https://www.codingame.com/training/medium/jumping-frog">https://www.codingame.com/training/medium/jumping-frog</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are given a grid of size <var>N</var>*<var>N</var> representing a lake. It is composed of water lily (#) or water (.)<br>You have to find the length of the longest path that a frog can take without going twice on the same water lily and never fall in the water.<br><br>The frog can jump of 1 or 2 squares in the four principal directions or jump of one square in diagonals.<br><br>Be careful with the beginning coordinates of the frog. (0,0) is the top left corner of the grid.<br><br>There may be more than one longest path, but they all have the same length. For the example, the longest path is of 7 water lilies and you can find different paths of this length :<br><br><pre style="font-family: monospace"></pre><pre style="font-family: monospace">12.        13.        17.<br>.34   or   .24   or   .26<br>765        657        354</pre><pre style="font-family: monospace"></pre><br><br>and many others...</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1 :</strong> an integer <var>N</var> the size of the lake<br><strong>Next N lines :</strong> a string representing a line of the grid (# or . )<br><strong>Next 2 lines :</strong> the beginning coordinates <var>xd</var>  and <var>yd</var> of the frog (integers)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">An integer which is the length of the longest path possible for the frog.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">3&lt;= <var>N</var> &lt;=15</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+##.
+.##
+###
+0
+0</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">7</pre>
+         </div>
+      </div>
+   </div>
+</div>

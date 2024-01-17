@@ -1,0 +1,98 @@
+<h1>2048</h1>
+
+<a href="https://www.codingame.com/multiplayer/optimization/2048">https://www.codingame.com/multiplayer/optimization/2048</a>
+
+<div class="statement_back"></div>
+<div class="statement-body">
+  
+  <div class="statement-section statement-goal">
+    This is a port of the popular game 2048, play it online on <a href="https://play2048.co/" target="_blank" rel="nofollow noopener noreferrer">https://play2048.co/</a> <br /><br /><br />
+    <h1>
+      <span class="icon icon-goal"> </span>
+      <span>The Goal</span>
+    </h1>
+    <div class="statement-goal-content">
+      Collect as many points as possible by joining two tiles with the same value.
+    </div>
+  </div>
+  
+  <div class="statement-section statement-rules">
+    <h1>
+      <span class="icon icon-rules"> </span>
+      <span>Rules</span>
+    </h1>
+    <div>
+      <div class="statement-rules-content">The game is played on a grid of size <const>4</const>x<const>4</const>. Some of the cells are occupied by numbers. You can move all the numbers on the grid in one of the four directions (up, down, left, right). Numbers will move as far as they can and only stop at an edge or another number. <br />
+      If two numbers with the same value collide and none of those has taken part in another merge during the turn, they will merge into a single number having twice the value. This will award you a score equal to the new value. <br />
+      After each move a new number will spawn at one of the free tiles at random. The new number can either be <const>2</const> or <const>4</const>.
+      </div>
+    </div>
+  </div>
+  
+  <div class="statement-section statement-expertrules">
+    <h1>
+      <span class="icon icon-expertrules"> </span>
+      <span>Expert Rules</span>
+    </h1>
+    <div class="statement-expert-rules-content">
+      For technical limitations you can only output 600 commands per game. To allow for longer games, you can print multiple actions at once.
+      The game uses a pseudo-random number generator to spawn new numbers, please refer to <a href="https://github.com/eulerscheZahl/2048/blob/master/src/main/java/engine/Board.java#L25" target="_blank" rel="nofollow noopener noreferrer">github</a> for details.<br />
+      The current seed is given to your program as an input each turn.
+    </div>
+  </div>
+
+ 
+  <div class="statement-section statement-examples">
+    <h1>
+      <span class="icon icon-example"> </span>
+      <span>Example</span>
+    </h1>
+
+    <div class="statement-examples-text">
+      Given the following board:<br />
+      <table><tbody><tr><td>4 </td><td>4 </td><td>4 </td><td>0</td></tr><tr><td>2 </td><td>0 </td><td>2 </td><td>2</td></tr><tr><td>4 </td><td>4 </td><td>0 </td><td>4</td></tr><tr><td>0 </td><td>2 </td><td>2 </td><td>4</td></tr></tbody></table>
+Applying a left move to it, you&#39;ll get:<br />
+      <table><tbody><tr><td>8 </td><td>4 </td><td>0 </td><td>0</td></tr><tr><td>4 </td><td>2 </td><td>0 </td><td>0</td></tr><tr><td>8 </td><td>4 </td><td>0 </td><td>0</td></tr><tr><td>4 </td><td>4 </td><td>0 </td><td>0</td></tr></tbody></table>
+Note that the two <const>4</const>&#39;s in the bottom line are not merged, as the left <const>4</const> was created in the same turn.
+    </div>
+
+  </div>
+
+  
+  <div class="statement-section statement-protocol">
+    <h1>
+      <span class="icon icon-protocol"> </span>
+      <span>Game Input</span>
+    </h1>
+    
+
+    <div class="blk">
+      <div class="title">Input per turn</div>
+      <div class="text">
+        <p><span class="statement-lineno">Line 1: <var>seed</var>, the seed used to spawn new tiles.</span></p>
+        <p><span class="statement-lineno">Line 2: <var>score</var>, your total score so far.</span></p>
+        <p><span class="statement-lineno">Line 3-6: </span>four space separated integers <var>value</var> per line, giving the current grid with numbers.</p>
+      </div>
+    </div>
+
+    
+    <div class="blk">
+      <div class="title">Output</div>
+      <div class="text">
+        <span class="statement-lineno">A single line</span> containing <action>U</action>, <action>D</action>, <action>R</action> or <action>L</action>. You can print multiple actions at once, e.g. <action>UURDLUDL</action> <br />
+        If you add a <const>-</const> to the output, you will disable the viewer (as it can get laggy for longer games).
+        <br />
+      </div>
+    </div>
+
+    
+    <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="text">
+        <var>BOARD_SIZE</var> &#61; <const>4</const>
+        <br />Allotted response time to output is ≤ <const>1</const> second for the first turn.
+        <br />Allotted response time to output is ≤ <const>50</const> ms for the later turns.
+        </div>
+    </div>
+  </div>
+</div>

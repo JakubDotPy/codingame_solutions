@@ -1,0 +1,38 @@
+<h1>Self Checkout Machine</h1>
+
+<a href="https://www.codingame.com/training/medium/self-checkout-machine">https://www.codingame.com/training/medium/self-checkout-machine</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are tasked with creating a solution for how much change is required from a self-checkout machine based on the customer bill, the cash they put in and the available cash in that machine.<br><br><strong>CHANGE</strong><br><strong>Notes:</strong> 50, 20, 10, 5<br><strong>Coins:</strong> 2, 1, 0.50, 0.20, 0.10, 0.05, 0.02, 0.01<br><br><strong>NOTATION</strong><br>All <var>cash</var> in machine and <var>output</var> change to customer must be formatted in notation<br>1X20+2X10+5X1 =  1 of 20 note, 2 of 10 note and 5 of 1 coins. Total is 45.<br><br>You must always <strong>output</strong> the highest denomination of any notes &amp; coins that is available.<br><br><strong>EXAMPLE</strong><br>Customer change = 50<br>Output will be: 2X20+1X10 (when available)<br><br><strong>NOTES</strong><br>Customers will always enter more than or equal cash for their bill.<br>Print <const>ERROR: OUT OF MONEY</const> if the machine cannot output the complete change required.<br>If you have a <const>J</const> in place of the count of note/coin, this means the machine will jam (but only when that note/coin is dispensed). In this case output <const>ERROR: JAM</const><br>If there is an error of any kind, all other customers are <strong>NOT</strong> processed.<br>If no change is due output: <const>0</const></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An string <var>cash</var> for the machines starting cash reserves.<br><strong>Line 2:</strong> An integer <var>n</var> for the number of customers.<br><strong>Next <var>n</var> lines:</strong> Space separated float <var>customer_bill</var> <var>cash_given</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>n</var> lines of customers:</strong> Cash returned in notation or some <const>ERROR</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>n</var> &le; 10</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1X20+5X10+2X5+20X1+20X0.50+20X0.20+20X0.10+20X0.05+20X0.02+20X0.01
+1
+22.10 1X20+1X5</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">2X1+1X0.50+2X0.20</pre>
+         </div>
+      </div>
+   </div>
+</div>

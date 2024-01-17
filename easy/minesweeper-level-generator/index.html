@@ -1,0 +1,41 @@
+<h1>Minesweeper level generator</h1>
+
+<a href="https://www.codingame.com/training/easy/minesweeper-level-generator">https://www.codingame.com/training/easy/minesweeper-level-generator</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You like to solve Minesweeper levels ? You will love generating them !<br><br><strong>How to generate a level</strong><br><br>* A level is a <var>width</var> x <var> height</var> cells grid. Its origin is the top left corner. It contains <var>n</var> mines.<br>* The level is generated only when the player selects the first cell. The 3x3 cells square centered on this cell is always set free of mines.<br>* To generate a mine, X and Y grid coordinates (X first and then Y) are randomly generated until an available position is found. To generate X (resp. Y), use the random value modulo <var>width</var> (resp. <var>height</var>).<br><br><strong>Controlling randomness</strong><br><br>The random number generator used to generate the level is a pseudo random number generator (PRNG) initialized with a <var>seed</var> provided in the inputs. The PRNG works as follows:<br><br>The nth generated value is:<br>R(n) = (214013 * R(n-1) + 2531011) / 65536<br>with R(0) = <var>seed</var><br>R(1) is the first value to use.<br><br>With a seed of 31, the expected five first values produced by the PRNG are 139, 492, 1645, 5410, 17705.<br><br>You must use a single instance of PRNG for the whole generation. All calculations must be in 32-bit unsigned numbers. Beware that some languages (Python for instance) implicitly generate big integers without overflowing.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>A single line:</strong> <var>width</var> the level width, <var>height</var> the level height, <var>n</var> the number of mines for the level,  <var>x</var>, <var>y</var> the coordinates of the first selected cell, <var>seed</var> the seed for the random number generator</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><var>height</var> <strong>lines: </strong> for each line, a row of cells starting from the top row. Each cell is represented by a single ASCII code without space between chars.<br><br><strong>Cell format</strong><br><br>* <const>#</const> for a cell containing a mine<br>* <const>.</const> for a cell without any mines next to it<br>* otherwise <const>1-8</const> for the number of neighboring cells containing mines</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">5 &le; <var>width</var> &le; 30<br>5 &le; <var>height</var> &le; 16<br>5 &le; <var>n</var> &le; 99</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">6 6 7 3 3 31</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1#2##1
+222221
+#1..11
+331.1#
+##1.11
+221...</pre>
+         </div>
+      </div>
+   </div>
+</div>

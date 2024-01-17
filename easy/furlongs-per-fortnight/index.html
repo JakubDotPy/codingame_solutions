@@ -1,0 +1,37 @@
+<h1>Furlongs per Fortnight</h1>
+
+<a href="https://www.codingame.com/training/easy/furlongs-per-fortnight">https://www.codingame.com/training/easy/furlongs-per-fortnight</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement"><strong>Background:</strong><br>Most of the world uses the &quot;metric system&quot; but the United States still uses the &quot;imperial system&quot; which has all sorts of interesting units of distance (some more common than others)<br><br>Speed is simply some-distance per some-time<br><br><br><strong>Your task:</strong><br>This puzzle inputs a <var>inputSpeed</var> expressed in <var>dist1</var>(unit of distance) per <var>time1</var>(unit of time)<br><br>Your challenge is to convert that to another <var>dist2</var>(unit of distance) per <var>time2</var>(unit of time)<br><br>Units of distance:<br>◆ 1 mile = 8 furlongs<br>◆ 1 furlong = 10 chains<br>◆ 1 chain = 22 yards<br>◆ 1 yard = 3 feet<br>◆ 1 foot = 12 inches<br><br>Units of time:<br>◆ 1 fortnight = 2 weeks<br>◆ 1 week = 7 days<br>◆ 1 day = 24 hours<br>◆ 1 hour = 60 minutes<br>◆ 1 minute = 60 seconds<br><br><br>In a speed expression:<br>~ a <strong>distance</strong> uses its <strong>plural</strong> version, such as yards, feet, inches (except for the rare occasion when the speed is exactly 1, which this puzzle doesn't include)<br>~ a <strong>time</strong> uses its <strong>singular</strong> version, such as hour, minute<br><br><br><br><br>Sources:<br>https://en.wikipedia.org/wiki/FFF_system<br>https://en.wikipedia.org/wiki/Imperial_units</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">A string: <var>inputSpeed</var> <var>dist1</var> <const>per</const> <var>time1</var> <const>CONVERT TO</const> <var>dist2</var> <const>per</const> <var>time2</var><br>where <var>inputSpeed</var> is an integer and the rest are strings</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">A string: <var>convertedSpeed</var> <var>dist2</var> <const>per</const> <var>time2</var><br>where <var>convertedSpeed</var> is a float rounded to nearest 1/10</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">790 furlongs per fortnight CONVERT TO chains per week
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">3950.0 chains per week</pre>
+         </div>
+      </div>
+   </div>
+</div>

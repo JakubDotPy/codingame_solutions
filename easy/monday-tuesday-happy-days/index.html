@@ -1,0 +1,38 @@
+<h1>Monday Tuesday Happy Days</h1>
+
+<a href="https://www.codingame.com/training/easy/monday-tuesday-happy-days">https://www.codingame.com/training/easy/monday-tuesday-happy-days</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Given a start date with a known week day, your program must compute the day of the week at another date anytime in the same year.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong>: whether or not the year is a <var>leap year</var>: <const>1</const> if it is, <const>0</const> otherwise. A leap year is a year when February has 29 days instead of 28. The actual year itself is not given.<br><strong>Line 2</strong>: the initial date formatted as <var>day of the week</var> <var>abbreviated month</var> <var>day in month</var>, e.g. Monday Apr 23 for April 23rd.<br><strong>Line 3</strong>: the date you must give the day of the week for, formatted as <var>abbreviated month</var> <var>day in month</var>, e.g. Apr 24 for April 24th.<br><br>The abbreviated month names are <const>Jan</const>, <const>Feb</const>, <const>Mar</const>, <const>Apr</const>, <const>May</const>, <const>Jun</const>, <const>Jul</const>, <const>Aug</const>, <const>Sep</const>, <const>Oct</const>, <const>Nov</const> and <const>Dec</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1</strong>: The day of the week for the second date: <const>Monday</const>, <const>Tuesday</const>, <const>Wednesday</const>, <const>Thursday</const>, <const>Friday</const>, <const>Saturday</const> or <const>Sunday</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">Both dates are always within the same year.<br>Both dates are valid&mdash;there is no Jan 45,  Feb 29 on non-leap years, etc.<br>The second date may be before the first one.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">0
+Monday Jan 1
+Jan 2</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">Tuesday</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,40 @@
+<h1>Her Majesty's well shared secret</h1>
+
+<a href="https://www.codingame.com/training/hard/her-majestys-well-shared-secret">https://www.codingame.com/training/hard/her-majestys-well-shared-secret</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Some top secret information has been shared between Her Majesty's double-zero agents. Time has come to reveal it! But in order to avoid the secret to fall too easily into the hands of the enemy, a deeply thought process has been used to share it.<br><br>First, each of the nine double-zero agents (from 001 to 009) only carries a distinct &quot;part&quot; of the secret.<br>Also, there is a <strong>threshold</strong> <var>k</var> (<const>1</const> &lt; <var>k</var> &lt; <const>9</const>) such that <strong>at least any <var>k</var> parts</strong> of the secret are necessary to reveal it. This allows to retrieve the secret even with a few agents missing in action.<br>Finally, the knowledge of less than <var>k</var> parts does not allow to derive any information about the secret! (There might be some statistical biases for some poorly chosen parameters, but in general there is none.) The enemy has to capture or hire at least <var>k</var> agents to learn anything.<br><br><strong>Your task is to figure out how to reveal the secret given at least <var>k</var> parts.</strong><br>The following describes the secret sharing process in details.<br><br>First of all, the secret message <var>S</var> is written using the following alphabet of <const>53</const> characters:<br><const>abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_</const><br>where each character is <strong>identified by its index</strong> from <const>0</const> to <const>52</const>: a=0, b=1, ..., underscore=52.<br><br>Given a threshold <var>k</var> &ge; 2, the secret sharing process is the following:<br>For each index i of <var>S</var>, a polynomial<br><pre style="font-family: monospace"></pre><pre style="font-family: monospace">P[i] = A[i,k-1]&sdot;X^(k-1) + A[i,k-2]&sdot;X^(k-2) + ... + A[i,1]&sdot;X + S[i]</pre><pre style="font-family: monospace"></pre> is defined where the coefficients A[..] are chosen randomly between <const>0</const> and <const>52</const> (inclusive) with the additional constraint A[i,k-1]&gt;0.<br>Each agent 00<const>x</const> is provided with the string representing the values [P[0](<const>x</const>)%53, P[1](<const>x</const>)%53, ...]. This constitutes his part of the secret, while the secret itself is the string representing [P[0](<const>0</const>), P[1](<const>0</const>), ...].<br><br><strong>Example:</strong> Consider <var>k</var> = 2 and <var>S</var> = &quot;SIS&quot; = [44, 34, 44].<br>For each character we pick a random polynomial of degree 1 with the corresponding character as constant coefficient:<br><pre style="font-family: monospace"></pre><pre style="font-family: monospace">P0 = 41X + 44, P1 = 8X + 34, P2 = 2X + 44</pre><pre style="font-family: monospace"></pre> Agent 001 receives [P0(1)%53, P1(1)%53, P2(1)%53] = [32, 42, 46] = GQU;<br>Agent 002 receives [P0(2)%53, P1(2)%53, P2(2)%53] = [20, 50, 48] = uYW;<br>...</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var>, the number of parts gathered.<br><strong>Next <var>N</var> lines:</strong> The code number <var>Ci</var> of an agent followed by his part <var>Si</var> of the secret. All the <var>Si</var> have the same size.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">One single string corresponding to the revealed secret.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><const>1</const> &lt; <var>N</var> &lt; <const>9</const><br>It is guaranteed that <var>N</var> &ge; <var>k</var> the threshold that was used to share the secret.<br>All the <var>Si</var> have the same length &lt;<const>300</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+005 Lvb
+004 Xn_
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">SIS
+</pre>
+         </div>
+      </div>
+   </div>
+</div>

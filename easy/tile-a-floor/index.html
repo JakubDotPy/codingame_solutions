@@ -1,0 +1,51 @@
+<h1>Tile a Floor</h1>
+
+<a href="https://www.codingame.com/training/easy/tile-a-floor">https://www.codingame.com/training/easy/tile-a-floor</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are a manufacturer and installer of Floor-Tiles.<br><br>The beauty of Tiles comes from their symmetry, in that the quadrants of a Tile are mirror/reflections of each other.<br><br>So, when you get an order for a Tile, only the pattern of the top left quadrant (plus a little more, so you can see the center characters) are the input.  Graphically explained here:<br><pre style="font-family: monospace">☑☑☑☐☐<br>☑☑☑☐☐<br>☑☑☑☐☐<br>☐☐☐☐☐<br>☐☐☐☐☐</pre>From that limited input, your task is to:<br>Create a full Tile<br>And display a 2x2 floor (i.e., a floor consisting of 4 of those Tiles)<br><br><strong>DETAILS:</strong><br>➤ Each Tile is a square; the input therefore is also a square<br>➤ The input square shows the <strong>top left</strong> character of the full Tile, all the way to the <strong>middle</strong> character of the full Tile<br>➤ The input has a side-length of <var>N</var>; therefore the full Tile has a side-length of 2<var>N</var>-1<br>➤ The full floor needs a grout border, and grout separating the individual Tiles.  Grout is represented by <const>-</const> on top/bottom, <const>|</const> on left/right, and <const>+</const> on corners<br><br><strong>Flip/Mirror patterns:</strong><br>Generally, a character appearing in the first quadrant just replicates in the other quadrants.<br><br>However, for these special characters, you will need to sometimes print the opposite-mate of it:<br>&bull; <const>() {} [] &lt;&gt;</const>  If any of these are on the left side, then show its opposite-mate on the right side <br>&bull; <const>^v AV wm WM un</const>  If any of these are on the top half, then show its opposite-mate on the bottom half<br>&bull; <const>/\</const>  If either of these is on the top left quadrant, then show its opposite-mate on the two adjacent quadrants<br><br>(The opposite-mate is the one beside it in the character-pair as shown)</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var>, denoting the number of rows of partial Tile pattern<br><strong>Next <var>N</var> lines:</strong> row of partial Tile pattern</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The entire floor</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">3 &le; <var>N</var> &le; 7</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+o  
+  O
+  *</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">+-----+-----+
+|o   o|o   o|
+|  O  |  O  |
+|  *  |  *  |
+|  O  |  O  |
+|o   o|o   o|
++-----+-----+
+|o   o|o   o|
+|  O  |  O  |
+|  *  |  *  |
+|  O  |  O  |
+|o   o|o   o|
++-----+-----+</pre>
+         </div>
+      </div>
+   </div>
+</div>

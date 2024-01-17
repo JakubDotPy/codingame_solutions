@@ -1,0 +1,44 @@
+<h1>The Grand Festival - II</h1>
+
+<a href="https://www.codingame.com/training/medium/the-grand-festival---ii">https://www.codingame.com/training/medium/the-grand-festival---ii</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement"><strong>Story:</strong><br><br>The Grand Festival has started! Merry and Pippin decide to participate in its competitions. There are a variety of competitions, like archery, swordifighting, hunting, riding, etc.<br>However, they realize that after playing some tournaments consecutively, they need to rest a week. They gather information about the prize money of each competition. 1 competition is held every week.<br>Merry and Pippin decide they will try to get the maximum prize money. For this, they ask Gandalf for help. Help Gandalf choose which tournaments They should play.<br><br>-------------------------------------------------- xxx --------------------------------------------------<br><br><strong>Rules:</strong><br><br>There are <var>N</var> tournaments in all, held from week <const>1</const> to week <const>N</const>.<br>Merry and Pippin can play at most <var>R</var> consecutive tournaments before they have to rest.<br>The prize money for all the tournaments will be given to you.<br>You need to display the tournaments they should play in order to get maximum prize money.<br><br>-------------------------------------------------- xxx --------------------------------------------------<br><br><strong>Example:</strong><br><br>Let there be <const>10</const> tournaments<br>Let Merry and Pippin be able to play <const>4</const> weeks consecutive<br>Let the prize moneys be: <const>15</const>, <const>32</const>, <const>22</const>, <const>29</const>, <const>19</const>, <const>39</const>, <const>20</const>, <const>30</const>, <const>12</const>, <const>47</const><br>To get the maximum they must play in the following weeks: <br><var>1</var>&gt;<var>2</var>&gt;<var>3</var>&gt;<var>4</var>&gt;<var>6</var>&gt;<var>7</var>&gt;<var>8</var>&gt;<var>10</var><br>Your program must display the above output<br><br>-------------------------------------------------- xxx --------------------------------------------------<br><br><strong>Note:</strong><br><br>This is the second in a series of puzzles. The first puzzle required you to display the maximum prize money. This one requires you to display the path. It is recommended to solve the first puzzle before starting this.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var><br><strong>Line 2:</strong> An integer <var>R</var><br><strong>Next <var>N</var> Lines:</strong> An integer <var>PRIZE</var>, the prize for the tournament that week</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> The weeks in which Merry and Pippin should play, to get the maximum prize money, in the following format:<br>&quot;<var>W1</var>&gt;<var>W2</var>&gt;<var>W3</var>&gt;...&gt;<var>Wk</var>&quot;</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">7
+3
+13 
+12 
+11 
+9 
+16 
+17 
+100</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1&gt;2&gt;3&gt;5&gt;6&gt;7</pre>
+         </div>
+      </div>
+   </div>
+</div>

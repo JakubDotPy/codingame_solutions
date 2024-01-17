@@ -1,0 +1,41 @@
+<h1>Surakarta</h1>
+
+<a href="https://www.codingame.com/training/medium/surakarta">https://www.codingame.com/training/medium/surakarta</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">The surakarta is a traditional board game from Indonesia. Here is what the board looks like.<br><pre style="font-family: monospace"><br>╭───╮╭───╮<br>│╭─╮││╭─╮│<br>││┏┿┿┿┿┓││<br>│╰╂┼┼┼┼╂╯│<br>╰─╂┼┼┼┼╂─╯<br>╭─╂┼┼┼┼╂─╮<br>│╭╂┼┼┼┼╂╮│<br>││┗┿┿┿┿┛││<br>│╰─╯││╰─╯│<br>╰───╯╰───╯<br></pre><br>It is played on a board of 6 by 6. The pieces are placed on intersections or edges of the grid. To move, they follow the lines horizontally or vertically as far as they wish.<br><br>- If a piece reaches the <strong>edge of the grid represented in bold</strong>, It can still move forward, by doing a loop following the lines on the side of the board.<br>- A piece cannot pass through another.<br>- To capture a piece of the other player, you have to go to its position <strong>after doing one or more loops</strong>.<br><br>Example of how to capture a piece: https://cdn.store-factory.com/www.lecomptoirdesjeux.com/media/diagsurakarta2.jpg<br><br>Each piece can potentially move in 4 directions, and potentially capture an enemy piece in every direction (it can be 4 times the same piece, if different moves lead to the capture of the same piece).<br><br>It is your turn. You have to find how many moves can be done to capture a piece this turn for every piece you have.<br><br>If you have 3 pieces:<br>3 moves of the first piece reach to capture.<br>1 moves of the second piece reach to capture.<br>2 moves of the third piece reach to capture.<br><br>The output will be &quot;6&quot;<br><br>For the sake of clarity, corner lines will not be in input. Do not thank me.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>6 lines</strong>:  the state of your grid.<br><strong>'X'</strong>  represents your pieces<br><strong>'O'</strong> represents the opponent pieces<br><strong>'.'</strong>   represents an empty square</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The number of moves that lead to a capture this turn.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; opponent pieces count &lt; 13<br>0 &lt; your pieces count &lt; 13</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">.O....
+......
+......
+.X....
+......
+......</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1</pre>
+         </div>
+      </div>
+   </div>
+</div>

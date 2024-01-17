@@ -1,0 +1,39 @@
+<h1>Frog Exchange</h1>
+
+<a href="https://www.codingame.com/training/medium/frog-exchange">https://www.codingame.com/training/medium/frog-exchange</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">@@<br>( &mdash; )<br>(&gt;___&lt;)<br>^^'''^^<br><br>Avoid deadlocks:<br>Given are <var>n</var> stones as array. The middle stone <const>s</const> is unoccupied at the start. On each of the left (<var>n</var>-1)/2 stones sits a male <const>m</const> frog looking to the right; on each of the right (<var>n</var>-1)/2 stones is a female <const>f</const> frog looking to the left.<br>(m)&gt; (m)&gt; (m)&gt; (m)&gt; ... (m)&gt; s &lt;(f) ... &lt;(f) &lt;(f) &lt;(f) &lt;(f)<br><br>The frogs can only jump in the direction they are facing. If the corresponding neighboring stone is free, the frog can jump directly to this stone. It is also possible to jump over <strong>one</strong> neighboring frog in order to get to a corresponding free stone.<br><br>We are looking for a sequence of jumps such that all male frogs are on the right (n-1)/2 stones and all female frogs are on the left (n-1)/2 stones. if there is no frog, return the input.<br><br>Male and female start positions can also be reversed, in which case their end position is also reversed.<br><br>Schematic example:<br>n=3, m=f=1<br>(m s f) -&gt; start with f and jump just to the left<br>(m f s) -&gt; a new stone is free<br>(m f s) -&gt; consider the next possible male frog(s) and jump to the free stone<br>(s f m) -&gt; a new stone is free<br>(s f m) -&gt; consider the next possible female fog(s) and jump to the free stone<br>(f s m) -&gt; a new stone is free<br>(f s m) -&gt; result <br><br>Output:<br>Return the state of the array on a separate line after each round.<br>e.g. Input: <br>m s f<br><br>Output: <br>m s f<br>s m f<br>f m s<br>f s m<br><br><strong>Be courteous and start with the ladies.</strong></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> A string with frog position</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> starting grid<br><strong>Line 2:</strong> first move<br>..<br><strong>Last line:</strong> final grid</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">3 &le; <var>n</var> &le; 100<br><var>n</var> is odd<br>number of <const>m</const> = number of <const>f</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">m s f</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">m s f
+m f s
+s f m
+f s m</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,89 @@
+<h1>Sokoban</h1>
+
+<a href="https://www.codingame.com/training/hard/sokoban">https://www.codingame.com/training/hard/sokoban</a>
+
+<div class="statement_back"></div>
+<div class="statement-body">
+  
+  <div class="statement-section statement-goal">
+    <h1>
+      <span class="icon icon-goal"> </span>
+      <span>The Goal</span>
+    </h1>
+    <div class="statement-goal-content">
+      Place all boxes on their target cells.
+    </div>
+  </div>
+  
+  <div class="statement-section statement-rules">
+    <h1>
+      <span class="icon icon-rules"> </span>
+      <span>Rules</span>
+    </h1>
+    <div>
+      <div class="statement-rules-content">You have one unit which you can move around on the map. You can push boxes by walking into them. This will push the box in the same direction as you are moving in. The field where you push the box to must be free, it is not possible to move two or more boxes at once. <br />
+      You are given target cells where you have to place the boxes.
+      </div>
+    </div>
+  </div>
+  
+  <div class="statement-section statement-expertrules">
+    <h1>
+      <span class="icon icon-expertrules"> </span>
+      <span>Expert Rules</span>
+    </h1>
+    <div class="statement-expert-rules-content">
+      The source code can be found here: <a href="https://github.com/eulerscheZahl/Sokoban" target="_blank" rel="nofollow noopener noreferrer">https://github.com/eulerscheZahl/Sokoban</a>
+    </div>
+  </div>
+
+  
+  <div class="statement-section statement-protocol">
+    <h1>
+      <span class="icon icon-protocol"> </span>
+      <span>Game Input</span>
+    </h1>
+    
+    <div class="blk">
+      <div class="title">Initial input</div>
+      <div class="text">
+        <p><span class="statement-lineno">Line 1: </span><var>width</var> <var>height</var> <var>boxCount</var>, the width and height of the map and the number of boxes</p>
+        <p><span class="statement-lineno">next <var>height</var> lines: </span>a string of <var>width</var> characters, that can be:
+        </p><ul><li><const>.</const> for an empty cell</li><li><const>#</const> for a wall</li><li><const>*</const> for a target cell</li></ul>
+      </div>
+    </div>
+
+    
+    <div class="blk">
+      <div class="title">Input per turn</div>
+      <div class="text">
+        <p><span class="statement-lineno">Line 1: </span><var>pusherX</var> <var>pusherY</var>, the position of your unit</p>
+        <p><span class="statement-lineno">next <var>boxCount</var> lines: </span><var>boxX</var> <var>boxY</var>, the position of each box</p>
+      </div>
+    </div>
+
+    
+    <div class="blk">
+      <div class="title">Output</div>
+      <div class="text">
+        <span class="statement-lineno">A single character indicating your movement direction: </span> <action>U</action> to move up, <action>D</action> to move down, <action>R</action> to move right, <action>L</action> to move left.
+        <br />
+      </div>
+    </div>
+
+    
+    <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="text"><const>7</const> ≤ <var>width</var> ≤ <const>11</const><br /></div>
+      <div class="text"><const>7</const> ≤ <var>height</var> ≤ <const>11</const><br /></div>
+      <div class="text"><const>3</const> ≤ <var>boxCount</var> ≤ <const>5</const><br /></div>
+      <br />Allotted response time to output
+        is ≤ <const>10</const> seconds for the first turn, <const>50</const> ms for later turns.</div>
+    </div>
+
+  Sprites:<br />
+  <a href="https://opengameart.org/content/sokoban-100-tiles" target="_blank" rel="nofollow noopener noreferrer">https://opengameart.org/content/sokoban-100-tiles</a>
+  <br /> <br />
+  Levels: <br />
+  <a href="https://www.sourcecode.se/sokoban/levels" target="_blank" rel="nofollow noopener noreferrer">https://www.sourcecode.se/sokoban/levels</a>
+</div>

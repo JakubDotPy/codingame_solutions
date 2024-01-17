@@ -1,0 +1,38 @@
+<h1>Blowing Fuse</h1>
+
+<a href="https://www.codingame.com/training/easy/blowing-fuse">https://www.codingame.com/training/easy/blowing-fuse</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are going to write a program to predict whether a specific usage pattern of electrical appliances will cause the main fuse to blow.<br><br>You have three pieces of data.<br>1. There are <var>n</var> appliances in a room, each of them has an electrical current consumption value.<br>2. A usage pattern. You will click the power buttons of a list of appliances in a sequence, at most <var>m</var> clicks. Each click on a button will toggle the power status, which means when the power is OFF, a click will turn it ON. Clicking it again will turn it OFF.<br>3. The capacity of the main fuse <var>c</var> in amperes [A].<br><br>The fuse will be blown if the sum of the consumed current of turned-on devices at some point exceeds the capacity of the main fuse <var>c</var>.<br><br>At the beginning, all appliances are OFF.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Integers <var>n</var> <var>m</var> <var>c</var>, separated by a space<br><var>n</var> is the number of devices, assume the devices have IDs from 1 to n<br><var>m</var> is the number of button-clicking going to happen<br><var>c</var> is the capacity of the main fuse in amperes [A]<br><br><strong>Line 2:</strong> <var>n</var> integers, space separated, representing the electrical current consumption value of each appliance, listed from ID 1 to n<br><br><strong>Line 3:</strong> <var>m</var> integers, space separated - a sequence of ID# you are going to click power buttons, that will toggle the device status in that exact sequence.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">If the fuse was blown during the operation sequence, output one line:<br><strong>Fuse was blown.</strong><br><br>If the fuse did not blow, find the maximal consumed power by turned-on devices that occurred during the sequence. Output two lines: <br><strong>Fuse was not blown.</strong><br><strong>Maximal consumed current was ? A.</strong><br><br>Follow examples of test cases for the expected format.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">n and m are below 100<br>c is below 10000</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">5 2 10
+11 6 11 10 10
+3 3</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">Fuse was blown.</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,44 @@
+<h1>Othello</h1>
+
+<a href="https://www.codingame.com/training/medium/othello">https://www.codingame.com/training/medium/othello</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are given an Othello board and the colour and position of the next turn. You must answer if it&rsquo;s legal or not.<br>Othello is a two-player game. Player #1 begins and plays black (<const>B</const>), and player #2 plays white (<const>W</const>).<br><const>B</const> player can only put his token near a <const>W</const> token in order to make at least one <const>BW+B</const> &quot;sandwich&quot;. A sandwich is defined as any number of tokens of one color consecutively in a line (either horizontally, vertically, or diagonally) which are surrounded on both sides by tokens of the opposite color. Once a sandwich is achieved, all the <const>W</const> tokens in this sandwich are turned into <const>B</const>. Repeat this as necessary for each valid sandwich in the eight directions (including diagonals).<br>Examples (the played token in lower-case):<br>* <const>--bWWWBW</const> yields <const>---bBBBBW</const>.<br>* <const>BBWWWwBW</const> yieds <const>BBWWWwWW</const>.<br>* <const>-WWWw---</const> is illegal if there is no sandwich elsewhere.<br>* <const>WWWbBW--</const> is illegal too.<br>Each player must play if possible. If not, he passes his turn.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>First <const>8</const> lines:</strong> <const>8</const> characters per line, each representing a <var>row</var> of the board. <const>W</const> is a white token, <const>B</const> is a black token, <const>-</const> is an empty cell.<br><strong>Line 9:</strong> The <var>colour</var> of the token, followed by a space, and then the chess-like coordinates of the next <var>move</var>. For example, <const>a1</const> is the top-left corner while <const>a8</const> is the bottom-left corner.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">If the move is legal, print the number of <const>W</const> tokens and of <const>B</const> tokens.<br>If the cell is already filled by a token, print <const>NOPE</const>.<br>If the token can&rsquo;t make a sandwich, print <const>NULL</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">--------
+--------
+--------
+---WB---
+---BW---
+--------
+--------
+--------
+B c4</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1 4</pre>
+         </div>
+      </div>
+   </div>
+</div>

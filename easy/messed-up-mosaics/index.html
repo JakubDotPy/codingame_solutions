@@ -1,0 +1,43 @@
+<h1>Messed up mosaics</h1>
+
+<a href="https://www.codingame.com/training/easy/messed-up-mosaics">https://www.codingame.com/training/easy/messed-up-mosaics</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">I ordered beautiful mosaics online.<br>They were cheap, but they all came with the same issue: <strong>one single tile is not the good one</strong>.<br><br>Can you help me locate the wrong tile in each mosaic?<br><br> Each mosaic is made of <var>N</var> * <var>N</var> <strong>tiles</strong>.<br>Given a <var>pattern</var> of tiles that repeats to form a <var>mosaic</var> and the <var>mosaic</var> itself, you have to find the <var>coordinates</var> of the tile that doesn't fit the <var>pattern</var>.<br>The origin of the <var>coordinates</var> is at the top left corner of the <var>mosaic</var>.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong>: An int <var>N</var> for the length (in tiles) of the side of the square <var>mosaic</var>.<br><strong>Line 2</strong>: A string <var>pattern</var> for the pattern of tiles that form the <var>mosaic</var>.<br><strong>Next <var>N</var> lines</strong>: a string that constitutes a <var>row</var> of the <var>mosaic</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">A single line containing the coordinates of the wrong tile, formatted as <var>(x,y)</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">There is only one wrong tile in the mosaic.<br>The mosaic is always wider than the pattern.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">6
+xO
+xOxOxO
+xO/OxO
+xOxOxO
+xOxOxO
+xOxOxO
+xOxOxO</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">(2,1)</pre>
+         </div>
+      </div>
+   </div>
+</div>

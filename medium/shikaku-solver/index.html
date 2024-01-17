@@ -1,0 +1,56 @@
+<h1>Shikaku Solver</h1>
+
+<a href="https://www.codingame.com/training/medium/shikaku-solver">https://www.codingame.com/training/medium/shikaku-solver</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement"><strong>Find all solutions to a Shikaku puzzle.</strong><br><br>Shikaku is a puzzle played on a rectangular grid. Some of the squares in the grid are numbered. The objective is to divide the grid into rectangular pieces such that each piece contains exactly one number, and that number represents the area of the rectangle.<br><br>If the puzzle is poorly designed, there might be more than one solution. The goal here is to find all the solutions to a given puzzle.<br><br>We will use the letters (<const>A</const>-<const>Z</const>,<const>a</const>-<const>z</const>) to represent the rectangles. Going left to right then top to bottom, you should encounter the rectangles (<const>A</const>-<const>Z</const>,<const>a</const>-<const>z</const>) in order.<br><br>https://en.wikipedia.org/wiki/Shikaku</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> The <var>W</var>idth and <var>H</var>eight of the puzzle, space separated.<br><strong>Next <var>H</var> lines:</strong> <var>W</var> space separated numbers to fill out the grid (0 for blank cells, otherwise the area value).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> The number of solutions to the puzzle. There will always be at least one solution.<br><strong>Next <var>H</var> lines:</strong> <var>W</var> characters (<const>A</const>-<const>Z</const>,<const>a</const>-<const>z</const>) for each line of the solution. If there is more than one solution, return the solution that comes first if you concatenate all rows and sort lexicographically.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">10 &le; <var>W</var>,<var>H</var> &le; 30</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">10 10
+0 0 0 0 0 0 0 0 9 0
+0 0 0 0 0 0 9 0 0 0
+0 0 0 0 0 0 0 0 0 0
+0 20 0 0 8 0 0 0 6 0
+0 0 0 0 0 0 0 0 0 0
+0 0 0 6 0 0 6 0 0 0
+10 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0
+0 0 6 0 6 0 0 0 8 0
+0 0 0 0 0 0 6 0 0 0</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1
+AAAABBBCCC
+AAAABBBCCC
+AAAABBBCCC
+AAAADDDDEE
+AAAADDDDEE
+FFGGGHHHEE
+FFGGGHHHII
+FFJJKKLLII
+FFJJKKLLII
+FFJJKKLLII</pre>
+         </div>
+      </div>
+   </div>
+</div>

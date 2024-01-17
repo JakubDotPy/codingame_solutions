@@ -1,0 +1,150 @@
+<h1>Super Computer</h1>
+
+<a href="https://www.codingame.com/training/hard/super-computer">https://www.codingame.com/training/hard/super-computer</a>
+
+<div class="statement_back" id="statement_back" style="display:none">&nbsp;</div>
+
+<div class="statement-body"><!-- GOAL -->
+<div class="statement-section statement-goal">
+<h2><span class="icon icon-goal">&nbsp;</span> <span>The Goal</span></h2>
+
+<div class="statement-goal-content">In the Computer2000 data center, you are responsible for planning the usage of a supercomputer for scientists. ​Therefore you&#39;ve decided to organize things a bit by planning everybody&rsquo;s tasks. The logic is simple: the higher the number of calculations which can be performed, the more people you can satisfy.</div>
+</div>
+<!-- RULES -->
+
+<div class="statement-section statement-rules">
+<h2><span class="icon icon-rules">&nbsp;</span> <span>Rules</span></h2>
+
+<div>
+<div class="statement-rules-content">Scientists give you the starting day of their calculation and the number of consecutive days they need to reserve the calculator.<br />
+<br />
+For example:
+  <div class="statement-example-horizontal" style="background-color: transparent;">
+<div style="width: 280px; display: table-cell; vertical-align: middle">
+<table border="1" cellpadding="3" cellspacing="0" style="width: 100%; margin: auto;text-align:center">
+	<thead>
+		<tr>
+			<th style="text-align:center">Calculation</th>
+			<th style="text-align:center">Starting Day</th>
+			<th style="text-align:center">Duration</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>A</td>
+			<td>2</td>
+			<td>5</td>
+		</tr>
+		<tr>
+			<td>B</td>
+			<td>9</td>
+			<td>7</td>
+		</tr>
+		<tr>
+			<td>C</td>
+			<td>15</td>
+			<td>6</td>
+		</tr>
+		<tr>
+			<td>D</td>
+			<td>9</td>
+			<td>3</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<div class="legend">
+<p>Calculation A starts on day 2 and ends on day 6</p>
+
+<p>Calculation B starts on day 9 and ends on day 15</p>
+
+<p>Calculation starts on day 15 and ends on day 20</p>
+
+<p>Calculation D starts on day 9 and ends on day 11</p>
+</div>
+</div>
+In this example, it&rsquo;s not possible to carry out all the calculations because the periods for B and C overlap. 3 calculations maximum can be carried out: A, D and C.</div>
+</div>
+</div>
+<!-- PROTOCOL -->
+
+<div class="statement-section statement-protocol">
+<h2><span class="icon icon-protocol">&nbsp;</span> <span>Game Input</span></h2>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Input</div>
+
+<div class="text">
+<p><span class="statement-lineno">Line 1: </span>The number <var>N</var> of calculations</p>
+
+<p><span class="statement-lineno">The <var>N</var> following lines: </span>on each line, the starting day <var>J</var> and the duration <var>D</var> of reservation, separated by a blank space.</p>
+</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Output</div>
+
+<div class="text">The maximum number of calculations that can be carried out.</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Constraints</div>
+
+<div class="text">0 &lt; <var>N</var> &lt; 100000<br />
+0 &lt; <var>J</var> &lt; 1000000<br />
+0 &lt; <var>D</var> &lt; 1000</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Examples</div>
+
+<div class="text">
+<div class="statement-inout">
+<div class="statement-inout-in" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Input</div>
+
+<pre>
+4
+2 5
+9 7
+15 6
+9 3</pre>
+</div>
+
+<div class="statement-inout-out" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Output</div>
+
+<pre>
+3</pre>
+</div>
+</div>
+
+<div class="statement-inout">
+<div class="statement-inout-in" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Input</div>
+
+<pre>
+5
+3 5
+9 2
+24 5
+16 9
+11 6</pre>
+</div>
+
+<div class="statement-inout-out" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Output</div>
+
+<pre>
+4</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

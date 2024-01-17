@@ -1,0 +1,41 @@
+<h1>Photo Booth Transformation</h1>
+
+<a href="https://www.codingame.com/training/medium/photo-booth-transformation">https://www.codingame.com/training/medium/photo-booth-transformation</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Given a <var>W</var>&times;<var>H</var> image, with <var>W</var> and <var>H</var> both even, we define its <strong>photo booth transformation</strong> as the image obtained after the following process:<br> - Divide the image into 2&times;2 blocks (which is possible as both dimensions are even);<br> - Build four <var>W</var>/2&times;<var>H</var>/2 images by gathering the top-left pixels of each block into one image (following the blocks ordering) and similarly the top-right / bottom-left / bottom-right pixels into three other images;<br> - Glue together these four images (following the inside-block ordering) to obtain a new <var>W</var>&times;<var>H</var> image.<br><br><strong>Example:</strong> 6&times;4 image<pre style="font-family: monospace"></pre><pre style="font-family: monospace">┌──────┐      ┌──┬──┬──┐      ┌───┬───┐      ┌──────┐<br>│ABCDEF│      │AB│CD│EF│      │ACE│BDF│      │ACEBDF│<br>│GHIJKL│      │GH│IJ│KL│      │MOQ│NPR│      │MOQNPR│<br>│MNOPQR│  ~&gt;  ├──┼──┼──┤  ~&gt;  ├───┼───┤  ~&gt;  │GIKHJL│<br>│STUVWX│      │MN│OP│QR│      │GIK│HJL│      │SUWTVX│<br>└──────┘      │ST│UV│WX│      │SUW│TVX│      └──────┘<br>              └──┴──┴──┘      └───┴───┘</pre><pre style="font-family: monospace"></pre>This transformation results in an image which contains four reduced versions of the original image, though none of them have a single a pixel in common (each of them contains exactly 1/4 of the original pixels).<br><br><strong>Illustrations:</strong><br>- https://i.imgur.com/632iL82.png<br>- https://i.imgur.com/nK8s3c7.png<br>- https://i.imgur.com/rMfqTYM.png<br><br>Iterating this transform from a given image always brings us back to the original image after a (positive) number of steps that we call a <strong>period</strong> of the image.<br><br>Given some even dimensions <var>W</var> and <var>H</var>, <strong>what is the minimum period common to all <var>W</var>&times;<var>H</var> images?</strong><br><br><strong>Back to the example:</strong> Assuming all pixel values are distinct, we have:<pre style="font-family: monospace"></pre><pre style="font-family: monospace">┌──────┐    ┌──────┐    ┌──────┐    ┌──────┐    ┌──────┐<br>│ABCDEF│    │ACEBDF│    │AEDCBF│    │ADBECF│    │ABCDEF│<br>│GHIJKL│    │MOQNPR│    │GKJIHL│    │MPNQOR│    │GHIJKL│<br>│MNOPQR│ ~&gt; │GIKHJL│ ~&gt; │MQPONR│ ~&gt; │GJHKIL│ ~&gt; │MNOPQR│<br>│STUVWX│    │SUWTVX│    │SWVUTX│    │SVTWUX│    │STUVWX│<br>└──────┘    └──────┘    └──────┘    └──────┘    └──────┘</pre><pre style="font-family: monospace"></pre>Hence the minimum period is <strong>4</strong>.<br><br><strong>Additional illustrations (and references in French):</strong><br> - http://www.lifl.fr/~pmathieu/transform/joc_phot.html<br> - http://www.lifl.fr/~pmathieu/transform/earth_phot.html</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> One single integer <var>T</var> for the number of testcases to follow.<br><strong>Next <var>T</var> lines:</strong> Two space-separated integers <var>Wi</var> and <var>Hi</var> corresponding to the width and height of the image.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>T</var> lines:</strong> One single integer corresponding to the period of the photo booth map on <var>Wi</var>&times;<var>Hi</var> images.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>T</var> &le; 10<br>2 &le; <var>W</var>, <var>H</var> &le; 2000<br>Both <var>W</var> and <var>H</var> are even.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+6 4
+4 6
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">4
+4
+</pre>
+         </div>
+      </div>
+   </div>
+</div>

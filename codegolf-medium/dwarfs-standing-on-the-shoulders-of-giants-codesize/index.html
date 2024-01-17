@@ -1,0 +1,149 @@
+<h1>Dwarfs standing on the shoulders of giants - Code Golf</h1>
+
+<a href="https://www.codingame.com/codegolf/medium/dwarfs-standing-on-the-shoulders-of-giants-codesize">https://www.codingame.com/codegolf/medium/dwarfs-standing-on-the-shoulders-of-giants-codesize</a>
+
+<div class="statement_back" id="statement_back" style="display:none">&nbsp;</div>
+
+<div class="statement-body"><!-- GOAL -->
+<div class="statement-section statement-goal">
+<h2><span class="icon icon-goal">&nbsp;</span> <span>The Goal</span></h2>
+
+<div class="statement-goal-content">
+<div>The saying &quot;<em>Dwarfs standing on the shoulders of giants</em>&quot; refers to the importance of being able to build upon the work of our predecessors.</div>
+
+<div>&nbsp;</div>
+
+<div>When we read texts, we often only get a small glance of this dependence: this person influenced that person.&nbsp;Thereafter, we learn that the second person, in turn influenced a third and so on. In this exercise we&rsquo;re interested in the chain of influence and more precisely in finding the longest possible chain.​</div>
+</div>
+</div>
+<!-- RULES -->
+
+<div class="statement-section statement-rules">
+<h2><span class="icon icon-rules">&nbsp;</span> <span>Rules</span></h2>
+
+<div>
+<div class="statement-rules-content">
+<p>We choose to represent each person by a distinct integer. If person <const>#1</const> has influenced persons <const>#2</const> and <const>#3</const> and person <const>#3</const> has influenced <const>#4</const> then there is a succession of thoughts between <const>#1</const>, <const>#3</const> and <const>#4</const>. In this case, it&rsquo;s the longest succession and the expected result will be <action>3</action>, since it involves 3 people.<br />
+<img alt="" src="https://www.codingame.com/fileservlet?id=320597291658" style="width: 141px; height: 71px;  margin-left: auto; margin-right: auto; display:inherit;" /></p>
+
+<div>&nbsp;</div>
+
+<p>If we were to complete this example when we learn that person <const>#2</const> also influenced persons <const>#4</const> and <const>#5</const>, then the longest succession will still have a length of 3, but there will now be several of them.<br />
+<img alt="" src="https://www.codingame.com/fileservlet?id=341835174025" style="width: 142px; height: 61px;  margin-left: auto; margin-right: auto; display:inherit;" /></p>
+
+<div>&nbsp;</div>
+
+<p>If we now add that person <const>#10</const> influenced person <const>#11</const>, the result remains 3. However, as soon as we learn that <const>#10</const> also influenced <const>#1</const> and <const>#3</const>, then the result becomes <action>4</action>, since there is now a succession involving 4 people, which is <const>#10</const>, <const>#1</const>, <const>#2</const>, <const>#5</const>. <img alt="" src="https://www.codingame.com/fileservlet?id=321010210617" style="width: 164px; height: 99px;  margin-left: auto; margin-right: auto; display:inherit;" /></p>
+
+<div>&nbsp;</div>
+
+<p><b>Note:</b> It takes time for a thought to influence others. So, we will suppose that it is not possible to have a mutual influence between people, i.e. If <const>A</const> influences <const>B</const> (even indirectly through other people), then <const>B</const> will not influence <const>A</const> (even indirectly). Also, you can not influence yourself.</p>
+</div>
+</div>
+</div>
+<!-- PROTOCOL -->
+
+<div class="statement-section statement-protocol">
+<h2><span class="icon icon-protocol">&nbsp;</span> <span>Game Input</span></h2>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Input</div>
+
+<div class="text">
+<p><span class="statement-lineno">Line 1: </span>The number <var>N</var> of relationships of influence.</p>
+
+<p><span class="statement-lineno"><var>N</var> following lines: </span>a relationship of influence between two people in the form of <var>X</var> (whitespace) <var>Y</var>, which indicates that <var>X</var> influences <var>Y</var>. The relationships of influence are listed in any order.</p>
+</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Output</div>
+
+<div class="text">The number of people involved in the longest succession&nbsp;of influences.</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Constraints</div>
+
+<div class="text">0 &lt; <var>N</var> &lt; 10000<br />
+0 &lt; <var>X</var>, <var>Y</var> &lt; 10000</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Examples</div>
+
+<div class="text">
+<div class="statement-inout">
+<div class="statement-inout-in" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Input</div>
+
+<pre>
+3
+1 2
+1 3
+3 4</pre>
+</div>
+
+<div class="statement-inout-out" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Output</div>
+
+<pre>
+3</pre>
+</div>
+
+<div class="statement-inout-in" style="background-color: white; text-align: center; vertical-align:top"><img alt="" src="https://www.codingame.com/fileservlet?id=320597291658" style="width: 141px; height: 71px;" /></div>
+</div>
+
+<div class="statement-inout">
+<div class="statement-inout-in" style="vertical-align: top; background-color: white">
+<div class="title" style="color: #989898; padding:0">Input</div>
+
+<pre>
+8
+1 2
+1 3
+3 4
+2 4
+2 5
+10 11
+10 1
+10 3</pre>
+</div>
+
+<div class="statement-inout-out" style="background-color: white; vertical-align: top;">
+<div class="title" style="color: #989898; padding:0">Output</div>
+
+<pre>
+4</pre>
+</div>
+
+<div class="statement-inout-in" style="background-color: white; text-align: center; vertical-align:center"><img alt="" src="https://www.codingame.com/fileservlet?id=321010210617" style="width: 164px; height: 99px;" /></div>
+</div>
+
+<div class="statement-inout">
+<div class="statement-inout-in" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Input</div>
+
+<pre>
+4
+2 3
+8 9
+1 2
+6 3</pre>
+</div>
+
+<div class="statement-inout-out" style="background-color: white">
+<div class="title" style="color: #989898; padding:0">Output</div>
+
+<pre>
+3</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

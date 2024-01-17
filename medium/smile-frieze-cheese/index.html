@@ -1,0 +1,40 @@
+<h1>Smile! Frieze! Cheese!</h1>
+
+<a href="https://www.codingame.com/training/medium/smile-frieze-cheese">https://www.codingame.com/training/medium/smile-frieze-cheese</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">If you try to fill a ribbon with a repetitive pattern, you will only find seven unique ways to do it due to symmetry.<br>The names of these symmetry classes (Frieze groups) are provided below with examples. Each class of patterns may include horizontal and vertical symmetries, 180&deg; rotations, and glide-reflections. All patterns also include horizontal translations, they are omitted below.<br><br><const>p111</const>: <var>RRRRR</var> No other transformations.<br><const>p1m1</const>: <var>DDDDDD</var> A horizontal symmetry.<br><const>pm11</const>: <var>MMMMMM</var> Vertical symmetries.<br><const>p112</const>: <var>SSSSSS</var> Only rotations.<br><const>pmm2</const>: <var>HHHHHH</var> Horizontal and vertical symmetries and rotations.<br><const>p1a1</const>: <var>pbpbpb</var> Only glide-reflections.<br><const>pma2</const>: <var>A&forall;A&forall;A&forall;</var> All transformations excepted horizontal symmetries.<br><br>You will be given a pattern in ASCII and you will have to find the mathematical name of the frieze.<br>Note that you will be given a full pattern, it won't be cut.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong>: The number <var>n</var> of lines of the pattern below<br><strong>Next <var>n</var> lines</strong>: The pattern you have to name</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The name of the pattern</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">The pattern will contain only hyphens <const>-</const> and hashes <const>#</const>.<br>Note that you will be given a full pattern and the full pattern is given without any truncation.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">4
+#---#---#---#---#---
+#---#---#---#---#---
+#---#---#---#---#---
+###-###-###-###-###-</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">p111</pre>
+         </div>
+      </div>
+   </div>
+</div>

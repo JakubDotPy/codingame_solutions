@@ -1,0 +1,54 @@
+<h1>Reverse Minesweeper</h1>
+
+<a href="https://www.codingame.com/training/easy/reverse-minesweeper">https://www.codingame.com/training/easy/reverse-minesweeper</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Given a grid of mine locations (where <const>.</const> are empty cells and <const>x</const> are mines), your goal is to display the grid like it appears if you win the game.<br>Each position is a digit indicating the number of mines bordering it (including diagonals). The mines (<const>x</const>) don't appear anymore. Mines and positions that do not border any mines both appear as empty cells (<const>.</const>).</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1 :</strong> an integer <var>w</var> for the width of the grid.<br><strong>Line 2 :</strong> an integer <var>h</var> for the height of the grid.<br><strong>Next <var>h</var> lines :</strong> each line of the minefield, with dots (<const>.</const>) or mines (<const>x</const>).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><var>h</var> lines of width <var>w</var> showing the completed game of Minesweeper.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &lt;= w &lt;= 30<br>1 &lt;= h &lt;= 30</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">16
+9
+................
+................
+................
+................
+................
+....x...........
+................
+................
+................</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">................
+................
+................
+................
+...111..........
+...1.1..........
+...111..........
+................
+................</pre>
+         </div>
+      </div>
+   </div>
+</div>

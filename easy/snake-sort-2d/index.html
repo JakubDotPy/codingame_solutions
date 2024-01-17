@@ -1,0 +1,40 @@
+<h1>Snake Sort 2D</h1>
+
+<a href="https://www.codingame.com/training/easy/snake-sort-2d">https://www.codingame.com/training/easy/snake-sort-2d</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">A lazy snake wants to eat all <var>N</var> apples in a 2D array of fixed size (<const>100</const>x<const>100</const>).<br><br>The snake starts at the position <const>0,0</const> and, because it is a lazy snake, goes down to the first row that contains apples and traverses the row from left to right; it then goes down to the next row that contains apples and traverses this row from right to left, and so on, &quot;snaking&quot; its way down the array.<br><br>You are given the <var>name</var> and the <var>row</var>,<var>column</var> coordinates of each apple.<br>What is the list of each apple&rsquo;s name in the lazy-snake-eating-order?</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var>  for the number of apples.<br><strong><var>N</var> next lines:</strong> A string <var>name</var> and two integers <var>row</var>,<var>column</var> for the name and coordinates of an apple.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> A lazy-snake-eating-order comma-separated sorted list of apples.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &le; <var>N</var> &le; 100<br>0 &le; <var>row</var>,<var>column</var> &lt; 100</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">4
+A 0 10
+B 0 20
+C 1 10
+D 1 20</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">A,B,D,C</pre>
+         </div>
+      </div>
+   </div>
+</div>

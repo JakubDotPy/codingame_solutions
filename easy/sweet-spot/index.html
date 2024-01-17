@@ -1,0 +1,65 @@
+<h1>Sweet spot</h1>
+
+<a href="https://www.codingame.com/training/easy/sweet-spot">https://www.codingame.com/training/easy/sweet-spot</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">The aim of this puzzle is to simulate the impact of the shock wave of bombs on a square grid. The grid initially contains cells labeled <const>0</const> along with several bombs of type <const>A</const>, <const>H</const>, or <const>B</const>. Display the greatest intensity of shockwaves felt at each cell after the bombs explode.<br><br>The three bombs have different explosion patterns. Consider the following generic configuration, where the X will be replaced by the different types of bombs. Note that for each bomb, <strong>the bomb's location is not replaced by a number</strong>.<br><const>000000000<br>000000000<br>000000000<br>000000000<br>0000X0000<br>000000000<br>000000000<br>000000000<br>000000000</const><br><br>For the <const>A</const>-bomb:<br><const>000000000<br>011111110<br>012222210<br>012333210<br>0123A3210<br>012333210<br>012222210<br>011111110<br>000000000</const><br><br>For the <const>H</const>-bomb:<br><const>000000000<br>055555550<br>055555550<br>055555550<br>0555H5550<br>055555550<br>055555550<br>055555550<br>000000000</const><br><br>For the <const>B</const>-bomb:<br><const>000000000<br>000010000<br>000020000<br>000030000<br>0123B3210<br>000030000<br>000020000<br>000010000<br>000000000</const><br>Unlike the other bombs, the <const>B</const>-bomb will not explode unless it is within the shockwave of another exploding bomb.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">&curren; <strong>First line</strong>: An integer <var>N</var> representing the size of the square grid<br>&curren; <strong>The following <var>N</var> lines</strong>: Strings representing each line of the grid</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">&curren; <strong><var>N</var> lines</strong>: Strings representing each line of the grid after the bombs explode. If two effects from two different bombs are felt on a square, the stronger effect is recorded on the square</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">&curren; 1 &le; <var>N</var> &le; 25<br>&curren; The place may already have felt the effect of other bombs before the grid bombs exploded. In this case the number of the cell will be different from 0 as soon as the grid is given<br>&curren; There are only three types of bomb: <const>A</const>, <const>B</const>, <const>H</const><br>&curren; There may be no explosion</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">15
+000000000000000
+A00A0000000000A
+000000000000000
+000000000000000
+000000000000000
+000000000000000
+000000000000000
+000000000000000
+0000000A0000000
+000000000000000
+000000000000000
+000000000000000
+000000000000000
+000000000000000
+A000000000000AA</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">333332100001233
+A33A3210000123A
+333332100001233
+222222100001222
+111111100001111
+000011111110000
+000012222210000
+000012333210000
+0000123A3210000
+000012333210000
+000012222210000
+111111111111111
+222100000012222
+332100000012333
+A321000000123AA</pre>
+         </div>
+      </div>
+   </div>
+</div>

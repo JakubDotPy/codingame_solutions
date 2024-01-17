@@ -1,0 +1,40 @@
+<h1>Unflood The World</h1>
+
+<a href="https://www.codingame.com/training/expert/unflood-the-world">https://www.codingame.com/training/expert/unflood-the-world</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">A rectangular map is made of squares, each with a specific height.<br>When it rains, the water falls evenly on all squares.<br><br>The water flows down from any square to an adjacent lower one. The water also flows freely between adjacent squares of equal height. If a square is surrounded by higher squares, the water just accumulates there.<br><br>You are allowed to build drains in some squares.<br>When a square has a drain, all the water that would accumulate on it will leak out instead.<br><br>What is the minimum number of drains that have to be built to leak out all the rain water?<br><br>NOTE: Adjacency is horizontal or vertical. Squares that touch diagonally through a corner aren't adjacent.<br><br>NOTE: The water can never flow outside the map. You can consider it  bounded by walls of infinite height.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">First line: integers <var>N</var> and <var>M</var> - width and height of map<br>Next <var>M</var> lines: <var>N</var> space separated integers between 1 and 10000 - height of each square</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">A single integer - number of drains to be built.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &lt;= N, M &lt;= 100</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">5 4
+5 5 5 5 5
+5 4 4 4 5
+5 3 2 1 5
+5 5 5 5 5</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1</pre>
+         </div>
+      </div>
+   </div>
+</div>

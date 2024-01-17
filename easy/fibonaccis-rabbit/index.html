@@ -1,0 +1,37 @@
+<h1>Fibonacci's Rabbit</h1>
+
+<a href="https://www.codingame.com/training/easy/fibonaccis-rabbit">https://www.codingame.com/training/easy/fibonaccis-rabbit</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">The Fibonacci sequence has first been introduced to calculate the growth of rabbit populations.<br>In this puzzle you will have to calculate how many pairs of rabbits will be born at a given moment.<br>To do so, you will know how many pairs of rabbits you introduce at year 0 (we'll denote them as F0) as well as the age (in years) the rabbits can reproduce. Each pair of rabbits will always give birth to one pair each year of reproduction. (e.g. if rabbits can reproduce from 2 to 3 you will have F(i) = F(i-2) + F(i-3)).</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>1st line</strong> Two space-separated integers <var>F0</var>, representing the initial number of pairs of rabbits at year 0 and <var>N</var>, representing the number of years to simulate.<br><strong>2nd line</strong> Two space-separated integers <var>a</var> and <var>b</var>, representing the inclusive range of age (in years) rabbits can give birth.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">An Integer <var>FN</var>, the number of pairs of newly born rabbits at year <var>N</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &le; <var>F0</var> &le; 100<br>0 &le; <var>N</var> &le; 60<br>0 &lt; <var>a</var> &le; <var>b</var> &le; 12<br><var>FN</var> &lt; 2^64</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1 10
+1 2</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">89</pre>
+         </div>
+      </div>
+   </div>
+</div>

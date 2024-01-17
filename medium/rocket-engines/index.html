@@ -1,0 +1,37 @@
+<h1>Rocket engines</h1>
+
+<a href="https://www.codingame.com/training/medium/rocket-engines">https://www.codingame.com/training/medium/rocket-engines</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">It is a public secret that you need a rocket to go to Mars, but only a few know that your rocket engines must be balanced.<br>Because Mars is fourth planet from the Sun, your rocket has four engines positioned in matrix 2&times;2. Before launch, each engine has it own default power, but you as engineer and captain of rocket can change power of engines. In one turn, you can increase by 1 every engine in arbitrary row or column, and you can perform multiple actions (there is no limit). <br><br>Imbalance of rocket is defined as difference between maximal engine power and minimal engine power.<br>Your goal is to find what is the <strong>minimal possible imbalance</strong> of rocket you can obtain using described action.<br><br><strong>Example:</strong><br>Given default power of each engine:<br><pre style="font-family: monospace">1 1<br>0 3</pre>Next actions are performed: 1 &times; first row, 2 &times; first column:<br><pre style="font-family: monospace">1 1 -&gt; 2 2 -&gt; 3 2 -&gt; 4 2<br>0 3    0 3    1 3    2 3</pre>So minimal imbalance of rocket is 4 - 2 = 2.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Two lines:</strong> Matrix 2&times;2 which represents the default power of each rocket engine.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>A single line:</strong> Number which represents the minimal imbalance of rocket.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><var>a[i][j]</var> - Element of matrix<br>0 &le; <var>a[i][j]</var> &le; 10⁹</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1 1
+0 3</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">2</pre>
+         </div>
+      </div>
+   </div>
+</div>

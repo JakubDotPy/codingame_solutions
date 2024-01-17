@@ -1,0 +1,86 @@
+<h1>Simplified Monopoly™ Turns Prediction</h1>
+
+<a href="https://www.codingame.com/training/medium/simplified-monopoly-turns-prediction">https://www.codingame.com/training/medium/simplified-monopoly-turns-prediction</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Your goal is to recreate a simplified turns prediction for the Monopoly&trade; game.<br><br>You'll be given a list of players with their names and their initial positions, a list of dice rolls, and a list of names of all the game board positions. You'll need to find the <strong>latest position</strong> for each player after all the given dice rolls.<br><br><strong>GAME BOARD</strong><br><br>The game is played on a <strong>circular</strong> game board.<br>There are 40 positions on the board, indexed from <const>0</const> to <const>39</const>.<br><br><strong>BASIC RULES</strong><br><br>Each player rolls two dice, and moves forward <const>the sum of the dice rolled</const> positions.<br>Multiple players can occupy the <strong>same</strong> position.<br>If a player reaches position <const>39</const> and still needs to move forward, he'll continue from position <const>0</const>. In other words, positions 38, 39, 0, 1, 2 are contiguous.<br>Unless something special happens (see below), his turn ends after moving.<br><br><strong>DOUBLE RULES</strong><br><br>A double refers to a roll where both dice have the same value.<br>If the player rolls a double, then he rolls the dice and moves again.<br>If the player rolls a double three times in a row, then he immediately goes to jail (see below) and his turn ends there.<br><br><strong>JAIL RULES</strong><br><br>The <const>Visit Only / In Jail</const> position has a dual nature: the player is either visiting only, or actually in jail, depending on how he got there.<br><br>If at the end of a basic move, the player lands on <const>Go To Jail</const>, then he immediately moves to the position <const>Visit Only / In Jail</const> and is in jail. His turn ends.<br>If the player rolls a double for the third time in a single turn, then he immediately moves to the position <const>Visit Only / In Jail</const> and is in jail. His turn ends.<br><br>If after moving, the player lands on <const>Visit Only / In Jail</const>, he is visiting only and is <strong>not</strong> in jail.<br><br>While the player is in jail, he still rolls the dice on his turn as usual, but doesn't move until either:<br>(a) he rolls a double, or<br>(b) he fails to roll a double for three throws (i.e. his previous two turns after moving to jail and his current turn).<br>If either (a) or (b) happens in the player's turn, then he moves forward <const>the sum of the dice rolled</const> positions and his turn ends. He doesn't roll the dice again even if he has rolled a double.<br><br><strong>Note:</strong> <const>Visit Only / In Jail</const> is at position <const>10</const>. <const>Go To Jail</const> is at position <const>30</const>.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>P</var> for the number of players<br><strong>Next <var>P</var> lines:</strong> One line for each player, containing the name and the initial position, separated with a space<br><strong>Next line:</strong> An integer <var>D</var> for the number of dice rolls in <strong>playing order</strong><br><strong>Next <var>D</var> lines:</strong> One line for each dice roll (space-separated)<br><strong>Next 40 lines:</strong> One line for the name of each board position. Note that these aren't actually needed to solve the puzzle.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>P</var> lines:</strong> One line for each player, containing the name and the latest position, separated with a space. The output should follow the same order of the players as given in the input.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &le; <var>P</var> &le; 6<br>Players' names do not contain any spaces.<br>Players never start on <const>Go To Jail</const> or in jail.<br>The game board is <strong>constant</strong>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+Horse 0
+TopHat 0
+6
+1 6
+2 1
+6 4
+2 1
+4 5
+6 5
+Go
+Mediterranean Avenue
+Community Chest
+Baltic Avenue
+Income Tax
+Reading Railroad
+Oriental Avenue
+Chance
+Vermont Avenue
+Connecticut Avenue
+Visit Only / In Jail
+St. Charles Place
+Electric Company
+States Avenue
+Virginia Avenue
+Pennsylvania Railroad
+St. James Place
+Community Chest
+Tennessee Avenue
+New York Avenue
+Free Parking
+Kentucky Avenue
+Chance
+Indiana Avenue
+Illinois Avenue
+B. &amp; O. Railroad
+Atlantic Avenue
+Ventnor Avenue
+Water Works
+Marvin Gardens
+Go To Jail
+Pacific Avenue
+North Carolina Avenue
+Community Chest
+Pennsylvania Avenue
+Short Line
+Chance
+Park Place
+Luxury Tax
+Boardwalk</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">Horse 26
+TopHat 17</pre>
+         </div>
+      </div>
+   </div>
+</div>

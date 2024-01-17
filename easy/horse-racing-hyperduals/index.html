@@ -1,0 +1,47 @@
+<h1>Horse-racing Hyperduals</h1>
+
+<a href="https://www.codingame.com/training/easy/horse-racing-hyperduals">https://www.codingame.com/training/easy/horse-racing-hyperduals</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Casablanca&rsquo;s hippodrome has grown tired of old-fashioned dual racing and has kicked it up a notch: they will now be organizing hyperduals.<br><br>During a hyperdual, only two horses will participate in the race. In order for the race to be interesting, it is necessary to try to select two horses with similar strength.<br><br>Write a program which, using a given number of strengths, identifies the two closest strengths and shows their difference with an integer.<br><br>In a hyperdual, a horse's strength is a bidimensional <var>(Velocity,Elegance)</var> vector. The distance between two strengths <var>(V1,E1)</var> and <var>(V2,E2)</var> is <var>abs(V2-V1)+abs(E2-E1)</var>.<br><br>(This is a harder version of training puzzle &ldquo;Horse-racing duals&rdquo;. You may want to solve that problem first.)<br>(To date there is no specific achievement if you solve this one in pure bash. Rest assured it *is* possible nonetheless!)</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> the number <var>N</var> of horses<br><strong><var>N</var> following lines:</strong> the speed <var>Vi</var> and elegance <var>Ei</var> of each horse, space-separated</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> the distance <var>D</var> between the two closest strengths</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">10 &le; <var>N</var>  &le; 600<br>0 &le; <var>Vi</var>,<var>Ei</var> &le; 10000000<br><var>D</var> &ge; 0<br>All values are integral.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">10
+6850207 0
+8707138 0
+8028585 0
+3635318 0
+8612162 0
+6854699 0
+7106093 0
+3721952 0
+2670046 0
+1746583 0
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">4492</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,38 @@
+<h1>Robot Show</h1>
+
+<a href="https://www.codingame.com/training/easy/robot-show">https://www.codingame.com/training/easy/robot-show</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Two rooms are connected by a service duct allowing floor-sweeping bots to move between the rooms.<br>The duct is very narrow, just wide enough for one bot to pass through.<br><br>The bots do not have visual, lazer, radar or anything to detect obstacles. Their only sensory is touching. If they meet in the duct, they will bump into each other. Collision will cause each of them to turn around to continue moving in the opposition direction.<br><br>Bob finds that it is very interesting to watch the bots bumping and bouncing back and forth. He prepared a longer transparent duct and put more bots into it, wishing to watch a sequence of bumping and bouncing &quot;bot-show&quot;. He designed some starting locations for the bots and then turned them all ON at the same time.<br><br>- assume the bots move at a constant speed of 1 meter/second, <br>- assume the bots have a diameter small enough to be negligible in calculation of travel distance,<br>- assume no bot will go from the rooms into the duct during &quot;show-time&quot;, <br>- assume Bob is free to arrange every bot to face it either Left or Right before starting the show... <br><br>What is the longest possible time for the bots to run around in the duct until all bots exit?<br><br><strong>Example</strong><br><br>In a duct of length 10m two bots move face-to-face<br><br><pre style="font-family: monospace">    &gt;       &lt;<br>+-+-+-+-+-+-+-+-+-+-+  init state<br>0 1 2 3 4 5 6 7 8 9 10<br><br>        X              after 2 sec<br>+-+-+-+-+-+-+-+-+-+-+  bump at 4, bounce<br>0 1 2 3 4 5 6 7 8 9 10<br><br>&lt;               &gt;      after 4 sec<br>+-+-+-+-+-+-+-+-+-+-+  the L bot is exiting<br>0 1 2 3 4 5 6 7 8 9 10<br><br>                    &gt;  after 2 sec<br>+-+-+-+-+-+-+-+-+-+-+  the R bot is exiting<br>0 1 2 3 4 5 6 7 8 9 10</pre><br>Total bot running time: 8 sec</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>L</var> for the length of the service duct, in meter<br><strong>Line 2:</strong> An integer <var>N</var> for the number of bots<br><strong>Line 3:</strong> <var>N</var> integers indicating the initial locations of the bots measured in meter from one end of the duct. Numbers are not arranged in special order.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> An integer, the maximum number of seconds for the bots to continue running in the duct before they all exit.<br><br>If the answer is not an integer, round it to become the nearest integer.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &le; <var>L</var> &le; 1000<br>1 &le; <var>N</var> &le; 100</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">10
+2
+2 6</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">8</pre>
+         </div>
+      </div>
+   </div>
+</div>

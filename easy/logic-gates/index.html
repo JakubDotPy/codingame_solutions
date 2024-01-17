@@ -1,0 +1,44 @@
+<h1>Logic gates</h1>
+
+<a href="https://www.codingame.com/training/easy/logic-gates">https://www.codingame.com/training/easy/logic-gates</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">A logic gate is an electronic device implementing a boolean function, performing a logical operation on one or more binary inputs and producing a single binary output.<br><br>Given <var>n</var> input signal names and their respective data, and <var>m</var> output signal names with their respective type of gate and two input signal names, provide <var>m</var> output signal names and their respective data, in the same order as provided in input description.<br><br>All type of gates will always have two inputs and one output.<br>All input signal data always have the same length.<br><br>The type of gates are :<br><strong>AND</strong> : performs a logical <strong>AND</strong> operation.<br><strong>OR</strong> : performs a logical <strong>OR</strong> operation. <br><strong>XOR</strong> : performs a logical <strong>exclusive OR</strong> operation.<br><strong>NAND</strong> : performs a logical <strong>inverted AND</strong> operation.<br><strong>NOR</strong> : performs a logical <strong>inverted OR</strong> operation.<br><strong>NXOR</strong>  : performs a logical <strong>inverted exclusive OR</strong> operation.<br><br>Signals are represented with <strong>underscore</strong> and <strong>minus</strong> characters, an <strong>undescore</strong> matching a low level (0, or false) and a <strong>minus</strong> matching a high level (1, or true).</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1 :</strong> <var>n</var> number of input signals.<br><strong>Line 2 :</strong> <var>m</var> number of output signals.<br><strong><var>n</var> next lines</strong> : two space separated strings : name of input signal, then signal form.<br><strong><var>m</var> next lines</strong> : four space separated strings :  name of output signal, then type of logic gate, then first input name, then second input name.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>m</var> lines</strong> : two space separated strings : name of output signal, then signal form.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>n</var> &le; 4<br>1 &le; <var>m</var> &le; 16</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+3
+A __---___---___---___---___
+B ____---___---___---___---_
+C AND A B
+D OR A B
+E XOR A B</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">C ____-_____-_____-_____-___
+D __-----_-----_-----_-----_
+E __--_--_--_--_--_--_--_--_</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,38 @@
+<h1>Wall Street</h1>
+
+<a href="https://www.codingame.com/training/hard/wall-street">https://www.codingame.com/training/hard/wall-street</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">On Wall Street people <const>buy</const> and people <const>sell</const>.<br>When a buyer and a seller's prices match a trade is created.<br>When there is no match the order is <strong>&ldquo;put in the book&rdquo;</strong>.<br><br>Some special cases that must be considered:<br>- If the buyer's price is higher than the seller's price: the price used is the one already in the system.<br>- If there are more than one order in the system at the same price: a first in first out approach is taken.<br>- A trade cannot be concluded between orders that aren't on top of the book: the best price is always traded first. For a <const>buy</const> order the best price is the highest; for a <const>sell</const> order the best price is the lowest.<br>- A trade can only occur between orders on the same stock symbol.<br>- If there are remaining quantities after a trade, we try to trade with the next order in the book. If we can't, we put an order <strong>&ldquo;in the book&rdquo;</strong> for the untraded quantity.<br><br>An order consist of a <var>symbol</var> that represents the stock to trade, a <var>verb</var> that indicates whether it's a <const>BUY</const> or a <const>SELL</const>, a quantity <var>qty</var> and a <var>price</var>.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> <var>N</var> number of orders<br><strong><var>N</var> following lines:</strong> an order as space-separated values: <var>symbol</var> <var>verb</var> <var>qty</var> <var>price</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">All trades in order of occurrence: <var>symbol</var> <var>qty</var> <var>price</var><br>If no trade at all takes place, write <const>NO TRADE</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &le; <var>N</var> &le; 1000<br>1 &le; <var>qty</var> &le; 1000<br>All prices are fixed-point decimals. They must be formatted with minimal integral figures and exactly two fractional figures. (one cent as <const>0.01</const>)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+AAA BUY 1 10.00
+AAA SELL 1 10.00</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">AAA 1 10.00</pre>
+         </div>
+      </div>
+   </div>
+</div>

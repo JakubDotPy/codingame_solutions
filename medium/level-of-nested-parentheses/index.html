@@ -1,0 +1,39 @@
+<h1>Level of nested parentheses</h1>
+
+<a href="https://www.codingame.com/training/medium/level-of-nested-parentheses">https://www.codingame.com/training/medium/level-of-nested-parentheses</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Output for each pair of matching parentheses their level of nesting in an ASCII art graphic style.<br><br>The input is a string <var>f</var> of size <var>n</var>, with nested parentheses. Outermost parentheses have level-1, and each time a new pair of parentheses is nested into a previous one, its level is incremented by one, up to level-<var>L</var>.<br><br>The output is the same line, followed by an ASCII graphic: for each pair of parentheses, under each parenthesis there must be an arrow pointing up (<const>^</const> and then <const>|</const> on the following line).<br>These arrows should be longer if they contain nested parentheses: in this case, additional <const>|</const> are added to the next line to make them longer. <br>Under these two arrows, there must be written the level of nesting (from <const>1</const> to <const>9</const>) and those two numbers are linked by a horizontal line made of repeated <const>-</const>.<br><br>Simple example:<br><pre style="font-family: monospace">(simple)<br>^      ^<br>|      |<br>1------1</pre><br>Note that if a level-1 pair of parentheses does not contain any other parenthesis it will be displayed on the 4th line, as in this example. But, if in the same formula, in addition to this simple case, there is another pair of parentheses of level-1 containing a nested pair of parentheses of level-2 then this new level-1 will be shown on the 5th line (whereas the nested level-2 will occupy the 4th line). See test case 3 (&quot;Two levels, unbalanced&quot;) for an example of level-1 statements being on two different lines.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><var>f</var> a string containing a formula with parentheses</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>line 1 :</strong> <var>f</var> the unchanged input formula<br><strong><var>L</var>+2 next lines</strong>: a formatted ASCII string showing the level of nesting of each pair of parentheses (<var>L</var> being the maximum level of nested parentheses). All output lines must have the same size <var>n</var> (<var>n</var> being the size of the input string <var>f</var>): complete with spaces when necessary.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">The opening and closing parentheses in the input formula <var>f</var> are consistent<br>0 &le; <var>L</var> &le; 9<br>1 &le; <var>n</var> &le; 100</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">(a+b)*(c+d)=ac+ad+bc+bd</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">(a+b)*(c+d)=ac+ad+bc+bd
+^   ^ ^   ^            
+|   | |   |            
+1---1 1---1            </pre>
+         </div>
+      </div>
+   </div>
+</div>

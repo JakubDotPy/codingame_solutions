@@ -1,0 +1,47 @@
+<h1>orDer oF succeSsion</h1>
+
+<a href="https://www.codingame.com/training/easy/order-of-succession">https://www.codingame.com/training/easy/order-of-succession</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You have to output the order of succession to the British throne of a list of given people.<br>The order is simple:<br>From a descendant A, the next in the order is A&rsquo;s first child B.<br>Then, the next one is B&rsquo;s first child C if any and so on.<br>If C has no child, then the next one is B&rsquo;s second child D.<br>Then D&rsquo;s children if any. Then B&rsquo;s third child E&hellip; then A&rsquo;s second child F&hellip;<br><br>Let&rsquo;s draw it with a tree:<br><pre style="font-family: monospace"><br>      A1<br>    ┌─┴─┐<br>    B2  F6<br> ┌──┼──┐<br> C3 D4 E5<br></pre><br><br>You see the order of succession: begin on the left of the tree, walk to the next level whenever possible otherwise continue to the right. Repeat until the whole tree is covered.<br>Thus, the order is A-B-C-D-E-F.<br><br>In fact, in siblings of the same person, the male descendants are ordered before the female descendants. For example, if the order of birth of the children (M for male, F for female) is Fa Ma Me Fe then the order of succession in these siblings is Ma Me Fa Fe.<br><br><strong>Ordering rules</strong><br>(a) in order of generation<br>(b) in order of gender<br>(c) in order of age (year of birth) <br><br><strong>Outputting rules</strong><br>(a) exclude dead people (but include siblings of dead people)<br>(b) exclude people who are catholic (but include siblings of catholic people)<br><br>Note that this puzzle has been written in June, 2017 (some <const>people</const> might have died since this date).</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> The number of people <var>n</var><br><strong>Next <var>n</var> lines:</strong> <const>Name</const> <const>Parent</const> <const>Year of birth</const> <const>Year of death</const> <const>Religion</const> <const>Gender</const><br><br>If the <const>people</const> is not dead then the year of death is replaced by the hyphen <const>-</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">One name per line, in the order of succession to the throne: first the Queen, then all her descendants.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">Exactly one <const>people</const> does not have a parent (the parent&rsquo;s name is replaced by the hyphen <const>-</const>).<br>No two siblings of the same gender of a person have the same year of birth.<br>1 &le; <var>n</var> &le; 100</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">6
+Elizabeth - 1926 - Anglican F
+Charles Elizabeth 1948 - Anglican M
+William Charles 1982 - Anglican M
+George William 2013 - Anglican M
+Charlotte William 2015 - Anglican F
+Henry Charles 1984 - Anglican M</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">Elizabeth
+Charles
+William
+George
+Charlotte
+Henry</pre>
+         </div>
+      </div>
+   </div>
+</div>

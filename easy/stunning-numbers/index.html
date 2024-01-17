@@ -1,0 +1,37 @@
+<h1>Stunning numbers</h1>
+
+<a href="https://www.codingame.com/training/easy/stunning-numbers">https://www.codingame.com/training/easy/stunning-numbers</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">When written with digits, some digits may still read when flipped (<const>0</const>, <const>1</const>, <const>2</const>, <const>5</const>, <const>6</const>, <const>8</const>, and <const>9</const>) while others mean nothing when flipped (<const>3</const>, <const>4</const>, and <const>7</const>).<br>Once flipped, some integers remain identical like <const>69</const>, they are called &quot;stunning numbers&quot;!<br>Given an integer <var>n</var>, say whether it is &quot;stunning&quot; or not, then find the next &quot;stunning number&quot;...<br><br><pre style="font-family: monospace"> --          --    --          --    --    --    --    --<br>|  |     |     |     |  |  |  |     |        |  |  |  |  |<br>             --    --    --    --    --          --    --<br>|  |     |  |        |     |     |  |  |     |  |  |     |<br> --          --    --          --    --          --    --<br><br><br> --    --          --    --          --    --          --<br>|     |  |  |     |  |  |     |     |        |  |     |  |<br> --    --          --    --    --    --    --        <br>|  |  |  |  |        |     |  |  |  |     |     |     |  |<br> --    --    --    --    --          --    --          --</pre><br>Even if the number <const>1</const> is a little off once flipped, it is considered stunning.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><var>n</var> an integer</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1</strong>:  <const>true</const> if <var>n</var> is a &quot;stunning number&quot;, <const>false</const> otherwise<br><strong>Line 2</strong>: the next &quot;stunning number&quot;.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><const>0</const> &lt;= <var>n</var> &lt;= <const>10^20</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">69</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">true
+88</pre>
+         </div>
+      </div>
+   </div>
+</div>

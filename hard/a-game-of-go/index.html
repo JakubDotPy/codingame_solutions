@@ -1,0 +1,51 @@
+<h1>A Game of Go</h1>
+
+<a href="https://www.codingame.com/training/hard/a-game-of-go">https://www.codingame.com/training/hard/a-game-of-go</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Go is an abstract strategy board game for two players, in which the aim is to surround more territory than the opponent.<br>Given a board (where some stones are already added) and a list of moves to be executed next, check whether the moves are valid and (if they are valid) execute them.<br>The initial board state in the input is always valid.<br><br>After executing all moves in the list the expected output is either <const>NOT_VALID</const> if at least one of the moves is invalid, or the new state of the board after all moves were executed.<br><br><strong>Rules of Go:</strong><br>- Two players place stones of their color (by turns)<br>- If a stone is completely surrounded by stones of the other player (or by the edge of the field) this stone is beaten and is removed from the board<br>- If stones of the same color are placed next to each other they build a group<br>- If the group is completely surrounded by stones of the other player (or by the edge of the fields) this group is beaten and all of its stones are removed from the board<br>- A stone can be placed on every free field on the board except for:<br>    --- A position in which it would be completely surrounded by the stones of the other player (no suicidal moves allowed). Except this move beats some other stones which leads to it not being surrounded anymore<br>    --- A position that would create the same board that was there before the other player made his move (to prevent an infinite loop of killing stones) which is named KO-rule (see a test case for an example)<br><br>- Points (which are not important for this puzzle) are made by empty fields that are surrounded by the stones of a player or by enemy stones that are beaten<br><br>For a more detailed description please visit wikipedia:<br>https://en.wikipedia.org/wiki/Go_(game)#Rules</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>S</var> for the size of the field (the field is a square of <var>S</var>&times;<var>S</var>).<br><strong>Line 2:</strong> An integer <var>M</var> for the number of moves that are to be made on the board.<br><strong>Next <var>S</var> lines:</strong> A line of the board where <const>.</const> is an empty field, <const>B</const> is a field with a black stone and <const>W</const> is a field with a white stone on it (each line contains <var>S</var> characters).<br><strong>Next <var>M</var> lines:</strong> A move that is described by the player color, and the position (separated by a <const>space</const> character). <br>Example: <const>B 0 11</const> means a black stone on the 1st line and the 12th column.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">If at least one of the moves in the list is not valid just print: <const>NOT_VALID</const>.<br>If all moves from the input list are valid you have to output the board after the execution of all moves, just like in the input. So a line of output could look like this:<br><const>.BW.</const> which means the first and the last field in this line is empty and in between there is a black and a white stone.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><var>S</var> &le; 19<br><var>S lines</var> contain only <const>'.'</const>, <const>'B'</const> or <const>'W'</const>.<br><var>M</var> &le; 15<br>A <var>Move</var> input starts with either <const>B</const> or <const>W</const> followed by two integers <var>i</var> and <var>j</var> that define the position of the placed stone (separated by a <const>space</const> character). The integers to define the positions can be 0 &le; <var>i</var> &lt; <var>S</var> (from 0 (included) to the size of the board (not included)).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">5
+5
+.....
+.....
+.....
+.....
+.....
+B 2 2
+W 2 3
+B 3 2
+W 3 4
+B 4 3</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">.....
+.....
+..BW.
+..B.W
+...B.</pre>
+         </div>
+      </div>
+   </div>
+</div>

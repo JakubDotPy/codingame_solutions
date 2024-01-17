@@ -1,0 +1,37 @@
+<h1>The Polish Dictionary</h1>
+
+<a href="https://www.codingame.com/training/medium/the-polish-dictionary">https://www.codingame.com/training/medium/the-polish-dictionary</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are given a mathematical expression in <strong>Reverse Polish Notation</strong> and you need to return the equivalent expression in <strong>Infix Notation</strong> with parentheses correctly placed.<br><br><strong>Infix Notation</strong><br>Infix notation is the standard for math, operators are inserted between the two operands they work on:<br><pre style="font-family: monospace">5 + 3</pre><br><const>*</const> and <const>/</const> have precedence over <const>+</const> and <const>-</const>. This can be altered by surrounding certain operations with parentheses so they have to be calculated first:<br><pre style="font-family: monospace">5 + 3 * 6 = 5 + 18 = 23  -&gt;  (5 + 3) * 6 = 8 * 6 = 48</pre><br><strong>Reverse Polish Notation</strong><br>In reverse polish notation, the operators are placed after the two operands they work on:<br><pre style="font-family: monospace">5 3 +</pre><br>When we calculate the result, we imagine going through the operators left to right and replacing each one with the result we get if we apply it onto the operands right beside it:<br><pre style="font-family: monospace">5 3 + 10 * 8 4 + -<br>8 10 * 8 4 + -<br>80 8 4 + - <br>80 12 -<br>68</pre><br>In this notation we do not need to worry about operator precedence or parentheses, as the order in which the operators were written dictates the order.<br><br>In this puzzle you also have to worry about &quot;variables&quot;, which are just combinations of letters, that are not operators, they have the same role as numbers and should appear in the result in the same way:<br><pre style="font-family: monospace">apple 3 *  -&gt;  apple * 3</pre></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var> for the number of operands and operators in the string.<br><strong>Line 2:</strong> A string consisting of <var>N</var> operands and operators separated by spaces in reverse polish notation.<br>An operator can be either of the following: <const>+</const>, <const>-</const>, <const>*</const>, <const>/</const>.<br>An operand can be a number or a variable name.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> The resulting infix notation expression with the minimum number of parentheses.<br>There should not be a space between the parentheses and their operands.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>N</var> &le; 100<br>1 &le; Length of the operands in characters &le; 10<br>Operands can only be a combination of letters and numbers.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+5 3 +</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">5 + 3</pre>
+         </div>
+      </div>
+   </div>
+</div>

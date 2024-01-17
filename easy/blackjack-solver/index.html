@@ -1,0 +1,38 @@
+<h1>Blackjack solver</h1>
+
+<a href="https://www.codingame.com/training/easy/blackjack-solver">https://www.codingame.com/training/easy/blackjack-solver</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are playing blackjack against the bank, but they no longer know the rules! Help her find who is the winner.<br>To win at Blackjack, your hand must be stronger than the banker's while not exceeding 21 (inclusive). If a hand exceeds 21 points, the opposing hand wins. If both exceed 21, the bank wins.<br><br>To calculate the value of a hand, we add the values ​​of the cards as follows:<br>- From <const>2</const> to <const>9</const>: each card has its own face value.<br>- The <const>10</const>, <const>J</const> (Jacks), <const>Q</const> (Queens) and <const>K</const> (Kings) are worth <const>10</const>.<br>- The <const>A</const> (Aces) are equivalent to <const>1</const> or <const>11</const> depending on the hand-holder's advantage. If the hand does not exceed 21, the <const>A</const> counts 11. If, on the contrary, it exceeds it, the <const>A</const> counts as 1.<br>Example: if the hand is <const>A A</const>, the hand-holder will have 12 points (11+1), because 11+11=22&gt;21 which is not to the advantage of the owner of the hand.<br>- The hand called &quot;Blackjack&quot; is composed of an <const>A</const> and a card worth 10, for a total of 21, received from the start (with no other card therefore).<br><br>Entries are not listed in the order the cards were dealt (the order does not matter).<br>Example: <const>A J 2</const> is not a blackjack, even if there is <const>A</const> and <const>J</const>, because there is a third card.<br><br>If your hand is stronger: return <const>Player</const><br>If your hand is weaker or bank has blackjack and not you: return <const>Bank</const><br>If there is a tie: return <const>Draw</const><br>If you have Blackjack and the bank has none: return <const>Blackjack!</const></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1 :</strong> <var>bank_cards</var>, bank cards (separated by a space)<br><strong>Line 2 :</strong> <var>player_cards</var>, the player's cards (separated by a space)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><const>Player</const>, <const>Bank</const>, <const>Draw</const>, <const>Blackjack!</const> depending on the situation</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">8 2 2
+7 6
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">Player</pre>
+         </div>
+      </div>
+   </div>
+</div>

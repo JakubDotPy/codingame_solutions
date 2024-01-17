@@ -1,0 +1,40 @@
+<h1>Grid climbing</h1>
+
+<a href="https://www.codingame.com/training/hard/grid-climbing">https://www.codingame.com/training/hard/grid-climbing</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are given an integer <var>n</var>, an array <var>costs</var> of <var>n-1</var> integers and a <var>n</var> times <var>n</var> grid of digits. You start at <const>(0, 0)</const> with a starting cost equal to <strong>grid(0, 0)</strong> and you want to <strong>reach the bottom right (n-1, n-1) with minimal cost.</strong> <br><br>At any turn you can move from <strong>(i, j) to (i', j') (different of (i, j))</strong> with a cost equal to the sum of:<br><br><strong>(1)</strong> the value of the grid at (i', j'), <strong>grid(i', j')</strong><br><strong>(2)</strong> the integer at the <strong>(d-1)</strong>-th index in <var>costs</var> table, where <strong>d</strong> = max(abs(i-i'), abs(j-j')).<br><br>Find the minimum cost.<br><br><pre style="font-family: monospace">Example:<br>3<br>1 5<br>132     X..<br>053  -&gt; X..<br>011     .XX<br><br>starting cost = grid(0, 0) = 1<br>(0, 0) -&gt; (1, 0) = costs[1-1] + grid(1, 0) = 1 + 0 = 1<br>(1, 0) -&gt; (2, 1) = costs[1-1] + grid(2, 1) = 1 + 1 = 2<br>(2, 1) -&gt; (2, 2) = costs[1-1] + grid(2, 2) = 1 + 1 = 2<br>total = 1 + 1 + 2 + 2 = 6</pre></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>n</var> for the number of points to compare.<br><strong>Line 2:</strong> A space separated string <var>costs</var> with <var>n-1</var>&nbsp;elements, representing the cost of the distance.<br><strong>Next <var>n</var> lines:</strong> The rows of the <var>n</var> times <var>n</var>&nbsp;grid</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> An integer for the minimum cost required to reach the target.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">In <var>costs</var>, the <var>n-1</var> integers satisfy: 0 &lt; <var>c_1</var> &lt; <var>c_2</var> &lt; ... &lt; <var>c_(n-1)</var><br>3 &lt;= <var>n</var> &lt;= 40</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+1 5
+132
+053
+011</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">6</pre>
+         </div>
+      </div>
+   </div>
+</div>

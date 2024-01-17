@@ -1,0 +1,38 @@
+<h1>Fun with CGX Expressions</h1>
+
+<a href="https://www.codingame.com/training/medium/fun-with-cgx-expressions">https://www.codingame.com/training/medium/fun-with-cgx-expressions</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You have to parse the CGX file format (see CGX Formatter https://www.codingame.com/training/hard/cgx-formatter for details) to evaluate an expression.<br>The CGX file contains a BLOCK with 2 KEY_VALUE fields: <const>result</const> and optionally <const>vars</const>.<br>The <const>result</const> BLOCK contains the <strong>variable</strong> whose final value should be calculated and returned as output, while the <const>vars</const> BLOCK contains a list of the intermediate variables.<br>Each <strong>variable</strong> (a KEY_VALUE) has a value that is an expression.<br>An <strong>expression</strong> could be: <br>- a constant value PRIMITIVE_TYPE <var>int</var>, <pre style="font-family: monospace">e.g. ('v1'=10)</pre><br>- if the expression is a PRIMITIVE_TYPE <var>str</var>, then it is a variable name, <pre style="font-family: monospace">e.g. ('v1'='v2')</pre><br>- a BLOCK with 3 KEY_VALUE <var>num1</var> , <var>num2</var> and an <var>operator</var>: <const>+</const> <const>-</const> <const>/</const> <const>*</const>, <pre style="font-family: monospace">e.g. (<const>'num1'</const>=<strong>expression</strong>;<const>'num2'</const>='v2';<const>'operator'</const>='+') </pre><br>is the value of the variable v2 plus the value of the <strong>expression</strong>.<br>The order ('num1';'num2';'operator') is not guaranteed, any arrangements are possible, ex: ('num1';'operator';'num2'), ...<br><br>- a fraction BLOCK in the form ('<const>numerator</const>'=<strong>expression</strong>;'<const>denominator</const>'=<strong>expression</strong>),  <pre style="font-family: monospace">e.g. ('numerator'=1;'denominator'=2) is 1/2.</pre> <br>The computations must be carried out in exact fractional form, in the lowest terms. e.g. 5/9+7/9=4/3.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong>: The number <var>N</var> of CGX lines.<br><strong>The <var>N</var> following lines</strong>: The CGX content.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The result of the expression in the KEY_VALUE <const>'result'</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1&lt;=<var>N</var>&lt;=30<br>-2^63&lt;=<var>numerator</var> and <var>denominator</var> &lt;=2^63<br>The CGX content supplied will always be valid.<br>Each line contains maximum 1000 characters. <br>All the characters are ASCII.<br>A KEY_VALUE <const>'result'</const> will always be present.<br>The <const>'result'</const> is always a number (integer or fraction).<br>The <const>'vars'</const> BLOCK could be present if necessary.<br>There are no circular references.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1
+('result'=10)
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">10</pre>
+         </div>
+      </div>
+   </div>
+</div>

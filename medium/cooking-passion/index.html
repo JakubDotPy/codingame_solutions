@@ -1,0 +1,47 @@
+<h1>Cooking passion</h1>
+
+<a href="https://www.codingame.com/training/medium/cooking-passion">https://www.codingame.com/training/medium/cooking-passion</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You love cooking. Therefore, you often go to the shop to buy ingredients for your recipes. Sometimes, you can't, so you ask your dog to go. But he can't read numbers, so he doesn't buy the quantities you need. Given the recipe and the list of ingredients your dog bought, with their respective quantities, find how many times you can cook this meal before you run out of an ingredient.<br>Output the first ingredient that will be running out, how many times you can cook, and how much of each ingredient you will have left.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">First line: Two integers <var>num_recipe</var> and <var>num_ingredients</var>, respectively the number of lines of the recipe and the number of ingredients your dog bought<br><var>num_recipe</var> following lines: A line of the recipe, either an ingredient (beginning with <const>-</const>, then its quantity and its name) or a line to ignore (not beginning with <const>-</const>)<br><var>num_ingredients</var> following lines: An ingredient (its name and its quantity) your dog bought<br><br>Each quantity is either an integer in <strong>g</strong> / <strong>cl</strong> or a float in <strong>kg</strong> (1000g = 1.0kg) / <strong>L</strong> (100cl = 1.0L)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">First line: <var>limiting_ingredient</var> The ingredient that will run out first<br>Second line: <var>num_cooking</var> How many times you can cook the meal before you run out of <var>limiting_ingredient</var><br><var>num_ingredients-1</var> following lines: An ingredient, followed by the quantity remaining, expressed as an integer in grams (respectively centiliters) if it is &lt;1kg (respectively &lt;1L), a float in kg or L otherwise (with at least one digit after the decimal point).<br>Ingredients must be <strong>ordered by quantity</strong>, in ascending order, beginning with <strong>solid ingredients</strong> (in g/kg). <strong>Don't output the <var>limiting_ingredient</var>.</strong></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1&lt;<var>num_ingredients</var>⩽<var>num_recipe</var>&lt;50<br>0&lt;length of a line&lt;500<br>The quantity of <var>limiting_ingredient</var> in grams is a multiple of the quantity needed in the recipe, therefore <var>num_cooking</var> is an integer.<br>There is only one <var>limiting_ingredient</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">5 3
+- 100g Butter
+- 500g Flour
+- 500g Sugar
+Mix it all together
+Eat it !
+Butter 400g
+Flour 1000g
+Sugar 1500g</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">Flour
+2
+Butter 200g
+Sugar 500g</pre>
+         </div>
+      </div>
+   </div>
+</div>

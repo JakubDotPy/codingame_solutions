@@ -1,0 +1,45 @@
+<h1>Ghost Legs</h1>
+
+<a href="https://www.codingame.com/training/easy/ghost-legs">https://www.codingame.com/training/easy/ghost-legs</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Ghost Legs is a kind of lottery game common in Asia. It starts with a number of vertical lines. Between the lines there are random horizontal connectors binding all lines into a connected diagram, like the one below.<br><br><pre style="font-family: monospace">A  B  C<br>|  |  |<br>|--|  |<br>|  |--|<br>|  |--|<br>|  |  |<br>1  2  3</pre><br>To play the game, a player chooses a line in the top and follow it downwards. When a horizontal connector is encountered, he must follow the connector to turn to another vertical line and continue downwards. Repeat this until reaching the bottom of the diagram.<br><br>In the example diagram, when you start from A, you will end up in 2. Starting from B will end up in 1. Starting from C will end up in 3. It is guaranteed that every top label will map to a unique bottom label.<br><br>Given a Ghost Legs diagram, find out which top label is connected to which bottom label. List all connected pairs.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Integer <var>W</var> and <var>H</var> for width and height of the diagram below.<br><strong>Next <var>H</var> lines:</strong> Containing a Ghost Legs diagram as your input.<br><br>The diagram itself is composed of characters: '<strong>|</strong>' and '<strong>-</strong>', (and space).<br>The top line in the diagram has a number of labels <var><strong>T</strong></var>.<br>The bottom line contains labels <var><strong>B</strong></var>.<br><br>Each <var><strong>T</strong></var> and <var><strong>B</strong></var> is a single visible ASCII character that can be of any random value. Do not assume they will always be ABC or 123.<br><br>As a rule of the game, left and right horizontal connectors will never appear at the same point.<br><br>All diagrams are having the same style as the test cases.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">List all connected pairs between top and bottom labels, <var><strong>T</strong></var><var><strong>B</strong></var>, in the order of the top labels <strong>from Left to Right</strong>. Write each pair in a separate line.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">3 &lt; <var>W</var>, <var>H</var> &le; 100<br><br>ASCII characters used in the top and bottom labels are in range of Hex 21 to Hex 7E, inclusive</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">7 7
+A  B  C
+|  |  |
+|--|  |
+|  |--|
+|  |--|
+|  |  |
+1  2  3</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">A2
+B1
+C3</pre>
+         </div>
+      </div>
+   </div>
+</div>

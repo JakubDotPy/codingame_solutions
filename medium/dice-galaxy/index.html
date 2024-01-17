@@ -1,0 +1,43 @@
+<h1>Dice galaxy</h1>
+
+<a href="https://www.codingame.com/training/medium/dice-galaxy">https://www.codingame.com/training/medium/dice-galaxy</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement"><strong>story</strong><br>The first numbers were finally born in the universe.<br>That is <const>&quot;1&quot;</const>.<br>In order to keep the balance of the dice galaxy, 6 must be arranged according to the dice law.<br><br><strong>rule</strong><br>Net of cube is <const>&quot;#&quot; or &quot;1&quot; or &quot;6&quot;</const>.<br>The blank value is <const>&quot;.&quot;</const>.<br>There is always one <const>&quot;1&quot;</const> in each net.<br>When the net is made into a cube, <const>&ldquo;6&rdquo;</const> is placed on the opposite side of <const>&ldquo;1&rdquo;</const>.<br>There may be multiple nets,each nets is not touch.<br><br><strong>The trouble is when <const>&quot;6&quot;</const> is in the wrong place. In that case, fix <const>&quot;6&quot;</const> to the correct place.</strong><br><br>Finally, display net that balanced <const>&quot;1&quot; and &quot;6&quot;</const>.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>w</var> width<br><strong>Line 2:</strong> An integer <var>h</var> height<br><strong>Next <var>h</var> lines:</strong> string <var>line</var> length <var>w</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>h</var> lines:</strong> string <var>outline</var> set 6</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">4 &le; <var>w</var> &le; 15<br>2 &le; <var>h</var> &le; 10<br>4 &le; <var>line</var> length &le; 15</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">4
+3
+..1.
+####
+..#.</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">..1.
+####
+..6.
+</pre>
+         </div>
+      </div>
+   </div>
+</div>

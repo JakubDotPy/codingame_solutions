@@ -1,0 +1,126 @@
+<h1>Cooperative Mate with Rook</h1>
+
+<a href="https://www.codingame.com/training/medium/cooperative-mate-with-rook">https://www.codingame.com/training/medium/cooperative-mate-with-rook</a>
+
+<div class="statement_back"></div>
+<div class="statement-body">
+  <div style="color:#7cc576;background-color:rgba( 124 , 197 , 118 , 0.1 );padding:20px;margin-right:15px;margin-left:15px;margin-bottom:10px;text-align:left">
+        <span class="statement-league-alert-content">
+          Cooperative mate is a family of <a href="https://en.wikipedia.org/wiki/Chess" target="_blank" rel="nofollow noopener noreferrer">Chess game</a> puzzles where both sides cooperate towards a common goal. Here, we consider endgames with only black king, white king, and white rook, aiming to checkmating the black king. Your task is to provide a shortest sequence of moves leading to such mate.
+            
+        </span>
+  </div>
+
+  
+  <div class="statement-section statement-goal">
+    <h1>
+      <span class="icon icon-goal"> </span>
+      <span>The Goal</span>
+    </h1>
+    <div class="statement-goal-content">
+      For a given state of the game, the goal is to compute a sequence of chess piece moves leading to the fastest checkmate.
+    </div>
+  </div>
+  
+  <div class="statement-section statement-rules">
+    <h1>
+      <span class="icon icon-rules"> </span>
+      <span>Rules</span>
+    </h1>
+    <div>
+      <div class="statement-rules-content">
+        <p>The game state is described by the player-to-move and position of each piece: white king, white rook, and black king, formatted as <const>white d5 g7 a6</const>.</p>
+        <p>The goal of this puzzle is to provide a sequence of moves leading to a cooperative checkmate, according to the Chess rules. The sequence should be formatted as <const>d5c5 a6a5 g7a7</const>.</p>
+      </div>
+    </div>
+
+    <br />
+
+  
+  <div class="statement-victory-conditions">
+    <div class="icon victory"></div>
+    <div class="blk">
+      <div class="title">Victory Conditions</div>
+      <div class="text">
+        <ul style="padding-bottom:0"><li>
+            Given sequence of moves leads to the fastest checkmate possible in the current board position.
+          </li></ul>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="statement-lose-conditions">
+    <div class="icon lose"></div>
+    <div class="blk">
+      <div class="title">Loss Conditions</div>
+      <div class="text">
+        <ul style="padding-bottom:0"><li>
+            Given sequence of moves does not lead to a checkmate within a turn limit.
+          </li><li>
+            Given sequence of moves contains illegal move.
+          </li><li>
+            Given answer is not properly formatted.
+          </li><li>
+            Response time exceeds the time limit.
+          </li></ul>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  
+  <div class="statement-section statement-expertrules">
+    <h1>
+      <span class="icon icon-expertrules"> </span>
+      <span>Detailed rules</span>
+    </h1>
+    <div class="statement-expert-rules-content">
+      <ul><li>Given board state is always a valid Chess game position.</li><li>You can hide showing legal moves in the settings panel (<img style="background:#20252a" height="18" src="https://www.codingame.com/servlet/fileservlet?id&#61;3463235186409" width="18" />)..</li></ul>
+    </div>
+  </div>
+
+  
+  <div class="statement-section statement-examples">
+    <h1>
+      <span class="icon icon-example"> </span>
+      <span>Related puzzles</span>
+    </h1>
+    <div class="statement-examples-text">
+      <ul><li>Adversarial variant of single rook endgames, requiring you to play as white against the black player, is available <a href="https://www.codingame.com/training/hard/adversarial-mate-with-rook" target="_blank" rel="nofollow noopener noreferrer">here</a>.</li><li>To play full version of Chess as a bot programming game you can go <a href="https://www.codingame.com/multiplayer/bot-programming/chess" target="_blank" rel="nofollow noopener noreferrer">here</a>.</li></ul>
+    </div>
+  </div>
+
+  
+  <div class="statement-section statement-protocol">
+    <h1>
+      <span class="icon icon-protocol"> </span>
+      <span>Game Input</span>
+    </h1>
+
+    
+    <div class="blk">
+      <div class="title">Initial input
+      </div>
+      <div class="text">
+        <p><span class="statement-lineno">A single line </span> containing space-separated strings, <var>movingPlayer</var> being either <const>black</const> or <const>white</const>, and <var>whiteKing</var> <var>whiteRook</var> <var>blackKing</var> positions in column-row format, e.g. <const>a1</const>.</p>
+      </div>
+    </div>
+
+    
+    <div class="blk">
+      <div class="title">Output</div>
+      <div class="text">
+        <span class="statement-lineno">A single line</span> containing a sequence of space-separated moves (each move in <const>a1h8</const> format).
+      </div>
+    </div>
+
+    
+    <div class="blk">
+      <div class="title">Constraints</div>
+      1 ≤ <var>solution length</var> ≤ 12 <br />
+      Response time ≤ <const>20</const>s<br />
+    </div>
+  </div>
+</div>
+

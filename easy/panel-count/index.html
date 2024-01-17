@@ -1,0 +1,46 @@
+<h1>Panel count</h1>
+
+<a href="https://www.codingame.com/training/easy/panel-count">https://www.codingame.com/training/easy/panel-count</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement"><strong>Goal</strong> : count the number of persons matching some formulas.<br><br><strong>Input</strong> :<br>- The <strong>properties</strong> of the persons (e.g. Age, Gender).<br>- A list of <strong>persons</strong>. Each one is identified by a name and its space-separated <var>properties</var> (e.g. John 25 London).<br>- A list of <strong>formulas</strong>. Each formula is a combination of properties, and is used to filter the matching persons (e.g. Town=Paris AND Gender=Male)<br><br><strong>Output</strong> : <br>For each formula, filter the matching persons and print their count.<br><br><strong>Example</strong> :  Gender=Male AND Age=25 AND Town=Berlin. The expected output is the number of 25yo men living in Berlin.<br><br><strong>Note</strong> : each formula has a variable number of properties.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>First Line</strong> : number <var>P</var> of properties.<br><strong><var>P</var> next lines</strong> : the name of each <strong>property</strong> (ex : Gender, Age, Town).<br><strong>Next line</strong> : number <var>N</var> of persons.<br><strong><var>N</var> next lines</strong> : one <strong>person</strong> per line, with a <var>name</var> followed by the <var>properties</var> (ex : Jean Male 25 Paris).<br><strong>Next line</strong> : number <var>F</var> of formulas.<br><strong><var>F</var> next lines</strong> : one formula per line, following this syntax : <var>propertyX</var>=valueA <const>AND</const> <var>propertyY</var>=valueB ...</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>F</var> lines</strong> (one for each formula) : print the number of persons matching this formula.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><const>1</const>&le;<var>P</var>&le;<const>10</const><br><const>1</const>&le;<var>N</var>&le;<const>1000</const><br><const>1</const>&le;<var>F</var>&le;<const>300</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1
+Gender
+5
+Leo Male
+Samuel Male
+Maya Female
+Diane Female
+Mael Male
+1
+Gender=Female
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">2</pre>
+         </div>
+      </div>
+   </div>
+</div>

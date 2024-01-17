@@ -1,0 +1,41 @@
+<h1>L-triominoes</h1>
+
+<a href="https://www.codingame.com/training/medium/l-triominoes">https://www.codingame.com/training/medium/l-triominoes</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">The goal of the puzzle is to apply the &quot;divide and conquer&quot; method in order to fill a square of side <const>2</const>^<var>n</var> with L-triominoes, this is always possible if the square has a hole at the start...<br>You are given the value of <var>n</var> and the coordinates (<var>x</var>,<var>y</var>) of the hole, your goal is to draw all the L-triominoes in the right places! <br><br><br>* <strong>Divide and conquer method :</strong><br><br>Divide the square into 4 equal squares.<br>We are then reduced to 4 smaller problems identical to the previous one:<br>- One of the squares already has a hole somewhere<br>- Place a L-triomino in the center to create a new hole in the 3 other squares.<br><br><strong>Exemple</strong> :<br><br><strong>Test 2 : 4x4</strong><br><const>2</const> : Level <const>2</const>, it's a <const>4</const>x<const>4</const> grid<br><const>0</const> <const>1</const> : The hole is in (<const>0</const>,<const>1</const>)<br><br><pre style="font-family: monospace">+--+--+--+--+<br>|  |  |  |  |<br>+--+--+--+--+<br>|##|  |  |  |<br>+--+--+--+--+<br>|  |  |  |  |<br>+--+--+--+--+<br>|  |  |  |  |<br>+--+--+--+--+</pre><br><br>The hole is in top-left 2x2 square, so I have to solve 4 smaller problems...<br><br>* top-left 2x2 square with initial hole:<br><pre style="font-family: monospace">+--+--+        +--+--+<br>|  |  |        |     |<br>+--+--+   =&gt;   +--+  +<br>|##|  |        |##|  |<br>+--+--+        +--+--+</pre><br>* top-right 2x2 square with new hole:<br><pre style="font-family: monospace">+--+--+        +--+--+<br>|  |  |        |     |<br>+--+--+   =&gt;   +--+  +<br>|##|  |        |##|  |<br>+--+--+        +--+--+</pre><br>* bottom-left 2x2 square with new hole:<br><pre style="font-family: monospace">+--+--+        +--+--+<br>|  |##|        |  |##|<br>+--+--+   =&gt;   +  +--+<br>|  |  |        |     |<br>+--+--+        +--+--+</pre><br>* bottom-right 2x2 square with new hole:<br><pre style="font-family: monospace">+--+--+        +--+--+<br>|##|  |        |##|  |<br>+--+--+   =&gt;   +--+  +<br>|  |  |        |     |<br>+--+--+        +--+--+<br><br>* join the 4 squares<br>+--+--+--+--+        +--+--+--+--+<br>|  |  |  |  |        |     |     |<br>+--+--+--+--+        +--+  +--+  +<br>|##|  |##|  |        |##|  |  |  |<br>+--+--+--+--+   =&gt;   +--+--+  +--+<br>|  |##|##|  |        |  |     |  |<br>+--+--+--+--+        +  +--+--+  +<br>|  |  |  |  |        |     |     |<br>+--+--+--+--+        +--+--+--+--+</pre></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong>:  Level <var>n</var>, for a square of side 2^<var>n</var><br><strong>Line 2</strong>: coordinates (<var>x</var>,<var>y</var>) of the hole. <strong>Note</strong>: (<const>0</const>,<const>0</const>) is the top left corner.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>1 + 2^(<var>n</var> + 1) lines</strong>: The grid of L-triominoes<br><br><strong>Hole</strong>:<br><pre style="font-family: monospace">+--+<br>|##|<br>+--+</pre><br><strong>L-triminoes</strong>:<br><pre style="font-family: monospace">+--+      +--+--+   +--+--+      +--+<br>|  |      |     |   |     |      |  |<br>+  +--+   +  +--+   +--+  +   +--+  +<br>|     |   |  |         |  |   |     |<br>+--+--+   +--+         +--+   +--+--+</pre></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &lt;= <var>n</var> &lt;= 3<br>0 &lt;= <var>x</var>, <var>y</var> &lt;= 2^<var>n</var> - 1</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1
+1 1</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">+--+--+
+|     |
++  +--+
+|  |##|
++--+--+</pre>
+         </div>
+      </div>
+   </div>
+</div>

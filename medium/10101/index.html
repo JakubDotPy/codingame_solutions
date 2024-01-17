@@ -1,0 +1,40 @@
+<h1>1010(1)</h1>
+
+<a href="https://www.codingame.com/training/medium/10101">https://www.codingame.com/training/medium/10101</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">This is the first in a series of 1010 puzzles.<br><br>You are given a grid of width <const>W</const> and height <const>H</const>. Each cell is either empty, represented as a dot &quot;<strong>.</strong>&quot;, or filled, represented with a hash &quot;<strong>#</strong>&quot;.<br><br>You are allowed to place a 2x2 block in the grid wherever it will fit (i.e., all of those 2x2 cells are empty).<br><br>You must find a place for your 2x2 block to completely fill as many rows and columns and report how many rows and columns you can complete.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>W</var> for the width of the game board.<br><strong>Line 2:</strong> An integer <var>H</var> for the height of the game board.<br><strong>Next <var>H</var> lines:</strong> A string of <var>W</var> characters, either <strong>.</strong> or <strong>#</strong></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><var>N</var>: the maximum number of columns and rows that could be completed by placing a 2x2 block on the given grid, or 0 if there is no place for your 2x2 block. Placing the block means converting  a 2x2 area of empty cells &quot;<strong>.</strong>&quot; to filled &quot;<strong>#</strong>&quot;</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">3 &le; <var>W</var> &le; 10<br>3 &le; <var>H</var> &le; 10<br>The grid will never already have any completed rows or columns.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+3
+..#
+..#
+##.</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">4</pre>
+         </div>
+      </div>
+   </div>
+</div>

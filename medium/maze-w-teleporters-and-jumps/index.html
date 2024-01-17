@@ -1,0 +1,42 @@
+<h1>Maze /w teleporters and jumps</h1>
+
+<a href="https://www.codingame.com/training/medium/maze-w-teleporters-and-jumps">https://www.codingame.com/training/medium/maze-w-teleporters-and-jumps</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Your goal is to find the minimum amount of steps from start to end in a maze with teleporters and jumps and return <const>-1</const> if it's not possible to reach the end.<br><br>You will be given a maze with <var>width</var> x <var>height</var> cells<br>With symbols:<br><const>#</const>: wall<br><const>_</const>: empty cell<br><const>S</const>: starting point<br><const>E</const>: ending point<br><const>lowercase letter</const>: teleporter entry<br><const>UPPERCASE letter</const>: teleporter exit<br><const>&lt;</const>, <const>&gt;</const>, <const>^</const>, <const>v</const>: jump pod<br><br>How teleporters work: <const>x</const> -&gt; <const>X</const> meaning when you step on the <const>x</const> you will be teleported to <const>X</const>. This does <strong>not</strong> mean when you walk over the <const>X</const> that you will be teleported to <const>x</const>.<br>How jump pods work: when you step on it, you jump 2 steps in the direction of the sign. You also jump over walls, but there won't be any out of bounds jump pods. Example: stepping on the <const>&gt;</const> will make you jump 2 steps to the right, <const>&lt;</const> to the left, <const>^</const> up, and <const>v</const> down. Letter <const>v</const> will not be used as a teleporter.<br><br>Allowed moves are Up, Down, Left and Right, no diagonal moves.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> <var>width</var> of the maze<br><strong>Line 2:</strong> <var>height</var> of the maze<br><strong>Next <var>height</var> lines:</strong> string describing a row in the maze</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">Single line containing the minimum amount of steps from start to end.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">5 &le; <var>width</var> &le; 20<br>5 &le; <var>height</var> &le; 20</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">6
+5
+######
+#S__x#
+######
+#X__E#
+######</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">6</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,87 @@
+<h1>Can you save the forest - Episode 2</h1>
+
+<a href="https://www.codingame.com/training/hard/can-you-save-the-forest---episode-2">https://www.codingame.com/training/hard/can-you-save-the-forest---episode-2</a>
+
+<div class="statement_back"></div>
+<div class="statement-body">
+
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal"> </span><span>Goal</span></h2>
+   <div class="statement-goal-content">In this game you have to extinguish the fire while saving as many squares in the forest as possible.</div>
+</div>
+
+<div class="statement-section statement-rules">
+   <h1><span class="icon icon-rules"> </span><span>Rules</span></h1>
+   <div>
+      <div class="statement-rules-content">
+         As for episode 1, you operate on a 10x10 square map.<br />
+         At each turn, your program receives the map of the forest and the state of each square. But now you also get the position of your fire trucks every turn.<br />
+         Based on this data, your program must determine an action for each fire truck.<br />
+         As in previous episode, under certain circumstances, as described below, fires spread to neighbouring squares.<br />
+         To win you must put out all the fires, while limiting the number of squares burned to a maximum given to you in the variable <var>maxBurnedForest</var>.<br />
+         <br />
+         <h2>The map</h2>
+         <i>In this episode, we introduce the water square.</i>
+         Each of the 10 lines of the map is given to you by a string. Each character represents a cell of the map.<br />
+         <action>.</action> represents an empty square with no forest. It cannot burn.<br />
+         <action>~</action> represents a water square. It cannot catch fire and trucks cannot go in it.<br />
+         <action>^</action> represents a forest square.<br />
+         <action>*</action> represents a burned forest square. It can no longer catch fire.<br />
+         <action>1</action>, <action>2</action> or <action>3</action> represents a forest square on fire. The value corresponds to the development level of the fire.<br />
+         <br />
+         <h2>The spread of fire</h2>
+         Fire on a square can have 3 levels of development and, unless fought, evolves as such:<br />
+         <ul><li>fires grow by one level per turn,</li><li>except for level 3 fires which, on the next turn, turn into burned forest squares and spread the fire to their 4 neighbouring squares (N/S/E/W) if 
+               <ul><li>the neighbouring square is a forest square, not burned,</li><li>there is not already a fire on this square,</li><li>the square is not occupied by a truck.</li></ul>
+               The fire on these neighbouring squares starts at level 1.
+            </li></ul>
+         <br />
+         <h2>Fighting fire</h2>
+         Once per turn you have to indicate the action for each of your fire trucks, among:<br />
+         <ul><li><action>WAIT</action> to leave the truck stationary and inactive,</li><li><action>MOVE</action> followed by one of the 4 directions <action>N</action> <action>S</action> <action>E</action> <action>W</action> to move the truck one square in the chosen direction,</li><li><action>FIGHT</action> followed by one of the 8 directions <action>N</action> <action>S</action> <action>E</action> <action>W</action> <action>NE</action> <action>SE</action> <action>NW</action> <action>SW</action> to fight fire from one of the 8 squares adjacent to the truck.</li></ul>
+         Some additional rules apply to trucks: 
+         <ul><li>Two trucks cannot be on the same.</li><li>A truck may not move to a burning square.</li><li>It also cannot go to a water square.</li><li>A truck protects the square it occupies from fire. In the event that it moves, it is its arrival square that is protected.</li><li>When a truck fights fire on a neighboring square with the <action>FIGHT</action>, then the fire on that square is immediately extinguished and does not spread to neighboring squares.</li></ul>
+         <br />
+         <h2>Sequence of actions</h2>
+         In each turn, the game follows the following actions, in this order
+         <ol><li>Moving fire trucks (action <action>MOVE</action>).</li><li>Extinguishing fire on squares fought by trucks (action <action>FIGHT</action>).</li><li>Evolution of the remaining fires (1&gt;&gt;2, 2&gt;&gt;3, 3&gt;&gt;burned)</li><li>Spread of fire around the squares that have just been burned</li></ol>
+         <br />
+
+         <h2>Winning and losing</h2>
+         You lose if
+         <ul><li>you do not send instructions to each of the trucks within the time limit,</li><li>the number of squares burned exceeds the maximum indicated in <var>maxBurnedForest</var></li></ul>
+         <div class="statement-victory-conditions">
+            <div class="icon victory"> </div>
+            <div class="blk">
+               <div class="title">Victory conditions</div>
+               <div class="text">You win when there are no active fires left on the map and the number of burned forest squares remains below <var>maxBurnedForest</var>.</div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<div class="statement-section statement-protocol">
+   <h1>
+      <span class="icon icon-protocol"> </span>
+      <span>Game Input</span>
+    </h1>
+   <div class="blk">
+      <div class="title">Initialization input</div>
+      <div class="question-statement-input">2 integers <var>nbTrucks</var> <var>maxBurnedForest</var> representing the number of trucks you have to manage and the maximum number of forest squares burned that you are allowed.</div>
+      <br />
+      <div class="title">Input for a game round</div>
+      <div class="question-statement-input">10 rows <var>row</var> representing the map of the forest and its active fires</div>
+      <div class="question-statement-input"><var>nbTrucks</var> rows <var>X</var> <var>Y</var> representing the coordinates of each truck</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><var>nbTrucks</var> rows which indicates the action for each truck: <action>WAIT</action> or <action>MOVE</action> <action>N</action> <action>S</action> <action>E</action> <action>W</action> or <action>FIGHT</action> <action>N</action> <action>S</action> <action>E</action> <action>W</action> <action>NE</action> <action>SE</action> <action>NW</action> <action>SW</action></div>
+   </div>
+   
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <br /><const>1</const> ≤ <var>nbTrucks</var> ≤ <const>5</const>
+      <br />Allotted response time to output is ≤ <const>1000</const> milliseconds.
+   </div>
+</div></div>

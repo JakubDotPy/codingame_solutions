@@ -1,0 +1,46 @@
+<h1>Battleship</h1>
+
+<a href="https://www.codingame.com/training/medium/battleship">https://www.codingame.com/training/medium/battleship</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You play battleship against your older sister, when an urgent desire is felt. You then ask your little brother to replace you temporarily. When you come back from your small business, it's up to your older sister to play.<br><br>Here is your mission, if you accept it:<br>- Check that your grid is valid (your little brother could have been wrong when placing the pieces!)<br>- Analyze the shot of your sister to determine the rest of the game.<br><br>The rules for checking the validity of the grid are as follows:<br>- Two ships can not touch each other vertically, horizontally or diagonally.<br>- There must be exactly <strong>1</strong> copy of these different ships:<br>&nbsp;&nbsp;&nbsp;&nbsp;&bull; Aircraft carrier (size <strong>5</strong>)<br>&nbsp;&nbsp;&nbsp;&nbsp;&bull; Cruiser (size <strong>4</strong>)<br>&nbsp;&nbsp;&nbsp;&nbsp;&bull; Counter-torpedoist (size <strong>3</strong>)<br>&nbsp;&nbsp;&nbsp;&nbsp;&bull; Submarine (size <strong>3</strong>)<br>&nbsp;&nbsp;&nbsp;&nbsp;&bull; Torpedoist (size <strong>2</strong>)<br><br>The grid is always a square of <const>10</const>&times;<const>10</const> boxes, the lines being numbered from <const>1</const> to <const>10</const> and the columns being numbered from <const>A</const> to <const>J</const>.<br>A little example:<pre style="font-family: monospace"></pre><pre style="font-family: monospace">  A B C<br>1 . . .<br>2 . . .<br>3 . . .</pre><pre style="font-family: monospace"></pre><br>A shot is always read beginning with the <strong>letter</strong>, for example: A5, H7, J10.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong> Line 1: </strong> the shot your sister is about to play, in the form <var>l</var><var>n</var>, where <var>l</var> is the letter corresponding to the column (from <const>A</const> to <const>J</const>) and <var>n</var> the line number (from <const>1</const> to <const>10</const>).<br><strong> Next 10 lines: </strong> the state of your grid.<br>A point (<strong>.</strong>) represents a void, a plus (<strong>+</strong>) represents an <strong>intact</strong> cell occupied by one of your ships, and an underscore (<strong>_</strong>) represents a <strong>destroyed</strong> cell.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">If the grid is <strong>invalid</strong>, then the game ends: you stop there and return <const>INVALID</const>.<br><br>Otherwise, analyze your sister's shot: if it <strong>falls in the water</strong>, return <const>MISSED</const>.<br>On the other hand, if it <strong>touches</strong> one of your ships, return <const>TOUCHE</const>.<br>If it's enough to <strong>sink</strong> it, rather return <const>TOUCHE COULE</const>, followed by a <strong>space</strong> and the <strong>size</strong> of the ship.<br>If it makes you <strong>lose</strong> the game (all your ships are sunk), add a <strong>space</strong> followed by <const>THEN LOSE</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">A &le; <var>l</var> &le; J<br>1 &le; <var>n</var> &le; 10</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">A1
+.+++......
+.....+++..
+.+........
+.+......+.
+........+.
+........+.
+........+.
+........+.
+....++++..
+..........</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">INVALID</pre>
+         </div>
+      </div>
+   </div>
+</div>

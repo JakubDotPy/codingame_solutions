@@ -1,0 +1,37 @@
+<h1>Fix the spaces</h1>
+
+<a href="https://www.codingame.com/training/medium/fix-the-spaces">https://www.codingame.com/training/medium/fix-the-spaces</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are given two strings, the first contains the <var>original</var> sentence, with words in the right order but no spaces. The second has the <var>words</var> in random order but with spaces to differentiate them. Fix the original sentence by adding spaces where they should be.<br><br>Every test has <strong>at least</strong> one solution, but there are some cases where the original sentence <strong>can not unambiguously</strong> be deciphered. In those cases print <const>Unsolvable</const>.<br><br><strong>NB:</strong> Tests 1-14 cover simple cases and should help you debug your program. Tests 15-16 check the performance.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1 :</strong> A string. The <var>original</var> sentence, with words in the right order but no spaces.<br><strong>Line 2 :</strong> A string containing the <var>words</var> in random order but with spaces to differentiate them.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The <var>original</var> sentence with the necessary spaces added to it or the string <const>Unsolvable</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">The <var>original</var> string only contains uppercase letters.<br>The <var>words</var> string only contains uppercase letters and spaces.<br>Each word in <var>words</var> appears the same number of times in <var>words</var> and in <var>original</var>.<br>Each string is at most <const>1000</const> characters long.<br>The number of words is at most <const>200</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">ABCDEFGHIJ
+DEF J ABC GHI</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">ABC DEF GHI J</pre>
+         </div>
+      </div>
+   </div>
+</div>

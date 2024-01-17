@@ -1,0 +1,39 @@
+<h1>When pigs fly</h1>
+
+<a href="https://www.codingame.com/training/expert/when-pigs-fly">https://www.codingame.com/training/expert/when-pigs-fly</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Given a set of universal truths, determine whether <const>All</const>, <const>Some</const>, or <const>No pigs can fly</const>.<br><br>Each of <var>N</var> lines contains a logical statement <var>S</var> in the following general form:<br>&nbsp;&nbsp;&nbsp;&nbsp;<const>OBJECTA</const> (are <const>OBJECTB</const> | have <const>TRAIT</const> | can <const>ABILITY</const>)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or<br>&nbsp;&nbsp;&nbsp;&nbsp;<const>TRAITA</const> are <const>TRAITB</const><br>where parentheses contain options separated by pipes ( <const>|</const> ). Furthermore, <const>OBJECTS</const> can be expanded like so:<br>&nbsp;&nbsp;&nbsp;&nbsp;<const>OBJECT</const> [with <const>TRAITA</const> [and <const>TRAITB</const> ...]] [that can <const>ABILITYA</const> [and <const>ABILITYB</const> ...]]<br>where brackets <const>[ ]</const> denote optional text.<br><br>Below are sample statements.<br>&nbsp;&nbsp;&nbsp;&nbsp;(1) MICE are RODENTS<br>&nbsp;&nbsp;&nbsp;&nbsp;(2) MICE with WINGS are BATS<br>&nbsp;&nbsp;&nbsp;&nbsp;(3) MICE that can FLY are ANIMALS with SUPERPOWERS<br>&nbsp;&nbsp;&nbsp;&nbsp;(4) BATS are RODENTS<br>&nbsp;&nbsp;&nbsp;&nbsp;(5) RODENTS with FEET and NOSES that can EAT are POPSICLES<br>To clarify, statement (1) means that <strong>all</strong> MICE are RODENTS, but only <strong>some</strong> RODENTS are MICE. Furthermore, it <strong>cannot be assumed</strong> from statements (1) and (4) that some MICE are BATS.<br><strong>Note for logicians and mathematicians</strong>: The statement (2) is not an hypothetical proposition, it implies that MICE with WINGS do exist. In a nutshell: All objects evoked are supposed to exist.<br><br>The task is to determine what can be concluded about pigs flying: <strong>must</strong> it be true for all pigs, some pigs, or none?</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var> representing the number of statements.<br><strong>Next <var>N</var> lines:</strong> A logical statement <var>S</var> written as described in the prompt.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">A string stating what can be concluded from the input about pigs flying:<br>(1) <const>All pigs can fly</const><br>(2) <const>Some pigs can fly</const><br>(3) <const>No pigs can fly</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &le; <var>N</var> &le; 15<br>1 &le; Length of <var>S</var> &le; 256<br><const>PIGS</const> appears in at least one statement<br><const>FLY</const> appears in at least one statement<br>Statements are composed of letters and spaces<br><const>OBJECTS</const>, <const>TRAITS</const>, and <const>ABILITIES</const> are written in uppercase, and everything else is in lowercase.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+PIGS are BACONS
+BACONS are GODS
+GODS can FLY</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">All pigs can fly</pre>
+         </div>
+      </div>
+   </div>
+</div>

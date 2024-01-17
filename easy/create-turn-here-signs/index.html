@@ -1,0 +1,44 @@
+<h1>Create 'Turn Here' Signs</h1>
+
+<a href="https://www.codingame.com/training/easy/create-turn-here-signs">https://www.codingame.com/training/easy/create-turn-here-signs</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Secretary of Transportation Pete has asked you to program electronic signs to communicate to drivers that they need to turn left or turn right.<br><br>Pete wants lots of options for the signs, so the input is:<br>&bull; <var>direction</var> -- which is either <const>left</const> or <const>right</const><br>&bull; <var>howManyArrows</var><br>&bull; <var>heightOfArrows</var><br>&bull; <var>strokeThicknessOfArrows</var><br>&bull; <var>spacingBetweenArrows</var><br>&bull; <var>additionalIndentOfEachLine</var> -- this will determine if the shape of the arrows is subtle or more pointy <br><br>However, Pete is also a minimalist, so all that input will be in a single string of data.<br><br>Note:<br>&bull; Left turn signs will consist of <const>&lt;</const> and spaces only<br>&bull; Right turn signs will consist of <const>&gt;</const> and spaces only</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> string <var>allInput</var>, that is composed of <var>direction</var> <var>howManyArrows</var>  <var>heightOfArrows</var> <var>strokeThicknessOfArrows</var> <var>spacingBetweenArrows</var> <var>additionalIndentOfEachLine</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>heightOfArrows</var> lines: </strong> the Turn Here sign</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">The input string <var>allInput</var> is a single word followed by 5 integers.  <br>All are separated by a single space.  <br>All integers are &gt; 0<br><br><var>heightOfArrows</var> is an odd number, &ge; 5</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">right 3 9 8 6 2</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;      &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;      &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+  &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;      &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;      &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+    &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;      &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;      &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+      &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;      &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;      &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+        &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;      &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;      &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+      &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;      &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;      &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+    &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;      &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;      &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+  &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;      &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;      &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;      &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;      &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</pre>
+         </div>
+      </div>
+   </div>
+</div>

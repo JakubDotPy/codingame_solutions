@@ -1,0 +1,47 @@
+<h1>Obsolete Programming</h1>
+
+<a href="https://www.codingame.com/training/hard/obsolete-programming">https://www.codingame.com/training/hard/obsolete-programming</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">How is your CSB ? Very bad, in fact, and you have been moved from the prestigious Bot Division to the awful Legacy Softwares Division where you must maintain obsolete and crappy code that runs 90% of your corporation's business.<br><br>Today you must write an interpreter for a strange and forgotten language, written in a narrow character set : only uppercase letters, digits, minus sign, space and newline.<br><br>Basically the language is based on <var>RPN</var> (Reverse Polish Notation) with the abilty to define new instructions.<br><br>Lines are split in instructions separated by space(s).<br><br>If the instruction is a <const>number</const>, simply put in on top of the stack.<br>The operations (<var>ADD</var>, <var>SUB</var>, <var>MUL</var>, <var>DIV</var>, <var>MOD</var>) pop the last two numbers out of the stack and push the result back on top.<br>For example after, <strong>2 5 SUB 8</strong>, the stack is <strong>-3 8</strong>.<br><var>DIV</var> is the integer quotient and <var>MOD</var> the remainder of the division.<br><br>There are also operators that act on the stack itself:<br><var>POP</var> removes the top number.<br><var>DUP</var> duplicates the top number.<br><var>SWP</var> swaps the two top numbers. <strong>4 5 SWP 6</strong> swaps <const>4</const> and <const>5</const> then pushes <const>6</const> on top, the stack is <strong>5 4 6</strong>.<br><var>ROT</var> brings to the top the third number of the stack. If the stack is <strong>1 2 3 4</strong>, <var>ROT</var> changes it in <strong>1 3 4 2</strong>.<br><var>OVR</var> copies the second top number of the stack on the top. If the stack is <strong>1 2 3 4</strong>, <var>OVR</var> changes it in <strong>1 2 3 4 3</strong>.<br><br><var>POS</var> removes the top number, push 1 if this number is &ge; 0, otherwise push 0.<br><var>NOT</var> removes the top number, push 1 if this number is 0, otherwise push 0.<br><var>OUT</var> removes the top number and print it on the standard output, followed by a newline char.<br><br>To define a new instruction the syntax is :<br><br><var>DEF</var> <const>name</const> <strong>RPN instructions</strong> <var>END</var><br><br>The instructions between <var>DEF</var> and <var>END</var> are not executed immediately but stored to be executed when <const>name</const> appears as instruction outside, after its definition.<br><const>name</const> must not be an already defined instruction or a number.<br>Note that <const>name</const> can appears in its own definition (recursion is available).<br><br>For example<br><strong>DEF SQ DUP MUL END</strong> defines the instruction <var>SQ</var><br>when <strong>4 SQ</strong> appears, <const>4</const> is pushed on the stack, then <var>DUP</var> then <var>MUL</var> are executed.<br><br>Inside a definition, conditionals are available :<br><br><var>IF</var> <strong>RPN instructions</strong> <var>FI</var><br>remove the top number, if this number is not zero, the instructions between <var>IF</var> and <var>FI</var> are executed, and continue with instructions after <var>FI</var>. If the number is zero, the execution continues after <var>FI</var>.<br><br><var>IF</var> <strong>RPN instructions 1</strong> <var>ELS</var> <strong>RPN instructions 2</strong> <var>FI</var><br>Remove the top number, if this number is not zero, the instructions between <var>IF</var> and <var>ELS</var> are executed, and continue with instructions after <var>FI</var>. If the number is zero, the instructions between <var>ELS</var> and <var>FI</var> are executed and continue execution after <var>FI</var>.<br><br>The two conditional structures can be nested.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> <var>N</var> : number of input lines of code<br><strong><var>N</var> lines:</strong> Obsolete code</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>any number of lines:</strong> whatever the obsolet program outputs</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>N</var> &le; 100<br>All the numbers are signed integer (minimum width : 30 bits).<br>All tests are correct (ie don't use undefined instruction) and use MOD and DIV instructions only with positive arguments.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">6
+10 5 ADD OUT
+10 5 SUB OUT
+12 24 SUB OUT
+30 10 MUL OUT
+50 7 DIV OUT
+50 7 MOD OUT</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">15
+5
+-12
+300
+7
+1</pre>
+         </div>
+      </div>
+   </div>
+</div>

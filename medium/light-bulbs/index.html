@@ -1,0 +1,37 @@
+<h1>Light Bulbs</h1>
+
+<a href="https://www.codingame.com/training/medium/light-bulbs">https://www.codingame.com/training/medium/light-bulbs</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are given a row of <var>N</var> light bulbs, represented by a string of 0 or 1, totally <var>N</var> characters in the string.<br><strong>0</strong> means the light bulb is <strong>OFF</strong>.<br><strong>1</strong> means the light bulb is <strong>ON</strong>.<br><br>The left-most character is light bulb 1.<br>The right-most character is light bulb N.<br><br>Each light bulb has an independent switch allowing you to switch it ON or OFF.<br><br>To switch ON/OFF any light bulb, there are two rules:<br><br><strong>Rule 1</strong> You can change the state of light bulb <strong>i</strong> if <strong>i+1</strong> is ON AND <strong>i+2</strong>, <strong>i+3</strong>,... <var>N</var> are OFF.<br><strong>Rule 2</strong> Rule 1 does not apply to light bulb <var>N</var>, which can be switched ON/OFF at will.<br><br>The game <strong>starts</strong> with a given lighting pattern.<br>You will also have a <strong>target</strong> lighting pattern.<br><br>Find the minimum number of switches needed to change the pattern from <var>start</var> to <var>target</var>.<br><br><br><strong>Example</strong><br>To change pattern from 1101 to 0100<br><br>1101 (start)<br>1100 (switch #4, by Rule 2)<br>0100 (switch #1, by Rule 1) - reached target by switching 2 times.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1: </strong><var>Start</var> pattern - a string of 0 or 1, totally <var>N</var> characters<br><strong>Line 2: </strong><var>Target</var> pattern - a string of 0 or 1, totally <var>N</var> characters</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1: </strong>The minimum number of switching needed to change the lighting pattern from start to target.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; N &le; 25</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1101
+0100</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">2</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,41 @@
+<h1>Wine from Kalbodia - Episode 1</h1>
+
+<a href="https://www.codingame.com/training/medium/wine-from-kalbodia---episode-1">https://www.codingame.com/training/medium/wine-from-kalbodia---episode-1</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement"><strong>&laquo;Story Background&raquo;</strong><br>It is the year 2636, and the United Colonies of Kalbodia are the premiere producers of wine in the Solar System. Who'd have thought that the asteroid belt could be so fruitful with just a touch of terraforming? History aside, Kordak is a new employee of the Kalbodiwine Company, which handles wine trade between high-class residential asteroids and wine-producing asteroids. There are many languages in use throughout the United Colonies of Kalbodia, and it is up to Kordak to determine which shipment of wine goes where.<br><br><strong>&laquo;Prompt&raquo;</strong><br>Kordak receives <var>N</var> requests of wine from the residential asteroids. For legibility, these requests are formatted as single strings containing the letters <const>A-Z</const>, where each letter represents a unique kind of wine within each request. At the same time, Kordak also gets <var>N</var> crates of wine from the wine-producing asteroids. The wine bottles in a crate are put in the same order as written in its corresponding wine request, using <const>a-z</const> for legibility. However, the wine comes from buyers and sellers of different languages, so the <strong>letters on different requests or on different crates are not correlated</strong>. Furthermore, the wine-producers all use the same type of bottle to store the wine (for stupid bureaucratic reasons, of course). Since Kordak does not know the language on the labels, and he cannot open the wine bottles lest he be fired for tampering with goods, Kordak must figure out which crate of wine corresponds to which wine request based on how the bottles are arranged.<br><br>Both wine requests and crates are indexed from <const>1</const> to <const>N</const> in the order given. Report the indices of the crates that correspond with the wine requests.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var> representing the number of requests / crates<br><strong>Next <var>N</var> lines:</strong> A string representing the <var>i</var>-th wine request with letters <const>A-Z</const><br><strong>Next <var>N</var> lines:</strong> A string representing what is inside the <var>j</var>-th crate with letters <const>a-z</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><var>N</var> lines of integers in the same order as the wine requests given</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &le; <var>N</var> &le; 100<br>2 &le; types of wine per request/crate &le; 26<br>1 &le; bottles of wine in a request/crate &le; 100<br>There is one unique answer</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+ABF
+DDCC
+mmjj
+xys</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">2
+1</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,41 @@
+<h1>How many triangles and rectangles?</h1>
+
+<a href="https://www.codingame.com/training/medium/how-many-triangles-and-rectangles">https://www.codingame.com/training/medium/how-many-triangles-and-rectangles</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Find the number of triangles and rectangles in the ASCII art picture.<br><strong>Warning</strong>: For the rectangles, we will only take the horizontal or vertical sides and not the diagonal sides...<br><br>* A little <strong>rectangle</strong> :<br><pre style="font-family: monospace">+-+<br>|.|<br>+-+</pre><br>* Some little <strong>triangles</strong> :<br><pre style="font-family: monospace">+..+-+..+-+..+....+...+---+<br>|\..\|..|/../|.../.\...\./.<br>+-+..+..+..+-+..+---+...+..</pre></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong> : height <var>h</var> and width <var>w</var> of the ASCII art picture.<br><strong><var>h</var> following lines</strong>: the content of the picture :<br><const>.</const> for empty spaces<br><const>+</const> for polygon corners<br><const>-</const>, <const>|</const>, <const>/</const> or <const>\</const> for strokes</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1</strong>: Number of triangles<br><strong>Line 2</strong>: Number of rectangles</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">3 &lt;= <var>h</var> &lt;= 21<br>4 &lt;= <var>w</var> &lt;= 141</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">4 5
++---+
+|...|
+|...|
++---+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">0
+1</pre>
+         </div>
+      </div>
+   </div>
+</div>

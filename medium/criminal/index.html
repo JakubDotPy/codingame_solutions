@@ -1,0 +1,41 @@
+<h1>Criminal</h1>
+
+<a href="https://www.codingame.com/training/medium/criminal">https://www.codingame.com/training/medium/criminal</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are a criminal. You are in search and capture,<br>nobody should see you.<br><br>You are in an area with an altitude <var>H</var> and a length <var>W</var>.<br>You have to print how many people are watching you.<br><br><strong>INFORMATION:</strong><br><strong>*</strong> &quot;.&quot;: nothing<br><strong>*</strong> &quot;Y&quot;: you<br><strong>*</strong> &quot;^&quot;: person who looks up<br><strong>*</strong> &quot;&gt;&quot;: person who looks to the right<br><strong>*</strong> &quot;v&quot;: person who looks down<br><strong>*</strong> &quot;&lt;&quot;: person who looks to the left<br><strong>*</strong> other character: obstacle<br><br><strong> RULES: </strong><br><strong> 1.You:</strong><br><strong>*</strong> If you are in the field of vision of a person, that person is considered to be watching you.<br><br><strong>2.The field of vision of the people:</strong><br><strong>*</strong> The field of vision increases by two characters (starting with 3) depending on where the person is looking:<br><pre style="font-family: monospace">........v........<br>.......###.......<br>......#####......<br>.....#######.....<br>....#########....<br>...###########...<br>..######Y######..<br>.###############.<br>#################<br>(is watching you)</pre><br><strong>*</strong> If an obstacle (!!OR ANOTHER PERSON!!) interferes with the field of vision of a person, the person cannot see what is behind the obstacle.<br><br><strong>3.Obstacles:</strong><br><strong>*</strong> If the obstacle is right in front of the person, everything that is behind cannot be seen. If the obstacle is to the right or left of the person, the hidden area will increase by one (starting from 2):<br><pre style="font-family: monospace">........v........<br>.......###.......<br>......#####......<br>.....###x###.....<br>....####.#x##....<br>...#####.#..##...<br>..###x##Y#...##..<br>.###..##.#....##.<br>###...##.#.....##<br>(is not watching you)</pre><br>(the physics of this puzzle is not realistic)</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> <var>H</var> Height<br><strong>Line 2:</strong> <var>W</var> Width<br><strong>Next <var>H</var> lines:</strong> String with one 'Y'</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">How many people are watching you.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <var>H</var>, <var>W</var> &lt; 256</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">4
+6
+...v..
+......
+..Y.#&lt;
+...^..</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">2</pre>
+         </div>
+      </div>
+   </div>
+</div>

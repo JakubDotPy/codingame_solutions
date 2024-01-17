@@ -1,0 +1,36 @@
+<h1>Chemical Equation Balancing</h1>
+
+<a href="https://www.codingame.com/training/expert/chemical-equation-balancing">https://www.codingame.com/training/expert/chemical-equation-balancing</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Given a chemical formula, balance the elements present and print out the balanced equation.<br><br>Molecules will be given in a simplified molecular formula. Elements are recorded as either a single uppercase letter or as an uppercase and lowercase letter together, followed by a number if greater than 1:<br><const>H</const> - 1 atom of Hydrogen<br><const>He</const> - 1 atom of Helium<br><const>C6H12O6</const> - 6 atoms of Carbon, 12 atoms of Hydrogen, and 6 atoms of Oxygen<br><const>H2O</const> - 2 atoms of Hydrogen, 1 atom of Oxygen<br><br>Different molecules on a single side of the equation are separated by a plus sign surrounded by spaces:<br>H2 + O2<br>C6H12O6 + H20 + O2<br><br>Each side of the equation is split by an ASCII arrow (hyphen-greater than) surrounded by spaces: <const>-&gt;</const><br><br>A full equation may look like:<br>C6H12O6 + O2 -&gt; CO2 + H2O<br><br>A balanced equation where each molecule is prefixed with the coresponding coefficient when greater than 1. Ratios of coefficients should be reduced to the smallest whole integers. Molecules should be in the same order given.<br>C6H12O6 + 6O2 -&gt; 6CO2 + 6H20<br><br>The equation string will only contain letters, numbers, spaces, and the symbols for plus and an arrow. [A-Za-z0-9+-&gt; ] There will be no parenthesis.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> One line consisting of a chemical equation that can be balanced in only one way.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The corresponding balanced equation.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">Each input will have only one way to balance the equation.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">H2 + O2 -&gt; H2O</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">2H2 + O2 -&gt; 2H2O</pre>
+         </div>
+      </div>
+   </div>
+</div>

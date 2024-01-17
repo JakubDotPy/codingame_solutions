@@ -1,0 +1,58 @@
+<h1>Digital Scoreboard</h1>
+
+<a href="https://www.codingame.com/training/easy/digital-scoreboard">https://www.codingame.com/training/easy/digital-scoreboard</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">There is a digital scoreboard showing 2 digits.<br><br>(1) First part of input shows the starting score<br>(2) Second part of input shows what lights will be turned OFF<br>(3) Third part of the input shows what additional lights will be turned ON<br><br>What is the <var>newScore</var>?<br><br>To see example of a digital scoreboard and how each of the 10 digits is displayed, see banner image<br>Each horizontal line is <const>~~~</const><br>Each vertical line is <const>|</const><br><br><br>Alternative image (if needed): https://www.vectorstock.com/royalty-free-vector/digital-numbers-digits-display-vector-22893808</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Lines 1-7: </strong> Starting Scoreboard<br><strong>Next Line:</strong> The word <const>Subtract</const> to indicate what the following lines will show<br><strong>Next 7 Lines:</strong> Scoreboard showing the parts that will be turned <strong>off</strong><br><strong>Next Line:</strong> The word <const>Add</const> to indicate what the following lines will show<br><strong>Next 7 Lines:</strong> Scoreboard showing the parts that will be turned <strong>on</strong></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> A string, the 2 digits that will be the <var>newScore</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">Scoreboard is 17 characters wide (counting the borders)<br>Scores are between 0 and 99 (inclusive)<br>Scoreboard always has 2 digits.  For example: 7 displays as &quot;07&quot;</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">.................
+.       .       .
+.     | .     | .
+.       .       .
+.     | .     | .
+.       .       .
+.................
+Subtract:
+.................
+.       .       .
+.       .       .
+.       .       .
+.       .       .
+.       .       .
+.................
+Add:
+.................
+.  ~~~  .  ~~~  .
+.       .       .
+.  ~~~  .       .
+.       .       .
+.  ~~~  .       .
+.................</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">37</pre>
+         </div>
+      </div>
+   </div>
+</div>

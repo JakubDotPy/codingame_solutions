@@ -1,0 +1,50 @@
+<h1>Plight Of The Fellowship Of The Ring</h1>
+
+<a href="https://www.codingame.com/training/medium/plight-of-the-fellowship-of-the-ring">https://www.codingame.com/training/medium/plight-of-the-fellowship-of-the-ring</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement"><strong>Story:</strong><br><br>Help the fellowship! They are trapped in the mines of Moria, with orcs closing in from all sides. Their only hope is Gandalf&rsquo;s wizardry. Gandalf can create portals through which they can quickly travel from one spot to another. However portals can be opened in limited spots only, and in a limited number of ways. Your program must print the path they should follow to be safely out.<br><br>--------------------------------------------------- xxx ---------------------------------------------------<br><br><strong>Rules:</strong><br><br>The Spots will be <const>INDEXED</const> as 0, 1, 2, 3, ...<br><br>You will be given the <const>COORDINATES OF THE SPOTS</const> to where Gandalf can create a portal. <br><br>You will be given the <const>COORDINATES OF THE ORCS</const>.<br><br>You will also be given the <const>POSSIBLE PATHS</const> from one spot to another. (the indexes)<br>(<strong>note:</strong> the paths are double sided. this means that if a path is possible from spot <var>2</var> to spot <var>5</var>, then it is possible to go from <strong><var>2</var> to <var>5</var></strong>, as also from <strong><var>5</var> to <var>2</var></strong>)<br><br>--------------------------------------------------- xxx ---------------------------------------------------<br><br><strong>The Problem:</strong><br><br>Your algorithm should display the sequence of the spots in order of how the fellowship go in order to reach the end fastest, and safely. <br>(<strong>note</strong>: the fellowship can travel from one spot to another along the <const>POSSIBLE PATHS</const> only) <br><br>You will be given the index of the <const>STARTING SPOT</const> and also the <const>ENDING SPOT</const>. <br><br>--------------------------------------------------- xxx ---------------------------------------------------<br><br><strong>Note:</strong> <br><br><strong>1.</strong> For every move of the fellowship, each orc can move by a distance of 1. If you need N moves to reach a spot, and distance from the starting point of an orc to that spot is &le; N, you cannot go there or you might be killed.<br><br><strong>For example,</strong> if spot <var>2</var> and spot <var>5</var> are connected by a path, and coordinates of <var>2</var> is <strong>(1,0)</strong> and <var>5</var> is <strong>(2,2)</strong>, and an orc is present at <strong>(1,2)</strong>, then the fellowship cannot go from spot <var>2</var> to spot <var>5</var>, as time taken by the fellowship is <var>1 UNIT</var>, and distance moved by the orc in 1 unit time is <var>1 UNIT</var> (<strong>(2,1)</strong> and <strong>(2,2)</strong> are separated by distance <var>1 UNIT</var>).<br><br><strong>2.</strong> The fellowship can only move along the paths from one spot to another. <br><br><strong>For example,</strong> if spot <var>2</var> and spot <var>5</var> are connected by a path, and coordinates of <var>2</var> is <strong>(1,0)</strong> and <var>5</var> is <strong>(2,2)</strong>, then from <var>2</var> the fellowship can <strong>move only to</strong> <var>5</var>, and not to any random spot {say <strong>(1,2)</strong>} [i.e. they can only move to a <strong>spot</strong>, which is <strong>connected</strong>] .<br><br><strong>3.</strong> Distances are calculated by the distance formula: <strong>dist = sqrt( (p1.x-p2.x)^2 + (p1.y-p2.y)^2 )</strong> (i.e. distances are <strong>Pythagorean</strong>)</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> an integer <var>N</var> denoting the number of spots<br><strong>Line 2:</strong> an integer <var>M</var> denoting the number of orcs<br><strong>Line 3:</strong> an integer <var>L</var> denoting the number of portals<br><strong>Next <var>N</var> lines:</strong> 2 integers <var>XS</var>, <var>YS</var>, the coordinates of the spots<br><strong>Next <var>M</var> lines:</strong> 2 integers <var>XO</var>, <var>YO</var>, the coordinates of the orcs<br><strong>Next <var>L</var> lines:</strong>  2 integers <var>N1</var>, <var>N2</var>, the indexes of 2 spots of a path forming a portal<br><strong>Next line:</strong> an integer <var>S</var> denoting the spot from which the 			fellowship start (the index)<br><strong>Next line:</strong> an integer <var>E</var> denoting the spot where the fellowship 		need to reach (the index)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">Your output should consist of one line of integers separated by spaces, denoting the indexes of the spots to which the fellowship go. (in order)<br>If it is not possible to reach the end, print a single String <var>IMPOSSIBLE</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>N</var>, <var>L</var> &le; 100<br>0 &le; <var>M</var> &le; 100</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">4
+1
+4
+1 1
+2 0
+2 2
+3 1
+1 2
+0 1
+0 2
+1 3
+2 3
+0
+3</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">0 1 3
+</pre>
+         </div>
+      </div>
+   </div>
+</div>

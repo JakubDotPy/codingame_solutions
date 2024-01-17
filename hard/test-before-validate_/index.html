@@ -1,0 +1,44 @@
+<h1>Test before Validate!</h1>
+
+<a href="https://www.codingame.com/training/hard/test-before-validate%21">https://www.codingame.com/training/hard/test-before-validate%21</a>
+
+<div class="statement_wrapping_div" style="position: relative;"> 
+
+<style type="text/css"> 
+.statement_wrapping_div, .statement {font-size: 14px;font-weight: 400;}  
+.statement_wrapping_div {margin-bottom: 10px;}
+.statement_wrapping_div ul {padding-left: 40px;}
+.statement {background-color:rgba(255, 255, 255, 0.85);padding: 20px;padding-top:0px;}
+code, span.const {display:inline-block;font-family:Inconsolata,consolas,monospace;padding-left:5px;padding-right:5px;padding-top:1px;padding-bottom:1px;background-color:#18a1ea;white-space: nowrap;margin-right:2px;color: white;}
+span.var {display: inline-block;padding-left:5px;padding-right:5px;padding-top:1px;padding-bottom:2px;background-color:#f2dd00;white-space:nowrap;margin-left:1px;margin-right:2px;color:black;}
+.stat_mid_title {font-weight:700;margin-bottom:5px;}
+.protocol_title{color:#ffd200;}
+.cross-statementBlock{position:relative;}</style>
+
+<div class="stat_mid_title">The program:</div>
+<div class="question-statement">Given an initial list of actions to do, and a partial chronological order, output the actions in the right order.</div><br />
+</div>
+
+<div style="background-color: rgba(0, 0, 0, 0.85);padding: 20px;color: white;margin-top: 10px;">
+<div class="protocol_title"><b>INPUT:</b></div>
+<div class="question-statement-input"><strong>Line 1:</strong> An integer <span class="var">N</span> for the number of actions.<br /><strong>Next <span class="var">N</span> lines:</strong> A unique action to perform.<br /><strong>Next line:</strong> An integer <span class="var">nbOrders</span> for the numbers of precedence.<br /><strong>Next <span class="var">nbOrders</span> lines:</strong> a line in the form <span class="var">a1</span> precedence <span class="var">a2</span>, where precedence is either  <span class="const">before</span> if action <span class="var">a1</span> must be done before action <span class="var">a2</span>, or <span class="const">after</span> if action <span class="var">a1</span> must be done after action <span class="var">a2</span>.</div><br /> 
+
+<div class="protocol_title"><b>OUTPUT:</b></div>
+<div class="question-statement-output">One action per line in chronological order.<br />If multiple actions can be done at the same time, choose the one that appears first in the intitial order.</div><br /> 
+
+<div class="protocol_title"><b>CONSTRAINTS:</b></div>
+<div class="question-statement-constraints">1 &lt; <span class="var">N</span> &lt; 10</div><br /> 
+
+<div class="protocol_title"><b>EXAMPLE:</b></div>
+<div style="border: 1px solid white; width: 440px;">
+<div style="float: left; margin-left: 10px; padding-left: 10px; width: 200px; font-family: monospace;">
+<div><b>Input</b></div>
+<div class="question-statement-example-in">3<br />Close<br />Open<br />Pour<br />2<br />Open before Pour<br />Close after Pour</div>
+</div>
+<div style="margin-left: 10px; float: left; padding-left: 5px; width: 200px; font-family: monospace;">
+<div><b>Output</b></div>
+<div class="question-statement-example-out">Open<br />Pour<br />Close</div>
+</div>
+<div style="clear: both;">&nbsp;</div>
+</div>
+</div>

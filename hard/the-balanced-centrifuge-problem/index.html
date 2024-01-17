@@ -1,0 +1,36 @@
+<h1>The Balanced Centrifuge Problem</h1>
+
+<a href="https://www.codingame.com/training/hard/the-balanced-centrifuge-problem">https://www.codingame.com/training/hard/the-balanced-centrifuge-problem</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">(Inspired by https://www.youtube.com/watch?v=7DHE8RnsCQ8)<br><br>Centrifuge is a piece of equipment that puts multiple test tubes in rotation at very high speeds. It consists of a cylindrical rotor with holes situated evenly along the circumference of the rotor.<br>Because the device is operating at high speeds, the center of mass of all tubes must coincide with the center of the rotor. We assume all tubes have the same mass.<br><br>For the sake of simplicity, we also assume that tubes are point masses, fixed firmly to the rotor. All at the same distance from the center. You may safely assume the (x,y) coordinates of tube <const>k</const> are (R*sin (a), R*cos (a)), where a = 2*Pi*<const>k</const>/<const>n</const>;<br><br>The problem is: Given a centrifuge with <var>N</var> holes and <var>K</var> tubes, is it possible to balance it?<br><br>example 1: given <var>N</var> = <const>6</const> possible values for <var>K</var> are 2,3,4,6.<br><br>example 2: given <var>N</var> = <const>12</const>, it is possible to balance <const>5</const> tubes: put 3 evenly dispersed (every 4th hole), then find a pair of opposite unoccupied holes and insert remaining 2 tubes there.<br><br>example 3: given <var>N</var> = <const>10</const>, it is impossible to balance <const>7</const> tubes: put 5 evenly dispersed, and there's no opposite unoccupied holes left!</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var> for the capacity of the centrifuge.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> An integer <var>M</var> for the number of different possible values of <var>K</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><const>2</const>&lt;=<var>N</var>&lt;=<const>200000</const><br><const>1</const> &lt;= <var>K</var> &lt;= <var>N</var><br><const>1</const> &lt;= <var>M</var> &lt;= <var>N</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">7</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1</pre>
+         </div>
+      </div>
+   </div>
+</div>

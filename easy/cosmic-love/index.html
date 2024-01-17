@@ -1,0 +1,39 @@
+<h1>Cosmic Love</h1>
+
+<a href="https://www.codingame.com/training/easy/cosmic-love">https://www.codingame.com/training/easy/cosmic-love</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement"><strong>&laquo;&laquo;Prompt&raquo;&raquo;</strong><br>Gary is attracted to Alice. It is almost as if there is some mysterious force pulling them together. However, Alice is known for viciously tearing apart potential suitors that get too close. In fact, Alice is currently undergoing such a temper tantrum, and Gary must get away immediately lest he be torn asunder! Help Gary find the closest planet to land his spaceship on that will not be ripped apart by Alice's gravitational field.<br><br><strong>&laquo;&laquo;Details&raquo;&raquo;</strong><br><var>N</var> planets, including <const>Alice</const>, are listed with names <var>name</var>, radii <var>r</var>, masses <var>m</var>, and current distances <var>c</var> from <const>Alice</const>. The <strong>Roche Limit</strong> between a planet and <const>Alice</const> defines the distance below which a planet would disintegrate due to Alice's gravitational field. Determine the closest of the <var>N</var> planets that will not disintegrate.<br><br><strong>&laquo;&laquo;Math&raquo;&raquo;</strong><br>Some equations reminiscent of high school physics:<br>&nbsp;&nbsp;&nbsp;&nbsp;Alice's Roche Limit = <var>rA</var> * <strong>cube-root</strong> ( <const>2</const> * <var>dA</var> / <var>dP</var> )<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;where <var>rA</var> is the radius of Alice,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<var>dA</var> and <var>dP</var> are the densities of Alice and a planet.<br>&nbsp;&nbsp;&nbsp;&nbsp;Volume of sphere <var>V</var> = <const>4/3</const> * <const>pi</const> * <var>r</var>^<const>3</const><br>&nbsp;&nbsp;&nbsp;&nbsp;Density <var>d</var> = <var>m</var> / <var>V</var><br><br>Model each planet as a sphere of uniform density. Distances are measured between centers of the spheres. For simplicity's sake for defining the &quot;closest&quot; planet, assume that all celestial bodies are positioned in a line, with <const>Alice</const> and Gary at one end of the line.<br><br><strong>&laquo;&laquo;Disclaimer&raquo;&raquo;</strong><br>This puzzle does not reflect reality and should be kept away from children under the age of 90. If you experience strange sensations of being ripped apart from within after solving this puzzle, call your doctor right away.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var> representing the number of planets, including <const>Alice</const><br><strong>Next <var>N</var> lines:</strong> Space separated <strong>strings</strong> <var>name</var>, <var>r</var>, <var>m</var>, and <var>c</var>, describing a planet.<br>&nbsp;&nbsp;&nbsp;&nbsp;Radii and orbital distances are given in units of <const>m</const><br>&nbsp;&nbsp;&nbsp;&nbsp;Masses are given in units of <const>kg</const><br>&nbsp;&nbsp;&nbsp;&nbsp;Quantities are formatted in scientific notation: <const>0.00e00</const>. For example, <const>8.00e3</const> represents 8,000, and <const>1.63e10</const> represents 16,300,000,000.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The <var>name</var> of the closest planet to <const>Alice</const> that will remain intact</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &le; <var>N</var> &le; 30<br><const>1e0</const> &le; <var>r</var>,<var>m</var>,<var>c</var> &le; <const>1e50</const><br>1 &le; length of a <var>name</var> &le; 30<br><var>name</var>s consist of characters <const>A-Za-z0-9_</const><br>Each test case has one unique solution</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+Alice 4.70e11 4.70e42 0
+BLARGHHH 6.30e09 1.30e31 5.14e11
+G7_24a 4.49e08 2.50e30 5.51e13</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">G7_24a</pre>
+         </div>
+      </div>
+   </div>
+</div>

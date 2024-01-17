@@ -1,0 +1,38 @@
+<h1>Pedestrian Traffic</h1>
+
+<a href="https://www.codingame.com/training/hard/pedestrian-traffic">https://www.codingame.com/training/hard/pedestrian-traffic</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Pedestrians are walking on a path of length <var>n</var> that is separated into an upper and lower lane. The upper lane is for people moving to the right and the lower lane is for people moving to the left. However, due to people walking next to their friend or being distracted by their phone, not everyone is in their correct lane. <br><br>People are differentiated by the direction in which they are moving:<br><br>People moving toward the right: <strong>R</strong><br>People moving toward the left: <strong>L</strong><br>Open spaces on the path: <strong>o</strong><br><br><pre style="font-family: monospace">              o o o o o --&gt; Right exit<br>Left exit &lt;-- o o o o o</pre><br>Each second, everyone moves according to the following rules:<br><br>1. People will prioritize trying to move to their lane. If this is not possible or they are already in their correct lane, they will try to move forward<br>2. If two people both want to move forward to the same space, the one who is in their correct lane takes priority<br>3. If a lane switcher and forward mover want to move to the same space, the forward mover takes priority<br>4. People can exit from the edges of the path<br>5. People can move to unoccupied spaces<br>6. People can move to a space that was opened up due to someone else moving during the current second (for example, two people directly above and below each other can swap lanes)<br>7. An exception to rule 6 is that two people in the same lane cannot walk past (swap places with) each other<br><br>Your task is to determine whether the path becomes clogged so that not everyone can exit, and if everyone is able to exit, how many seconds it takes.<br><br>Example:<br><br>o o R L o<br>o L R o o<br><br>o o R R o<br>L o o L o<br><br>o o o R R<br>o o L o o<br><br>o o o o R<br>o L o o o<br><br>o o o o o<br>L o o o o<br><br>o o o o o<br>o o o o o<br><br>It takes 5 seconds for everyone to exit.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>n</var> for the length of the path<br><strong>Lines 2 &amp; 3:</strong> String of length <var>n</var> consisting of <strong>R</strong>, <strong>L</strong>, and <strong>o</strong></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The number of seconds it takes for everyone to exit the path.<br>If not everyone can exit, print &quot;Congestion&quot;.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <var>n</var> &lt; 1000</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">4
+RoLo
+oooo</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">4</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,52 @@
+<h1>Rocket mice</h1>
+
+<a href="https://www.codingame.com/training/hard/rocket-mice">https://www.codingame.com/training/hard/rocket-mice</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">A colony of peaceable, space-faring mice has been invaded by cats. You must get the mice to your rocket so they can evade the evil cats' claws.<br><br><strong>Puzzle goal</strong><br><br>Calculate the final score for all players in the game, based on the moves made.<br><br><strong>Scoring</strong><br><br>Each player has a rocket on a grid of squares. A player scores <const>1</const> point for each mouse that enters his rocket, and <const>-10</const> points for each cat that enters his rocket. Animals can enter a rocket from any orthogonally adjacent square.<br><br>A player's score can never go below zero.<br><br><strong>Animal generation</strong><br><br>Each board has one or more doors on the edges of the grid. Animals enter through these doors and always move directly away from the door they entered through, in a direction perpendicular to the wall where the door is located. So, for example, if a mouse enters through a door on the <strong>northern</strong> edge of the grid, it will move <strong>south</strong>. Doors are never in the corners of the grid.<br><br>Animals always go straight until they leave the board (rocket, pit, or eaten) or are redirected (wall or arrow).<br><br>Each door produces <const>1</const> animal every turn. Every <const>10th</const> animal to enter through each door is a cat. The other <const>9</const> animals produced are mice.<br><br><strong>Walls and pits</strong><br><br>If an animal hits a wall, it will turn 90 degrees counter-clockwise. Animals never exit through doors. They only enter through them. Otherwise, a door behaves like a wall.<br><br>The four squares in the corners of the grid are pits. If a mouse or a cat moves to one of these squares, they fall to their doom.<br><br><strong>Eaten by cats</strong><br><br>Multiple mice can coexist on the same square, and multiple cats can coexist on the same square, but mice and cats don't mix. A mouse on the same square as a cat is eaten.<br><br>If a mouse and cat switch positions, i.e. mouse from (1,2) to (1,3) and cat from (1,3) to (1,2), the mouse is eaten in passing.<br><br><strong>Arrows</strong><br><br>Each turn, one player places an arrow onto a square of the grid. Arrows point in any of four directions: <const>N</const>, <const>E</const>, <const>S</const>, or <const>W</const>. The players take turns placing arrows. Player 1 places on the first turn, then player 2 on the next turn, etc. Arrows cannot be placed onto another arrow, a rocket, or a pit.<br><br>Each player can have a maximum of 3 arrows on the grid at a time. Once a player places his 4th arrow, then the first arrow he placed is removed. When his 5th is placed, his 2nd is removed, and so on.<br><br>When an animal moves to a square with an arrow, it turns to face the direction indicated by the arrow.<br><br><strong>Order of a turn</strong><br><br>1) An animal is produced <strong>behind</strong> each door, just off the grid, ready to enter the board.<br>2) All animals move forward one square, simultaneously, in the direction they are facing.<br>3) Mice score.<br>4) Cats score.<br>5) Mice are eaten.<br>6) All animals on an arrow or facing a wall are redirected.<br>7) The next player to play places an arrow.<br><br>After the final arrow is placed on the last turn, steps 1-4 are executed one more time to determine the score.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Two space-separated integers indicating the <var>width</var> and <var>height</var> of the grid<br><strong>Line 2:</strong> An integer indicating the number of <var>players</var> in the game<br><strong>Line 3:</strong> An integer indicating the number of <var>doors</var> on the grid<br><strong>Line 4:</strong> An integer indicating the number of <var>turns</var> to be played<br><strong>Next <var>players</var> lines:</strong> Two space-separated integers (<var>rX</var> and <var>rY</var>) indicating the coordinates of each player's rocket<br><strong>Next <var>doors</var> lines:</strong> An integer indicating the x or y <var>coordinate</var> of the door, followed by the <var>wall</var> that the door is on, either <const>N</const>, <const>E</const>, <const>S</const>, or <const>W</const><br><strong>Next <var>turns</var> lines:</strong> Two space-separated integers (<var>tX</var> and <var>tY</var>) indicating the coordinates where an arrow is placed, followed by a <var>direction</var>, either <const>N</const>, <const>E</const>, <const>S</const>, or <const>W</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>players</var> lines:</strong> One line per player, indicating that player's <var>score</var> for the game</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">5 &le; <var>width</var> = <var>height</var> &le; 25<br>2 &le; <var>players</var> &le; 4<br>1 &le; <var>doors</var> &le; 16<br>1 &le; <var>turns</var> &le; 100<br>0 &le; <var>rX</var>, <var>tX</var> &le; <var>width</var> - 1<br>0 &le; <var>rY</var>, <var>tY</var> &le; <var>height</var> - 1<br>(0, 0) is the north-west corner.<br>(<var>width</var>-1, 0) is the north-east corner.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">5 5
+2
+2
+8
+1 2
+3 2
+2 E
+2 W
+2 0 W
+2 2 E
+1 0 S
+1 1 E
+2 1 W
+0 1 S
+0 3 E
+2 0 E</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">8
+8</pre>
+         </div>
+      </div>
+   </div>
+</div>

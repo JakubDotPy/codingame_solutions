@@ -1,0 +1,41 @@
+<h1>Hitori solver</h1>
+
+<a href="https://www.codingame.com/training/hard/hitori-solver">https://www.codingame.com/training/hard/hitori-solver</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Each puzzle consists of a square grid with numbers appearing in all squares. The object is to shade squares so:<br><br>- No number appears in a row or column more than once.<br>- Shaded squares do not touch each other vertically or horizontally.<br>- When completed, all un-shaded squares create a single continuous area.<br>(use <const>*</const> for shaded squares)</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">Line 1 : The size of the square, <var>n</var>  .<br><var>n</var> following lines : Content of the grid made of <var>n</var> numbers.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><var>n</var> following lines : Content of the solved grid made of <var>n</var> numbers and <const>*</const> for shaded squares.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &le; <var>n</var> &le; 8</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+111
+234
+224</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">*1*
+234
+*2*</pre>
+         </div>
+      </div>
+   </div>
+</div>

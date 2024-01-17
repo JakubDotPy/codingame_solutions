@@ -1,0 +1,41 @@
+<h1>Minimax Simple Example</h1>
+
+<a href="https://www.codingame.com/training/expert/minimax-simple-example">https://www.codingame.com/training/expert/minimax-simple-example</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">At the beginning the 2 players see a pile of letters, all different. In turns they can choose to get <strong>the first or the second letter</strong> of the pile. At the last turn, the last player has no choice but getting the last letter.<br>Then, the players score according to the words they can build with their collected letters. A dictionary gives the possible words with their associated gains. Letters can be used several times to form several words.<br><br>You have to advise the first player for its first turn: what letter is best to choose, and what scores are expected for each player, when the two players play their best choice at each turn.<br><br>For the player 1, the purpose is to have the higher positive difference between its score and the opponent's score. For example, '10-2' is a better result than '15-14', which is better than '20-25'.<br><br>This puzzle is a simple game to implement a <strong>minimax</strong> algorithm. You may need to optimize your code with <strong>alpha-beta pruning</strong> for some tests.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1 :</strong> Two integers <var>N</var> the number of letters in the pile and <var>Q</var> the number of scoring words.<br><strong>Line 2 :</strong> <var>N</var> letters separated by space.<br><strong><var>Q</var> next lines :</strong> A <var>word</var> and its associated <var>score</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1 :</strong> <var>C</var> the best choice for the first turn, and <var>S1</var>-<var>S2</var> the expected final scores for the player 1 and 2.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &lt;= <var>N</var> &lt;= 26<br>1 &lt;= <var>Q</var> &lt;= 100<br>All input letters are different<br>Words in dictionary do not contain duplicate letters<br>The tests are designed to have a unique best solution.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">4 4
+A S R E
+SA 2
+SE 4
+RE 1
+A 1</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">S 4-1</pre>
+         </div>
+      </div>
+   </div>
+</div>

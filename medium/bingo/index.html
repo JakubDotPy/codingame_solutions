@@ -1,0 +1,43 @@
+<h1>Bingo!</h1>
+
+<a href="https://www.codingame.com/training/medium/bingo">https://www.codingame.com/training/medium/bingo</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Provided with a set of <strong>bingo cards</strong>, and the order in which the numbers will be called, output how many numbers need to be called before somebody has a <strong>line</strong>, followed by how many numbers need to be called before somebody has &quot;bingo&quot; (all numbers on their sheet filled in).<br><br>A <strong>bingo card</strong> is defined as a <var>5x5</var> set of numbers between 1 and 90. The center of a bingo card is a &quot;free space&quot;, meaning it is already filled in - this is denoted with a <var>0</var> in this puzzle. <br><br>A <strong>line</strong> on the bingo card is defined as any row, column or diagonal of 5 numbers on the card.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong>: An integer <var>n</var> for the number of bingo cards in play<br><strong>Next <var>n*5</var> lines</strong>: The numbers <var>bn</var> on the bingo cards, separated by spaces.<br><strong>Line <var>n*5+2</var></strong>: The order in which the numbers <var>cn</var> will be called, separated by a space. You are provided all 90 numbers.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1</strong>: The amount of numbers that need to be called before a bingo card has a complete line.<br><strong>Line 2</strong>: The amount of numbers that need to be called before a bingo card has a full house (all numbers filled).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <var>n</var> &le; 10000<br>0 &le; <var>bn</var> &le; 90 (&quot;free space&quot; is signified with a 0)<br>0 &lt; <var>cn</var> &le; 90</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1
+1 67 89 69 48
+72 65 38 85 28
+37 29 0 54 22
+83 80 10 75 58
+25 35 49 87 27
+65 4 48 59 26 24 3 60 36 29 54 47 78 32 18 9 83 90 2 50 17 45 11 20 55 33 30 64 35 75 39 81 71 70 5 52 53 46 88 6 41 66 86 67 49 38 62 31 85 27 13 84 58 1 40 80 16 82 22 76 57 37 14 19 79 73 44 68 15 43 87 72 8 42 69 12 34 89 77 21 74 51 63 25 10 61 56 28 7 23</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">54
+88</pre>
+         </div>
+      </div>
+   </div>
+</div>

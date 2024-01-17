@@ -1,0 +1,37 @@
+<h1>Folding Paper</h1>
+
+<a href="https://www.codingame.com/training/easy/folding-paper">https://www.codingame.com/training/easy/folding-paper</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">A sheet of paper is folded several times. The goal is to determine how many layers of paper are visible from one side of the obtained folding.<br><br>Folding motions are:<br><const>R</const> for Right: take the right side and fold it on the left side.<br><const>L</const> for Left: take the left side and fold it on the right side.<br><const>U</const> for Up: take the high side and fold it on the low side.<br><const>D</const> for Down: take the low side and fold it on the high side.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> a fold string <var>order</var>: several letters <const>R</const>, <const>L</const>, <const>U</const> and <const>D</const> with no space in-between<br><strong>Line 2:</strong> <var>side</var>: a single character <const>R</const>, <const>L</const>, <const>U</const> or <const>D</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><var>n</var>: the number of layers of paper visible from <var>side</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 characters &le; length of <var>order</var> &le; 8 characters<br>(Try to fold a sheet more than 6 times!)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">UL
+D</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">4</pre>
+         </div>
+      </div>
+   </div>
+</div>

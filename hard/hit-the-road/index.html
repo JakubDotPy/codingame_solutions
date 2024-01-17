@@ -1,0 +1,55 @@
+<h1>Hit the road</h1>
+
+<a href="https://www.codingame.com/training/hard/hit-the-road">https://www.codingame.com/training/hard/hit-the-road</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">A driver is on a road network with <var>n</var> junctions and <var>m</var> roads with two specific positions <var>s</var> and <var>t</var>. <br>Each junction of the network can be associated with a time window <var>[b,e]</var> : the driver can go through that intersection only between times <var>b</var> and <var>e</var>. Every other junction is free : the driver can cross it at any time. Each road is associated with a duration: the time a car needs to drive through that road. <strong>The roads are directed : the car cannot go through a road backwards.</strong><br><br>Your goal is to decide if a driver can go from <var>s</var> to <var>t</var> such that, for each junction associated with a time window <var>[b,e]</var>, the moment <var>r</var> when the driver reaches that junction belongs to its window : b &lt;= r &lt;= e. If the junction has no time window, the driver can reach it at any time.<br><br>The driver starts in <var>s</var> at time <const>0</const>.<br><strong>The driver cannot wait. Once he reaches a junction, he must go though an outgoing road of that junction.</strong><br>The time windows are always closed intervals.<br><br>Here is an example where &lt;, &gt;, ^ and v represent roads (and the directions).<br><br><pre style="font-family: monospace">s &gt; u &gt; w &gt; t</pre> <br><pre style="font-family: monospace">v   ^   v   ^</pre> <br><pre style="font-family: monospace">x &gt; y &gt; z &gt; r</pre><br><br>The time window on x, u and y is <const>[1,2]</const>.<br>The time window on w, z and r is <const>[3,5]</const>.<br>The time window on t is <const>[1,7]</const>.<br>The duration on each arc is <const>1</const>.<br><br><br>It is possible to go from s to t with that path.<br><br><pre style="font-family: monospace">s           t</pre> <br><pre style="font-family: monospace">v           ^</pre> <br><pre style="font-family: monospace">x &gt; y &gt; z &gt; r</pre><br><br>The driver would be in x at time 1, y at time 2, z at time 3, r at time 4 and t at time 5. Each time fits within the specified time window.<br><br>In this example with the same time windows and same durations :<br><br><pre style="font-family: monospace">s &gt; u &gt; w &gt; t</pre> <br><pre style="font-family: monospace">v   ^   v   ^</pre> <br><pre style="font-family: monospace">x &gt; y   z &gt; r</pre><br><br>You cannot go from s to t, because you must go through w in order to reach t and  it is not possible to be in w between time 3 and 5 and in u between time 1 and 2:<br>- either the driver goes from s to u and arrives at w at time 2;<br>- or it uses the path s x y u w and arrives at u at time 3.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1 :</strong> Three integers <var>n</var>, <var>m</var> and <var>ntw</var> the number of junctions and roads in the network and the number of junctions with a time window. The junctions are numbered from 0 to <var>n-1</var>.<br><strong>Line 2 :</strong> Two integers <var>s</var> and <var>t</var>, the origin  and the destination of the driver<br><strong><var>ntw</var> next lines :</strong> three integers <var>v</var>, <var>b</var> and <var>e</var>, a junction v, the beginning and the end of the time window of that junction.<br><strong><var>m</var> next lines :</strong> three integers <var>u</var>, <var>v</var> and <var>d</var>, the origin, the destination and the duration of each arc.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1 :</strong> print <const>true</const> if there is a path from <var>s</var> to <var>t</var> satisfying the time windows constraints. Otherwise, print <const>false</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &lt;= <var>n</var> &lt;= 10<br>1 &lt;= <var>m</var> &lt;= 20<br>0 &lt;= <var>e</var> - <var>b</var> &lt; 10<br>0 &lt;= <var>e</var>, <var>b</var> &lt;= 50<br>0 &lt;= <var>d</var> &lt;= 25</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">8 10 8
+0 3
+0 0 0
+1 1 2
+2 3 5
+3 1 7
+4 1 2
+5 1 2
+6 3 5
+7 3 5
+0 1 1
+0 4 1
+1 2 1
+2 3 1
+2 6 1
+4 5 1
+5 1 1
+5 6 1
+6 7 1
+7 3 1</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">true</pre>
+         </div>
+      </div>
+   </div>
+</div>

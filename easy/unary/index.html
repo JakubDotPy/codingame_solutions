@@ -1,0 +1,117 @@
+<h1>Unary</h1>
+
+<a href="https://www.codingame.com/training/easy/unary">https://www.codingame.com/training/easy/unary</a>
+
+<div class="statement_back" id="statement_back" style="display:none">&nbsp;</div>
+
+<div class="statement-body"><!-- GOAL -->
+<div class="statement-section statement-goal">
+<h2><span class="icon icon-goal">&nbsp;</span> <span>The Goal</span></h2>
+
+<div class="statement-goal-content">
+<p>Binary with 0 and 1 is good, but binary with only 0, or almost, is even better! </p>
+
+<p>Write a program that takes an incoming message as input and displays as output the message encoded using this method.</p>
+</div>
+</div>
+<!-- RULES -->
+
+<div class="statement-section statement-rules">
+<h2><span class="icon icon-rules">&nbsp;</span> <span>Rules</span></h2>
+
+<div>
+<div class="statement-rules-content">
+<p>Here is the encoding principle:</p>
+
+<ul>
+	<li>The input message consists of ASCII characters (7-bit)</li>
+	<li>The encoded output message consists of blocks of <const>0</const></li>
+	<li>A block is separated from another block by a space</li>
+	<li>Two consecutive blocks are used to produce a series of same value bits (only <const>1</const> or <const>0</const> values):
+	<div>- First block: it is always&nbsp;<const>0</const> or <const>00</const>. If it is <const>0</const>, then the series contains <const>1</const>, if not, it contains <const>0</const><br />
+	- Second block: the number of <const>0</const> in this block is the number of bits in the series</div>
+	</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- EXAMPLES -->
+
+<div class="statement-section statement-examples">
+<h2><span class="icon icon-example">&nbsp;</span> <span>Example</span></h2>
+
+<div class="statement-examples-text">
+<p>Let&rsquo;s take a simple example with a message which consists of only one character: Capital C. C in binary is represented as <const>1000011</const>, so with this method, this gives:</p>
+
+<ul>
+	<li><const>0 0</const> (the first series consists of only a single <const>1</const>)</li>
+	<li><const>00 0000</const> (the second series consists of four <const>0</const>)</li>
+	<li><const>0 00</const> (the third consists of two <const>1</const>)</li>
+</ul>
+
+<p>So C is coded as: <const>0 0 00 0000 0 00</const></p>
+&nbsp;
+
+<p>Second example, we want to encode the message CC (i.e. the 14 bits <const>10000111000011</const>)&nbsp;:</p>
+
+<ul>
+	<li><const>0 0</const> (one single <const>1</const>)</li>
+	<li><const>00 0000</const> (four <const>0</const>)</li>
+	<li><const>0 000</const> (three <const>1</const>)</li>
+	<li><const>00 0000</const> (four <const>0</const>)</li>
+	<li><const>0 00</const> (two <const>1</const>)</li>
+</ul>
+
+<p>So CC is coded as: <const>0 0 00 0000 0 000 00 0000 0 00</const></p>
+</div>
+</div>
+<!-- PROTOCOL -->
+
+<div class="statement-section statement-protocol">
+<h2><span class="icon icon-protocol">&nbsp;</span> <span>Game Input</span></h2>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Input</div>
+
+<div class="text"><span class="statement-lineno">Line 1: </span>the message consisting of <const>N</const> ASCII characters (without carriage return)</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Output</div>
+
+<div class="text">The encoded message</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Constraints</div>
+
+<div class="text">0 &lt; <const>N</const> &lt; 100</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Example</div>
+
+<div class="text">
+<div class="statement-inout" style="table-layout: fixed;">
+<div class="statement-inout-in" style="background-color: white">
+<div class="title" style="color:#989898;padding:0">Input</div>
+
+<pre>
+C</pre>
+</div>
+
+<div class="statement-inout-out" style="background-color: white">
+<div class="title" style="color:#989898;padding:0">Output</div>
+
+<pre>
+0 0 00 0000 0 00</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

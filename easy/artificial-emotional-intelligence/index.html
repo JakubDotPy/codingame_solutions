@@ -1,0 +1,38 @@
+<h1>Artificial Emotional Intelligence</h1>
+
+<a href="https://www.codingame.com/training/easy/artificial-emotional-intelligence">https://www.codingame.com/training/easy/artificial-emotional-intelligence</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You've been tasked to build an A.I. machine that can sense the essence and future of its human-partner/user.  But that seems way too hard.  What to do?<br><br>Then you remember that people are all pretty much the same, so using generic adjectives and destinies will perfectly fit most people most of the time.  So you create 3 lists, shown below:<br>~ <strong>adjList</strong> = 20 Adjectives to generically describe a person<br>~ <strong>goodList</strong> = 6 phrases for common Good things that happen to a person<br>~ <strong>badList</strong> = 6 phrases for common Bad things that happen to a person<br><br>There are 6 vowels (a,e,i,o,u,y) and 20 consonants in the alphabet.<br>You decide you will use the first 3 <strong>unique consonants</strong> and the first 2 <strong>vowels</strong> in a person's name to create a customized Greeting to that person.<br><br>Here is an example for someone named &quot;Missy Marie&quot;:<br>The first 3 unique consonants are: M, S, and R<br>&quot;M&quot; is the <strong>10th</strong> consonant in the alphabet, &quot;S&quot; is the <strong>15th</strong>, and &quot;R&quot; is the <strong>14th</strong>.<br>The first 2 vowels are: I and Y<br>&quot;I&quot; is the <strong>3rd</strong> vowel in the alphabet, and &quot;Y&quot; is the <strong>6th</strong>. <br><br>So your mock-A.I. greets her like this:<br><const>It's so nice to meet you, my dear </const>[<strong>10th</strong> word in adjList] <var>name</var><const>.</const><br><const>I sense you are both </const>[<strong>15th</strong> word in adjList]<const> and </const>[<strong>14th</strong> word in adjList]<const>.</const><br><const>May our future together have much more </const>[<strong>3rd</strong> phrase in goodList]<const> than </const>[<strong>6th</strong> phrase in badList]<const>.</const><br><br>... which becomes ...<br><br>It's so nice to meet you, my dear gregarious Missy Marie.<br>I sense you are both non-judgmental and honest.<br>May our future together have much more friendship than investment loss.<br><br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>If a name doesn't have the letters required for this (like &quot;John&quot; or &quot;Paw Paw&quot;) then output this basic greeting: &quot;<const>Hello </const><var>name</var><const>.</const>&quot; (for example &quot;Hello John.&quot;)<br><br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br>About the name:<br>~Names often have spaces, hyphens, periods (and sometimes symbols and numbers) in them: Ignore all those. We only care about letters.<br>~It's fine if both of the first two <strong>vowels</strong> are the same, for example: if both are &quot;A&quot;, as in &quot;Lamar&quot;<br><br>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br><br><strong>adjList</strong> =  <const>&quot;Adaptable Adventurous Affectionate Courageous Creative Dependable Determined Diplomatic Giving Gregarious Hardworking Helpful Hilarious Honest Non-judgmental Observant Passionate Sensible Sensitive Sincere&quot;</const><br><strong>goodList</strong> = <const>&quot;Love, Forgiveness, Friendship, Inspiration, Epic Transformations, Wins&quot;</const><br><strong>badList</strong> = <const>&quot;Crime, Disappointment, Disasters, Illness, Injury, Investment Loss&quot;</const><br><br><br>Sources of the lists:<br>https://argoprep.com/blog/206-personality-adjectives-to-describe-anybody/<br>https://simplicable.com/en/life-events</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><var>name</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The customized Greeting that is either 1-line or 3-lines long.<br>If it's the 3-line greeting, make sure it reads as normal sentences (adjust capitalization and spacing as needed).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><var>name</var> can be upper or lower case or any combination thereof.<br><var>name</var> can contain letters, numbers, and symbols.<br><var>name</var> is at least 1 character long.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">Frankie</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">It's so nice to meet you, my dear courageous Frankie.
+I sense you are both honest and hardworking.
+May our future together have much more love than disasters.</pre>
+         </div>
+      </div>
+   </div>
+</div>

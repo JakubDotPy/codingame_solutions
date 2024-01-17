@@ -1,0 +1,164 @@
+<h1>TAN Network</h1>
+
+<a href="https://www.codingame.com/training/hard/tan-network">https://www.codingame.com/training/hard/tan-network</a>
+
+<div class="statement_back" id="statement_back" style="display:none">&nbsp;</div>
+
+<div class="statement-body"><!-- GOAL -->
+<div class="statement-section statement-goal">
+<h2><span class="icon icon-goal">&nbsp;</span> <span>The Goal</span></h2>
+
+<div class="statement-goal-content">The administration of the <i>Loire-Atlantique</i> region, located in France, has decided to open up a large amount of public transportation information to the public. The public transport company in charge for this area is named TAN.<br />
+<br />
+One part of this information is the list of TAN stops, timetables and routes. The region wants to provide TAN users with a tool which will allow them to calculate the shortest route between two stops using the TAN network.
+<div style="text-align: center; margin: 10px;"><img src="https://code.codingame.com/fileservlet?id=327872424921" /></div>
+</div>
+</div>
+<!-- RULES -->
+
+<div class="statement-section statement-rules">
+<h2><span class="icon icon-rules">&nbsp;</span> <span>Rules</span></h2>
+
+<div>
+<div class="statement-rules-content">
+<p>The input data required for your program is provided in an ASCII text format:</p>
+
+<ul>
+	<li>The stop which is the starting point of the journey</li>
+	<li>The stop which is the final point of the journey</li>
+	<li>The list of all the stops</li>
+	<li>The routes between the stops</li>
+</ul>
+
+<p>&nbsp;</p>
+<b>List of all the stops:</b>
+
+<p>A series of lines representing the stops (one stop per line) and which contains the following fields:</p>
+
+<ul>
+	<li>The unique identifier of the stop</li>
+	<li>The full name of the stop, between quote marks<const>&quot;</const></li>
+	<li>The description of the stop (not used)</li>
+	<li>The latitude of the stop (in degrees)</li>
+	<li>The longitude of the stop (in degrees)</li>
+	<li>The identifier of the zone (not used)</li>
+	<li>The url of the stop (not used)</li>
+	<li>The type of stop</li>
+	<li>The mother station (not used)</li>
+</ul>
+These fields are <b>separated by a comma ,</b>
+
+<p>&nbsp;</p>
+
+<p>Example:</p>
+
+<pre>
+StopArea:ABDU,&quot;Abel Durand&quot;,,47.22019661,-1.60337553,,,1,</pre>
+
+<p>&nbsp;</p>
+<br />
+<b>The routes between stops:</b>
+
+<p>A list of lines representing the routes between the stops (one route per line). Each line contains two stop identifiers separated by a white space. ​<br />
+<br />
+Each line represents a one-directional route running from the first identifier to the second. If two stops A and B are reciprocally accessible, then there will be two lines to represent this route:<br />
+A B<br />
+B A</p>
+
+<p>Example:</p>
+
+<pre>
+StopArea:LAIL StopArea:GALH
+StopArea:GALH StopArea:LAIL
+</pre>
+<br />
+<b>DISTANCE</b>
+
+<p>The distance d between two points A and B will be calculated using the following formula:</p>
+
+<div style="border: dashed 1px black; padding: 5px; padding-left: 10px; margin-bottom: 10px; background-color: #eee; color: #20252a">
+<div style="height: 40px"><img alt="" src="fileservlet?id=333885671302" style="width: 385px; height: 32px;" /></div>
+
+<div style="height: 26px"><img alt="" src="fileservlet?id=327016981042" style="width: 176px; height: 16px;" /></div>
+
+<div><img src="fileservlet?id=327025222227" style="width: 142px; height: 19px;" />​</div>
+
+<p style="margin-top:10px"><i>Note: the latitudes and longitudes are expressed in <b>radians</b>. 6371 corresponds to the radius of the earth in km.</i></p>
+</div>
+<br />
+The program will display the list of the full names of the stops along which the shortest route passes. If there is no possible route between the starting and final stops, the program will display <action>IMPOSSIBLE</action>.</div>
+</div>
+</div>
+<!-- PROTOCOL -->
+
+<div class="statement-section statement-protocol">
+<h2><span class="icon icon-protocol">&nbsp;</span> <span>Game Input</span></h2>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Input</div>
+
+<div class="text">
+<p><span class="statement-lineno">Line 1: </span>the identifier of the stop which is the starting point of the journey</p>
+
+<p><span class="statement-lineno">Line 2: </span>the identifier of the stop which is the final point of the journey</p>
+
+<p><span class="statement-lineno">Line 3: </span>the number <var>N</var> of stops in the TAN network</p>
+
+<p><span class="statement-lineno">N following lines: </span> on each line a stop as described above</p>
+
+<p><span class="statement-lineno">Following line: </span>the number <var>M</var> of routes in the TAN network</p>
+
+<p><span class="statement-lineno">M following lines: </span>on each line a route as described above</p>
+</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Output</div>
+
+<div class="text">The list of the stops with their full names (one name per line) along which the shortest route passes from the start to the end of the journey (start and end included) The names <b>must not be</b> between quotes &quot;.<br />
+If it is not possible to find a route between the start and end points, the program should display <action>IMPOSSIBLE</action>.</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Constraints</div>
+
+<div class="text">0 &lt; <var>N</var> &lt; 10000<br />
+0 &lt; <var>M</var> &lt; 10000</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Example</div>
+
+<div class="text">
+<div class="statement-inout">
+<div class="statement-inout-in">
+<div class="title">Input</div>
+
+<pre>
+StopArea:ABDU
+StopArea:ABLA
+3
+StopArea:ABDU,&quot;Abel Durand&quot;,,47.22019661,-1.60337553,,,1,
+StopArea:ABLA,&quot;Avenue Blanche&quot;,,47.22973509,-1.58937990,,,1,
+StopArea:ACHA,&quot;Angle Chaillou&quot;,,47.26979248,-1.57206627,,,1,
+2
+StopArea:ABDU StopArea:ABLA
+StopArea:ABLA StopArea:ACHA</pre>
+</div>
+
+<div class="statement-inout-out">
+<div class="title">Output</div>
+
+<pre>
+Abel Durand
+Avenue Blanche</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

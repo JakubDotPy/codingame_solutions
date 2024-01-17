@@ -1,0 +1,41 @@
+<h1>Rod cutting problem</h1>
+
+<a href="https://www.codingame.com/training/medium/rod-cutting-problem">https://www.codingame.com/training/medium/rod-cutting-problem</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">The rod cutting problem consists of cutting a rod in some pieces of different <strong>length</strong>, each having a specific <strong>value</strong>, such that the total value is maximized.<br><br>For example, consider that the rods of <strong>length</strong> 1, 2, 3 and 4 are marketable with respective <strong>values</strong> 1, 5, 8 and 9.<br>A rod of <strong>length</strong> 4 can then be cut in pieces in five different ways:<br>&bull; 0&times;1 + 0&times;2 + 0&times;3 + 1&times;4 &rarr; total value: 0&times;1 + 0&times;5 + 0&times;8 + 1&times;9 =  9<br>&bull; 1&times;1 + 0&times;2 + 1&times;3 + 0&times;4 &rarr; total value: 1&times;1 + 0&times;5 + 1&times;8 + 0&times;9 =  9<br>&bull; 0&times;1 + 2&times;2 + 0&times;3 + 0&times;4 &rarr; total value: 0&times;1 + 2&times;5 + 0&times;8 + 0&times;9 = 10<br>&bull; 2&times;1 + 1&times;2 + 0&times;3 + 0&times;4 &rarr; total value: 2&times;1 + 1&times;5 + 0&times;8 + 0&times;9 =  7<br>&bull; 4&times;1 + 0&times;2 + 0&times;3 + 0&times;4 &rarr; total value: 4&times;1 + 0&times;5 + 0&times;8 + 0&times;9 =  4<br><br>The optimal cut is thus two pieces of length <const>2</const> which gives a total value of <const>10</const>.<br><br>You can make pieces that are not marketable, but theses pieces will have a value of 0.<br><br><br>The rod cutting problem is the one-dimensional variant of the cutting stock problem. https://en.wikipedia.org/wiki/Cutting_stock_problem</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>First line:</strong> <var>L</var> the length of the rod<br><strong>Second line:</strong> <var>N</var> the number of different pieces that are marketable.<br><strong>Next <var>N</var> lines:</strong> <var>length</var> <var>value</var> of each marketable piece, separated by a space.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The maximum total value that can be obtained from the cut of the rod in different pieces.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <var>L</var> &le; 100 000<br>0 &lt; <var>N</var> &lt; 50<br>0 &lt; <var>length</var> &le; 10 000 000 000<br>0 &le; <var>value</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">4
+4
+1 1
+2 5
+3 8
+4 9</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">10</pre>
+         </div>
+      </div>
+   </div>
+</div>

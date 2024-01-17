@@ -1,0 +1,41 @@
+<h1>Mars Colonization</h1>
+
+<a href="https://www.codingame.com/training/hard/mars-colonization">https://www.codingame.com/training/hard/mars-colonization</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Men are sending robots to Mars as precursors for the final target of colonization.<br><br>The robots are called Mobile Construction Vehicles (MCV), that rove on Mars surface to seek suitable stationing sites. MCV will deploy itself to become a shelter for all kinds of equipment to establish power, communications, heating, plant cultivation and manufacturing basics by robotic systems. There are multiple MCVs to deploy to form a network of colonies.<br><br><strong>Commu links</strong><br>It is necessary to keep a communication link between the deployment stations. There are two forms of communication. One is by a xG wireless network (evolved from 1G, 2G, 3G...). Wireless transmitters are simple and sturdy but have a transmission distance limit, determined by the designed power consumption. To standardize the equipment, all MCVs to send to Mars will be equipped with wireless transmitters of the same specification.<br><br>The second communication mode is by satellite microwave transmission. Communication by satellites does not have a distance limit but it needs an extra bulky equipment installed in the station. Some but not all stations will have satellite transmitters besides the standard wireless transmitters.<br><br><strong>Commu distance</strong><br>You, as the network architect, are given a list of planned stationing sites on Mars, denoted by (x,y) coordinates. Each site will have a MCV to deploy. The deployment area is carefully chosen to be a flatland so that we assume the land is flat.<br><br>It is not yet confirmed how strong the signal is needed for the wireless transmitters. You would like the communication distance be as long as possible. But longer distance causes progressively higher power consumption. So, you are asked to determine the minimum distance to conserve energy but still keep all stations linked up according to the deployment plan.<br><br>The baseline is, all stations need to have communication link, directly or indirectly, connected with each others, no matter it is by xG wireless or by satellites or by both.<br><br><strong>Example</strong><br><br>M = 5 (stations)<br>S = 2 (satellite transmitters available)<br><br>A (1,0)<br>B (1,1)<br>C (2,0)<br>D (4,0)<br>E (4,1)<br><br><pre style="font-family: monospace"> B o            o E<br>   |            |<br>   o---o........o<br>   A   C        D</pre><br>One possible solution is to install satellite transmitters in C and D.<br>Communication distance between wireless transmitters can be kept to minimum 1.00 unit length and still have all 5 stations linked up.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> <var>M</var> <var>S</var><br><br><var>M</var> is the number of stations. It also equals to the number of wireless transmitters.<br><var>S</var> is the number of satellite transmitters among all stations.<br><br><strong>Next <var>M</var> lines:</strong><br>each line will be <var>x</var> <var>y</var>, the coordinates of one spot of deployment. <var>x</var> and <var>y</var> are non-negative integers.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> the minimum wireless transmission distance required for the wireless transmitters, accurate to the nearest 2 decimal places.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &le;  S &le;  M &le;  100<br>0 &le;  x, y &le;  10000</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">5 2
+1 0
+1 1
+2 0
+4 0
+4 1</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1.00</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,37 @@
+<h1>Decode the message</h1>
+
+<a href="https://www.codingame.com/training/easy/decode-the-message">https://www.codingame.com/training/easy/decode-the-message</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">As an FBI agent you intercepted a message from terrorists.<br>This message has to be decrypted, and to do so you have access to 2 pieces of information : P and C.<br><br>C is the alphabet used to write the message, and contains all the letters/characters needed to decode it.<br><br>P corresponds to the encoded value of the message.<br>Thankfully, you happen to know how this value is computed, and now need to reverse the following process :<br> - Assuming the alphabet is 'abcd', each letter is associated to its index : a = 0, b = 1, c = 2, d = 3.<br> - For the following values, a new letter is either added or switched :<br>   - aa = 4, ba = 5, ca = 6, da = 7<br>   - ab = 8, bb = 9, cb = 10, db = 11<br>   - ...<br>   - aaa = 20, baa = 21, caa = 22, daa = 23, and so on.<br> - The whole message gets a unique value this way. For example with a full alphabet (26 letters) 'hello' would be 7073801.<br><br>Get it done agent ! (Good Luck)</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">first line : an integer <var>P</var>, the encoded value of the message.<br>second line : a string <var>C</var>, the alphabet used for the message. Every character in the string is unique, and a space can be one of them.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">One line containing the decoded message.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <var>P</var> &lt; 10^16</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">35
+abcdefghijklmnopqrstuvwxyz</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">ja</pre>
+         </div>
+      </div>
+   </div>
+</div>

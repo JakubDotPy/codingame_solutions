@@ -1,0 +1,47 @@
+<h1>In Stereo</h1>
+
+<a href="https://www.codingame.com/training/easy/in-stereo">https://www.codingame.com/training/easy/in-stereo</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">A time machine with an empty gas tank leaves you stranded in a 1990s shopping mall, with nothing the locals recognize as money. The only commodity you can release without ruining the timeline are those stereogram posters sometimes known by the trade name &quot;Magic Eye&quot;. Can you sell enough 3D art to top up the tank and get back to modern life?<br><br>https://en.wikipedia.org/wiki/Autostereogram<br><br>Start with a base <var>pattern</var> (which wraps around), a <var>stock</var> of extra symbols to fill in when the pattern needs to grow, and a <var>depth map</var>.<br><br>For each line in the depth map, start at the beginning of the original pattern with the original stock and at a depth of <const>0</const>.<br><br>For each character in the depth map:<br>1. If the depth is higher, decrease the pattern by removing characters at the current position.<br>  If the depth is lower, increase the pattern by moving characters from the stock into the current position.<br>2. Output the pattern character at the current position.<br>3. Advance to the next pattern position, wrapping around if you reach the end.<br><br>For example, if the pattern is <const>ABCD</const>, the stock is <const>UVWX</const>, and the depth map is <const>23200</const>:<br><br><pre style="font-family: monospace">        | Current | New   | Change   |          | New     |       |<br>Pattern | Depth   | Depth | in Depth | Action   | pattern | Stock | Output<br>--------+---------+-------+----------+----------+---------+-------+-------<br><strong>A</strong>BCD    | 0       | 2     | +2       | Remove 2 | <strong>C</strong>D      | UVWX  | C<br>C<strong>D</strong>      | 2       | 3     | +1       | Remove 1 | <strong>C</strong>       | UVWX  | C<br><strong>C</strong>       | 3       | 2     | -1       | Add 1    | <strong>U</strong>C      | VWX   | U<br>U<strong>C</strong>      | 2       | 0     | -2       | Add 2    | U<strong>V</strong>WC    | X     | V<br>UV<strong>W</strong>C    | 0       | 0     | 0        | Nothing  | UV<strong>W</strong>C    | X     | W</pre><br><strong>bold</strong> indicates current position in pattern<br><br>Because of length limitations for test cases, the examples below are too narrow to see easily.<br>Here's a wider depth map: https://pastebin.com/raw/ZBffbNTy<br>The stereogram it produces: https://pastebin.com/raw/UZbLA2CE<br>(Zoom out until the lines do not wrap. Use the parallel &quot;wall-eyed&quot; viewing technique, not cross-eyed.)</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>P</var> for the length of the pattern<br><strong>Line 2:</strong> A string <var>pattern</var><br><strong>Line 3:</strong> An integer <var>S</var> for the length of the stock<br><strong>Line 4:</strong> A string <var>stock</var><br><strong>Line 5:</strong> Two integers <var>H</var> <var>W</var> for the height and width of the depth map<br><strong>Next <var>H</var> lines:</strong> A string of length <var>W</var> for each line of the <var>depth map</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>H</var> lines of width <var>W</var></strong>: The stereogram</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">P &lt; 20<br>S &lt; 20<br>H &lt; 30<br>W &lt; 200</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">4
+ABCD
+3
+UVW
+4 10
+0000000000
+0001111000
+0200000001
+1232000222</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">ABCDABCDAB
+ABCABCAUBC
+ADUVADUVAU
+BDDUVWDWDW</pre>
+         </div>
+      </div>
+   </div>
+</div>

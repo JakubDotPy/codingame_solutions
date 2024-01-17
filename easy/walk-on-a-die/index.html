@@ -1,0 +1,39 @@
+<h1>Walk on a Die</h1>
+
+<a href="https://www.codingame.com/training/easy/walk-on-a-die">https://www.codingame.com/training/easy/walk-on-a-die</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are walking on a 6-sided die one side per step. Your initial position on this cube is described by a 3-<var>line</var> string such as<br><pre style="font-family: monospace"><br> 1<br>2354<br> 6<br></pre><br>where<br>1. the first <var>line</var> has one whitespace and then the number on the side in front of you<br>2. the second <var>line</var> has four numbers of the sides<br>    a. to your left<br>    b. that you're on<br>    c. to your right<br>    d. opposite you and<br>3. the third <var>line</var> has one whitespace and then the number on the side behind you.<br><br>That is, in this example, you are standing on 3, going forward takes you to 1, left to 2, right to 5 and backward to 6.<br><br>You need to follow a string <var>commands</var> encoding movements by the characters <const>U</const>, <const>L</const>, <const>D</const>, <const>R</const> where <const>U</const> is forward, <const>L</const> is left, <const>D</const> is backward and <const>R</const> is right.<br><br>Left and right turns and moving backward also change your orientation. That is, you will always arrive on the next side with the previous side directly behind you.<br><br>For example, with the starting position given above, if you are given <var>commands</var>=&quot;DLU&quot;, then first you move backward to 6, then left to 5 and finally forward to 1.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Lines 1-3:</strong> The starting position described in 3 <var>line</var>s as above.<br><strong>Line 4:</strong> The string <var>commands</var> of steps you need to perform.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The number on the side you are on after having performed <var>commands</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">The string <var>commands</var> is at most 12 characters long.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in"> 1
+2354
+ 6
+DLU</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1</pre>
+         </div>
+      </div>
+   </div>
+</div>

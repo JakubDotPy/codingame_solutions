@@ -1,0 +1,36 @@
+<h1>2-player game on a calculator</h1>
+
+<a href="https://www.codingame.com/training/medium/2-player-game-on-a-calculator">https://www.codingame.com/training/medium/2-player-game-on-a-calculator</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">A number <var>N</var> is displayed on the calculator. <br><br>First player picks a digit d between 1 and 9.<br><var>N</var> is replaced by <var>N</var> - d.<br>Second player does the same thing, but has to choose a key which is adjacent to the last one (but not the same one, you cannot repeat the digit select by the opponent).<br>Repeat until one player gets a negative number. He lost !<br><br>For example, we start with <var>N</var> =  20.<br><br><pre style="font-family: monospace">7  8  9</pre> <br><pre style="font-family: monospace">4  5  6</pre> <br><pre style="font-family: monospace">1  2  3</pre> <br>First player can pick any digit and hits 8.<br><var>N</var> becomes 12.<br><br><pre style="font-family: monospace">7  x  9</pre> <br><pre style="font-family: monospace">4  5  6</pre> <br><pre style="font-family: monospace">*  *  *</pre> <br>Second player can pick 4, 5, 6, 7 or 9. He picks 9<br><var>N</var> becomes 3.<br><br><pre style="font-family: monospace">*  8  x</pre> <br><pre style="font-family: monospace">*  5  6</pre> <br><pre style="font-family: monospace">*  *  *</pre> <br>First player can pick 5, 6 or 8. He picks 5.<br><var>N</var> becomes -2.<br>First player has lost this game.<br><br>Your job is to find all winning moves in a starting situation.<br><br>Examples:<br>- if <var>N</var> = 1, then 1 is the only winning move (getting to 0 makes the other player lose since he will have to make <var>N</var> negative on his turn).<br>- if <var>N</var> = 8, then 5 is NOT a winning move (since second player can reply with 3).<br><br>Note: detailed specification of what is &quot;near&quot;.<br><br>When 1 was selected, then 2, 4 or 5 can be selected.<br>When 2 was selected, then 1, 3, 4, 5 or 6 can be selected.<br>When 3 was selected, then 2, 5 or 6 can be selected.<br>When 4 was selected, then 1, 2, 5, 7, or 8 can be selected.<br>When 5 was selected, then 1, 2, 3, 4, 6, 7, 8 or 9 can be selected.<br>When 6 was selected, then 2, 3, 5, 8 or 9 can be selected.<br>When 7 was selected, then 4, 5 or 8 can be selected.<br>When 8 was selected, then 4, 5, 6, 7 or 9 can be selected.<br>When 9 was selected, then 5, 6, or 8 can be selected.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1 :</strong> An int <var>N</var> : the starting number</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1 :</strong> 0 to 9 ints, separated with spaces, from lowest to highest. These are the winning moves when playing first and N is the starting number</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <var>N</var> &le; 100000</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1 2</pre>
+         </div>
+      </div>
+   </div>
+</div>

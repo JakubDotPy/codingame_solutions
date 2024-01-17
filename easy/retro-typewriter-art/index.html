@@ -1,0 +1,39 @@
+<h1>Retro Typewriter Art</h1>
+
+<a href="https://www.codingame.com/training/easy/retro-typewriter-art">https://www.codingame.com/training/easy/retro-typewriter-art</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Back in the day, people had fun turning &quot;recipes&quot; into surprise images using typewriters.<br><br>Use the provided recipe to create a recognizable image.<br><br>Chunks in the recipe are separated by a space.<br>Each chunk will tell you either <br><const>nl</const> meaning NewLine (aka Carriage Return)<br>~or~ <br>how many of the character and what character<br><br>For example:<br>   <const>4z</const> means <const>zzzz</const><br>   <const>1{</const> means <const>{</const><br>   <const>10=</const> means <const>==========</const><br>   <const>5bS</const> means <const>\\\\\</const> (see Abbreviations list below)<br>   <const>27</const> means <const>77</const><br>   <const>123</const> means <const>333333333333</const><br>   (If a chunk is composed only of numbers, the character is the last digit.)<br><br>So if part of the recipe is <br><const>2* 15sp 1x 4sQ nl</const><br>...that tells you to show <pre style="font-family: monospace">**               x''''</pre> and then go to a new line.<br><br><br>Abbreviations used:<br><const>sp</const> = space <br><const>bS</const> = backSlash <const>\</const><br><const>sQ</const> = singleQuote <const>'</const><br>and<br><const>nl</const> = NewLine<br><br><br><br><br>Sources/references:<br>https://asciiart.cc<br>https://loriemerson.net/2013/01/18/d-i-y-typewriter-art/<br>https://www.youtube.com/watch?v=kyK5WvpFxqo</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">string <var>recipe</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">string (multiple lines) to show the image the <var>recipe</var> creates</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">5 &le; Length of <var>recipe</var> &le; 1000<br>There won't be any double quotes (<const>&quot;</const>) in the <var>recipe</var> <br><var>recipe</var> will contain at least 1 <const>nl</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1sp 1/ 1bS 1_ 1/ 1bS nl 1( 1sp 1o 1. 1o 1sp 1) nl 1sp 1&gt; 1sp 1^ 1sp 1&lt; nl 2sp 3|</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out"> /\_/\
+( o.o )
+ &gt; ^ &lt;
+  |||</pre>
+         </div>
+      </div>
+   </div>
+</div>

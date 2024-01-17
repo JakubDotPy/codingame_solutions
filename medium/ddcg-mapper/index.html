@@ -1,0 +1,36 @@
+<h1>DDCG Mapper</h1>
+
+<a href="https://www.codingame.com/training/medium/ddcg-mapper">https://www.codingame.com/training/medium/ddcg-mapper</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Your program must automate the create of maps for the new game &#34;Dance Dance CodinGame&#34;. In this game, the player must push 4 keys in rhythm.<br><br>One map is composed of lines of 4 characters each: a zero (<strong>0</strong>) indicates that the corresponding key is released, a cross (<strong>X</strong>) indicates that the corresponding key is pushed.<br><br>You are given the patterns of lines <var>Pattern</var> and their tempo <var>Tempo</var>. You must reproduce the pattern every <var>Tempo</var> lines.<br>If one line has no pattern, it is composed of 4 zeros: <strong>0000</strong>.<br>If one line has multiple patterns, you must accumulate cross. For example, <strong>XX00</strong> and <strong>X0X0</strong> becomes <strong>XXX0</strong>.<br><br><strong>Warning: </strong>the map starts from the bottom to the top!</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1: </strong>The length <var>L</var> of the map.<br><strong>Line 2: </strong>The number <var>N</var> of pair <var>Pattern</var> <var>Tempo</var>.<br><strong><var>N</var> next lines: </strong>A string <var>Pattern</var> and a number <var>Tempo</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>L</var> lines </strong>representing the map.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <var>L</var> &lt; 100<br>0 &lt; <var>N</var> &lt; 10<br>0 &lt; <var>Tempo</var> &lt; 100</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">7&#10;2&#10;X000 2&#10;00XX 3</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">0000&#10;X0XX&#10;0000&#10;X000&#10;00XX&#10;X000&#10;0000</pre>
+         </div>
+      </div>
+   </div>
+</div>

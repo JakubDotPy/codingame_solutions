@@ -1,0 +1,42 @@
+<h1>Prefix code</h1>
+
+<a href="https://www.codingame.com/training/easy/prefix-code">https://www.codingame.com/training/easy/prefix-code</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Given a fixed set of characters, a code is a table that gives the encoding to use for each character.<br><br>A prefix code is a code with the <strong>prefix property</strong>, which is that there is no character with an encoding that is a prefix (initial segment) of the encoding of another character.<br><br><br>Your goal is to <strong>decode</strong> an encoded string using the given prefix code, or say that is not possible.<br><br>Example of encoding.<br>Given the string <const>&quot;abracadabra&quot;</const> and the prefix code:<br><pre style="font-family: monospace">a -&gt; 1<br>b -&gt; 001<br>c -&gt; 011<br>d -&gt; 010<br>r -&gt; 000</pre>The resulting encoding is: <const>10010001011101010010001</const><br><br>Thus, if your are given the code above and the input <const>10010001011101010010001</const>, you should output the string <const>&quot;abracadabra&quot;</const>.<br><br>With the same prefix code, if the input is <const>0000</const>, then you should tell that there is an error at index 3. Indeed, the first three characters of this input can be decoded to give an 'r', but that leaves <const>0</const>, which cannot be decoded.<br><br><br><br><br>-&gt; External link:<br><br><pre style="font-family: monospace">https://en.wikipedia.org/wiki/Prefix_code</pre><br><br><br>-&gt;️ What's next?<br><br>Once you have solved this puzzle, you can continue the challenge by building efficient prefix codes:<br><pre style="font-family: monospace">https://www.codingame.com/training/medium/huffman-code</pre></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> A single integer <var>N</var> representing the number of association in the prefix-code table.<br><strong>Next <var>N</var> lines:</strong> A binary code <var>Bi</var> and an integer <var>Ci</var>, which tells that the character with ASCII code <var>Ci</var> will be encoded by <var>Bi</var>.<br><strong>Next line:</strong> The binary code <var>S</var> of an encoded string.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">- If it is not possible to decode the encoded string, print <strong>DECODE FAIL AT INDEX <var>i</var></strong> with <var>i</var> the first index in the encoded string where the decoding fails (index starts from 0).<br>- Otherwise print the decoded string.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &le; <var>N</var>, <var>C</var> &le; 127<br><var>S</var> and the binary codes <var>Bi</var> have a length less that or equal to 5000.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">5
+1 97
+001 98
+000 114
+011 99
+010 100
+10010001011101010010001</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">abracadabra</pre>
+         </div>
+      </div>
+   </div>
+</div>

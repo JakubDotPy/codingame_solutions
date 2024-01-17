@@ -1,0 +1,41 @@
+<h1>Crossword</h1>
+
+<a href="https://www.codingame.com/training/medium/crossword">https://www.codingame.com/training/medium/crossword</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Given two horizontal words (<var>H1</var>, <var>H2</var>) and two vertical words (<var>V1</var>, <var>V2</var>), find out if they can be printed so that they all intersect two by two.<br><br>Each horizontal word must cross both vertical words.<br>Each vertical word must cross both horizontal words.<br><br>Words cannot be side by side:<br>The two horizontal words must be at least one row apart from each other.<br>The two vertical words must be at least one column apart from each other.<br><br>If there is one and only one solution, print out the crossword grid with dots &quot;<const>.</const>&quot; for empty spaces.<br>Otherwise, print the number of solutions (could be zero).<br><br>The grid shall be adjusted to its minimal size.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> A horizontal word <var>H1</var><br><strong>Line 2:</strong> A horizontal word <var>H2</var><br><strong>Line 3:</strong> A vertical word <var>V1</var><br><strong>Line 4:</strong> A vertical word <var>V2</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The crossword grid if there is one and only one solution.<br>The number of solutions otherwise.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; length of each word &le; 12</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">SIN
+BUT
+SOB
+NOT</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">SIN
+O.O
+BUT</pre>
+         </div>
+      </div>
+   </div>
+</div>

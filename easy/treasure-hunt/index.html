@@ -1,0 +1,39 @@
+<h1>Treasure hunt</h1>
+
+<a href="https://www.codingame.com/training/easy/treasure-hunt">https://www.codingame.com/training/easy/treasure-hunt</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are a treasure hunter.<br>Your goal is simple : Move on the map to collect the maximum amount of gold.<br><br>Given a map of height <var>H</var>, width <var>W</var> and a starting position <var>X</var>, you can move on 4 directions ( North, South, East, West ).<br>Each time you visit a cell, you collect the amount of gold indicated on it.<br>You Cannot visit a cell more than once !<br><br>The possible values for a cell are :<br>        - <const>'X'</const> : Your position<br>        - <const>' '</const> : Nothing - you can go through that cell, but there is no gold on it.<br>        - <const>'#'</const> : A wall - you cannot go through that cell.<br>        - [<const>1</const> - <const>9</const>] : The amount of gold on that cell.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1 :</strong> Two space-separated positive integers <var>H</var> and <var>W</var> for the height and the width of the map.<br><strong><var>H</var> next lines :</strong> A string (of size <var>W</var>) representing each row of the map.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">A non-negative integer for the <strong>maximum amount of gold</strong> obtained by summing the amount of gold on each visited cell.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &lt;= H &lt;= 100<br>1 &lt;= W &lt;= 100</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3 3
+X##
+1 5
+3#4</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">10</pre>
+         </div>
+      </div>
+   </div>
+</div>

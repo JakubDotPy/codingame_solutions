@@ -1,0 +1,37 @@
+<h1>Consecutive Balanced Substrings</h1>
+
+<a href="https://www.codingame.com/training/medium/consecutive-balanced-substrings">https://www.codingame.com/training/medium/consecutive-balanced-substrings</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">A binary substring is balanced if the number of <const>1</const>s in it is equal to the number of <const>0</const>s.<br><br>Given a binary string <var>S</var>, find the maximum number of consecutive balanced substrings. The substring must not be overlapping (e.g. 010 contains one balanced substring either 01 or 10). Also, the binary substring must not be empty.<br><strong>Example:</strong><br>For example if <var>S</var>=<const>0010110101</const>, the result is 4 ( the substring <const>01011010</const> contains <const>4</const> consecutive balanced substrings, <const>01</const> <const>01</const> <const>10</const> <const>10</const>, all four appear next to each other).<br>Another example is: for <var>S</var> = <const>0010100010010100011100110</const>, the result is 6. Because, the substring <const>10100011100110</const> contains six consecutive balanced substrings: <const>10</const> <const>10</const> <const>0011</const> <const>10</const> <const>01</const> and <const>10</const>.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> <var>N</var> An integer denoting the number of characters in <var>S</var>.<br><strong>Line 2:</strong> A binary string <var>S</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The maximum number of consecutive balanced substrings in <var>S</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1&lt;=<var>N</var>&lt;=3000</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">10
+0010110101</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">4</pre>
+         </div>
+      </div>
+   </div>
+</div>

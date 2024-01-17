@@ -1,0 +1,39 @@
+<h1>5D Chests</h1>
+
+<a href="https://www.codingame.com/training/medium/5d-chests">https://www.codingame.com/training/medium/5d-chests</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Pirx the Pilot is flying his spaceship through hyperspace in search of gold.  Given a 5D realm with all dimensions ranging from 1 to N, each location (x,y,z,w,v) is either a chest of gold (1) or a barrier (0) as determined by the function:<br><br>f(x,y,z,w,v)=isprime(1+ mod(x*y*z*w*v,C)) <br><br>The barriers form rooms in hyperspace (Pirx can only move along the five dimensions, no diagonals). Help Pirx search every room and find all the gold.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>First line:</strong>  The size <var>N</var> of each dimension.<br><strong>Second line:</strong>  The constant <var>C</var> for terrain generation.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>First line:</strong>  The total number of gold chests.<br><strong>Second line:</strong>  The number of rooms that contain at least one chest.<br><strong>Third line:</strong>  The largest number of gold chests in one room.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">3 &le; <var>N</var> &le; 20<br>2 &le; <var>C</var> &le; 10,000</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">5
+8</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1141
+236
+216</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,57 @@
+<h1>The alien business of cows</h1>
+
+<a href="https://www.codingame.com/training/easy/the-alien-business-of-cows">https://www.codingame.com/training/easy/the-alien-business-of-cows</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Within the Universe, <strong>Earth cows are highly prized</strong>. Some would accuse aliens of stealing them to supply the best restaurants in the galaxy with meat. Others argue that cows are used as Earth ambassadors within the galaxy, because aliens have experimented with all the beings of Earth, and have learned that cows are the most intelligent and wise.<br><br>On <strong>23rd of March 1983</strong>, President <strong>Ronald Reagan</strong> of the USA announced the <strong>Strategic Defense Initiative (SDI)</strong>, nicknamed by the medias as the <strong>Star Wars program</strong>. Although most people thought that it was a missile defense system to protect the USA from USSR attacks by ballistic nuclear weapons, the Department of Defense organized it as the <strong>military answer to alien operations on <const>North America</const></strong>. Since the beginning of 1984, the <strong>Homing Overlay Experiment (HOE)</strong> provides <strong>hit-to-kill missiles</strong> going up to <const>6km/s</const> to search and destroy any object until an altitude of <const>160 km</const>. Those <strong>Minuteman missiles</strong> are launched from the <strong>Space Launch Complexe 1</strong> of the <strong>Vandenberg Space Force Base</strong>, Santa Barbara County, California (<const>34&deg;45'21.8&quot;N, 120&deg;37'34.8&quot;W, elevation: 46 meters</const>).<br><br><strong>You are an alien mercenary</strong> working for the <strong>Corporation of Abduction and Transfer of Typical Livestock from Earth (C.A.T.T.L.E.)</strong>, the biggest industry of its kind in the Milky Way. This corporation has a hidden base on one of Jupiter's moons, from where <strong>different types of collectors</strong> are sent to Earth. Your corporation takes a very dim view of the new earth defense system, which has already caused the company's stock to fall in value on the Universe stock exchange. <strong>The CEO, Elon Mowsk, has tasked you with defining the feasibility of upcoming missions</strong>.<br><br>C.A.T.T.L.E. <strong>collectors take off vertically</strong> at a speed of <var>collector speed</var> to escape Earth's gravity, and this speed is kept until the moon orbit altitude (<const>385 000km</const>). A collector aims at its target point, <strong>stops at <const>500 meters</const> above the ground</strong>, out of effective range of assault rifles. It then <strong>abducts as many cows as possible</strong> until <var>collector maximum capacity</var>, and takes off. To not kill the cow during the abduction, they are <strong>captured one by one at a speed of <const>9.81m/s</const></strong> . This collecting speed is multiplied by the <var>collector levitation efficiency parameter</var>.<br>However, <strong>once the abducting device is on</strong>, a special SDI radar detects it and a <strong>MinuteMan missile is immediately launched at maximum speed</strong> from the <strong>Space Launch Complexe 1</strong> of the <strong>Vandenberg Space Force Base</strong>. It <strong>goes in a straight line from the silo to its limit altitude above the anomaly</strong> pointed by the HOE radar, <strong>then fall vertically</strong>. If it collides with a C.A.T.T.L.E. collector, both explode, Elon Mowsk is furious, the collector crew is dead, and you are held responsible for the deaths.<br><br>As you don't want to go to intergalactic jail, you must tell if a <strong>mission</strong> is <strong>possible or not</strong>, given the <var>name of the destination</var>, its <var>latitude</var>, <var>longitude</var>, and <var>elevation</var>. A mission is possible if one collector abduct cows and flee without getting hit by a MinuteMan missile. if the mission is possible, you have to give the <strong>collector type</strong> to send and the <strong>number of cows</strong> it will bring back. Beware, sending a collector has a cost that must be covered by the number of cows brought back.<br><br><var>Collectors type</var><br>The <const>VaCoWM Cleaner</const> is the formula 1 of the collectors. Designed to be fast, it can get to <const>44.7 km/s</const> in Earth atmosphere. However, the lack of space limits the capacity to <const>3</const> cows only, and its smaller abduction beams has a levitation efficiency of <const>0.8</const>. It is the cheapest collector, and make profitable missions if it brings back at least <const>one cow</const>.<br>The <const>L4nd MoWer</const> is the medium collector. It was designed to have a good balance between speed (<const>22.38 km/s</const> and capacity (<const>10</const> cows), with a good quality abduction device (efficiency of <const>1.2</const>). 4th generation of its kind, it must bring back at least <const>6 cows</const> to be profitable.<br>The <const>Cow Harvester</const> is the biggest of its kind, just fast enough to escape Earth's gravity (<const>11.19 km/s</const>). Its &quot;slowness&quot; is compensated by its capacity (<const>20</const> cows !) and its premium abduction device which can levitate cows with an impressive <const>1.5</const> efficiency. King of collectors, it is not cheap to send it, and must bring at least <const>14 cows</const> for a mission to be worth it.<br><br><strong>Example</strong><br>If a L4nd Mower can get 8 cows and a VaCoWM 3 cows, send the first one (more cows !). But if a L4nd Mower can get 5 cows and a VaCoWM 3 cows, send the last one, because sending the first one is not profitable.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>First line :</strong> <var>N</var> number of upcoming missions.<br><strong><var>N</var> next lines :</strong> a string <var>upcomingMission</var> with the <var>name of the location</var>, coordinates <var>latitude</var> and <var>longitude</var> in degrees/minutes/seconds, <var>elevation</var> in meters.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>N</var> lines :</strong> For each mission, the output form should be one of these :<br><var>name of the location</var><const>: impossible.</const><br><var>name of the location</var><const>: possible. Send a </const><var>collector type</var><const> to bring back </const><var>number of abducted cows</var><const> cow</const>/<const> cows</const><const>.</const> (English rules, so cow has an s if there is more than one cow).</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">The cow-llect area is North america. Hence : <br>- <var>latitude</var> is always in <const>N</const><br>- <var>longitude</var> is always in <const>W</const><br><const>PI</const> = 3.14159265359<br><br><strong>Help</strong><br>Coordinates in degrees/minutes/seconds should be converted to decimal using the simplest conversion: <strong>Decimal Degrees = <var>degrees</var> + (<var>minutes</var>/60) + (<var>seconds</var>/3600)</strong>.<br>- One degree in <var>latitude</var> is equal to <strong>111.11 km</strong>.<br>- One degree in <var>longitude</var> between two points is equal to <strong>111.11*cos( (latitude1+latitude2) /2)</strong>.<br><strong>Be careful</strong> of the actual unit expected by the platform cos function !</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">11
+Boadwine Farms Inc (South Dakota, USA) 43&deg;44'41.7&quot;N 96&deg;49'37.4&quot;W 496
+George Farms (Wyoming, USA) 44&deg;38'39.1&quot;N 108&deg;58'19.0&quot;W 1467
+Coronado Dairy (Arizona, USA) 32&deg;01'35.6&quot;N 109&deg;45'44.3&quot;W 1289
+Peaceful Hills Farm (Missouri, USA) 39&deg;04'39.6&quot;N 94&deg;11'49.5&quot;W 282
+Grotegut Dairy Farm Inc (Wisconsin, USA) 43&deg;59'33.9&quot;N 87&deg;45'19.2&quot;W 227
+Crooked Creek Farm Dairy (Michigan, USA) 42&deg;51'18.8&quot;N 82&deg;59'26.4&quot;W 237
+MVP Dairy, LLC (Ohio, USA) 40&deg;37'28.0&quot;N 84&deg;31'41.0&quot;W 253
+The Family Cow (Pennsylvania, USA) 39&deg;58'02.7&quot;N 77&deg;34'26.9&quot;W 213
+Kleinpeter Farms Dairy LLC (Louisiana, USA) 30&deg;21'47.1&quot;N 91&deg;01'21.1&quot;W 8
+Working Cows Dairy (Alabama, USA) 31&deg;11'14.2&quot;N 85&deg;36'06.3&quot;W 83
+Happy Cow Creamery (South Carolina, USA) 34&deg;36'51.1&quot;N 82&deg;21'13.1&quot;W 249</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">Boadwine Farms Inc (South Dakota, USA): possible. Send a L4nd MoWer to bring back 8 cows.
+George Farms (Wyoming, USA): possible. Send a VaCoWM Cleaner to bring back 3 cows.
+Coronado Dairy (Arizona, USA): possible. Send a VaCoWM Cleaner to bring back 2 cows.
+Peaceful Hills Farm (Missouri, USA): possible. Send a L4nd MoWer to bring back 9 cows.
+Grotegut Dairy Farm Inc (Wisconsin, USA): possible. Send a Cow Harvester to bring back 14 cows.
+Crooked Creek Farm Dairy (Michigan, USA): possible. Send a Cow Harvester to bring back 16 cows.
+MVP Dairy, LLC (Ohio, USA): possible. Send a Cow Harvester to bring back 15 cows.
+The Family Cow (Pennsylvania, USA): possible. Send a Cow Harvester to bring back 18 cows.
+Kleinpeter Farms Dairy LLC (Louisiana, USA): possible. Send a L4nd MoWer to bring back 10 cows.
+Working Cows Dairy (Alabama, USA): possible. Send a Cow Harvester to bring back 15 cows.
+Happy Cow Creamery (South Carolina, USA): possible. Send a Cow Harvester to bring back 16 cows.</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,45 @@
+<h1>Unique Prefixes</h1>
+
+<a href="https://www.codingame.com/training/easy/unique-prefixes">https://www.codingame.com/training/easy/unique-prefixes</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Find the shortest unique prefixes for each word of the given list of words.<br><br>That should look familiar for those who handled switches for their command-line scripts or maintained their completion tables.<br><br><strong>Example</strong><br><br>You are given a list of six different words: <const>alphabet</const>, <const>book</const>, <const>carpet</const>, <const>cadmium</const>, <const>cadeau</const>, <const>alpine</const>.<br><br>In this list, you can see that:<br>* only one word starts with the letter <const>b</const>, so its shortest prefix will be <const>b</const><br>* two words start with the letter <const>a</const>, but also both continue with <const>lp</const> so their respective shortest prefixes will be <const>alph</const> and <const>alpi</const> (<const>h</const> and <const>i</const> making the differentiation)<br>* three words start with the letter <const>c</const>, but also continue with some common letters, like <const>a</const> for all of them, and then <const>d</const> for only two of them, so their respective shortest prefixes will be <const>car</const>, <const>cadm</const> and <const>cade</const><br><br><strong>Notes</strong><br><br>* The prefixes will not necessarily be of the same length.<br>* A word can be given several times in the given list. All the occurences of this word will share the same prefix.<br>* Each given different word must have a distinctive prefix from the prefixes of the other given words.<br>* A prefix cannot be used by two different words.<br>* If a word shares all its prefixes with the other different words, then, to avoid starvation, its prefix will be itself, and all its prefixes cannot be used by other words.<br>* You can read detailed definition of prefix in https://en.wikipedia.org/wiki/String_operations#Prefixes<br><br><strong>Acknowledgements</strong><br><br>Mohammad Sajid Anwar (aka manwar) who nicely accepted that one puzzle of one of the weekly challenges, from his website https://perlweeklychallenge.org, could be transcribed into one CodinGame contribution.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>First line:</strong> The number <var>N</var> of given words<br><strong>Following <var>N</var> lines:</strong> A word <var>W</var> on each line</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>N</var> lines:</strong> The shortest prefix <var>P</var> on each line</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &le; <var>N</var> &le; 200<br>1 &le; length(<var>W</var>) &le; 20</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">5
+find
+the
+shortest
+unique
+prefix</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">f
+t
+s
+u
+p</pre>
+         </div>
+      </div>
+   </div>
+</div>

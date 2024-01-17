@@ -1,0 +1,43 @@
+<h1>Vectors in variables dimensions</h1>
+
+<a href="https://www.codingame.com/training/easy/vectors-in-variables-dimensions">https://www.codingame.com/training/easy/vectors-in-variables-dimensions</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are a space-time traveler who can travel across universe. You want to know where you can go, so you've got yourself a list of anchors' coordinates (as you travel not only in 3D space, there can be more than 3 associated components for each point). The goal of this exercise is to output the shortest (non zero) and the longest vectors you can form from your list by pairing any two points in combination.<br><br>As in 2D: Distance in higher dimensions is calculated as follows: <br>For two points A(a1, a2, ..., an) and B(b1, b2, ..., bn), distance = &radic; ( <const>(a1-b1)&sup2;</const>+<const>(a2-b2)&sup2;</const>+...+<const>(an-bn)&sup2;</const> )</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong>: An integer <var>D</var> for the number of dimensions your points will be in.<br><strong>Line 2</strong>: An integer <var>N</var> for the number of points you receive.<br><strong><var>N</var> next lines</strong>: One point per line, written like <const>A(0,1,2)</const>, every component is integer.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1</strong>: The shortest non-zero vector, if it is the one between A and B, it will be <const>AB(b1-a1,b2-a2, ...,bn-an)</const>, the first point should be the one that appears first in the list<br><strong>Line 2</strong>: The longest vector, written the same way.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>D</var> &le; 10<br>2 &le; <var>N</var> &le; 100<br>-20 &le; <var>each component</var> &le; 20<br>It is guaranteed that there is only one shortest and one longest in each case.<br>There can never have two vectors with the same names.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+5
+A(1,2)
+C(0,8)
+D(0,9)
+E(6,2)
+F(6,4)</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">CD(0,1)
+DE(6,-7)</pre>
+         </div>
+      </div>
+   </div>
+</div>

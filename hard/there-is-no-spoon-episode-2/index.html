@@ -1,0 +1,191 @@
+<h1>There is no Spoon - Episode 2</h1>
+
+<a href="https://www.codingame.com/training/hard/there-is-no-spoon-episode-2">https://www.codingame.com/training/hard/there-is-no-spoon-episode-2</a>
+
+<div class="statement_back" id="statement_back" style="display:none">&nbsp;</div>
+
+<div class="statement-body"><!-- GOAL -->
+<div class="statement-section statement-goal">
+<h2><span class="icon icon-goal">&nbsp;</span> <span>The Goal</span></h2>
+
+<div class="statement-goal-content">The game is played on a rectangular grid with a given size. Some cells contain nodes with a number on them <strong>from 1 to 8</strong> inclusive. This number represents the <strong>amount of links the node should have with neighboring nodes</strong>. The rest of the cells are empty.<br />
+<br />
+The goal is to <strong>connect all of the nodes</strong> by printing a list of links.</div>
+</div>
+<!-- RULES -->
+
+<div class="statement-section statement-rules">
+<h2><span class="icon icon-rules">&nbsp;</span> <span>Rules</span></h2>
+
+<div>
+<div class="statement-rules-content">The links must follow certain criteria:
+<ul>
+	<li>They must begin and end at distinct nodes.</li>
+	<li>They must either be <strong>horizontal or vertical</strong> (in a straight line).</li>
+	<li>They must not cross any other links or nodes.</li>
+	<li>At most <strong>two links</strong> connect a pair of nodes.</li>
+	<li>The number of links connected to each node must match the number on that node.</li>
+	<li>The links must connect all the nodes into <strong>a single connected group</strong>.</li>
+</ul>
+<br />
+You <strong>lose</strong> if:
+
+<ul>
+	<li>You try to place three or more links between two nodes.</li>
+	<li>You try to place a link which crosses another link or a node to which it is not connected.</li>
+	<li>You try to place a link which causes a node to have a greater number of links than the amount of links it displays.</li>
+	<li>Your solution <strong>does not reach the amount of optimal links</strong> for each node.</li>
+	<li>Your solution creates two or more isolated groups of nodes.</li>
+	<li>Your program does not link nodes fast enough (timeout).</li>
+</ul>
+</div>
+<!-- Victory conditions -->
+
+<div class="statement-victory-conditions">
+<div class="icon victory">&nbsp;</div>
+
+<div class="blk">
+<div class="title">Victory Conditions</div>
+
+<div class="text">You win when all nodes are correctly connected to each other.</div>
+</div>
+</div>
+</div>
+</div>
+<!-- EXAMPLES -->
+
+<div class="statement-section statement-examples">
+<div class="statement-examples-text">
+<div class="statement-example-horizontal">
+<div style="width: 280px;display: table-cell;background-color: transparent;vertical-align: middle;padding: 0;"><img src="https://cdn-games.codingame.com/no-spoon-game/example/2-0.png" style="width: 100%" /></div>
+
+<div class="legend">Example: there are 4 nodes in a 2 by 2 grid. Each node must be connected to neighboring nodes with the displayed amount of links.<br />
+&nbsp;
+<pre>
+<const>42</const>
+<const>31</const></pre>
+</div>
+</div>
+</div>
+
+<div class="statement-example-container">
+<div class="statement-example statement-example-medium"><img src="https://cdn-games.codingame.com/no-spoon-game/example/2-1.png" />
+<div class="legend">
+<div class="title"><action>0 0</action> <action>1 0</action> <action>1</action></div>
+
+<div class="description">You can set a link you&#39;re sure exists.</div>
+</div>
+</div>
+
+<div class="statement-example statement-example-medium"><img src="https://cdn-games.codingame.com/no-spoon-game/example/2-2.png" />
+<div class="legend">
+<div class="title"><action>0 0</action> <action>1 0</action> <action>1</action></div>
+
+<div class="description">And add another one at the same place later.</div>
+</div>
+</div>
+
+<div class="statement-example statement-example-medium"><img src="https://cdn-games.codingame.com/no-spoon-game/example/2-3.png" />
+<div class="legend">
+<div class="title"><action>0 0</action> <action>0 1</action> <action>2</action></div>
+
+<div class="description">You can set two links at once.</div>
+</div>
+</div>
+
+<div class="statement-example statement-example-medium"><img src="https://cdn-games.codingame.com/no-spoon-game/example/2-4.png" />
+<div class="legend">
+<div class="title"><action>0 1</action> <action>1 1</action> <action>1</action></div>
+
+<div class="description">All nodes must be connected.</div>
+</div>
+</div>
+
+<div class="statement-example statement-example-medium statement-example-empty" style="height: 0; margin-top: 0; margin-bottom: 0">&nbsp;</div>
+
+<div class="statement-example statement-example-medium statement-example-empty" style="height: 0; margin-top: 0; margin-bottom: 0">&nbsp;</div>
+
+<div class="statement-example statement-example-medium statement-example-empty" style="height: 0; margin-top: 0; margin-bottom: 0">&nbsp;</div>
+
+<div class="statement-example statement-example-medium statement-example-empty" style="height: 0; margin-top: 0; margin-bottom: 0">&nbsp;</div>
+</div>
+</div>
+<!-- WARNING -->
+
+<div class="statement-section statement-warning">
+<h2><span class="icon icon-warning">&nbsp;</span> <span>Note</span></h2>
+
+<div class="statement-warning-content">
+<ul>
+	<li>Several optimal solutions may exist. You are only required to provide one of these solutions.</li>
+	<li>Debug mode is available from the settings panel (the dented wheel)</li>
+	<li>You can check the coordinates of a node by moving your mouse cursor over it in debug mode.</li>
+	<li>You can zoom/unzoom with the mouse wheel and move using drag&#39;n drop (useful for large grids)</li>
+</ul>
+<strong>Warning:</strong> the tests provided are similar to the validation tests used to compute the final score <strong>but remain different</strong>. This is a &quot;hardcoding&quot; prevention mechanism.</div>
+</div>
+<!-- PROTOCOL -->
+
+<div class="statement-section statement-protocol">
+<h2><span class="icon icon-protocol">&nbsp;</span> <span>Game Input</span></h2>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="text">The program must first read the initialization data from standard input. Then, provide to the standard output one line per instruction</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Input</div>
+
+<div class="text">
+<p><span class="statement-lineno">Line 1: </span>one integer <var>width</var> for the number of cells along the x axis.</p>
+
+<p><span class="statement-lineno">Line 2: </span>one integer <var>height</var> for the number of cells along the y axis.</p>
+
+<p><span class="statement-lineno">Next height lines: </span>A string <var>line</var> containing <var>width</var> characters. A dot <action>.</action> represents an empty cell. A number from <action>1</action> to <action>8</action> represents a cell containing a node. The number is the amount of links the node must have.</p>
+</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Output</div>
+
+<div class="text"><span class="statement-lineno">One line per link or couple of links</span>. Each line is comprised of five integers: <var>x1</var> <var>y1</var> <var>x2</var> <var>y2</var> <var>amount</var> to add <var>amount</var> links between two nodes at coordinates (x1,y1) and (x2,y2).</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Constraints</div>
+
+<div class="text">0 &lt; <var>width</var> &le; 30<br />
+0 &lt; <var>height</var> &le; 30<br />
+0 &le; <var>x1</var> , <var>x2</var> &lt; <var>width</var><br />
+0 &le; <var>y1</var> , <var>y2</var> &lt; <var>height</var><br />
+1 &le; <var>amount</var> &le; 2<br />
+Alloted response time to first output line &le; 1s.<br />
+Response time between two output lines &le; 100ms</div>
+</div>
+</div>
+<!-- STORY 
+
+<div class="statement-story-background">
+<div class="statement-story-cover" style="background-size: cover; background-image: url(https://www.codingame.com/servlet/fileservlet?id=2210361556836)">
+<div class="statement-story" style="min-height: 300px; position: relative">
+<h2>25th of April 2699, 12:58 - Zion...</h2>
+
+<div class="story-text">The machines have breached Zion&#39;s walls and are raining devastation upon the city, the human defenses are struggling to contain as much of the attack as possible. The human army is down to a handful of APUs (Armored Personal Unit), piloted by the most determined of soldiers.<br />
+<br />
+The battle is straining their exoskeletons to the very limit, malfunctions could start to appear at any second. This is when their R-Chips kick in once again.<br />
+<br />
+The R-Chip regulates ammunition as well as keeping any one APU component from over-heating or interfering with any other part of the system. And the regulation algorithm is written at the highest possible abstraction layer of the R-Chip.<br />
+<br />
+You are the lead programmer for the top abstraction layer of the R-Chips.<br />
+<br />
+Your assignment is as follows: Write the code for the R-chip that will dynamically link the components of the APU together, in such a way that no piece is saturated or lacking a connection during usage.<br />
+<br />
+This will prevent any part of the APU to breakdown. Without a working piece of code, many soldiers would suddenly find themselves unable to use their weapons - which is not a desirable state in the middle of a desperate war for survival.</div>
+</div>
+</div>
+</div>
+</div> -->

@@ -1,0 +1,60 @@
+<h1>Picture Puzzle</h1>
+
+<a href="https://www.codingame.com/training/hard/picture-puzzle">https://www.codingame.com/training/hard/picture-puzzle</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">What if you have to solve a real puzzle? I mean, assembling pieces of a picture into a single big picture. You are provided a set of puzzle pieces, in a random order and with random orientations. You have to assemble the final picture from the pieces.<br><br><strong>Assembly Rules:</strong><br>Two pieces can be put together if a border of the first piece matches with a border of the second one. That is, the given pieces have their border &quot;duplicated&quot;. Only then do they match. This duplicated border appears only once in the final picture. For example, assembling the two pieces below results in the picture on the right:<br><br><pre style="font-family: monospace"><const>####</const>     <const>####</const>     <const>#######</const><br><const>#123</const>  +  <const>345#</const>  =  <const>#12345#</const><br><const>#abc</const>     <const>cde#</const>     <const>#abcde#</const><br><const>####</const>     <const>####</const>     <const>#######</const></pre><br>However, the pieces are given with random orientations (in 90 degree steps, that is, 4 different orientations). In the example below the right border of the 1st piece matches the top border of the 2nd piece, so the 2nd piece needs to be rotated before assembling:<br><br><pre style="font-family: monospace"><const>####</const>     <const>#c3#</const>     <const>#######</const><br><const>#123</const>  +  <const>#d4#</const>  =  <const>#12345#</const><br><const>#abc</const>     <const>#e5#</const>     <const>#abcde#</const><br><const>####</const>     <const>####</const>     <const>#######</const></pre><br><br><strong>Guarantees:</strong><br>&bull; The border of a piece which is on the border of the final picture will contain only the '#' character.<br>&bull; The first piece (in the input list) is given with the correct orientation so that you can know the orientation of the whole picture.<br>&bull; There is only one solution with the given rules and the given pieces.<br><br><br><strong>Notes:</strong><br>&bull; With the given assembly rules, you can determine that if the puzzle is composed of <var>nColumns</var> columns and <var>nRows</var> rows of pieces with size <var>pieceSize</var>, then the final picture will have <var>pictureWidth</var> columns and <var>pictureHeight</var> rows of characters, where<br><br>==&gt; <var>pictureWidth</var> = <const>1 + (</const><var>pieceSize</var> <const>- 1) * </const><var>nColumns</var><br><br>==&gt; <var>pictureHeight</var> = <const>1 + (</const><var>pieceSize</var> <const>- 1) * </const><var>nRows</var><br><br>&bull; The given constraints are designed so that you can use a brute-force solution with exponential complexity (but still not too silly :p).<br>&bull; The first four test cases give the pieces without rotation. So you can first try to find a solution that doesn't take into account the rotated pieces.<br>&bull; Be aware that multiple pieces might be identical. However because of the unicity of the solution, pieces cannot have same borders and different contents. For example, in the same puzzle, you will never have two pieces like :<br><pre style="font-family: monospace"><const>123</const>     <const>123</const><br><const>8A4</const> and <const>8B4</const><br><const>765</const>     <const>765</const></pre>because they could be swapped and the puzzle would have multiple solutions.<br><br><br><strong>Test descriptions:</strong><br><pre style="font-family: monospace">Name    |Pieces|Piece size|Ambiguity|Rotation|Comment<br>--------|------|----------|---------|--------|-------------------------------------<br> Test 1 | 2x2  | 4x4      | No      | No     | Who needs an algo to solve that?<br> Test 2 | 15x15| 2x2      | No      | No     | So much diversity<br> Test 3 | 11x3 | 6x6      | A bit   | No     | The birth of programming languages<br> Test 4 | 8x4  | 6x6      | More    | No     | Your deepest wish<br> Test 5 | 2x2  | 4x4      | No      | Yes    | Who needs an algo to solve that?<br> Test 6 | 15x15| 2x2      | No      | Yes    | So much diversity<br> Test 7 | 11x3 | 6x6      | A bit   | Yes    | The birth of programming languages<br> Test 8 | 8x4  | 6x6      | More    | Yes    | Your deepest wish</pre></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Two space-separated integers: <var>pieceSize</var> the size of a square-shaped piece (number of characters on every border of the piece) and <var>nPieces</var> the total number of pieces given in the input.<br><br><strong>Line 2:</strong> Two space-separated integers: <var>nColumns</var> the number of pieces in a row, <var>nRows</var> the number of pieces in a column in the final picture.<br><br><strong>Line 3:</strong> Two space-separated integers: <var>pictureWidth</var> the number of characters in a row of the final picture, <var>pictureHeight</var> the number of characters in a column of the final picture.<br><br><strong>Next <var>nPieces</var>x<var>pieceSize</var> lines:</strong> All the pieces. each piece is <var>pieceSize</var> lines composed of <var>pieceSize</var> characters.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><var>pictureHeight</var> lines of <var>pictureWidth</var> characters representing the final picture</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">&bull; 2 &le; <var>pieceSize</var> &le; 6<br>&bull; 2 &le; <var>nColumns</var> &le; 15<br>&bull; 2 &le; <var>nRows</var> &le; 15<br>&bull; 4 &le; <var>nPieces</var> &le; 225<br>&bull; 2 &le; <var>pictureHeight</var> &le; 60<br>&bull; 2 &le; <var>pictureWidth</var> &le; 60<br>&bull; There is only one solution with the given rules and the given pieces.<br>&bull; The first piece given will always be in the correct orientation.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">4 4
+2 2
+7 7
++ B#
+  *#
+C**#
+####
+####
+#**A
+#*  
+#D +
+####
+A**#
+  *#
++ B#
+#D +
+#*  
+#**C
+####</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">#######
+#**A**#
+#*   *#
+#D + B#
+#*   *#
+#**C**#
+#######</pre>
+         </div>
+      </div>
+   </div>
+</div>

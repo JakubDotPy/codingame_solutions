@@ -1,0 +1,47 @@
+<h1>Go competition</h1>
+
+<a href="https://www.codingame.com/training/medium/go-competition">https://www.codingame.com/training/medium/go-competition</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Go is an abstract strategy board game for two players, in which the aim is to surround more territory than the opponent. At the end of the game, you have to determine which player is the winner by counting which one has the biggest territory.<br><br>Area scoring: A player's score is the number of stones that he has on the board, plus the number of empty intersections surrounded by that player's stones.<br><br><const>BLACK</const> is always first so <const>WHITE</const> starts with 6.5 points also known as &quot;komi&quot;.<br><br>Every board is in a stable position, you only have to calculate the territories.<br><br>Example (with only a 4x4 grid):<br><br><pre style="font-family: monospace"><br>.BW.<br>BBWW<br>.BW.<br>BBWW<br></pre><br>After transformation we have:<br><br><pre style="font-family: monospace"><br>bBWw<br>BBWW<br>bBWw<br>BBWW<br></pre><br><br>6B + 2b = 8 for BLACK<br>6W + 2w + 6.5(komi) = 14.5 for WHITE<br><br>WHITE is the winner.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>L</var> for the number of lines of the go board<br><strong>Next <var>L</var> lines:</strong> Each line is the state of the board, <const>.</const> represents an empty intersection , <const>B</const> a <const>BLACK</const> stone and <const>W</const> a <const>WHITE</const> stone.<br>Each line contains <var>L</var> characters.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">You have to print:<br><br>WHITE : score<br>BLACK : score<br><const>BLACK</const>/<const>WHITE</const> WINS<br><br><const>WHITE</const> score always ends with &quot;.5&quot;</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><var>L</var> is in [ <const>9</const> , <const>13</const> , <const>19</const> ]<br><var>L lines</var> contains only [ <const>.</const> , <const>B</const> , <const>W</const> ] characters</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">9
+....BW...
+....BW...
+....BW...
+....BW...
+...BBW...
+...BWW...
+...BW....
+...BW....
+...BW....</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">BLACK : 41
+WHITE : 46.5
+WHITE WINS</pre>
+         </div>
+      </div>
+   </div>
+</div>

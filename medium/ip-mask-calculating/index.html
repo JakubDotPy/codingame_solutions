@@ -1,0 +1,37 @@
+<h1>IP mask calculating</h1>
+
+<a href="https://www.codingame.com/training/medium/ip-mask-calculating">https://www.codingame.com/training/medium/ip-mask-calculating</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Given an IP address and a mask in CIDR format you must output the network address and the broadcast address.<br><br>The IP address is the address of a computer on a network. In an IP address there are two parts, the <strong>network part</strong> and the <strong>machine part</strong>. We can separate the two parts with the <var>mask</var>.<br><br><strong>The mask</strong> is, in binary, a continuous part of <const>1</const>s flowing by a continuous part of <const>0</const>s. It can't be a mixture of 1 and 0.<br><br>To know the network address of an IP we proceed like this:<br>For the entry <const>192.168.0.15/24</const>, the machine IP is <const>192.168.0.15</const> and the mask part is <const>24</const>.<br><br>The mask part means the first 24 bits in the mask are set at <const>1</const> and the last ones are set to <const>0</const>:<br>The mask is 11111111.11111111.11111111.00000000<br>In integers that corresponds to 255.255.255.0<br><br>To know the network address we take all bits with a <const>1</const> in the mask:<br>192.168.0.15 is in binary<br>11000000.10101000.00000000.00001111<br>11111111.11111111.11111111.00000000 -&gt; is the mask in binary<br>Now the network part of the IP address is:<br>11000000.10101000.00000000<br>After, we place all 0 we need to get a total of 32 digits<br>The network address is now<br>10000000.10101000.00000000.00000000<br>In integer that means<br>192.168.0.0<br><br>The broadcast address is the network address with all bits in machine part set to <const>1</const>.<br><br>If we take the same example we got this<br>192.168.0.15 is in binary<br>11000000.10101000.00000000.00001111<br>11111111.11111111.11111111.00000000 -&gt; is the mask in binary<br>The broadcast address is:<br>11000000.10101000.00000000.11111111 -&gt; in integer that means 192.168.0.255.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">A ip address and a mask in CIDR format. <br><br>Example:<br>192.168.0.5/24</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The network address and the broadcast address on two different lines.<br><br>Example:<br>192.168.0.0<br>192.168.0.255</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">All entries can be calculated.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">192.168.0.5/24</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">192.168.0.0
+192.168.0.255</pre>
+         </div>
+      </div>
+   </div>
+</div>

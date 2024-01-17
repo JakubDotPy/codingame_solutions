@@ -1,0 +1,56 @@
+<h1>Number Shifting</h1>
+
+<a href="https://www.codingame.com/multiplayer/optimization/number-shifting">https://www.codingame.com/multiplayer/optimization/number-shifting</a>
+
+<div class="statement_back"></div>
+<div class="statement-body">
+  
+  <div class="statement-section statement-goal">
+    <h1>
+      <span class="icon icon-goal"> </span>
+      <span>The Goal</span>
+    </h1>
+    <div class="statement-goal-content">
+      This is an offline optimization game. Unlike other optimization puzzles, this one has a correct solution. You will start with an introduction level. When a level is solved, you will get another (harder) level. The goal is to solve as many levels as possible.
+    </div>
+  </div>
+  
+  <div class="statement-section statement-rules">
+    <h1>
+      <span class="icon icon-rules"> </span>
+      <span>Rules</span>
+    </h1>
+    <div>
+      You are given a grid, filled with numbers. You can move a number horizontally or vertically by exactly as many cells as the value of the number. The number has to be pushed on another non-zero number. The moved number will then be added to the other number or subtracted. The absolute value will be taken on subtraction. The goal is to clear the board and not have any numbers remaining.
+<br />
+      The top left corner has the coordinate (0,0). X increases to the right, y to the bottom.
+      <br /><br />
+      You can find the source code of the game at <a href="https://github.com/eulerscheZahl/NumberShifting" target="_blank" rel="nofollow noopener noreferrer">https://github.com/eulerscheZahl/NumberShifting</a>. <br />
+      You can play the game interactively at <a href="https://eulerschezahl.github.io/NumberShifting.html" target="_blank" rel="nofollow noopener noreferrer">https://eulerschezahl.github.io/NumberShifting.html</a> (note: the levels are not the same as on CodinGame). <br />
+      This game is inspired by <a href="http://www.hacker.org/push/" target="_blank" rel="nofollow noopener noreferrer">Pusherboy</a>. <br /> <br />
+        For convenience you can use <a href="https://github.com/eulerscheZahl/NumberShifting/tree/master/solver" target="_blank" rel="nofollow noopener noreferrer">this python script</a> to test your solution and download the next level.
+        Save the files from this directory and enter your login data at the beginning of the script. Of course you can also test your solutions using the CodinGame website directly.
+  </div>
+
+  
+  <div class="statement-section statement-protocol">
+    <h1>
+      <span class="icon icon-protocol"> </span>
+      <span>Game Input</span>
+    </h1>
+    
+    <div class="blk">
+      <div class="text">The program must output the level code first. The code of the first level is <const>first_level</const>.</div>
+<br />
+Then the level will be given as follows: <br />
+Line 1: <var>width</var> <var>height</var>, the size of the level. <br />
+Next <const>height</const> lines: <const>width</const> integers <var>cell</var>, the values in the grid.
+<br /><br />
+Then the program has to output the actions to solve the game, each in a new line:<br />
+<action>x y dir &#43;/-</action>, the position of the number that shall be moved, the direction (<var>U</var>,<var>D</var>,<var>R</var>,<var>L</var>) and a <var>&#43;</var> to add the numbers or a <var>-</var> to subtract them.
+<br /><br />
+When the solution was correct, the code to play the next level will be given in the game summary.
+    </div>
+</div>
+  </div>
+</div>

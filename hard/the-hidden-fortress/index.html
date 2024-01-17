@@ -1,0 +1,41 @@
+<h1>The Hidden Fortress</h1>
+
+<a href="https://www.codingame.com/training/hard/the-hidden-fortress">https://www.codingame.com/training/hard/the-hidden-fortress</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">&ldquo;I have enjoyed the journey. The happiness of these days, I would have never known living in the castle. I've seen people as they are, without pretense. I've seen their beauty and their ugliness with my own eyes.&rdquo;<br>&mdash; Princess Yuki<br><br>Hidden fortresses are placed on a <var>size</var> x <var>size</var> grid.<br>You don't know their number and you don't know their locations.<br>For each cell of the grid, you're given the number of fortresses that share the same row and/or the same column.<br>Those numbers are joined together to form a grid of <var>size</var> rows of <var>size</var> characters.<br>To describe every possible number with one character, the following symbols are used in order:<br><const>&quot;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</const><br>so numbers [10-35] are given with [a-z] and numbers [36-61] are given with [A-Z].<br><br><br>You must deduce the fortresses' locations and output the grid of revealed fortresses.<br><br>For example in the following example, there's a 3 in cell (1, 0), meaning that there are a total of 3 fortresses in row 1 and/or column 0. In the solution, you can see that these fortresses are located at cells (0, 0), (1, 0) and (1, 2).</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1 :</strong> An integer <var>size</var>.<br><strong><var>size</var> next lines :</strong> A string of length <var>size</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>size</var> lines :</strong> A string of length <var>size</var>, with <const>&quot;.&quot;</const> representing an empty cell and <const>&quot;O&quot;</const> a fortress.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">3 &le; <var>size</var> &le; 31</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+212
+322
+201</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">O..
+O.O
+...</pre>
+         </div>
+      </div>
+   </div>
+</div>

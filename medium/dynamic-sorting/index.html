@@ -1,0 +1,43 @@
+<h1>Dynamic sorting</h1>
+
+<a href="https://www.codingame.com/training/medium/dynamic-sorting">https://www.codingame.com/training/medium/dynamic-sorting</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Sorting in a webApi should be tricky as you have to pass all your parameters in a single URL in a GET request, your team decided to do use this convention to order the result by prop1 ascending, <strong>then</strong> by prop2 descending, <strong>then</strong> by prop3 ascending.<br><strong>+prop1-prop2+prop3</strong><br><br>You have to read the given items and print their Ids ordered by the given sorting expression.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1 :</strong> The sorting expression<br><strong>Line 2:</strong> The associated types of previously given properties separated by &quot;,&quot;<br><strong>Line 3 :</strong> An integer N of the next input lines<br><strong>N next lines</strong> an object formatted like this :<br>prop1:value1,prop2:value2,prop3:value3</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The sorted objects ids (there will always be an id property which is an integer). <br>In case all property fields have the same values, sort it by the id acsendingly.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">Types can be &quot;int&quot; or &quot;string&quot;</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">+name
+string
+3
+id:1,name:maria
+id:2,name:jason
+id:3,name:robert</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">2
+1
+3</pre>
+         </div>
+      </div>
+   </div>
+</div>

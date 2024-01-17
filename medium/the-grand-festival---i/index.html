@@ -1,0 +1,44 @@
+<h1>The Grand Festival - I</h1>
+
+<a href="https://www.codingame.com/training/medium/the-grand-festival---i">https://www.codingame.com/training/medium/the-grand-festival---i</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement"><strong>Story:</strong><br><br>The Grand Festival has arrived at the Shire! Merry and Pippin decide to participate in its competitions. There are a variety of competitions, like archery, sword fighting, hunting, riding, etc.<br>However, they realize that after playing some tournaments consecutively, they need to rest a day. They gather information about the prize money of each competition. 1 competition is held every day.<br>Merry and Pippin decide they will try to get the maximum prize money. For this, they ask Gandalf for help. Help Gandalf choose which tournaments They should play.<br><br>-------------------------------------------------- xxx --------------------------------------------------<br><br><strong>The Problem:</strong><br><br>Given the prize-money for each tournament, and the maximum consecutive days Merry and Pippin can play without break, output the maximum prize money they can win.<br><br>-------------------------------------------------- xxx --------------------------------------------------<br><br><strong>Rules:</strong><br>There are <var>N</var> tournaments in all, held from day <const>1</const> to day <const>N</const>.<br>Merry and Pippin can play at most <var>R</var> consecutive tournaments before they have to rest.<br>The prize money for all the tournaments will be given to you.<br>You need to display the maximum total prize money.<br><br>-------------------------------------------------- xxx --------------------------------------------------<br><br><strong>Example:</strong><br>Let there be <const>10</const> tournaments.<br>Let Merry and Pippin be able to play <const>4</const> days consecutive.<br>Let the prize moneys be <const>13</const>, <const>2</const>, <const>15</const>, <const>17</const>, <const>19</const>, <const>33</const>, <const>2</const>, <const>2</const>, <const>2</const>, <const>2</const>.<br>So, Merry and Pippin will play on days <strong>1</strong> &gt; <strong>3</strong> &gt; <strong>4</strong> &gt; <strong>5</strong> &gt;<strong>6</strong> &gt; <strong>8</strong> &gt; <strong>9</strong> &gt; <strong>10</strong>.<br>Thus, the maximum prize money will be <const>103</const>.<br><br>-------------------------------------------------- xxx --------------------------------------------------<br><br><strong>Note:</strong><br><br>This is the first in a series of puzzles. This puzzle required you to display the maximum prize money. The second requires you to display the path. It is recommended to solve the second puzzle after solving this.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var><br><strong>Line 2:</strong> An integer <var>R</var><br><strong>Next <var>N</var> Lines:</strong> Integers <var>PRIZE</var>, the prize money for the tournaments respectively</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> An integer <var>MAX_MONEY</var>, the maximum prize money possible</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">7
+3
+13
+12
+11
+9
+16
+17
+100</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">169</pre>
+         </div>
+      </div>
+   </div>
+</div>

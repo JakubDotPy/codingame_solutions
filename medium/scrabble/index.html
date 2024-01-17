@@ -1,0 +1,142 @@
+<h1>Scrabble</h1>
+
+<a href="https://www.codingame.com/training/medium/scrabble">https://www.codingame.com/training/medium/scrabble</a>
+
+<div class="statement_back" id="statement_back" style="display: none;">&nbsp;</div>
+
+<div class="statement-body"><!-- GOAL -->
+<div class="statement-section statement-goal">
+<h2><span class="icon icon-goal">&nbsp;</span> The Goal</h2>
+
+<div class="statement-goal-content">
+<p><img alt="" src="https://www.codingame.com/fileservlet?id=228917514133" style="width: 200px; float: right; height: 133px; margin-left: 10px;" />When playing Scrabble&copy;, each player draws 7 letters and must find a word that scores the most points using these letters.<br />
+<br />
+A player doesn&#39;t necessarily have to make a 7-letter word; the word can be shorter. The only constraint is that the word must be made using the 7 letters which the player has drawn.<br />
+<br />
+For example, with the letters &nbsp;etaenhs, some possible words are: ethane, hates, sane, ant.</p>
+
+<p>Your objective is to find the word that scores the most points using the available letters (1 to 7 letters).</p>
+</div>
+</div>
+<!-- RULES -->
+
+<div class="statement-section statement-rules">
+<h2><span class="icon icon-rules">&nbsp;</span> Rules</h2>
+
+<div>
+<div class="statement-rules-content">
+<p>In Scrabble&copy;, each letter is weighted with a score depending on how difficult it is to place that letter in a word. You will see below a table showing the points corresponding to each letter:<br />
+&nbsp;</p>
+
+<table border="1" style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+	<thead>
+		<tr>
+			<th style="text-align: center;">Letters</th>
+			<th style="text-align: center;">Points</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td style="padding-left: 30px;">e, a, i, o, n, r, t, l, s, u</td>
+			<td style="text-align: center;">1</td>
+		</tr>
+		<tr>
+			<td style="padding-left: 30px;">d, g</td>
+			<td style="text-align: center;">2</td>
+		</tr>
+		<tr>
+			<td style="padding-left: 30px;">b, c, m, p</td>
+			<td style="text-align: center;">3</td>
+		</tr>
+		<tr>
+			<td style="padding-left: 30px;">f, h, v, w, y</td>
+			<td style="text-align: center;">4</td>
+		</tr>
+		<tr>
+			<td style="padding-left: 30px;">k</td>
+			<td style="text-align: center;">5</td>
+		</tr>
+		<tr>
+			<td style="padding-left: 30px;">j, x</td>
+			<td style="text-align: center;">8</td>
+		</tr>
+		<tr>
+			<td style="padding-left: 30px;">q, z</td>
+			<td style="text-align: center;">10</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>The word banjo earns you 3 + 1 + 1 + 8 + 1 = 14 points.<br />
+<br />
+A dictionary of authorized words is provided as input for the program. The program must find the word in the dictionary which wins the most points for the seven given letters (a letter can only be used once). If two words win the same number of points, then the word which appears first in the order of the given dictionary should be chosen.<br />
+&nbsp;</p>
+
+<p>All words will only be composed of alphabetical characters in lower case. There will always be at least one possible word.</p>
+</div>
+</div>
+</div>
+<!-- PROTOCOL -->
+
+<div class="statement-section statement-protocol">
+<h2><span class="icon icon-protocol">&nbsp;</span> Game Input</h2>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Input</div>
+
+<div class="text">
+<p><span class="statement-lineno">Line 1: </span>the number <var>N</var> of words in the dictionary</p>
+
+<p><span class="statement-lineno"><var>N</var> following lines: </span>the words in the dictionary. One word per line.</p>
+
+<p><span class="statement-lineno">Last line: </span>the 7 letters available.</p>
+</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Output</div>
+
+<div class="text">The word that scores the most points using the available letters (1 to 7 letters). The word must belong to the dictionary. Each letter must be used at most once in the solution. There is always a solution.</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Constraints</div>
+
+<div class="text">0 &lt; <var>N</var> &lt; 100000<br />
+Words in the dictionary have a maximum length of 30 characters.</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Example</div>
+
+<div class="text">
+<div class="statement-inout">
+<div class="statement-inout-in" style="background-color: white;">
+<div class="title" style="color: #989898; padding: 0;">Input</div>
+
+<pre>
+5
+because
+first
+these
+could
+which
+hicquwh
+</pre>
+</div>
+
+<div class="statement-inout-out" style="background-color: white;">
+<div class="title" style="color: #989898; padding: 0;">Output</div>
+
+<pre>
+which</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,36 @@
+<h1>CGFunge interpreter</h1>
+
+<a href="https://www.codingame.com/training/medium/cgfunge-interpreter">https://www.codingame.com/training/medium/cgfunge-interpreter</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">CGFunge is a 2-dimensional, positional programming language. This means that execution of a CGFunge program follows a designated pattern on a grid of ASCII characters.  Each command in the language is a single character. The most basic commands involve flow control:<br><br>'<const>&gt;</const>' - Continue to the right<br>'<const>&lt;</const>' - Continue to the left<br>'<const>^</const>' - Continue up<br>'<const>v</const>' - Continue down<br>'<const>S</const>' - Skip the next character and continue with the subsequent character<br>'<const>E</const>' - End the program immediately<br><br>Execution always starts on the first character of the first line and proceeds to the right. Spaces are ignored. So, for example, the following are equivalent:<br><br>11+E<br><br><pre style="font-family: monospace"><br>vE&lt;<br>1 +<br>&gt;1^<br></pre><br><br>SE S+1&lt;<br><br>The execution of the program entirely revolves around a stack consisting only of integers in the range [<const>0</const> - <const>255</const>]. Any digit encountered (<const>0</const> - <const>9</const>) is pushed onto the stack. Arithmetic operators ('<const>+</const>', '<const>-</const>', '<const>*</const>') pop two operands from the stack and push the result onto the stack. For subtraction, the <strong>top element</strong> on the stack is subtracted <strong>from</strong> the <strong>second element</strong> on the stack. So, for example, the program &#34;52 - E&#34; would leave the value 3 on the stack.<br><br>The following commands perform other basic stack manipulation tasks:<br><br>'<const>P</const>' - Pop the top value<br>'<const>X</const>' - Switch the order of the top two stack values<br>'<const>D</const>' - Push a duplicate of the top value onto the stack<br><br>The quotation mark character ('<const>&#34;</const>') toggles &#34;string mode&#34;. When in string mode, the ASCII codes for all characters encountered are pushed onto the stack.<br><br>The following commands perform stack-based logical flow control:<br><br>'<const>_</const>' - Pop the top value from the stack. If it is <const>0</const>, continue to the right. Otherwise, go left.<br>'<const>|</const>' - Pop the top value from the stack. If it is <const>0</const>, continue down. Otherwise, go up.<br><br>Output is performed with the following commands:<br><br>'<const>I</const>' - Pop the top integer from the stack and print it to <strong>stdout</strong>.<br>'<const>C</const>' - Pop the top integer from the stack and interpret it as an ASCII code, printing the corresponding character to <strong>stdout</strong>.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var> indicating the number of lines in the program<br><strong>Next <var>N</var> lines:</strong> One line per program input</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The output of the properly interpreted program</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &#8804; <var>N</var> &#8804; 10</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1&#10;2419+*+IE</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">42</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,40 @@
+<h1>Futoshiki Solver</h1>
+
+<a href="https://www.codingame.com/training/medium/futoshiki-solver">https://www.codingame.com/training/medium/futoshiki-solver</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Futoshiki is a Japanese numeric logic puzzle similar to the more popular Sudoku.<br>See https://en.wikipedia.org/wiki/Futoshiki<br>Like in Sudoku, in a Futoshiki of size n every row and every column must contain every number from 1 to n.<br>Unlike Sudoku there may be greater than / less than relations between cells.<br><br>For a n&times;n Futoshiki the input will be 2n-1 lines of digits <const>0..n</const> (<const>0</const> meaning empty), and either spaces or inequality constraints <const>^</const> <const>v</const> <const>&lt;</const> <const>&gt;</const> separating the digits of length 2n-1.<br><br><const>^</const> meaning the cell below the symbol has a higher value than the one above the symbol and so on.<br><br><br><strong>Example:</strong> A 2&times;2 Futoshiki<br><pre style="font-family: monospace"></pre><pre style="font-family: monospace">0&gt;0<br>v ^<br>0&lt;0</pre><pre style="font-family: monospace"></pre>having the solution:<br><pre style="font-family: monospace"></pre><pre style="font-family: monospace">21<br>12</pre><pre style="font-family: monospace"></pre></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> number <var>size</var> of lines to read<br><strong>Next <var>size</var> lines:</strong><br><strong> - even-numbered lines:</strong> string of length <var>size</var> alternating between a number <const>0..n</const> and a space or <const>&lt;</const> or <const>&gt;</const>.<br><strong> - odd-numbered lines:</strong> string of length <var>size</var> containing spaces and <const>v</const> or <const>^</const> on even-numbered positions and spaces on odd-numbered positions.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>n</var> lines:</strong> <var>n</var> digits for each row of the solved board<br>(for <var>n</var> such that <var>size</var> = 2&times;<var>n</var> - 1)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">There is only 1 correct solution to each board.<br>1 &le; <var>size</var> &le; 13</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+1 0
+   
+0 0</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">12
+21</pre>
+         </div>
+      </div>
+   </div>
+</div>

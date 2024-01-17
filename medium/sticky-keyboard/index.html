@@ -1,0 +1,37 @@
+<h1>Sticky Keyboard</h1>
+
+<a href="https://www.codingame.com/training/medium/sticky-keyboard">https://www.codingame.com/training/medium/sticky-keyboard</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Oh no, the keyboard is sticky and sometimes keys have repeated twice and sometimes keys haven't been activated after pressed.  Not only that but the problem wasn't discovered until after some documents have been written.<br><br>Fortunately, the problem isn't too bad and only happens once in a while.  Instead of retyping all the documents you will write a program to correct the issue.<br><br>Your program will read a document and use the document as both the source to find correct words and to fix words with missing letters or letters that are duplicated by accident. <strong>Preserve the placement of all non-letters, like punctuation.</strong><br><br>For example the following document<br><br><pre style="font-family: monospace">6<br>once upon a little while,<br>the moon came out and began to smile.<br>smile it-did all night long,<br>until the sun arose at dawn.<br>iit-did linger high in broad day light,<br>before under cloud it dd take flight.</pre><br><br>Here we have two examples of <strong>'it'</strong> spelt correctly to fix the one instance of <strong>'iit'</strong><br>and two examples of <strong>'did'</strong> spelt correctly to fix the one instance of <strong>'dd'</strong><br><br>The incorrect word must have less instances than the number of instances the correct word.  Therefore <strong>'did'</strong> is not changed to <strong>'dd'</strong>, because <strong>'did'</strong> has 2 instances and <strong>'dd'</strong> only has 1.<br><br>Incorrect words have either 1 letter doubled (like <strong>'iit'</strong>) or 1 letter missing (like <strong>'dd'</strong>) but not both.  For example 'dii' should not be corrected to 'did' if 'dii' existed in the above document.<br><br>Do not use words that are not in the document, for example do not hard code common English words.  There is no guarantee that the words in the documents are English or any Earthly language.  Also, the documents are precisely crafted such that they will only work if the only vocabulary that is used is from the document itself.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>line 1 :</strong> integer <var>N</var> number of lines<br><strong>next N lines:</strong> Document lines</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>N lines:</strong> Corrected document lines</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">The document length is less than 20 lines and less than 256 characters per line.  &quot;Words&quot; consist only of lower case ascii characters from <strong>a-z</strong>.  For example <const>isn't</const> is considered 2 words <const>isn</const> and <const>t</const> because the <const>'</const> cannot be inside a word for this puzzle.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1
+dont fix it</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">dont fix it</pre>
+         </div>
+      </div>
+   </div>
+</div>

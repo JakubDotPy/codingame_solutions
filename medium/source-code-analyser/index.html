@@ -1,0 +1,43 @@
+<h1>Source Code Analyser</h1>
+
+<a href="https://www.codingame.com/training/medium/source-code-analyser">https://www.codingame.com/training/medium/source-code-analyser</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are given a source code and you have to analyse it: Output the names of all the called library functions &amp; methods, with the number of occurrences for each of them.<br><br><strong>Detailed rules:</strong> (if you are lazy reading this much, skip it and check the example &amp; test cases...)<br><br>* Source might contain multiple whitespaces: space, tab (<const>\t</const>), new line (<const>\n</const>) or linefeed (<const>\r</const>).<br>* Anything within string literals (within pair of single (<const>'</const>) or double (<const>&quot;</const>) quotes) shall be omitted.<br>* Anything after single line comments (starting with <const>//</const>) or within multi-line comments (between <const>/*</const> and <const>*/</const> ) shall be omitted.<br>* A function call can be identified by a valid name, immediately followed by an opening paranthesis <const>(</const><br>* Valid function names might contain upper and lower case letters, digits and underscore <const>_</const>.<br>* Function names shall be treated case sensitively.<br>* Following reserved words shall be not treated as function calls and omitted from output: <br>&quot;<const>and</const>&quot;, &quot;<const>array</const>&quot;, &quot;<const>echo</const>&quot;, &quot;<const>else</const>&quot;, &quot;<const>elseif</const>&quot;, &quot;<const>if</const>&quot;, &quot;<const>for</const>&quot;, &quot;<const>foreach</const>&quot;, &quot;<const>function</const>&quot;, &quot;<const>or</const>&quot;, &quot;<const>return</const>&quot;, &quot;<const>while</const>&quot;, &quot;<const>new</const>&quot; (regardless of lower, upper or mixed case)<br>* If a function name is immediately preceded by a <const>$</const>, it shall be omitted (a PHP-specific rule, call of function with a name stored in a variable).<br>* Class names and user-defined functions shall be excluded. If the source contains &quot;<const>function name(</const>&quot; or &quot;<const>new name(</const>&quot;, then the &quot;<const>name</const>&quot; shall be omitted from output.<br>* Output lines shall be sorted by the function names (by ascending ascii values).<br>* If no library call encountered, output <const>NONE</const><br><br><strong>Notes:</strong><br><br>* While the provided test cases are PHP source files, knowledge of PHP is no pre-requisite at all. Of course, you can solve the puzzle in any language.<br>* Solution would be very similar for analysing C, C++, C#, Java and Javascript source (only difference is the set of reserved keywords and how user-defined functions can be detected). You can easily adapt your solution to analyze your languages of choice and analyze your own source files. Analysing Python or Haskell might need a bit more change though...<br>* Useless fun fact: my toplist in 98k source lines of PHP: <const>fscanf</const>, <const>error_log</const>, <const>strlen</const>, <const>isset</const>, <const>ord</const><br>* Puzzle was inspired by this blog post: <const>https://thephp.website/en/issue/most-used-php-functions/</const></span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var> for the number of source lines.<br><strong>Next <var>N</var> lines:</strong> the source code to analyse (string, might contain whitespaces)<br><strong>IMPORTANT:</strong> Unlike in many other puzzles, you might need to read and process also the linefeeds at end of each line. If your input reader strips the \n from the string, you might want to add it back manually.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>??</var> lines:</strong> separate lines for each library function/method encountered: the <var>name</var> of the function and the <var>count</var> number of calls, space separated.<br>Output lines shall be sorted by the function names (by ascending ascii values).<br>If no library call encountered, output <const>NONE</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le;  <var>N</var> &le;  200</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">5
+/* test with fscanf() and strlen() */
+fscanf(STDIN, &quot;%s&quot;, $s);
+$len = strlen($s); // strlen() gives the length of the string
+if(strlen($s) == $len)
+  echo &quot;strlen() matching\n&quot;;</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">fscanf 1
+strlen 2
+</pre>
+         </div>
+      </div>
+   </div>
+</div>

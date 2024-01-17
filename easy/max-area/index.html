@@ -1,0 +1,39 @@
+<h1>Max Area</h1>
+
+<a href="https://www.codingame.com/training/easy/max-area">https://www.codingame.com/training/easy/max-area</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Given <var>n</var> non-negative integers <var>a_1, a_2, ..., a_n</var>, <var>n</var> vertical segments parallel with the y-axis, each vertical lines separated by a distance of <const>1</const>. Find 2 vertical lines which, with the x-axis,  form a rectangular bucket, so that the container holds the most water. Water will spill over the shorter of the two sides.<br><br>Example:<br><br>With <var>arr</var> = <const>[1, 8, 6, 2, 5, 4, 8, 3, 7]</const><br><br>The bucket with the largest area is created by <var>arr_2</var> = <const>8</const>, <var>arr_9</var> = <const>7</const> and x-axis with a max height that can hold water of <const>7</const> and the distance between them is <const>7</const>. So output is <const>7 * 7 = 49</const><br><pre style="font-family: monospace">  |         |<br>  |~ ~ ~ ~ ~|~ ~|<br>  |~|~ ~ ~ ~|~ ~|<br>  |~|~ ~|~ ~|~ ~|<br>  |~|~ ~|~|~|~ ~|<br>  |~|~ ~|~|~|~|~|<br>  |~|~|~|~|~|~|~|<br>|_|_|_|_|_|_|_|_|</pre><br>You can create a taller bucket from <var>arr_2</var> and <var>arr_7</var>, area is <const>8 * 5 = 40</const>. But it doesn't hold the most area.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Integers <var>n</var><br><strong>Line 2:</strong> <var>n</var> non-negative integers <var>a_1, a_2, ..., a_n</var> separated by spaces</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> An integer for the maximum amount of water the bucket can hold</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &lt;= <var>n</var> &lt;= 1000<br>0 &lt;= <var>a_i</var> &lt;= 1000</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">9
+1 8 6 2 5 4 8 3 7
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">49
+</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,42 @@
+<h1>Harmless Rooks</h1>
+
+<a href="https://www.codingame.com/training/hard/harmless-rooks">https://www.codingame.com/training/hard/harmless-rooks</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">The <strong>rook</strong> is a chess piece that can move along its current line (horizontally) or column (vertically) through any number of free (unoccupied) squares.<br><br>In this problem, we consider an <var>N</var> &times; <var>N</var> generalized chess board where the squares are either free (<const>.</const> in the input) or already occupied (<const>X</const> in the input) and hence cannot be crossed by the rooks.<br><br>Compute the <strong>maximum number of rooks</strong> that can be placed on <strong>free squares</strong> in such a way that <strong>no two rooks threaten each other</strong> (hence two rooks on the same line/column must be separated by at least one occupied square).</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>N</var>, the size of the square board.<br><strong>Next <var>N</var> lines:</strong> A string of length <var>N</var> describing a line of the board, <const>.</const> indicates a free square and <const>X</const> an occupied one.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">A single integer corresponding to the maximum number of rooks that can be placed on free squares without directly threatening each other.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>N</var> &le; 99</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">5
+XX..X
+....X
+XX.X.
+X....
+.....
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">6</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,53 @@
+<h1>Tile a Floor Differently</h1>
+
+<a href="https://www.codingame.com/training/easy/tile-a-floor-differently">https://www.codingame.com/training/easy/tile-a-floor-differently</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You saw the success your brother had as a manufacturer and installer of Floor-Tiles in the original &ldquo;Tile a Floor&rdquo; puzzle.  So you start a rival business doing something similar but different, specializing in what you call the <const>bdpq</const>-effect.<br><br>The beauty of Tiles comes from their symmetry, in that the quadrants of a Tile are mirror/reflections of each other.<br><br>So, when you get an order for a Tile, only the pattern of the top left quadrant is the input. <br>Graphically explained here:<pre style="font-family: monospace"><br>☑☑☑☐☐☐<br>☑☑☑☐☐☐<br>☑☑☑☐☐☐<br>☐☐☐☐☐☐<br>☐☐☐☐☐☐<br>☐☐☐☐☐☐</pre> From that limited input, your task is to:<br>Create a full Tile<br>And display a 2x2 floor (i.e., a floor consisting of 4 of those Tiles)<br><br><strong>Flip/Mirror patterns:</strong><br>Generally, a character appearing in the first quadrant just replicates in the other quadrants.<br>However, your beautiful Tiles exploit the particular symmetry of:<pre style="font-family: monospace"><const>b</const> <const>d</const><br><const>p</const> <const>q</const></pre>and<pre style="font-family: monospace"><const>\</const><const>/</const><br><const>/</const><const>\</const></pre>For those, you'll want to put the proper reflected/flipped version in each quadrant.<br><br><strong>Details:</strong><br>➤ You only make square Tiles, where the side-length is an even number<br>➤ Each Tile is a square; the input therefore is also a square<br>➤ The input has a side-length of <var>quarterSize</var>; therefore the full Tile has a side-length of 2*<var>quarterSize</var><br>➤ The full floor needs a grout border, and grout separating the individual Tiles. Grout is represented by <const>-</const> on top/bottom, <const>|</const> on left/right, and <const>+</const> on corners<br><br><br><br><br>Happy trowelling</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1</strong>: An integer <var>quarterSize</var>, denoting the number of rows of Tile pattern in the top left quadrant<br><strong>Next <var>quarterSize</var> lines:</strong> row of Tile pattern in the top left quadrant</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The entire floor</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">3 &le; <var>quarterSize</var> &le; 7</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+  /
+/b 
+b  </pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">+------+------+
+|  /\  |  /\  |
+|/b  d\|/b  d\|
+|b    d|b    d|
+|p    q|p    q|
+|\p  q/|\p  q/|
+|  \/  |  \/  |
++------+------+
+|  /\  |  /\  |
+|/b  d\|/b  d\|
+|b    d|b    d|
+|p    q|p    q|
+|\p  q/|\p  q/|
+|  \/  |  \/  |
++------+------+</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,50 @@
+<h1>Remove insert statements</h1>
+
+<a href="https://www.codingame.com/training/easy/remove-insert-statements">https://www.codingame.com/training/easy/remove-insert-statements</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Given a SQL file, you must:<br>- remove the INSERT statements that are actually inserting data in the database<br>- keep the INSERT statements that are embedded in functions.<br>- All others statements must remains the same <br><br>SQL syntax to consider:<br>- INSERT statement is a statement that starts with the <const>INSERT</const> keyword and ends with the semicolon <const>;</const>. It can be written anywhere in the SQL file, it can be written on one or many lines. There is no constraint on where <const>INSERT</const> keyword appears first. It can start a new line or after spaces or it may have some indentation before the <const>INSERT</const> keyword<br>- comments begin with <const>--</const> and comments must be kept in the script. Comments end at the EOL.<br>- the syntax used to denote the body  of functions: <br><pre style="font-family: monospace">  <const>BEGIN</const> start of body<br>  <const>END</const> end of body<br>  <const>BEGIN</const> and <const>END</const> keywords are always at the start of a line.</pre><br><br>Body is the main part of the function where SQL statements must be checked. If INSERT statements are written in this part, INSERT statements must be kept.<br>- <const>INSERT</const>, <const>BEGIN</const> and <const>END</const> are keywords, keywords are case-insensitive<br><br>EXAMPLES:<br>- Example of INSERT statement that must be removed:<br><pre style="font-family: monospace">  <strong>INSERT INTO ref_metric <br>  VALUES (767, 'make it clear', 'some description', 2, 'LOW');</strong></pre><br>  =&gt; VALUES are hardcoded values or string literals<br><br>- Example of INSERT statement that must be kept:<br><pre style="font-family: monospace">  <strong>CREATE FUNCTION my_function(pObj integer, pUser integer) <br>  LANGUAGE plpgsql<br>  AS $$<br>  declare<br>  begin <br>    INSERT INTO lk_table(nb_object, id_user, stat) <br>    VALUES ( pObj, pUser);<br>  end;</strong></pre><br>  =&gt; VALUES are variables, INSERT is embedded in the body of a function. The body is defined by <const>BEGIN</const> and <const>END</const> keywords.<br><br><br>TIP: <br>- You can copy/paste input file on some sql beautifier tools online to help you to identify relevant lines to remove.<br>- SQL statements are real statements that can be executed in SQL tools.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>n</var> for the number of lines to read<br><strong>Next <var>n</var> lines:</strong> SQL statements to parse</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>m</var> lines:</strong> SQL statements cleaned up without INSERT statements that are doing data insertion in the database. comments must remain in the output. <var>m</var> is the number of lines that remain.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">8
+CREATE TABLE vendeur (
+    id character integer NOT NULL,
+    date_creation timestamp without time zone,
+    name text,
+    id_createur character varying(32),
+    amount double precision,
+);
+insert into vendeur(id,date_creation, name, id_createur, amount) values(1,'12/08/2020','John',1,100);</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">CREATE TABLE vendeur (
+    id character integer NOT NULL,
+    date_creation timestamp without time zone,
+    name text,
+    id_createur character varying(32),
+    amount double precision,
+);</pre>
+         </div>
+      </div>
+   </div>
+</div>

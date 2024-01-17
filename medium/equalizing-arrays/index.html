@@ -1,0 +1,43 @@
+<h1>Equalizing arrays</h1>
+
+<a href="https://www.codingame.com/training/medium/equalizing-arrays">https://www.codingame.com/training/medium/equalizing-arrays</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are given two arrays of non-negative integers <var>A</var> and <var>B</var>. You can subtract some integer <const>x</const> from any element <var>A[i]</var> and increase <var>A[i-1]</var> or <var>A[i+1]</var> by <const>x</const>. After each operation all values in array <var>A</var> should remain non-negative. You must find the minimum number of operations to equalize the arrays and the correct order of their use. If there are several orders of operations possible then output the one that is lexicographically minimal.<br><br>To compare two orders of operations consider them as a sequences of integers in a one-dimensional array. Let's compare the first element that is different in the sequences. One sequence will be lexicographically smaller than the other where this element is smaller.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1 :</strong> An integer <var>N</var> size of arrays <var>A</var> and <var>B</var>.<br><strong>Line 2 :</strong> Array <var>A</var> of <var>N</var> non-negative integers.<br><strong>Line 3 :</strong> Array <var>B</var> of <var>N</var> non-negative integers.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1 :</strong> Minimum number operations <var>K</var> to equalize arrays.<br><strong>Line  2...K+1 :</strong> Next <var>K</var> lines contain three numbers <var>P</var> <var>D</var> <var>V</var>: array index for subtract (1-based indexing), direction to increase and value modify respectively.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><const>1</const> &le; <var>N</var> &le; <const>100</const><br><const>0</const> &le; <var>A[i]</var>, <var>B[i]</var> &le; <const>100 000</const><br>&sum; <var>A[i]</var> = &sum; <var>B[i]</var><br><const>1</const> &le; <var>P</var> &le; <var>N</var><br><var>D</var> is integer number <const>-1</const> or <const>1</const><br><const>1</const> &le; <var>P</var> + <var>D</var> &le; <var>N</var><br><const>0</const> &lt; <var>V</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">4
+1 2 0 1
+0 1 3 0
+</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">3
+1 1 1
+2 1 2
+4 -1 1
+</pre>
+         </div>
+      </div>
+   </div>
+</div>

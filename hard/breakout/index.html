@@ -1,0 +1,41 @@
+<h1>Breakout</h1>
+
+<a href="https://www.codingame.com/training/hard/breakout">https://www.codingame.com/training/hard/breakout</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Bricks of <const>100</const> x <const>30</const> pixels are arranged in a playfield of <const>1600</const> x <const>2400</const> pixels (origin at the top-left). A dimensionless point (the ball) bounces around the playfield, breaking bricks as it hits them. Each broken brick scores points.<br><br>The ball will bounce off of:<br><br>- The left, right, and top of the playfield<br>- Any side of any brick<br>- The top of a <const>200</const> x <const>3</const> pixel mobile paddle<br><br>All bounces are treated classically. The accidental angle is equal to the incidental angle. So, for example, if the ball's vector is (<var>vX</var>, <var>vY</var>) = (<const>10</const>, <const>10</const>) (moving down and right), and the ball hits the top of a brick, then the resulting ball vector will be (<const>10</const>, <const>-10</const>), and if the ball then hits the right-hand wall, then the resulting vector would be (<const>-10</const>, <const>-10</const>).<br><br> You don't need to worry about what happens if the ball hits the corner of something. The tests are engineered to avoid this situation.<br><br>Each brick has an associated <var>kStrength</var> value, indicating the &quot;strength&quot; of the brick. A brick with a strength of <const>1</const> will break and disappear after a single hit from the ball. A brick with a strength of <const>2</const> requires 2 hits before it breaks. No points are awarded for hitting a brick until it breaks and disappears.<br><br>For many of the tests, the paddle is stationary, but in some of the latter tests, the paddle can move around the playfield to keep the ball in play. Multiple coordinate sets are provided to specify the various locations of the paddle throughout the test. The paddle &quot;moves&quot; to the next coordinate set after being hit by the ball. If there are no other coordinate sets provided in the input, then the paddle doesn't move for the rest of the test, and remains at the last specified position.<br><br>The ball is lost if it goes off the bottom of the playfield. Your program must calculate and report points acquired by breaking bricks before the ball is lost.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Two space-separated integers <var>bX</var> and <var>bY</var> indicating the starting position of the ball.<br><strong>Line 2:</strong> Two space-separated integers <var>vX</var> and <var>vY</var> indicating the starting vector of the ball.<br><strong>Line 3:</strong> An integer <var>pN</var> indicating the number of positions that will be occupied by the paddle during the game.<br><strong>Line 4:</strong> An integer <var>kN</var> indicating the number of bricks initially on the playfield.<br><strong>Next <var>pN</var> lines:</strong> Two space-separated integers <var>pX</var> and <var>pY</var> for the coordinates of the top-left-hand pixel of the paddle.<br><strong>Next <var>kN</var> lines:</strong> Four space-separated integers <var>kX</var>, <var>kY</var>, <var>kStrength</var>, <var>kPoints</var> for the coordinates of the top-left corner of the brick, the strength of the brick, and the number of points earned for breaking the brick.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The number of points earned before the ball is lost.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0&le;<var>bX</var>&lt;1600<br>0&le;<var>bY</var>&lt;2400<br>-100&le;<var>vX</var>&le;100<br>-100&le;<var>vY</var>&le;100<br>1&le;<var>pN</var>&le;32<br>1&le;<var>kN</var>&le;64<br>0&le;<var>pX</var>&le;1400<br>2200&le;<var>pY</var>&le;2300<br>0&le;<var>kX</var>&le;1500<br>0&le;<var>kY</var>&le;1500<br>1&le;<var>kStrength</var>&le;5</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">100 100
+0 100
+1
+1
+1400 2300
+1500 0 1 1</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">0</pre>
+         </div>
+      </div>
+   </div>
+</div>

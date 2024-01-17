@@ -1,0 +1,36 @@
+<h1>Gravity Centrifuge Tuning</h1>
+
+<a href="https://www.codingame.com/training/medium/gravity-centrifuge-tuning">https://www.codingame.com/training/medium/gravity-centrifuge-tuning</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">The program must generate an octal bistream suitable for use in a damaged <strong>Gravity Centrifuge</strong> for tumbling a landscape a given number of times. This puzzle is in the same theme but completely independent, difficulty- and code-wise, from the Gravity Centrifuge puzzle at https://www.codingame.com/training/community/gravity-centrifuge .<br><br><strong>Pristine Gravity Centrifuges</strong><br><br>Same as in the parallel puzzle, a Gravity Centrifuge works as such: a twin inertial drive is programmed with an octal bitstream to perform a certain number of tumbles. How does the bitstream control the twin inertial drives?<br>&ensp;&ndash; Both drives are gotten to roll with an initial momentum of 1.<br>&ensp;&ndash; The bits operate on the drives in alternating order, from least significant bit on. So bit 0 controls drive A, bit 1 drive B, bit 2 drive A again, and so on.<br>&ensp;&ndash; When the bit is set, the drive tumbles the landscape around as many times as the current value of its momentum. It's all done by frictionless induction, so the drive's own momentum is unaffected.<br>&ensp;&ndash; Simultaneously and regardless of bit value, the drive accelerates its twin by the current value of its momentum. Its own is still unaffected.<br>&ensp;&ndash; Control then shifts to the other drive for the next bit in the stream.<br><br><strong>Pristine Example</strong><br><br>Using binary bitstream <const>1010</const>, which we're reading right to left (lsb first, remember):<br><br><pre style="font-family: monospace">┌────────┬────────┬─────────┬──────────────────┐<br>│ A mom. │ B mom. │ Tumbles │ Action           │<br>├────────┼────────┼─────────┼──────────────────┤<br>│      1 │      1 │       0 │ 0 =&gt; no A tumble │<br>│      1 │      2 │       0 │ A induces 1 on B │<br>├────────┼────────┼─────────┼──────────────────┤<br>│      1 │      2 │       2 │ 1 =&gt; 2 B tumbles │<br>│      3 │      2 │       2 │ B induces 2 on A │<br>├────────┼────────┼─────────┼──────────────────┤<br>│      3 │      2 │       2 │ 0 =&gt; no A tumble │<br>│      3 │      5 │       2 │ A induces 3 on B │<br>├────────┼────────┼─────────┼──────────────────┤<br>│      3 │      5 │       7 │ 1 =&gt; 5 B tumbles │<br> (B would induce 5 on A here, but we're done anyway)<br>└────────┴────────┴─────────┴──────────────────┘</pre><br>The bitstream is then fully consumed and operation can stop. The landscape has been tumbled <const>7</const> times.<br><br><strong>Damaged Gravity Centrifuges</strong><br><br>The Gravity Centrifuge you've got access to has a cooling issue that hasn't been fixed yet. On your damaged Gravity Centrifuge, if two consecutive bits in the bitstream are set, the twin inertial drive overheats and burns down.<br><br>So don't do that.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> <var>N</var>, the number of tumbles you want to program the centrifuge for.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The octal representation of a bitstream that encodes a non-overheating <var>N</var>-tumble program. No leading zeroes.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints"><var>N</var> &gt;= 0</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1</pre>
+         </div>
+      </div>
+   </div>
+</div>

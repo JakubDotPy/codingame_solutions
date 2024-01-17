@@ -1,0 +1,37 @@
+<h1>Length of Syracuse Conjecture Sequence</h1>
+
+<a href="https://www.codingame.com/training/medium/length-of-syracuse-conjecture-sequence">https://www.codingame.com/training/medium/length-of-syracuse-conjecture-sequence</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">The Syracuse Conjecture concerns a sequence of integers defined as follows:<br><br><pre style="font-family: monospace">- start with any positive integer n. <br>- Then each term is obtained from the previous term as follows: <br>   * if the previous term is even<br>        the next term is one half the previous term. <br>   * If the previous term is odd<br>        the next term is 3 times the previous term plus 1.</pre><br>The conjecture is that no matter what value of n, the sequence will always reach 1.<br>https://en.wikipedia.org/wiki/Collatz_conjecture<br><br>For example, given the input 22, the following sequence is constructed: 22 11 34 17 52 26 13 40 20 10 5 16 8 4 2 1<br><br>Given an input <var>n</var>, it is possible to determine the number of terms in the sequence, including the terminating 1. For a given <var>n</var>, this is called the <strong>cycle-length</strong> of <var>n</var>.<br><br>In the example above, the cycle-length of <const>22</const> is <const>16</const>.<br><br>For any two numbers <var>A</var> and <var>B</var> you are to determine the maximum cycle-length over all numbers between them.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An Integer <var>N</var> the number of ranges to compute.<br><strong><var>N</var> next lines:</strong> Two integers <var>A</var> and <var>B</var> respectively the lower and upper bound of the range.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>N</var> lines:</strong> <var>i</var> <var>cycle_length</var> the lowest integer that leads to the longest cycle-length, and the cycle length itself.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>N</var> &le; 10<br>1 &le; <var>A</var> &le; <var>i</var> &le; <var>B</var> &le; 100000<br>You can assume that no operation overflows a 32-bit integer</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1
+1 10</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">9 20</pre>
+         </div>
+      </div>
+   </div>
+</div>

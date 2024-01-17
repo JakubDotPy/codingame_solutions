@@ -1,0 +1,39 @@
+<h1>Hacking at RobberCity</h1>
+
+<a href="https://www.codingame.com/training/medium/hacking-at-robbercity">https://www.codingame.com/training/medium/hacking-at-robbercity</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">At RobberCity, it's really hard to send a parcel safely. Postmen are thiefs, and you can be sure that without a proper lock, your box will be opened and emptied prior to &quot;delivery&quot;.<br>This is a famous riddle: how can Alice send a parcel to Bob, without having to send the lock key?<br><br>The answer is:<br>* step 1: Alice locks the box using her own lock and send it to Bob<br>* step 2: Bob receives the unopened parcel, but cannot open it without the key. He add his own lock on the parcel and send it back to Alice<br>* step 3: Alice gets her parcel back with the 2 locks. She can now remove hers and send it Bob again.<br>* step 4: Bob receives the parcel with his lock, that he can open<br><br>Now, the electronic version!<br>This time, Alice wants to send secured data to Bob. They both read this wikipedia article: https://en.wikipedia.org/wiki/XOR_cipher#Use_and_security about the XOR cipher<br><strong>With a key that is truly random, the result is a one-time pad, which is unbreakable in theory.</strong><br>Wow. Unbreakable.<br><br>Alice and Bob decided to use the riddle solution applied to XOR.<br>* step 1: Alice encodes her message with her random key, as long as the message itself. She sends it to Bob<br>* step 2: Bob encodes the ciphered message with his own random key, as long as the message itself. He sends it back to Alice<br>* step 3: Alice decodes the message with her initial key, and sends it to Bob<br>* step 4: Bob decodes the message with his initial key, and gets the clear text.<br><br>And it works! XOR is both commutative and associative, and A XOR 0 = A and A XOR A = 0. Hence<br><pre style="font-family: monospace"></pre><pre style="font-family: monospace">Message XOR AliceKey XOR BobKey XOR AliceKey XOR BobKey<br> = Message XOR (AliceKey XOR AliceKey) XOR (BobKey XOR BobKey)<br> = Message XOR 0 XOR 0<br> = Message</pre><pre style="font-family: monospace"></pre><br>You're a man-in-the-middle, intercepting any message between Alice and Bob.<br>(Btw, your existence proves that they both really had good reasons to put a data cipher process in place...)<br>So, you intercept the 3 messages <var>message1</var>, <var>message2</var> and <var>message3</var>.<br><br>Your goal is to be smarter than the smarties, and to break their code.<br><br>Note: intercepted messages are made of bytes (values from 0 to 255), that will be displayed in hexadecimal form. <br>Thus, each message will be an hexadecimal string of size 2n, each digit pair corresponds to a byte (from 00=0 to FF=255).<br><br>Once you get the clear message bytes, convert to clear text using ASCII encoding.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> <var>message1</var>, the first message Alice sends to Bob (hexadecimal)<br><strong>Line 2:</strong> <var>message2</var>, the second message Bob sends back (hexadecimal)<br><strong>Line 3:</strong> <var>message3</var>, the last message Alice sends (hexadecimal)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The clear text message</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">Message length &le; 250 chars (i.e. <var>message1</var>, <var>message2</var> and <var>message3</var> lengths are &le; 500 hexadecimal digits)</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">391813c092a2d5ac9acb705dfe41be3df08de67d1145cbcc3f
+03adeae2c8c2f2336c8a8d312733c2456e76e0b2d9068adc3f
+72d0954e354045f09461dc4c911d0b58ff8963efb12c34303f</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">Hello bob ! How are you ?
+</pre>
+         </div>
+      </div>
+   </div>
+</div>

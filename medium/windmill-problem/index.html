@@ -1,0 +1,44 @@
+<h1>Windmill problem</h1>
+
+<a href="https://www.codingame.com/training/medium/windmill-problem">https://www.codingame.com/training/medium/windmill-problem</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement"><strong>Windmill Process</strong> --------------------------------------------------------------------------------------------------------------------------<br><br>Given a finite plane <const>S</const> having <strong>at least</strong> three points. The windmill process can be define as follow:<br><br>- Start with a line <var>ℓ</var> going through a point <var>P</var> &isin; <const>S</const><br>- Rotate <var>ℓ</var> <strong>clockwise</strong> around the pivot <var>P</var>  until the line hits another point <var>Q</var> of <const>S</const>.<br>- The point <var>Q</var> now takes over as the new pivot.<br><br>This process continues until there is <var>N</var> changes of pivot.<br><br><strong>Objectives</strong> --------------------------------------------------------------------------------------------------------------------------<br><br>Given :<br> - all points of <const>S</const>  (there will never be three collinear points in <const>S</const>)<br> - the starting pivot <var>P</var><br> - the number <var>N</var> of pivot changes<br><br>Your objective is to make a simulation of this process. You should output :<br>- The index of the pivot<br>- For each point, the number of times it has been a pivot<br><br><strong>Definition of  <const>S</const></strong> --------------------------------------------------------------------------------------------------------------------------<br><br><const>S</const> is a plane of 800 x 600<br>Position (X, Y) = (0, 0) is at the bottom left of <const>S</const><br>The line <var>ℓ</var> will always start horizontally<br>The line <var>ℓ</var> will never starts aligned with another point<br>All point coordinates are integers.<br><br><strong>Example</strong> --------------------------------------------------------------------------------------------------------------------------<br><br>Let's assume we have <var>K</var>=<const>3</const> points (x, y) at:<br> - #0: (200,200)<br> - #1: (400,300)<br> - #2: (400,100)<br>and <var>N</var> == <const>3</const><br><br>The starting point <var>P</var> is #1 so the line starts horizontally at 400, 300. <br>The line turns Clockwise by 90 degrees and hits the point 2. It becomes the new pivot (1st time).<br>The line continues to turn and hits the point 0 after around 120 degrees. It becomes the new pivot  (1st time).<br>The line turns again around 120 degrees and hits point 1 which becomes the pivot  (2nd time). <br><br>As a result after 3 changes of pivot the result is :<br><br>1<br>1<br>2<br>1<br><br>The first 1 is for the pivot index and the rest is the number of time each point was a pivot.<br><br><strong>Extra Information</strong> --------------------------------------------------------------------------------------------------------------------------<br><br>This puzzle has been <strong>inspired</strong> from a problem proposed during the international mathematical olympiad in 2011 (https://artofproblemsolving.com/wiki/index.php?title=2011_IMO_Problems/Problem_2) and there is a nice explanation of this problem in one video of 3Blue1Brown (https://www.youtube.com/watch?v=M64HUIJFTZM)</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> Number of points on <const>S</const>, called <var>K</var><br><strong>Line 2:</strong> Number of pivot changes, called <var>N</var><br><strong>Line 3:</strong> Index <var>P</var> of the starting pivot (<strong>0-indexed</strong>)<br><strong>Next <var>K</var> lines:</strong> Two integers for the position of each point <var>X</var>, <var>Y</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>Line 1:</strong> The index of the current pivot<br><strong><var>K</var> lines:</strong> One integer for the number of times each point was a pivot</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">2 &lt; <var>K</var> &le; 30<br>0 &lt; <var>N</var> &le; 10^12<br>0 &le; <var>X</var> &le; 800<br>0 &le; <var>Y</var> &le; 600<br><br>The line <var>ℓ</var> will never starts aligned with another point</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">3
+3
+1
+200 200
+400 300
+400 100</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1
+1
+2
+1</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,50 @@
+<h1>Cubic Bézier curves</h1>
+
+<a href="https://www.codingame.com/training/easy/cubic-bezier-curves">https://www.codingame.com/training/easy/cubic-bezier-curves</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">B&eacute;zier curves are used everywhere in computer design because they are handy and easy to use, but they are also easy to calculate!<br><br>Your task is to draw a <strong>B&eacute;zier curve</strong> using ASCII characters: To create a cubic B&eacute;zier curve, you need a starting point <strong>A</strong> (<var>Ax</var>, <var>Ay</var>), two control points <strong>B</strong> (<var>Bx</var>, <var>By</var>) and <strong>C</strong> (<var>Cx</var>, <var>Cy</var>) and an ending point <strong>D</strong> (<var>Dx</var>, <var>Dy</var>). Then, you have to perform some <strong>linear interpolations</strong>:<br>Interpolate <strong>A and B</strong> to get one point <strong>AB</strong> (and repeat for <strong>BC</strong> and <strong>CD</strong>).<br>Interpolate <strong>AB and BC</strong> to get one point <strong>ABC</strong> (and repeat for <strong>BCD</strong>).<br>Interpolate <strong>ABC and BCD</strong> to get one <strong>point of the B&eacute;zier curve</strong>.<br><br>The formula to perform a <strong>linear interpolation &quot;I&quot;</strong> given 2 points <strong>P,Q</strong> and one weight <strong>t</strong> is: <strong>I=P*(1-t) + Q*t</strong>.<br><br>Since the curve could have infinite resolution, we provide the amount of interpolation <var>steps</var> that have to be used. For example, if there are 3 <strong>steps</strong>, you will have to calculate the points for the <strong>weights</strong> of <strong>0, 0.5 and 1</strong> (since the interpolation weights can range from <strong>0 to 1</strong>, 0 being the starting point and 1 being the ending point).<br><br>The <var>width</var> and <var>height</var> of the canvas are also provided. The origin (0, 0) is always the <strong>bottom-left corner</strong> and the coordinates are positive integers between <strong>[0, <var>width</var>-1]</strong> for X and <strong>[0, <var>height</var>-1]</strong> for Y.<br><br>For each of the <var>height</var> lines, you'll need to print:<br>-A point <const>&quot;.&quot;</const> as the first character.<br>-<const>&quot;#&quot;</const> at every coordinate where there is a point of the curve. If it coincides with a reference point <const>&quot;.&quot;</const>, <const>&quot;#&quot;</const> has more preference. Multiple curve points could fall on the same coordinate (they would be represented still as a <const>&quot;#&quot;</const>). The coordinates of the points of the curve are the <strong>rounded integers</strong> of the <strong>last interpolation</strong> results (0.5 is always rounded to the higher integer).<br>-Blank spaces <const>&quot; &quot;</const> to separate all the characters (as many as needed). Don't add extra spaces after the last curve (or reference) point!</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> The size of the canvas <var>width</var>, <var>height</var>.<br><strong>Line 2:</strong> The number of interpolation <var>steps</var>.<br><strong>Line 3:</strong> Starting point <var>Ax</var>, <var>Ay</var>.<br><strong>Line 4:</strong> Control point <var>Bx</var>, <var>By</var>.<br><strong>Line 5:</strong> Control point <var>Cx</var>, <var>Cy</var>.<br><strong>Line 6:</strong> Ending point <var>Dx</var>, <var>Dy</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><var>height</var> lines of length <var>width</var> to represent the canvas.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">10 &le; <var>width</var>,<var>height</var> &le; 50<br>2 &le; <var>steps</var> &le; 100<br>0 &le; <var>Ax</var>,<var>Bx</var>,<var>Cx</var>,<var>Dx</var> &lt; <var>width</var><br>0 &le; <var>Ay</var>,<var>By</var>,<var>Cy</var>,<var>Dy</var> &lt; <var>height</var></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">10 10
+10
+0 0
+0 9
+9 9
+9 0</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">.
+.
+.   ##
+. #    #
+.#      #
+.
+#        #
+.
+.
+#        #</pre>
+         </div>
+      </div>
+   </div>
+</div>

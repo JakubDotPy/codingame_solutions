@@ -1,0 +1,41 @@
+<h1>Graffiti on the fence</h1>
+
+<a href="https://www.codingame.com/training/easy/graffiti-on-the-fence">https://www.codingame.com/training/easy/graffiti-on-the-fence</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are paid by a farmer to paint his fence.<br><br>Knowing that the task can be too difficult for yourself, you sub-contracted the job to a school of students as their extracurricular activity, to draw graffiti on the fence.<br><br>After a whole day of work and fun, the students reported which sections of the fence have been painted. The students were working in small teams or individually, so that you got multiple separated reports from them.<br><br>The fence has markings on it at every meter, count from <strong>meter 0</strong>. A painted section is reported as<br><var>st</var> <var>ed</var><br>which means painting is done from [starting point] to [ending point]. <br>We take only integer readings.<br><br><strong>Example</strong><br><br><pre style="font-family: monospace">    st      ed<br>    !░░░░░░░░!<br> +--+--+--+--+--+--<br> 0  1  2  3  4  5</pre><br>st = 1<br>ed = 4<br>painted length = 3<br><br><br>The painted sections may not be continuous, done on different parts of the fence. Some reported sections are even overlapping. The reports are not sorted in any special order.<br><br>Having the reports in hands, you want to know which sections of the fence have <strong>not</strong> been painted.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>L</var> for the total length of the fence in meter<br><strong>Line 2:</strong> An integer <var>N</var> for the number of reports<br><strong>Next <var>N</var> lines:</strong> Each line defines a reported section, by format <var>st</var> <var>ed</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">A list of unpainted sections, one section on each line, by format <var>st</var> <var>ed</var>,<br>sorted by <var>st</var> in ascending order.<br><br>If there is no unpainted section, output a line:<br><br><pre style="font-family: monospace">All painted</pre></div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>L</var> &le; 2,000,000,000<br>1 &le; <var>N</var> &le; 100<br>0 &le; <var>st</var> &lt; <var>ed</var> &le; L<br><br><const>Of course you can declare and use arrays. It is just a bad approach if you wish to create an array occupying 2GB continuous memory.</const></div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">10
+2
+1 4
+5 6</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">0 1
+4 5
+6 10</pre>
+         </div>
+      </div>
+   </div>
+</div>

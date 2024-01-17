@@ -1,0 +1,108 @@
+<h1>Stock Exchange Losses</h1>
+
+<a href="https://www.codingame.com/training/medium/stock-exchange-losses">https://www.codingame.com/training/medium/stock-exchange-losses</a>
+
+<div class="statement_back" id="statement_back" style="display:none">&nbsp;</div>
+
+<div class="statement-body"><!-- GOAL -->
+<div class="statement-section statement-goal">
+<h2><span class="icon icon-goal">&nbsp;</span> <span>The Goal</span></h2>
+
+<div class="statement-goal-content">A finance company is carrying out a study on the worst stock investments and would like to acquire a program to do so. The program must be able to analyze a chronological series of stock values in order to show the largest loss that it is possible to make by buying a share at a given time <var>t0</var> and by selling it at a later date <var>t1</var>. The loss will be expressed as the difference in value between <var>t0</var> and <var>t1</var>. If there is no loss, the loss will be worth <const>0</const>.</div>
+</div>
+<!-- PROTOCOL -->
+
+<div class="statement-section statement-protocol">
+<h2><span class="icon icon-protocol">&nbsp;</span> <span>Game Input</span></h2>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Input</div>
+
+<div class="text">
+<p><span class="statement-lineno">Line 1:</span> the number <var>n</var> of stock values available.</p>
+
+<p><span class="statement-lineno">Line 2:</span> the stock values arranged in order, from the date of their introduction on the stock market <var>v<sub>1</sub></var> until the last known value <var>v<sub>n</sub></var>. The values are integers.</p>
+</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Output</div>
+
+<div class="text">The maximal loss <var>p</var>, expressed negatively if there is a loss, otherwise <const>0</const>.</div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Constraints</div>
+
+<div class="text">0 &lt; <var>n</var> &lt; 100000<br />
+0 &lt; <var>v</var> &lt; 2<sup>31</sup></div>
+</div>
+<!-- Protocol block -->
+
+<div class="blk">
+<div class="title">Examples</div>
+
+<div class="text">
+<div class="statement-inout">
+<div class="statement-inout-in" style="background-color: white; text-align: center"><img src="https://www.codingame.com/fileservlet?id=43114364027" /></div>
+
+<div class="statement-inout-in" style="background-color: white; vertical-align: top">
+<div class="title" style="color: #989898; padding:0">Input</div>
+
+<pre>
+6
+3 2 4 2 1 5</pre>
+</div>
+
+<div class="statement-inout-out" style="background-color: white; vertical-align: top">
+<div class="title" style="color: #989898; padding:0">Output</div>
+
+<pre>
+-3</pre>
+</div>
+</div>
+
+<div class="statement-inout">
+<div class="statement-inout-in" style="background-color: white; text-align: center"><img src="https://www.codingame.com/fileservlet?id=43127740838" /></div>
+
+<div class="statement-inout-in" style="background-color: white; vertical-align: top">
+<div class="title" style="color: #989898; padding:0">Input</div>
+
+<pre>
+6
+5 3 4 2 3 1</pre>
+</div>
+
+<div class="statement-inout-out" style="background-color: white; vertical-align: top">
+<div class="title" style="color: #989898; padding:0">Output</div>
+
+<pre>
+-4</pre>
+</div>
+</div>
+
+<div class="statement-inout">
+<div class="statement-inout-in" style="background-color: white; text-align: center"><img src="https://www.codingame.com/fileservlet?id=43130710003" /></div>
+
+<div class="statement-inout-in" style="background-color: white; vertical-align: top">
+<div class="title" style="color: #989898; padding:0">Input</div>
+
+<pre>
+5
+1 2 4 4 5</pre>
+</div>
+
+<div class="statement-inout-out" style="background-color: white; vertical-align: top">
+<div class="title" style="color: #989898; padding:0">Output</div>
+
+<pre>
+0</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

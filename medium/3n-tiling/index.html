@@ -1,0 +1,39 @@
+<h1>3×N Tiling</h1>
+
+<a href="https://www.codingame.com/training/medium/3n-tiling">https://www.codingame.com/training/medium/3n-tiling</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement"><strong>The Problem:</strong><br><br>You are required to fill an <var>K</var> &times; <var>N</var> grid using the following pieces:<br><br>A 2&times;2 Piece:<pre style="font-family: monospace">┌───┐ <br>│   │	 <br>└───┘</pre>A 3&times;1 Piece which can be placed in two ways:<pre style="font-family: monospace">┌─────┐ <br>└─────┘<br>┌─┐<br>│ │<br>│ │<br>└─┘</pre>Given that <var>K</var> is always either <const>1</const>, <const>2</const> or <const>3</const>.<br><br>You have to output the total number of ways of doing this.<br><br>-------------------------------------------------- xxx --------------------------------------------------<br><br><strong>Rules:</strong><br><br>1. The entire grid must be filled i.e. there can be no empty cell.<br><br>2. No 2 tiles can overlap.<br><br>3. As already pointed above, the <const>3&times;1</const> Tile can be placed horizontally or vertically.<br><br>4. Since the answer might be large output it modulo <const>10⁹+7</const>.<br><br>5. Note that there may also be 0 ways of filling a particular grid.<br><br>-------------------------------------------------- xxx --------------------------------------------------<br><br><strong>Examples:</strong><br><br>1. <var>K</var> = <const>1</const> and <var>N</var> = <const>6</const>:<pre style="font-family: monospace">┌─────┬─────┐<br>└─────┴─────┘</pre>So there is only <const>1</const> way of doing this.<br><br><br>2. <var>K</var> = <const>2</const> and <var>N</var> = <const>6</const>: <pre style="font-family: monospace">┌─────┬─────┐  ┌───┬───┬───┐<br>├─────┼─────┤  │   │   │   │<br>└─────┴─────┘  └───┴───┴───┘</pre>So there are <const>2</const> ways of doing this.<br><br><br>3. <var>K</var> = <const>3</const> and <var>N</var> = <const>6</const>: <pre style="font-family: monospace">┌─────┬─────┐  ┌───┬───┬───┐  ┌─────┬─────┐  ┌─┬─┬─────┬─┐<br>├─────┼─────┤  │   │   │   │  ├───┬─┴─┬───┤  │ │ ├─────┤ │<br>├─────┼─────┤  ├───┴─┬─┴───┤  │   │   │   │  │ │ ├─────┤ │<br>└─────┴─────┘  └─────┴─────┘  └───┴───┴───┘  └─┴─┴─────┴─┘<br>┌─┬─────┬─┬─┐  ┌─┬─┬─┬─────┐  ┌─────┬─┬─┬─┐  ┌─┬─┬─┬─┬─┬─┐<br>│ ├─────┤ │ │  │ │ │ ├─────┤  ├─────┤ │ │ │  │ │ │ │ │ │ │<br>│ ├─────┤ │ │  │ │ │ ├─────┤  ├─────┤ │ │ │  │ │ │ │ │ │ │<br>└─┴─────┴─┴─┘  └─┴─┴─┴─────┘  └─────┴─┴─┴─┘  └─┴─┴─┴─┴─┴─┘</pre>So there are <const>8</const> ways of doing this.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> An integer <var>T</var>, the number of test cases<br><strong>Next <var>T</var> Lines:</strong> Integers <var>K</var> and <var>N</var>, the height and width of the grid respectively</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong>First <var>T</var> Lines:</strong> An integer <var>W</var>, the total number of ways of tiling the respective grid modulo 10⁹ + 7</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>T</var> &le; 10<br>1 &le; <var>K</var> &le; 3<br>1 &le; <var>N</var> &le; 10⁶</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2
+1 6
+1 9</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1
+1</pre>
+         </div>
+      </div>
+   </div>
+</div>

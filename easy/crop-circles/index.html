@@ -1,0 +1,60 @@
+<h1>Crop-Circles</h1>
+
+<a href="https://www.codingame.com/training/easy/crop-circles">https://www.codingame.com/training/easy/crop-circles</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">You are an intern on an Alien spacecraft, and your job is to create &quot;Crop-Circles&quot;.<br><br>You are assigned a Farming-Field that is planted with a crop of <const>{}</const><br>The Farming-Field is 25 high and 19 wide.  The naming convention is:<br>The columns are <const>a</const> to <const>s</const><br>The rows are <const>a</const> to <const>y</const><br><br>The way you are told what Crop-Circle to make is notation in the format of xyd or xydd<br>where:<br>x tells you the x coordinate of the center<br>y tells you the y coordinate of the center<br>d or dd tells you the diameter (always an integer)<br>For example <const>bc13</const> tells you center of the circle is 2nd column, 3rd row; and the diameter is 13.<br>NOTES:<br>&bull; Some Crop-Circles will not be fully in the Farming-Field, but all centers will be.<br>&bull; To be clear, a circle includes its circumference.<br>&bull; There are advanced ways to determine a circle (such as Bresenham's Circle Algorithm).  Do <strong>not</strong> use them; stick with what you learned in elementary school.<br><br>Mostly, Crop-Circles are made by mowing; so if no other instructions are given that's what you'll do.<br><br>However, your spacecraft is equipped with the latest technological advances in Crop-Circle creation, so you can also <const>PLANT</const> or <const>PLANTMOW</const>.  Here's what that means:<br><br><const>PLANT</const> = add back the <const>{}</const> crop to the entire circle.  In other words, plant back <const>{}</const> as needed, so the entire area of the circle is fully planted, including spots that have already been mowed.<br><br><const>PLANTMOW</const> = within a circle if a spot is planted, then mow it; if a spot is mowed, then plant it.  In other words reverse it.<br><br>If you are to do either of these, the key word will be before the other part of the notation.  For example: <const>PLANTgg7</const> or <const>PLANTMOWjm13</const><br><br>Now, go do your job, before you are transferred to the Human Probing Department or the Cattle Mutilation Division.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input">A single string describing what Crop-Circles to make</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The 19-wide x 25-high Farming-Field after it has been Crop-Circled.<br>The only characters allowed are <const>{}</const> and spaces</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">There will be one or more Crop-Circles</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">fg9 ls11 oe7</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}
+{}{}{}{}{}{}{}{}{}{}{}{}{}      {}{}{}
+{}{}{}          {}{}{}{}          {}{}
+{}{}              {}{}              {}
+{}                  {}              {}
+{}                  {}              {}
+{}                  {}{}          {}{}
+{}                  {}{}{}      {}{}{}
+{}                  {}{}{}{}{}{}{}{}{}
+{}{}              {}{}{}{}{}{}{}{}{}{}
+{}{}{}          {}{}{}{}{}{}{}{}{}{}{}
+{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}
+{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}
+{}{}{}{}{}{}{}{}{}          {}{}{}{}{}
+{}{}{}{}{}{}{}{}              {}{}{}{}
+{}{}{}{}{}{}{}                  {}{}{}
+{}{}{}{}{}{}                      {}{}
+{}{}{}{}{}{}                      {}{}
+{}{}{}{}{}{}                      {}{}
+{}{}{}{}{}{}                      {}{}
+{}{}{}{}{}{}                      {}{}
+{}{}{}{}{}{}{}                  {}{}{}
+{}{}{}{}{}{}{}{}              {}{}{}{}
+{}{}{}{}{}{}{}{}{}          {}{}{}{}{}
+{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}</pre>
+         </div>
+      </div>
+   </div>
+</div>

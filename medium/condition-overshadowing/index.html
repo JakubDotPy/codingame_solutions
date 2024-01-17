@@ -1,0 +1,41 @@
+<h1>Condition Overshadowing</h1>
+
+<a href="https://www.codingame.com/training/medium/condition-overshadowing">https://www.codingame.com/training/medium/condition-overshadowing</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Condition overshadowing can be a possible cause for unreachable code in a computer program and solving this problem can help detect it.<br><br>Programs often define a chain of conditions in the form of: if ... else if ... else if ... else if<br>Some of those conditions can be overshadowed by previous conditions.<br><br>The meaning is fairly intuitive: an overshadowed condition is a condition for which any values satisfying the condition also satisfy at least one previous condition, thus making the overshadowed block of code unreachable.<br><br>The goal is to detect all overshadowed conditions in a chain of conditions and output their serial position in the chain. The first condition has index 0.<br><br>Overshadowed conditions in real-life programs can be extremely hard to detect, but here the conditions are simplified to only an integer variable <var>x</var> compared to an integer constant <const>c</const> (and still this isn't so simple...)<br><br>Note: <strong>Partial</strong> overshadowing does not count, while <strong>complete</strong> overshadowing (which leads to totally unreachable code) counts.<br><br><strong>In the example:</strong><br>Condition (x == 9) is overshadowed by condition (x &gt; 4).<br>Condition (x &lt; 6) is overshadowed by conditions (x &gt; 4) and (x != 5).<br>Condition (x != 5) is only partially overshadowed by condition (x &gt; 4) and hence is not treated as part of the answer.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><var>N</var> amount of conditions.<br><strong>Next <var>N</var> lines:</strong><br>A condition with a variable <var>x</var> compared to a constant <const>c</const>.<br>A condition is one of:<br>x == c<br>x != c<br>x &gt; c<br>x &lt; c<br>Each line is split into tokens separated by spaces.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The serial positions of all overshadowed conditions sorted from smallest to largest, in a single line separated by spaces.<br>If no overshadowed conditions exist, output <const>ok</const>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; <var>N</var> &le; 10<br>-2^30 &lt; <var>x</var> &lt; 2^30<br><var>x</var> is of type integer and <const>c</const> is an integer.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">5
+x &gt; 4
+x == 9
+x &lt; 4
+x != 5
+x &lt; 6</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1 4</pre>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,36 @@
+<h1>Extended Hamming Codes</h1>
+
+<a href="https://www.codingame.com/training/easy/extended-hamming-codes">https://www.codingame.com/training/easy/extended-hamming-codes</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Hamming Codes are a way of validating and fixing blocks of binary data using <strong>parity bits</strong>. Each block is <strong>2^<var>N</var></strong> bits long. Here, we are only interested in the case where <var>N = 4</var> (i.e. <strong>16</strong> bit blocks)<br><br>Consider the following, generic, block of data, <const>abcdefghijklmnop</const>, which can be rewritten as:<br><pre style="font-family: monospace"><br>a b c d<br>e f g h<br>i j k l<br>m n o p<br></pre><br>- Bit <strong>a</strong> is a global parity bit. A valid message has an <strong>even</strong> number of <strong>1</strong>'s<br>- Bit <strong>b</strong> is a parity bit for the bits <strong>[d, f, h, j, l, n, p]</strong> (<strong>odd</strong> columns), meaning that the subset <const>bdfhjlnp</const> has an <strong>even</strong> number of <strong>1</strong>'s.<br>- Bit <strong>c</strong> is a parity check on bits <strong>[d, g, h, k, l, o, p]</strong> (<strong>last two</strong> columns), meaning that the subset <const>cdghklop</const> has an <strong>even</strong> number of <strong>1</strong>'s.<br>- Bit <strong>e</strong> is a parity check on bits <strong>[f, g, h, m, n, o, p]</strong> (<strong>odd</strong> lines), meaning that the subset <const>efghmnop</const> has an <strong>even</strong> number of <strong>1</strong>'s.<br>- Bit <strong>i</strong> is a parity check on bits <strong>[j, k, l, m, n, o, p]</strong> (<strong>last two</strong> lines), meaning that the subset <const>ijklmnop</const> has an <strong>even</strong> number of <strong>1</strong>'s.<br><br>Given a message encoded with this error-checking algorithm, it's possible to locate any 1 faulty bit and correct it, and locate if there are 2 faulty bits (but not correct them).<br><br>For instance, if <const>bdfhjlnp</const> is <strong>odd</strong>, <const>cdghklop</const> is <strong>even</strong>, <const>efghmnop</const> is <strong>even</strong> and <const>ijklmnop</const> is <strong>odd</strong>, then the bit <strong>j</strong> needs to be flipped. Furthermore, bit <strong>a</strong> can be used to detect if there are 2 errors in the block. If bit <strong>j</strong> needs to be flipped, but the whole message is <strong>even</strong>, then there are two errors.<br><br>You are given a string in binary of length 16. Your goal is to check whether this string has an error, and if so correct it. If the string has only one error, or is valid, print out the corrected string. Print out 'TWO ERRORS' if the string has two errors.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> A string of 16 binary digits, representing a message block protected with the Hamming ECC scheme.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">If the message has <strong>no errors</strong>: print out the <strong>original</strong> message.<br>If it has <strong>1 error</strong>: print out the <strong>corrected</strong> message.<br>If it has <strong>2 errors</strong>: print out <strong>'TWO ERRORS'</strong>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">At most 2 errors in the message.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">1100101010110110</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1100101011110110</pre>
+         </div>
+      </div>
+   </div>
+</div>

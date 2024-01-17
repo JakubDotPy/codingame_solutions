@@ -1,0 +1,37 @@
+<h1>Kolakoski Sequence</h1>
+
+<a href="https://www.codingame.com/training/hard/kolakoski-sequence">https://www.codingame.com/training/hard/kolakoski-sequence</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">A <strong>Kolakoski sequence</strong>, named after William Kolakoski, is an infinite sequence of digits whose run lengths reduce to the sequence itself.<br><br>For example, the Kolakoski sequence for the numbers 1 and 2 is<br>1,2,2,1,1,2,1,2,2,1,2,2,1,1,2,1,1,2,2,1,2,1,1,2,1,2,2,1,1&hellip;<br>because, when writing down the successive run lengths of <const>1</const>s and <const>2</const>s, you get the same sequence back:<br><pre style="font-family: monospace"><br>Sequence:    1  2 2  1 1  2  1  2 2  1  2 2 &hellip;<br>             ↕   ↕    ↕   ↕  ↕   ↕   ↕   ↕<br>Run lengths: 1   2    2   1  1   2   1   2  &hellip;  &larr; same sequence<br></pre>Your goal is to output the first <var>N</var> elements of the Kolakoski sequence given its first two distinct digits <var>A</var> and <var>B</var>.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> The number <var>N</var> of digits to output<br><strong>Line 2:</strong> The digits <var>A</var> and <var>B</var> which will form the sequence, in that order</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output">The Kolakoski sequence, without any separator.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">1 &le; N &le; 1000<br>1 &le; A &le; 9<br>1 &le; B &le; 9<br>A &ne; B</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">10
+1 2</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">1221121221</pre>
+         </div>
+      </div>
+   </div>
+</div>

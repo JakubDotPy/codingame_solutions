@@ -1,0 +1,41 @@
+<h1>A Bunny and Carrots</h1>
+
+<a href="https://www.codingame.com/training/easy/a-bunny-and-carrots">https://www.codingame.com/training/easy/a-bunny-and-carrots</a>
+
+<div class="statement-body">
+<div class="statement-section statement-goal">
+   <h2><span class="icon icon-goal">&nbsp;</span><span>Goal </span></h2>
+   <span class="question-statement">Farmer Fibo has a nice <var>M</var>&times;<var>N</var> grid of carrots in his garden. However, he also owns a very hungry bunny named Bugs who really likes carrots.<br>In each turn, Bugs hops along one of the <var>N</var> columns and eats the first carrot he finds. i.e. if the <var>i</var>th column is chosen, he eats the carrot in (<var>j</var>,<var>i</var>) where <var>j</var> is the highest value for which there is a carrot.<br><br>Given an array with the column choices of Bugs, for each of them print the <strong>perimeter</strong> of the region of carrots remaining after Bugs has eaten that carrot.<br><br>For example, take the following 2&times;2 garden where &quot;<const>C</const>&quot; stands for a carrot and &quot;<const>X</const>&quot; stands for eaten:<br><br><pre style="font-family: monospace"> _ _<br>|C C|<br>|C C|<br> - -</pre><br><br>The perimeter is 8 as all grid is covered with carrots. <br><br>Suppose the choices are the array [2,1,1,2].<br>This is how the garden will look like after each eaten carrot:<br> <pre style="font-family: monospace"> _ _<br>|C C|<br>   -<br>|C|X<br> -<br><br> _ _<br>|C C|<br> - -<br> X X<br><br>   _<br> X|C|<br>   -<br> X X</pre><br><br>and finally:<br><br><pre style="font-family: monospace"> X X<br> X X</pre><br><br>The perimeters of the area occupied by the carrots are respectively <strong>8, 6, 4 and 0</strong>.</span>
+</div>
+<div class="statement-section statement-protocol">
+   <div class="blk">
+      <div class="title">Input</div>
+      <div class="question-statement-input"><strong>Line 1:</strong> A pair <var>M</var>,<var>N</var> for the height and width of the carrots garden.<br><strong>Line 2:</strong> An integer <var>T</var> - the total number of choices from Bugs.<br><strong>Line 3:</strong> <var>T</var> space-separated integers <var>choices</var>.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Output</div>
+      <div class="question-statement-output"><strong><var>T</var> lines:</strong> The perimeters delimited by the carrots after Bugs ate each carrot.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="question-statement-constraints">0 &lt; <var>M</var>,<var>N</var> &le; 20<br><var>T</var> &le; <var>M</var>&times;<var>N</var><br>1 &le; <var>choices</var> &le; <var>N</var><br>No column will be chosen more than <var>M</var> times.</div>
+   </div>
+   <div class="blk">
+      <div class="title">Example</div>
+      <div class="statement-inout">
+         <div class="statement-inout-in">
+            <div class="title">Input</div>
+            <pre class="question-statement-example-in">2 2
+4
+2 1 1 2</pre>
+         </div>
+         <div class="statement-inout-out">
+            <div class="title">Output</div>
+            <pre class="question-statement-example-out">8
+6
+4
+0</pre>
+         </div>
+      </div>
+   </div>
+</div>
